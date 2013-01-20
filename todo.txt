@@ -1,0 +1,19 @@
+Beta
+- Add license to about dialog.
+- Add icons credits to about dialog.
+- Add reload WAD files option to menu + shortcut key.
+- Cleanup + comment module by module.
+- Add editor iconography.
+- Add sounds editor.
+- Add strings editor.
+- Add weapons editor.
+- Add ammo editor.
+- Add cheats editor.
+- Add misc. editor.
+- Add par times editor.
+- Set up Git or SVN repo, and use versioning.
+- Beta test.
+
+Release
+- Set up changelog since WhackEd2\3.
+- Finish website.

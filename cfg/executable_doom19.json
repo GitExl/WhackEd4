@@ -1,0 +1,824 @@
+{
+	"versions": [19],
+	"extended": false,
+	"name": "Doom 1.9",
+
+	"thingOffset": 672768,
+	"thingCount": 137,
+
+	"stateOffset": 645692,
+	"stateCount": 967,
+
+	"weaponOffset": 634276,
+	"weaponCount": 9,
+
+	"soundOffset": 641220,
+	"soundCount": 108,
+
+	"spriteOffset": 645140,
+	"spriteCount": 138,
+
+	"stringOffset": 686360,
+	"stringCount": 1079,
+
+	"cheatOffset": 637616,
+
+	"ammoOffset": 634244,
+	"ammoCount": 4,
+
+	"miscOffset": 403896,
+	"miscCount": 15,
+
+	"dataSegment": 557076,
+
+	"hacks": {
+		"plasmaFlashStateJitter": true
+	},
+
+	"miscData": {
+		"startHealth": {
+			"offsets": [403896],
+			"type": "int",
+			"patchKey": "Initial Health"
+		},
+		"startAmmo": {
+			"offsets": [403927],
+			"type": "int",
+			"patchKey": "Initial Bullets"
+		},
+		"maxHealth": {
+			"offsets": [441274, 441283],
+			"type": "int",
+			"patchKey": "Max Health"
+		},
+		"maxArmor": {
+			"offsets": [441319, 441328],
+			"type": "int",
+			"patchKey": "Max Armor"
+		},
+		"armorClassGreen": {
+			"offsets": [441159],
+			"type": "int",
+			"patchKey": "Green Armor Class"
+		},
+		"armorClassBlue": {
+			"offsets": [441211],
+			"type": "int",
+			"patchKey": "Blue Armor Class"
+		},
+		"maxSoulSphereHealth": {
+			"offsets": [441370, 441379],
+			"type": "int",
+			"patchKey": "Max Soulsphere"
+		},
+		"soulSphereHealth": {
+			"offsets": [441365],
+			"type": "byte",
+			"patchKey": "Soulsphere Health"
+		},
+		"megaSphereHealth": {
+			"offsets": [441427],
+			"type": "int",
+			"patchKey": "Megasphere Health"
+		},
+		"godModeHealth": {
+			"offsets": [506723, 506735],
+			"type": "int",
+			"patchKey": "God Mode Health"
+		},
+		"idfaArmor": {
+			"offsets": [506803],
+			"type": "int",
+			"patchKey": "IDFA Armor"
+		},
+		"idfaArmorClass": {
+			"offsets": [506815],
+			"type": "int",
+			"patchKey": "IDFA Armor Class"
+		},
+		"idkfaArmor": {
+			"offsets": [506903],
+			"type": "int",
+			"patchKey": "IDKFA Armor"
+		},
+		"idkfaArmorClass": {
+			"offsets": [506915],
+			"type": "int",
+			"patchKey": "IDKFA Armor Class"
+		},
+		"bfgAmmoUsage": {
+			"offsets": [455832, 456545, 455299],
+			"type": "byte",
+			"patchKey": "BFG Cells/Shot"
+		},
+		"monstersInfight": {
+			"offsets": [446370],
+			"type": "boolean",
+			"on": 221,
+			"off": 220,
+			"patchKey": "Monsters Infight"
+		}
+	},
+
+	"actionIndexToState": [
+		1, 2, 3, 4, 6, 9, 10, 11, 12, 14, 16, 17, 18, 19, 20, 22, 29, 30, 31, 32, 33, 34, 36, 38, 39,
+		41, 43, 44, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 66, 67, 68,
+		69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 119, 127,
+		157, 159, 160, 166, 167, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 188, 190,
+		191, 195, 196, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 221, 223, 224, 228,
+		229, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258,
+		259, 260, 261, 262, 263, 264, 270, 272, 273, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290,
+		291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309,
+		310, 316, 317, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336,
+		337, 338, 339, 340, 341, 342, 344, 347, 348, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371,
+		372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 387, 389, 390, 397, 406,
+		407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 421, 423, 424, 430, 431, 442,
+		443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 456, 458, 460, 463, 465, 475, 476,
+		477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 489, 491, 493, 502, 503, 504, 505, 506,
+		508, 511, 514, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 541, 543, 545,
+		548, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 570, 572, 574, 585, 586,
+		587, 588, 589, 590, 594, 596, 598, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612,
+		613, 614, 615, 616, 617, 618, 620, 621, 622, 631, 632, 633, 635, 636, 637, 638, 639, 640, 641,
+		642, 643, 644, 645, 646, 647, 648, 650, 652, 653, 654, 659, 674, 675, 676, 677, 678, 679, 680,
+		681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 692, 696, 700, 701, 702, 703, 704, 705, 706,
+		707, 708, 709, 710, 711, 713, 715, 718, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736,
+		737, 738, 739, 740, 741, 743, 745, 746, 750, 751, 766, 774, 777, 779, 780, 783, 784, 785, 786,
+		787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 801, 809, 811
+	],
+
+	"cheatData": {
+		"changeMusic": {
+			"patchKey": "Change music",
+			"offset": 0,
+			"length": 5
+		},
+		"chainsaw": {
+			"patchKey": "Chainsaw",
+			"offset": 9,
+			"length": 10
+		},
+		"godMode": {
+			"patchKey": "God mode",
+			"offset": 20,
+			"length": 5
+		},
+		"ammoAndKeys": {
+			"patchKey": "Ammo & keys",
+			"offset": 26,
+			"length": 5
+		},
+		"ammo": {
+			"patchKey": "Ammo",
+			"offset": 32,
+			"length": 4
+		},
+		"noClip1": {
+			"patchKey": "No Clipping 1",
+			"offset": 37,
+			"length": 10
+		},
+		"noClip2": {
+			"patchKey": "No Clipping 2",
+			"offset": 48,
+			"length": 6
+		},
+		"invincibility": {
+			"patchKey": "Invincibility",
+			"offset": 55,
+			"length": 9
+		},
+		"berserk": {
+			"patchKey": "Berserk",
+			"offset": 65,
+			"length": 9
+		},
+		"invisibility": {
+			"patchKey": "Invisibility",
+			"offset": 75,
+			"length": 9
+		},
+		"radiationSuit": {
+			"patchKey": "Radiation Suit",
+			"offset": 85,
+			"length": 9
+		},
+		"autoMap": {
+			"patchKey": "Auto-map",
+			"offset": 95,
+			"length": 9
+		},
+		"liteAmpGoggles": {
+			"patchKey": "Lite-Amp Goggles",
+			"offset": 105,
+			"length": 9
+		},
+		"beholdMenu": {
+			"patchKey": "BEHOLD menu",
+			"offset": 115,
+			"length": 8
+		},
+		"warp": {
+			"patchKey": "Level Warp",
+			"offset": 125,
+			"length": 6
+		},
+		"position": {
+			"patchKey": "Player Position",
+			"offset": 135,
+			"length": 7
+		},
+		"map": {
+			"patchKey": "Map cheat",
+			"offset": -3624,
+			"length": 4
+		}
+	},
+
+	"thingFlags": {
+		"SPECIAL": {
+			"name": "Can be picked up",
+			"description": "This thing can be picked up."
+		},
+		"SOLID": {
+			"name": "Obstacle",
+			"description": "This thing blocks other things from moving through it."
+		},
+		"SHOOTABLE": {
+			"name": "Shootable",
+			"description": "This thing can get hit by projectiles and hitscan weapons."
+		},
+		"NOSECTOR": {
+			"name": "Invisible & touchable",
+			"description": "This thing is invisible, but touchable."
+		},
+		"NOBLOCKMAP": {
+			"name": "Visible & untouchable",
+			"description": "This thing is visible, but untouchable."
+		},
+		"AMBUSH": {
+			"name": "Deaf (ambush)",
+			"description": "This thing cannot be woken up by sounds, only by sight (internal flag)."
+		},
+		"JUSTHIT": {
+			"name": "Attack right back",
+			"description": "This thing is going to attack right after being attacked itself (internal flag)."
+		},
+		"JUSTATTACKED": {
+			"name": "Steps before attack",
+			"description": "This thing is going to take a single step before it attacks (internal flag)."
+		},
+		"SPAWNCEILING": {
+			"name": "Spawned on ceiling",
+			"description": "This thing will spawn hanging from the ceiling."
+		},
+		"NOGRAVITY": {
+			"name": "No gravity",
+			"description": "This thing is not affected by gravity."
+		},
+		"DROPOFF": {
+			"name": "Travels over cliffs",
+			"description": "This thing is able to travel over height differences bigger than 24 units."
+		},
+		"PICKUP": {
+			"name": "Picks up items",
+			"description": "This thing can pick up other things that can be picked up."
+		},
+		"NOCLIP": {
+			"name": "No clipping",
+			"description": "This thing can move through walls and through blocking obstacles."
+		},
+		"SLIDE": {
+			"name": "Keep wall-slide info",
+			"description": "This thing will remember wall-sliding information (internal flag)."
+		},
+		"FLOAT": {
+			"name": "Floating",
+			"description": "This thing floats."
+		},
+		"TELEPORT": {
+			"name": "Semi no-clipping",
+			"description": "This thing can walk through obstacles, but not through walls."
+		},
+		"MISSILE": {
+			"name": "Projectile",
+			"description": "This thing is a projectile."
+		},
+		"DROPPED": {
+			"name": "Dropped by enemy",
+			"description": "This thing was dropped dropped by an enemy (internal flag)."
+		},
+		"SHADOW": {
+			"name": "Draw as shadow",
+			"description": "This thing is drawn using the Spectre fuzz effect."
+		},
+		"NOBLOOD": {
+			"name": "Puffs (vs. bleeds)",
+			"description": "This thing emits puffs when hit instead of blood splats."
+		},
+		"CORPSE": {
+			"name": "Corpse slides off steps",
+			"description": "This thing slides off steps (internal flag)."
+		},
+		"INFLOAT": {
+			"name": "No auto-levelling",
+			"description": "This thing won't automatically get equal to the floor's level."
+		},
+		"COUNTKILL": {
+			"name": "Affects kill %",
+			"description": "This thing counts towards the 'killed' percentage in the intermission screen."
+		},
+		"COUNTITEM": {
+			"name": "Affects item %",
+			"description": "This thing counts towards the 'items' percentage in the intermission screen."
+		},
+		"SKULLFLY": {
+			"name": "Flying skull",
+			"description": "This thing is a skull (Lost Soul) in mid-flight (internal flag)."
+		},
+		"NOTDMATCH": {
+			"name": "Not in deathmatch",
+			"description": "This thing won't be spawned during deathmatch."
+		},
+		"TRANSLATION": {
+			"name": "Color 1 (grey\\red)",
+			"description": "This thing's green colors will be mapped to grey (or red if the Color 2 flag is also set)."
+		},
+		"UNUSED1": {
+			"name": "Color 2 (brown\\red)",
+			"description": "This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set)."
+		}
+	},
+
+	"thingNames": [
+		"Player",
+		"Trooper",
+		"Sargeant",
+		"Archvile",
+		"Archvile attack",
+		"Revenant",
+		"Revenant fireball",
+		"Fireball trail",
+		"Mancubus",
+		"Mancubus fireball",
+		"Chaingun Sargeant",
+		"Imp",
+		"Demon",
+		"Spectre",
+		"Cacodemon",
+		"Baron of Hell",
+		"Baron fireball",
+		"Hell Knight",
+		"Lost Soul",
+		"Spiderdemon",
+		"Arachnotron",
+		"Cyberdemon",
+		"Pain Elemental",
+		"SS Nazi",
+		"Commander Keen",
+		"Big Brain",
+		"Demon spawner",
+		"Demon spawn spot",
+		"Demon spawn cube",
+		"Demon spawn fire",
+		"Barrel",
+		"Imp fireball",
+		"Caco fireball",
+		"Rocket in flight",
+		"Plasma projectile",
+		"BFG projectile",
+		"Arachnotron projectile",
+		"Bullet puff",
+		"Blood splat",
+		"Teleport fog",
+		"Item respawn fog",
+		"Teleport exit",
+		"BFG impact",
+		"Green armor",
+		"Blue armor",
+		"Health potion",
+		"Armor helmet",
+		"Blue keycard",
+		"Red keycard",
+		"Yellow keycard",
+		"Yellow skull key",
+		"Red skull key",
+		"Blue skull key",
+		"Stimpack",
+		"Medical kit",
+		"Soul sphere",
+		"Invulnerability",
+		"Berserk sphere",
+		"Blur sphere",
+		"Radiation suit",
+		"Computer map",
+		"Lite amplification visor",
+		"Mega sphere",
+		"Ammo clip",
+		"Box of ammo",
+		"Rocket",
+		"Box of rockets",
+		"Energy cell",
+		"Energy cell pack",
+		"Shells",
+		"Box of shells",
+		"Backpack",
+		"BFG 9000",
+		"Chaingun",
+		"Chainsaw",
+		"Rocket launcher",
+		"Plasma rifle",
+		"Shotgun",
+		"Super shotgun",
+		"Tall lamp",
+		"Tall lamp 2",
+		"Short lamp",
+		"Tall green pillar",
+		"Short green pillar",
+		"Tall red pillar",
+		"Short red pillar",
+		"Pillar with skull",
+		"Pillar with heart",
+		"Eye in symbol",
+		"Flaming skulls",
+		"Grey tree",
+		"Tall blue torch",
+		"Tall green torch",
+		"Tall red torch",
+		"Small blue torch",
+		"Small green torch",
+		"Small red torch",
+		"Brown stub",
+		"Technical column",
+		"Candle",
+		"Candelabra",
+		"Swaying body",
+		"Hanging arms out",
+		"One-legged body",
+		"Hanging torso",
+		"Hanging leg",
+		"Hanging arms out 2",
+		"Hanging torso 2",
+		"One-legged body 2",
+		"Hanging leg 2",
+		"Swaying body 2",
+		"Dead Cacodemon",
+		"Dead Marine",
+		"Dead Trooper",
+		"Dead Demon",
+		"Dead Lost Soul",
+		"Dead Imp",
+		"Dead Sargeant",
+		"Guts and bones",
+		"Guts and bones 2",
+		"Skewered heads",
+		"Pool of blood",
+		"Pole with skull",
+		"Pile of skulls",
+		"Impaled body",
+		"Twitching body",
+		"Large tree",
+		"Flaming barrel",
+		"Hanging body 1",
+		"Hanging body 2",
+		"Hanging body 3",
+		"Hanging body 4",
+		"Hanging body 5",
+		"Hanging body 6",
+		"Pool of blood 1",
+		"Pool of blood 2",
+		"Brain"
+	],
+
+	"weaponNames": [
+		"Fist",
+		"Pistol",
+		"Shotgun",
+		"Chaingun",
+		"Rocket launcher",
+		"Plasma rifle",
+		"BFG 9000",
+		"Chainsaw",
+		"Super-shotgun"
+	],
+
+	"ammoNames": [
+		"Bullets",
+		"Shells",
+		"Cells",
+		"Rockets",
+		"Unknown",
+		"Unlimited"
+	],
+
+	"actions": {
+		"0": {
+			"description": "None.",
+			"name": "NULL"
+		},
+		"161376": {
+			"description": "Same as the 'Fall' and 'BossDeath' actions together.",
+			"name": "KeenDie"
+		},
+		"161472": {
+			"description": "Wait to wake up.\n\nThis causes currently sleeping monsters to wake up when they see a player.",
+			"name": "Look"
+		},
+		"161680": {
+			"description": "Standard walking code pointer.\n\nThis chases the target object, regardless of a direct line of sight.",
+			"name": "Chase"
+		},
+		"162160": {
+			"description": "Turn to face the player's direction.",
+			"name": "FaceTarget"
+		},
+		"162256": {
+			"description": "Trooper pistol shot.",
+			"name": "PosAttack"
+		},
+		"162384": {
+			"description": "Shotgun Sargeant and Spiderdemon attack.",
+			"name": "SPosAttack"
+		},
+		"162528": {
+			"description": "Chaingun Sargeant\\SS Nazi Chaingun attack.",
+			"name": "CPosAttack"
+		},
+		"162656": {
+			"description": "Check line of sight to stop firing.\n\nIf the target is no longer visible, halt firing and continue chasing it.",
+			"name": "CPosRefire"
+		},
+		"162720": {
+			"description": "Check line of sight to stop firing (Spiderdemon).",
+			"name": "SpidRefire"
+		},
+		"162784": {
+			"description": "Arachnotron plasma shot.",
+			"name": "BspiAttack"
+		},
+		"162832": {
+			"description": "Imp fireball shot or scratch if at close range.",
+			"name": "TroopAttack"
+		},
+		"162944": {
+			"description": "Demon bite attack.",
+			"name": "SargAttack"
+		},
+		"163024": {
+			"description": "Cacodemon fireball shot or bite at close range.",
+			"name": "HeadAttack"
+		},
+		"163120": {
+			"description": "Cyberdemon attack (launch a single rocket).",
+			"name": "CyberAttack"
+		},
+		"163168": {
+			"description": "Baron of Hell or Hell Knight fireball shot or scratch if at close range.",
+			"name": "BruisAttack"
+		},
+		"163264": {
+			"description": "Launch a Revenant missile. Chance of launching a homing missile.",
+			"name": "SkelMissile"
+		},
+		"163360": {
+			"description": "A Revenant's fireball homing action. Changes the angle to point towards the target and emits a puff of smoke.",
+			"name": "Tracer"
+		},
+		"163744": {
+			"description": "Play sound 'skeswg'.",
+			"name": "SkelWhoosh"
+		},
+		"163776": {
+			"description": "Revenant punch.\n\nThis plays the sound 'skepch' if it hits it's target.",
+			"name": "SkelFist"
+		},
+		"164096": {
+			"description": "Arch-Vile walking code pointer.\n\nChecks to see if there is a dead monster in front of the Arch-Vile and ressurects it if so.",
+			"name": "VileChase"
+		},
+		"164432": {
+			"description": "Play sound 'vilatk'.",
+			"name": "VileStart"
+		},
+		"164448": {
+			"description": "Play sound 'flamest'.",
+			"name": "StartFire"
+		},
+		"164480": {
+			"description": "Play sound 'flame'.",
+			"name": "FireCrackle"
+		},
+		"164512": {
+			"description": "Keep the Arch-Vile's flame at the same position as it's target.",
+			"name": "Fire"
+		},
+		"164640": {
+			"description": "Creates an Arch-Vile flame at the target object's location.",
+			"name": "VileTarget"
+		},
+		"164720": {
+			"description": "Arch-Vile targeted attack.",
+			"name": "VileAttack"
+		},
+		"164928": {
+			"description": "Play sound 'manatk'.",
+			"name": "FatRaise"
+		},
+		"164960": {
+			"description": "Mancubus shot, 2 fireballs: one straight, one left.",
+			"name": "FatAttack1"
+		},
+		"165088": {
+			"description": "Mancubus shot, 2 fireballs: one straight, one right.",
+			"name": "FatAttack2"
+		},
+		"165216": {
+			"description": "Mancubus shot, 2 fireballs: one left, one right.",
+			"name": "FatAttack3"
+		},
+		"165408": {
+			"description": "Lost soul attack.\n\nAn attack sound is REQUIRED.",
+			"name": "SkullAttack"
+		},
+		"165824": {
+			"description": "Spawn a lost soul.",
+			"name": "PainAttack"
+		},
+		"165856": {
+			"description": "Spawn 3 or 4 lost souls.",
+			"name": "PainDie"
+		},
+		"165920": {
+			"description": "Play the object's death sound.",
+			"name": "Scream"
+		},
+		"166032": {
+			"description": "Play sound 'slop'.",
+			"name": "XScream"
+		},
+		"166048": {
+			"description": "Play the object's pain sound.",
+			"name": "Pain"
+		},
+		"166080": {
+			"description": "Dead body mode.\n\nThis action enabled the object's flags Obstacle, Corpse and Dropoff.",
+			"name": "Fall"
+		},
+		"166096": {
+			"description": "Damage objects inside the explosion radius.",
+			"name": "Explode"
+		},
+		"166128": {
+			"description": "Magic.\n\nDo special effects based on map number and enemy type.",
+			"name": "BossDeath"
+		},
+		"166432": {
+			"description": "Play sound 'hoof'.",
+			"name": "Hoof"
+		},
+		"166464": {
+			"description": "Play sound 'metal'.",
+			"name": "Metal"
+		},
+		"166496": {
+			"description": "Play sound 'bspwlk'.",
+			"name": "BabyMetal"
+		},
+		"166528": {
+			"description": "Play sound 'dbopn'.",
+			"name": "OpenShotgun"
+		},
+		"166544": {
+			"description": "Play sound 'dbload'.",
+			"name": "LoadShotgun"
+		},
+		"166560": {
+			"description": "Play sound 'dbcls'.",
+			"name": "CloseShotgun2"
+		},
+		"166592": {
+			"description": "Play sound 'bossit'.",
+			"name": "BrainAwake"
+		},
+		"166688": {
+			"description": "Play sound 'bospn'.",
+			"name": "BrainPain"
+		},
+		"166704": {
+			"description": "Play sound 'bosdth' and make special explosions (states 799-801) about 320 units south of the object.",
+			"name": "BrainScream"
+		},
+		"166864": {
+			"description": "Creates an explosion (states 127-129).",
+			"name": "BrainExplode"
+		},
+		"166992": {
+			"description": "Immediately end the level.",
+			"name": "BrainDie"
+		},
+		"167008": {
+			"description": "Fire a spawn cube.\n\nA landing spot thing is REQUIRED.",
+			"name": "BrainSpit"
+		},
+		"167168": {
+			"description": "Play sound 'boscub'.",
+			"name": "SpawnSound"
+		},
+		"167200": {
+			"description": "Check for spawn point.\n\nSpawns a monster if it hits a spawn-point.",
+			"name": "SpawnFly"
+		},
+		"167488": {
+			"description": "Play sound 'pldeth'",
+			"name": "PlayerScream"
+		},
+		"185072": {
+			"description": "Weapon bobbing.",
+			"name": "WeaponReady"
+		},
+		"185328": {
+			"description": "Last shooting state.\n\nIf the fire button is still held, jump back to the first shooting state instead of the state with this action.",
+			"name": "Refire"
+		},
+		"185440": {
+			"description": "Check ammo.\n\nIf there is not enough ammo for another shot, skip the reloading states and select a different weapon.",
+			"name": "CheckReload"
+		},
+		"185488": {
+			"description": "Weapon select.",
+			"name": "Lower"
+		},
+		"185552": {
+			"description": "Weapon deselect.",
+			"name": "Raise"
+		},
+		"185616": {
+			"description": "Display the weapon's firing flash sprite over the regular weapon sprite.",
+			"name": "GunFlash"
+		},
+		"185680": {
+			"description": "Player Punch attack.",
+			"name": "Punch"
+		},
+		"185856": {
+			"description": "Player Chainsaw attack.\n\nEager Beaver to the rescue!",
+			"name": "Saw"
+		},
+		"186112": {
+			"description": "Player Rocket Launcher attack.",
+			"name": "FireMissile"
+		},
+		"186160": {
+			"description": "Player BFG9000 attack.",
+			"name": "FireBFG"
+		},
+		"186208": {
+			"description": "Player Plasma Rifle attack.",
+			"name": "FirePlasma"
+		},
+		"186512": {
+			"description": "Player Pistol shot.",
+			"name": "FirePistol"
+		},
+		"186640": {
+			"description": "Player Shotgun attack.",
+			"name": "FireShotgun"
+		},
+		"186800": {
+			"description": "Player Super Shotgun attack",
+			"name": "FireShotgun2"
+		},
+		"186992": {
+			"description": "Player Chaingun shot.\n\nAlso checks ammo, does not go to -1 ammo, but changes the weapon instead.",
+			"name": "FireCGun"
+		},
+		"187200": {
+			"description": "Restore the lighting level after a gun flash.",
+			"name": "Light0"
+		},
+		"187216": {
+			"description": "Set the light flash to 'dim'.",
+			"name": "Light1"
+		},
+		"187232": {
+			"description": "Set the light flash to bright.",
+			"name": "Light2"
+		},
+		"187248": {
+			"description": "BFG blast effect.\n\nCasts invisible BFG rays.",
+			"name": "BFGSpray"
+		},
+		"187424": {
+			"description": "Play sound 'bfg'.",
+			"name": "BFGSound"
+		}
+	},
+
+	"usedStates": [
+		149,
+		155,
+		52,
+		56,
+		266,
+		799
+	]
+}
