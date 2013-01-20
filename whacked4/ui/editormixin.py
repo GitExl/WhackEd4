@@ -12,8 +12,8 @@ class EditorMixin():
     """
     
     def __init__(self):
-        self.Bind(wx.EVT_MOVE, self.update_workspace_data)
-        self.Bind(wx.EVT_SIZE, self.update_workspace_data)
+        self.Bind(wx.EVT_MOVE, self.workspace_update_data)
+        self.Bind(wx.EVT_SIZE, self.workspace_update_data)
         
         self.Bind(wx.EVT_CLOSE, self.close)
         
@@ -71,6 +71,7 @@ class EditorMixin():
         
         raise NotImplementedError()
         
+        
     def undo_store_item(self):
         """
         Called when an undo item needs to be stored.
@@ -79,7 +80,7 @@ class EditorMixin():
         raise NotImplementedError()
     
     
-    def update_workspace_data(self, event):
+    def workspace_update_data(self, event):
         """
         Updates this editor window's position data.
         """
@@ -138,4 +139,4 @@ class EditorMixin():
         """
         
         self.Maximize(False)
-        self.GetParent().window_closed(self)
+        self.GetParent().editor_window_closed(self)

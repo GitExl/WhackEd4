@@ -158,7 +158,7 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
 		self.MainToolbar = self.CreateToolBar( wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL, wx.ID_ANY ) 
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u"Things", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u"Things", wx.Bitmap( u"../../../Desktop/Programming/eclipse_workspace/WhackEd4/res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.MainToolbar.AddLabelTool( MAIN_TOOL_STATES, u"States", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
@@ -276,15 +276,15 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		
 		# Connect Events
 		self.Bind( wx.EVT_CLOSE, self.close )
-		self.Bind( wx.EVT_TOOL, self.set_toolbar_state, id = MAIN_TOOL_THINGS )
-		self.Bind( wx.EVT_TOOL, self.set_toolbar_state, id = MAIN_TOOL_STATES )
-		self.Bind( wx.EVT_TOOL, self.set_toolbar_state, id = MAIN_TOOL_SOUNDS )
-		self.Bind( wx.EVT_TOOL, self.set_toolbar_state, id = MAIN_TOOL_STRINGS )
-		self.Bind( wx.EVT_TOOL, self.set_toolbar_state, id = MAIN_TOOL_WEAPONS )
-		self.Bind( wx.EVT_TOOL, self.set_toolbar_state, id = MAIN_TOOL_AMMO )
-		self.Bind( wx.EVT_TOOL, self.set_toolbar_state, id = MAIN_TOOL_CHEATS )
-		self.Bind( wx.EVT_TOOL, self.set_toolbar_state, id = MAIN_TOOL_MISC )
-		self.Bind( wx.EVT_TOOL, self.set_toolbar_state, id = MAIN_TOOL_PAR )
+		self.Bind( wx.EVT_TOOL, self.toolbar_set_state, id = MAIN_TOOL_THINGS )
+		self.Bind( wx.EVT_TOOL, self.toolbar_set_state, id = MAIN_TOOL_STATES )
+		self.Bind( wx.EVT_TOOL, self.toolbar_set_state, id = MAIN_TOOL_SOUNDS )
+		self.Bind( wx.EVT_TOOL, self.toolbar_set_state, id = MAIN_TOOL_STRINGS )
+		self.Bind( wx.EVT_TOOL, self.toolbar_set_state, id = MAIN_TOOL_WEAPONS )
+		self.Bind( wx.EVT_TOOL, self.toolbar_set_state, id = MAIN_TOOL_AMMO )
+		self.Bind( wx.EVT_TOOL, self.toolbar_set_state, id = MAIN_TOOL_CHEATS )
+		self.Bind( wx.EVT_TOOL, self.toolbar_set_state, id = MAIN_TOOL_MISC )
+		self.Bind( wx.EVT_TOOL, self.toolbar_set_state, id = MAIN_TOOL_PAR )
 		self.Bind( wx.EVT_MENU, self.file_new, id = self.MenuFileNew.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_open, id = self.MenuFileOpen.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_open_as, id = self.MenuFileOpenAs.GetId() )
@@ -314,7 +314,7 @@ class MainFrameBase ( wx.MDIParentFrame ):
 	def close( self, event ):
 		pass
 	
-	def set_toolbar_state( self, event ):
+	def toolbar_set_state( self, event ):
 		pass
 	
 	
@@ -1281,7 +1281,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.FilterTools.SetToolSeparation( 0 )
 		self.FilterTools.SetMargins( wx.Size( 0,0 ) )
 		self.FilterTools.SetToolPacking( 0 )
-		self.FilterTools.AddLabelTool( STATES_FILTERTOOLS_REFRESH, u"tool", wx.Bitmap( u"res/icon-refresh.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"Refreshes the state list.", wx.EmptyString, None ) 
+		self.FilterTools.AddLabelTool( STATES_FILTERTOOLS_REFRESH, u"tool", wx.Bitmap( u"../../../Desktop/Programming/eclipse_workspace/WhackEd4/res/icon-refresh.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"Refreshes the state list.", wx.EmptyString, None ) 
 		
 		self.FilterTools.Realize() 
 		
@@ -2272,9 +2272,9 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		bSizer63 = wx.BoxSizer( wx.VERTICAL )
 		
 		self.m_toolBar3 = wx.ToolBar( self, PATCHINFO_TOOLBAR, wx.DefaultPosition, wx.DefaultSize, wx.TB_FLAT|wx.TB_NODIVIDER|wx.TB_VERTICAL ) 
-		self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_ADD, u"tool", wx.Bitmap( u"res/icon-plus.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_ADD, u"tool", wx.Bitmap( u"../../../Desktop/Programming/eclipse_workspace/WhackEd4/res/icon-plus.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_REMOVE, u"tool", wx.Bitmap( u"res/icon-minus.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_REMOVE, u"tool", wx.Bitmap( u"../../../Desktop/Programming/eclipse_workspace/WhackEd4/res/icon-minus.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.m_toolBar3.Realize() 
 		
@@ -2451,7 +2451,7 @@ class AboutDialogBase ( wx.Dialog ):
 		
 		bSizer57 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_bitmap3 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"res/hatchet.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_bitmap3 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"../../../Desktop/Programming/eclipse_workspace/WhackEd4/res/hatchet.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer57.Add( self.m_bitmap3, 0, wx.BOTTOM|wx.LEFT, 6 )
 		
 		
@@ -2459,7 +2459,7 @@ class AboutDialogBase ( wx.Dialog ):
 		
 		bSizer56 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_bitmap4 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"res/logo.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_bitmap4 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"../../../Desktop/Programming/eclipse_workspace/WhackEd4/res/logo.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer56.Add( self.m_bitmap4, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
 		self.Version = wx.StaticText( self, wx.ID_ANY, u"Version 0.5.0 alpha", wx.DefaultPosition, wx.DefaultSize, 0 )

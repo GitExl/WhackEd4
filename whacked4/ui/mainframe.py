@@ -43,7 +43,7 @@ class MainFrame(windows.MainFrameBase):
         self.load_engines()
         
         # Window\ID relationships.
-        self.tool_windows = {
+        self.editor_windows = {
             windows.MAIN_TOOL_THINGS: thingframe.ThingFrame(self),
             windows.MAIN_TOOL_STATES: statesframe.StatesFrame(self) 
         }
@@ -52,13 +52,13 @@ class MainFrame(windows.MainFrameBase):
             windows.MAIN_MENU_STATES: windows.MAIN_TOOL_STATES,
         }
         self.workspace_windows = {
-            'things': self.tool_windows[windows.MAIN_TOOL_THINGS],
-            'states': self.tool_windows[windows.MAIN_TOOL_STATES]
+            'things': self.editor_windows[windows.MAIN_TOOL_THINGS],
+            'states': self.editor_windows[windows.MAIN_TOOL_STATES]
         }
         
         # Reset tool windows states.
-        self.tool_windows_hide()
-        self.set_toolbar_enabled(False, False)
+        self.editor_windows_hide()
+        self.toolbar_set_enabled(False, False)
         
         # Dialogs.
         self.start_dialog = startdialog.StartDialog(self)
@@ -66,7 +66,7 @@ class MainFrame(windows.MainFrameBase):
         
         self.Show()
 
-        self.update_recent_files()        
+        self.update_recent_files_menu()        
         config.settings.main_window_state_restore(self)
         
         wx.EndBusyCursor()
@@ -74,8 +74,8 @@ class MainFrame(windows.MainFrameBase):
         self.parse_options(arguments)
         
         # Late bind these to prevent bad workspace data from being saved.
-        self.Bind(wx.EVT_MOVE, self.update_window_data)
-        self.Bind(wx.EVT_SIZE, self.update_window_data)
+        self.Bind(wx.EVT_MOVE, self.workspace_update_data)
+        self.Bind(wx.EVT_SIZE, self.workspace_update_data)
     
     
     def parse_options(self, args):
@@ -111,34 +111,6 @@ class MainFrame(windows.MainFrameBase):
                 self.engines[name] = new_engine
                     
         
-    def set_toolbar_enabled(self, enabled, extended):
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_THINGS, enabled)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_STATES, enabled)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_AMMO, False)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_CHEATS, False)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_STRINGS, False)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_WEAPONS, False)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_SOUNDS, False)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_MISC, False)
-        
-        self.MenuViewThings.Enable(enabled)
-        self.MenuViewStates.Enable(enabled)
-        self.MenuViewAmmo.Enable(False)
-        self.MenuViewCheats.Enable(False)
-        self.MenuViewStrings.Enable(False)
-        self.MenuViewWeapons.Enable(False)
-        self.MenuViewSounds.Enable(False)
-        self.MenuViewMiscellaneous.Enable(False)
-        self.MenuViewPatchSettings.Enable(enabled)
-        
-        if extended == True:
-            self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, False)
-            self.MenuViewPar.Enable(False)
-        else:
-            self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, False)
-            self.MenuViewPar.Enable(False)
-    
-    
     def edit_undo(self, event):
         window = self.GetActiveChild()
         if window is None:
@@ -178,7 +150,7 @@ class MainFrame(windows.MainFrameBase):
             
             self.set_modified(True)
             self.workspace_modified = True
-            self.tool_windows[windows.MAIN_TOOL_STATES].tools_update()
+            self.editor_windows[windows.MAIN_TOOL_STATES].tools_update()
     
     
     def file_open(self, event):
@@ -271,14 +243,14 @@ class MainFrame(windows.MainFrameBase):
         self.load_wads()
         
         # Refresh UI contents and state.
-        self.init_ui()
+        self.build_ui()
 
         # Store potentially updated workspace.
-        self.save_workspace()
+        self.workspace_save()
         
         # Add item to recent files.
         config.settings.recent_files_add(filename)
-        self.update_recent_files()
+        self.update_recent_files_menu()
         
         
     def load_wads(self):
@@ -371,28 +343,18 @@ class MainFrame(windows.MainFrameBase):
         self.patch.write_dehacked(filename)
         
         # Store workspace info.
-        self.save_workspace()
+        self.workspace_save()
 
         self.patch.filename = filename
         self.set_modified(False)
         
         config.settings.recent_files_add(filename)
-        self.update_recent_files()
+        self.update_recent_files_menu()
         
         wx.EndBusyCursor()
         
         
-    def save_workspace(self):
-        if self.workspace is None or self.patch.filename is None:
-            return
-        
-        workspace_file = workspace.get_filename(self.patch.filename)
-        self.workspace.store_windows(self, self.workspace_windows)
-        self.workspace.save(workspace_file)
-        self.workspace_modified = False
-        
-        
-    def update_recent_files(self):
+    def update_recent_files_menu(self):
         while(self.MenuFileRecent.GetMenuItemCount() > 0):
             item = self.MenuFileRecent.FindItemByPosition(0)
             self.MenuFileRecent.DestroyItem(item)
@@ -403,18 +365,18 @@ class MainFrame(windows.MainFrameBase):
             self.Bind(wx.EVT_MENU, self.file_open_recent, id=item.GetId())
         
     
-    def init_ui(self):
+    def build_ui(self):
         wx.BeginBusyCursor()
         
-        self.set_toolbar_enabled(True, self.patch.engine.extended)
-        self.build_editors()
+        self.toolbar_set_enabled(True, self.patch.engine.extended)
+        self.editors_build()
         
         if self.workspace.windows is None:
             self.workspace.store_windows(self, self.workspace_windows)
         else:
             self.workspace.apply_windows(self, self.workspace_windows)
             
-        self.update_toolbar_state()
+        self.toolbar_update_state()
         self.set_modified(self.patch_modified)
         
         wx.EndBusyCursor()
@@ -472,11 +434,11 @@ class MainFrame(windows.MainFrameBase):
         
         # Initialize the UI.
         self.load_wads()
-        self.init_ui()
+        self.build_ui()
     
     
-    def build_editors(self):
-        for window in self.tool_windows.itervalues():
+    def editors_build(self):
+        for window in self.editor_windows.itervalues():
             window.build(self.patch)
             
             
@@ -500,7 +462,7 @@ class MainFrame(windows.MainFrameBase):
             return
         
         if self.workspace_modified == True:
-            self.save_workspace()
+            self.workspace_save()
         
         # Write program settings.
         config.settings.save()
@@ -509,21 +471,21 @@ class MainFrame(windows.MainFrameBase):
         self.Destroy()
         
         
-    def tool_windows_hide(self):
-        for window in self.tool_windows.itervalues():
+    def editor_windows_hide(self):
+        for window in self.editor_windows.itervalues():
             window.Show(False)
             
             
-    def tool_windows_get_id_from_instance(self, window):
-        for window_id, tool_window in self.tool_windows.iteritems():
+    def editor_windows_get_id_from_instance(self, window):
+        for window_id, tool_window in self.editor_windows.iteritems():
             if window == tool_window:
                 return window_id
             
         return 0
         
         
-    def tool_window_show(self, tool_id):
-        window = self.tool_windows[tool_id]
+    def editor_window_show(self, tool_id):
+        window = self.editor_windows[tool_id]
         window.Maximize(False)
         window.Show(True)
         
@@ -534,18 +496,18 @@ class MainFrame(windows.MainFrameBase):
     def set_menu_state(self, event):
         event_id = event.GetId()
         tool_id = self.menu_windows[event_id]
-        window = self.tool_windows[tool_id]
+        window = self.editor_windows[tool_id]
                 
         if window is not None:
-            state = self.MainToolbar.GetToolState(tool_id)
+            state = not self.MainToolbar.GetToolState(tool_id)
             window.Maximize(False)
             window.Show(state)
             self.MainToolbar.ToggleTool(tool_id, state)
             self.workspace_modified = True
     
      
-    def set_toolbar_state(self, event):
-        window = self.tool_windows[event.GetId()]
+    def toolbar_set_state(self, event):
+        window = self.editor_windows[event.GetId()]
                 
         if window is not None:
             state = self.MainToolbar.GetToolState(event.GetId())
@@ -553,15 +515,43 @@ class MainFrame(windows.MainFrameBase):
             window.Show(state)
             
             self.workspace_modified = True
+
+
+    def toolbar_set_enabled(self, enabled, extended):
+        self.ToolBar.EnableTool(windows.MAIN_TOOL_THINGS, enabled)
+        self.ToolBar.EnableTool(windows.MAIN_TOOL_STATES, enabled)
+        self.ToolBar.EnableTool(windows.MAIN_TOOL_AMMO, False)
+        self.ToolBar.EnableTool(windows.MAIN_TOOL_CHEATS, False)
+        self.ToolBar.EnableTool(windows.MAIN_TOOL_STRINGS, False)
+        self.ToolBar.EnableTool(windows.MAIN_TOOL_WEAPONS, False)
+        self.ToolBar.EnableTool(windows.MAIN_TOOL_SOUNDS, False)
+        self.ToolBar.EnableTool(windows.MAIN_TOOL_MISC, False)
+        
+        self.MenuViewThings.Enable(enabled)
+        self.MenuViewStates.Enable(enabled)
+        self.MenuViewAmmo.Enable(False)
+        self.MenuViewCheats.Enable(False)
+        self.MenuViewStrings.Enable(False)
+        self.MenuViewWeapons.Enable(False)
+        self.MenuViewSounds.Enable(False)
+        self.MenuViewMiscellaneous.Enable(False)
+        self.MenuViewPatchSettings.Enable(enabled)
+        
+        if extended == True:
+            self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, False)
+            self.MenuViewPar.Enable(False)
+        else:
+            self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, False)
+            self.MenuViewPar.Enable(False)
                 
                 
-    def update_toolbar_state(self):
-        for tool_id, window in self.tool_windows.iteritems():
+    def toolbar_update_state(self):
+        for tool_id, window in self.editor_windows.iteritems():
             self.MainToolbar.ToggleTool(tool_id, window.IsShown())
     
                     
-    def window_closed(self, window):
-        tool_id = self.tool_windows_get_id_from_instance(window)
+    def editor_window_closed(self, window):
+        tool_id = self.editor_windows_get_id_from_instance(window)
 
         if tool_id != 0:
             self.MainToolbar.ToggleTool(tool_id, False)
@@ -571,9 +561,19 @@ class MainFrame(windows.MainFrameBase):
     
     def help_about(self, event):
         self.about_dialog.ShowModal()
+    
+    
+    def workspace_save(self):
+        if self.workspace is None or self.patch.filename is None:
+            return
         
+        workspace_file = workspace.get_filename(self.patch.filename)
+        self.workspace.store_windows(self, self.workspace_windows)
+        self.workspace.save(workspace_file)
+        self.workspace_modified = False
+    
         
-    def update_window_data(self, event):
+    def workspace_update_data(self, event):
         # Only update size and position if the window is not maximized.
         if self.IsMaximized() == True or self.IsShown() == False:
             main_window_state = config.settings['main_window_state']
