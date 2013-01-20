@@ -22,8 +22,8 @@ MAIN_TOOL_MISC = 1674
 MAIN_TOOL_PAR = 1675
 MAIN_MENU_THINGS = 1676
 MAIN_MENU_STATES = 1677
-MAIN_MENU_SOUNDS = 1678
-MAIN_MENU_STRINGS = 1679
+MAIN_MENU_STRINGS = 1678
+MAIN_MENU_SOUNDS = 1679
 MAIN_MENU_WEAPONS = 1680
 MAIN_MENU_AMMO = 1681
 MAIN_MENU_CHEATS = 1682
@@ -228,13 +228,13 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.MenuViewStates = wx.MenuItem( self.MenuView, MAIN_MENU_STATES, u"States"+ u"\t" + u"F3", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuView.AppendItem( self.MenuViewStates )
 		
-		self.MenuViewSounds = wx.MenuItem( self.MenuView, MAIN_MENU_SOUNDS, u"Sounds"+ u"\t" + u"F4", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewSounds )
-		self.MenuViewSounds.Enable( False )
-		
 		self.MenuViewStrings = wx.MenuItem( self.MenuView, MAIN_MENU_STRINGS, u"Strings"+ u"\t" + u"F6", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuView.AppendItem( self.MenuViewStrings )
 		self.MenuViewStrings.Enable( False )
+		
+		self.MenuViewSounds = wx.MenuItem( self.MenuView, MAIN_MENU_SOUNDS, u"Sounds"+ u"\t" + u"F4", wx.EmptyString, wx.ITEM_NORMAL )
+		self.MenuView.AppendItem( self.MenuViewSounds )
+		self.MenuViewSounds.Enable( False )
 		
 		self.MenuViewWeapons = wx.MenuItem( self.MenuView, MAIN_MENU_WEAPONS, u"Weapons"+ u"\t" + u"F7", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuView.AppendItem( self.MenuViewWeapons )
@@ -296,8 +296,8 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.Bind( wx.EVT_MENU, self.edit_paste, id = self.MenuEditPaste.GetId() )
 		self.Bind( wx.EVT_MENU, self.set_menu_state, id = self.MenuViewThings.GetId() )
 		self.Bind( wx.EVT_MENU, self.set_menu_state, id = self.MenuViewStates.GetId() )
-		self.Bind( wx.EVT_MENU, self.set_menu_state, id = self.MenuViewSounds.GetId() )
 		self.Bind( wx.EVT_MENU, self.set_menu_state, id = self.MenuViewStrings.GetId() )
+		self.Bind( wx.EVT_MENU, self.set_menu_state, id = self.MenuViewSounds.GetId() )
 		self.Bind( wx.EVT_MENU, self.set_menu_state, id = self.MenuViewWeapons.GetId() )
 		self.Bind( wx.EVT_MENU, self.set_menu_state, id = self.MenuViewAmmo.GetId() )
 		self.Bind( wx.EVT_MENU, self.set_menu_state, id = self.MenuViewCheats.GetId() )
@@ -1327,7 +1327,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.Parameter1.Bind( wx.EVT_TEXT, self.set_value )
 		self.Parameter2.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Parameter2.Bind( wx.EVT_TEXT, self.set_value )
-		self.Restore.Bind( wx.EVT_BUTTON, self.restore_state )
+		self.Restore.Bind( wx.EVT_BUTTON, self.state_restore )
 		self.Filter.Bind( wx.EVT_CHOICE, self.filter_select )
 		self.Bind( wx.EVT_TOOL, self.filter_select, id = STATES_FILTERTOOLS_REFRESH )
 		self.StateList.Bind( wx.EVT_LEFT_DOWN, self.state_link )
@@ -1385,7 +1385,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
-	def restore_state( self, event ):
+	def state_restore( self, event ):
 		pass
 	
 	def filter_select( self, event ):

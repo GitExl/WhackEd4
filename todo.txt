@@ -2,6 +2,7 @@ Beta
 - Add license to about dialog.
 - Add icons credits to about dialog.
 - Add reload WAD files option to menu + shortcut key.
+- Sort action choice box alphabetically.
 - Cleanup + comment module by module.
 - Add editor iconography.
 - Add sounds editor.
@@ -11,6 +12,7 @@ Beta
 - Add cheats editor.
 - Add misc. editor.
 - Add par times editor.
+- Sound playback.
 - Set up Git or SVN repo, and use versioning.
 - Beta test.
 

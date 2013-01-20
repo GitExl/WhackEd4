@@ -286,12 +286,12 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         event_id = event.GetId()
         
         parent = self.GetParent()
-        parent.tool_window_show(windows.MAIN_TOOL_STATES)
+        parent.editor_window_show(windows.MAIN_TOOL_STATES)
 
         key = self.PROPS_STATENAMES[event_id]        
         state_index = self.current_thing['state' + key]
         
-        states_frame = parent.tool_windows[windows.MAIN_TOOL_STATES]
+        states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
         filter_type = statefilter.FILTER_TYPE_THING
         filter_index = self.current_list_index
         states_frame.goto_state_index(state_index, filter_type=filter_type, filter_index=filter_index)
@@ -304,7 +304,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         event_id = event.GetId()
         
         parent = self.GetParent()
-        states_frame = parent.tool_windows[windows.MAIN_TOOL_STATES]
+        states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
 
         text_ctrl = self.FindWindowById(self.PROPS_STATESET[event_id])
         text_ctrl.SetValue(str(states_frame.selection_get_state_index()))
