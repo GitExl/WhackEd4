@@ -12,6 +12,9 @@ It also expands on the features of the original Dehacked:
 - Editing multiple states at the same time.
 - Filtering the displayed list of states by thing states, weapon states or unused states.
 - Does not require a Doom executable, but reads engine data from table files.
+- State highlighting based on sprite index.
+- Separate undo actions for every editor window.
+- Copy and pasting things and states.
 
 
 Dependencies
