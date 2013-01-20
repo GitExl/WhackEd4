@@ -1,13 +1,24 @@
+#!/usr/bin/env python
+#coding=utf8
+
+"""
+Contains classes to read Doom style patch graphics, and Doom PLAYPAL lump palette data.
+"""
+
 import struct
 import wx
 
 
 class Palette():
+    """
+    A 256 color RGB palette.
+    """
     
     def __init__(self, data):
         self.colors = []
         
         data = bytearray(data)
+        
         offset = 0
         while offset < 768:
             entry = [data[offset], data[offset + 1], data[offset + 2], 255]
@@ -16,14 +27,19 @@ class Palette():
 
 
 class Image():
+    """
+    A Doom style patch.
+    """
+    
     S_HEADER = struct.Struct('<HHhh')
+    
     
     def __init__(self, data, palette):
         # Read header.
         width, height, top, left = self.S_HEADER.unpack_from(data)
         
         # Initialize an empty bitmap.
-        bitmap_data = bytearray([0, 0, 0, 0] * width * height)
+        image_data = bytearray([0, 0, 0, 0] * width * height)
         
         # Read column offsets.
         offset_struct = struct.Struct('<' + ('I' * width))
@@ -59,10 +75,10 @@ class Image():
                     dest = ((pixel_index + column_top) * width + column_index) * 4
                     
                     # Plot pixel from palette.
-                    bitmap_data[dest] = palette.colors[pixel][0]
-                    bitmap_data[dest + 1] = palette.colors[pixel][1]
-                    bitmap_data[dest + 2] = palette.colors[pixel][2]
-                    bitmap_data[dest + 3] = 255
+                    image_data[dest] = palette.colors[pixel][0]
+                    image_data[dest + 1] = palette.colors[pixel][1]
+                    image_data[dest + 2] = palette.colors[pixel][2]
+                    image_data[dest + 3] = 255
                     
                     pixel_index += 1
                 
@@ -76,4 +92,4 @@ class Image():
         self.left = left
         
         # Create usable bitmap.
-        self.bitmap = wx.BitmapFromBufferRGBA(width, height, bitmap_data)
+        self.image = wx.BitmapFromBufferRGBA(width, height, image_data)

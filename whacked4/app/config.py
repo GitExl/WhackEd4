@@ -121,5 +121,6 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
         
         self.put_setting('recent_files', new_recent)   
         
-        
+
+# Global settings object.
 settings = WhackEd4Settings(SETTINGS_PATH)

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#coding=utf8
+
 from app import config
 from ui import utils
 import wx

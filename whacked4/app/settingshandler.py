@@ -40,8 +40,9 @@ class SettingsHandler():
         """
         Returns a setting from this handler.
         
-        Will return a default value if the setting has not yet been altered.
-        Will raise LookupError if the setting has not been registered with this handler.
+        @return: a default value if the setting has not yet been altered, otherwise it will return the current setting.
+        
+        @raise LookupError: if the setting has not been registered with this handler.
         """
         
         if name in self.settings:
@@ -56,7 +57,7 @@ class SettingsHandler():
         """
         Stores a setting in this handler.
         
-        Will raise LookupError if the setting has not been registered with this handler.
+        @raise LookupError: if the setting has not been registered with this handler.
         """
         
         if name in self.defaults:
@@ -65,22 +66,6 @@ class SettingsHandler():
             raise LookupError('The setting with name {} has not been registered.'.format(name))
         
         
-    def __getitem__(self, name):
-        """
-        @see: get_setting
-        """
-        
-        return self.get_setting(name)
-    
-    
-    def __setitem__(self, name, value):
-        """
-        @see: put_setting
-        """
-        
-        self.put_setting(name, value)
-
-    
     def load(self):
         """
         Loads settings data from a JSON file.
@@ -118,3 +103,10 @@ class SettingsHandler():
         
         with open(self.path, 'w') as f:
             json.dump(self.settings, f, indent=4) 
+            
+    
+    def __getitem__(self, name):
+        return self.get_setting(name)
+    
+    def __setitem__(self, name, value):
+        self.put_setting(name, value)

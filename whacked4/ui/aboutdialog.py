@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+#coding=utf8
+
+"""
+Generic about dialog interface.
+"""
+
 from app import config
 from ui import windows
 

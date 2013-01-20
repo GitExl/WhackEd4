@@ -90,7 +90,7 @@ class Entry:
 
     def read_from_executable(self, f):
         """
-        Reads the entry's values from an executable.
+        Reads this entry's values from an executable.
         """
         
         self.values = {}

@@ -390,7 +390,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                     sprite_lump = self.pwads.get_sprite(sprite_name, sprite_frame_index, 1)
                 
                 if sprite_lump is not None:
-                    self.sprite = self.pwads.get_sprite_bitmap(sprite_lump)
+                    self.sprite = self.pwads.get_sprite_image(sprite_lump)
                 
         self.SpritePreview.Refresh()
         
@@ -405,7 +405,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             y = size[1] * 0.9 - self.sprite.height
             x + self.sprite.left
             y + self.sprite.top
-            dc.DrawBitmap(self.sprite.bitmap, x, y, True)
+            dc.DrawBitmap(self.sprite.image, x, y, True)
             
         else:
             x = size[0] / 2 - self.missing.GetWidth() / 2

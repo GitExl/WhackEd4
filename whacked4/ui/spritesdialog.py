@@ -62,7 +62,7 @@ class SpritesDialog(windows.SpritesDialogBase):
                     if sprite_lump is None:
                         sprite_lump = self.pwads.get_sprite(sprite_name, sprite_frame, 1)
                     else:
-                        self.sprite = self.pwads.get_sprite_bitmap(sprite_lump)
+                        self.sprite = self.pwads.get_sprite_image(sprite_lump)
         
         self.SpritePreview.Refresh()
             
@@ -77,7 +77,7 @@ class SpritesDialog(windows.SpritesDialogBase):
             y = size[1] * 0.7 - self.sprite.height
             x + self.sprite.left
             y + self.sprite.top
-            dc.DrawBitmap(self.sprite.bitmap, x, y, True)
+            dc.DrawBitmap(self.sprite.image, x, y, True)
             
         else:
             x = size[0] / 2 - self.missing.GetWidth() / 2

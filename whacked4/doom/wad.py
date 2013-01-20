@@ -1,6 +1,17 @@
+#!/usr/bin/env python
+#coding=utf8
+
+"""
+Contains Doom WAD file reading classes.
+"""
+
 import struct
+
+
 class WADError(Exception):
-    """Base class for errors in WAD files."""
+    """
+    Base class for errors in WAD files.
+    """
     
     def __init__(self, msg):
         self.msg = msg
@@ -8,12 +19,19 @@ class WADError(Exception):
     def __str__(self):
         return self.msg
     
-
 class WADTypeError(WADError):
-    """The WAD file has an invalid type."""
+    """
+    The WAD file has an invalid type.
+    """
      
 
 class Lump():
+    """
+    A lump that is part of a WAD file.
+    
+    It is recommended to access a lump's data through the get_data() method to prevent having to load an entire
+    WAD's data in memory.
+    """
     
     def __init__(self, name, size, offset, owner):
         self.name = name
@@ -24,6 +42,12 @@ class Lump():
 
         
     def get_data(self):
+        """
+        Returns this lump's data.
+        
+        If the data has not yet been read, it will open the WAD file and read it before returning it.
+        """
+        
         if self.data is None:
             with open(self.owner.filename, 'rb') as f:
                 f.seek(self.offset)
@@ -33,6 +57,10 @@ class Lump():
      
 
 class WADReader():
+    """
+    Reads Doom WAD files.
+    """
+    
     TYPE_IWAD = 'IWAD'
     TYPE_PWAD = 'PWAD'
     
@@ -49,7 +77,14 @@ class WADReader():
     
     
     def read(self, filename):
+        """
+        Reads a WAD file's header and lump directory.
+        
+        @raise WADTypeError: if the WAD file is not of a valid type (IWAD or PWAD). 
+        """
+        
         with open(filename, 'rb') as f:
+            
             # Read and validate header. Should contain PWAD or IWAD magic bytes.
             wad_type, entry_count, dir_offset = self.S_HEADER.unpack(f.read(self.S_HEADER.size)) 
             wad_type = wad_type.decode('ascii')
@@ -72,6 +107,12 @@ class WADReader():
             
     
     def get_lump(self, lump_name):
+        """
+        Searches this WAD's lump directory for a lump by name.
+        
+        @return: the first matching lump with the specified name, or None if no lump with that name could be found.
+        """
+        
         for lump in reversed(self.lumps):
             if lump.name == lump_name:
                 return lump

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#coding=utf8
+
 from app import config
 from collections import OrderedDict
 from dehacked import engine, patch
@@ -11,6 +14,9 @@ import wx
 
 
 class MainFrame(windows.MainFrameBase):
+    """
+    The main MDI parent window.
+    """
 
     def __init__(self, parent, arguments):
         windows.MainFrameBase.__init__(self, parent)
@@ -50,27 +56,33 @@ class MainFrame(windows.MainFrameBase):
             'states': self.tool_windows[windows.MAIN_TOOL_STATES]
         }
         
+        # Reset tool windows states.
         self.tool_windows_hide()
         self.set_toolbar_enabled(False, False)
-        self.update_recent_files()
         
         # Dialogs.
         self.start_dialog = startdialog.StartDialog(self)
         self.about_dialog = aboutdialog.AboutDialog(self)
         
         self.Show()
-        
+
+        self.update_recent_files()        
         config.settings.main_window_state_restore(self)
         
         wx.EndBusyCursor()
         
         self.parse_options(arguments)
         
+        # Late bind these to prevent bad workspace data from being saved.
         self.Bind(wx.EVT_MOVE, self.update_window_data)
         self.Bind(wx.EVT_SIZE, self.update_window_data)
     
     
     def parse_options(self, args):
+        """
+        Parses commandline options and acts on them.
+        """
+        
         for arg in sys.argv[1:]:
             if os.path.exists(arg):
                 self.open_file(arg)
@@ -80,6 +92,10 @@ class MainFrame(windows.MainFrameBase):
     
         
     def load_engines(self):
+        """
+        Loads all engine configuration files. These are kept in memory for patch compatibility auto-detection.
+        """
+        
         for file_name in glob.glob('cfg/tables_*.json'):
             new_engine = engine.Engine()
             try:
