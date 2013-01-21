@@ -94,8 +94,6 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         
     
     def browse_iwad(self, event):
-        self.Show(False)
-        
         filename = wx.FileSelector('Choose an IWAD.', default_extension='.wad',
             wildcard='WAD files (*.wad)|*.wad|All files|*.*',
             flags=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
@@ -116,13 +114,9 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
                         parent=self)
                 else:
                     self.IWAD.SetValue(filename)
-        
-        self.Show(True)
             
     
     def pwad_add(self, event):
-        self.Show(False)
-        
         filename = wx.FileSelector('Choose a PWAD.', default_extension='.wad',
             wildcard='WAD files (*.wad)|*.wad|All files|*.*',
             flags=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
@@ -144,8 +138,6 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
                 else:
                     self.pwads.append(filename)
                     self.PWADList.Append(filename)
-            
-        self.Show(True)
         
             
     def pwad_remove(self, event):
