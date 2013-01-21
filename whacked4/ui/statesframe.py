@@ -26,8 +26,6 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         editormixin.EditorMixin.__init__(self)
         
         self.SetIcon(wx.Icon('res/icon-weapons-small.bmp'))
-        
-        self.missing = wx.Bitmap('res/icon-missing.bmp', wx.BITMAP_TYPE_BMP)
                 
         self.WINDOWS_TOOLS = [
             self.SpriteIndex,
@@ -60,9 +58,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     def build(self, patch):
         self.patch = patch
         self.clipboard = None
-        
-        self.sprite = None
         self.pwads = self.GetParent().pwads
+        
+        self.SpritePreview.set_source(self.pwads)
+        self.SpritePreview.set_baseline_factor(0.9)
         
         # Undo properties.
         self.undo = []
@@ -373,45 +372,19 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         else:
             state_index = -1
         
-        if state_index != 0 and len(self.pwads) > 0:
+        if state_index != 0:
             sprite_index = self.SpriteIndex.GetValue()
             if sprite_index != '':
-                sprite_index = int(sprite_index)
-                sprite_name = self.patch.sprite_names[sprite_index]
+                sprite_name = self.patch.sprite_names[int(sprite_index)]
                     
-                sprite_frame_index = self.FrameIndex.GetValue()
-                if sprite_frame_index != '':
-                    sprite_frame_index = int(sprite_frame_index)
+                sprite_frame = self.FrameIndex.GetValue()
+                if sprite_frame != '':
+                    sprite_frame = int(sprite_frame)
                 else:
-                    sprite_frame_index = 0
+                    sprite_frame = 0
+                    
+                self.SpritePreview.show_sprite(sprite_name, sprite_frame)
                 
-                sprite_lump = self.pwads.get_sprite(sprite_name, sprite_frame_index, 0)
-                if sprite_lump is None:
-                    sprite_lump = self.pwads.get_sprite(sprite_name, sprite_frame_index, 1)
-                
-                if sprite_lump is not None:
-                    self.sprite = self.pwads.get_sprite_image(sprite_lump)
-                
-        self.SpritePreview.Refresh()
-        
-        
-    def paint_sprite_preview(self, event):
-        dc = wx.PaintDC(self.SpritePreview)
-        dc.Clear()
-        
-        size = self.SpritePreview.GetSizeTuple()
-        if self.sprite is not None:
-            x = size[0] / 2 - self.sprite.width / 2
-            y = size[1] * 0.9 - self.sprite.height
-            x + self.sprite.left
-            y + self.sprite.top
-            dc.DrawBitmap(self.sprite.image, x, y, True)
-            
-        else:
-            x = size[0] / 2 - self.missing.GetWidth() / 2
-            y = size[1] / 2 - self.missing.GetHeight() / 2
-            dc.DrawBitmap(self.missing, x, y, True)
-        
     
     def select_sprite(self, event):
         if len(self.selected) == 1:

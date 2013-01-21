@@ -13,10 +13,7 @@ class SpritesDialog(windows.SpritesDialogBase):
 
     def __init__(self, parent):
         windows.SpritesDialogBase.__init__(self, parent)
-        
-        # Icon for missing sprites.
-        self.missing = wx.Bitmap('res/icon-missing.bmp', wx.BITMAP_TYPE_BMP)
-        
+                
         
     def ok(self, event):
         """
@@ -68,8 +65,6 @@ class SpritesDialog(windows.SpritesDialogBase):
         
         
     def update_preview(self):
-        self.sprite = None
-        
         selected = self.SpriteNames.GetSelection()
         if selected != wx.NOT_FOUND:
             sprite_name = self.SpriteNames.GetString(selected)
@@ -77,34 +72,7 @@ class SpritesDialog(windows.SpritesDialogBase):
             if sprite_frame != '':
                 sprite_frame = int(sprite_frame)
             
-                # Refresh sprite preview with new sprite.
-                if len(self.pwads) > 0:
-                    sprite_lump = self.pwads.get_sprite(sprite_name, sprite_frame, 0)
-                    if sprite_lump is None:
-                        sprite_lump = self.pwads.get_sprite(sprite_name, sprite_frame, 1)
-
-                    if sprite_lump is not None:
-                        self.sprite = self.pwads.get_sprite_image(sprite_lump)
-        
-        self.SpritePreview.Refresh()
-            
-    
-    def paint_preview(self, event):
-        dc = wx.PaintDC(self.SpritePreview)
-        dc.Clear()
-        
-        size = self.SpritePreview.GetSizeTuple()
-        if self.sprite is not None:
-            x = size[0] / 2 - self.sprite.width / 2
-            y = size[1] * 0.7 - self.sprite.height
-            x + self.sprite.left
-            y + self.sprite.top
-            dc.DrawBitmap(self.sprite.image, x, y, True)
-            
-        else:
-            x = size[0] / 2 - self.missing.GetWidth() / 2
-            y = size[1] / 2 - self.missing.GetHeight() / 2
-            dc.DrawBitmap(self.missing, x, y, True)
+            self.SpritePreview.show_sprite(sprite_name, sprite_frame)
         
         
     def set_state(self, patch, pwads, sprite_index, frame_index=None):
@@ -117,8 +85,6 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         self.selected_sprite = -1
         self.selected_frame = -1
-        
-        self.sprite = None
         
         self.Filter.ChangeValue('')
         self.filter_build('')
@@ -134,6 +100,9 @@ class SpritesDialog(windows.SpritesDialogBase):
             self.FrameIndex.ChangeValue('')
         
         self.Filter.SetFocus()
+        
+        self.SpritePreview.set_source(self.pwads)
+        self.SpritePreview.set_baseline_factor(0.7)
         self.update_preview()
         
     

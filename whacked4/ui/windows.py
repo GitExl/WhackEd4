@@ -9,6 +9,7 @@
 
 import wx
 import wx.xrc
+from ui import spritepreview
 
 WINDOW_MAIN = 1666
 MAIN_TOOL_THINGS = 1667
@@ -1124,8 +1125,8 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer42 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.SpritePreview = wx.StaticBitmap( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.Size( -1,160 ), wx.STATIC_BORDER )
-		self.SpritePreview.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWFRAME ) )
+		self.SpritePreview = spritepreview.SpritePreview(self, size=(-1, 160))
+		self.SpritePreview.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_3DDKSHADOW ) )
 		
 		bSizer42.Add( self.SpritePreview, 0, wx.EXPAND, 5 )
 		
@@ -1306,7 +1307,6 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.SpritePreview.Bind( wx.EVT_PAINT, self.paint_sprite_preview )
 		self.SpriteIndex.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.SpriteIndex.Bind( wx.EVT_TEXT, self.set_value )
 		self.SpriteSelect.Bind( wx.EVT_BUTTON, self.select_sprite )
@@ -1340,9 +1340,6 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def paint_sprite_preview( self, event ):
-		pass
-	
 	def focus_text( self, event ):
 		pass
 	
@@ -2008,8 +2005,8 @@ class SpritesDialogBase ( wx.Dialog ):
 		
 		bSizer40 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.SpritePreview = wx.StaticBitmap( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, wx.STATIC_BORDER )
-		self.SpritePreview.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWFRAME ) )
+		self.SpritePreview = spritepreview.SpritePreview(self)
+		self.SpritePreview.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_3DDKSHADOW ) )
 		
 		bSizer40.Add( self.SpritePreview, 1, wx.EXPAND|wx.RIGHT|wx.TOP, 6 )
 		
@@ -2070,7 +2067,6 @@ class SpritesDialogBase ( wx.Dialog ):
 		# Connect Events
 		self.SpriteNames.Bind( wx.EVT_LISTBOX, self.sprite_select_list )
 		self.SpriteNames.Bind( wx.EVT_LISTBOX_DCLICK, self.ok )
-		self.SpritePreview.Bind( wx.EVT_PAINT, self.paint_preview )
 		self.Filter.Bind( wx.EVT_CHAR, self.filter_key )
 		self.Filter.Bind( wx.EVT_TEXT, self.filter_update )
 		self.Filter.Bind( wx.EVT_TEXT_ENTER, self.ok )
@@ -2090,9 +2086,6 @@ class SpritesDialogBase ( wx.Dialog ):
 		pass
 	
 	def ok( self, event ):
-		pass
-	
-	def paint_preview( self, event ):
 		pass
 	
 	def filter_key( self, event ):
