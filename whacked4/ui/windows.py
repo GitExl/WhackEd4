@@ -887,7 +887,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		# Connect Events
 		self.Bind( wx.EVT_ACTIVATE, self.activate )
-		self.ThingNames.Bind( wx.EVT_LISTBOX, self.select_thing )
+		self.ThingNames.Bind( wx.EVT_LISTBOX, self.thing_select )
 		self.ThingNames.Bind( wx.EVT_LISTBOX_DCLICK, self.thing_rename )
 		self.ThingId.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingId.Bind( wx.EVT_TEXT, self.set_value )
@@ -907,76 +907,86 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingPainChance.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingMass.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingMass.Bind( wx.EVT_TEXT, self.set_value )
-		self.ThingFlags.Bind( wx.EVT_CHECKLISTBOX, self.update_flags )
-		self.ThingFlags.Bind( wx.EVT_MOTION, self.flag_tooltip )
+		self.ThingFlags.Bind( wx.EVT_CHECKLISTBOX, self.set_flags )
+		self.ThingFlags.Bind( wx.EVT_MOTION, self.set_flag_tooltip )
 		self.ThingStateSpawn.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingStateSpawn.Bind( wx.EVT_TEXT, self.update_state )
+		self.ThingStateSpawn.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateSpawnName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateSpawnName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateSpawnName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.ThingStateSpawnSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.ThingStateSpawnSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateWalk.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingStateWalk.Bind( wx.EVT_TEXT, self.update_state )
+		self.ThingStateWalk.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateWalkName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateWalkName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateWalkName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.ThingStateWalkSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.ThingStateWalkSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStatePain.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingStatePain.Bind( wx.EVT_TEXT, self.update_state )
+		self.ThingStatePain.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStatePainName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStatePainName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStatePainName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.ThingStatePainSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.ThingStatePainSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateMelee.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingStateMelee.Bind( wx.EVT_TEXT, self.update_state )
+		self.ThingStateMelee.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateMeleeName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateMeleeName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateMeleeName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.ThingStateMeleeSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.ThingStateMeleeSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateAttack.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingStateAttack.Bind( wx.EVT_TEXT, self.update_state )
+		self.ThingStateAttack.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateAttackName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateAttackName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateAttackName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.ThingStateAttackSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.ThingStateAttackSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateDeath.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingStateDeath.Bind( wx.EVT_TEXT, self.update_state )
+		self.ThingStateDeath.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateDeathName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateDeathName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateDeathName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.ThingStateDeathSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.ThingStateDeathSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateExplode.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingStateExplode.Bind( wx.EVT_TEXT, self.update_state )
+		self.ThingStateExplode.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateExplodeName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateExplodeName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateExplodeName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.ThingStateExplodeSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.ThingStateExplodeSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateRaise.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingStateRaise.Bind( wx.EVT_TEXT, self.update_state )
+		self.ThingStateRaise.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateRaiseName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateRaiseName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateRaiseName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.ThingStateRaiseSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.ThingStateRaiseSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingSoundAlert.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingSoundAlert.Bind( wx.EVT_TEXT, self.update_sound )
+		self.ThingSoundAlert.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundAlertName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingSoundAlertName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
+		self.ThingSoundAlertName.Bind( wx.EVT_LEFT_UP, self.goto_sound )
+		self.ThingSoundAlertSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ThingSoundAttack.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingSoundAttack.Bind( wx.EVT_TEXT, self.update_sound )
+		self.ThingSoundAttack.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundAttackName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingSoundAttackName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
+		self.ThingSoundAttackName.Bind( wx.EVT_LEFT_UP, self.goto_sound )
+		self.ThingSoundAttackSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ThingSoundPain.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingSoundPain.Bind( wx.EVT_TEXT, self.update_sound )
+		self.ThingSoundPain.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundPainName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingSoundPainName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
+		self.ThingSoundPainName.Bind( wx.EVT_LEFT_UP, self.goto_sound )
+		self.ThingSoundPainSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ThingSoundDeath.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingSoundDeath.Bind( wx.EVT_TEXT, self.update_sound )
+		self.ThingSoundDeath.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundDeathName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingSoundDeathName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
+		self.ThingSoundDeathName.Bind( wx.EVT_LEFT_UP, self.goto_sound )
+		self.ThingSoundDeathSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ThingSoundActive.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingSoundActive.Bind( wx.EVT_TEXT, self.update_sound )
+		self.ThingSoundActive.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundActiveName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingSoundActiveName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
+		self.ThingSoundActiveName.Bind( wx.EVT_LEFT_UP, self.goto_sound )
+		self.ThingSoundActiveSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ButtonRename.Bind( wx.EVT_BUTTON, self.thing_rename )
 		self.ButtonRestore.Bind( wx.EVT_BUTTON, self.thing_restore )
 	
@@ -988,7 +998,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 	def activate( self, event ):
 		pass
 	
-	def select_thing( self, event ):
+	def thing_select( self, event ):
 		pass
 	
 	def thing_rename( self, event ):
@@ -1016,14 +1026,14 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
-	def update_flags( self, event ):
+	def set_flags( self, event ):
 		pass
 	
-	def flag_tooltip( self, event ):
+	def set_flag_tooltip( self, event ):
 		pass
 	
 	
-	def update_state( self, event ):
+	def set_state( self, event ):
 		pass
 	
 	def enter_state( self, event ):
@@ -1035,7 +1045,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 	def goto_state( self, event ):
 		pass
 	
-	def set_state( self, event ):
+	def set_state_external( self, event ):
 		pass
 	
 	
@@ -1081,8 +1091,22 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
-	def update_sound( self, event ):
+	def set_sound( self, event ):
 		pass
+	
+	
+	
+	def goto_sound( self, event ):
+		pass
+	
+	def set_sound_external( self, event ):
+		pass
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -1739,31 +1763,31 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.Bind( wx.EVT_SIZE, self.update_workspace_data )
 		self.WeaponList.Bind( wx.EVT_LISTBOX, self.weapon_select )
 		self.WeaponStateSelect.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeaponStateSelect.Bind( wx.EVT_TEXT, self.set_state_index )
+		self.WeaponStateSelect.Bind( wx.EVT_TEXT, self.set_state_external )
 		self.WeaponStateSelectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateSelectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateSelectName.Bind( wx.EVT_LEFT_UP, self.goto_state )
 		self.WeaponStateSelectSet.Bind( wx.EVT_BUTTON, self.set_state )
 		self.WeaponStateDeselect.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeaponStateDeselect.Bind( wx.EVT_TEXT, self.set_state_index )
+		self.WeaponStateDeselect.Bind( wx.EVT_TEXT, self.set_state_external )
 		self.WeaponStateDeselectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEFT_UP, self.goto_state )
 		self.WeaponStateDeselectSet.Bind( wx.EVT_BUTTON, self.set_state )
 		self.WeapnStateBob.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeapnStateBob.Bind( wx.EVT_TEXT, self.set_state_index )
+		self.WeapnStateBob.Bind( wx.EVT_TEXT, self.set_state_external )
 		self.WeaponStateBobName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateBobName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateBobName.Bind( wx.EVT_LEFT_UP, self.goto_state )
 		self.WeaponStateBobSet.Bind( wx.EVT_BUTTON, self.set_state )
 		self.WeaponStateFire.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeaponStateFire.Bind( wx.EVT_TEXT, self.set_state_index )
+		self.WeaponStateFire.Bind( wx.EVT_TEXT, self.set_state_external )
 		self.WeaponStateFireName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateFireName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateFireName.Bind( wx.EVT_LEFT_UP, self.goto_state )
 		self.WeaponStateFireSet.Bind( wx.EVT_BUTTON, self.set_state )
 		self.WeaponStateMuzzle.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeaponStateMuzzle.Bind( wx.EVT_TEXT, self.set_state_index )
+		self.WeaponStateMuzzle.Bind( wx.EVT_TEXT, self.set_state_external )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEFT_UP, self.goto_state )
@@ -1786,7 +1810,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	def focus_text( self, event ):
 		pass
 	
-	def set_state_index( self, event ):
+	def set_state_external( self, event ):
 		pass
 	
 	def enter_state( self, event ):

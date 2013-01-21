@@ -12,10 +12,8 @@ class EditorMixin():
     """
     
     def __init__(self):
-        self.Bind(wx.EVT_MOVE, self.workspace_update_data)
-        self.Bind(wx.EVT_SIZE, self.workspace_update_data)
-        
-        self.Bind(wx.EVT_CLOSE, self.close)
+        self.undo = []
+        self.undo_index = -1
         
         # Stores the position of this editor window.
         self.workspace_data = {
@@ -24,6 +22,11 @@ class EditorMixin():
             'width': self.GetMinWidth(),
             'height': self.GetMinHeight()
         }
+        
+        self.Bind(wx.EVT_MOVE, self.workspace_update_data)
+        self.Bind(wx.EVT_SIZE, self.workspace_update_data)
+        
+        self.Bind(wx.EVT_CLOSE, self.close)
         
         
     def build(self, patch):
@@ -122,6 +125,14 @@ class EditorMixin():
         window.SetCursor(wx.StockCursor(wx.CURSOR_ARROW))
         window.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_WINDOWTEXT))
         window.Refresh()
+        
+    
+    def is_modified(self, modified):
+        """
+        Marks the currently loaded patch as modified or not.
+        """
+        
+        self.GetParent().set_modified(modified)
         
         
     def focus_text(self, event):

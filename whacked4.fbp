@@ -881,7 +881,7 @@
                         <event name="OnLeftDClick"></event>
                         <event name="OnLeftDown"></event>
                         <event name="OnLeftUp"></event>
-                        <event name="OnListBox">select_thing</event>
+                        <event name="OnListBox">thing_select</event>
                         <event name="OnListBoxDClick">thing_rename</event>
                         <event name="OnMiddleDClick"></event>
                         <event name="OnMiddleDown"></event>
@@ -2656,7 +2656,7 @@
                                 <event name="OnChar"></event>
                                 <event name="OnCheckListBox"></event>
                                 <event name="OnCheckListBoxDClick"></event>
-                                <event name="OnCheckListBoxToggled">update_flags</event>
+                                <event name="OnCheckListBoxToggled">set_flags</event>
                                 <event name="OnEnterWindow"></event>
                                 <event name="OnEraseBackground"></event>
                                 <event name="OnKeyDown"></event>
@@ -2669,7 +2669,7 @@
                                 <event name="OnMiddleDClick"></event>
                                 <event name="OnMiddleDown"></event>
                                 <event name="OnMiddleUp"></event>
-                                <event name="OnMotion">flag_tooltip</event>
+                                <event name="OnMotion">set_flag_tooltip</event>
                                 <event name="OnMouseEvents"></event>
                                 <event name="OnMouseWheel"></event>
                                 <event name="OnPaint"></event>
@@ -2887,7 +2887,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_state</event>
+                                                <event name="OnText">set_state</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -3039,7 +3039,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick">set_state</event>
+                                                <event name="OnButtonClick">set_state_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -3243,7 +3243,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_state</event>
+                                                <event name="OnText">set_state</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -3395,7 +3395,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick">set_state</event>
+                                                <event name="OnButtonClick">set_state_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -3599,7 +3599,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_state</event>
+                                                <event name="OnText">set_state</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -3751,7 +3751,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick">set_state</event>
+                                                <event name="OnButtonClick">set_state_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -3955,7 +3955,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_state</event>
+                                                <event name="OnText">set_state</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -4107,7 +4107,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick">set_state</event>
+                                                <event name="OnButtonClick">set_state_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -4311,7 +4311,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_state</event>
+                                                <event name="OnText">set_state</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -4463,7 +4463,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick">set_state</event>
+                                                <event name="OnButtonClick">set_state_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -4667,7 +4667,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_state</event>
+                                                <event name="OnText">set_state</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -4819,7 +4819,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick">set_state</event>
+                                                <event name="OnButtonClick">set_state_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -5023,7 +5023,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_state</event>
+                                                <event name="OnText">set_state</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -5175,7 +5175,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick">set_state</event>
+                                                <event name="OnButtonClick">set_state_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -5379,7 +5379,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_state</event>
+                                                <event name="OnText">set_state</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -5531,7 +5531,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick">set_state</event>
+                                                <event name="OnButtonClick">set_state_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -5745,7 +5745,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_sound</event>
+                                                <event name="OnText">set_sound</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -5819,7 +5819,7 @@
                                                 <event name="OnLeaveWindow">leave_state</event>
                                                 <event name="OnLeftDClick"></event>
                                                 <event name="OnLeftDown"></event>
-                                                <event name="OnLeftUp"></event>
+                                                <event name="OnLeftUp">goto_sound</event>
                                                 <event name="OnMiddleDClick"></event>
                                                 <event name="OnMiddleDown"></event>
                                                 <event name="OnMiddleUp"></event>
@@ -5897,7 +5897,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick"></event>
+                                                <event name="OnButtonClick">set_sound_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -6101,7 +6101,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_sound</event>
+                                                <event name="OnText">set_sound</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -6175,7 +6175,7 @@
                                                 <event name="OnLeaveWindow">leave_state</event>
                                                 <event name="OnLeftDClick"></event>
                                                 <event name="OnLeftDown"></event>
-                                                <event name="OnLeftUp"></event>
+                                                <event name="OnLeftUp">goto_sound</event>
                                                 <event name="OnMiddleDClick"></event>
                                                 <event name="OnMiddleDown"></event>
                                                 <event name="OnMiddleUp"></event>
@@ -6253,7 +6253,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick"></event>
+                                                <event name="OnButtonClick">set_sound_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -6457,7 +6457,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_sound</event>
+                                                <event name="OnText">set_sound</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -6531,7 +6531,7 @@
                                                 <event name="OnLeaveWindow">leave_state</event>
                                                 <event name="OnLeftDClick"></event>
                                                 <event name="OnLeftDown"></event>
-                                                <event name="OnLeftUp"></event>
+                                                <event name="OnLeftUp">goto_sound</event>
                                                 <event name="OnMiddleDClick"></event>
                                                 <event name="OnMiddleDown"></event>
                                                 <event name="OnMiddleUp"></event>
@@ -6609,7 +6609,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick"></event>
+                                                <event name="OnButtonClick">set_sound_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -6813,7 +6813,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_sound</event>
+                                                <event name="OnText">set_sound</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -6887,7 +6887,7 @@
                                                 <event name="OnLeaveWindow">leave_state</event>
                                                 <event name="OnLeftDClick"></event>
                                                 <event name="OnLeftDown"></event>
-                                                <event name="OnLeftUp"></event>
+                                                <event name="OnLeftUp">goto_sound</event>
                                                 <event name="OnMiddleDClick"></event>
                                                 <event name="OnMiddleDown"></event>
                                                 <event name="OnMiddleUp"></event>
@@ -6965,7 +6965,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick"></event>
+                                                <event name="OnButtonClick">set_sound_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -7169,7 +7169,7 @@
                                                 <event name="OnRightUp"></event>
                                                 <event name="OnSetFocus"></event>
                                                 <event name="OnSize"></event>
-                                                <event name="OnText">update_sound</event>
+                                                <event name="OnText">set_sound</event>
                                                 <event name="OnTextEnter"></event>
                                                 <event name="OnTextMaxLen"></event>
                                                 <event name="OnTextURL"></event>
@@ -7243,7 +7243,7 @@
                                                 <event name="OnLeaveWindow">leave_state</event>
                                                 <event name="OnLeftDClick"></event>
                                                 <event name="OnLeftDown"></event>
-                                                <event name="OnLeftUp"></event>
+                                                <event name="OnLeftUp">goto_sound</event>
                                                 <event name="OnMiddleDClick"></event>
                                                 <event name="OnMiddleDown"></event>
                                                 <event name="OnMiddleUp"></event>
@@ -7321,7 +7321,7 @@
                                                 <property name="window_extra_style"></property>
                                                 <property name="window_name"></property>
                                                 <property name="window_style"></property>
-                                                <event name="OnButtonClick"></event>
+                                                <event name="OnButtonClick">set_sound_external</event>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
                                                 <event name="OnEraseBackground"></event>
@@ -7647,11 +7647,11 @@
                                 <property name="name">bSizer42</property>
                                 <property name="orient">wxVERTICAL</property>
                                 <property name="permission">none</property>
-                                <object class="sizeritem" expanded="1">
+                                <object class="sizeritem" expanded="0">
                                     <property name="border">5</property>
                                     <property name="flag">wxEXPAND</property>
                                     <property name="proportion">0</property>
-                                    <object class="CustomControl" expanded="1">
+                                    <object class="CustomControl" expanded="0">
                                         <property name="BottomDockable">1</property>
                                         <property name="LeftDockable">1</property>
                                         <property name="RightDockable">1</property>

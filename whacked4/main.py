@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#coding=utf8
+
 from app import config
 from ui import mainframe
 import argparse
@@ -8,6 +11,8 @@ import wx
 
 
 if __name__ == '__main__':
+    
+    # Parse common commandline arguments.
     parser = argparse.ArgumentParser()
     parser.add_argument('-debug', action='store_true', help='Enable debug mode.')
     args = parser.parse_known_args()[0]
@@ -17,12 +22,13 @@ if __name__ == '__main__':
         config.DEBUG = True
         print 'Debug mode enabled. Only writing exceptions to stdout.'
  
-       # Redirect all console output to a single log file.
+    # Redirect all console output to a single log file.
     if config.DEBUG == False:
         log_file = open(config.LOG_PATH, 'a')
         sys.stderr = log_file
         sys.stdout = log_file
     
+    # Start application.
     config.settings.load()
     app = wx.App(redirect=False)
     
@@ -39,6 +45,7 @@ if __name__ == '__main__':
             tb = traceback.extract_tb(exc_traceback)
             logpath = config.LOG_PATH
             
+            # Concatenate a debug trace message.
             trace = ''
             for line in tb:
                 trace += '{}: {}: line {}: {}\n'.format(os.path.basename(line[0]), line[2], line[1], line[3])

@@ -63,10 +63,6 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.SpritePreview.set_source(self.pwads)
         self.SpritePreview.set_baseline_factor(0.9)
         
-        # Undo properties.
-        self.undo = []
-        self.undo_index = -1
-        
         self.sprites_dialog = spritesdialog.SpritesDialog(self.GetParent())
                 
         # List of selected list indices.
@@ -152,7 +148,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 break
         
         self.tools_update()
-        self.GetParent().set_modified(True)
+        self.is_modified(True)
     
     
     def tools_set_state(self, enabled):
@@ -175,7 +171,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.tools_update()
         self.update_selected_rows()
         self.update_colors()
-        self.GetParent().set_modified(True)
+        self.is_modified(True)
         
     
     def state_link(self, event):
@@ -295,7 +291,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             if state_index > 0:
                 state = self.filter.states[list_index]
                 state[key] = value
-                parent.set_modified(True)
+                self.is_modified(True)
         
         
     def update_selected_rows(self):
@@ -452,7 +448,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         self.update_selected_rows()
         self.update_sprite_preview()
-        self.GetParent().set_modified(True)
+        self.is_modified(True)
         
         if window_id == windows.STATES_SPRITE:
             self.update_colors()
@@ -472,7 +468,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             state['spriteFrame'] = frame_index
     
         self.update_selected_rows()
-        self.GetParent().set_modified(True)
+        self.is_modified(True)
         
     
     def set_action(self, event):
@@ -490,7 +486,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                     state['action'] = action_value
         
         self.update_selected_rows()
-        self.GetParent().set_modified(True)
+        self.is_modified(True)
             
     
     def set_frame(self, event):
@@ -513,7 +509,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             
         self.update_selected_rows()
         self.update_sprite_preview()
-        self.GetParent().set_modified(True)
+        self.is_modified(True)
         
         
     def get_action_value_from_name(self, action_name):
