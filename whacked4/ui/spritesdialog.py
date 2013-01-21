@@ -1,33 +1,38 @@
+#!/usr/bin/env python
+#coding=utf8
+
+from app import config
 from ui import windows, utils
 import wx
 
+
 class SpritesDialog(windows.SpritesDialogBase):
+    """
+    This dialog displays a list of sprites and sprite frames, and lets the user select one of them.
+    """
 
     def __init__(self, parent):
         windows.SpritesDialogBase.__init__(self, parent)
         
+        # Icon for missing sprites.
         self.missing = wx.Bitmap('res/icon-missing.bmp', wx.BITMAP_TYPE_BMP)
-        
-        self.patch = self.GetParent().patch
-        self.pwads = self.GetParent().pwads
-        self.sprite = None
-        
-        self.build_filter('')
-        
-        self.selected_sprite = -1
-        self.selected_frame = -1
-        
-        
-    def cancel(self, event):
-        self.Hide()
         
         
     def ok(self, event):
+        """
+        Called when the user clicks the Ok button.
+        """
+        
         window = self.FindWindowById(windows.SPRITES_NAMES)
         
-        selections = window.GetSelections() 
-        if len(selections) > 0:
-            self.selected_sprite = self.filter_list[selections[0]]
+        # Store selected details.
+        selection = window.GetSelection()
+        if selection == wx.NOT_FOUND:
+            self.selected_sprite = -1
+            self.selected_frame = -1
+            
+        else:
+            self.selected_sprite = self.filter_list[selection]
             
             # Store the frame index if one was selected.
             frame_index = self.FrameIndex.GetValue()
@@ -35,19 +40,36 @@ class SpritesDialog(windows.SpritesDialogBase):
                 self.selected_frame = -1
             else:
                 self.selected_frame = int(frame_index)
-        else:
-            self.selected_sprite = -1
-            self.selected_frame = -1
                  
         self.Hide()
         
         
-    def select(self, event):
+    def sprite_select_list(self, event):
+        """
+        Called when a sprite name is selected in the list.
+        """
+        
         self.FrameIndex.SetValue('0')
         self.update_preview()
         
         
+    def sprite_select_index(self, list_index):
+        """
+        Selects a sprite name from the list based on a list index.
+        """
+        
+        if list_index < 0:
+            list_index = 0
+        elif list_index >= self.SpriteNames.GetCount():
+            list_index = self.SpriteNames.GetCount() - 1
+                
+        self.SpriteNames.Select(list_index)
+        self.update_preview()
+        
+        
     def update_preview(self):
+        self.sprite = None
+        
         selected = self.SpriteNames.GetSelection()
         if selected != wx.NOT_FOUND:
             sprite_name = self.SpriteNames.GetString(selected)
@@ -56,12 +78,12 @@ class SpritesDialog(windows.SpritesDialogBase):
                 sprite_frame = int(sprite_frame)
             
                 # Refresh sprite preview with new sprite.
-                self.sprite = None
                 if len(self.pwads) > 0:
                     sprite_lump = self.pwads.get_sprite(sprite_name, sprite_frame, 0)
                     if sprite_lump is None:
                         sprite_lump = self.pwads.get_sprite(sprite_name, sprite_frame, 1)
-                    else:
+
+                    if sprite_lump is not None:
                         self.sprite = self.pwads.get_sprite_image(sprite_lump)
         
         self.SpritePreview.Refresh()
@@ -85,12 +107,25 @@ class SpritesDialog(windows.SpritesDialogBase):
             dc.DrawBitmap(self.missing, x, y, True)
         
         
-    def set_state(self, sprite_index, frame_index=None):
-        self.Filter.SetValue('')
+    def set_state(self, patch, pwads, sprite_index, frame_index=None):
+        """
+        Sets this dialog's user interface state.
+        """
         
-        self.selected_sprite = sprite_index
+        self.patch = patch
+        self.pwads = pwads
+
+        self.selected_sprite = -1
+        self.selected_frame = -1
+        
+        self.sprite = None
+        
+        self.Filter.ChangeValue('')
+        self.filter_build('')
+        
         self.SpriteNames.Select(sprite_index)
         
+        # Set the right frame index, or leave it blank if none was specified.
         if frame_index is not None:
             self.selected_frame = frame_index
             self.FrameIndex.ChangeValue(str(frame_index))
@@ -103,14 +138,20 @@ class SpritesDialog(windows.SpritesDialogBase):
         
     
     def update_frame(self, event):
+        """
+        Called when the frame index text control is updated.
+        
+        Updates the frame index value, ensuring it is a valid integer.
+        """
+        
         window_id = event.GetId() 
         window = self.FindWindowById(window_id)
         value = utils.validate_numeric(window)
 
         if value < 0:
             value = 0
-        elif value > 29:
-            value = 29
+        elif value > config.MAX_SPRITE_FRAME:
+            value = config.MAX_SPRITE_FRAME
             
         if str(value) != window.GetValue():
             window.ChangeValue(str(value))
@@ -118,49 +159,33 @@ class SpritesDialog(windows.SpritesDialogBase):
         self.update_preview()
             
             
-    def spin_up(self, event):
-        if self.FrameIndex.GetValue() == '':
-            self.FrameIndex.SetValue('0')
-        else:    
-            index = int(self.FrameIndex.GetValue())
-            self.FrameIndex.SetValue(str(index + 1))
-    
-    
-    def spin_down(self, event):
-        if self.FrameIndex.GetValue() == '':
-            self.FrameIndex.SetValue('0')
-        else:    
-            index = int(self.FrameIndex.GetValue())
-            self.FrameIndex.SetValue(str(index - 1))
-        
-        
     def filter_key(self, event):
+        """
+        Called when a key is pressed in the filter text control.
+        
+        Catches up and down keys to move through the filter list without giving the names list focus.
+        """
+        
         key = event.GetKeyCode()
         list_index = self.SpriteNames.GetSelection()
         
-        if key == 315:
-            list_index -= 1
-            if list_index < 0:
-                list_index = 0
-            self.SpriteNames.Select(list_index)
-            self.update_preview()
+        # Move selection up.
+        if key == wx.WXK_UP:
+            self.sprite_select_index(list_index - 1)
             
-        elif key == 317:
-            list_index += 1
-            if list_index >= self.SpriteNames.GetCount():
-                list_index = self.SpriteNames.GetCount() - 1
-            self.SpriteNames.Select(list_index)
-            self.update_preview()
+        # Move selection down.
+        elif key == wx.WXK_DOWN:
+            self.sprite_select_index(list_index + 1)
             
         event.Skip()
         
         
-    def update_filter(self, event):
-        window = self.FindWindowById(event.GetId())
-        self.build_filter(window.GetValue().upper())
+    def filter_build(self, filter_string):
+        """
+        Builds a newly filtered sprite list.
+        """
         
-    
-    def build_filter(self, filter_string):
+        # Create a filtered list of sprite name indices.
         index = 0
         self.filter_list = []
         for name in self.patch.sprite_names:
@@ -168,18 +193,45 @@ class SpritesDialog(windows.SpritesDialogBase):
                 self.filter_list.append(index)
             index += 1
         
+        # Add the filtered sprite names to the names list.
         list_index = 0
         self.SpriteNames.Clear()
         for index in self.filter_list:
             self.SpriteNames.Insert(self.patch.sprite_names[index], list_index)
             list_index += 1
-            
+        
+        # Select the first item by default.
         if len(self.filter_list) > 0:
             self.SpriteNames.Select(0)
         
         self.update_preview()
     
     
+    def frameindex_set(self, modifier):
+        """
+        Modifies the frame index value by a specified amount.
+        """ 
+        
+        if self.FrameIndex.GetValue() == '':
+            self.FrameIndex.SetValue('0')
+        else:    
+            index = int(self.FrameIndex.GetValue())
+            self.FrameIndex.SetValue(str(index + modifier))
+    
+    
+    def frameindex_spin_up(self, event):
+        self.frameindex_set(1)
+    
+    def frameindex_spin_down(self, event):
+        self.frameindex_set(-1)
+        
     def focus_text(self, event):
         utils.focus_text(event, self)
         event.Skip()
+            
+    def cancel(self, event):
+        self.Hide()
+        
+    def filter_update(self, event):
+        window = self.FindWindowById(event.GetId())
+        self.filter_build(window.GetValue().upper())

@@ -14273,7 +14273,7 @@
                                 <event name="OnLeftDClick"></event>
                                 <event name="OnLeftDown"></event>
                                 <event name="OnLeftUp"></event>
-                                <event name="OnListBox">select</event>
+                                <event name="OnListBox">sprite_select_list</event>
                                 <event name="OnListBoxDClick">ok</event>
                                 <event name="OnMiddleDClick"></event>
                                 <event name="OnMiddleDown"></event>
@@ -14477,7 +14477,7 @@
                                 <event name="OnRightUp"></event>
                                 <event name="OnSetFocus"></event>
                                 <event name="OnSize"></event>
-                                <event name="OnText">update_filter</event>
+                                <event name="OnText">filter_update</event>
                                 <event name="OnTextEnter">ok</event>
                                 <event name="OnTextMaxLen"></event>
                                 <event name="OnTextURL"></event>
@@ -14737,8 +14737,8 @@
                                 <event name="OnSetFocus"></event>
                                 <event name="OnSize"></event>
                                 <event name="OnSpin"></event>
-                                <event name="OnSpinDown">spin_down</event>
-                                <event name="OnSpinUp">spin_up</event>
+                                <event name="OnSpinDown">frameindex_spin_down</event>
+                                <event name="OnSpinUp">frameindex_spin_up</event>
                                 <event name="OnUpdateUI"></event>
                             </object>
                         </object>

@@ -418,10 +418,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             sprite_index = int(self.SpriteIndex.GetValue())
             frame_index = int(self.FrameIndex.GetValue())
             
-            self.sprites_dialog.set_state(sprite_index, frame_index=frame_index)
+            self.sprites_dialog.set_state(self.patch, self.pwads, sprite_index, frame_index=frame_index)
         elif len(self.selected) > 1:
             state = self.filter.states[self.selected[0]]
-            self.sprites_dialog.set_state(state['sprite'])
+            self.sprites_dialog.set_state(self.patch, self.pwads, state['sprite'])
             
         self.sprites_dialog.ShowModal()
         

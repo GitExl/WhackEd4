@@ -2068,16 +2068,16 @@ class SpritesDialogBase ( wx.Dialog ):
 		self.Centre( wx.BOTH )
 		
 		# Connect Events
-		self.SpriteNames.Bind( wx.EVT_LISTBOX, self.select )
+		self.SpriteNames.Bind( wx.EVT_LISTBOX, self.sprite_select_list )
 		self.SpriteNames.Bind( wx.EVT_LISTBOX_DCLICK, self.ok )
 		self.SpritePreview.Bind( wx.EVT_PAINT, self.paint_preview )
 		self.Filter.Bind( wx.EVT_CHAR, self.filter_key )
-		self.Filter.Bind( wx.EVT_TEXT, self.update_filter )
+		self.Filter.Bind( wx.EVT_TEXT, self.filter_update )
 		self.Filter.Bind( wx.EVT_TEXT_ENTER, self.ok )
 		self.FrameIndex.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.FrameIndex.Bind( wx.EVT_TEXT, self.update_frame )
-		self.FrameIndexSpinner.Bind( wx.EVT_SPIN_DOWN, self.spin_down )
-		self.FrameIndexSpinner.Bind( wx.EVT_SPIN_UP, self.spin_up )
+		self.FrameIndexSpinner.Bind( wx.EVT_SPIN_DOWN, self.frameindex_spin_down )
+		self.FrameIndexSpinner.Bind( wx.EVT_SPIN_UP, self.frameindex_spin_up )
 		self.ButtonOk.Bind( wx.EVT_BUTTON, self.ok )
 		self.ButtonCancel.Bind( wx.EVT_BUTTON, self.cancel )
 	
@@ -2086,7 +2086,7 @@ class SpritesDialogBase ( wx.Dialog ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def select( self, event ):
+	def sprite_select_list( self, event ):
 		pass
 	
 	def ok( self, event ):
@@ -2098,7 +2098,7 @@ class SpritesDialogBase ( wx.Dialog ):
 	def filter_key( self, event ):
 		pass
 	
-	def update_filter( self, event ):
+	def filter_update( self, event ):
 		pass
 	
 	
@@ -2108,10 +2108,10 @@ class SpritesDialogBase ( wx.Dialog ):
 	def update_frame( self, event ):
 		pass
 	
-	def spin_down( self, event ):
+	def frameindex_spin_down( self, event ):
 		pass
 	
-	def spin_up( self, event ):
+	def frameindex_spin_up( self, event ):
 		pass
 	
 	

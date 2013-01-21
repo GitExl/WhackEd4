@@ -29,6 +29,9 @@ LOG_PATH = CONFIG_DIR + '/log.txt'
 # Enable debugging functions.
 DEBUG = False
 
+# The highest allowed sprite frame index.
+MAX_SPRITE_FRAME = 29
+
 
 class WhackEd4Settings(settingshandler.SettingsHandler):
     """
