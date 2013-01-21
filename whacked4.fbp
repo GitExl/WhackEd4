@@ -24,7 +24,7 @@
         <property name="skip_python_events">0</property>
         <property name="use_enum">0</property>
         <property name="use_microsoft_bom">0</property>
-        <object class="Frame" expanded="1">
+        <object class="Frame" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>
@@ -166,7 +166,7 @@
                 <event name="OnSize"></event>
                 <event name="OnUpdateUI"></event>
                 <object class="tool" expanded="0">
-                    <property name="bitmap">Load From File; C:\Users\Dennis\Desktop\Programming\eclipse_workspace\WhackEd4\res\icon-weapons.bmp</property>
+                    <property name="bitmap">Load From File; C:\Users\Dennis\Documents\GitHub\WhackEd4\res\icon-weapons.bmp</property>
                     <property name="context_menu">0</property>
                     <property name="id">MAIN_TOOL_THINGS</property>
                     <property name="kind">wxITEM_CHECK</property>
@@ -181,13 +181,13 @@
                     <event name="OnAuiToolBarRightClick"></event>
                     <event name="OnAuiToolBarToolDropDown"></event>
                     <event name="OnMenuSelection"></event>
-                    <event name="OnToolClicked">toolbar_set_state</event>
+                    <event name="OnToolClicked">editor_window_tooltoggle</event>
                     <event name="OnToolEnter"></event>
                     <event name="OnToolRClicked"></event>
                     <event name="OnUpdateUI"></event>
                 </object>
                 <object class="tool" expanded="0">
-                    <property name="bitmap">Load From File; res\icon-weapons.bmp</property>
+                    <property name="bitmap">Load From File; C:\Users\Dennis\Documents\GitHub\WhackEd4\res\icon-weapons.bmp</property>
                     <property name="context_menu">0</property>
                     <property name="id">MAIN_TOOL_STATES</property>
                     <property name="kind">wxITEM_CHECK</property>
@@ -202,7 +202,7 @@
                     <event name="OnAuiToolBarRightClick"></event>
                     <event name="OnAuiToolBarToolDropDown"></event>
                     <event name="OnMenuSelection"></event>
-                    <event name="OnToolClicked">toolbar_set_state</event>
+                    <event name="OnToolClicked">editor_window_tooltoggle</event>
                     <event name="OnToolEnter"></event>
                     <event name="OnToolRClicked"></event>
                     <event name="OnUpdateUI"></event>
@@ -223,7 +223,7 @@
                     <event name="OnAuiToolBarRightClick"></event>
                     <event name="OnAuiToolBarToolDropDown"></event>
                     <event name="OnMenuSelection"></event>
-                    <event name="OnToolClicked">toolbar_set_state</event>
+                    <event name="OnToolClicked">editor_window_tooltoggle</event>
                     <event name="OnToolEnter"></event>
                     <event name="OnToolRClicked"></event>
                     <event name="OnUpdateUI"></event>
@@ -244,7 +244,7 @@
                     <event name="OnAuiToolBarRightClick"></event>
                     <event name="OnAuiToolBarToolDropDown"></event>
                     <event name="OnMenuSelection"></event>
-                    <event name="OnToolClicked">toolbar_set_state</event>
+                    <event name="OnToolClicked">editor_window_tooltoggle</event>
                     <event name="OnToolEnter"></event>
                     <event name="OnToolRClicked"></event>
                     <event name="OnUpdateUI"></event>
@@ -265,7 +265,7 @@
                     <event name="OnAuiToolBarRightClick"></event>
                     <event name="OnAuiToolBarToolDropDown"></event>
                     <event name="OnMenuSelection"></event>
-                    <event name="OnToolClicked">toolbar_set_state</event>
+                    <event name="OnToolClicked">editor_window_tooltoggle</event>
                     <event name="OnToolEnter"></event>
                     <event name="OnToolRClicked"></event>
                     <event name="OnUpdateUI"></event>
@@ -286,7 +286,7 @@
                     <event name="OnAuiToolBarRightClick"></event>
                     <event name="OnAuiToolBarToolDropDown"></event>
                     <event name="OnMenuSelection"></event>
-                    <event name="OnToolClicked">toolbar_set_state</event>
+                    <event name="OnToolClicked">editor_window_tooltoggle</event>
                     <event name="OnToolEnter"></event>
                     <event name="OnToolRClicked"></event>
                     <event name="OnUpdateUI"></event>
@@ -307,7 +307,7 @@
                     <event name="OnAuiToolBarRightClick"></event>
                     <event name="OnAuiToolBarToolDropDown"></event>
                     <event name="OnMenuSelection"></event>
-                    <event name="OnToolClicked">toolbar_set_state</event>
+                    <event name="OnToolClicked">editor_window_tooltoggle</event>
                     <event name="OnToolEnter"></event>
                     <event name="OnToolRClicked"></event>
                     <event name="OnUpdateUI"></event>
@@ -328,7 +328,7 @@
                     <event name="OnAuiToolBarRightClick"></event>
                     <event name="OnAuiToolBarToolDropDown"></event>
                     <event name="OnMenuSelection"></event>
-                    <event name="OnToolClicked">toolbar_set_state</event>
+                    <event name="OnToolClicked">editor_window_tooltoggle</event>
                     <event name="OnToolEnter"></event>
                     <event name="OnToolRClicked"></event>
                     <event name="OnUpdateUI"></event>
@@ -349,13 +349,13 @@
                     <event name="OnAuiToolBarRightClick"></event>
                     <event name="OnAuiToolBarToolDropDown"></event>
                     <event name="OnMenuSelection"></event>
-                    <event name="OnToolClicked">toolbar_set_state</event>
+                    <event name="OnToolClicked">editor_window_tooltoggle</event>
                     <event name="OnToolEnter"></event>
                     <event name="OnToolRClicked"></event>
                     <event name="OnUpdateUI"></event>
                 </object>
             </object>
-            <object class="wxMenuBar" expanded="1">
+            <object class="wxMenuBar" expanded="0">
                 <property name="bg"></property>
                 <property name="context_help"></property>
                 <property name="context_menu">1</property>
@@ -562,7 +562,7 @@
                         <event name="OnUpdateUI"></event>
                     </object>
                 </object>
-                <object class="wxMenu" expanded="1">
+                <object class="wxMenu" expanded="0">
                     <property name="label">View</property>
                     <property name="name">MenuView</property>
                     <property name="permission">protected</property>
@@ -578,7 +578,7 @@
                         <property name="permission">none</property>
                         <property name="shortcut">F2</property>
                         <property name="unchecked_bitmap"></property>
-                        <event name="OnMenuSelection">set_menu_state</event>
+                        <event name="OnMenuSelection">editor_window_menutoggle</event>
                         <event name="OnUpdateUI"></event>
                     </object>
                     <object class="wxMenuItem" expanded="0">
@@ -593,7 +593,7 @@
                         <property name="permission">none</property>
                         <property name="shortcut">F3</property>
                         <property name="unchecked_bitmap"></property>
-                        <event name="OnMenuSelection">set_menu_state</event>
+                        <event name="OnMenuSelection">editor_window_menutoggle</event>
                         <event name="OnUpdateUI"></event>
                     </object>
                     <object class="wxMenuItem" expanded="0">
@@ -608,7 +608,7 @@
                         <property name="permission">none</property>
                         <property name="shortcut">F6</property>
                         <property name="unchecked_bitmap"></property>
-                        <event name="OnMenuSelection">set_menu_state</event>
+                        <event name="OnMenuSelection">editor_window_menutoggle</event>
                         <event name="OnUpdateUI"></event>
                     </object>
                     <object class="wxMenuItem" expanded="0">
@@ -623,7 +623,7 @@
                         <property name="permission">none</property>
                         <property name="shortcut">F4</property>
                         <property name="unchecked_bitmap"></property>
-                        <event name="OnMenuSelection">set_menu_state</event>
+                        <event name="OnMenuSelection">editor_window_menutoggle</event>
                         <event name="OnUpdateUI"></event>
                     </object>
                     <object class="wxMenuItem" expanded="0">
@@ -638,7 +638,7 @@
                         <property name="permission">none</property>
                         <property name="shortcut">F7</property>
                         <property name="unchecked_bitmap"></property>
-                        <event name="OnMenuSelection">set_menu_state</event>
+                        <event name="OnMenuSelection">editor_window_menutoggle</event>
                         <event name="OnUpdateUI"></event>
                     </object>
                     <object class="wxMenuItem" expanded="0">
@@ -653,7 +653,7 @@
                         <property name="permission">none</property>
                         <property name="shortcut">F8</property>
                         <property name="unchecked_bitmap"></property>
-                        <event name="OnMenuSelection">set_menu_state</event>
+                        <event name="OnMenuSelection">editor_window_menutoggle</event>
                         <event name="OnUpdateUI"></event>
                     </object>
                     <object class="wxMenuItem" expanded="0">
@@ -668,7 +668,7 @@
                         <property name="permission">none</property>
                         <property name="shortcut">F9</property>
                         <property name="unchecked_bitmap"></property>
-                        <event name="OnMenuSelection">set_menu_state</event>
+                        <event name="OnMenuSelection">editor_window_menutoggle</event>
                         <event name="OnUpdateUI"></event>
                     </object>
                     <object class="wxMenuItem" expanded="0">
@@ -683,7 +683,7 @@
                         <property name="permission">none</property>
                         <property name="shortcut">F11</property>
                         <property name="unchecked_bitmap"></property>
-                        <event name="OnMenuSelection">set_menu_state</event>
+                        <event name="OnMenuSelection">editor_window_menutoggle</event>
                         <event name="OnUpdateUI"></event>
                     </object>
                     <object class="wxMenuItem" expanded="0">
@@ -698,7 +698,7 @@
                         <property name="permission">none</property>
                         <property name="shortcut">F12</property>
                         <property name="unchecked_bitmap"></property>
-                        <event name="OnMenuSelection">set_menu_state</event>
+                        <event name="OnMenuSelection">editor_window_menutoggle</event>
                         <event name="OnUpdateUI"></event>
                     </object>
                     <object class="separator" expanded="0">
@@ -9765,7 +9765,7 @@
                                                 <event name="OnSize"></event>
                                                 <event name="OnUpdateUI"></event>
                                                 <object class="tool" expanded="0">
-                                                    <property name="bitmap">Load From File; C:\Users\Dennis\Desktop\Programming\eclipse_workspace\WhackEd4\res\icon-refresh.bmp</property>
+                                                    <property name="bitmap">Load From File; C:\Users\Dennis\Documents\GitHub\WhackEd4\res\icon-refresh.bmp</property>
                                                     <property name="context_menu">0</property>
                                                     <property name="id">STATES_FILTERTOOLS_REFRESH</property>
                                                     <property name="kind">wxITEM_NORMAL</property>
@@ -16395,7 +16395,7 @@
                                         <event name="OnSize"></event>
                                         <event name="OnUpdateUI"></event>
                                         <object class="tool" expanded="0">
-                                            <property name="bitmap">Load From File; C:\Users\Dennis\Desktop\Programming\eclipse_workspace\WhackEd4\res\icon-plus.bmp</property>
+                                            <property name="bitmap">Load From File; C:\Users\Dennis\Documents\GitHub\WhackEd4\res\icon-plus.bmp</property>
                                             <property name="context_menu">0</property>
                                             <property name="id">PATCHINFO_TOOLBAR_ADD</property>
                                             <property name="kind">wxITEM_NORMAL</property>
@@ -16416,7 +16416,7 @@
                                             <event name="OnUpdateUI"></event>
                                         </object>
                                         <object class="tool" expanded="0">
-                                            <property name="bitmap">Load From File; C:\Users\Dennis\Desktop\Programming\eclipse_workspace\WhackEd4\res\icon-minus.bmp</property>
+                                            <property name="bitmap">Load From File; C:\Users\Dennis\Documents\GitHub\WhackEd4\res\icon-minus.bmp</property>
                                             <property name="context_menu">0</property>
                                             <property name="id">PATCHINFO_TOOLBAR_REMOVE</property>
                                             <property name="kind">wxITEM_NORMAL</property>
@@ -17300,7 +17300,7 @@
                                 <property name="aui_row"></property>
                                 <property name="best_size"></property>
                                 <property name="bg"></property>
-                                <property name="bitmap">Load From File; C:\Users\Dennis\Desktop\Programming\eclipse_workspace\WhackEd4\res\hatchet.bmp</property>
+                                <property name="bitmap">Load From File; C:\Users\Dennis\Documents\GitHub\WhackEd4\res\hatchet.bmp</property>
                                 <property name="caption"></property>
                                 <property name="caption_visible">1</property>
                                 <property name="center_pane">0</property>
@@ -17392,7 +17392,7 @@
                                 <property name="aui_row"></property>
                                 <property name="best_size"></property>
                                 <property name="bg"></property>
-                                <property name="bitmap">Load From File; C:\Users\Dennis\Desktop\Programming\eclipse_workspace\WhackEd4\res\logo.bmp</property>
+                                <property name="bitmap">Load From File; C:\Users\Dennis\Documents\GitHub\WhackEd4\res\logo.bmp</property>
                                 <property name="caption"></property>
                                 <property name="caption_visible">1</property>
                                 <property name="center_pane">0</property>
