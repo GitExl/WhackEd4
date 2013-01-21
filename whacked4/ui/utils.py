@@ -1,4 +1,21 @@
+#!/usr/bin/env python
+#coding=utf8
+
+"""
+General utility functions used by the ui package.
+"""
+
+
 def validate_numeric(window):
+    """
+    Validates the contents of a window (usually a text control), to make sure it is numeric.
+    
+    The window's contents are altered if the user entered any non-numeric input. 0 is returned if only a minus sign
+    is present in the control, to allow the user to enter negative numbers.
+
+    @return: the validated integer value that is present in the control.
+    """
+    
     value = window.GetValue()
     
     if len(value) == 0:
@@ -34,5 +51,9 @@ def validate_numeric(window):
 
 
 def focus_text(event, parent):
+    """
+    Selects the entire contents of a text control so that the user can immediately type to replace it.
+    """
+    
     window = parent.FindWindowById(event.GetId())
     window.SetSelection(-1, -1)

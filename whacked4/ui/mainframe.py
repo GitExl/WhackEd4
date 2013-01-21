@@ -157,10 +157,10 @@ class MainFrame(windows.MainFrameBase):
         """
         
         # Load the accompanying workspace file if it exists.
-        workspace_file = workspace.get_filename(filename)
         new_workspace = workspace.Workspace()
+        workspace_file = new_workspace.get_filename(filename)
         if os.path.exists(workspace_file):
-            new_workspace.load(workspace_file)
+            new_workspace.load(filename)
         
         # Analyze the patch file to determine what engines support it.
         new_patch = patch.Patch()
@@ -366,7 +366,7 @@ class MainFrame(windows.MainFrameBase):
         if self.workspace.windows is None:
             self.workspace.store_windows(self, self.workspace_windows)
         else:
-            self.workspace.apply_windows(self, self.workspace_windows)
+            self.workspace.restore_windows(self.workspace_windows)
 
         self.toolbar_set_enabled(True)            
         self.toolbar_update_state()
@@ -602,9 +602,8 @@ class MainFrame(windows.MainFrameBase):
         if self.workspace is None or self.patch.filename is None:
             return
         
-        workspace_file = workspace.get_filename(self.patch.filename)
         self.workspace.store_windows(self, self.workspace_windows)
-        self.workspace.save(workspace_file)
+        self.workspace.save(self.patch.filename)
         self.workspace_modified = False
     
         
