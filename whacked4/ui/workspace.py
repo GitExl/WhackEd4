@@ -112,7 +112,7 @@ class Workspace():
         @param workspace_windows: a dict containing window names and window objects to store.
         """
         
-        self.windows.clear()
+        self.windows = {}
         for window_name, window in workspace_windows.iteritems():
             window_data = {}
             

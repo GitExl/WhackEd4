@@ -57,8 +57,7 @@ class MainFrame(windows.MainFrameBase):
         }
         
         # Reset editor window states.
-        for window in self.editor_windows.itervalues():
-            window.Show(False)
+        self.editor_windows_show(False)
         self.toolbar_set_enabled(False)
         
         # Dialogs.
@@ -233,11 +232,11 @@ class MainFrame(windows.MainFrameBase):
         Loads the WAD files that are selected in the current workspace.
         """
         
-        if self.workspace.iwad is None:
-            return
-        
         self.iwad = None
         self.pwads.clear()
+        
+        if self.workspace.iwad is None:
+            return
         
         # Verify if the IWAD file exists at all.
         if os.path.exists(self.workspace.iwad) == False:
@@ -441,6 +440,7 @@ class MainFrame(windows.MainFrameBase):
         
         # Initialize the UI.
         self.load_wads()
+        self.editor_windows_show(False)
         self.update_ui()
             
             
@@ -537,6 +537,15 @@ class MainFrame(windows.MainFrameBase):
             window.Show(state)
             
             self.workspace_modified = True
+            
+            
+    def editor_windows_show(self, show):
+        """
+        Sets the visibility of all editor windows at once.
+        """
+        
+        for window in self.editor_windows.itervalues():
+            window.Show(show)
             
     
     def editor_window_closed(self, window):
