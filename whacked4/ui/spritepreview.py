@@ -9,6 +9,10 @@ class SpritePreview(wx.Panel):
     Renders a sprite preview to a StaticBitmap control.
     """
     
+    # Indicates that no sprite should be drawn at all.
+    CLEAR = 0xDEADBEEF
+    
+    
     def __init__(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition, size=wx.DefaultSize,
                  style=wx.NO_BORDER):
 
@@ -67,6 +71,9 @@ class SpritePreview(wx.Panel):
         dc = wx.BufferedPaintDC(self)
         dc.Clear()
         
+        if self.sprite == self.CLEAR:
+            return
+        
         size = self.GetClientSizeTuple()
         if self.sprite is not None:
             x = size[0] / 2 - self.sprite.width / 2
@@ -74,12 +81,21 @@ class SpritePreview(wx.Panel):
             x + self.sprite.left
             y + self.sprite.top
             dc.DrawBitmap(self.sprite.image, x, y, True)
-            
+        
         # Display the missing image bitmap if no sprite is set.
         else:
             x = size[0] / 2 - self.missing.GetWidth() / 2
             y = size[1] / 2 - self.missing.GetHeight() / 2
             dc.DrawBitmap(self.missing, x, y, True)
+            
+            
+    def clear(self):
+        """
+        Clears this sprite preview.
+        """
+        
+        self.sprite = self.CLEAR
+        self.Refresh()
             
             
     def set_baseline_factor(self, factor):

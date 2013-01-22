@@ -65,17 +65,23 @@ class SpritesDialog(windows.SpritesDialogBase):
         
         
     def update_preview(self):
+        """
+        Updates the displayed sprite.
+        """
+        
         selected = self.SpriteNames.GetSelection()
         if selected != wx.NOT_FOUND:
             sprite_name = self.SpriteNames.GetString(selected)
             sprite_frame = self.FrameIndex.GetValue()
             if sprite_frame != '':
                 sprite_frame = int(sprite_frame)
+            else:
+                sprite_frame = 0
             
             self.SpritePreview.show_sprite(sprite_name, sprite_frame)
         
         
-    def set_state(self, patch, pwads, sprite_index, frame_index=None):
+    def set_state(self, patch, pwads, sprite_index=None, frame_index=None):
         """
         Sets this dialog's user interface state.
         """
@@ -89,14 +95,13 @@ class SpritesDialog(windows.SpritesDialogBase):
         self.Filter.ChangeValue('')
         self.filter_build('')
         
-        self.SpriteNames.Select(sprite_index)
+        if sprite_index is not None:
+            self.SpriteNames.Select(sprite_index)
         
         # Set the right frame index, or leave it blank if none was specified.
         if frame_index is not None:
-            self.selected_frame = frame_index
             self.FrameIndex.ChangeValue(str(frame_index))
         else:
-            self.selected_frame = -1
             self.FrameIndex.ChangeValue('')
         
         self.Filter.SetFocus()

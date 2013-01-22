@@ -70,6 +70,8 @@ class EditorMixin():
     def undo_restore_item(self, item):
         """
         Called when an undo item needs to be restored.
+        
+        @param item: the item object for the editor window to restore. 
         """
         
         raise NotImplementedError()
@@ -78,6 +80,8 @@ class EditorMixin():
     def undo_store_item(self):
         """
         Called when an undo item needs to be stored.
+        
+        @return: an item object to store in the undo buffer.
         """
         
         raise NotImplementedError()

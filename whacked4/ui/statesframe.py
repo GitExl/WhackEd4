@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+#coding=utf8
+
 from app import config
 from collections import OrderedDict
 from dehacked import statefilter
@@ -5,9 +8,13 @@ from ui import windows, utils, spritesdialog, editormixin
 import copy
 import wx
 
+
 class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
-    FRAMEFLAG_LIT = 0x8000
+    """
+    States editor window.
+    """
     
+    # Maps window ids to state property keys.
     PROPS_STATE = {
         windows.STATES_DURATION: 'duration',
         windows.STATES_NEXT: 'nextState',
@@ -16,10 +23,15 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         windows.STATES_SPRITE: 'sprite'
     }
         
+    # The colours used for color-coding sprite indices.
     SPRITE_COLOURS = [
         wx.Colour(red=255, green=48, blue=0),
         wx.Colour(red=255, green=255, blue=255),
     ]
+    
+    # Doom lit flag. Frame indices with this flag set are always lit by Doom's rendering engine.
+    FRAMEFLAG_LIT = 0x8000
+    
     
     def __init__(self, params):
         windows.StatesFrameBase.__init__(self, params)
@@ -27,6 +39,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         self.SetIcon(wx.Icon('res/icon-weapons-small.bmp'))
                 
+        # A list of all tool windows for simple mass operations.
         self.WINDOWS_TOOLS = [
             self.SpriteIndex,
             self.SpriteSelect,
@@ -43,6 +56,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.SpriteName
         ]
         
+        # Retain the system font size for the states list.
         font_size = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT).GetPointSize()
         self.list_font = wx.Font(
             font_size,
@@ -52,18 +66,24 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             faceName=config.FONT_MONOSPACED
         )
         
-        self.mix_colors()
+        # Mix sprite color coding colours with the default system colours.
+        self.mix_colours()
 
 
     def build(self, patch):
-        self.patch = patch
-        self.clipboard = None
-        self.pwads = self.GetParent().pwads
+        """
+        @see: EditorMixin.build
+        """
         
+        self.patch = patch
+        self.pwads = self.GetParent().pwads
+        self.clipboard = None
+
+        self.sprites_dialog = spritesdialog.SpritesDialog(self.GetParent())
+        
+        # Setup sprite preview control.
         self.SpritePreview.set_source(self.pwads)
         self.SpritePreview.set_baseline_factor(0.9)
-        
-        self.sprites_dialog = spritesdialog.SpritesDialog(self.GetParent())
                 
         # List of selected list indices.
         self.selected = []
@@ -77,7 +97,11 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.build_actionlist()
                 
         
-    def mix_colors(self):
+    def mix_colours(self):
+        """
+        Mixes sprite index colour coding with the system's window background color.
+        """
+        
         sys_col = self.StateList.GetBackgroundColour()
         factor = 0.08
         sys_factor = 1 - factor
@@ -91,9 +115,14 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         
     def undo_restore_item(self, item):
+        """
+        @see: EditorMixin.undo_restore_item
+        """
+        
         for state_index, state in item.iteritems():
             self.patch.states[state_index] = state
-            
+
+            # Restore all state indices in the undo item.            
             if state_index in self.filter.state_indices:
                 list_index = self.filter.state_indices.index(state_index)
                 self.filter.states[list_index] = state
@@ -104,8 +133,12 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         
     def undo_store_item(self):
-        items = OrderedDict()
+        """
+        @see: EditorMixin.undo_store_item
+        """
         
+        # Store all currently selected states.
+        items = OrderedDict()
         for list_index in self.selected:
             state_index = self.filter.state_indices[list_index]
             state = copy.deepcopy(self.filter.states[list_index])
@@ -116,6 +149,12 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             
     
     def edit_copy(self):
+        """
+        Copies all currently selected states to the clipboard.
+        
+        The states are stored in sequence, without non-selected states in between.
+        """
+        
         self.clipboard = []
         
         for list_index in self.selected:
@@ -124,11 +163,16 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         
     def edit_paste(self):
+        """
+        Pastes the current clipboard, starting at the first selected state.
+        """
+        
         if self.clipboard is None:
             return
         if len(self.selected) == 0:
             return
         
+        # Do not paste over state 0.
         list_index = self.selected[0]
         if self.filter.state_indices[list_index] == 0:
             return
@@ -136,10 +180,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.undo_add()
          
         for state in self.clipboard:
-            dup = copy.deepcopy(state)
-            state_index = self.filter.state_indices[list_index]
-            
+            # Ignore states that are not currently visible because of filters.
             if list_index in self.selected:
+                dup = copy.deepcopy(state)
+                state_index = self.filter.state_indices[list_index]
                 self.patch.states[state_index] = dup
                 self.update_row(list_index)
             
@@ -152,15 +196,19 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     
     
     def tools_set_state(self, enabled):
-        if enabled == True:
-            for window in self.WINDOWS_TOOLS:
-                window.Enable()
-        elif enabled == False:
-            for window in self.WINDOWS_TOOLS:
-                window.Disable()
+        """
+        Sets the state of all tool controls.
+        """
+        
+        for window in self.WINDOWS_TOOLS:
+            window.Enable(enabled)
                 
                 
     def state_restore(self, event):
+        """
+        Restores all currently selected states to the way they are in the engine configuration.
+        """
+        
         self.undo_add()
         
         for list_index in self.selected:
@@ -170,11 +218,16 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         self.tools_update()
         self.update_selected_rows()
-        self.update_colors()
+        self.update_colours()
         self.is_modified(True)
         
     
     def state_link(self, event):
+        """
+        Connects the currently selected state's next state property to the state being clicked, while the alt key
+        is held down.
+        """
+        
         # Set the current state's next state if the alt key is held down.
         connect = wx.GetKeyState(wx.WXK_ALT)
         if connect == True:
@@ -193,17 +246,11 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             event.Skip()
             
 
-    def state_select(self, event):
-        self.selected.append(event.GetIndex())
-        self.tools_update()
-        
-            
-    def state_deselect(self, event):
-        self.selected.remove(event.GetIndex())
-        self.tools_update()
-    
-    
     def build_filterlist(self):
+        """
+        Build the list of available filters.
+        """
+        
         list_items = []
         for filter_data in self.filter.filters:
             list_items.append(filter_data['name'])
@@ -213,6 +260,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     
             
     def build_actionlist(self):
+        """
+        Builds the list of available state actions.
+        """
+        
         action_items = []
         
         if self.patch.engine.extended == True:
@@ -232,13 +283,17 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         
     def build_statelist(self):
+        """
+        Builds the list of currently filtered states.
+        """
+        
         wx.BeginBusyCursor()
         
         self.StateList.Freeze()
         self.StateList.ClearAll()
         self.selected = []
         
-        # Add columns when needed.
+        # Add list column headers if needed.
         if self.StateList.GetColumnCount() == 0:
             self.StateList.InsertColumn(0, '', width=29)
             self.StateList.InsertColumn(1, 'Name', width=47)
@@ -250,7 +305,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.StateList.InsertColumn(7, 'Action', width=103)
             self.StateList.InsertColumn(8, 'Parameters', width=77)
         
-        # Add all list items.
+        # Add all items in the filtered list.
         list_index = 0
         for state_index in self.filter.state_indices:
             self.StateList.InsertStringItem(list_index, str(state_index))
@@ -260,8 +315,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             
             list_index += 1
         
-        self.update_colors()
+        self.update_colours()
         
+        # Select the first row if it is not state 0.
         if self.filter.state_indices[0] == 0 and len(self.filter.state_indices) > 1:
             self.StateList.Select(1, True)
         elif len(self.filter.state_indices) > 0:
@@ -272,35 +328,51 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         wx.EndBusyCursor()
         
         
-    def filter_select(self, event):
-        self.filter_update(self.Filter.GetSelection())
-    
-    
     def filter_update(self, index):
+        """
+        Updates the current state filter and rebuilds the state list accordingly.
+        """
+        
         self.filter.update(index)
         self.build_statelist()
         self.tools_update()
         
     
     def set_selected_property(self, key, value):
+        """
+        Sets a property of all currently selected states.
+        
+        @param key: the state property key to set.
+        @param value: the new value of the state property.  
+        """
+        
         self.undo_add()
         
-        parent = self.GetParent()
         for list_index in self.selected:
             state_index = self.filter.state_indices[list_index]
-            if state_index > 0:
-                state = self.filter.states[list_index]
-                state[key] = value
-                self.is_modified(True)
+            if state_index == 0:
+                continue
+            
+            state = self.filter.states[list_index]
+            state[key] = value
+            self.is_modified(True)
         
         
     def update_selected_rows(self):
+        """
+        Updates the contents of every selecte state list row.
+        """
+        
         for list_index in self.selected:
             self.update_row(list_index)
 
 
     def tools_update(self):
-        # Only one state is selected, fill tools with state info.
+        """
+        Updates the tool controls with the properties of the currently selected state(s).
+        """
+        
+        # If only one state is selected, fill the tools with that state's properties.
         if len(self.selected) == 1:
             state = self.filter.states[self.selected[0]]
             state_index = self.filter.state_indices[self.selected[0]] 
@@ -341,8 +413,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 else:
                     self.Action.Enable()
 
-        
-        # Multiple states are selected, zero out all tools.
+        # If multiple states are selected, empty out all tools.
         else:
             self.SpriteIndex.ChangeValue('')
             self.SpriteName.SetLabel('')
@@ -361,37 +432,48 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         
     def update_sprite_preview(self):
-        self.sprite = None
+        """
+        Updates the sprite preview control with the currently selected state's sprite.
+        """
         
         if len(self.selected) == 1:
             state_index = self.filter.state_indices[self.selected[0]]
-        else:
-            state_index = -1
+            
+            # Find a valid sprite name and frame index.
+            if state_index != 0:
+                sprite_index = self.SpriteIndex.GetValue()
+                if sprite_index != '':
+                    sprite_index = int(sprite_index)
+                    sprite_name = self.patch.sprite_names[sprite_index]
+                        
+                    sprite_frame = self.FrameIndex.GetValue()
+                    if sprite_frame != '':
+                        sprite_frame = int(sprite_frame)
+                    else:
+                        sprite_frame = 0
+                    
+                    self.SpritePreview.show_sprite(sprite_name, sprite_frame)
+                    return
         
-        if state_index != 0:
-            sprite_index = self.SpriteIndex.GetValue()
-            if sprite_index != '':
-                sprite_name = self.patch.sprite_names[int(sprite_index)]
-                    
-                sprite_frame = self.FrameIndex.GetValue()
-                if sprite_frame != '':
-                    sprite_frame = int(sprite_frame)
-                else:
-                    sprite_frame = 0
-                    
-                self.SpritePreview.show_sprite(sprite_name, sprite_frame)
+        self.SpritePreview.clear()
                 
     
     def select_sprite(self, event):
+        """
+        Shows the sprite select dialog to replace the currently selected state's sprites.
+        """
+        
+        # Only use the first selected state's sprite as the default selected value.
         if len(self.selected) == 1:
             sprite_index = int(self.SpriteIndex.GetValue())
             frame_index = int(self.FrameIndex.GetValue())
             
-            self.sprites_dialog.set_state(self.patch, self.pwads, sprite_index, frame_index=frame_index)
         elif len(self.selected) > 1:
             state = self.filter.states[self.selected[0]]
-            self.sprites_dialog.set_state(self.patch, self.pwads, state['sprite'])
+            sprite_index = state['sprite']
+            frame_index = None
             
+        self.sprites_dialog.set_state(self.patch, self.pwads, sprite_index=sprite_index, frame_index=frame_index)
         self.sprites_dialog.ShowModal()
         
         if self.sprites_dialog.selected_sprite != -1:
@@ -401,6 +483,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.SpriteIndex.ChangeValue(str(sprite_index))
             self.set_selected_property('sprite', sprite_index)
             
+            # Change the frame index if it was altered.
             if frame_index != -1:
                 self.FrameIndex.ChangeValue(str(frame_index))
                 
@@ -410,11 +493,15 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                     state['spriteFrame'] = frame_index | (state['spriteFrame'] & self.FRAMEFLAG_LIT)
             
             self.update_selected_rows()
-            self.update_colors()
+            self.update_colours()
             self.update_sprite_preview()
     
     
-    def set_value(self, event):        
+    def set_value(self, event):
+        """
+        Validates and sets a property of all currently selected states. 
+        """
+                
         window_id = event.GetId() 
         window = self.FindWindowById(window_id)
         value = utils.validate_numeric(window)
@@ -450,17 +537,24 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.update_sprite_preview()
         self.is_modified(True)
         
+        # Update sprite index colour coding.
         if window_id == windows.STATES_SPRITE:
-            self.update_colors()
+            self.update_colours()
         
 
     def set_lit(self, event):
+        """
+        Sets the lit property of all currently selected states.
+        """
+        
         self.undo_add()
         
         checked = self.AlwaysLit.GetValue()
          
         for list_index in self.selected:
             state = self.filter.states[list_index]
+            
+            # Remove lit flag, then set it only if it needs to be.
             frame_index = state['spriteFrame'] & ~self.FRAMEFLAG_LIT
             if checked == True:
                 frame_index |= self.FRAMEFLAG_LIT
@@ -472,6 +566,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
     
     def set_action(self, event):
+        """
+        Sets the action property of all currently selected states.
+        """
+        
         self.undo_add()
         
         value = self.Action.GetStringSelection()
@@ -479,30 +577,35 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         for list_index in self.selected:
             state = self.filter.states[list_index]
-            if self.patch.engine.extended == True:
+            
+            # Only allow modifying a state's action if the engine is extended, or if the state already has an action.
+            if self.patch.engine.extended == True or state['action'] != 0:
                 state['action'] = action_value
-            else:
-                if state['action'] != 0:
-                    state['action'] = action_value
-        
+            
         self.update_selected_rows()
         self.is_modified(True)
             
     
     def set_frame(self, event):
+        """
+        Sets the frame index property of all currently selected states.
+        """
+        
         self.undo_add()
         
         window = self.FindWindowById(event.GetId())
         value = utils.validate_numeric(window)
         
+        # Clamp to a valid index.
         if value < 0:
             value = 0
-        elif value > 29:
-            value = 29
+        elif value > config.MAX_SPRITE_FRAME:
+            value = config.MAX_SPRITE_FRAME
         
         if window.GetValue() != str(value):
             window.ChangeValue(str(value))
         
+        # Manually update all selected states so that the lit frame index flag can be retained.
         for list_index in self.selected:
             state = self.filter.states[list_index]
             state['spriteFrame'] = value | (state['spriteFrame'] & self.FRAMEFLAG_LIT)
@@ -513,6 +616,12 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         
     def get_action_value_from_name(self, action_name):
+        """
+        Returns an action value for an action name.
+        
+        'NULL'\0 is displayed as an empty string. Other action values depend on the type of patch.
+        """
+        
         if action_name == '':
             if self.patch.engine.extended == True:
                 return 'NULL'
@@ -523,8 +632,12 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     
     
     def get_action_name_from_value(self, action_value):
-        # Determine action string based on extended mode.
-        # NULL\0 is displayed as an empty string.
+        """
+        Returns an action name for an action value.
+        
+        'NULL'\0 is displayed as an empty string. Other action names depend on the type of patch.
+        """
+        
         if self.patch.engine.extended == True:
             if action_value == 'NULL':
                 return ''
@@ -541,6 +654,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     
     
     def get_action_index_from_value(self, action_value):
+        """
+        Returns the index in the engine's action dict of the specified action value.
+        """
+        
         if self.patch.engine.extended == True:
             return self.patch.engine.actions.keys().index(action_value)
         else:
@@ -548,6 +665,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
     
     def update_row(self, list_index):
+        """
+        Updates the list row with information of the state that it displays.
+        """
+        
         state_index = self.filter.state_indices[list_index]
         state = self.filter.states[list_index]
 
@@ -555,7 +676,6 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             lit = 'X'
         else:
             lit = ''
-            
         parameters = str(state['parameter1']) + ', ' + str(state['parameter2'])
         action = self.get_action_name_from_value(state['action'])
         
@@ -570,20 +690,26 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.SetStringItem(list_index, 8, parameters)
     
     
-    def update_colors(self):
-        color_index = 0
-        previous_sprite = 0
-        list_index = 0
+    def update_colours(self):
+        """
+        Updates all the state list row background colours.
+        
+        State list rows are colour-coded by their sprite index.
+        """
         
         self.StateList.Freeze()
         
+        colour_index = 0
+        previous_sprite = 0
+        list_index = 0
         for state in self.filter.states:
+            # Advance in the colour list.
             if state['sprite'] != previous_sprite:
-                color_index += 1
-                if color_index == len(self.SPRITE_COLOURS):
-                    color_index = 0
+                colour_index += 1
+                if colour_index == len(self.SPRITE_COLOURS):
+                    colour_index = 0
             
-            self.StateList.SetItemBackgroundColour(list_index, self.SPRITE_COLOURS[color_index])
+            self.StateList.SetItemBackgroundColour(list_index, self.SPRITE_COLOURS[colour_index])
             
             list_index += 1
             previous_sprite = state['sprite']
@@ -591,14 +717,11 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.Thaw()
     
     
-    def selection_get_state_index(self):
-        if len(self.selected) == 0:
-            return -1
-        
-        return self.filter.state_indices[self.selected[0]]
-    
-    
     def selection_clear(self):
+        """
+        Clears the list of selected states.
+        """
+        
         self.StateList.Freeze()
         
         for list_index in self.selected:
@@ -606,24 +729,24 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         self.StateList.Thaw()
     
+    
+    def frame_set(self, modifier):
+        """
+        Modifies the state frame index value by a specified amount.
+        """ 
         
-    def frame_spin_up(self, event):
         if self.FrameIndex.GetValue() == '':
             self.FrameIndex.SetValue('0')
-        else:
+        else:    
             index = int(self.FrameIndex.GetValue())
-            self.FrameIndex.SetValue(str(index + 1))
+            self.FrameIndex.SetValue(str(index + modifier))
     
-    
-    def frame_spin_down(self, event):
-        if self.FrameIndex.GetValue() == '':
-            self.FrameIndex.SetValue('0')
-        else:
-            index = int(self.FrameIndex.GetValue())
-            self.FrameIndex.SetValue(str(index - 1))
-    
-    
+        
     def goto_next_state(self, event):
+        """
+        Select the currently selected state's next state.
+        """
+        
         if len(self.selected) == 0:
             return
         
@@ -632,18 +755,48 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
     
     def goto_state_index(self, state_index, filter_type=None, filter_index=None):
+        """
+        Selects a state and applies a filter.
+        
+        @param state_index: the index of the state to select.
+        @param filter_type: the type of filter to enable. @see dehacked.statefilter.
+        @param filter_index: the index of the item to filter for. @see dehacked.statefilter.  
+        """
+        
+        # Enable the specified filter.
         if filter_type is not None:
             index = self.filter.find_index(filter_type, filter_index)
             self.filter_update(index)
             self.Filter.Select(index)
+            
+        # Disable all filtering otherwise.
         else:
             if not state_index in self.filter.state_indices:
                 self.filter_update(0)
                 self.Filter.Select(0)
             
         filter_index = self.filter.state_indices.index(state_index)
-            
+        
+        # Select only the specified state and make sure it is visible.
         self.selection_clear()
         self.StateList.Select(filter_index, True)
         self.StateList.EnsureVisible(filter_index)
         self.StateList.SetFocus()
+        
+    
+    def state_select(self, event):
+        self.selected.append(event.GetIndex())
+        self.tools_update()
+            
+    def state_deselect(self, event):
+        self.selected.remove(event.GetIndex())
+        self.tools_update()
+    
+    def filter_select(self, event):
+        self.filter_update(self.Filter.GetSelection())
+        
+    def frame_spin_up(self, event):
+        self.frame_set(1)
+        
+    def frame_spin_down(self, event):
+        self.frame_set(-1)
