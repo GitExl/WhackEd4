@@ -128,24 +128,26 @@ AMMO_RESTORE = 1779
 FRAME_CHEATS = 1780
 CHEATS_LIST = 1781
 CHEATS_RESTORE = 1782
-DIALOG_SPRITES = 1783
-SPRITES_NAMES = 1784
-SPRITES_FILTER = 1785
-SPRITES_FRAME = 1786
-SPRITES_FRAMESPIN = 1787
-SPRITES_OK = 1788
-SPRITES_CANCEL = 1789
-DIALOG_PATCHINFO = 1790
-PATCHINFO_TOOLBAR = 1791
-PATCHINFO_TOOLBAR_ADD = 1792
-PATCHINFO_TOOLBAR_REMOVE = 1793
-DIALOG_START = 1794
-START_NEW = 1795
-START_OPEN = 1796
-START_RECENT = 1797
-START_CANCEL = 1798
-DIALOG_ABOUT = 1799
-ABOUT_OK = 1800
+FRAME_MISC = 1783
+FRAME_PAR = 1784
+DIALOG_SPRITES = 1785
+SPRITES_NAMES = 1786
+SPRITES_FILTER = 1787
+SPRITES_FRAME = 1788
+SPRITES_FRAMESPIN = 1789
+SPRITES_OK = 1790
+SPRITES_CANCEL = 1791
+DIALOG_PATCHINFO = 1792
+PATCHINFO_TOOLBAR = 1793
+PATCHINFO_TOOLBAR_ADD = 1794
+PATCHINFO_TOOLBAR_REMOVE = 1795
+DIALOG_START = 1796
+START_NEW = 1797
+START_OPEN = 1798
+START_RECENT = 1799
+START_CANCEL = 1800
+DIALOG_ABOUT = 1801
+ABOUT_OK = 1802
 
 ###########################################################################
 ## Class MainFrameBase
@@ -886,7 +888,6 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.Bind( wx.EVT_ACTIVATE, self.activate )
 		self.ThingNames.Bind( wx.EVT_LISTBOX, self.thing_select )
 		self.ThingNames.Bind( wx.EVT_LISTBOX_DCLICK, self.thing_rename )
 		self.ThingId.Bind( wx.EVT_LEFT_UP, self.focus_text )
@@ -995,9 +996,6 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def activate( self, event ):
-		pass
-	
 	def thing_select( self, event ):
 		pass
 	
@@ -1489,8 +1487,6 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.Bind( wx.EVT_CLOSE, self.close )
-		self.Bind( wx.EVT_SIZE, self.update_workspace_data )
 		self.Priority.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Priority.Bind( wx.EVT_TEXT, self.set_value )
 		self.PrioritySpinner.Bind( wx.EVT_SPIN_DOWN, self.priority_spin_down )
@@ -1505,12 +1501,6 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def close( self, event ):
-		pass
-	
-	def update_workspace_data( self, event ):
-		pass
-	
 	def focus_text( self, event ):
 		pass
 	
@@ -1560,8 +1550,6 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.Bind( wx.EVT_CLOSE, self.close )
-		self.Bind( wx.EVT_SIZE, self.update_workspace_data )
 		self.StringList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.string_edit )
 	
 	def __del__( self ):
@@ -1569,12 +1557,6 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def close( self, event ):
-		pass
-	
-	def update_workspace_data( self, event ):
-		pass
-	
 	def string_edit( self, event ):
 		pass
 	
@@ -1759,35 +1741,33 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.Bind( wx.EVT_CLOSE, self.close )
-		self.Bind( wx.EVT_SIZE, self.update_workspace_data )
 		self.WeaponList.Bind( wx.EVT_LISTBOX, self.weapon_select )
 		self.WeaponStateSelect.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeaponStateSelect.Bind( wx.EVT_TEXT, self.set_state_external )
+		self.WeaponStateSelect.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateSelectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateSelectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateSelectName.Bind( wx.EVT_LEFT_UP, self.goto_state )
 		self.WeaponStateSelectSet.Bind( wx.EVT_BUTTON, self.set_state )
 		self.WeaponStateDeselect.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeaponStateDeselect.Bind( wx.EVT_TEXT, self.set_state_external )
+		self.WeaponStateDeselect.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateDeselectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEFT_UP, self.goto_state )
 		self.WeaponStateDeselectSet.Bind( wx.EVT_BUTTON, self.set_state )
 		self.WeapnStateBob.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeapnStateBob.Bind( wx.EVT_TEXT, self.set_state_external )
+		self.WeapnStateBob.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateBobName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateBobName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateBobName.Bind( wx.EVT_LEFT_UP, self.goto_state )
 		self.WeaponStateBobSet.Bind( wx.EVT_BUTTON, self.set_state )
 		self.WeaponStateFire.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeaponStateFire.Bind( wx.EVT_TEXT, self.set_state_external )
+		self.WeaponStateFire.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateFireName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateFireName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateFireName.Bind( wx.EVT_LEFT_UP, self.goto_state )
 		self.WeaponStateFireSet.Bind( wx.EVT_BUTTON, self.set_state )
 		self.WeaponStateMuzzle.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeaponStateMuzzle.Bind( wx.EVT_TEXT, self.set_state_external )
+		self.WeaponStateMuzzle.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEFT_UP, self.goto_state )
@@ -1798,19 +1778,13 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def close( self, event ):
-		pass
-	
-	def update_workspace_data( self, event ):
-		pass
-	
 	def weapon_select( self, event ):
 		pass
 	
 	def focus_text( self, event ):
 		pass
 	
-	def set_state_external( self, event ):
+	def set_state_index( self, event ):
 		pass
 	
 	def enter_state( self, event ):
@@ -1912,8 +1886,6 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.Bind( wx.EVT_CLOSE, self.close )
-		self.Bind( wx.EVT_SIZE, self.update_workspace_data )
 		self.AmmoList.Bind( wx.EVT_LISTBOX, self.ammo_select )
 		self.AmmoMaximum.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.AmmoMaximum.Bind( wx.EVT_TEXT, self.set_value )
@@ -1925,12 +1897,6 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def close( self, event ):
-		pass
-	
-	def update_workspace_data( self, event ):
-		pass
-	
 	def ammo_select( self, event ):
 		pass
 	
@@ -1957,7 +1923,7 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.CheatsList = wx.ListCtrl( self, CHEATS_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_EDIT_LABELS|wx.LC_HRULES|wx.LC_ICON|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		self.CheatsList = wx.ListCtrl( self, CHEATS_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_EDIT_LABELS|wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
 		bSizer41.Add( self.CheatsList, 1, wx.EXPAND, 5 )
 		
 		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
@@ -1978,8 +1944,6 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.Bind( wx.EVT_CLOSE, self.close )
-		self.Bind( wx.EVT_SIZE, self.update_workspace_data )
 		self.CheatsList.Bind( wx.EVT_LIST_BEGIN_LABEL_EDIT, self.cheat_edit_start )
 		self.CheatsList.Bind( wx.EVT_LIST_END_LABEL_EDIT, self.cheat_edit_end )
 		self.Restore.Bind( wx.EVT_BUTTON, self.cheat_restore )
@@ -1989,12 +1953,6 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def close( self, event ):
-		pass
-	
-	def update_workspace_data( self, event ):
-		pass
-	
 	def cheat_edit_start( self, event ):
 		pass
 	
@@ -2002,6 +1960,50 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 		pass
 	
 	def cheat_restore( self, event ):
+		pass
+	
+
+###########################################################################
+## Class MiscFrameBase
+###########################################################################
+
+class MiscFrameBase ( wx.MDIChildFrame ):
+	
+	def __init__( self, parent ):
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_MISC, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 555,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		
+		self.SetSizeHintsSz( wx.Size( 350,380 ), wx.DefaultSize )
+		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		
+		bSizer41 = wx.BoxSizer( wx.VERTICAL )
+		
+		
+		self.SetSizer( bSizer41 )
+		self.Layout()
+	
+	def __del__( self ):
+		pass
+	
+
+###########################################################################
+## Class ParFrameBase
+###########################################################################
+
+class ParFrameBase ( wx.MDIChildFrame ):
+	
+	def __init__( self, parent ):
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_PAR, title = u"Par times", pos = wx.DefaultPosition, size = wx.Size( 555,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		
+		self.SetSizeHintsSz( wx.Size( 350,380 ), wx.DefaultSize )
+		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		
+		bSizer41 = wx.BoxSizer( wx.VERTICAL )
+		
+		
+		self.SetSizer( bSizer41 )
+		self.Layout()
+	
+	def __del__( self ):
 		pass
 	
 

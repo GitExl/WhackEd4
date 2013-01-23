@@ -143,6 +143,9 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         Called when this editor window is activated by the user.
         """
         
+        # Call the editor mixin function that we are overriding.
+        editormixin.EditorMixin.activate(self, event)
+        
         # Update the properties being displayed by this window, in case state or sound names have changed.
         if self.IsBeingDeleted() == False:
             self.update_properties()

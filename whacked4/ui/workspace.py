@@ -74,6 +74,9 @@ class Workspace():
         """
         
         for window_name, window in workspace_windows.iteritems():
+            if window_name not in self.windows:
+                continue
+            
             window_data = self.windows[window_name]
             
             # Set window dimensions.

@@ -9,7 +9,7 @@ paths.append('whacked4')
 build_exe_options = {
 	'packages': [],
 	'path': paths,
-	'include_files': ['res', 'cfg', 'LICENSE', 'README'],
+	'include_files': ['res', 'cfg', 'LICENSE', 'README.md'],
 	'optimize': 2,
 	'compressed': True,
 	'icon': 'res/icon-hatchet.ico',

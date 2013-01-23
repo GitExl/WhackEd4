@@ -5,7 +5,8 @@ from app import config
 from collections import OrderedDict
 from dehacked import engine, patch
 from doom import wad, wadlist
-from ui import windows, thingframe, statesframe, patchinfodialog, workspace, startdialog, aboutdialog
+from ui import windows, thingframe, statesframe, patchinfodialog, workspace, startdialog, aboutdialog, soundsframe, \
+    stringsframe, weaponsframe, ammoframe, cheatsframe, miscframe, parframe
 import glob
 import os.path
 import shutil
@@ -45,15 +46,36 @@ class MainFrame(windows.MainFrameBase):
         # Window\ID relationships.
         self.editor_windows = {
             windows.MAIN_TOOL_THINGS: thingframe.ThingFrame(self),
-            windows.MAIN_TOOL_STATES: statesframe.StatesFrame(self) 
+            windows.MAIN_TOOL_STATES: statesframe.StatesFrame(self),
+            windows.MAIN_TOOL_SOUNDS: soundsframe.SoundsFrame(self),
+            windows.MAIN_TOOL_STRINGS: stringsframe.StringsFrame(self),
+            windows.MAIN_TOOL_WEAPONS: weaponsframe.WeaponsFrame(self),
+            windows.MAIN_TOOL_AMMO: ammoframe.AmmoFrame(self),
+            windows.MAIN_TOOL_CHEATS: cheatsframe.CheatsFrame(self),
+            windows.MAIN_TOOL_MISC: miscframe.MiscFrame(self),
+            windows.MAIN_TOOL_PAR: parframe.ParFrame(self)
         }
         self.menu_windows = {
             windows.MAIN_MENU_THINGS: windows.MAIN_TOOL_THINGS,
             windows.MAIN_MENU_STATES: windows.MAIN_TOOL_STATES,
+            windows.MAIN_MENU_SOUNDS: windows.MAIN_TOOL_SOUNDS,
+            windows.MAIN_MENU_STRINGS: windows.MAIN_TOOL_STRINGS,
+            windows.MAIN_MENU_WEAPONS: windows.MAIN_TOOL_WEAPONS,
+            windows.MAIN_MENU_AMMO: windows.MAIN_TOOL_AMMO,
+            windows.MAIN_MENU_CHEATS: windows.MAIN_TOOL_CHEATS,
+            windows.MAIN_MENU_MISC: windows.MAIN_TOOL_MISC,
+            windows.MAIN_MENU_PAR: windows.MAIN_TOOL_PAR
         }
         self.workspace_windows = {
             'things': self.editor_windows[windows.MAIN_TOOL_THINGS],
-            'states': self.editor_windows[windows.MAIN_TOOL_STATES]
+            'states': self.editor_windows[windows.MAIN_TOOL_STATES],
+            'sounds': self.editor_windows[windows.MAIN_TOOL_SOUNDS],
+            'strings': self.editor_windows[windows.MAIN_TOOL_STRINGS],
+            'weapons': self.editor_windows[windows.MAIN_TOOL_WEAPONS],
+            'ammo': self.editor_windows[windows.MAIN_TOOL_AMMO],
+            'cheats': self.editor_windows[windows.MAIN_TOOL_CHEATS],
+            'misc': self.editor_windows[windows.MAIN_TOOL_MISC],
+            'par': self.editor_windows[windows.MAIN_TOOL_PAR]
         }
         
         # Reset editor window states.
@@ -492,7 +514,17 @@ class MainFrame(windows.MainFrameBase):
                 return tool_id
             
         return wx.NOT_FOUND
+    
+    
+    def editor_window_activate(self, window):
+        """
+        Called by a window that is being activated.
+        """
         
+        enable_cp = ('edit_copy' in window.__dict__)
+        self.MenuEditCopy.Enable(enable_cp)
+        self.MenuEditPaste.Enable(enable_cp)
+    
         
     def editor_window_show(self, tool_id):
         """
@@ -567,28 +599,20 @@ class MainFrame(windows.MainFrameBase):
         for tool_id in self.editor_windows.iterkeys():
             self.ToolBar.EnableTool(tool_id, enabled)
         
-        # TODO: Remove when all editors are implemented.
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_AMMO, False)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_CHEATS, False)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_STRINGS, False)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_WEAPONS, False)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_SOUNDS, False)
-        self.ToolBar.EnableTool(windows.MAIN_TOOL_MISC, False)
-        
         # Set menu states.
         self.MenuViewThings.Enable(enabled)
         self.MenuViewStates.Enable(enabled)
-        self.MenuViewAmmo.Enable(False)
-        self.MenuViewCheats.Enable(False)
-        self.MenuViewStrings.Enable(False)
-        self.MenuViewWeapons.Enable(False)
-        self.MenuViewSounds.Enable(False)
-        self.MenuViewMiscellaneous.Enable(False)
+        self.MenuViewAmmo.Enable(enabled)
+        self.MenuViewCheats.Enable(enabled)
+        self.MenuViewStrings.Enable(enabled)
+        self.MenuViewWeapons.Enable(enabled)
+        self.MenuViewSounds.Enable(enabled)
+        self.MenuViewMiscellaneous.Enable(enabled)
         self.MenuViewPatchSettings.Enable(enabled)
         
         if self.patch is not None and self.patch.extended == True:
-            self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, False)
-            self.MenuViewPar.Enable(False)
+            self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, True)
+            self.MenuViewPar.Enable(True)
         else:
             self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, False)
             self.MenuViewPar.Enable(False)

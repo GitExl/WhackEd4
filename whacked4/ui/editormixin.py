@@ -25,7 +25,7 @@ class EditorMixin():
         
         self.Bind(wx.EVT_MOVE, self.workspace_update_data)
         self.Bind(wx.EVT_SIZE, self.workspace_update_data)
-        
+        self.Bind(wx.EVT_ACTIVATE, self.activate)
         self.Bind(wx.EVT_CLOSE, self.close)
         
         
@@ -146,8 +146,16 @@ class EditorMixin():
         
         utils.focus_text(event, self)
         event.Skip()
-            
         
+        
+    def activate(self, event):
+        """
+        Called when this window is activated.
+        """
+        
+        self.GetParent().editor_window_activate(self)
+
+
     def close(self, event):
         """
         Called when this editor window is closed.
