@@ -120,34 +120,43 @@ WEAPON_STATESET_MUZZLE = 1771
 WEAPON_RENAME = 1772
 WEAPON_RESTORE = 1773
 FRAME_AMMO = 1774
-AMMO_LSIT = 1775
+AMMO_LIST = 1775
 AMMO_MAXIMUM = 1776
 AMMO_PICKUP = 1777
 AMMO_RENAME = 1778
 AMMO_RESTORE = 1779
 FRAME_CHEATS = 1780
 CHEATS_LIST = 1781
-CHEATS_RESTORE = 1782
-FRAME_MISC = 1783
-FRAME_PAR = 1784
-DIALOG_SPRITES = 1785
-SPRITES_NAMES = 1786
-SPRITES_FILTER = 1787
-SPRITES_FRAME = 1788
-SPRITES_FRAMESPIN = 1789
-SPRITES_OK = 1790
-SPRITES_CANCEL = 1791
-DIALOG_PATCHINFO = 1792
-PATCHINFO_TOOLBAR = 1793
-PATCHINFO_TOOLBAR_ADD = 1794
-PATCHINFO_TOOLBAR_REMOVE = 1795
-DIALOG_START = 1796
-START_NEW = 1797
-START_OPEN = 1798
-START_RECENT = 1799
-START_CANCEL = 1800
-DIALOG_ABOUT = 1801
-ABOUT_OK = 1802
+CHEATS_INFIGHT = 1782
+CHEATS_RESTORE = 1783
+FRAME_MISC = 1784
+MISC_LIST = 1785
+MISC_RESTORE = 1786
+FRAME_PAR = 1787
+PAR_LIST = 1788
+PAR_EPISODE = 1789
+PAR_MAP = 1790
+PAR_TIME = 1791
+PAR_RENAME = 1792
+PAR_RESTORE = 1793
+DIALOG_SPRITES = 1794
+SPRITES_NAMES = 1795
+SPRITES_FILTER = 1796
+SPRITES_FRAME = 1797
+SPRITES_FRAMESPIN = 1798
+SPRITES_OK = 1799
+SPRITES_CANCEL = 1800
+DIALOG_PATCHINFO = 1801
+PATCHINFO_TOOLBAR = 1802
+PATCHINFO_TOOLBAR_ADD = 1803
+PATCHINFO_TOOLBAR_REMOVE = 1804
+DIALOG_START = 1805
+START_NEW = 1806
+START_OPEN = 1807
+START_RECENT = 1808
+START_CANCEL = 1809
+DIALOG_ABOUT = 1810
+ABOUT_OK = 1811
 
 ###########################################################################
 ## Class MainFrameBase
@@ -1831,36 +1840,35 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 class AmmoFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_AMMO, title = u"Ammo", pos = wx.DefaultPosition, size = wx.Size( 350,250 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_AMMO, title = u"Ammo", pos = wx.DefaultPosition, size = wx.Size( 397,250 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
 		self.SetSizeHintsSz( wx.Size( 350,250 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		AmmoListChoices = []
-		self.AmmoList = wx.ListBox( self, AMMO_LSIT, wx.DefaultPosition, wx.DefaultSize, AmmoListChoices, wx.LB_HSCROLL|wx.SUNKEN_BORDER )
-		bSizer41.Add( self.AmmoList, 1, wx.EXPAND, 5 )
+		self.Ammo = wx.ListCtrl( self, AMMO_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		bSizer41.Add( self.Ammo, 1, wx.ALL|wx.EXPAND, 0 )
 		
 		bSizer139 = wx.BoxSizer( wx.VERTICAL )
 		
-		gSizer1 = wx.GridSizer( 2, 2, 3, 0 )
+		gSizer1 = wx.GridSizer( 2, 2, 3, 12 )
 		
 		self.m_staticText88 = wx.StaticText( self, wx.ID_ANY, u"Maximum ammo", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText88.Wrap( -1 )
 		gSizer1.Add( self.m_staticText88, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.AmmoMaximum = wx.TextCtrl( self, AMMO_MAXIMUM, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
-		self.AmmoMaximum.SetMaxLength( 6 ) 
-		gSizer1.Add( self.AmmoMaximum, 0, wx.ALL|wx.EXPAND, 5 )
+		self.Maximum = wx.TextCtrl( self, AMMO_MAXIMUM, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.Maximum.SetMaxLength( 6 ) 
+		gSizer1.Add( self.Maximum, 0, wx.ALL|wx.EXPAND, 3 )
 		
 		self.m_staticText881 = wx.StaticText( self, wx.ID_ANY, u"Pickup ammo", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText881.Wrap( -1 )
 		gSizer1.Add( self.m_staticText881, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.AmmoPickup = wx.TextCtrl( self, AMMO_PICKUP, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
-		self.AmmoPickup.SetMaxLength( 6 ) 
-		gSizer1.Add( self.AmmoPickup, 0, wx.ALL|wx.EXPAND, 5 )
+		self.Pickup = wx.TextCtrl( self, AMMO_PICKUP, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.Pickup.SetMaxLength( 6 ) 
+		gSizer1.Add( self.Pickup, 0, wx.ALL|wx.EXPAND, 3 )
 		
 		
 		bSizer139.Add( gSizer1, 0, wx.ALL, 6 )
@@ -1886,20 +1894,16 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.AmmoList.Bind( wx.EVT_LISTBOX, self.ammo_select )
-		self.AmmoMaximum.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.AmmoMaximum.Bind( wx.EVT_TEXT, self.set_value )
-		self.AmmoPickup.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.AmmoPickup.Bind( wx.EVT_TEXT, self.set_value )
+		self.Maximum.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.Maximum.Bind( wx.EVT_TEXT, self.set_value )
+		self.Pickup.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.Pickup.Bind( wx.EVT_TEXT, self.set_value )
 	
 	def __del__( self ):
 		pass
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def ammo_select( self, event ):
-		pass
-	
 	def focus_text( self, event ):
 		pass
 	
@@ -1923,10 +1927,13 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.CheatsList = wx.ListCtrl( self, CHEATS_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_EDIT_LABELS|wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		self.CheatsList = wx.ListCtrl( self, CHEATS_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
 		bSizer41.Add( self.CheatsList, 1, wx.EXPAND, 5 )
 		
 		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.Infight = wx.CheckBox( self, CHEATS_INFIGHT, u" Monsters infight", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer158.Add( self.Infight, 0, wx.ALL|wx.EXPAND, 6 )
 		
 		
 		bSizer158.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
@@ -1970,18 +1977,42 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 class MiscFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_MISC, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 555,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_MISC, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 406,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
 		self.SetSizeHintsSz( wx.Size( 350,380 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
 		
+		self.MiscList = wx.ListCtrl( self, MISC_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		bSizer41.Add( self.MiscList, 1, wx.EXPAND, 0 )
+		
+		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		
+		bSizer158.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		
+		self.Restore = wx.Button( self, MISC_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Restore.SetMinSize( wx.Size( 120,28 ) )
+		
+		bSizer158.Add( self.Restore, 0, wx.ALL, 6 )
+		
+		
+		bSizer41.Add( bSizer158, 0, wx.EXPAND, 5 )
+		
 		
 		self.SetSizer( bSizer41 )
 		self.Layout()
+		
+		# Connect Events
+		self.Restore.Bind( wx.EVT_BUTTON, self.cheat_restore )
 	
 	def __del__( self ):
+		pass
+	
+	
+	# Virtual event handlers, overide them in your derived class
+	def cheat_restore( self, event ):
 		pass
 	
 
@@ -1992,19 +2023,89 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 class ParFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_PAR, title = u"Par times", pos = wx.DefaultPosition, size = wx.Size( 555,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_PAR, title = u"Par times", pos = wx.DefaultPosition, size = wx.Size( 362,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
 		self.SetSizeHintsSz( wx.Size( 350,380 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
-		bSizer41 = wx.BoxSizer( wx.VERTICAL )
+		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.ParList = wx.ListCtrl( self, PAR_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		bSizer41.Add( self.ParList, 1, wx.EXPAND, 5 )
+		
+		bSizer139 = wx.BoxSizer( wx.VERTICAL )
+		
+		gSizer1 = wx.GridSizer( 3, 2, 3, 0 )
+		
+		self.m_staticText88 = wx.StaticText( self, wx.ID_ANY, u"Episode", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText88.Wrap( -1 )
+		gSizer1.Add( self.m_staticText88, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		self.Episode = wx.TextCtrl( self, PAR_EPISODE, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.Episode.SetMaxLength( 6 ) 
+		gSizer1.Add( self.Episode, 0, wx.ALL|wx.EXPAND, 3 )
+		
+		self.m_staticText881 = wx.StaticText( self, wx.ID_ANY, u"Map", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText881.Wrap( -1 )
+		gSizer1.Add( self.m_staticText881, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		self.Map = wx.TextCtrl( self, PAR_MAP, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.Map.SetMaxLength( 6 ) 
+		gSizer1.Add( self.Map, 0, wx.ALL, 3 )
+		
+		self.m_staticText8811 = wx.StaticText( self, wx.ID_ANY, u"Time", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText8811.Wrap( -1 )
+		gSizer1.Add( self.m_staticText8811, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		self.Time = wx.TextCtrl( self, PAR_TIME, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.Time.SetMaxLength( 6 ) 
+		gSizer1.Add( self.Time, 0, wx.ALL, 3 )
+		
+		
+		bSizer139.Add( gSizer1, 0, wx.ALL, 6 )
+		
+		
+		bSizer139.AddSpacer( ( 0, 0), 1, wx.EXPAND, 0 )
+		
+		self.Rename = wx.Button( self, PAR_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Rename.SetMinSize( wx.Size( -1,28 ) )
+		
+		bSizer139.Add( self.Rename, 0, wx.ALL|wx.EXPAND, 6 )
+		
+		self.Restore = wx.Button( self, PAR_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Restore.SetMinSize( wx.Size( -1,28 ) )
+		
+		bSizer139.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 6 )
+		
+		
+		bSizer41.Add( bSizer139, 0, wx.ALL|wx.EXPAND, 6 )
 		
 		
 		self.SetSizer( bSizer41 )
 		self.Layout()
+		
+		# Connect Events
+		self.Episode.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.Episode.Bind( wx.EVT_TEXT, self.set_value )
+		self.Map.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.Map.Bind( wx.EVT_TEXT, self.set_value )
+		self.Time.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.Time.Bind( wx.EVT_TEXT, self.set_value )
 	
 	def __del__( self ):
 		pass
+	
+	
+	# Virtual event handlers, overide them in your derived class
+	def focus_text( self, event ):
+		pass
+	
+	def set_value( self, event ):
+		pass
+	
+	
+	
+	
 	
 
 ###########################################################################
