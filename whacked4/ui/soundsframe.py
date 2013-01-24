@@ -141,6 +141,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         
         self.patch.sounds[self.selected_index] = copy.deepcopy(self.patch.engine.sounds[self.selected_index])
         self.soundlist_update_row(self.selected_index)
+        self.is_modified(True)
         
         
     def sound_play(self, event):
@@ -170,6 +171,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             sound['isSingular'] = 0
             
         self.soundlist_update_row(self.selected_index)
+        self.is_modified(True)
 
 
     def set_priority(self, event):

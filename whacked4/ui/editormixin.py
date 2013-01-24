@@ -2,7 +2,8 @@
 #coding=utf8
 
 from app import config
-from ui import utils
+from dehacked import statefilter
+from ui import utils, windows
 import wx
 
 
@@ -163,3 +164,17 @@ class EditorMixin:
         
         self.Maximize(False)
         self.GetParent().editor_window_closed(self)
+
+        
+    def goto_state_index(self, state_index, filter_type, filter_index):
+        """
+        Displays a state in the states editor, and enabled a filter.
+        """
+                
+        parent = self.GetParent()
+        parent.editor_window_show(windows.MAIN_TOOL_STATES)
+
+        # Set selected state and display the state editor window.
+        states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
+        states_frame.goto_state_index(state_index, filter_type=filter_type, filter_index=filter_index)
+        states_frame.Raise()

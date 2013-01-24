@@ -1642,7 +1642,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		AmmoTypeChoices = []
 		self.AmmoType = wx.Choice( self, WEAPON_AMMOTYPE, wx.DefaultPosition, wx.DefaultSize, AmmoTypeChoices, 0 )
 		self.AmmoType.SetSelection( 0 )
-		gSizer1.Add( self.AmmoType, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		gSizer1.Add( self.AmmoType, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.FIXED_MINSIZE, 3 )
 		
 		self.m_staticText881 = wx.StaticText( self, wx.ID_ANY, u"Select state", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText881.Wrap( -1 )
@@ -1700,9 +1700,9 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer1242 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.WeapnStateBob = wx.TextCtrl( self, WEAPON_STATE_BOB, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
-		self.WeapnStateBob.SetMaxLength( 4 ) 
-		bSizer1242.Add( self.WeapnStateBob, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		self.WeaponStateBob = wx.TextCtrl( self, WEAPON_STATE_BOB, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.WeaponStateBob.SetMaxLength( 4 ) 
+		bSizer1242.Add( self.WeaponStateBob, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		self.WeaponStateBobName = wx.StaticText( self, WEAPON_STATENAME_BOB, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateBobName.Wrap( -1 )
@@ -1794,6 +1794,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		# Connect Events
 		self.WeaponList.Bind( wx.EVT_LISTBOX, self.weapon_select )
+		self.AmmoType.Bind( wx.EVT_CHOICE, self.set_ammo )
 		self.WeaponStateSelect.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateSelect.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateSelectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
@@ -1806,8 +1807,8 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEFT_UP, self.goto_state )
 		self.WeaponStateDeselectSet.Bind( wx.EVT_BUTTON, self.set_state )
-		self.WeapnStateBob.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.WeapnStateBob.Bind( wx.EVT_TEXT, self.set_state_index )
+		self.WeaponStateBob.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.WeaponStateBob.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateBobName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateBobName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateBobName.Bind( wx.EVT_LEFT_UP, self.goto_state )
@@ -1824,6 +1825,8 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEFT_UP, self.goto_state )
 		self.WeaponStateMuzzleSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.Rename.Bind( wx.EVT_BUTTON, self.weapon_rename )
+		self.Restore.Bind( wx.EVT_BUTTON, self.weapon_restore )
 	
 	def __del__( self ):
 		pass
@@ -1831,6 +1834,9 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	# Virtual event handlers, overide them in your derived class
 	def weapon_select( self, event ):
+		pass
+	
+	def set_ammo( self, event ):
 		pass
 	
 	def focus_text( self, event ):
@@ -1874,6 +1880,12 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	
+	def weapon_rename( self, event ):
+		pass
+	
+	def weapon_restore( self, event ):
+		pass
 	
 
 ###########################################################################

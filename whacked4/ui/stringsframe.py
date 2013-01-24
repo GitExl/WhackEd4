@@ -120,6 +120,8 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
                 if len(dup) == 4:
                     self.patch.update_string_externals(self.patch.engine.sprite_names, self.patch.sprite_names)
             
+            self.is_modified(True)
+            
             
     def string_restore(self, event):
         """
@@ -133,6 +135,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         dup = copy.copy(self.patch.engine.strings[string_key])
         self.patch.strings[string_key] = dup
         self.stringlist_update_row(self.selected_index)
+        self.is_modified(True)
         
         
     def get_string_key(self, string_index):

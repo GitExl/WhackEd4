@@ -362,27 +362,6 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         self.ThingFlags.SetToolTipString(tip)
     
     
-    def goto_state(self, event):
-        """
-        Changes the selected state in the states editor window to the one of a thing's state property.
-        """
-        
-        parent = self.GetParent()
-        parent.editor_window_show(windows.MAIN_TOOL_STATES)
-
-        key = self.PROPS_STATENAMES[event.GetId()]        
-        state_index = self.current_thing['state' + key]
-        
-        # Prepare a filter for the currently selected thing.
-        filter_type = statefilter.FILTER_TYPE_THING
-        filter_index = self.current_list_index
-        
-        # Set selected state and display the state editor window.
-        states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
-        states_frame.goto_state_index(state_index, filter_type=filter_type, filter_index=filter_index)
-        states_frame.Raise()
-        
-        
     def set_state_external(self, event):
         """
         Sets a state property based on the state that is currently selected in the states editor.
@@ -454,3 +433,15 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         
         self.update_properties()
         self.is_modified(True)
+        
+    
+    def goto_state(self, event):
+        """
+        Changes the selected state in the states editor window to the one of a thing's state property.
+        """
+        
+        key = self.PROPS_STATENAMES[event.GetId()]
+        state_index = self.current_thing['state' + key]
+        
+        self.goto_state_index(state_index, statefilter.FILTER_TYPE_THING, self.current_list_index)
+    
