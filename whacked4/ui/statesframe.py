@@ -373,17 +373,16 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 sprite_name = self.patch.sprite_names[state['sprite']]
             sprite_frame = state['spriteFrame'] & ~self.FRAMEFLAG_LIT
             
-            action_index = self.get_action_index_from_value(state['action'])
-            
             self.SpriteIndex.ChangeValue(str(state['sprite']))
             self.SpriteName.SetLabel(sprite_name)
             self.FrameIndex.ChangeValue(str(sprite_frame))
             self.NextStateIndex.ChangeValue(str(state['nextState']))
             self.NextStateName.SetLabel(self.patch.get_state_name(state['nextState']))
             self.Duration.ChangeValue(str(state['duration']))
-            self.Action.SetSelection(action_index)
             self.Parameter1.ChangeValue(str(state['parameter1']))
             self.Parameter2.ChangeValue(str(state['parameter2']))
+            
+            self.set_selected_action(state['action'])
             
             if state['spriteFrame'] & self.FRAMEFLAG_LIT != 0:
                 self.AlwaysLit.SetValue(True)
@@ -643,15 +642,16 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         return None
     
     
-    def get_action_index_from_value(self, action_value):
+    def set_selected_action(self, action_value):
         """
-        Returns the index in the engine's action dict of the specified action value.
+        Sets the action choice box' index to reflect the specified action value.
         """
         
-        if self.patch.engine.extended == True:
-            return self.patch.engine.actions.keys().index(action_value)
-        else:
-            return self.patch.engine.actions.keys().index(str(action_value)) 
+        action_name = self.get_action_name_from_value(action_value)
+        for index in range(self.Action.GetCount()):
+            if self.Action.GetString(index) == action_name:
+                self.Action.Select(index)
+                return 
         
     
     def update_row(self, list_index):

@@ -1,6 +1,5 @@
 Beta
 - After non-extended strings have been edited, update sound and sprite names.
-- Sort action choice box alphabetically.
 - Add editor iconography.
 - Add strings editor.
 - Add weapons editor.

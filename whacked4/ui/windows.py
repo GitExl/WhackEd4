@@ -1265,7 +1265,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		bSizer521211.Add( self.m_staticText54, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		ActionChoices = []
-		self.Action = wx.Choice( self, STATES_ACTION, wx.DefaultPosition, wx.DefaultSize, ActionChoices, 0 )
+		self.Action = wx.Choice( self, STATES_ACTION, wx.DefaultPosition, wx.DefaultSize, ActionChoices, wx.CB_SORT )
 		self.Action.SetSelection( 0 )
 		bSizer521211.Add( self.Action, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
