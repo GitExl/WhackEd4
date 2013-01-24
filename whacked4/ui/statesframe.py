@@ -56,16 +56,6 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.SpriteName
         ]
         
-        # Retain the system font size for the states list.
-        font_size = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT).GetPointSize()
-        self.list_font = wx.Font(
-            font_size,
-            wx.FONTFAMILY_DEFAULT,
-            wx.FONTSTYLE_NORMAL,
-            wx.FONTWEIGHT_NORMAL,
-            faceName=config.FONT_MONOSPACED
-        )
-        
         # Mix sprite color coding colours with the default system colours.
         self.mix_colours()
 
@@ -309,7 +299,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         list_index = 0
         for state_index in self.filter.state_indices:
             self.StateList.InsertStringItem(list_index, str(state_index))
-            self.StateList.SetItemFont(list_index, self.list_font)
+            self.StateList.SetItemFont(list_index, config.FONT_MONOSPACED)
             
             self.update_row(list_index)
             

@@ -9919,10 +9919,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_SOUNDS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">560,480</property>
+            <property name="minimum_size">382,480</property>
             <property name="name">SoundsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">560,480</property>
+            <property name="size">382,480</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Sounds</property>
@@ -10156,7 +10156,7 @@
                                         <event name="OnRightUp"></event>
                                         <event name="OnSetFocus"></event>
                                         <event name="OnSize"></event>
-                                        <event name="OnText">set_value</event>
+                                        <event name="OnText">set_priority</event>
                                         <event name="OnTextEnter"></event>
                                         <event name="OnTextMaxLen"></event>
                                         <event name="OnTextURL"></event>
@@ -10580,7 +10580,7 @@
                         <property name="resize">Resizable</property>
                         <property name="show">1</property>
                         <property name="size"></property>
-                        <property name="style">wxLC_HRULES|wxLC_NO_SORT_HEADER|wxLC_REPORT</property>
+                        <property name="style">wxLC_HRULES|wxLC_NO_SORT_HEADER|wxLC_REPORT|wxLC_SINGLE_SEL</property>
                         <property name="subclass">; </property>
                         <property name="toolbar_pane">0</property>
                         <property name="tooltip"></property>
@@ -10618,7 +10618,7 @@
                         <event name="OnListItemDeselected">sound_deselect</event>
                         <event name="OnListItemFocused"></event>
                         <event name="OnListItemMiddleClick"></event>
-                        <event name="OnListItemRightClick"></event>
+                        <event name="OnListItemRightClick">sound_play</event>
                         <event name="OnListItemSelected">sound_select</event>
                         <event name="OnListKeyDown"></event>
                         <event name="OnMiddleDClick"></event>
@@ -13131,7 +13131,7 @@
                 </object>
             </object>
         </object>
-        <object class="Frame" expanded="1">
+        <object class="Frame" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg">wxSYS_COLOUR_BTNFACE</property>
@@ -13193,16 +13193,16 @@
             <event name="OnSetFocus"></event>
             <event name="OnSize"></event>
             <event name="OnUpdateUI"></event>
-            <object class="wxBoxSizer" expanded="1">
+            <object class="wxBoxSizer" expanded="0">
                 <property name="minimum_size"></property>
                 <property name="name">bSizer41</property>
                 <property name="orient">wxHORIZONTAL</property>
                 <property name="permission">none</property>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">0</property>
                     <property name="flag">wxALL|wxEXPAND</property>
                     <property name="proportion">1</property>
-                    <object class="wxListCtrl" expanded="1">
+                    <object class="wxListCtrl" expanded="0">
                         <property name="BottomDockable">1</property>
                         <property name="LeftDockable">1</property>
                         <property name="RightDockable">1</property>
@@ -13303,20 +13303,20 @@
                         <event name="OnUpdateUI"></event>
                     </object>
                 </object>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">6</property>
                     <property name="flag">wxALL|wxEXPAND</property>
                     <property name="proportion">0</property>
-                    <object class="wxBoxSizer" expanded="1">
+                    <object class="wxBoxSizer" expanded="0">
                         <property name="minimum_size"></property>
                         <property name="name">bSizer139</property>
                         <property name="orient">wxVERTICAL</property>
                         <property name="permission">none</property>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">6</property>
                             <property name="flag">wxALL</property>
                             <property name="proportion">0</property>
-                            <object class="wxGridSizer" expanded="1">
+                            <object class="wxGridSizer" expanded="0">
                                 <property name="cols">2</property>
                                 <property name="hgap">12</property>
                                 <property name="minimum_size"></property>
@@ -13864,7 +13864,7 @@
                 </object>
             </object>
         </object>
-        <object class="Frame" expanded="1">
+        <object class="Frame" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg">wxSYS_COLOUR_BTNFACE</property>
@@ -13926,7 +13926,7 @@
             <event name="OnSetFocus"></event>
             <event name="OnSize"></event>
             <event name="OnUpdateUI"></event>
-            <object class="wxBoxSizer" expanded="1">
+            <object class="wxBoxSizer" expanded="0">
                 <property name="minimum_size"></property>
                 <property name="name">bSizer41</property>
                 <property name="orient">wxVERTICAL</property>
@@ -14036,20 +14036,20 @@
                         <event name="OnUpdateUI"></event>
                     </object>
                 </object>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">5</property>
                     <property name="flag">wxEXPAND</property>
                     <property name="proportion">0</property>
-                    <object class="wxBoxSizer" expanded="1">
+                    <object class="wxBoxSizer" expanded="0">
                         <property name="minimum_size"></property>
                         <property name="name">bSizer158</property>
                         <property name="orient">wxHORIZONTAL</property>
                         <property name="permission">none</property>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">6</property>
                             <property name="flag">wxALL|wxEXPAND</property>
                             <property name="proportion">0</property>
-                            <object class="wxCheckBox" expanded="1">
+                            <object class="wxCheckBox" expanded="0">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
                                 <property name="RightDockable">1</property>

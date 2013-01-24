@@ -65,6 +65,7 @@ class Patch:
         self.misc = None
         self.pars = None
         self.sprite_names = None
+        self.sound_names = None
         
         
     def initialize_from_engine(self, engine):
@@ -83,6 +84,7 @@ class Patch:
         self.cheats = copy.deepcopy(engine.cheats)
         self.misc = copy.deepcopy(engine.misc)
         self.sprite_names = copy.deepcopy(engine.sprite_names)
+        self.sound_names = copy.deepcopy(engine.sound_names)
         
         if engine.extended == True:
             self.pars = []
@@ -460,6 +462,12 @@ class Patch:
                         for i in range(len(self.sprite_names)):
                             if self.sprite_names[i] == original:
                                 self.sprite_names[i] = new
+                                break
+                            
+                        # Also replace sound names, so that patches can alter them without offset modifications.
+                        for i in range(len(self.sound_names)):
+                            if self.sound_names[i] == original:
+                                self.sound_names[i] = new
                                 break
                         
                     # In extended mode, locate the key of the string and replace that.

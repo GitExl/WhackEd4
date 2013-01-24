@@ -1438,9 +1438,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 class SoundsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 560,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 382,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 560,480 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 382,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -1486,7 +1486,7 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer41.Add( bSizer42, 0, wx.ALL|wx.EXPAND, 6 )
 		
-		self.SoundList = wx.ListCtrl( self, SOUNDS_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_SORT_HEADER|wx.LC_REPORT|wx.NO_BORDER )
+		self.SoundList = wx.ListCtrl( self, SOUNDS_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_SORT_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
 		self.SoundList.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 90, False, wx.EmptyString ) )
 		
 		bSizer41.Add( self.SoundList, 1, wx.EXPAND, 5 )
@@ -1497,12 +1497,13 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		
 		# Connect Events
 		self.Priority.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.Priority.Bind( wx.EVT_TEXT, self.set_value )
+		self.Priority.Bind( wx.EVT_TEXT, self.set_priority )
 		self.PrioritySpinner.Bind( wx.EVT_SPIN_DOWN, self.priority_spin_down )
 		self.PrioritySpinner.Bind( wx.EVT_SPIN_UP, self.priority_spin_up )
 		self.Singular.Bind( wx.EVT_CHECKBOX, self.set_singular )
 		self.Restore.Bind( wx.EVT_BUTTON, self.sound_restore )
 		self.SoundList.Bind( wx.EVT_LIST_ITEM_DESELECTED, self.sound_deselect )
+		self.SoundList.Bind( wx.EVT_LIST_ITEM_RIGHT_CLICK, self.sound_play )
 		self.SoundList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.sound_select )
 	
 	def __del__( self ):
@@ -1513,7 +1514,7 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 	def focus_text( self, event ):
 		pass
 	
-	def set_value( self, event ):
+	def set_priority( self, event ):
 		pass
 	
 	def priority_spin_down( self, event ):
@@ -1529,6 +1530,9 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		pass
 	
 	def sound_deselect( self, event ):
+		pass
+	
+	def sound_play( self, event ):
 		pass
 	
 	def sound_select( self, event ):

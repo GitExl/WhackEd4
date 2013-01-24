@@ -1,4 +1,5 @@
 Beta
+- After non-extended strings have been edited, update sound and sprite names.
 - Add license to about dialog.
 - Add icons credits to about dialog.
 - Add reload WAD files option to menu + shortcut key.

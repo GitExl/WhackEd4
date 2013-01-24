@@ -15,7 +15,8 @@ APP_SIMPLE_NAME = 'whacked4'
 APP_VERSION = '0.6.0 alpha'
 
 # Monospaced font for displays that use them.
-FONT_MONOSPACED = 'Bitstream Vera Sans Mono'
+FONT_MONOSPACED_NAME = 'Bitstream Vera Sans Mono'
+FONT_MONOSPACED = None
 
 # Application configuration path.
 CONFIG_DIR = os.environ['APPDATA'] + '/' + APP_SIMPLE_NAME

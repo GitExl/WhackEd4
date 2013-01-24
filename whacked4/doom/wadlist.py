@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from doom import graphics
+from doom import graphics, sound
 
 
 class WADList():
@@ -23,6 +23,8 @@ class WADList():
         self.sprites = {}
         self.sprite_image_cache = {}
         self.palette = None
+        
+        self.sound_cache = {}
     
     
     def add_wad(self, wad):
@@ -39,6 +41,8 @@ class WADList():
         
         The last WAD is searched first, in reverse order. This way the lumps in the last WAD that was added will
         override any that were in previously added ones.
+        
+        @return: a lump object, or None if the lump could not be found.
         """ 
         
         for wad in reversed(self.wads):
@@ -49,9 +53,30 @@ class WADList():
         return None
     
     
+    def get_sound(self, lump_name):
+        """
+        Returns a sound object for a lump name.
+        
+        The sound object is cached automatically.
+        """
+        
+        if lump_name in self.sound_cache:
+            return self.sound_cache[lump_name]
+        
+        lump = self.get_lump(lump_name)
+        if lump == None:
+            return
+        
+        sound_data = sound.Sound()
+        sound_data.read_from(lump.get_data())
+        self.sound_cache[lump_name] = sound_data
+        
+        return sound_data
+    
+    
     def get_sprite(self, sprite_name, frame_index=0, rotation=0):
         """
-        Returns a sprite of a sprite in this WAD list.
+        Returns a sprite lump of a sprite in this WAD list.
         
         @param sprite_name: the 4 character name of the sprite to return.
         @param frame_index: the index of the sprite frame to return.
