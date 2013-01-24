@@ -718,6 +718,14 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.StateList.Select(list_index, False)    
         
         self.StateList.Thaw()
+        
+        
+    def selection_get_state_index(self):
+        """
+        Returns the first selected state index.
+        """
+        
+        return self.filter.state_indices[self.selected[0]]
     
     
     def frame_set(self, modifier):

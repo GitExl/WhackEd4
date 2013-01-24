@@ -1800,31 +1800,31 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateSelectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateSelectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateSelectName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.WeaponStateSelectSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.WeaponStateSelectSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.WeaponStateDeselect.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateDeselect.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateDeselectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.WeaponStateDeselectSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.WeaponStateDeselectSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.WeaponStateBob.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateBob.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateBobName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateBobName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateBobName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.WeaponStateBobSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.WeaponStateBobSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.WeaponStateFire.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateFire.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateFireName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateFireName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateFireName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.WeaponStateFireSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.WeaponStateFireSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.WeaponStateMuzzle.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateMuzzle.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEFT_UP, self.goto_state )
-		self.WeaponStateMuzzleSet.Bind( wx.EVT_BUTTON, self.set_state )
+		self.WeaponStateMuzzleSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.Rename.Bind( wx.EVT_BUTTON, self.weapon_rename )
 		self.Restore.Bind( wx.EVT_BUTTON, self.weapon_restore )
 	
@@ -1854,7 +1854,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	def goto_state( self, event ):
 		pass
 	
-	def set_state( self, event ):
+	def set_state_external( self, event ):
 		pass
 	
 	

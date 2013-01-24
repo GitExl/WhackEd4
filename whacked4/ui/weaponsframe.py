@@ -30,6 +30,15 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         windows.WEAPON_STATENAME_MUZZLE: 'Muzzle'
     }
     
+    # State set button to partial internal key mappings.
+    PROPS_STATESET = {
+        windows.WEAPON_STATESET_SELECT: windows.WEAPON_STATE_SELECT,
+        windows.WEAPON_STATESET_DESELECT: windows.WEAPON_STATE_DESELECT,
+        windows.WEAPON_STATESET_BOB: windows.WEAPON_STATE_BOB,
+        windows.WEAPON_STATESET_FIRE: windows.WEAPON_STATE_FIRE,
+        windows.WEAPON_STATESET_MUZZLE: windows.WEAPON_STATE_MUZZLE
+    }
+    
     def __init__(self, params):
         windows.WeaponsFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
@@ -48,6 +57,20 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
     
         self.ammolist_build()
         self.weaponlist_build()
+        
+    
+    def activate(self, event):
+        """
+        Called when this editor window is activated by the user.
+        """
+        
+        # Call the editor mixin function that we are overriding.
+        editormixin.EditorMixin.activate(self, event)
+        
+        if self.IsBeingDeleted():
+            return
+        
+        self.update_properties()
     
     
     def weaponlist_build(self):
@@ -128,6 +151,21 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         ammo_index = self.AmmoType.GetSelection()
         self.patch.weapons[self.selected_index]['ammoType'] = ammo_index
         self.is_modified(True)
+        
+    
+    def set_state_external(self, event):
+        """
+        Sets a state property based on the state that is currently selected in the states editor.
+        """
+        
+        self.undo_add()
+        
+        # Get a reference to the states editor window.
+        parent = self.GetParent()
+        states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
+
+        text_ctrl = self.FindWindowById(self.PROPS_STATESET[event.GetId()])
+        text_ctrl.SetValue(str(states_frame.selection_get_state_index()))
         
         
     def set_display_state(self, state_name):
