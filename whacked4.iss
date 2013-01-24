@@ -46,12 +46,13 @@ AllowNoIcons=true
 PrivilegesRequired=admin
 ChangesAssociations=true
 InfoBeforeFile=
-LicenseFile=
+LicenseFile=C:\Users\Dennis\Documents\GitHub\WhackEd4\LICENSE
 FlatComponentsList=true
 UninstallLogMode=overwrite
 LanguageDetectionMethod=none
 WizardImageStretch=false
 RestartIfNeededByRun=false
+AppID={{A8A56AC6-E82B-49AD-9093-5AC204830F89}
 
 
 [Run]
@@ -62,6 +63,7 @@ Filename: {app}\whacked4.exe; WorkingDir: {app}; Description: Run WhackEd4; Flag
 Name: {app}\res; Type: filesandordirs
 Name: {app}\cfg; Type: filesandordirs
 Name: {app}\*.*; Type: files
+Name: {app}; Type: dirifempty
 Name: {userappdata}\whacked4; Type: filesandordirs
 
 
