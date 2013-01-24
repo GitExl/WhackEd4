@@ -146,9 +146,11 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         # Call the editor mixin function that we are overriding.
         editormixin.EditorMixin.activate(self, event)
         
+        if self.IsBeingDeleted():
+            return
+        
         # Update the properties being displayed by this window, in case state or sound names have changed.
-        if self.IsBeingDeleted() == False:
-            self.update_properties()
+        self.update_properties()
             
             
     def edit_copy(self):

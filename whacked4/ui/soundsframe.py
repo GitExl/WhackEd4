@@ -26,6 +26,22 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         self.build_colours()
         
         
+    def activate(self, event):
+        """
+        Called when this editor window is activated by the user.
+        """
+        
+        # Call the editor mixin function that we are overriding.
+        editormixin.EditorMixin.activate(self, event)
+        
+        if self.IsBeingDeleted():
+            return
+        
+        # Update sound names only.
+        for index, name in enumerate(self.patch.sound_names):
+            self.SoundList.SetStringItem(index, 1, name.upper())
+        
+        
     def build_colours(self):
         """
         Builds priority colour coding colours and blends them with the system's window background color.

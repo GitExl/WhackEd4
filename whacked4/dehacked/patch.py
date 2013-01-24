@@ -36,7 +36,35 @@ class DehackedLookupError(DehackedPatchError):
     """
     Patch format key lookup errors in Dehacked file reading.
     """
-     
+
+
+def string_escape(string):
+    """
+    Returns an escaped string for use in Dehacked patch writing.
+    """
+    
+    string = string.replace('\\', '\\\\')
+    string = string.replace('\n', '\\n')
+    string = string.replace('\r', '\\r')
+    string = string.replace('\t', '\\t')
+    string = string.replace('\"', '\\"')
+    
+    return string
+
+
+def string_unescape(string):
+    """
+    Returns an escaped string for use in Dehacked patch reading.
+    """
+    
+    string = string.replace('\\\\', '\\')
+    string = string.replace('\\n', '\n')
+    string = string.replace('\\r', '\r')
+    string = string.replace('\\t', '\t')
+    string = string.replace('\\"', '\"')
+    
+    return string
+
 
 class Patch:
     """
@@ -89,7 +117,26 @@ class Patch:
         
         if engine.extended == True:
             self.pars = []
+            
+            
+    def update_string_externals(self, engine_names, patch_names):
+        """
+        Updates a names list to reflect their string list name.
         
+        This is used to update sound and sprite names after the strings list has been altered.
+        
+        @param engine_names: the list of names in the engine object.
+        @param patch_names: the list of names in the patch object.  
+        """ 
+        
+        if self.extended == True:
+            return
+        
+        for name_index, name in enumerate(engine_names):
+            if name in self.engine.strings:
+                string_index = self.engine.strings.index(name)
+                patch_names[name_index] = self.strings[string_index]
+                
     
     def write_dehacked(self, filename):
         """
@@ -168,7 +215,7 @@ class Patch:
         if len(out) > 0:
             f.write('\n[STRINGS]\n')
             for name, string in out.iteritems():
-                f.write('{} = {}\n'.format(name, self.string_escape(string)))
+                f.write('{} = {}\n'.format(name, string_escape(string)))
     
     
     def write_patch_pars(self, f):
@@ -535,7 +582,7 @@ class Patch:
                             else:
                                 value += line.lstrip()[:-1]
                     
-                    self.strings[key] = self.string_unescape(value)
+                    self.strings[key] = string_unescape(value)
                     continue
                 
                 elif mode == MODE_POINTERS_EXT:
@@ -620,31 +667,3 @@ class Patch:
             return '????'
         else:
             return self.engine.sound_names[sound_index - 1].upper()
-        
-        
-    def string_escape(self, string):
-        """
-        Returns an escaped string for use in Dehacked patch writing.
-        """
-        
-        string = string.replace('\\', '\\\\')
-        string = string.replace('\n', '\\n')
-        string = string.replace('\r', '\\r')
-        string = string.replace('\t', '\\t')
-        string = string.replace('\"', '\\"')
-        
-        return string
-    
-    
-    def string_unescape(self, string):
-        """
-        Returns an escaped string for use in Dehacked patch reading.
-        """
-        
-        string = string.replace('\\\\', '\\')
-        string = string.replace('\\n', '\n')
-        string = string.replace('\\r', '\r')
-        string = string.replace('\\t', '\t')
-        string = string.replace('\\"', '\"')
-        
-        return string

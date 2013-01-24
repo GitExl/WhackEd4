@@ -99,64 +99,69 @@ SOUNDS_RESTORE = 1750
 SOUNDS_LIST = 1751
 FRAME_STRINGS = 1752
 STRINGS_LIST = 1753
-FRAME_WEAPONS = 1754
-WEAPON_LIST = 1755
-WEAPON_AMMOTYPE = 1756
-WEAPON_STATE_SELECT = 1757
-WEAPON_STATENAME_SELECT = 1758
-WEAPON_STATESET_SELECT = 1759
-WEAPON_STATE_DESELECT = 1760
-WEAPON_STATENAME_DESELECT = 1761
-WEAPON_STATESET_DESELECT = 1762
-WEAPON_STATE_BOB = 1763
-WEAPON_STATENAME_BOB = 1764
-WEAPON_STATESET_BOB = 1765
-WEAPON_STATE_FIRE = 1766
-WEAPON_STATENAME_FIRE = 1767
-WEAPON_STATESET_FIRE = 1768
-WEAPON_STATE_MUZZLE = 1769
-WEAPON_STATENAME_MUZZLE = 1770
-WEAPON_STATESET_MUZZLE = 1771
-WEAPON_RENAME = 1772
-WEAPON_RESTORE = 1773
-FRAME_AMMO = 1774
-AMMO_LIST = 1775
-AMMO_MAXIMUM = 1776
-AMMO_PICKUP = 1777
-AMMO_RENAME = 1778
-AMMO_RESTORE = 1779
-FRAME_CHEATS = 1780
-CHEATS_LIST = 1781
-CHEATS_INFIGHT = 1782
-CHEATS_RESTORE = 1783
-FRAME_MISC = 1784
-MISC_LIST = 1785
-MISC_RESTORE = 1786
-FRAME_PAR = 1787
-PAR_LIST = 1788
-PAR_EPISODE = 1789
-PAR_MAP = 1790
-PAR_TIME = 1791
-PAR_RENAME = 1792
-PAR_RESTORE = 1793
-DIALOG_SPRITES = 1794
-SPRITES_NAMES = 1795
-SPRITES_FILTER = 1796
-SPRITES_FRAME = 1797
-SPRITES_FRAMESPIN = 1798
-SPRITES_OK = 1799
-SPRITES_CANCEL = 1800
-DIALOG_PATCHINFO = 1801
-PATCHINFO_TOOLBAR = 1802
-PATCHINFO_TOOLBAR_ADD = 1803
-PATCHINFO_TOOLBAR_REMOVE = 1804
-DIALOG_START = 1805
-START_NEW = 1806
-START_OPEN = 1807
-START_RECENT = 1808
-START_CANCEL = 1809
-DIALOG_ABOUT = 1810
-ABOUT_OK = 1811
+STRINGS_RESTORE = 1754
+FRAME_WEAPONS = 1755
+WEAPON_LIST = 1756
+WEAPON_AMMOTYPE = 1757
+WEAPON_STATE_SELECT = 1758
+WEAPON_STATENAME_SELECT = 1759
+WEAPON_STATESET_SELECT = 1760
+WEAPON_STATE_DESELECT = 1761
+WEAPON_STATENAME_DESELECT = 1762
+WEAPON_STATESET_DESELECT = 1763
+WEAPON_STATE_BOB = 1764
+WEAPON_STATENAME_BOB = 1765
+WEAPON_STATESET_BOB = 1766
+WEAPON_STATE_FIRE = 1767
+WEAPON_STATENAME_FIRE = 1768
+WEAPON_STATESET_FIRE = 1769
+WEAPON_STATE_MUZZLE = 1770
+WEAPON_STATENAME_MUZZLE = 1771
+WEAPON_STATESET_MUZZLE = 1772
+WEAPON_RENAME = 1773
+WEAPON_RESTORE = 1774
+FRAME_AMMO = 1775
+AMMO_LIST = 1776
+AMMO_MAXIMUM = 1777
+AMMO_PICKUP = 1778
+AMMO_RENAME = 1779
+AMMO_RESTORE = 1780
+FRAME_CHEATS = 1781
+CHEATS_LIST = 1782
+CHEATS_INFIGHT = 1783
+CHEATS_RESTORE = 1784
+FRAME_MISC = 1785
+MISC_LIST = 1786
+MISC_RESTORE = 1787
+FRAME_PAR = 1788
+PAR_LIST = 1789
+PAR_EPISODE = 1790
+PAR_MAP = 1791
+PAR_TIME = 1792
+PAR_RENAME = 1793
+PAR_RESTORE = 1794
+DIALOG_SPRITES = 1795
+SPRITES_NAMES = 1796
+SPRITES_FILTER = 1797
+SPRITES_FRAME = 1798
+SPRITES_FRAMESPIN = 1799
+SPRITES_OK = 1800
+SPRITES_CANCEL = 1801
+STRING_OLD = 1802
+STRING_NEW = 1803
+STRING_OK = 1804
+STRING_CANCEL = 1805
+DIALOG_PATCHINFO = 1806
+PATCHINFO_TOOLBAR = 1807
+PATCHINFO_TOOLBAR_ADD = 1808
+PATCHINFO_TOOLBAR_REMOVE = 1809
+DIALOG_START = 1810
+START_NEW = 1811
+START_OPEN = 1812
+START_RECENT = 1813
+START_CANCEL = 1814
+DIALOG_ABOUT = 1815
+ABOUT_OK = 1816
 
 ###########################################################################
 ## Class MainFrameBase
@@ -1331,7 +1336,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer421.Add( bSizer441, 0, wx.ALL|wx.EXPAND, 6 )
 		
-		self.StateList = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_SORT_HEADER|wx.LC_REPORT )
+		self.StateList = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_SORT_HEADER|wx.LC_REPORT|wx.NO_BORDER )
 		self.StateList.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 90, False, wx.EmptyString ) )
 		
 		bSizer421.Add( self.StateList, 1, wx.EXPAND, 5 )
@@ -1555,17 +1560,30 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 class StringsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STRINGS, title = u"Strings", pos = wx.DefaultPosition, size = wx.Size( 640,400 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STRINGS, title = u"Strings", pos = wx.DefaultPosition, size = wx.Size( 480,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 640,400 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 480,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
-		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
+		bSizer41 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.StringList = wx.ListCtrl( self, STRINGS_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_SORT_HEADER|wx.LC_REPORT|wx.NO_BORDER )
+		self.StringList = wx.ListCtrl( self, STRINGS_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_SORT_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
 		self.StringList.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 90, False, wx.EmptyString ) )
 		
 		bSizer41.Add( self.StringList, 1, wx.EXPAND, 5 )
+		
+		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		
+		bSizer158.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		
+		self.Restore = wx.Button( self, STRINGS_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Restore.SetMinSize( wx.Size( 120,28 ) )
+		
+		bSizer158.Add( self.Restore, 0, wx.ALL, 6 )
+		
+		
+		bSizer41.Add( bSizer158, 0, wx.EXPAND, 6 )
 		
 		
 		self.SetSizer( bSizer41 )
@@ -1573,6 +1591,9 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 		
 		# Connect Events
 		self.StringList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.string_edit )
+		self.StringList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.string_select )
+		self.StringList.Bind( wx.EVT_SIZE, self.stringlist_resize )
+		self.Restore.Bind( wx.EVT_BUTTON, self.string_restore )
 	
 	def __del__( self ):
 		pass
@@ -1580,6 +1601,15 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 	
 	# Virtual event handlers, overide them in your derived class
 	def string_edit( self, event ):
+		pass
+	
+	def string_select( self, event ):
+		pass
+	
+	def stringlist_resize( self, event ):
+		pass
+	
+	def string_restore( self, event ):
 		pass
 	
 
@@ -2259,9 +2289,9 @@ class SpritesDialogBase ( wx.Dialog ):
 class StringDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"String", pos = wx.DefaultPosition, size = wx.Size( 651,483 ), style = wx.CAPTION )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"String", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 640,480 ), wx.DefaultSize )
 		
 		bSizer39 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -2273,10 +2303,11 @@ class StringDialogBase ( wx.Dialog ):
 		self.m_staticText81.Wrap( -1 )
 		bSizer42.Add( self.m_staticText81, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_textCtrl54 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE|wx.TE_READONLY )
-		self.m_textCtrl54.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 90, False, "Bitstream Vera Sans Mono" ) )
+		self.Original = wx.TextCtrl( self, STRING_OLD, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_DONTWRAP|wx.TE_MULTILINE|wx.TE_READONLY )
+		self.Original.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 90, False, "Bitstream Vera Sans Mono" ) )
+		self.Original.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
-		bSizer42.Add( self.m_textCtrl54, 1, wx.ALL|wx.EXPAND, 6 )
+		bSizer42.Add( self.Original, 1, wx.ALL|wx.EXPAND, 6 )
 		
 		
 		bSizer113.Add( bSizer42, 1, wx.EXPAND, 5 )
@@ -2287,10 +2318,10 @@ class StringDialogBase ( wx.Dialog ):
 		self.m_staticText811.Wrap( -1 )
 		bSizer421.Add( self.m_staticText811, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_textCtrl541 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE )
-		self.m_textCtrl541.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 90, False, "Bitstream Vera Sans Mono" ) )
+		self.New = wx.TextCtrl( self, STRING_NEW, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_DONTWRAP|wx.TE_MULTILINE|wx.TE_PROCESS_ENTER|wx.TE_PROCESS_TAB )
+		self.New.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 90, False, "Bitstream Vera Sans Mono" ) )
 		
-		bSizer421.Add( self.m_textCtrl541, 1, wx.ALL|wx.EXPAND, 6 )
+		bSizer421.Add( self.New, 1, wx.ALL|wx.EXPAND, 6 )
 		
 		
 		bSizer113.Add( bSizer421, 1, wx.EXPAND, 5 )
@@ -2300,16 +2331,20 @@ class StringDialogBase ( wx.Dialog ):
 		
 		bSizer43 = wx.BoxSizer( wx.HORIZONTAL )
 		
+		self.CharsLeft = wx.StaticText( self, wx.ID_ANY, u"12 characters left", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.CharsLeft.Wrap( -1 )
+		bSizer43.Add( self.CharsLeft, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
 		
 		bSizer43.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
-		self.ButtonOk = wx.Button( self, SPRITES_OK, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.ButtonOk = wx.Button( self, STRING_OK, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ButtonOk.SetDefault() 
 		self.ButtonOk.SetMinSize( wx.Size( 120,28 ) )
 		
 		bSizer43.Add( self.ButtonOk, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
-		self.ButtonCancel = wx.Button( self, SPRITES_CANCEL, u"Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.ButtonCancel = wx.Button( self, STRING_CANCEL, u"Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ButtonCancel.SetMinSize( wx.Size( 120,28 ) )
 		
 		bSizer43.Add( self.ButtonCancel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
@@ -2324,6 +2359,7 @@ class StringDialogBase ( wx.Dialog ):
 		self.Centre( wx.BOTH )
 		
 		# Connect Events
+		self.New.Bind( wx.EVT_TEXT, self.text_enter )
 		self.ButtonOk.Bind( wx.EVT_BUTTON, self.ok )
 		self.ButtonCancel.Bind( wx.EVT_BUTTON, self.cancel )
 	
@@ -2332,6 +2368,9 @@ class StringDialogBase ( wx.Dialog ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def text_enter( self, event ):
+		pass
+	
 	def ok( self, event ):
 		pass
 	
@@ -2636,6 +2675,7 @@ class AboutDialogBase ( wx.Dialog ):
 		
 		self.License = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE|wx.TE_READONLY )
 		self.License.SetFont( wx.Font( 7, 70, 90, 90, False, "Courier New" ) )
+		self.License.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer56.Add( self.License, 1, wx.ALL|wx.EXPAND, 6 )
 		
