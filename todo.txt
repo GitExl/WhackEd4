@@ -1,9 +1,7 @@
 Beta
 - After non-extended strings have been edited, update sound and sprite names.
-- Add reload WAD files option to menu + shortcut key.
 - Sort action choice box alphabetically.
 - Add editor iconography.
-- Add sounds editor.
 - Add strings editor.
 - Add weapons editor.
 - Add ammo editor.

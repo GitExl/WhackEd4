@@ -17,8 +17,8 @@ class AboutDialog(windows.AboutDialogBase):
         self.Version.SetLabel('Version ' + config.APP_VERSION)
         
         with open('LICENSE', 'r') as f:
-            license = f.read()
-        self.License.SetValue(license)
+            license_text = f.read()
+        self.License.SetValue(license_text)
     
     
     def ok(self, event):

@@ -23,8 +23,8 @@ MAIN_TOOL_MISC = 1674
 MAIN_TOOL_PAR = 1675
 MAIN_MENU_THINGS = 1676
 MAIN_MENU_STATES = 1677
-MAIN_MENU_STRINGS = 1678
-MAIN_MENU_SOUNDS = 1679
+MAIN_MENU_SOUNDS = 1678
+MAIN_MENU_STRINGS = 1679
 MAIN_MENU_WEAPONS = 1680
 MAIN_MENU_AMMO = 1681
 MAIN_MENU_CHEATS = 1682
@@ -209,6 +209,11 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		
 		self.MenuFile.AppendSeparator()
 		
+		self.MenuFileReloadWADs = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Reload WADs"+ u"\t" + u"CTRL+R", wx.EmptyString, wx.ITEM_NORMAL )
+		self.MenuFile.AppendItem( self.MenuFileReloadWADs )
+		
+		self.MenuFile.AppendSeparator()
+		
 		self.MenuFileRecent = wx.Menu()
 		self.MenuFile.AppendSubMenu( self.MenuFileRecent, u"Recent files" )
 		
@@ -240,13 +245,13 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.MenuViewStates = wx.MenuItem( self.MenuView, MAIN_MENU_STATES, u"States"+ u"\t" + u"F3", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuView.AppendItem( self.MenuViewStates )
 		
-		self.MenuViewStrings = wx.MenuItem( self.MenuView, MAIN_MENU_STRINGS, u"Strings"+ u"\t" + u"F6", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewStrings )
-		self.MenuViewStrings.Enable( False )
-		
 		self.MenuViewSounds = wx.MenuItem( self.MenuView, MAIN_MENU_SOUNDS, u"Sounds"+ u"\t" + u"F4", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuView.AppendItem( self.MenuViewSounds )
 		self.MenuViewSounds.Enable( False )
+		
+		self.MenuViewStrings = wx.MenuItem( self.MenuView, MAIN_MENU_STRINGS, u"Strings"+ u"\t" + u"F6", wx.EmptyString, wx.ITEM_NORMAL )
+		self.MenuView.AppendItem( self.MenuViewStrings )
+		self.MenuViewStrings.Enable( False )
 		
 		self.MenuViewWeapons = wx.MenuItem( self.MenuView, MAIN_MENU_WEAPONS, u"Weapons"+ u"\t" + u"F7", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuView.AppendItem( self.MenuViewWeapons )
@@ -302,14 +307,15 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.Bind( wx.EVT_MENU, self.file_open_as, id = self.MenuFileOpenAs.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_save, id = self.MenuFileSave.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_save_as, id = self.MenuFileSaveAs.GetId() )
+		self.Bind( wx.EVT_MENU, self.wads_reload, id = self.MenuFileReloadWADs.GetId() )
 		self.Bind( wx.EVT_MENU, self.close, id = self.MenuFileExit.GetId() )
 		self.Bind( wx.EVT_MENU, self.edit_undo, id = self.MenuEditUndo.GetId() )
 		self.Bind( wx.EVT_MENU, self.edit_copy, id = self.MenuEditCopy.GetId() )
 		self.Bind( wx.EVT_MENU, self.edit_paste, id = self.MenuEditPaste.GetId() )
 		self.Bind( wx.EVT_MENU, self.editor_window_menutoggle, id = self.MenuViewThings.GetId() )
 		self.Bind( wx.EVT_MENU, self.editor_window_menutoggle, id = self.MenuViewStates.GetId() )
-		self.Bind( wx.EVT_MENU, self.editor_window_menutoggle, id = self.MenuViewStrings.GetId() )
 		self.Bind( wx.EVT_MENU, self.editor_window_menutoggle, id = self.MenuViewSounds.GetId() )
+		self.Bind( wx.EVT_MENU, self.editor_window_menutoggle, id = self.MenuViewStrings.GetId() )
 		self.Bind( wx.EVT_MENU, self.editor_window_menutoggle, id = self.MenuViewWeapons.GetId() )
 		self.Bind( wx.EVT_MENU, self.editor_window_menutoggle, id = self.MenuViewAmmo.GetId() )
 		self.Bind( wx.EVT_MENU, self.editor_window_menutoggle, id = self.MenuViewCheats.GetId() )
@@ -350,6 +356,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		pass
 	
 	def file_save_as( self, event ):
+		pass
+	
+	def wads_reload( self, event ):
 		pass
 	
 	

@@ -678,6 +678,10 @@ class MainFrame(windows.MainFrameBase):
     def file_open_as(self, event):
         self.open_file_dialog(force_show_settings=True)
         
+    def wads_reload(self, event):
+        self.load_wads()
+        self.update_ui()
+        
     def file_open_recent(self, event):
         item = self.FindItemInMenuBar(event.GetId())
         filename = item.GetItemLabel()
