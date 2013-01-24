@@ -47,6 +47,7 @@ class Patch:
     
     FRAMEFLAG_LIT = 0x8000
 
+
     def __init__(self):
         self.filename = None
         

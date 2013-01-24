@@ -13,9 +13,7 @@ class SpritePreview(wx.Panel):
     CLEAR = 0xDEADBEEF
     
     
-    def __init__(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition, size=wx.DefaultSize,
-                 style=wx.NO_BORDER):
-
+    def __init__(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.NO_BORDER):
         wx.Panel.__init__(self, parent, id=id, pos=pos, size=size, style=wx.STATIC_BORDER)
         
         # WAD list to use for sprite rendering.

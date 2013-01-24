@@ -4,7 +4,7 @@
 from doom import graphics, sound
 
 
-class WADList():
+class WADList:
     """
     Maintains a list of WAD files that can be queried for specific lump data.
     """

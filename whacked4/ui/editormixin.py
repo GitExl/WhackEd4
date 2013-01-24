@@ -6,7 +6,7 @@ from ui import utils
 import wx
 
 
-class EditorMixin():
+class EditorMixin:
     """
     Adds common editor window functionality to any wx.Frame object.
     """

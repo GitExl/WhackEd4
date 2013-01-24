@@ -9,7 +9,7 @@ import struct
 import wx
 
 
-class Palette():
+class Palette:
     """
     A 256 color RGB palette.
     """
@@ -26,7 +26,7 @@ class Palette():
             offset += 3
 
 
-class Image():
+class Image:
     """
     A Doom style patch.
     """
