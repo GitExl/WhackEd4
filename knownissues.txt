@@ -1,3 +1,2 @@
 - Tab key traversal barely works if at all.
-- About dialog shows up in taskbar.
 - The file dialogs over the model patch settings window are not modal themselves.

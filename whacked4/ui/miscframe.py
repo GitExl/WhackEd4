@@ -14,7 +14,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         windows.MiscFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
         
-        self.SetIcon(wx.Icon('res/icon-weapons-small.bmp'))
+        self.SetIcon(wx.Icon('res/icon-weapons-small.png'))
 
 
     def build(self, patch):

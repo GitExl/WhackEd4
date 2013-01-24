@@ -170,23 +170,23 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
 		self.MainToolbar = self.CreateToolBar( wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL, wx.ID_ANY ) 
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u"Things", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u"Things", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_STATES, u"States", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_STATES, u"States", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_SOUNDS, u"Sounds", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_SOUNDS, u"Sounds", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_STRINGS, u"Strings", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_STRINGS, u"Strings", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_WEAPONS, u"Weapons", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_WEAPONS, u"Weapons", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_AMMO, u"Ammo", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_AMMO, u"Ammo", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_CHEATS, u"Cheats", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_CHEATS, u"Cheats", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_MISC, u"Miscellaneous  ", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_MISC, u"Miscellaneous  ", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_PAR, u"Par times", wx.Bitmap( u"res/icon-weapons.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_PAR, u"Par times", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.MainToolbar.Realize() 
 		
@@ -1313,7 +1313,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.FilterTools.SetToolSeparation( 0 )
 		self.FilterTools.SetMargins( wx.Size( 0,0 ) )
 		self.FilterTools.SetToolPacking( 0 )
-		self.FilterTools.AddLabelTool( STATES_FILTERTOOLS_REFRESH, u"tool", wx.Bitmap( u"res/icon-refresh.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"Refreshes the state list.", wx.EmptyString, None ) 
+		self.FilterTools.AddLabelTool( STATES_FILTERTOOLS_REFRESH, u"tool", wx.Bitmap( u"res/icon-refresh.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"Refreshes the state list.", wx.EmptyString, None ) 
 		
 		self.FilterTools.Realize() 
 		
@@ -2396,9 +2396,9 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		bSizer63 = wx.BoxSizer( wx.VERTICAL )
 		
 		self.m_toolBar3 = wx.ToolBar( self, PATCHINFO_TOOLBAR, wx.DefaultPosition, wx.DefaultSize, wx.TB_FLAT|wx.TB_NODIVIDER|wx.TB_VERTICAL ) 
-		self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_ADD, u"tool", wx.Bitmap( u"res/icon-plus.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_ADD, u"tool", wx.Bitmap( u"res/icon-plus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_REMOVE, u"tool", wx.Bitmap( u"res/icon-minus.bmp", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_REMOVE, u"tool", wx.Bitmap( u"res/icon-minus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.m_toolBar3.Realize() 
 		
@@ -2567,7 +2567,7 @@ class StartDialogBase ( wx.Dialog ):
 class AboutDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 510,306 ), style = wx.CAPTION )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,478 ), style = wx.CAPTION )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -2575,7 +2575,7 @@ class AboutDialogBase ( wx.Dialog ):
 		
 		bSizer57 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_bitmap3 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"res/hatchet.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_bitmap3 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"res/hatchet.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer57.Add( self.m_bitmap3, 0, wx.BOTTOM|wx.LEFT, 6 )
 		
 		
@@ -2583,32 +2583,55 @@ class AboutDialogBase ( wx.Dialog ):
 		
 		bSizer56 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.m_bitmap4 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"res/logo.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_bitmap4 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"res/logo.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer56.Add( self.m_bitmap4, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.Version = wx.StaticText( self, wx.ID_ANY, u"Version 0.5.0 alpha", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Version = wx.StaticText( self, wx.ID_ANY, u"Version", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Version.Wrap( -1 )
 		bSizer56.Add( self.Version, 0, wx.ALL, 6 )
 		
 		
-		bSizer56.AddSpacer( ( 0, 12), 0, wx.EXPAND, 5 )
+		bSizer56.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
 		
 		self.URL = wx.HyperlinkCtrl( self, wx.ID_ANY, u"http://www.teamhellspawn.com/exl/whacked4", u"http://www.teamhellspawn.com/exl/whacked4", wx.DefaultPosition, wx.DefaultSize, wx.HL_DEFAULT_STYLE )
 		bSizer56.Add( self.URL, 0, wx.ALL, 6 )
 		
 		
-		bSizer56.AddSpacer( ( 0, 12), 0, wx.EXPAND, 5 )
+		bSizer56.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
+		
+		bSizer84 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText1391 = wx.StaticText( self, wx.ID_ANY, u"Application icon by Paul Davey, from the ", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText1391.Wrap( -1 )
+		bSizer84.Add( self.m_staticText1391, 0, wx.BOTTOM|wx.LEFT|wx.TOP, 6 )
+		
+		self.URL1 = wx.HyperlinkCtrl( self, wx.ID_ANY, u"Buuf Icon set", u"http://www.iconarchive.com/show/buuf-icons-by-mattahan.html", wx.DefaultPosition, wx.DefaultSize, wx.HL_DEFAULT_STYLE )
+		bSizer84.Add( self.URL1, 0, wx.BOTTOM|wx.RIGHT|wx.TOP, 6 )
+		
+		
+		bSizer56.Add( bSizer84, 0, wx.EXPAND, 5 )
+		
+		
+		bSizer56.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
 		
 		self.m_staticText139 = wx.StaticText( self, wx.ID_ANY, u"Thanks to...", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText139.Wrap( -1 )
 		bSizer56.Add( self.m_staticText139, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, un4seen, XDelusion", wx.DefaultPosition, wx.DefaultSize, wx.ST_NO_AUTORESIZE )
-		self.m_staticText138.Wrap( 310 )
+		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, un4seen, XDelusion", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText138.Wrap( 450 )
 		bSizer56.Add( self.m_staticText138, 0, wx.ALL, 6 )
 		
 		
-		bSizer56.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		bSizer56.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
+		
+		self.License = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE|wx.TE_READONLY )
+		self.License.SetFont( wx.Font( 7, 70, 90, 90, False, "Courier New" ) )
+		
+		bSizer56.Add( self.License, 1, wx.ALL|wx.EXPAND, 6 )
+		
+		
+		bSizer56.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
 		
 		bSizer58 = wx.BoxSizer( wx.HORIZONTAL )
 		

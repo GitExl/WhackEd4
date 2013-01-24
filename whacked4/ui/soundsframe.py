@@ -20,7 +20,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         windows.SoundsFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
         
-        self.SetIcon(wx.Icon('res/icon-weapons-small.bmp'))
+        self.SetIcon(wx.Icon('res/icon-weapons-small.png'))
         
         self.priority_colours = []
         self.build_colours()

@@ -26,7 +26,7 @@ class SpritePreview(wx.Panel):
         self.baseline_factor = 0.8
         
         # The icon to display instead of missing sprites.
-        self.missing = wx.Bitmap('res/icon-missing.bmp', wx.BITMAP_TYPE_BMP)
+        self.missing = wx.Bitmap('res/icon-missing.png', wx.BITMAP_TYPE_PNG)
         
         self.Bind(wx.EVT_PAINT, self.paint)
         

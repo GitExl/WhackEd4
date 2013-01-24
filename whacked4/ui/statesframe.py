@@ -37,7 +37,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         windows.StatesFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
         
-        self.SetIcon(wx.Icon('res/icon-weapons-small.bmp'))
+        self.SetIcon(wx.Icon('res/icon-weapons-small.png'))
                 
         # A list of all tool windows for simple mass operations.
         self.WINDOWS_TOOLS = [

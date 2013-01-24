@@ -82,11 +82,11 @@ class MainFrame(windows.MainFrameBase):
         self.editor_windows_show(False)
         self.toolbar_set_enabled(False)
         
+        self.Show()
+        
         # Dialogs.
         self.start_dialog = startdialog.StartDialog(self)
         self.about_dialog = aboutdialog.AboutDialog(self)
-        
-        self.Show()
 
         self.update_recent_files_menu()        
         config.settings.main_window_state_restore(self)
