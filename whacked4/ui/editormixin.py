@@ -165,7 +165,7 @@ class EditorMixin:
         self.GetParent().editor_window_closed(self)
 
         
-    def goto_state_index(self, state_index, filter_type, filter_index):
+    def goto_state(self, state_index, filter_type, filter_index):
         """
         Displays a state in the states editor, and enabled a filter.
         """
@@ -177,3 +177,17 @@ class EditorMixin:
         states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
         states_frame.goto_state_index(state_index, filter_type=filter_type, filter_index=filter_index)
         states_frame.Raise()
+        
+    
+    def goto_sound(self, sound_index):
+        """
+        Displays a sound in the sounds editor.
+        """
+                
+        parent = self.GetParent()
+        parent.editor_window_show(windows.MAIN_TOOL_SOUNDS)
+
+        # Set selected state and display the state editor window.
+        sounds_frame = parent.editor_windows[windows.MAIN_TOOL_SOUNDS]
+        sounds_frame.goto_sound_index(sound_index)
+        sounds_frame.Raise()

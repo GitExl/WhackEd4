@@ -67,101 +67,106 @@ THING_STATE_RAISE = 1718
 THING_STATENAME_RAISE = 1719
 THING_STATESET_RAISE = 1720
 THING_SOUND_ALERT = 1721
-THING_SOUNDSET_ALERT = 1722
-THING_SOUND_ATTACK = 1723
-THING_SOUNDSET_ATTACK = 1724
-THING_SOUND_PAIN = 1725
-THING_SOUNDSET_PAIN = 1726
-THING_SOUND_DEATH = 1727
-THING_SOUNDSET_DEATH = 1728
-THING_SOUND_ACTIVE = 1729
-THING_SOUNDSET_ACTIVE = 1730
-THING_RENAME = 1731
-THING_RESTORE = 1732
-FRAME_STATES = 1733
-STATES_SPRITE = 1734
-STATES_FRAME = 1735
-STATES_FRAMESPIN = 1736
-STATES_LIT = 1737
-STATES_NEXT = 1738
-STATES_DURATION = 1739
-STATES_ACTION = 1740
-STATES_PARM1 = 1741
-STATES_PARM2 = 1742
-STATES_FILTER = 1743
-STATES_FILTERTOOLS = 1744
-STATES_FILTERTOOLS_REFRESH = 1745
-FRAME_SOUNDS = 1746
-SOUNDS_PRIORITY = 1747
-SOUNDS_PRIORITYSPIN = 1748
-SOUNDS_SINGULAR = 1749
-SOUNDS_RESTORE = 1750
-SOUNDS_LIST = 1751
-FRAME_STRINGS = 1752
-STRINGS_LIST = 1753
-STRINGS_RESTORE = 1754
-FRAME_WEAPONS = 1755
-WEAPON_LIST = 1756
-WEAPON_AMMOTYPE = 1757
-WEAPON_STATE_SELECT = 1758
-WEAPON_STATENAME_SELECT = 1759
-WEAPON_STATESET_SELECT = 1760
-WEAPON_STATE_DESELECT = 1761
-WEAPON_STATENAME_DESELECT = 1762
-WEAPON_STATESET_DESELECT = 1763
-WEAPON_STATE_BOB = 1764
-WEAPON_STATENAME_BOB = 1765
-WEAPON_STATESET_BOB = 1766
-WEAPON_STATE_FIRE = 1767
-WEAPON_STATENAME_FIRE = 1768
-WEAPON_STATESET_FIRE = 1769
-WEAPON_STATE_MUZZLE = 1770
-WEAPON_STATENAME_MUZZLE = 1771
-WEAPON_STATESET_MUZZLE = 1772
-WEAPON_RENAME = 1773
-WEAPON_RESTORE = 1774
-FRAME_AMMO = 1775
-AMMO_LIST = 1776
-AMMO_VAL_MAXIMUM = 1777
-AMMO_VAL_PICKUP = 1778
-AMMO_RENAME = 1779
-AMMO_RESTORE = 1780
-FRAME_CHEATS = 1781
-CHEATS_LIST = 1782
-CHEATS_INFIGHT = 1783
-CHEATS_RESTORE = 1784
-FRAME_MISC = 1785
-MISC_LIST = 1786
-MISC_RESTORE = 1787
-FRAME_PAR = 1788
-PAR_LIST = 1789
-PAR_EPISODE = 1790
-PAR_MAP = 1791
-PAR_TIME = 1792
-PAR_RENAME = 1793
-PAR_RESTORE = 1794
-DIALOG_SPRITES = 1795
-SPRITES_NAMES = 1796
-SPRITES_FILTER = 1797
-SPRITES_FRAME = 1798
-SPRITES_FRAMESPIN = 1799
-SPRITES_OK = 1800
-SPRITES_CANCEL = 1801
-STRING_OLD = 1802
-STRING_NEW = 1803
-STRING_OK = 1804
-STRING_CANCEL = 1805
-DIALOG_PATCHINFO = 1806
-PATCHINFO_TOOLBAR = 1807
-PATCHINFO_TOOLBAR_ADD = 1808
-PATCHINFO_TOOLBAR_REMOVE = 1809
-DIALOG_START = 1810
-START_NEW = 1811
-START_OPEN = 1812
-START_RECENT = 1813
-START_CANCEL = 1814
-DIALOG_ABOUT = 1815
-ABOUT_OK = 1816
+THING_SOUNDNAME_ALERT = 1722
+THING_SOUNDSET_ALERT = 1723
+THING_SOUND_ATTACK = 1724
+THING_SOUNDNAME_ATTACK = 1725
+THING_SOUNDSET_ATTACK = 1726
+THING_SOUND_PAIN = 1727
+THING_SOUNDNAME_PAIN = 1728
+THING_SOUNDSET_PAIN = 1729
+THING_SOUND_DEATH = 1730
+THING_SOUNDNAME_DEATH = 1731
+THING_SOUNDSET_DEATH = 1732
+THING_SOUND_ACTIVE = 1733
+THING_SOUNDNAME_ACTIVE = 1734
+THING_SOUNDSET_ACTIVE = 1735
+THING_RENAME = 1736
+THING_RESTORE = 1737
+FRAME_STATES = 1738
+STATES_SPRITE = 1739
+STATES_FRAME = 1740
+STATES_FRAMESPIN = 1741
+STATES_LIT = 1742
+STATES_NEXT = 1743
+STATES_DURATION = 1744
+STATES_ACTION = 1745
+STATES_PARM1 = 1746
+STATES_PARM2 = 1747
+STATES_FILTER = 1748
+STATES_FILTERTOOLS = 1749
+STATES_FILTERTOOLS_REFRESH = 1750
+FRAME_SOUNDS = 1751
+SOUNDS_PRIORITY = 1752
+SOUNDS_PRIORITYSPIN = 1753
+SOUNDS_SINGULAR = 1754
+SOUNDS_RESTORE = 1755
+SOUNDS_LIST = 1756
+FRAME_STRINGS = 1757
+STRINGS_LIST = 1758
+STRINGS_RESTORE = 1759
+FRAME_WEAPONS = 1760
+WEAPON_LIST = 1761
+WEAPON_AMMOTYPE = 1762
+WEAPON_STATE_SELECT = 1763
+WEAPON_STATENAME_SELECT = 1764
+WEAPON_STATESET_SELECT = 1765
+WEAPON_STATE_DESELECT = 1766
+WEAPON_STATENAME_DESELECT = 1767
+WEAPON_STATESET_DESELECT = 1768
+WEAPON_STATE_BOB = 1769
+WEAPON_STATENAME_BOB = 1770
+WEAPON_STATESET_BOB = 1771
+WEAPON_STATE_FIRE = 1772
+WEAPON_STATENAME_FIRE = 1773
+WEAPON_STATESET_FIRE = 1774
+WEAPON_STATE_MUZZLE = 1775
+WEAPON_STATENAME_MUZZLE = 1776
+WEAPON_STATESET_MUZZLE = 1777
+WEAPON_RENAME = 1778
+WEAPON_RESTORE = 1779
+FRAME_AMMO = 1780
+AMMO_LIST = 1781
+AMMO_VAL_MAXIMUM = 1782
+AMMO_VAL_PICKUP = 1783
+AMMO_RENAME = 1784
+AMMO_RESTORE = 1785
+FRAME_CHEATS = 1786
+CHEATS_LIST = 1787
+CHEATS_INFIGHT = 1788
+CHEATS_RESTORE = 1789
+FRAME_MISC = 1790
+MISC_LIST = 1791
+MISC_RESTORE = 1792
+FRAME_PAR = 1793
+PAR_LIST = 1794
+PAR_EPISODE = 1795
+PAR_MAP = 1796
+PAR_TIME = 1797
+PAR_RENAME = 1798
+PAR_RESTORE = 1799
+DIALOG_SPRITES = 1800
+SPRITES_NAMES = 1801
+SPRITES_FILTER = 1802
+SPRITES_FRAME = 1803
+SPRITES_FRAMESPIN = 1804
+SPRITES_OK = 1805
+SPRITES_CANCEL = 1806
+STRING_OLD = 1807
+STRING_NEW = 1808
+STRING_OK = 1809
+STRING_CANCEL = 1810
+DIALOG_PATCHINFO = 1811
+PATCHINFO_TOOLBAR = 1812
+PATCHINFO_TOOLBAR_ADD = 1813
+PATCHINFO_TOOLBAR_REMOVE = 1814
+DIALOG_START = 1815
+START_NEW = 1816
+START_OPEN = 1817
+START_RECENT = 1818
+START_CANCEL = 1819
+DIALOG_ABOUT = 1820
+ABOUT_OK = 1821
 
 ###########################################################################
 ## Class MainFrameBase
@@ -764,7 +769,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundAlert.SetMaxLength( 4 ) 
 		Sizer151.Add( self.ThingSoundAlert, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundAlertName = wx.StaticText( self, wx.ID_ANY, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundAlertName = wx.StaticText( self, THING_SOUNDNAME_ALERT, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundAlertName.Wrap( -1 )
 		self.ThingSoundAlertName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundAlertName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -789,7 +794,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundAttack.SetMaxLength( 4 ) 
 		Sizer1511.Add( self.ThingSoundAttack, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundAttackName = wx.StaticText( self, wx.ID_ANY, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundAttackName = wx.StaticText( self, THING_SOUNDNAME_ATTACK, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundAttackName.Wrap( -1 )
 		self.ThingSoundAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundAttackName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -814,7 +819,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundPain.SetMaxLength( 4 ) 
 		Sizer1512.Add( self.ThingSoundPain, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundPainName = wx.StaticText( self, wx.ID_ANY, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundPainName = wx.StaticText( self, THING_SOUNDNAME_PAIN, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundPainName.Wrap( -1 )
 		self.ThingSoundPainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundPainName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -839,7 +844,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundDeath.SetMaxLength( 4 ) 
 		Sizer1513.Add( self.ThingSoundDeath, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundDeathName = wx.StaticText( self, wx.ID_ANY, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundDeathName = wx.StaticText( self, THING_SOUNDNAME_DEATH, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundDeathName.Wrap( -1 )
 		self.ThingSoundDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundDeathName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -864,7 +869,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundActive.SetMaxLength( 4 ) 
 		Sizer1514.Add( self.ThingSoundActive, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundActiveName = wx.StaticText( self, wx.ID_ANY, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundActiveName = wx.StaticText( self, THING_SOUNDNAME_ACTIVE, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundActiveName.Wrap( -1 )
 		self.ThingSoundActiveName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundActiveName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -937,79 +942,84 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateSpawn.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateSpawnName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateSpawnName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingStateSpawnName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.ThingStateSpawnName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateSpawnSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateWalk.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateWalk.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateWalkName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateWalkName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingStateWalkName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.ThingStateWalkName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateWalkSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStatePain.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStatePain.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStatePainName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStatePainName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingStatePainName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.ThingStatePainName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStatePainSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateMelee.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateMelee.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateMeleeName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateMeleeName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingStateMeleeName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.ThingStateMeleeName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateMeleeSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateAttack.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateAttack.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateAttackName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateAttackName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingStateAttackName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.ThingStateAttackName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateAttackSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateDeath.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateDeath.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateDeathName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateDeathName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingStateDeathName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.ThingStateDeathName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateDeathSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateExplode.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateExplode.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateExplodeName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateExplodeName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingStateExplodeName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.ThingStateExplodeName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateExplodeSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingStateRaise.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateRaise.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateRaiseName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingStateRaiseName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingStateRaiseName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.ThingStateRaiseName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateRaiseSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.ThingSoundAlert.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundAlert.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundAlertName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingSoundAlertName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingSoundAlertName.Bind( wx.EVT_LEFT_UP, self.goto_sound )
+		self.ThingSoundAlertName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
+		self.ThingSoundAlertName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundAlertSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ThingSoundAttack.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundAttack.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundAttackName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingSoundAttackName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingSoundAttackName.Bind( wx.EVT_LEFT_UP, self.goto_sound )
+		self.ThingSoundAttackName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
+		self.ThingSoundAttackName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundAttackSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ThingSoundPain.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundPain.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundPainName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingSoundPainName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingSoundPainName.Bind( wx.EVT_LEFT_UP, self.goto_sound )
+		self.ThingSoundPainName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
+		self.ThingSoundPainName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundPainSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ThingSoundDeath.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundDeath.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundDeathName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingSoundDeathName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingSoundDeathName.Bind( wx.EVT_LEFT_UP, self.goto_sound )
+		self.ThingSoundDeathName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
+		self.ThingSoundDeathName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundDeathSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ThingSoundActive.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundActive.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundActiveName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.ThingSoundActiveName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.ThingSoundActiveName.Bind( wx.EVT_LEFT_UP, self.goto_sound )
+		self.ThingSoundActiveName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
+		self.ThingSoundActiveName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundActiveSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ButtonRename.Bind( wx.EVT_BUTTON, self.thing_rename )
 		self.ButtonRestore.Bind( wx.EVT_BUTTON, self.thing_restore )
@@ -1063,7 +1073,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 	def leave_state( self, event ):
 		pass
 	
-	def goto_state( self, event ):
+	def goto_state_event( self, event ):
 		pass
 	
 	def set_state_external( self, event ):
@@ -1117,11 +1127,18 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
-	def goto_sound( self, event ):
+	def goto_sound_event( self, event ):
+		pass
+	
+	def sound_play( self, event ):
 		pass
 	
 	def set_sound_external( self, event ):
 		pass
+	
+	
+	
+	
 	
 	
 	
@@ -1452,9 +1469,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 class SoundsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 382,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 384,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 382,480 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 384,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )

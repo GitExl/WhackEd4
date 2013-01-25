@@ -57,3 +57,17 @@ def focus_text(event, parent):
     
     window = parent.FindWindowById(event.GetId())
     window.SetSelection(-1, -1)
+    
+    
+def sound_play(name, pwads):
+    """
+    Plays back a sound.
+    """
+    
+    if pwads is None:
+        return
+    
+    name = 'DS' + name.upper()
+    sound_data = pwads.get_sound(name)
+    if sound_data != None:
+        sound_data.play()

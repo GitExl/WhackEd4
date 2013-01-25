@@ -149,10 +149,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         Plays the currently selected sound.
         """
         
-        sound_name = 'DS' + self.patch.sound_names[self.selected_index].upper()
-        sound_data = self.pwads.get_sound(sound_name)
-        if sound_data != None:
-            sound_data.play()
+        utils.sound_play(self.patch.sound_names[self.selected_index], self.pwads)
 
 
     def set_singular(self, event):
@@ -197,6 +194,16 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         
         self.soundlist_update_row(self.selected_index)
         self.is_modified(True)
+        
+        
+    def goto_sound_index(self, sound_index):
+        """
+        Selects a sound from the list.
+        """
+        
+        self.SoundList.Select(sound_index, True)
+        self.SoundList.EnsureVisible(sound_index)
+        self.SoundList.SetFocus()
         
                 
     def undo_restore_item(self, item):

@@ -70,6 +70,24 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         windows.THING_SOUND_ACTIVE: 'Active'
     }
     
+    # Sound set button to partial internal key mappings.
+    PROPS_SOUNDSET = {
+        windows.THING_SOUNDSET_ALERT: windows.THING_SOUND_ALERT,
+        windows.THING_SOUNDSET_ATTACK: windows.THING_SOUND_ATTACK,
+        windows.THING_SOUNDSET_PAIN: windows.THING_SOUND_PAIN,
+        windows.THING_SOUNDSET_DEATH: windows.THING_SOUND_DEATH,
+        windows.THING_SOUNDSET_ACTIVE: windows.THING_SOUND_ACTIVE
+    }
+    
+    # State name label to partial internal key mappings.
+    PROPS_SOUNDNAMES = {
+        windows.THING_SOUNDNAME_ALERT: 'Alert',
+        windows.THING_SOUNDNAME_ATTACK: 'Attack',
+        windows.THING_SOUNDNAME_PAIN: 'Pain',
+        windows.THING_SOUNDNAME_DEATH: 'Death',
+        windows.THING_SOUNDNAME_ACTIVE: 'Active'
+    }
+    
     # Fixed point unit divisor for certain thing properties.
     FIXED_UNIT = 0x10000
     
@@ -90,6 +108,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         """
         
         self.patch = patch
+        self.pwads = self.GetParent().pwads
         self.clipboard = None
         
         self.selected_index = 0
@@ -365,6 +384,21 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
 
         text_ctrl = self.FindWindowById(self.PROPS_STATESET[event.GetId()])
         text_ctrl.SetValue(str(states_frame.selection_get_state_index()))
+        
+        
+    def set_sound_external(self, event):
+        """
+        Sets a sound property based on the sound that is currently selected in the sounds editor.
+        """
+        
+        self.undo_add()
+        
+        # Get a reference to the states editor window.
+        parent = self.GetParent()
+        sounds_frame = parent.editor_windows[windows.MAIN_TOOL_SOUNDS]
+
+        text_ctrl = self.FindWindowById(self.PROPS_SOUNDSET[event.GetId()])
+        text_ctrl.SetValue(str(sounds_frame.selected_index))
     
     
     def thing_select(self, event):
@@ -416,7 +450,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         self.is_modified(True)
         
     
-    def goto_state(self, event):
+    def goto_state_event(self, event):
         """
         Changes the selected state in the states editor window to the one of a thing's state property.
         """
@@ -424,7 +458,31 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         key = self.PROPS_STATENAMES[event.GetId()]
         state_index = self.patch.things[self.selected_index]['state' + key]
         
-        self.goto_state_index(state_index, statefilter.FILTER_TYPE_THING, self.selected_index)
+        self.goto_state(state_index, statefilter.FILTER_TYPE_THING, self.selected_index)
+        
+        
+    def goto_sound_event(self, event):
+        """
+        Changes the selected sound in the sounds editor window to the one of a thing's sound property.
+        """
+        
+        key = self.PROPS_SOUNDNAMES[event.GetId()]
+        sound_index = self.patch.things[self.selected_index]['sound' + key]
+        
+        self.goto_sound(sound_index)
+        
+        
+    def sound_play(self, event):
+        """
+        Plays a sound entry.
+        """
+        
+        key = self.PROPS_SOUNDNAMES[event.GetId()]
+        sound_index = self.patch.things[self.selected_index]['sound' + key]
+        if sound_index == 0:
+            return
+        
+        utils.sound_play(self.patch.sound_names[sound_index - 1], self.pwads)
     
     
     def undo_restore_item(self, item):
