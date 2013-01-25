@@ -2,7 +2,6 @@
 #coding=utf8
 
 from app import config
-from dehacked import statefilter
 from ui import utils, windows
 import wx
 

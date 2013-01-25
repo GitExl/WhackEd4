@@ -14917,9 +14917,7 @@
         "Bullets", 
         "Shells", 
         "Cells", 
-        "Rockets", 
-        "Unknown", 
-        "Unlimited"
+        "Rockets"
     ], 
     "strings": [
         "CODEC: Testing I/O address: %04x\n", 

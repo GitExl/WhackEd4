@@ -134,6 +134,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
             
         dup = copy.copy(self.patch.engine.strings[string_key])
         self.patch.strings[string_key] = dup
+        
         self.stringlist_update_row(self.selected_index)
         self.is_modified(True)
         
@@ -155,7 +156,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         """
         
         string_key = self.get_string_key(item['index'])
-        self.patch.strings[string_key] = item['string']
+        self.patch.strings[string_key] = item['item']
         self.stringlist_update_row(item['index'])
         
         
@@ -167,7 +168,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         string_key = self.get_string_key(self.selected_index)
         
         return {
-            'string': copy.deepcopy(self.patch.strings[string_key]),
+            'item': copy.deepcopy(self.patch.strings[string_key]),
             'index': self.selected_index 
         }
     

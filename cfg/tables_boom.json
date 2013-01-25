@@ -106,9 +106,7 @@
         "Bullets",
         "Shells",
         "Cells",
-        "Rockets",
-        "Unknown",
-        "Unlimited"
+        "Rockets"
     ],
     "cheatData": {
         "ammo": {

@@ -70,6 +70,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         if self.IsBeingDeleted():
             return
         
+        self.ammolist_build()
         self.update_properties()
     
     
@@ -92,6 +93,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         
         self.AmmoType.Clear()
         self.AmmoType.AppendItems(self.patch.ammo.names)
+        self.AmmoType.Append('Unknown')
+        self.AmmoType.Append('Infinite')
         
         
     def update_properties(self):
@@ -198,8 +201,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             self.undo_add()
             
             self.patch.weapons.names[self.selected_index] = new_name
-            self.WeaponList.SetString(self.selected_index, new_name)
-            
             self.update_properties()
             self.is_modified(True)
             
@@ -226,7 +227,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         index = item['index']
         self.patch.weapons[index] = item['item']
         self.patch.weapons.names[index] = item['name']
-        
+
+        self.WeaponList.SetString(index, item['name'])        
         self.update_properties()
         
         

@@ -122,8 +122,8 @@ WEAPON_RENAME = 1773
 WEAPON_RESTORE = 1774
 FRAME_AMMO = 1775
 AMMO_LIST = 1776
-AMMO_MAXIMUM = 1777
-AMMO_PICKUP = 1778
+AMMO_VAL_MAXIMUM = 1777
+AMMO_VAL_PICKUP = 1778
 AMMO_RENAME = 1779
 AMMO_RESTORE = 1780
 FRAME_CHEATS = 1781
@@ -1794,6 +1794,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		# Connect Events
 		self.WeaponList.Bind( wx.EVT_LISTBOX, self.weapon_select )
+		self.WeaponList.Bind( wx.EVT_LISTBOX_DCLICK, self.weapon_rename )
 		self.AmmoType.Bind( wx.EVT_CHOICE, self.set_ammo )
 		self.WeaponStateSelect.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateSelect.Bind( wx.EVT_TEXT, self.set_state_index )
@@ -1834,6 +1835,9 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	# Virtual event handlers, overide them in your derived class
 	def weapon_select( self, event ):
+		pass
+	
+	def weapon_rename( self, event ):
 		pass
 	
 	def set_ammo( self, event ):
@@ -1881,8 +1885,6 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
-	def weapon_rename( self, event ):
-		pass
 	
 	def weapon_restore( self, event ):
 		pass
@@ -1895,15 +1897,15 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 class AmmoFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_AMMO, title = u"Ammo", pos = wx.DefaultPosition, size = wx.Size( 397,250 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_AMMO, title = u"Ammo", pos = wx.DefaultPosition, size = wx.Size( 442,250 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 350,250 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 442,250 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.Ammo = wx.ListCtrl( self, AMMO_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
-		bSizer41.Add( self.Ammo, 1, wx.ALL|wx.EXPAND, 0 )
+		self.AmmoList = wx.ListCtrl( self, AMMO_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		bSizer41.Add( self.AmmoList, 1, wx.ALL|wx.EXPAND, 0 )
 		
 		bSizer139 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -1913,7 +1915,7 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText88.Wrap( -1 )
 		gSizer1.Add( self.m_staticText88, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Maximum = wx.TextCtrl( self, AMMO_MAXIMUM, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.Maximum = wx.TextCtrl( self, AMMO_VAL_MAXIMUM, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
 		self.Maximum.SetMaxLength( 6 ) 
 		gSizer1.Add( self.Maximum, 0, wx.ALL|wx.EXPAND, 3 )
 		
@@ -1921,7 +1923,7 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText881.Wrap( -1 )
 		gSizer1.Add( self.m_staticText881, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Pickup = wx.TextCtrl( self, AMMO_PICKUP, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.Pickup = wx.TextCtrl( self, AMMO_VAL_PICKUP, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
 		self.Pickup.SetMaxLength( 6 ) 
 		gSizer1.Add( self.Pickup, 0, wx.ALL|wx.EXPAND, 3 )
 		
@@ -1949,16 +1951,26 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
+		self.AmmoList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.ammo_rename )
+		self.AmmoList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.ammo_select )
 		self.Maximum.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Maximum.Bind( wx.EVT_TEXT, self.set_value )
 		self.Pickup.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Pickup.Bind( wx.EVT_TEXT, self.set_value )
+		self.Rename.Bind( wx.EVT_BUTTON, self.ammo_rename )
+		self.Restore.Bind( wx.EVT_BUTTON, self.ammo_restore )
 	
 	def __del__( self ):
 		pass
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def ammo_rename( self, event ):
+		pass
+	
+	def ammo_select( self, event ):
+		pass
+	
 	def focus_text( self, event ):
 		pass
 	
@@ -1966,6 +1978,10 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		pass
 	
 	
+	
+	
+	def ammo_restore( self, event ):
+		pass
 	
 
 ###########################################################################

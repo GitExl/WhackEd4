@@ -137,6 +137,23 @@ class Patch:
                 string_index = self.engine.strings.index(name)
                 patch_names[name_index] = self.strings[string_index]
                 
+                
+    def get_ammo_name(self, ammo_index):
+        """
+        Returns the name of an ammo entry.
+        
+        The second to last and last entries are hardcoded.
+        """
+        
+        if ammo_index == len(self.ammo):
+            return 'Unknown'
+        elif ammo_index == len(self.ammo) + 1:
+            return 'Infinite'
+        elif ammo_index < len(self.ammo):
+            return self.ammo.names[ammo_index]
+        
+        return None
+                
     
     def write_dehacked(self, filename):
         """

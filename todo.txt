@@ -1,7 +1,5 @@
 Beta
 - Add editor iconography.
-- Add weapons editor.
-- Add ammo editor.
 - Add cheats editor.
 - Add misc. editor.
 - Add par times editor.

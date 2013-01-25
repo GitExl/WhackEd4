@@ -505,9 +505,7 @@
 		"Bullets",
 		"Shells",
 		"Cells",
-		"Rockets",
-		"Unknown",
-		"Unlimited"
+		"Rockets"
 	],
 
 	"actions": {
