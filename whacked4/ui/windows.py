@@ -408,9 +408,9 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		Sizer26 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		ThingNamesChoices = []
-		self.ThingNames = wx.ListBox( self, THING_LIST, wx.DefaultPosition, wx.Size( -1,-1 ), ThingNamesChoices, wx.LB_HSCROLL|wx.LB_NEEDED_SB|wx.LB_SINGLE|wx.SUNKEN_BORDER )
-		Sizer26.Add( self.ThingNames, 10, wx.EXPAND|wx.FIXED_MINSIZE, 0 )
+		ThingListChoices = []
+		self.ThingList = wx.ListBox( self, THING_LIST, wx.DefaultPosition, wx.Size( -1,-1 ), ThingListChoices, wx.LB_HSCROLL|wx.LB_NEEDED_SB|wx.LB_SINGLE|wx.SUNKEN_BORDER )
+		Sizer26.Add( self.ThingList, 10, wx.EXPAND|wx.FIXED_MINSIZE, 0 )
 		
 		
 		Sizer26.AddSpacer( ( 12, 0), 0, 0, 0 )
@@ -911,8 +911,8 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.ThingNames.Bind( wx.EVT_LISTBOX, self.thing_select )
-		self.ThingNames.Bind( wx.EVT_LISTBOX_DCLICK, self.thing_rename )
+		self.ThingList.Bind( wx.EVT_LISTBOX, self.thing_select )
+		self.ThingList.Bind( wx.EVT_LISTBOX_DCLICK, self.thing_rename )
 		self.ThingId.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingId.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )

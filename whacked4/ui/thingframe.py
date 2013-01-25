@@ -84,37 +84,6 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         self.SetIcon(wx.Icon('res/icon-weapons-small.png'))
         
         
-    def undo_restore_item(self, item):
-        """
-        @see EditorMixin.undo_restore_item
-        """
-        
-        index = item['index']
-
-        self.current_thing = item['thing']
-        self.patch.things[index] = item['thing']
-        self.patch.things.names[index] = item['name']
-        self.ThingNames.SetString(index, item['name'])
-        
-        self.ThingNames.Select(index)
-        self.ThingNames.EnsureVisible(index)
-        self.update_properties()
-        
-        self.is_modified(True)
-        
-        
-    def undo_store_item(self):
-        """
-        @see EditorMixin.undo_store_item
-        """
-        
-        return {
-            'index': self.current_list_index,
-            'thing': copy.deepcopy(self.current_thing),
-            'name': copy.copy(self.patch.things.names[self.current_list_index])
-        }   
-        
-    
     def build(self, patch):
         """
         @see EditorMixin.build
@@ -123,19 +92,30 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         self.patch = patch
         self.clipboard = None
         
-        # Build thing names list.
-        self.ThingNames.SetItems(self.patch.things.names)
+        self.selected_index = 0
         
-        # Build flags list.
+        self.flaglist_build()
+        self.thinglist_build()
+        
+        
+    def thinglist_build(self):
+        """
+        Builds the thing names list from scratch.
+        """
+        
+        self.ThingList.SetItems(self.patch.things.names)
+        self.ThingList.SetSelection(0, True)
+        
+        
+    def flaglist_build(self):
+        """
+        Build the flags list from scratch.
+        """
+        
         flaglist = []
         for data in self.patch.engine.things.flags.itervalues():
             flaglist.append(' ' + data['name'])
         self.ThingFlags.SetItems(flaglist)
-        
-        # Select the first thing in the list.
-        self.current_thing = self.patch.things[0]
-        self.current_list_index = 0
-        self.update_properties()
         
     
     def activate(self, event):
@@ -159,8 +139,8 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         """
         
         self.clipboard = {
-            'thing': copy.deepcopy(self.current_thing),
-            'name': copy.copy(self.patch.things.names[self.current_list_index])
+            'thing': copy.deepcopy(self.patch.things[self.selected_index]),
+            'name': copy.copy(self.patch.things.names[self.selected_index])
         }
         
         
@@ -178,9 +158,8 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         dup_name = copy.copy(self.clipboard['name'])
         
         # Copy references to newly duplicated thing.
-        self.patch.things[self.current_list_index] = dup
-        self.patch.things.names[self.current_list_index] = dup_name
-        self.current_thing = dup
+        self.patch.things[self.selected_index] = dup
+        self.patch.things.names[self.selected_index] = dup_name
         
         self.update_properties()
         self.is_modified(True)
@@ -191,26 +170,28 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         Update the visible properties of the currently selected thing.
         """
         
-        self.SetLabel('Things - ' + self.patch.things.names[self.current_list_index])
+        thing = self.patch.things[self.selected_index]
+        thing_name = self.patch.things.names[self.selected_index]
         
         # Set basic property text control values.
-        self.ThingId.ChangeValue(str(self.current_thing['id']))
-        self.ThingHealth.ChangeValue(str(self.current_thing['health']))
-        self.ThingRadius.ChangeValue(str(self.current_thing['radius'] / self.FIXED_UNIT))
-        self.ThingHeight.ChangeValue(str(self.current_thing['height'] / self.FIXED_UNIT))
-        self.ThingDamage.ChangeValue(str(self.current_thing['damage']))
-        self.ThingReactionTime.ChangeValue(str(self.current_thing['reactionTime']))
-        self.ThingPainChance.ChangeValue(str(self.current_thing['painChance']))
-        self.ThingMass.ChangeValue(str(self.current_thing['mass']))
+        self.ThingId.ChangeValue(str(thing['id']))
+        self.ThingHealth.ChangeValue(str(thing['health']))
+        self.ThingRadius.ChangeValue(str(thing['radius'] / self.FIXED_UNIT))
+        self.ThingHeight.ChangeValue(str(thing['height'] / self.FIXED_UNIT))
+        self.ThingDamage.ChangeValue(str(thing['damage']))
+        self.ThingReactionTime.ChangeValue(str(thing['reactionTime']))
+        self.ThingPainChance.ChangeValue(str(thing['painChance']))
+        self.ThingMass.ChangeValue(str(thing['mass']))
         
         # Speed is in fixed point if this thing is a missile, normal otherwise
-        speed = self.current_thing['speed']
-        if (self.current_thing['flags'] & self.FLAG_MISSILE) != 0:
-            speed /= self.FIXED_UNIT
+        if (thing['flags'] & self.FLAG_MISSILE) != 0:
+            speed = thing['speed'] / self.FIXED_UNIT
+        else:
+            speed = thing['speed']
         self.ThingSpeed.ChangeValue(str(speed))
         
         # Set flags.
-        flags = self.current_thing['flags']
+        flags = thing['flags']
         bits = 1
         for flag in range(len(self.patch.engine.things.flags)):
             self.ThingFlags.Check(flag, (flags & bits != 0))
@@ -222,8 +203,8 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         for name in self.PROPS_SOUNDS.values():
             self.set_display_sound(name)
             
-        # Thing name.
-        self.ThingNames.SetString(self.current_list_index, self.patch.things.names[self.current_list_index])
+        # Update name.
+        self.ThingList.SetString(self.selected_index, thing_name)
         
 
     def set_display_state(self, state_name):
@@ -231,7 +212,8 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         Sets state control values based on the partial name of a state thing property.
         """
         
-        state_index = self.current_thing['state' + state_name]
+        thing = self.patch.things[self.selected_index]
+        state_index = thing['state' + state_name]
         self.__dict__['ThingState' + state_name].ChangeValue(str(state_index))
         self.__dict__['ThingState' + state_name + 'Name'].SetLabel(self.patch.get_state_name(state_index))
         
@@ -241,7 +223,8 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         Sets sound control values based on the partial name of a sound thing property.
         """
         
-        sound_index = self.current_thing['sound' + sound_name]
+        thing = self.patch.things[self.selected_index]
+        sound_index = thing['sound' + sound_name]
         self.__dict__['ThingSound' + sound_name].ChangeValue(str(sound_index))
         self.__dict__['ThingSound' + sound_name + 'Name'].SetLabel(self.patch.get_sound_name(sound_index))
         
@@ -259,15 +242,18 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         window = self.FindWindowById(window_id)
         value = utils.validate_numeric(window)
         
+        thing = self.patch.things[self.selected_index]
+        
         # Apply fixed point divisor if the value needs it.
         # This is also necessary for the speed property if the thing has it's MISSILE flag set.
         key = self.PROPS_VALUES[window_id]
         if key == 'radius' or key == 'height':
             value *= self.FIXED_UNIT
-        elif key == 'speed' and (self.current_thing['flags'] & self.FLAG_MISSILE) != 0:
+        elif key == 'speed' and (thing['flags'] & self.FLAG_MISSILE) != 0:
             value *= self.FIXED_UNIT
         
-        self.current_thing[key] = value
+        thing[key] = value
+        
         self.is_modified(True)
         
         
@@ -283,6 +269,8 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         window_id = event.GetId()
         window = self.FindWindowById(window_id)
         value = utils.validate_numeric(window)
+
+        thing = self.patch.things[self.selected_index]
         
         # Clamp to valid state indices.
         if value < 0:
@@ -294,7 +282,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
             window.ChangeValue(str(value))
         
         key = self.PROPS_STATES[window_id]
-        self.current_thing['state' + key] = value
+        thing['state' + key] = value
         self.__dict__['ThingState' + key + 'Name'].SetLabel(self.patch.get_state_name(value))
         self.is_modified(True)
         
@@ -312,6 +300,8 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         window = self.FindWindowById(window_id)
         value = utils.validate_numeric(window)
         
+        thing = self.patch.things[self.selected_index]
+        
         # Clamp to valid sound indices.
         if value < 0:
             value = 0
@@ -322,7 +312,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
             window.ChangeValue(str(value))
         
         key = self.PROPS_SOUNDS[window_id]
-        self.current_thing['sound' + key] = value
+        thing['sound' + key] = value
         self.__dict__['ThingSound' + key + 'Name'].SetLabel(self.patch.get_sound_name(value))
         self.is_modified(True)
 
@@ -343,7 +333,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
                 flags_value |= bits
             bits *= 2
             
-        self.current_thing['flags'] = flags_value
+        self.patch.things[self.selected_index]['flags'] = flags_value
         self.is_modified(True)
         
         
@@ -382,11 +372,8 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         Called when a thing is selected from the thing names list.
         """
         
-        index = self.ThingNames.GetSelection()
-        if index != wx.NOT_FOUND:
-            self.current_list_index = index
-            self.current_thing = self.patch.things[index]
-            self.update_properties()
+        self.selected_index = self.ThingList.GetSelection()
+        self.update_properties()
     
         
     def thing_rename(self, event):
@@ -402,14 +389,14 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         Renames the currently selected thing.
         """
         
-        thing_name = self.patch.things.names[self.current_list_index]
+        thing_name = self.patch.things.names[self.selected_index]
         new_name = wx.GetTextFromUser('Enter a new name for ' + thing_name, caption='Change name', default_value=thing_name, parent=self)
         
         if new_name != '':
             self.undo_add()
             
-            self.patch.things.names[self.current_list_index] = new_name
-            self.ThingNames.SetString(self.current_list_index, new_name)
+            self.patch.things.names[self.selected_index] = new_name
+            self.ThingList.SetString(self.selected_index, new_name)
             
             self.update_properties()
             self.is_modified(True)
@@ -422,14 +409,8 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         
         self.undo_add()
         
-        # Restore all thing references.
-        self.current_thing = copy.deepcopy(self.patch.engine.things[self.current_list_index])
-        self.patch.things[self.current_list_index] = self.current_thing
-        
-        # Restore all name references.
-        name = copy.copy(self.patch.engine.things.names[self.current_list_index])
-        self.patch.things.names[self.current_list_index] = name
-        self.ThingNames.SetString(self.current_list_index, name)
+        self.patch.things[self.selected_index] = copy.deepcopy(self.patch.engine.things[self.selected_index])
+        self.patch.things.names[self.selected_index] = copy.copy(self.patch.engine.things.names[self.selected_index])
         
         self.update_properties()
         self.is_modified(True)
@@ -441,7 +422,34 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         """
         
         key = self.PROPS_STATENAMES[event.GetId()]
-        state_index = self.current_thing['state' + key]
+        state_index = self.patch.things[self.selected_index]['state' + key]
         
-        self.goto_state_index(state_index, statefilter.FILTER_TYPE_THING, self.current_list_index)
+        self.goto_state_index(state_index, statefilter.FILTER_TYPE_THING, self.selected_index)
     
+    
+    def undo_restore_item(self, item):
+        """
+        @see EditorMixin.undo_restore_item
+        """
+        
+        index = item['index']
+
+        self.patch.things[index] = item['item']
+        self.patch.things.names[index] = item['name']
+        
+        self.ThingList.SetString(index, item['name'])
+        self.update_properties()
+        
+        self.is_modified(True)
+        
+        
+    def undo_store_item(self):
+        """
+        @see EditorMixin.undo_store_item
+        """
+        
+        return {
+            'item': copy.deepcopy(self.patch.things[self.selected_index]),
+            'name': copy.copy(self.patch.things.names[self.selected_index]),
+            'index': self.selected_index
+        }  
