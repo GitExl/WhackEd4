@@ -92,7 +92,9 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
             self.undo_add()
             
             self.patch.cheats[key] = self.string_dialog.new_string
+            
             self.cheatlist_update_row(row_index)
+            self.is_modified(True)
             
             
     def cheat_restore(self, event):
@@ -104,7 +106,9 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         
         key = self.cheat_get_key(self.selected_index)
         self.patch.cheats[key] = copy.deepcopy(self.patch.engine.cheats[key])
+        
         self.cheatlist_update_row(self.selected_index)
+        self.is_modified(True)
         
         
     def cheat_select(self, event):
@@ -131,7 +135,9 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         key = self.cheat_get_key(index)
         
         self.patch.cheats[key] = item['item']
+        
         self.cheatlist_update_row(index)
+        self.is_modified(True)
         
         
     def undo_store_item(self):
