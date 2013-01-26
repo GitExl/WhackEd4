@@ -2,6 +2,7 @@
 #coding=utf8
 
 from ui import windows
+import wx
 
 
 class StringDialog(windows.StringDialogBase):
@@ -19,7 +20,7 @@ class StringDialog(windows.StringDialogBase):
         self.max_length = 0
 
 
-    def set_state(self, engine_string, old_string, extended):
+    def set_state(self, engine_string, old_string, extended, name, cheat=False):
         """
         Sets a new state for this string dialog.
         """
@@ -32,16 +33,26 @@ class StringDialog(windows.StringDialogBase):
         self.Original.ChangeValue(engine_string)
         self.New.ChangeValue(old_string)
         
+        if cheat == False:
+            self.SetLabel('String - {}'.format(name))
+            self.New.SetWindowStyleFlag(wx.TE_MULTILINE | wx.TE_DONTWRAP | wx.TE_PROCESS_ENTER | wx.TE_PROCESS_TAB)
+        else:
+            self.SetLabel('Cheat - {}'.format(name))
+            self.New.SetWindowStyleFlag(wx.TE_DONTWRAP)
+        
         if extended == True:
             self.max_length = 0
             self.New.SetMaxLength(0)
             self.CharsLeft.Hide()
         else:
             # Non-extended string lengths are limited by the padding room in the executable.
-            self.max_length = int((len(old_string) / 4.0) * 4) + 3
+            if cheat == False:
+                self.max_length = int((len(old_string) / 4.0) * 4) + 3
+            else:
+                self.max_length = len(old_string)
             self.New.SetMaxLength(self.max_length)
             self.CharsLeft.Show()
-        
+            
         self.update_length()
         
         self.New.SelectAll()

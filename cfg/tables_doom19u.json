@@ -14575,86 +14575,103 @@
     }, 
     "cheatData": {
         "changeMusic": {
+            "name": "Change music",
             "patchKey": "Change music", 
             "offset": 0, 
             "length": 5
         }, 
         "chainsaw": {
+            "name": "Give chainsaw",
             "patchKey": "Chainsaw", 
             "offset": 9, 
             "length": 10
         }, 
         "godMode": {
+            "name": "God mode",
             "patchKey": "God mode", 
             "offset": 20, 
             "length": 5
         }, 
         "ammoAndKeys": {
+            "name": "Give ammo + keys",
             "patchKey": "Ammo & keys", 
             "offset": 26, 
             "length": 5
         }, 
         "ammo": {
+            "name": "Give ammo",
             "patchKey": "Ammo", 
             "offset": 32, 
             "length": 4
         }, 
         "noClip1": {
+            "name": "No clipping 1",
             "patchKey": "No Clipping 1", 
             "offset": 37, 
             "length": 10
         }, 
         "noClip2": {
+            "name": "No clipping 2",
             "patchKey": "No Clipping 2", 
             "offset": 48, 
             "length": 6
         }, 
         "invincibility": {
+            "name": "Invincibility powerup",
             "patchKey": "Invincibility", 
             "offset": 55, 
             "length": 9
         }, 
         "berserk": {
+            "name": "Berserk powerup",
             "patchKey": "Berserk", 
             "offset": 65, 
             "length": 9
         }, 
         "invisibility": {
+            "name": "Invisibility powerup",
             "patchKey": "Invisibility", 
             "offset": 75, 
             "length": 9
         }, 
         "radiationSuit": {
+            "name": "Radiation suit",
             "patchKey": "Radiation Suit", 
             "offset": 85, 
             "length": 9
         }, 
         "autoMap": {
+            "name": "Auto-map",
             "patchKey": "Auto-map", 
             "offset": 95, 
             "length": 9
         }, 
         "liteAmpGoggles": {
+            "name": "Lite-amp powerup",
             "patchKey": "Lite-Amp Goggles", 
             "offset": 105, 
             "length": 9
         }, 
         "beholdMenu": {
+            "name": "Powerup menu",
             "patchKey": "BEHOLD menu", 
             "offset": 115, 
             "length": 8
         }, 
         "warp": {
+            "name": "Level warp",
             "patchKey": "Level Warp", 
             "offset": 125, 
             "length": 6
         }, 
         "position": {
+            "name": "Get player position",
             "patchKey": "Player Position", 
             "offset": 135, 
             "length": 7
         }, 
         "map": {
+            "name": "Reveal map",
             "patchKey": "Map cheat", 
             "offset": -3624, 
             "length": 4

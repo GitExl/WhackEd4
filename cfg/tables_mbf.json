@@ -119,56 +119,73 @@
         "Rockets"
     ],
     "cheatData": {
-        "ammo": {
-            "patchKey": "Ammo"
-        },
-        "ammoAndKeys": {
-            "patchKey": "Ammo & keys"
-        },
-        "autoMap": {
-            "patchKey": "Auto-map"
-        },
-        "beholdMenu": {
-            "patchKey": "BEHOLD menu"
-        },
-        "berserk": {
-            "patchKey": "Berserk"
-        },
-        "chainsaw": {
-            "patchKey": "Chainsaw"
-        },
         "changeMusic": {
+            "name": "Change music",
             "patchKey": "Change music"
-        },
+        }, 
+        "chainsaw": {
+            "name": "Give chainsaw",
+            "patchKey": "Chainsaw"
+        }, 
         "godMode": {
+            "name": "God mode",
             "patchKey": "God mode"
-        },
-        "invincibility": {
-            "patchKey": "Invincibility"
-        },
-        "invisibility": {
-            "patchKey": "Invisibility"
-        },
-        "liteAmpGoggles": {
-            "patchKey": "Lite-Amp Goggles"
-        },
-        "map": {
-            "patchKey": "Map cheat"
-        },
+        }, 
+        "ammoAndKeys": {
+            "name": "Give ammo + keys",
+            "patchKey": "Ammo & keys"
+        }, 
+        "ammo": {
+            "name": "Give ammo",
+            "patchKey": "Ammo"
+        }, 
         "noClip1": {
+            "name": "No clipping 1",
             "patchKey": "No Clipping 1"
-        },
+        }, 
         "noClip2": {
+            "name": "No clipping 2",
             "patchKey": "No Clipping 2"
-        },
-        "position": {
-            "patchKey": "Player Position"
-        },
+        }, 
+        "invincibility": {
+            "name": "Invincibility powerup",
+            "patchKey": "Invincibility"
+        }, 
+        "berserk": {
+            "name": "Berserk powerup",
+            "patchKey": "Berserk"
+        }, 
+        "invisibility": {
+            "name": "Invisibility powerup",
+            "patchKey": "Invisibility"
+        }, 
         "radiationSuit": {
+            "name": "Radiation suit",
             "patchKey": "Radiation Suit"
-        },
+        }, 
+        "autoMap": {
+            "name": "Auto-map",
+            "patchKey": "Auto-map"
+        }, 
+        "liteAmpGoggles": {
+            "name": "Lite-amp powerup",
+            "patchKey": "Lite-Amp Goggles"
+        }, 
+        "beholdMenu": {
+            "name": "Powerup menu",
+            "patchKey": "BEHOLD menu"
+        }, 
         "warp": {
+            "name": "Level warp",
             "patchKey": "Level Warp"
+        }, 
+        "position": {
+            "name": "Get player position",
+            "patchKey": "Player Position"
+        }, 
+        "map": {
+            "name": "Reveal map",
+            "patchKey": "Map cheat"
         }
     },
     "cheats": {

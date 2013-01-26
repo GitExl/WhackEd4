@@ -27,7 +27,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         
         self.patch = patch
         
-        self.string_dialog = stringdialog.StringDialog(self)
+        self.string_dialog = stringdialog.StringDialog(self.GetParent())
         
         self.stringlist_build()
         
@@ -99,9 +99,10 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
             
         engine_string = self.patch.engine.strings[string_key]
         old_string = self.patch.strings[string_key]
+        name = string_key
         
         # Display dialog.
-        self.string_dialog.set_state(engine_string, old_string, self.patch.extended)
+        self.string_dialog.set_state(engine_string, old_string, self.patch.extended, name)
         self.string_dialog.ShowModal()
         
         if self.string_dialog.new_string != None:

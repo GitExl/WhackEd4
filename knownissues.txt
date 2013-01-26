@@ -1,2 +1,3 @@
 - Tab key traversal barely works if at all.
 - The file dialogs over the model patch settings window are not modal themselves.
+- Some listcontrols that expand the last column display a scrollbar when none is needed.

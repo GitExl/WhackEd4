@@ -4,7 +4,6 @@ Beta
 - Add misc. editor.
 - Add par times editor.
 - Fix MaxLength in string dialog not counting any newlines. Why would the control do this???
-- Allow sound playback from thing editor.
 - Beta test.
 
 Release

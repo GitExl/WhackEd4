@@ -133,10 +133,10 @@ AMMO_RENAME = 1784
 AMMO_RESTORE = 1785
 FRAME_CHEATS = 1786
 CHEATS_LIST = 1787
-CHEATS_INFIGHT = 1788
-CHEATS_RESTORE = 1789
-FRAME_MISC = 1790
-MISC_LIST = 1791
+CHEATS_RESTORE = 1788
+FRAME_MISC = 1789
+MISC_LIST = 1790
+MISC_INFIGHT = 1791
 MISC_RESTORE = 1792
 FRAME_PAR = 1793
 PAR_LIST = 1794
@@ -2008,20 +2008,17 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 class CheatsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_CHEATS, title = u"Cheats", pos = wx.DefaultPosition, size = wx.Size( 350,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_CHEATS, title = u"Cheats", pos = wx.DefaultPosition, size = wx.Size( 350,401 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 350,380 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 350,401 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.CheatsList = wx.ListCtrl( self, CHEATS_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
-		bSizer41.Add( self.CheatsList, 1, wx.EXPAND, 5 )
+		self.CheatList = wx.ListCtrl( self, CHEATS_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		bSizer41.Add( self.CheatList, 1, wx.EXPAND, 5 )
 		
 		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.Infight = wx.CheckBox( self, CHEATS_INFIGHT, u" Monsters infight", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer158.Add( self.Infight, 0, wx.ALL|wx.EXPAND, 6 )
 		
 		
 		bSizer158.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
@@ -2039,8 +2036,9 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.CheatsList.Bind( wx.EVT_LIST_BEGIN_LABEL_EDIT, self.cheat_edit_start )
-		self.CheatsList.Bind( wx.EVT_LIST_END_LABEL_EDIT, self.cheat_edit_end )
+		self.CheatList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.cheat_edit )
+		self.CheatList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.cheat_select )
+		self.CheatList.Bind( wx.EVT_SIZE, self.cheatlist_resize )
 		self.Restore.Bind( wx.EVT_BUTTON, self.cheat_restore )
 	
 	def __del__( self ):
@@ -2048,10 +2046,13 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def cheat_edit_start( self, event ):
+	def cheat_edit( self, event ):
 		pass
 	
-	def cheat_edit_end( self, event ):
+	def cheat_select( self, event ):
+		pass
+	
+	def cheatlist_resize( self, event ):
 		pass
 	
 	def cheat_restore( self, event ):
@@ -2076,6 +2077,9 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		bSizer41.Add( self.MiscList, 1, wx.EXPAND, 0 )
 		
 		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.Infight = wx.CheckBox( self, MISC_INFIGHT, u" Monsters infight", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer158.Add( self.Infight, 0, wx.ALL|wx.EXPAND, 6 )
 		
 		
 		bSizer158.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
@@ -2336,7 +2340,7 @@ class StringDialogBase ( wx.Dialog ):
 	def __init__( self, parent ):
 		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"String", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 640,480 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 640,300 ), wx.DefaultSize )
 		
 		bSizer39 = wx.BoxSizer( wx.VERTICAL )
 		
