@@ -7,6 +7,7 @@ Generic about dialog interface.
 
 from whacked4 import config
 from whacked4.ui import windows
+import wx
 
 
 class AboutDialog(windows.AboutDialogBase):
@@ -17,9 +18,12 @@ class AboutDialog(windows.AboutDialogBase):
         self.Version.SetLabel('Version ' + config.APP_VERSION)
         
         with open('LICENSE', 'r') as f:
-            license_text = f.read()
-        self.License.SetValue(license_text)
+            self.license_text = f.read()
     
     
     def ok(self, event):
         self.Hide()
+        
+        
+    def license(self, event):
+        wx.MessageBox(message=self.license_text, caption='License', style=wx.OK, parent=self)

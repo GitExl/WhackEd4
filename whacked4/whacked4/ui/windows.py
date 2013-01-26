@@ -180,25 +180,25 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
 		self.MainToolbar = self.CreateToolBar( wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL, wx.ID_ANY )
-		self.MainToolbar.SetToolBitmapSize( wx.Size( 40,40 ) )
+		self.MainToolbar.SetToolBitmapSize( wx.Size( 40,48 ) )
 		self.MainToolbar.SetToolSeparation( 1 )
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u"Things", wx.Bitmap( u"res/editor-things.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u" Things", wx.Bitmap( u"res/editor-things.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_STATES, u"States", wx.Bitmap( u"res/editor-states.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_STATES, u" States", wx.Bitmap( u"res/editor-states.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_SOUNDS, u"Sounds", wx.Bitmap( u"res/editor-sounds.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_SOUNDS, u" Sounds", wx.Bitmap( u"res/editor-sounds.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_STRINGS, u"Strings", wx.Bitmap( u"res/editor-strings.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_STRINGS, u" Strings", wx.Bitmap( u"res/editor-strings.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_WEAPONS, u"Weapons", wx.Bitmap( u"res/editor-weapons.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_WEAPONS, u" Weapons", wx.Bitmap( u"res/editor-weapons.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_AMMO, u"Ammo", wx.Bitmap( u"res/editor-ammo.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_AMMO, u" Ammo", wx.Bitmap( u"res/editor-ammo.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_CHEATS, u"Cheats", wx.Bitmap( u"res/editor-cheats.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_CHEATS, u" Cheats", wx.Bitmap( u"res/editor-cheats.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_MISC, u"Miscellaneous  ", wx.Bitmap( u"res/editor-misc.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_MISC, u" Miscellaneous  ", wx.Bitmap( u"res/editor-misc.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_PAR, u"Par times", wx.Bitmap( u"res/editor-par.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_PAR, u" Par times", wx.Bitmap( u"res/editor-par.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.MainToolbar.Realize() 
 		
@@ -2666,7 +2666,7 @@ class StartDialogBase ( wx.Dialog ):
 class AboutDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,478 ), style = wx.CAPTION )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,312 ), style = wx.CAPTION )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -2717,23 +2717,19 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText139.Wrap( -1 )
 		bSizer56.Add( self.m_staticText139, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, un4seen, XDelusion", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, un4seen, XDelusion", wx.DefaultPosition, wx.DefaultSize, wx.ST_NO_AUTORESIZE )
 		self.m_staticText138.Wrap( 450 )
-		bSizer56.Add( self.m_staticText138, 0, wx.ALL, 6 )
+		bSizer56.Add( self.m_staticText138, 1, wx.ALL, 6 )
 		
 		
-		bSizer56.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
-		
-		self.License = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE|wx.TE_READONLY )
-		self.License.SetFont( wx.Font( 7, 70, 90, 90, False, "Courier New" ) )
-		self.License.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
-		
-		bSizer56.Add( self.License, 1, wx.ALL|wx.EXPAND, 6 )
-		
-		
-		bSizer56.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
+		bSizer56.AddSpacer( ( 0, 12), 0, wx.EXPAND, 5 )
 		
 		bSizer58 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.License = wx.Button( self, wx.ID_ANY, u"License", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.License.SetMinSize( wx.Size( 150,28 ) )
+		
+		bSizer58.Add( self.License, 0, wx.ALL, 0 )
 		
 		
 		bSizer58.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
@@ -2757,6 +2753,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.Centre( wx.BOTH )
 		
 		# Connect Events
+		self.License.Bind( wx.EVT_BUTTON, self.license )
 		self.ButtonOk.Bind( wx.EVT_BUTTON, self.ok )
 	
 	def __del__( self ):
@@ -2764,6 +2761,9 @@ class AboutDialogBase ( wx.Dialog ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def license( self, event ):
+		pass
+	
 	def ok( self, event ):
 		pass
 	

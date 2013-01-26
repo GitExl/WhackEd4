@@ -1,6 +1,9 @@
 Beta
 - Add misc. editor.
 - Add par times editor.
+- Fix about dialog credits list being cut off.
+- Replace wxListBox instances with wxListView.
+- Make edit\copy\undo available only when an editor that supports those functions is active.
 - Fix MaxLength in string dialog not counting any newlines. Why would the control do this???
 - Tab key traversal barely works if at all.
 - The file dialogs over the model patch settings window are not modal themselves.
