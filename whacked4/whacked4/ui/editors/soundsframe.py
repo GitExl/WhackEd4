@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from app import config
-from ui import editormixin, windows, utils
+from whacked4 import config, utils
+from whacked4.ui import editormixin, windows
 import copy
 import wx
 

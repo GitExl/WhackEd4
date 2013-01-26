@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from dehacked import statefilter
-from ui import windows, utils, editormixin
+from whacked4 import utils
+from whacked4.dehacked import statefilter
+from whacked4.ui import editormixin, windows
 import copy
 import wx
 

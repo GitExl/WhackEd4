@@ -5,8 +5,8 @@
 Generic about dialog interface.
 """
 
-from app import config
-from ui import windows
+from whacked4 import config
+from whacked4.ui import windows
 
 
 class AboutDialog(windows.AboutDialogBase):

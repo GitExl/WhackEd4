@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from app import config
-from dehacked import patch
-from ui import editormixin, windows, stringdialog
+from whacked4 import config
+from whacked4.dehacked import patch
+from whacked4.ui import editormixin, windows
+from whacked4.ui.dialogs import stringdialog
 import copy
 import wx
 

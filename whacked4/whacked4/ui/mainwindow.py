@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from app import config
 from collections import OrderedDict
-from dehacked import engine, patch
-from doom import wad, wadlist
-from ui import windows, thingframe, statesframe, patchinfodialog, workspace, startdialog, aboutdialog, soundsframe, \
-    stringsframe, weaponsframe, ammoframe, cheatsframe, miscframe, parframe
+from whacked4 import config
+from whacked4.dehacked import engine, patch
+from whacked4.doom import wadlist, wad
+from whacked4.ui import windows, workspace
+from whacked4.ui.dialogs import startdialog, aboutdialog, patchinfodialog
+from whacked4.ui.editors import thingframe, statesframe, soundsframe, stringsframe, weaponsframe, ammoframe, cheatsframe, \
+    miscframe, parframe
 import glob
 import os.path
 import shutil
@@ -14,7 +16,7 @@ import sys
 import wx
 
 
-class MainFrame(windows.MainFrameBase):
+class MainWindow(windows.MainFrameBase):
     """
     The main MDI parent window.
     """

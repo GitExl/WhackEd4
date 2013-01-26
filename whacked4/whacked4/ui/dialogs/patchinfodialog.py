@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from doom import wad
-from ui import windows
+from whacked4.doom import wad
+from whacked4.ui import windows
 import os.path
 import wx
 

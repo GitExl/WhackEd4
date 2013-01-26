@@ -6,7 +6,7 @@ Contains all entry definition objects used by an engine's tables.
 """
 
 from collections import OrderedDict
-from dehacked.entry import Entry
+from whacked4.dehacked.entry import Entry
 import struct
 
 

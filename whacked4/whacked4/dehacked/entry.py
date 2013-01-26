@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from dehacked import filters
+from whacked4.dehacked import filters
 
 
 class Entry:

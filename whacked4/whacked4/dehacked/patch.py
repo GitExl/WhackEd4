@@ -5,8 +5,8 @@
 This module contains classes to create, read and write Dehacked patches.
 """
 
-from app import config
-from dehacked import entries
+from whacked4 import config
+from whacked4.dehacked import entries
 import copy
 
 

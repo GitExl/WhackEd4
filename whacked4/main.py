@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from app import config
-from ui import mainframe
+from whacked4 import config
+from whacked4.ui import mainwindow
 import argparse
 import os.path
 import sys
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     )
     
     try:
-        main_frame = mainframe.MainFrame(None, args)
+        main_window = mainwindow.MainWindow(None, args)
         app.MainLoop()
     
     # Catch all exceptions and write them to stdout, and display if needed.

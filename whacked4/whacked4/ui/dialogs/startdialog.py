@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from app import config
-from ui import windows
+from whacked4 import config
+from whacked4.ui import windows
 
 
 class StartDialog(windows.StartDialogBase):

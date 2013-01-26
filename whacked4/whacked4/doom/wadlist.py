@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from doom import graphics, sound
+from whacked4.doom import sound, graphics
 
 
 class WADList:

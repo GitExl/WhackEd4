@@ -9,7 +9,7 @@
 
 import wx
 import wx.xrc
-from ui import spritepreview
+from whacked4.ui import spritepreview
 
 WINDOW_MAIN = 1666
 MAIN_TOOL_THINGS = 1667

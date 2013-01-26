@@ -5,7 +5,7 @@
 Contains program configuration constants and a settings object which contains user-definable configuration details.
 """
 
-from app import settingshandler
+from whacked4 import settingshandler
 import os.path
 
 

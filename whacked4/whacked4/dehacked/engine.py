@@ -2,8 +2,8 @@
 #coding=utf8
 
 from collections import OrderedDict
-from dehacked import entries, entry, table
 from json.encoder import JSONEncoder
+from whacked4.dehacked import table, entries, entry
 import json
 import struct
 

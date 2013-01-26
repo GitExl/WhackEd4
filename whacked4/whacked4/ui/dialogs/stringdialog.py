@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from ui import windows
+from whacked4.ui import windows
 import wx
 
 

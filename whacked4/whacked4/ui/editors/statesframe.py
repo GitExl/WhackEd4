@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from app import config
 from collections import OrderedDict
-from dehacked import statefilter
-from ui import windows, utils, spritesdialog, editormixin
+from whacked4 import config, utils
+from whacked4.dehacked import statefilter
+from whacked4.ui import editormixin, windows
+from whacked4.ui.dialogs import spritesdialog
 import copy
 import wx
 
