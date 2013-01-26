@@ -14,7 +14,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         windows.ParFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
         
-        self.SetIcon(wx.Icon('res/icon-weapons-small.png'))
+        self.SetIcon(wx.Icon('res/editor-par.ico'))
 
 
     def build(self, patch):

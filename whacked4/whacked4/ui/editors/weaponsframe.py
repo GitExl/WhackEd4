@@ -44,7 +44,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         windows.WeaponsFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
         
-        self.SetIcon(wx.Icon('res/icon-weapons-small.png'))
+        self.SetIcon(wx.Icon('res/editor-weapons.ico'))
 
 
     def build(self, patch):

@@ -100,7 +100,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         windows.ThingFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
         
-        self.SetIcon(wx.Icon('res/icon-weapons-small.png'))
+        self.SetIcon(wx.Icon('res/editor-things.ico'))
         
         
     def build(self, patch):

@@ -2,7 +2,7 @@
 #coding=utf8
 
 """
-General utility functions used by the ui package.
+General utility functions.
 """
 
 

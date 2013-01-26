@@ -18,7 +18,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         windows.StringsFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
         
-        self.SetIcon(wx.Icon('res/icon-weapons-small.png'))
+        self.SetIcon(wx.Icon('res/editor-strings.ico'))
 
 
     def build(self, patch):

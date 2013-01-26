@@ -179,24 +179,26 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
-		self.MainToolbar = self.CreateToolBar( wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL, wx.ID_ANY ) 
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u"Things", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar = self.CreateToolBar( wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL, wx.ID_ANY )
+		self.MainToolbar.SetToolBitmapSize( wx.Size( 40,40 ) )
+		self.MainToolbar.SetToolSeparation( 1 )
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u"Things", wx.Bitmap( u"res/editor-things.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_STATES, u"States", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_STATES, u"States", wx.Bitmap( u"res/editor-states.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_SOUNDS, u"Sounds", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_SOUNDS, u"Sounds", wx.Bitmap( u"res/editor-sounds.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_STRINGS, u"Strings", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_STRINGS, u"Strings", wx.Bitmap( u"res/editor-strings.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_WEAPONS, u"Weapons", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_WEAPONS, u"Weapons", wx.Bitmap( u"res/editor-weapons.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_AMMO, u"Ammo", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_AMMO, u"Ammo", wx.Bitmap( u"res/editor-ammo.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_CHEATS, u"Cheats", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_CHEATS, u"Cheats", wx.Bitmap( u"res/editor-cheats.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_MISC, u"Miscellaneous  ", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_MISC, u"Miscellaneous  ", wx.Bitmap( u"res/editor-misc.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_PAR, u"Par times", wx.Bitmap( u"res/icon-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.MainToolbar.AddLabelTool( MAIN_TOOL_PAR, u"Par times", wx.Bitmap( u"res/editor-par.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.MainToolbar.Realize() 
 		
