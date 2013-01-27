@@ -149,7 +149,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         if self.patch.extended == True:
             return self.patch.strings.keys()[string_index]
         else:
-            return string_index 
+            return string_index
     
     
     def undo_restore_item(self, item):

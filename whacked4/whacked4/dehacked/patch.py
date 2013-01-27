@@ -103,6 +103,7 @@ class Patch:
         """
         
         self.engine = engine
+        self.extended = engine.extended
         
         self.things = copy.deepcopy(engine.things)
         self.states = copy.deepcopy(engine.states)

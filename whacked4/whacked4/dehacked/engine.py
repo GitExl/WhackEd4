@@ -430,7 +430,13 @@ class Engine:
         Returns True if the patch can be loaded with this engine.
         """
         
-        return (patch.version in self.versions) and (self.extended == patch.extended)
+        version_match = (patch.version in self.versions)
+        if patch.extended == True and self.extended == False:
+            extension_match = False
+        else:
+            extension_match = True
+        
+        return (version_match and extension_match)
     
     
 class EngineJSONEncoder(JSONEncoder):
