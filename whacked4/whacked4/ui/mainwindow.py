@@ -100,6 +100,8 @@ class MainWindow(windows.MainFrameBase):
         # Late bind these to prevent bad workspace data from being saved.
         self.Bind(wx.EVT_MOVE, self.workspace_update_data)
         self.Bind(wx.EVT_SIZE, self.workspace_update_data)
+        
+        self.editor_window_set_edit()
     
     
     def parse_options(self, args):
@@ -523,9 +525,26 @@ class MainWindow(windows.MainFrameBase):
         Called by a window that is being activated.
         """
         
-        enable_cp = ('edit_copy' in window.__dict__)
-        self.MenuEditCopy.Enable(enable_cp)
-        self.MenuEditPaste.Enable(enable_cp)
+        self.editor_window_set_edit()
+        
+        
+    def editor_window_set_edit(self):
+        """
+        Sets the state of some edit menu tools.
+        """
+        
+        # Disable edit menu tools if no window is active.
+        active_child = self.GetActiveChild()
+        if active_child is None or active_child.IsShown() == False:
+            edit_state = False
+            undo_state = False
+        else:
+            edit_state = hasattr(active_child, 'edit_copy')
+            undo_state = True
+        
+        self.MenuEditCopy.Enable(edit_state)
+        self.MenuEditPaste.Enable(edit_state)
+        self.MenuEditUndo.Enable(undo_state)
     
         
     def editor_window_show(self, tool_id):
@@ -557,6 +576,8 @@ class MainWindow(windows.MainFrameBase):
             
             self.MainToolbar.ToggleTool(tool_id, state)
             self.workspace_modified = True
+           
+        self.editor_window_set_edit()
     
      
     def editor_window_tooltoggle(self, event):
@@ -569,8 +590,10 @@ class MainWindow(windows.MainFrameBase):
             state = self.MainToolbar.GetToolState(event.GetId())
             window.Maximize(False)
             window.Show(state)
-            
+
             self.workspace_modified = True
+        
+        self.editor_window_set_edit()
             
             
     def editor_windows_show(self, show):
@@ -590,6 +613,8 @@ class MainWindow(windows.MainFrameBase):
         self.MainToolbar.ToggleTool(tool_id, False)
         window.Show(False)
         self.workspace_modified = True
+        
+        self.editor_window_set_edit()
 
 
     def toolbar_set_enabled(self, enabled):
@@ -618,6 +643,8 @@ class MainWindow(windows.MainFrameBase):
         else:
             self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, False)
             self.MenuViewPar.Enable(False)
+            
+        self.editor_window_set_edit()
                 
                 
     def toolbar_update_state(self):
