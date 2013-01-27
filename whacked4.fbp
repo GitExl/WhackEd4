@@ -2573,7 +2573,7 @@
                                 <property name="validator_variable"></property>
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
-                                <property name="window_style">wxSUNKEN_BORDER</property>
+                                <property name="window_style">wxSTATIC_BORDER</property>
                                 <event name="OnChar"></event>
                                 <event name="OnCheckListBox"></event>
                                 <event name="OnCheckListBoxDClick"></event>

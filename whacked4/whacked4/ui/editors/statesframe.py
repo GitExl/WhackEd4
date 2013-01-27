@@ -93,17 +93,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         Mixes sprite index colour coding with the system's window background color.
         """
         
-        sys_col = self.StateList.GetBackgroundColour()
-        factor = 0.08
-        sys_factor = 1 - factor
-        
-        for col in self.SPRITE_COLOURS:
-            col.Set(
-                int(col.Red() * factor + sys_col.Red() * sys_factor),
-                int(col.Green() * factor + sys_col.Green() * sys_factor),
-                int(col.Blue() * factor + sys_col.Blue() * sys_factor)
-            )
-        
+        sys_colour = self.StateList.GetBackgroundColour()
+        for index, colour in enumerate(self.SPRITE_COLOURS):
+            self.SPRITE_COLOURS[index] = utils.mix_colours(colour, sys_colour, 0.92)
+            
         
     def undo_restore_item(self, item):
         """

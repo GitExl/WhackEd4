@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #coding=utf8
 
+from whacked4 import utils
 import wx
 
 
@@ -27,6 +28,11 @@ class SpritePreview(wx.Panel):
         
         # The icon to display instead of missing sprites.
         self.missing = wx.Bitmap('res/icon-missing.png', wx.BITMAP_TYPE_PNG)
+        
+        # Create "floor" fill color.
+        floor_colour = utils.mix_colours(self.GetBackgroundColour(), wx.Colour(0, 0, 0), 0.6)
+        self.floor_brush = wx.Brush(floor_colour)
+        self.create_floor_points()
         
         self.Bind(wx.EVT_PAINT, self.paint)
         
@@ -69,13 +75,20 @@ class SpritePreview(wx.Panel):
         dc = wx.BufferedPaintDC(self)
         dc.Clear()
         
+        # Draw a floor polygon.
+        dc.SetBrush(self.floor_brush)
+        dc.SetPen(wx.TRANSPARENT_PEN)
+        dc.DrawPolygon(self.floor_points, 0, 0)
+        
         if self.sprite == self.CLEAR:
             return
         
         size = self.GetClientSizeTuple()
         if self.sprite is not None:
+            baseline = size[1] * self.baseline_factor
+            
             x = size[0] / 2 - self.sprite.width / 2
-            y = size[1] * self.baseline_factor - self.sprite.height
+            y = baseline - self.sprite.height
             x + self.sprite.left
             y + self.sprite.top
             dc.DrawBitmap(self.sprite.image, x, y, True)
@@ -107,3 +120,16 @@ class SpritePreview(wx.Panel):
             factor = 1
             
         self.baseline_factor = factor
+        self.create_floor_points()
+        
+        
+    def create_floor_points(self):
+        size = self.GetClientSizeTuple()
+        baseline = size[1] * self.baseline_factor
+        
+        self.floor_points = [
+            wx.Point(0, baseline),
+            wx.Point(size[0], baseline),
+            wx.Point(size[0], size[1]),
+            wx.Point(0, size[1])
+        ]

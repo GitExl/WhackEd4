@@ -4,6 +4,7 @@
 """
 General utility functions.
 """
+import wx
 
 
 def validate_numeric(window):
@@ -71,3 +72,21 @@ def sound_play(name, pwads):
     sound_data = pwads.get_sound(name)
     if sound_data != None:
         sound_data.play()
+
+
+def mix_colours(colour1, colour2, mix):
+    """
+    Mixes two colours together.
+    
+    @param colour1: the first colour to mix.
+    @param colour2: the second colour to mix.
+    @param mix: the mix factor. 0.0 is only colour1, 1.0 is only colour2, 0.5 is an even mix.  
+    """
+    
+    colour = wx.Colour(
+        int(colour1.Red() * (1.0 - mix) + colour2.Red() * mix),
+        int(colour1.Green() * (1.0 - mix) + colour2.Green() * mix),
+        int(colour1.Blue() * (1.0 - mix) + colour2.Blue() * mix)
+    )
+    
+    return colour
