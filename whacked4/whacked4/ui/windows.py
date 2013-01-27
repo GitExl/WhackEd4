@@ -31,58 +31,58 @@ MAIN_MENU_CHEATS = 1682
 MAIN_MENU_MISC = 1683
 MAIN_MENU_PAR = 1684
 FRAME_THINGS = 1685
-THING_LIST = 1686
-THING_VAL_ID = 1687
-THING_VAL_HEALTH = 1688
-THING_VAL_SPEED = 1689
-THING_VAL_RADIUS = 1690
-THING_VAL_HEIGHT = 1691
-THING_VAL_DAMAGE = 1692
-THING_VAL_REACTIONTIME = 1693
-THING_VAL_PAINCHANCE = 1694
-THING_VAL_MASS = 1695
-THING_FLAGS = 1696
-THING_STATE_SPAWN = 1697
-THING_STATENAME_SPAWN = 1698
-THING_STATESET_SPAWN = 1699
-THING_STATE_WALK = 1700
-THING_STATENAME_WALK = 1701
-THING_STATESET_WALK = 1702
-THING_STATE_PAIN = 1703
-THING_STATENAME_PAIN = 1704
-THING_STATESET_PAIN = 1705
-THING_STATE_MELEE = 1706
-THING_STATENAME_MELEE = 1707
-THING_STATESET_MELEE = 1708
-THING_STATE_ATTACK = 1709
-THING_STATENAME_ATTACK = 1710
-THING_STATESET_ATTACK = 1711
-THING_STATE_DEATH = 1712
-THING_STATENAME_DEATH = 1713
-THING_STATESET_DEATH = 1714
-THING_STATE_EXPLODE = 1715
-THING_STATENAME_EXPLODE = 1716
-THING_STATESET_EXPLODE = 1717
-THING_STATE_RAISE = 1718
-THING_STATENAME_RAISE = 1719
-THING_STATESET_RAISE = 1720
-THING_SOUND_ALERT = 1721
-THING_SOUNDNAME_ALERT = 1722
-THING_SOUNDSET_ALERT = 1723
-THING_SOUND_ATTACK = 1724
-THING_SOUNDNAME_ATTACK = 1725
-THING_SOUNDSET_ATTACK = 1726
-THING_SOUND_PAIN = 1727
-THING_SOUNDNAME_PAIN = 1728
-THING_SOUNDSET_PAIN = 1729
-THING_SOUND_DEATH = 1730
-THING_SOUNDNAME_DEATH = 1731
-THING_SOUNDSET_DEATH = 1732
-THING_SOUND_ACTIVE = 1733
-THING_SOUNDNAME_ACTIVE = 1734
-THING_SOUNDSET_ACTIVE = 1735
-THING_RENAME = 1736
-THING_RESTORE = 1737
+THING_VAL_ID = 1686
+THING_VAL_HEALTH = 1687
+THING_VAL_SPEED = 1688
+THING_VAL_RADIUS = 1689
+THING_VAL_HEIGHT = 1690
+THING_VAL_DAMAGE = 1691
+THING_VAL_REACTIONTIME = 1692
+THING_VAL_PAINCHANCE = 1693
+THING_VAL_MASS = 1694
+THING_FLAGS = 1695
+THING_STATE_SPAWN = 1696
+THING_STATENAME_SPAWN = 1697
+THING_STATESET_SPAWN = 1698
+THING_STATE_WALK = 1699
+THING_STATENAME_WALK = 1700
+THING_STATESET_WALK = 1701
+THING_STATE_PAIN = 1702
+THING_STATENAME_PAIN = 1703
+THING_STATESET_PAIN = 1704
+THING_STATE_MELEE = 1705
+THING_STATENAME_MELEE = 1706
+THING_STATESET_MELEE = 1707
+THING_STATE_ATTACK = 1708
+THING_STATENAME_ATTACK = 1709
+THING_STATESET_ATTACK = 1710
+THING_STATE_DEATH = 1711
+THING_STATENAME_DEATH = 1712
+THING_STATESET_DEATH = 1713
+THING_STATE_EXPLODE = 1714
+THING_STATENAME_EXPLODE = 1715
+THING_STATESET_EXPLODE = 1716
+THING_STATE_RAISE = 1717
+THING_STATENAME_RAISE = 1718
+THING_STATESET_RAISE = 1719
+THING_SOUND_ALERT = 1720
+THING_SOUNDNAME_ALERT = 1721
+THING_SOUNDSET_ALERT = 1722
+THING_SOUND_ATTACK = 1723
+THING_SOUNDNAME_ATTACK = 1724
+THING_SOUNDSET_ATTACK = 1725
+THING_SOUND_PAIN = 1726
+THING_SOUNDNAME_PAIN = 1727
+THING_SOUNDSET_PAIN = 1728
+THING_SOUND_DEATH = 1729
+THING_SOUNDNAME_DEATH = 1730
+THING_SOUNDSET_DEATH = 1731
+THING_SOUND_ACTIVE = 1732
+THING_SOUNDNAME_ACTIVE = 1733
+THING_SOUNDSET_ACTIVE = 1734
+THING_RENAME = 1735
+THING_RESTORE = 1736
+THING_LIST = 1737
 FRAME_STATES = 1738
 STATES_SPRITE = 1739
 STATES_FRAME = 1740
@@ -402,25 +402,18 @@ class MainFrameBase ( wx.MDIParentFrame ):
 	
 
 ###########################################################################
-## Class ThingFrameBase
+## Class ThingsFrameBase
 ###########################################################################
 
-class ThingFrameBase ( wx.MDIChildFrame ):
+class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 640,540 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 850,540 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 640,540 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 850,540 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		Sizer26 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		ThingListChoices = []
-		self.ThingList = wx.ListBox( self, THING_LIST, wx.DefaultPosition, wx.Size( -1,-1 ), ThingListChoices, wx.LB_HSCROLL|wx.LB_NEEDED_SB|wx.LB_SINGLE|wx.SUNKEN_BORDER )
-		Sizer26.Add( self.ThingList, 10, wx.EXPAND|wx.FIXED_MINSIZE, 0 )
-		
-		
-		Sizer26.AddSpacer( ( 12, 0), 0, 0, 0 )
 		
 		Sizer27 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -428,9 +421,9 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingIdLabel = wx.StaticText( self, wx.ID_ANY, u"Id", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingIdLabel.Wrap( -1 )
-		Sizer28.Add( self.ThingIdLabel, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		Sizer28.Add( self.ThingIdLabel, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
-		self.ThingId = wx.TextCtrl( self, THING_VAL_ID, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.ThingId = wx.TextCtrl( self, THING_VAL_ID, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
 		self.ThingId.SetMaxLength( 6 ) 
 		Sizer28.Add( self.ThingId, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.EXPAND, 3 )
 		
@@ -441,9 +434,9 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingHealthLabel = wx.StaticText( self, wx.ID_ANY, u"Health", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingHealthLabel.Wrap( -1 )
-		Sizer1.Add( self.ThingHealthLabel, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		Sizer1.Add( self.ThingHealthLabel, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
-		self.ThingHealth = wx.TextCtrl( self, THING_VAL_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.ThingHealth = wx.TextCtrl( self, THING_VAL_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
 		self.ThingHealth.SetMaxLength( 6 ) 
 		Sizer1.Add( self.ThingHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -454,9 +447,9 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSpeeLabel = wx.StaticText( self, wx.ID_ANY, u"Speed", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingSpeeLabel.Wrap( -1 )
-		Sizer2.Add( self.ThingSpeeLabel, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		Sizer2.Add( self.ThingSpeeLabel, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
-		self.ThingSpeed = wx.TextCtrl( self, THING_VAL_SPEED, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.ThingSpeed = wx.TextCtrl( self, THING_VAL_SPEED, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
 		self.ThingSpeed.SetMaxLength( 6 ) 
 		Sizer2.Add( self.ThingSpeed, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -467,9 +460,9 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingRadiusLabel = wx.StaticText( self, wx.ID_ANY, u"Radius", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingRadiusLabel.Wrap( -1 )
-		Sizer3.Add( self.ThingRadiusLabel, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		Sizer3.Add( self.ThingRadiusLabel, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
-		self.ThingRadius = wx.TextCtrl( self, THING_VAL_RADIUS, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.ThingRadius = wx.TextCtrl( self, THING_VAL_RADIUS, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
 		self.ThingRadius.SetMaxLength( 6 ) 
 		Sizer3.Add( self.ThingRadius, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -480,9 +473,9 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingHeightLabel = wx.StaticText( self, wx.ID_ANY, u"Height", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingHeightLabel.Wrap( -1 )
-		Sizer4.Add( self.ThingHeightLabel, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		Sizer4.Add( self.ThingHeightLabel, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
-		self.ThingHeight = wx.TextCtrl( self, THING_VAL_HEIGHT, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.ThingHeight = wx.TextCtrl( self, THING_VAL_HEIGHT, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
 		self.ThingHeight.SetMaxLength( 6 ) 
 		Sizer4.Add( self.ThingHeight, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -493,9 +486,9 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingDamageLabel = wx.StaticText( self, wx.ID_ANY, u"Damage", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingDamageLabel.Wrap( -1 )
-		Sizer5.Add( self.ThingDamageLabel, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		Sizer5.Add( self.ThingDamageLabel, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
-		self.ThingDamage = wx.TextCtrl( self, THING_VAL_DAMAGE, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.ThingDamage = wx.TextCtrl( self, THING_VAL_DAMAGE, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
 		self.ThingDamage.SetMaxLength( 6 ) 
 		Sizer5.Add( self.ThingDamage, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -506,9 +499,9 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingReactionTimeLabel = wx.StaticText( self, wx.ID_ANY, u"Reaction time", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingReactionTimeLabel.Wrap( -1 )
-		Sizer6.Add( self.ThingReactionTimeLabel, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		Sizer6.Add( self.ThingReactionTimeLabel, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
-		self.ThingReactionTime = wx.TextCtrl( self, THING_VAL_REACTIONTIME, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.ThingReactionTime = wx.TextCtrl( self, THING_VAL_REACTIONTIME, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
 		self.ThingReactionTime.SetMaxLength( 6 ) 
 		Sizer6.Add( self.ThingReactionTime, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -519,9 +512,9 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingPainChanceLabel = wx.StaticText( self, wx.ID_ANY, u"Pain chance", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingPainChanceLabel.Wrap( -1 )
-		Sizer7.Add( self.ThingPainChanceLabel, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		Sizer7.Add( self.ThingPainChanceLabel, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
-		self.ThingPainChance = wx.TextCtrl( self, THING_VAL_PAINCHANCE, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.ThingPainChance = wx.TextCtrl( self, THING_VAL_PAINCHANCE, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
 		self.ThingPainChance.SetMaxLength( 6 ) 
 		Sizer7.Add( self.ThingPainChance, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -532,9 +525,9 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingMassLabel = wx.StaticText( self, wx.ID_ANY, u"Mass", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingMassLabel.Wrap( -1 )
-		Sizer8.Add( self.ThingMassLabel, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		Sizer8.Add( self.ThingMassLabel, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
-		self.ThingMass = wx.TextCtrl( self, THING_VAL_MASS, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.ThingMass = wx.TextCtrl( self, THING_VAL_MASS, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
 		self.ThingMass.SetMaxLength( 6 ) 
 		Sizer8.Add( self.ThingMass, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -546,13 +539,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		ThingFlagsChoices = []
 		self.ThingFlags = wx.CheckListBox( self, THING_FLAGS, wx.DefaultPosition, wx.Size( -1,-1 ), ThingFlagsChoices, 0|wx.SUNKEN_BORDER )
-		Sizer27.Add( self.ThingFlags, 8, wx.EXPAND|wx.FIXED_MINSIZE, 0 )
+		Sizer27.Add( self.ThingFlags, 1, wx.EXPAND, 0 )
 		
 		
-		Sizer26.Add( Sizer27, 10, wx.ALL|wx.EXPAND, 6 )
+		Sizer26.Add( Sizer27, 0, wx.ALL|wx.EXPAND, 6 )
 		
 		
-		Sizer26.AddSpacer( ( 12, 0), 0, wx.EXPAND, 5 )
+		Sizer26.AddSpacer( ( 12, 0), 0, 0, 0 )
 		
 		bSizer40 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -562,13 +555,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateSpawnLabel = wx.StaticText( self, wx.ID_ANY, u"Spawn state", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingStateSpawnLabel.Wrap( -1 )
-		Sizer9.Add( self.ThingStateSpawnLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer9.Add( self.ThingStateSpawnLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateSpawn = wx.TextCtrl( self, THING_STATE_SPAWN, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingStateSpawn = wx.TextCtrl( self, THING_STATE_SPAWN, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingStateSpawn.SetMaxLength( 4 ) 
 		Sizer9.Add( self.ThingStateSpawn, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateSpawnName = wx.StaticText( self, THING_STATENAME_SPAWN, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateSpawnName = wx.StaticText( self, THING_STATENAME_SPAWN, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateSpawnName.Wrap( -1 )
 		self.ThingStateSpawnName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateSpawnName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -578,7 +571,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateSpawnSet = wx.Button( self, THING_STATESET_SPAWN, u"<", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingStateSpawnSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer9.Add( self.ThingStateSpawnSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer9.Add( self.ThingStateSpawnSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer9, 1, wx.EXPAND, 5 )
@@ -587,13 +580,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateWalkLabel = wx.StaticText( self, wx.ID_ANY, u"Walk state", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingStateWalkLabel.Wrap( -1 )
-		Sizer10.Add( self.ThingStateWalkLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer10.Add( self.ThingStateWalkLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateWalk = wx.TextCtrl( self, THING_STATE_WALK, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingStateWalk = wx.TextCtrl( self, THING_STATE_WALK, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingStateWalk.SetMaxLength( 4 ) 
 		Sizer10.Add( self.ThingStateWalk, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateWalkName = wx.StaticText( self, THING_STATENAME_WALK, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateWalkName = wx.StaticText( self, THING_STATENAME_WALK, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateWalkName.Wrap( -1 )
 		self.ThingStateWalkName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateWalkName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -603,7 +596,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateWalkSet = wx.Button( self, THING_STATESET_WALK, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingStateWalkSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer10.Add( self.ThingStateWalkSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer10.Add( self.ThingStateWalkSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer10, 1, wx.EXPAND, 5 )
@@ -612,13 +605,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStatePainLabel = wx.StaticText( self, wx.ID_ANY, u"Pain state", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingStatePainLabel.Wrap( -1 )
-		Sizer11.Add( self.ThingStatePainLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer11.Add( self.ThingStatePainLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStatePain = wx.TextCtrl( self, THING_STATE_PAIN, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingStatePain = wx.TextCtrl( self, THING_STATE_PAIN, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingStatePain.SetMaxLength( 4 ) 
 		Sizer11.Add( self.ThingStatePain, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStatePainName = wx.StaticText( self, THING_STATENAME_PAIN, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStatePainName = wx.StaticText( self, THING_STATENAME_PAIN, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStatePainName.Wrap( -1 )
 		self.ThingStatePainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStatePainName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -628,7 +621,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingStatePainSet = wx.Button( self, THING_STATESET_PAIN, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingStatePainSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer11.Add( self.ThingStatePainSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer11.Add( self.ThingStatePainSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer11, 1, wx.EXPAND, 5 )
@@ -637,13 +630,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateMeleeLabel = wx.StaticText( self, wx.ID_ANY, u"Melee state", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingStateMeleeLabel.Wrap( -1 )
-		Sizer12.Add( self.ThingStateMeleeLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer12.Add( self.ThingStateMeleeLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateMelee = wx.TextCtrl( self, THING_STATE_MELEE, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingStateMelee = wx.TextCtrl( self, THING_STATE_MELEE, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingStateMelee.SetMaxLength( 4 ) 
 		Sizer12.Add( self.ThingStateMelee, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateMeleeName = wx.StaticText( self, THING_STATENAME_MELEE, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateMeleeName = wx.StaticText( self, THING_STATENAME_MELEE, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateMeleeName.Wrap( -1 )
 		self.ThingStateMeleeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateMeleeName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -653,7 +646,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateMeleeSet = wx.Button( self, THING_STATESET_MELEE, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingStateMeleeSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer12.Add( self.ThingStateMeleeSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer12.Add( self.ThingStateMeleeSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer12, 1, wx.EXPAND, 5 )
@@ -662,13 +655,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateAttackLabel = wx.StaticText( self, wx.ID_ANY, u"Attack state", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingStateAttackLabel.Wrap( -1 )
-		Sizer13.Add( self.ThingStateAttackLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer13.Add( self.ThingStateAttackLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateAttack = wx.TextCtrl( self, THING_STATE_ATTACK, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingStateAttack = wx.TextCtrl( self, THING_STATE_ATTACK, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingStateAttack.SetMaxLength( 4 ) 
 		Sizer13.Add( self.ThingStateAttack, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateAttackName = wx.StaticText( self, THING_STATENAME_ATTACK, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateAttackName = wx.StaticText( self, THING_STATENAME_ATTACK, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateAttackName.Wrap( -1 )
 		self.ThingStateAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateAttackName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -678,7 +671,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateAttackSet = wx.Button( self, THING_STATESET_ATTACK, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingStateAttackSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer13.Add( self.ThingStateAttackSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer13.Add( self.ThingStateAttackSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer13, 1, wx.EXPAND, 5 )
@@ -687,13 +680,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateDeathLabel = wx.StaticText( self, wx.ID_ANY, u"Death state", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingStateDeathLabel.Wrap( -1 )
-		Sizer14.Add( self.ThingStateDeathLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer14.Add( self.ThingStateDeathLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateDeath = wx.TextCtrl( self, THING_STATE_DEATH, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingStateDeath = wx.TextCtrl( self, THING_STATE_DEATH, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingStateDeath.SetMaxLength( 4 ) 
 		Sizer14.Add( self.ThingStateDeath, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateDeathName = wx.StaticText( self, THING_STATENAME_DEATH, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateDeathName = wx.StaticText( self, THING_STATENAME_DEATH, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateDeathName.Wrap( -1 )
 		self.ThingStateDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateDeathName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -703,7 +696,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateDeathSet = wx.Button( self, THING_STATESET_DEATH, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingStateDeathSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer14.Add( self.ThingStateDeathSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer14.Add( self.ThingStateDeathSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer14, 1, wx.EXPAND, 5 )
@@ -712,13 +705,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateExplodeLabel = wx.StaticText( self, wx.ID_ANY, u"Explode state", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingStateExplodeLabel.Wrap( -1 )
-		Sizer15.Add( self.ThingStateExplodeLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer15.Add( self.ThingStateExplodeLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateExplode = wx.TextCtrl( self, THING_STATE_EXPLODE, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingStateExplode = wx.TextCtrl( self, THING_STATE_EXPLODE, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingStateExplode.SetMaxLength( 4 ) 
 		Sizer15.Add( self.ThingStateExplode, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateExplodeName = wx.StaticText( self, THING_STATENAME_EXPLODE, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateExplodeName = wx.StaticText( self, THING_STATENAME_EXPLODE, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateExplodeName.Wrap( -1 )
 		self.ThingStateExplodeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateExplodeName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -728,7 +721,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateExplodeSet = wx.Button( self, THING_STATESET_EXPLODE, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingStateExplodeSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer15.Add( self.ThingStateExplodeSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer15.Add( self.ThingStateExplodeSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer15, 1, wx.EXPAND, 5 )
@@ -737,13 +730,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateRaiseLabel = wx.StaticText( self, wx.ID_ANY, u"Raise", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingStateRaiseLabel.Wrap( -1 )
-		Sizer152.Add( self.ThingStateRaiseLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer152.Add( self.ThingStateRaiseLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateRaise = wx.TextCtrl( self, THING_STATE_RAISE, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingStateRaise = wx.TextCtrl( self, THING_STATE_RAISE, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingStateRaise.SetMaxLength( 4 ) 
 		Sizer152.Add( self.ThingStateRaise, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateRaiseName = wx.StaticText( self, THING_STATENAME_RAISE, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateRaiseName = wx.StaticText( self, THING_STATENAME_RAISE, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateRaiseName.Wrap( -1 )
 		self.ThingStateRaiseName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateRaiseName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -753,7 +746,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateRaiseSet = wx.Button( self, THING_STATESET_RAISE, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingStateRaiseSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer152.Add( self.ThingStateRaiseSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer152.Add( self.ThingStateRaiseSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer152, 1, wx.EXPAND, 5 )
@@ -765,13 +758,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSoundAlertLabel = wx.StaticText( self, wx.ID_ANY, u"Alert sound", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingSoundAlertLabel.Wrap( -1 )
-		Sizer151.Add( self.ThingSoundAlertLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer151.Add( self.ThingSoundAlertLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundAlert = wx.TextCtrl( self, THING_SOUND_ALERT, u"46", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingSoundAlert = wx.TextCtrl( self, THING_SOUND_ALERT, u"46", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingSoundAlert.SetMaxLength( 4 ) 
 		Sizer151.Add( self.ThingSoundAlert, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundAlertName = wx.StaticText( self, THING_SOUNDNAME_ALERT, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundAlertName = wx.StaticText( self, THING_SOUNDNAME_ALERT, u"PLPAIN", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundAlertName.Wrap( -1 )
 		self.ThingSoundAlertName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundAlertName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -781,7 +774,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundAlertSet = wx.Button( self, THING_SOUNDSET_ALERT, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingSoundAlertSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer151.Add( self.ThingSoundAlertSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer151.Add( self.ThingSoundAlertSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer151, 1, wx.EXPAND, 5 )
@@ -790,13 +783,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSoundAttackLabel = wx.StaticText( self, wx.ID_ANY, u"Attack sound", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingSoundAttackLabel.Wrap( -1 )
-		Sizer1511.Add( self.ThingSoundAttackLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer1511.Add( self.ThingSoundAttackLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundAttack = wx.TextCtrl( self, THING_SOUND_ATTACK, u"46", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingSoundAttack = wx.TextCtrl( self, THING_SOUND_ATTACK, u"46", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingSoundAttack.SetMaxLength( 4 ) 
 		Sizer1511.Add( self.ThingSoundAttack, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundAttackName = wx.StaticText( self, THING_SOUNDNAME_ATTACK, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundAttackName = wx.StaticText( self, THING_SOUNDNAME_ATTACK, u"PLPAIN", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundAttackName.Wrap( -1 )
 		self.ThingSoundAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundAttackName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -806,7 +799,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundAttackSet = wx.Button( self, THING_SOUNDSET_ATTACK, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingSoundAttackSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer1511.Add( self.ThingSoundAttackSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer1511.Add( self.ThingSoundAttackSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer1511, 1, wx.EXPAND, 5 )
@@ -815,13 +808,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSoundPainLabel = wx.StaticText( self, wx.ID_ANY, u"Pain sound", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingSoundPainLabel.Wrap( -1 )
-		Sizer1512.Add( self.ThingSoundPainLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer1512.Add( self.ThingSoundPainLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundPain = wx.TextCtrl( self, THING_SOUND_PAIN, u"46", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingSoundPain = wx.TextCtrl( self, THING_SOUND_PAIN, u"46", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingSoundPain.SetMaxLength( 4 ) 
 		Sizer1512.Add( self.ThingSoundPain, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundPainName = wx.StaticText( self, THING_SOUNDNAME_PAIN, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundPainName = wx.StaticText( self, THING_SOUNDNAME_PAIN, u"PLPAIN", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundPainName.Wrap( -1 )
 		self.ThingSoundPainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundPainName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -831,7 +824,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundPainSet = wx.Button( self, THING_SOUNDSET_PAIN, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingSoundPainSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer1512.Add( self.ThingSoundPainSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer1512.Add( self.ThingSoundPainSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer1512, 1, wx.EXPAND, 5 )
@@ -840,13 +833,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSoundDeathLabel = wx.StaticText( self, wx.ID_ANY, u"Death sound", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingSoundDeathLabel.Wrap( -1 )
-		Sizer1513.Add( self.ThingSoundDeathLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer1513.Add( self.ThingSoundDeathLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundDeath = wx.TextCtrl( self, THING_SOUND_DEATH, u"46", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingSoundDeath = wx.TextCtrl( self, THING_SOUND_DEATH, u"46", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingSoundDeath.SetMaxLength( 4 ) 
 		Sizer1513.Add( self.ThingSoundDeath, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundDeathName = wx.StaticText( self, THING_SOUNDNAME_DEATH, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundDeathName = wx.StaticText( self, THING_SOUNDNAME_DEATH, u"PLPAIN", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundDeathName.Wrap( -1 )
 		self.ThingSoundDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundDeathName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -856,7 +849,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundDeathSet = wx.Button( self, THING_SOUNDSET_DEATH, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingSoundDeathSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer1513.Add( self.ThingSoundDeathSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer1513.Add( self.ThingSoundDeathSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer1513, 1, wx.EXPAND, 5 )
@@ -865,13 +858,13 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSoundActiveLabel = wx.StaticText( self, wx.ID_ANY, u"Active sound", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.ThingSoundActiveLabel.Wrap( -1 )
-		Sizer1514.Add( self.ThingSoundActiveLabel, 12, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		Sizer1514.Add( self.ThingSoundActiveLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundActive = wx.TextCtrl( self, THING_SOUND_ACTIVE, u"46", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.ThingSoundActive = wx.TextCtrl( self, THING_SOUND_ACTIVE, u"46", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.ThingSoundActive.SetMaxLength( 4 ) 
 		Sizer1514.Add( self.ThingSoundActive, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundActiveName = wx.StaticText( self, THING_SOUNDNAME_ACTIVE, u"PLPAIN", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundActiveName = wx.StaticText( self, THING_SOUNDNAME_ACTIVE, u"PLPAIN", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundActiveName.Wrap( -1 )
 		self.ThingSoundActiveName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundActiveName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -881,7 +874,7 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundActiveSet = wx.Button( self, THING_SOUNDSET_ACTIVE, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ThingSoundActiveSet.SetMinSize( wx.Size( 22,22 ) )
 		
-		Sizer1514.Add( self.ThingSoundActiveSet, 5, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
+		Sizer1514.Add( self.ThingSoundActiveSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 		
 		
 		bSizer43.Add( Sizer1514, 1, wx.EXPAND, 5 )
@@ -911,15 +904,19 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		bSizer40.Add( bSizer42, 1, wx.EXPAND, 3 )
 		
 		
-		Sizer26.Add( bSizer40, 10, wx.ALL|wx.EXPAND, 6 )
+		Sizer26.Add( bSizer40, 0, wx.ALL|wx.EXPAND, 6 )
+		
+		
+		Sizer26.AddSpacer( ( 12, 0), 0, wx.EXPAND, 5 )
+		
+		self.ThingList = wx.ListCtrl( self, THING_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		Sizer26.Add( self.ThingList, 1, wx.EXPAND, 0 )
 		
 		
 		self.SetSizer( Sizer26 )
 		self.Layout()
 		
 		# Connect Events
-		self.ThingList.Bind( wx.EVT_LISTBOX, self.thing_select )
-		self.ThingList.Bind( wx.EVT_LISTBOX_DCLICK, self.thing_rename )
 		self.ThingId.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingId.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
@@ -1025,18 +1022,15 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundActiveSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ButtonRename.Bind( wx.EVT_BUTTON, self.thing_rename )
 		self.ButtonRestore.Bind( wx.EVT_BUTTON, self.thing_restore )
+		self.ThingList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.thing_rename )
+		self.ThingList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.thing_select )
+		self.ThingList.Bind( wx.EVT_SIZE, self.thinglist_resize )
 	
 	def __del__( self ):
 		pass
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def thing_select( self, event ):
-		pass
-	
-	def thing_rename( self, event ):
-		pass
-	
 	def focus_text( self, event ):
 		pass
 	
@@ -1166,8 +1160,17 @@ class ThingFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	def thing_rename( self, event ):
+		pass
 	
 	def thing_restore( self, event ):
+		pass
+	
+	
+	def thing_select( self, event ):
+		pass
+	
+	def thinglist_resize( self, event ):
 		pass
 	
 
@@ -2666,7 +2669,7 @@ class StartDialogBase ( wx.Dialog ):
 class AboutDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,312 ), style = wx.CAPTION )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,340 ), style = wx.CAPTION )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		

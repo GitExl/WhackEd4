@@ -1,7 +1,6 @@
 Beta
 - Add misc. editor.
 - Add par times editor.
-- Fix about dialog credits list being cut off.
 - Replace wxListBox instances with wxListView.
 - Make edit\copy\undo available only when an editor that supports those functions is active.
 - Fix MaxLength in string dialog not counting any newlines. Why would the control do this???

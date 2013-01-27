@@ -7,7 +7,7 @@ from whacked4.dehacked import engine, patch
 from whacked4.doom import wadlist, wad
 from whacked4.ui import windows, workspace
 from whacked4.ui.dialogs import startdialog, aboutdialog, patchinfodialog
-from whacked4.ui.editors import thingframe, statesframe, soundsframe, stringsframe, weaponsframe, ammoframe, cheatsframe, \
+from whacked4.ui.editors import thingsframe, statesframe, soundsframe, stringsframe, weaponsframe, ammoframe, cheatsframe, \
     miscframe, parframe
 import glob
 import os.path
@@ -47,7 +47,7 @@ class MainWindow(windows.MainFrameBase):
         
         # Window\ID relationships.
         self.editor_windows = {
-            windows.MAIN_TOOL_THINGS: thingframe.ThingFrame(self),
+            windows.MAIN_TOOL_THINGS: thingsframe.ThingsFrame(self),
             windows.MAIN_TOOL_STATES: statesframe.StatesFrame(self),
             windows.MAIN_TOOL_SOUNDS: soundsframe.SoundsFrame(self),
             windows.MAIN_TOOL_STRINGS: stringsframe.StringsFrame(self),

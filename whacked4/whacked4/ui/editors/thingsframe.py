@@ -8,7 +8,7 @@ import copy
 import wx
 
 
-class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
+class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     """
     Things editor window.
     """
@@ -97,7 +97,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
     
 
     def __init__(self, params):
-        windows.ThingFrameBase.__init__(self, params)
+        windows.ThingsFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
         
         self.SetIcon(wx.Icon('res/editor-things.ico'))
@@ -123,8 +123,48 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         Builds the thing names list from scratch.
         """
         
-        self.ThingList.SetItems(self.patch.things.names)
-        self.ThingList.SetSelection(0, True)
+        self.ThingList.ClearAll()
+        
+        if self.ThingList.GetColumnCount() == 0:
+            self.ThingList.InsertColumn(0, 'Name', width=187)
+            self.ThingList.InsertColumn(1, 'Id', width=36)
+            self.ThingList.InsertColumn(2, 'Health', width=48)
+            self.ThingList.InsertColumn(3, 'Radius', width=48)
+            self.ThingList.InsertColumn(4, 'Height', width=48)
+            
+        for index in range(len(self.patch.things.names)):
+            self.ThingList.InsertStringItem(index, '')
+            
+            self.thinglist_update_row(index)
+        
+        self.ThingList.Select(0, True)
+        
+        
+    def thinglist_update_row(self, row_index):
+        """
+        Updates a thing name in the list.
+        """
+        
+        thing = self.patch.things[row_index]
+        thing_name = self.patch.things.names[row_index]
+        
+        self.ThingList.SetItemText(row_index, thing_name)
+        self.ThingList.SetStringItem(row_index, 1, str(thing['id']))
+        self.ThingList.SetStringItem(row_index, 2, str(thing['health']))
+        self.ThingList.SetStringItem(row_index, 3, str(thing['radius'] / self.FIXED_UNIT))
+        self.ThingList.SetStringItem(row_index, 4, str(thing['height'] / self.FIXED_UNIT))
+        
+        
+    def thinglist_resize(self, event):
+        """
+        Resizes the thing name column to match the control's width.
+        """
+        
+        columns_width = self.ThingList.GetColumnWidth(1) + self.ThingList.GetColumnWidth(2)
+        columns_width += self.ThingList.GetColumnWidth(3) + self.ThingList.GetColumnWidth(4)
+        
+        width = self.ThingList.GetClientSizeTuple()[0] - columns_width - 4
+        self.ThingList.SetColumnWidth(0, width)
         
         
     def flaglist_build(self):
@@ -191,7 +231,6 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         """
         
         thing = self.patch.things[self.selected_index]
-        thing_name = self.patch.things.names[self.selected_index]
         
         # Set basic property text control values.
         self.ThingId.ChangeValue(str(thing['id']))
@@ -224,7 +263,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
             self.set_display_sound(name)
             
         # Update name.
-        self.ThingList.SetString(self.selected_index, thing_name)
+        self.thinglist_update_row(self.selected_index)
         
 
     def set_display_state(self, state_name):
@@ -274,6 +313,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         
         thing[key] = value
         
+        self.thinglist_update_row(self.selected_index)
         self.is_modified(True)
         
         
@@ -407,8 +447,14 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         Called when a thing is selected from the thing names list.
         """
         
-        self.selected_index = self.ThingList.GetSelection()
+        self.selected_index = event.GetIndex()
         self.update_properties()
+        
+        print self.ThingList.GetColumnWidth(0)
+        print self.ThingList.GetColumnWidth(1)
+        print self.ThingList.GetColumnWidth(2)
+        print self.ThingList.GetColumnWidth(3)
+        print self.ThingList.GetColumnWidth(4)
     
         
     def thing_rename(self, event):
@@ -431,7 +477,6 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
             self.undo_add()
             
             self.patch.things.names[self.selected_index] = new_name
-            self.ThingList.SetString(self.selected_index, new_name)
             
             self.update_properties()
             self.is_modified(True)
@@ -496,7 +541,7 @@ class ThingFrame(editormixin.EditorMixin, windows.ThingFrameBase):
         self.patch.things[index] = item['item']
         self.patch.things.names[index] = item['name']
         
-        self.ThingList.SetString(index, item['name'])
+        self.thinglist_update_row(index)
         self.update_properties()
         
         self.is_modified(True)
