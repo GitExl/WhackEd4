@@ -90,3 +90,27 @@ def mix_colours(colour1, colour2, mix):
     )
     
     return colour
+
+
+def get_map_name(episode_index, map_index):
+    """
+    Returns a map name from an episode and map index.
+    
+    @param episode_index: the index of the episode. If this is 0, a Doom 2 style MAPxx name is returned.
+    @param map_index: the index of the map.
+    
+    @return: a ExMx map name if episode_index is non-zero, a MAPxx name otherwise.
+    """  
+    
+    if episode_index == 0:
+        return 'MAP{:0>2}'.format(map_index)
+    else:
+        return 'E{}M{}'.format(episode_index, map_index)
+    
+
+def seconds_to_minutes(seconds):
+    """
+    Returns a number of seconds formatted as minutes:seconds.
+    """
+    
+    return '{}:{:0>2}'.format(int(seconds / 60), seconds % 60)

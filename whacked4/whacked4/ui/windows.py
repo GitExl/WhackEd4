@@ -138,34 +138,35 @@ MISC_LIST = 1789
 MISC_INFIGHT = 1790
 MISC_RESTORE = 1791
 FRAME_PAR = 1792
-PAR_LIST = 1793
-PAR_EPISODE = 1794
-PAR_MAP = 1795
-PAR_TIME = 1796
-PAR_RENAME = 1797
-PAR_RESTORE = 1798
-DIALOG_SPRITES = 1799
-SPRITES_NAMES = 1800
-SPRITES_FILTER = 1801
-SPRITES_FRAME = 1802
-SPRITES_FRAMESPIN = 1803
-SPRITES_OK = 1804
-SPRITES_CANCEL = 1805
-STRING_OLD = 1806
-STRING_NEW = 1807
-STRING_OK = 1808
-STRING_CANCEL = 1809
-DIALOG_PATCHINFO = 1810
-PATCHINFO_TOOLBAR = 1811
-PATCHINFO_TOOLBAR_ADD = 1812
-PATCHINFO_TOOLBAR_REMOVE = 1813
-DIALOG_START = 1814
-START_NEW = 1815
-START_OPEN = 1816
-START_RECENT = 1817
-START_CANCEL = 1818
-DIALOG_ABOUT = 1819
-ABOUT_OK = 1820
+PAR_EPISODE = 1793
+PAR_MAP = 1794
+PAR_SECONDS = 1795
+PAR_TOOLS = 1796
+PAR_TOOL_ADD = 1797
+PAR_TOOL_REMOVE = 1798
+PAR_LIST = 1799
+DIALOG_SPRITES = 1800
+SPRITES_NAMES = 1801
+SPRITES_FILTER = 1802
+SPRITES_FRAME = 1803
+SPRITES_FRAMESPIN = 1804
+SPRITES_OK = 1805
+SPRITES_CANCEL = 1806
+STRING_OLD = 1807
+STRING_NEW = 1808
+STRING_OK = 1809
+STRING_CANCEL = 1810
+DIALOG_PATCHINFO = 1811
+PATCHINFO_TOOLBAR = 1812
+PATCHINFO_TOOLBAR_ADD = 1813
+PATCHINFO_TOOLBAR_REMOVE = 1814
+DIALOG_START = 1815
+START_NEW = 1816
+START_OPEN = 1817
+START_RECENT = 1818
+START_CANCEL = 1819
+DIALOG_ABOUT = 1820
+ABOUT_OK = 1821
 
 ###########################################################################
 ## Class MainFrameBase
@@ -537,7 +538,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		Sizer27.AddSpacer( ( 0, 12), 0, wx.EXPAND, 5 )
 		
 		ThingFlagsChoices = []
-		self.ThingFlags = wx.CheckListBox( self, THING_FLAGS, wx.DefaultPosition, wx.Size( -1,-1 ), ThingFlagsChoices, 0|wx.SUNKEN_BORDER )
+		self.ThingFlags = wx.CheckListBox( self, THING_FLAGS, wx.DefaultPosition, wx.Size( -1,-1 ), ThingFlagsChoices, 0|wx.STATIC_BORDER )
 		Sizer27.Add( self.ThingFlags, 1, wx.EXPAND, 0 )
 		
 		
@@ -2161,62 +2162,79 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 class ParFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_PAR, title = u"Par times", pos = wx.DefaultPosition, size = wx.Size( 362,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_PAR, title = u"Par times", pos = wx.DefaultPosition, size = wx.Size( 400,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 350,380 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 400,380 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.ParList = wx.ListCtrl( self, PAR_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
-		bSizer41.Add( self.ParList, 1, wx.EXPAND, 5 )
+		bSizer98 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		bSizer139 = wx.BoxSizer( wx.VERTICAL )
 		
-		gSizer1 = wx.GridSizer( 3, 2, 3, 0 )
+		bSizer139.SetMinSize( wx.Size( 150,-1 ) ) 
+		bSizer94 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText88 = wx.StaticText( self, wx.ID_ANY, u"Episode", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText88.Wrap( -1 )
-		gSizer1.Add( self.m_staticText88, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		bSizer94.Add( self.m_staticText88, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		self.Episode = wx.TextCtrl( self, PAR_EPISODE, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
-		self.Episode.SetMaxLength( 6 ) 
-		gSizer1.Add( self.Episode, 0, wx.ALL|wx.EXPAND, 3 )
+		self.Episode.SetMaxLength( 1 ) 
+		bSizer94.Add( self.Episode, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		
+		bSizer139.Add( bSizer94, 0, wx.EXPAND, 5 )
+		
+		bSizer95 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText881 = wx.StaticText( self, wx.ID_ANY, u"Map", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText881.Wrap( -1 )
-		gSizer1.Add( self.m_staticText881, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		bSizer95.Add( self.m_staticText881, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		self.Map = wx.TextCtrl( self, PAR_MAP, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
-		self.Map.SetMaxLength( 6 ) 
-		gSizer1.Add( self.Map, 0, wx.ALL, 3 )
+		self.Map.SetMaxLength( 2 ) 
+		bSizer95.Add( self.Map, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.m_staticText8811 = wx.StaticText( self, wx.ID_ANY, u"Time", wx.DefaultPosition, wx.DefaultSize, 0 )
+		
+		bSizer139.Add( bSizer95, 0, wx.EXPAND, 5 )
+		
+		bSizer96 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText8811 = wx.StaticText( self, wx.ID_ANY, u"Seconds", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText8811.Wrap( -1 )
-		gSizer1.Add( self.m_staticText8811, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		bSizer96.Add( self.m_staticText8811, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Time = wx.TextCtrl( self, PAR_TIME, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
-		self.Time.SetMaxLength( 6 ) 
-		gSizer1.Add( self.Time, 0, wx.ALL, 3 )
-		
-		
-		bSizer139.Add( gSizer1, 0, wx.ALL, 6 )
+		self.Seconds = wx.TextCtrl( self, PAR_SECONDS, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.Seconds.SetMaxLength( 6 ) 
+		bSizer96.Add( self.Seconds, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		
-		bSizer139.AddSpacer( ( 0, 0), 1, wx.EXPAND, 0 )
-		
-		self.Rename = wx.Button( self, PAR_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Rename.SetMinSize( wx.Size( -1,28 ) )
-		
-		bSizer139.Add( self.Rename, 0, wx.ALL|wx.EXPAND, 6 )
-		
-		self.Restore = wx.Button( self, PAR_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Restore.SetMinSize( wx.Size( -1,28 ) )
-		
-		bSizer139.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 6 )
+		bSizer139.Add( bSizer96, 0, wx.EXPAND, 5 )
 		
 		
-		bSizer41.Add( bSizer139, 0, wx.ALL|wx.EXPAND, 6 )
+		bSizer98.Add( bSizer139, 0, wx.BOTTOM|wx.EXPAND|wx.LEFT|wx.TOP, 6 )
+		
+		bSizer97 = wx.BoxSizer( wx.VERTICAL )
+		
+		self.Tools = wx.ToolBar( self, PAR_TOOLS, wx.DefaultPosition, wx.DefaultSize, wx.TB_FLAT|wx.TB_NODIVIDER|wx.TB_VERTICAL ) 
+		self.Tools.AddLabelTool( PAR_TOOL_ADD, u"tool", wx.Bitmap( u"res/icon-plus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		
+		self.Tools.AddLabelTool( PAR_TOOL_REMOVE, u"tool", wx.Bitmap( u"res/icon-minus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		
+		self.Tools.Realize() 
+		
+		bSizer97.Add( self.Tools, 0, wx.EXPAND, 5 )
+		
+		
+		bSizer98.Add( bSizer97, 0, wx.ALL|wx.EXPAND, 6 )
+		
+		
+		bSizer41.Add( bSizer98, 1, wx.EXPAND, 5 )
+		
+		self.ParList = wx.ListCtrl( self, PAR_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		bSizer41.Add( self.ParList, 1, wx.EXPAND, 5 )
 		
 		
 		self.SetSizer( bSizer41 )
@@ -2227,8 +2245,12 @@ class ParFrameBase ( wx.MDIChildFrame ):
 		self.Episode.Bind( wx.EVT_TEXT, self.set_value )
 		self.Map.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Map.Bind( wx.EVT_TEXT, self.set_value )
-		self.Time.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.Time.Bind( wx.EVT_TEXT, self.set_value )
+		self.Seconds.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.Seconds.Bind( wx.EVT_TEXT, self.set_value )
+		self.Bind( wx.EVT_TOOL, self.par_add, id = PAR_TOOL_ADD )
+		self.Bind( wx.EVT_TOOL, self.par_remove, id = PAR_TOOL_REMOVE )
+		self.ParList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.par_select )
+		self.ParList.Bind( wx.EVT_SIZE, self.parlist_resize )
 	
 	def __del__( self ):
 		pass
@@ -2244,6 +2266,18 @@ class ParFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	
+	def par_add( self, event ):
+		pass
+	
+	def par_remove( self, event ):
+		pass
+	
+	def par_select( self, event ):
+		pass
+	
+	def parlist_resize( self, event ):
+		pass
 	
 
 ###########################################################################
