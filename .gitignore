@@ -134,6 +134,7 @@ test
 web
 releases
 *.exe
+*.7z
 
 
 #############

@@ -180,7 +180,7 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
 		self.MainToolbar = self.CreateToolBar( wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL, wx.ID_ANY )
-		self.MainToolbar.SetToolBitmapSize( wx.Size( 40,48 ) )
+		self.MainToolbar.SetToolBitmapSize( wx.Size( 40,40 ) )
 		self.MainToolbar.SetToolSeparation( 1 )
 		self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u" Things", wx.Bitmap( u"res/editor-things.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
@@ -2717,7 +2717,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText139.Wrap( -1 )
 		bSizer56.Add( self.m_staticText139, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, un4seen, XDelusion", wx.DefaultPosition, wx.DefaultSize, wx.ST_NO_AUTORESIZE )
+		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, un4seen, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
 		self.m_staticText138.Wrap( 450 )
 		bSizer56.Add( self.m_staticText138, 1, wx.ALL, 6 )
 		
