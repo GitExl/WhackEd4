@@ -408,9 +408,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 850,540 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 840,540 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 850,540 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 840,540 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		Sizer26 = wx.BoxSizer( wx.HORIZONTAL )
@@ -545,7 +545,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		Sizer26.Add( Sizer27, 0, wx.ALL|wx.EXPAND, 6 )
 		
 		
-		Sizer26.AddSpacer( ( 12, 0), 0, 0, 0 )
+		Sizer26.AddSpacer( ( 6, 0), 0, 0, 0 )
 		
 		bSizer40 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -907,7 +907,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		Sizer26.Add( bSizer40, 0, wx.ALL|wx.EXPAND, 6 )
 		
 		
-		Sizer26.AddSpacer( ( 12, 0), 0, wx.EXPAND, 5 )
+		Sizer26.AddSpacer( ( 9, 0), 0, wx.EXPAND, 5 )
 		
 		self.ThingList = wx.ListCtrl( self, THING_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
 		Sizer26.Add( self.ThingList, 1, wx.EXPAND, 0 )
@@ -1474,9 +1474,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 class SoundsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 384,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 420,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 384,480 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 420,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -1541,6 +1541,7 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		self.SoundList.Bind( wx.EVT_LIST_ITEM_DESELECTED, self.sound_deselect )
 		self.SoundList.Bind( wx.EVT_LIST_ITEM_RIGHT_CLICK, self.sound_play )
 		self.SoundList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.sound_select )
+		self.SoundList.Bind( wx.EVT_SIZE, self.soundlist_resize )
 	
 	def __del__( self ):
 		pass
@@ -1572,6 +1573,9 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		pass
 	
 	def sound_select( self, event ):
+		pass
+	
+	def soundlist_resize( self, event ):
 		pass
 	
 

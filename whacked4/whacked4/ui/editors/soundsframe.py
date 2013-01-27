@@ -118,7 +118,19 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         
         # Colour-code rows by priority.
         self.SoundList.SetItemBackgroundColour(row_index, self.priority_colours[sound['priority'] / 32])
+    
+    
+    def soundlist_resize(self, event):
+        """
+        Adjust sound list column widths.
+        """
         
+        column_width = self.SoundList.GetClientSizeTuple()[0] - 4
+        self.SoundList.SetColumnWidth(0, column_width / 4)
+        self.SoundList.SetColumnWidth(1, column_width / 4)
+        self.SoundList.SetColumnWidth(2, column_width / 4)
+        self.SoundList.SetColumnWidth(3, column_width / 4)
+    
         
     def sound_select_index(self, sound_index):
         """
