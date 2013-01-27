@@ -72,6 +72,16 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.AmmoList.SetStringItem(row_index, 2, str(ammo['clip']))
         
         
+    def ammolist_resize(self, event):
+        """
+        Resize the ammo name column as wide as possible.
+        """
+        
+        column_width = self.AmmoList.GetClientSizeTuple()[0]
+        column_width -= self.AmmoList.GetColumnWidth(1) + self.AmmoList.GetColumnWidth(2) + 4
+        self.AmmoList.SetColumnWidth(0, column_width)
+        
+        
     def ammo_select(self, event):
         """
         Selects a new ammo entry.

@@ -125,11 +125,11 @@ WEAPON_STATESET_MUZZLE = 1776
 WEAPON_RENAME = 1777
 WEAPON_RESTORE = 1778
 FRAME_AMMO = 1779
-AMMO_LIST = 1780
-AMMO_VAL_MAXIMUM = 1781
-AMMO_VAL_PICKUP = 1782
-AMMO_RENAME = 1783
-AMMO_RESTORE = 1784
+AMMO_VAL_MAXIMUM = 1780
+AMMO_VAL_PICKUP = 1781
+AMMO_RENAME = 1782
+AMMO_RESTORE = 1783
+AMMO_LIST = 1784
 FRAME_CHEATS = 1785
 CHEATS_LIST = 1786
 CHEATS_RESTORE = 1787
@@ -1956,15 +1956,12 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 class AmmoFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_AMMO, title = u"Ammo", pos = wx.DefaultPosition, size = wx.Size( 442,250 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_AMMO, title = u"Ammo", pos = wx.DefaultPosition, size = wx.Size( 460,250 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 442,250 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 460,250 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.AmmoList = wx.ListCtrl( self, AMMO_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
-		bSizer41.Add( self.AmmoList, 1, wx.ALL|wx.EXPAND, 0 )
 		
 		bSizer139 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -1995,41 +1992,39 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		self.Rename = wx.Button( self, AMMO_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Rename.SetMinSize( wx.Size( -1,28 ) )
 		
-		bSizer139.Add( self.Rename, 0, wx.ALL|wx.EXPAND, 6 )
+		bSizer139.Add( self.Rename, 0, wx.ALL|wx.EXPAND, 3 )
 		
 		self.Restore = wx.Button( self, AMMO_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Restore.SetMinSize( wx.Size( -1,28 ) )
 		
-		bSizer139.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 6 )
+		bSizer139.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 3 )
 		
 		
 		bSizer41.Add( bSizer139, 0, wx.ALL|wx.EXPAND, 6 )
+		
+		self.AmmoList = wx.ListCtrl( self, AMMO_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		bSizer41.Add( self.AmmoList, 1, wx.ALL|wx.EXPAND, 0 )
 		
 		
 		self.SetSizer( bSizer41 )
 		self.Layout()
 		
 		# Connect Events
-		self.AmmoList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.ammo_rename )
-		self.AmmoList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.ammo_select )
 		self.Maximum.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Maximum.Bind( wx.EVT_TEXT, self.set_value )
 		self.Pickup.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Pickup.Bind( wx.EVT_TEXT, self.set_value )
 		self.Rename.Bind( wx.EVT_BUTTON, self.ammo_rename )
 		self.Restore.Bind( wx.EVT_BUTTON, self.ammo_restore )
+		self.AmmoList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.ammo_rename )
+		self.AmmoList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.ammo_select )
+		self.AmmoList.Bind( wx.EVT_SIZE, self.ammolist_resize )
 	
 	def __del__( self ):
 		pass
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def ammo_rename( self, event ):
-		pass
-	
-	def ammo_select( self, event ):
-		pass
-	
 	def focus_text( self, event ):
 		pass
 	
@@ -2038,8 +2033,17 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	def ammo_rename( self, event ):
+		pass
 	
 	def ammo_restore( self, event ):
+		pass
+	
+	
+	def ammo_select( self, event ):
+		pass
+	
+	def ammolist_resize( self, event ):
 		pass
 	
 
