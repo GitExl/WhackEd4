@@ -80,11 +80,38 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         Builds the list of weapon names.
         """
         
-        self.WeaponList.Clear()
-        self.WeaponList.AppendItems(self.patch.weapons.names)
-        self.WeaponList.Select(0)
+        self.WeaponList.ClearAll()
         
-        self.update_properties()
+        if self.WeaponList.GetColumnCount() == 0:
+            self.WeaponList.InsertColumn(0, 'Name', width=135)
+            self.WeaponList.InsertColumn(1, 'Ammo', width=69)
+        
+        for index in range(len(self.patch.weapons)):
+            self.WeaponList.InsertStringItem(index, '')
+            self.weaponlist_update_row(index)
+        
+        self.WeaponList.Select(0, True)
+        
+        
+    def weaponlist_update_row(self, row_index):
+        """
+        Updates a row in the weapons list.
+        """
+        
+        weapon = self.patch.weapons[row_index]
+        weapon_name = self.patch.weapons.names[row_index]
+        
+        self.WeaponList.SetItemText(row_index, weapon_name)
+        self.WeaponList.SetStringItem(row_index, 1, self.patch.get_ammo_name(weapon['ammoType']))
+        
+    
+    def weaponlist_resize(self, event):
+        """
+        Resizes the weapon name column to fill as much space as is available.
+        """
+        
+        column_width = self.WeaponList.GetClientSizeTuple()[0] - self.WeaponList.GetColumnWidth(1) - 4
+        self.WeaponList.SetColumnWidth(0, column_width)
     
     
     def ammolist_build(self):
@@ -116,7 +143,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         for name in self.PROPS_STATES.values():
             self.set_display_state(name)
             
-        self.WeaponList.SetString(self.selected_index, self.patch.weapons.names[self.selected_index])
+        self.WeaponList.SetItemText(self.selected_index, self.patch.weapons.names[self.selected_index])
         
         
     def set_state_index(self, event):
@@ -154,6 +181,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         
         ammo_index = self.AmmoType.GetSelection()
         self.patch.weapons[self.selected_index]['ammoType'] = ammo_index
+        
+        self.weaponlist_update_row(self.selected_index)
         self.is_modified(True)
         
     
@@ -245,7 +274,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         }
     
     
-    def goto_state(self, event):
+    def goto_state_event(self, event):
         """
         Changes the selected state in the states editor window to the one of a weapon's state property.
         """
@@ -253,9 +282,13 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         key = self.PROPS_STATENAMES[event.GetId()]
         state_index = self.patch.weapons[self.selected_index]['state' + key]
         
-        self.goto_state_index(state_index, statefilter.FILTER_TYPE_WEAPON, self.selected_index)
+        self.goto_state(state_index, statefilter.FILTER_TYPE_WEAPON, self.selected_index)
     
     
     def weapon_select(self, event):
-        self.selected_index = self.WeaponList.GetSelection()
+        """
+        Selects a new weapon from the list.
+        """
+        
+        self.selected_index = event.GetIndex()
         self.update_properties()

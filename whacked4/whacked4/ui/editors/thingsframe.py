@@ -449,12 +449,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         
         self.selected_index = event.GetIndex()
         self.update_properties()
-        
-        print self.ThingList.GetColumnWidth(0)
-        print self.ThingList.GetColumnWidth(1)
-        print self.ThingList.GetColumnWidth(2)
-        print self.ThingList.GetColumnWidth(3)
-        print self.ThingList.GetColumnWidth(4)
     
         
     def thing_rename(self, event):

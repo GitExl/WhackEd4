@@ -106,67 +106,66 @@ FRAME_STRINGS = 1757
 STRINGS_LIST = 1758
 STRINGS_RESTORE = 1759
 FRAME_WEAPONS = 1760
-WEAPON_LIST = 1761
-WEAPON_AMMOTYPE = 1762
-WEAPON_STATE_SELECT = 1763
-WEAPON_STATENAME_SELECT = 1764
-WEAPON_STATESET_SELECT = 1765
-WEAPON_STATE_DESELECT = 1766
-WEAPON_STATENAME_DESELECT = 1767
-WEAPON_STATESET_DESELECT = 1768
-WEAPON_STATE_BOB = 1769
-WEAPON_STATENAME_BOB = 1770
-WEAPON_STATESET_BOB = 1771
-WEAPON_STATE_FIRE = 1772
-WEAPON_STATENAME_FIRE = 1773
-WEAPON_STATESET_FIRE = 1774
-WEAPON_STATE_MUZZLE = 1775
-WEAPON_STATENAME_MUZZLE = 1776
-WEAPON_STATESET_MUZZLE = 1777
-WEAPON_RENAME = 1778
-WEAPON_RESTORE = 1779
-FRAME_AMMO = 1780
-AMMO_LIST = 1781
-AMMO_VAL_MAXIMUM = 1782
-AMMO_VAL_PICKUP = 1783
-AMMO_RENAME = 1784
-AMMO_RESTORE = 1785
-FRAME_CHEATS = 1786
-CHEATS_LIST = 1787
-CHEATS_RESTORE = 1788
-FRAME_MISC = 1789
-MISC_LIST = 1790
-MISC_INFIGHT = 1791
-MISC_RESTORE = 1792
-FRAME_PAR = 1793
-PAR_LIST = 1794
-PAR_EPISODE = 1795
-PAR_MAP = 1796
-PAR_TIME = 1797
-PAR_RENAME = 1798
-PAR_RESTORE = 1799
-DIALOG_SPRITES = 1800
-SPRITES_NAMES = 1801
-SPRITES_FILTER = 1802
-SPRITES_FRAME = 1803
-SPRITES_FRAMESPIN = 1804
-SPRITES_OK = 1805
-SPRITES_CANCEL = 1806
-STRING_OLD = 1807
-STRING_NEW = 1808
-STRING_OK = 1809
-STRING_CANCEL = 1810
-DIALOG_PATCHINFO = 1811
-PATCHINFO_TOOLBAR = 1812
-PATCHINFO_TOOLBAR_ADD = 1813
-PATCHINFO_TOOLBAR_REMOVE = 1814
-DIALOG_START = 1815
-START_NEW = 1816
-START_OPEN = 1817
-START_RECENT = 1818
-START_CANCEL = 1819
-DIALOG_ABOUT = 1820
-ABOUT_OK = 1821
+WEAPON_AMMOTYPE = 1761
+WEAPON_STATE_SELECT = 1762
+WEAPON_STATENAME_SELECT = 1763
+WEAPON_STATESET_SELECT = 1764
+WEAPON_STATE_DESELECT = 1765
+WEAPON_STATENAME_DESELECT = 1766
+WEAPON_STATESET_DESELECT = 1767
+WEAPON_STATE_BOB = 1768
+WEAPON_STATENAME_BOB = 1769
+WEAPON_STATESET_BOB = 1770
+WEAPON_STATE_FIRE = 1771
+WEAPON_STATENAME_FIRE = 1772
+WEAPON_STATESET_FIRE = 1773
+WEAPON_STATE_MUZZLE = 1774
+WEAPON_STATENAME_MUZZLE = 1775
+WEAPON_STATESET_MUZZLE = 1776
+WEAPON_RENAME = 1777
+WEAPON_RESTORE = 1778
+FRAME_AMMO = 1779
+AMMO_LIST = 1780
+AMMO_VAL_MAXIMUM = 1781
+AMMO_VAL_PICKUP = 1782
+AMMO_RENAME = 1783
+AMMO_RESTORE = 1784
+FRAME_CHEATS = 1785
+CHEATS_LIST = 1786
+CHEATS_RESTORE = 1787
+FRAME_MISC = 1788
+MISC_LIST = 1789
+MISC_INFIGHT = 1790
+MISC_RESTORE = 1791
+FRAME_PAR = 1792
+PAR_LIST = 1793
+PAR_EPISODE = 1794
+PAR_MAP = 1795
+PAR_TIME = 1796
+PAR_RENAME = 1797
+PAR_RESTORE = 1798
+DIALOG_SPRITES = 1799
+SPRITES_NAMES = 1800
+SPRITES_FILTER = 1801
+SPRITES_FRAME = 1802
+SPRITES_FRAMESPIN = 1803
+SPRITES_OK = 1804
+SPRITES_CANCEL = 1805
+STRING_OLD = 1806
+STRING_NEW = 1807
+STRING_OK = 1808
+STRING_CANCEL = 1809
+DIALOG_PATCHINFO = 1810
+PATCHINFO_TOOLBAR = 1811
+PATCHINFO_TOOLBAR_ADD = 1812
+PATCHINFO_TOOLBAR_REMOVE = 1813
+DIALOG_START = 1814
+START_NEW = 1815
+START_OPEN = 1816
+START_RECENT = 1817
+START_CANCEL = 1818
+DIALOG_ABOUT = 1819
+ABOUT_OK = 1820
 
 ###########################################################################
 ## Class MainFrameBase
@@ -1642,41 +1641,44 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 480,360 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 550,360 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 480,360 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 550,360 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		WeaponListChoices = []
-		self.WeaponList = wx.ListBox( self, WEAPON_LIST, wx.DefaultPosition, wx.DefaultSize, WeaponListChoices, wx.LB_HSCROLL|wx.SUNKEN_BORDER )
-		bSizer41.Add( self.WeaponList, 1, wx.EXPAND, 5 )
+		bSizer93 = wx.BoxSizer( wx.VERTICAL )
 		
 		bSizer139 = wx.BoxSizer( wx.VERTICAL )
 		
-		gSizer1 = wx.GridSizer( 6, 2, 3, 0 )
+		bSizer86 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText88 = wx.StaticText( self, wx.ID_ANY, u"Ammo type", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText88.Wrap( -1 )
-		gSizer1.Add( self.m_staticText88, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		bSizer86.Add( self.m_staticText88, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		AmmoTypeChoices = []
 		self.AmmoType = wx.Choice( self, WEAPON_AMMOTYPE, wx.DefaultPosition, wx.DefaultSize, AmmoTypeChoices, 0 )
 		self.AmmoType.SetSelection( 0 )
-		gSizer1.Add( self.AmmoType, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.FIXED_MINSIZE, 3 )
+		bSizer86.Add( self.AmmoType, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.EXPAND|wx.FIXED_MINSIZE, 3 )
+		
+		
+		bSizer139.Add( bSizer86, 1, wx.EXPAND, 5 )
+		
+		bSizer87 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText881 = wx.StaticText( self, wx.ID_ANY, u"Select state", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText881.Wrap( -1 )
-		gSizer1.Add( self.m_staticText881, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		bSizer87.Add( self.m_staticText881, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		bSizer124 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.WeaponStateSelect = wx.TextCtrl( self, WEAPON_STATE_SELECT, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.WeaponStateSelect = wx.TextCtrl( self, WEAPON_STATE_SELECT, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.WeaponStateSelect.SetMaxLength( 4 ) 
-		bSizer124.Add( self.WeaponStateSelect, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		bSizer124.Add( self.WeaponStateSelect, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.WeaponStateSelectName = wx.StaticText( self, WEAPON_STATENAME_SELECT, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.WeaponStateSelectName = wx.StaticText( self, WEAPON_STATENAME_SELECT, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateSelectName.Wrap( -1 )
 		self.WeaponStateSelectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.WeaponStateSelectName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1689,19 +1691,24 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer124.Add( self.WeaponStateSelectSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		
-		gSizer1.Add( bSizer124, 1, wx.EXPAND, 5 )
+		bSizer87.Add( bSizer124, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer139.Add( bSizer87, 1, wx.EXPAND, 5 )
+		
+		bSizer88 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText8811 = wx.StaticText( self, wx.ID_ANY, u"Deselect state", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText8811.Wrap( -1 )
-		gSizer1.Add( self.m_staticText8811, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		bSizer88.Add( self.m_staticText8811, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
 		bSizer1241 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.WeaponStateDeselect = wx.TextCtrl( self, WEAPON_STATE_DESELECT, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.WeaponStateDeselect = wx.TextCtrl( self, WEAPON_STATE_DESELECT, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.WeaponStateDeselect.SetMaxLength( 4 ) 
-		bSizer1241.Add( self.WeaponStateDeselect, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		bSizer1241.Add( self.WeaponStateDeselect, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.WeaponStateDeselectName = wx.StaticText( self, WEAPON_STATENAME_DESELECT, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.WeaponStateDeselectName = wx.StaticText( self, WEAPON_STATENAME_DESELECT, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateDeselectName.Wrap( -1 )
 		self.WeaponStateDeselectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.WeaponStateDeselectName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1714,19 +1721,24 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer1241.Add( self.WeaponStateDeselectSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		
-		gSizer1.Add( bSizer1241, 1, wx.EXPAND, 5 )
+		bSizer88.Add( bSizer1241, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer139.Add( bSizer88, 1, wx.EXPAND, 5 )
+		
+		bSizer89 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText8812 = wx.StaticText( self, wx.ID_ANY, u"Bob state", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText8812.Wrap( -1 )
-		gSizer1.Add( self.m_staticText8812, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		bSizer89.Add( self.m_staticText8812, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
 		bSizer1242 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.WeaponStateBob = wx.TextCtrl( self, WEAPON_STATE_BOB, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.WeaponStateBob = wx.TextCtrl( self, WEAPON_STATE_BOB, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.WeaponStateBob.SetMaxLength( 4 ) 
-		bSizer1242.Add( self.WeaponStateBob, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		bSizer1242.Add( self.WeaponStateBob, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.WeaponStateBobName = wx.StaticText( self, WEAPON_STATENAME_BOB, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.WeaponStateBobName = wx.StaticText( self, WEAPON_STATENAME_BOB, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateBobName.Wrap( -1 )
 		self.WeaponStateBobName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.WeaponStateBobName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1739,19 +1751,24 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer1242.Add( self.WeaponStateBobSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		
-		gSizer1.Add( bSizer1242, 1, wx.EXPAND, 5 )
+		bSizer89.Add( bSizer1242, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer139.Add( bSizer89, 1, wx.EXPAND, 5 )
+		
+		bSizer90 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText8813 = wx.StaticText( self, wx.ID_ANY, u"Fire state", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText8813.Wrap( -1 )
-		gSizer1.Add( self.m_staticText8813, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		bSizer90.Add( self.m_staticText8813, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
 		bSizer1243 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.WeaponStateFire = wx.TextCtrl( self, WEAPON_STATE_FIRE, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.WeaponStateFire = wx.TextCtrl( self, WEAPON_STATE_FIRE, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.WeaponStateFire.SetMaxLength( 4 ) 
-		bSizer1243.Add( self.WeaponStateFire, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		bSizer1243.Add( self.WeaponStateFire, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.WeaponStateFireName = wx.StaticText( self, WEAPON_STATENAME_FIRE, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.WeaponStateFireName = wx.StaticText( self, WEAPON_STATENAME_FIRE, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateFireName.Wrap( -1 )
 		self.WeaponStateFireName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.WeaponStateFireName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1764,19 +1781,24 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer1243.Add( self.WeaponStateFireSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		
-		gSizer1.Add( bSizer1243, 1, wx.EXPAND, 5 )
+		bSizer90.Add( bSizer1243, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer139.Add( bSizer90, 1, wx.EXPAND, 5 )
+		
+		bSizer91 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText8814 = wx.StaticText( self, wx.ID_ANY, u"Muzzle flash state", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText8814.Wrap( -1 )
-		gSizer1.Add( self.m_staticText8814, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		bSizer91.Add( self.m_staticText8814, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
 		bSizer1244 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.WeaponStateMuzzle = wx.TextCtrl( self, WEAPON_STATE_MUZZLE, u"318", wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.WeaponStateMuzzle = wx.TextCtrl( self, WEAPON_STATE_MUZZLE, u"318", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
 		self.WeaponStateMuzzle.SetMaxLength( 4 ) 
-		bSizer1244.Add( self.WeaponStateMuzzle, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		bSizer1244.Add( self.WeaponStateMuzzle, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.WeaponStateMuzzleName = wx.StaticText( self, WEAPON_STATENAME_MUZZLE, u"TROOA", wx.DefaultPosition, wx.Size( 45,-1 ), wx.ST_NO_AUTORESIZE )
+		self.WeaponStateMuzzleName = wx.StaticText( self, WEAPON_STATENAME_MUZZLE, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateMuzzleName.Wrap( -1 )
 		self.WeaponStateMuzzleName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.WeaponStateMuzzleName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1789,79 +1811,85 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer1244.Add( self.WeaponStateMuzzleSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		
-		gSizer1.Add( bSizer1244, 1, wx.EXPAND, 5 )
+		bSizer91.Add( bSizer1244, 1, wx.EXPAND, 5 )
 		
 		
-		bSizer139.Add( gSizer1, 0, wx.ALL, 6 )
+		bSizer139.Add( bSizer91, 1, wx.EXPAND, 5 )
 		
 		
-		bSizer139.AddSpacer( ( 0, 0), 1, wx.EXPAND, 0 )
+		bSizer93.Add( bSizer139, 0, wx.ALL, 6 )
+		
+		
+		bSizer93.AddSpacer( ( 0, 0), 1, wx.EXPAND, 0 )
+		
+		bSizer92 = wx.BoxSizer( wx.VERTICAL )
 		
 		self.Rename = wx.Button( self, WEAPON_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Rename.SetMinSize( wx.Size( -1,28 ) )
 		
-		bSizer139.Add( self.Rename, 0, wx.ALL|wx.EXPAND, 6 )
+		bSizer92.Add( self.Rename, 0, wx.ALL|wx.EXPAND, 3 )
 		
 		self.Restore = wx.Button( self, WEAPON_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Restore.SetMinSize( wx.Size( -1,28 ) )
 		
-		bSizer139.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 6 )
+		bSizer92.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 3 )
 		
 		
-		bSizer41.Add( bSizer139, 0, wx.ALL|wx.EXPAND, 6 )
+		bSizer93.Add( bSizer92, 0, wx.ALL|wx.EXPAND, 3 )
+		
+		
+		bSizer41.Add( bSizer93, 0, wx.EXPAND, 5 )
+		
+		self.WeaponList = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
+		bSizer41.Add( self.WeaponList, 1, wx.ALL|wx.EXPAND, 0 )
 		
 		
 		self.SetSizer( bSizer41 )
 		self.Layout()
 		
 		# Connect Events
-		self.WeaponList.Bind( wx.EVT_LISTBOX, self.weapon_select )
-		self.WeaponList.Bind( wx.EVT_LISTBOX_DCLICK, self.weapon_rename )
 		self.AmmoType.Bind( wx.EVT_CHOICE, self.set_ammo )
 		self.WeaponStateSelect.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateSelect.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateSelectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateSelectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.WeaponStateSelectName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.WeaponStateSelectName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.WeaponStateSelectSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.WeaponStateDeselect.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateDeselect.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateDeselectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.WeaponStateDeselectName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.WeaponStateDeselectName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.WeaponStateDeselectSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.WeaponStateBob.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateBob.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateBobName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateBobName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.WeaponStateBobName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.WeaponStateBobName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.WeaponStateBobSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.WeaponStateFire.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateFire.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateFireName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateFireName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.WeaponStateFireName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.WeaponStateFireName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.WeaponStateFireSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.WeaponStateMuzzle.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateMuzzle.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
-		self.WeaponStateMuzzleName.Bind( wx.EVT_LEFT_UP, self.goto_state )
+		self.WeaponStateMuzzleName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.WeaponStateMuzzleSet.Bind( wx.EVT_BUTTON, self.set_state_external )
 		self.Rename.Bind( wx.EVT_BUTTON, self.weapon_rename )
 		self.Restore.Bind( wx.EVT_BUTTON, self.weapon_restore )
+		self.WeaponList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.weapon_rename )
+		self.WeaponList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.weapon_select )
+		self.WeaponList.Bind( wx.EVT_SIZE, self.weaponlist_resize )
 	
 	def __del__( self ):
 		pass
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def weapon_select( self, event ):
-		pass
-	
-	def weapon_rename( self, event ):
-		pass
-	
 	def set_ammo( self, event ):
 		pass
 	
@@ -1877,7 +1905,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	def leave_state( self, event ):
 		pass
 	
-	def goto_state( self, event ):
+	def goto_state_event( self, event ):
 		pass
 	
 	def set_state_external( self, event ):
@@ -1907,8 +1935,17 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	def weapon_rename( self, event ):
+		pass
 	
 	def weapon_restore( self, event ):
+		pass
+	
+	
+	def weapon_select( self, event ):
+		pass
+	
+	def weaponlist_resize( self, event ):
 		pass
 	
 
