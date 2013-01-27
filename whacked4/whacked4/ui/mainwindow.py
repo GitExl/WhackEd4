@@ -102,6 +102,7 @@ class MainWindow(windows.MainFrameBase):
         self.Bind(wx.EVT_SIZE, self.workspace_update_data)
         
         self.editor_window_set_edit()
+        self.file_set_state()
     
     
     def parse_options(self, args):
@@ -244,6 +245,7 @@ class MainWindow(windows.MainFrameBase):
         # Refresh user interface contents.
         self.load_wads()
         self.update_ui()
+        self.file_set_state()
 
         # Store potentially updated workspace.
         self.workspace_save()
@@ -468,6 +470,7 @@ class MainWindow(windows.MainFrameBase):
         self.load_wads()
         self.editor_windows_show(False)
         self.update_ui()
+        self.file_set_state()
             
             
     def save_if_needed(self):
@@ -667,6 +670,18 @@ class MainWindow(windows.MainFrameBase):
         self.workspace.store_windows(self, self.workspace_windows)
         self.workspace.save(self.patch.filename)
         self.workspace_modified = False
+        
+        
+    def file_set_state(self):
+        """
+        Set the state of file related menu options.
+        """
+        
+        state = (self.workspace is not None)
+        
+        self.MenuFileReloadWADs.Enable(state)
+        self.MenuFileSave.Enable(state)
+        self.MenuFileSaveAs.Enable(state)
     
         
     def workspace_update_data(self, event):
