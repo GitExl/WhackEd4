@@ -114,3 +114,22 @@ def seconds_to_minutes(seconds):
     """
     
     return '{}:{:0>2}'.format(int(seconds / 60), seconds % 60)
+
+
+def file_dialog(parent, message=wx.FileSelectorPromptStr, default_dir=wx.EmptyString, default_file=wx.EmptyString,
+                     wildcard=wx.FileSelectorDefaultWildcardStr, style=wx.FD_DEFAULT_STYLE, pos=wx.DefaultPosition):
+    """
+    Wrapper around the wxWidgets file dialog class.
+    
+    @return: the selected file path, or None if the user cancelled.
+    
+    @see: http://www.wxpython.org/docs/api/wx.FileDialog-class.html
+    """
+    
+    dialog = wx.FileDialog(parent, message, default_dir, default_file, wildcard, style, pos)
+
+    result = dialog.ShowModal()
+    if result == wx.ID_OK:
+        return dialog.GetPath()
+    else:
+        return None

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #coding=utf8
 
+from whacked4 import utils
 from whacked4.doom import wad
 from whacked4.ui import windows
 import os.path
@@ -125,11 +126,10 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         Displays the IWAD file browser.
         """
         
-        filename = wx.FileSelector('Choose an IWAD.', default_extension='.wad',
-            wildcard='WAD files (*.wad)|*.wad|All files|*.*',
-            flags=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+        filename = utils.file_dialog(self, message='Choose an IWAD.', wildcard='WAD files (*.wad)|*.wad|All files|*.*',
+                                     style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST, default_file=self.IWAD.GetValue())
         
-        if filename != '':
+        if filename is not None:
             # Validate the WAD file.
             try:
                 iwad = wad.WADReader(filename)
@@ -153,11 +153,10 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         Displays the PWAD file browser.
         """
         
-        filename = wx.FileSelector('Choose a PWAD.', default_extension='.wad',
-            wildcard='WAD files (*.wad)|*.wad|All files|*.*',
-            flags=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+        filename = utils.file_dialog(self, message='Choose a PWAD.', wildcard='WAD files (*.wad)|*.wad|All files|*.*',
+                                     style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST, default_file=self.IWAD.GetValue())
         
-        if filename != '':
+        if filename is not None:
             # Validate the WAD file.
             try:
                 pwad = wad.WADReader(filename)

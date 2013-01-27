@@ -2,13 +2,13 @@
 #coding=utf8
 
 from collections import OrderedDict
-from whacked4 import config
+from whacked4 import config, utils
 from whacked4.dehacked import engine, patch
 from whacked4.doom import wadlist, wad
 from whacked4.ui import windows, workspace
 from whacked4.ui.dialogs import startdialog, aboutdialog, patchinfodialog
-from whacked4.ui.editors import thingsframe, statesframe, soundsframe, stringsframe, weaponsframe, ammoframe, cheatsframe, \
-    miscframe, parframe
+from whacked4.ui.editors import thingsframe, statesframe, soundsframe, stringsframe, weaponsframe, ammoframe, \
+    cheatsframe, miscframe, parframe
 import glob
 import os.path
 import shutil
@@ -166,11 +166,11 @@ class MainWindow(windows.MainFrameBase):
         if self.save_if_needed() == False:
             return
         
-        filename = wx.FileSelector('Choose a Dehacked file to open.',
-            wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|Extended Dehacked files (*.bex)|*.bex|All files|*.*',
-            flags=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+        filename = utils.file_dialog(self, message='Choose a Dehacked file to open.',
+                                     wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|Extended Dehacked files (*.bex)|*.bex|All files|*.*',
+                                     style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
         
-        if filename != '':
+        if filename is not None:
             self.open_file(filename, force_show_settings)
             
     
@@ -316,22 +316,19 @@ class MainWindow(windows.MainFrameBase):
         # Use the patch filename if it was saved before.
         if self.patch.filename is not None:
             use_filename = self.patch.filename
-            default_ext = os.path.splitext(self.patch.filename)[1]
         
         # Otherwise use a default filename and extension.
         else:
             if self.patch.extended == True:
                 use_filename = 'unnamed.bex'
-                default_ext = 'bex'
             else:
                 use_filename = 'unnamed.deh'
-                default_ext = 'deh'
         
-        filename = wx.FileSelector('Save Dehacked file.', default_filename=use_filename, default_extension=default_ext,
-            wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|Extended Dehacked files (*.bex)|*.bex|All files|*.*',
-            flags=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
+        filename = utils.file_dialog(self, message='Save Dehacked file.', default_file=use_filename,
+                             wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|Extended Dehacked files (*.bex)|*.bex|All files|*.*',
+                             style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
         
-        if filename != '':
+        if filename is not None:
             self.save_file(filename)
         
         
