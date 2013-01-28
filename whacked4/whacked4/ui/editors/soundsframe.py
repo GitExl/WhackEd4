@@ -233,3 +233,12 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         """
         
         self.sound_select_index(event.GetIndex())
+        
+        
+    def priority_spin_up(self, event):
+        priority = int(self.Priority.GetValue())
+        self.Priority.SetValue(str(priority + 1))
+    
+    def priority_spin_down(self, event):
+        priority = int(self.Priority.GetValue())
+        self.Priority.SetValue(str(priority - 1))
