@@ -762,7 +762,7 @@
                 </object>
             </object>
         </object>
-        <object class="Frame" expanded="0">
+        <object class="Frame" expanded="1">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg">wxSYS_COLOUR_BTNFACE</property>
@@ -824,7 +824,7 @@
             <event name="OnSetFocus"></event>
             <event name="OnSize"></event>
             <event name="OnUpdateUI"></event>
-            <object class="wxBoxSizer" expanded="0">
+            <object class="wxBoxSizer" expanded="1">
                 <property name="minimum_size"></property>
                 <property name="name">Sizer26</property>
                 <property name="orient">wxHORIZONTAL</property>
@@ -2573,7 +2573,7 @@
                                 <property name="validator_variable"></property>
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
-                                <property name="window_style">wxSTATIC_BORDER</property>
+                                <property name="window_style"></property>
                                 <event name="OnChar"></event>
                                 <event name="OnCheckListBox"></event>
                                 <event name="OnCheckListBoxDClick"></event>
@@ -18595,7 +18595,7 @@
                                 <property name="validator_variable"></property>
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
-                                <property name="window_style">wxSTATIC_BORDER</property>
+                                <property name="window_style"></property>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
                                 <event name="OnEraseBackground"></event>
@@ -20711,7 +20711,7 @@
                                 <property name="validator_variable"></property>
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
-                                <property name="window_style">wxSTATIC_BORDER</property>
+                                <property name="window_style"></property>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
                                 <event name="OnEraseBackground"></event>
@@ -21510,7 +21510,7 @@
                                         <property name="validator_variable"></property>
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
-                                        <property name="window_style">wxSTATIC_BORDER</property>
+                                        <property name="window_style"></property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
                                         <event name="OnEraseBackground"></event>

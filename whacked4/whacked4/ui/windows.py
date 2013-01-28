@@ -551,7 +551,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		Sizer27.AddSpacer( ( 0, 12), 0, wx.EXPAND, 5 )
 		
 		ThingFlagsChoices = []
-		self.ThingFlags = wx.CheckListBox( self, THING_FLAGS, wx.DefaultPosition, wx.Size( -1,-1 ), ThingFlagsChoices, 0|wx.STATIC_BORDER )
+		self.ThingFlags = wx.CheckListBox( self, THING_FLAGS, wx.DefaultPosition, wx.Size( -1,-1 ), ThingFlagsChoices, 0 )
 		Sizer27.Add( self.ThingFlags, 1, wx.EXPAND, 0 )
 		
 		
@@ -2587,7 +2587,7 @@ class SpritesDialogBase ( wx.Dialog ):
 		
 		bSizer42 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.SpriteNames = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 74,-1 ), wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.STATIC_BORDER )
+		self.SpriteNames = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 74,-1 ), wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL )
 		bSizer42.Add( self.SpriteNames, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
 		bSizer40 = wx.BoxSizer( wx.VERTICAL )
@@ -2858,7 +2858,7 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		
 		bSizer452.Add( self.m_staticText462, 0, wx.ALL, 6 )
 		
-		self.PWADList = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.STATIC_BORDER )
+		self.PWADList = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL )
 		bSizer452.Add( self.PWADList, 1, wx.ALL|wx.EXPAND, 6 )
 		
 		bSizer63 = wx.BoxSizer( wx.VERTICAL )
@@ -2971,7 +2971,7 @@ class StartDialogBase ( wx.Dialog ):
 		self.m_staticText50.Wrap( -1 )
 		bSizer54.Add( self.m_staticText50, 0, wx.LEFT|wx.RIGHT|wx.TOP, 5 )
 		
-		self.FileList = wx.ListCtrl( self, START_RECENT, wx.DefaultPosition, wx.DefaultSize, wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.STATIC_BORDER )
+		self.FileList = wx.ListCtrl( self, START_RECENT, wx.DefaultPosition, wx.DefaultSize, wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL )
 		bSizer54.Add( self.FileList, 1, wx.ALL|wx.EXPAND, 6 )
 		
 		
