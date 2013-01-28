@@ -134,38 +134,52 @@ FRAME_CHEATS = 1785
 CHEATS_LIST = 1786
 CHEATS_RESTORE = 1787
 FRAME_MISC = 1788
-MISC_LIST = 1789
-MISC_INFIGHT = 1790
-MISC_RESTORE = 1791
-FRAME_PAR = 1792
-PAR_EPISODE = 1793
-PAR_MAP = 1794
-PAR_SECONDS = 1795
-PAR_TOOLS = 1796
-PAR_TOOL_ADD = 1797
-PAR_TOOL_REMOVE = 1798
-PAR_LIST = 1799
-DIALOG_SPRITES = 1800
-SPRITES_FILTER = 1801
-SPRITES_FRAME = 1802
-SPRITES_FRAMESPIN = 1803
-SPRITES_OK = 1804
-SPRITES_CANCEL = 1805
-STRING_OLD = 1806
-STRING_NEW = 1807
-STRING_OK = 1808
-STRING_CANCEL = 1809
-DIALOG_PATCHINFO = 1810
-PATCHINFO_TOOLBAR = 1811
-PATCHINFO_TOOLBAR_ADD = 1812
-PATCHINFO_TOOLBAR_REMOVE = 1813
-DIALOG_START = 1814
-START_NEW = 1815
-START_OPEN = 1816
-START_RECENT = 1817
-START_CANCEL = 1818
-DIALOG_ABOUT = 1819
-ABOUT_OK = 1820
+MISC_START_HEALTH = 1789
+MISC_START_BULLETS = 1790
+MISC_MAX_HEALTH = 1791
+MISC_MAX_ARMOR = 1792
+MISC_ARMOR_CLASS_GREEN = 1793
+MISC_ARMOR_CLASS_BLUE = 1794
+MISC_MAX_SOULSPHERE_HEALTH = 1795
+MISC_SOULSPHERE_HEALTH = 1796
+MISC_MEGASPHERE_HEALTH = 1797
+MISC_GODMODE_HEALTH = 1798
+MISC_IDFA_ARMOR = 1799
+MISC_IDFA_ARMOR_CLASS = 1800
+MISC_IDKFA_ARMOR = 1801
+MISC_IDKFA_ARMOR_CLASS = 1802
+MISC_BFG_AMMO = 1803
+MISC_MONSTERS_INFIGHT = 1804
+MISC_RESTORE = 1805
+FRAME_PAR = 1806
+PAR_EPISODE = 1807
+PAR_MAP = 1808
+PAR_SECONDS = 1809
+PAR_TOOLS = 1810
+PAR_TOOL_ADD = 1811
+PAR_TOOL_REMOVE = 1812
+PAR_LIST = 1813
+DIALOG_SPRITES = 1814
+SPRITES_FILTER = 1815
+SPRITES_FRAME = 1816
+SPRITES_FRAMESPIN = 1817
+SPRITES_OK = 1818
+SPRITES_CANCEL = 1819
+STRING_OLD = 1820
+STRING_NEW = 1821
+STRING_OK = 1822
+STRING_CANCEL = 1823
+DIALOG_PATCHINFO = 1824
+PATCHINFO_TOOLBAR = 1825
+PATCHINFO_TOOLBAR_ADD = 1826
+PATCHINFO_TOOLBAR_REMOVE = 1827
+DIALOG_START = 1828
+START_NEW = 1829
+START_OPEN = 1830
+START_RECENT = 1831
+START_CANCEL = 1832
+DIALOG_ABOUT = 1833
+ABOUT_OK = 1834
 
 ###########################################################################
 ## Class MainFrameBase
@@ -2116,26 +2130,233 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 class MiscFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_MISC, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 406,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_MISC, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 440,340 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 350,380 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 440,340 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.MiscList = wx.ListCtrl( self, MISC_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
-		bSizer41.Add( self.MiscList, 1, wx.EXPAND, 0 )
+		bSizer137 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		bSizer99 = wx.BoxSizer( wx.VERTICAL )
+		
+		bSizer100 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText75 = wx.StaticText( self, wx.ID_ANY, u"Starting health", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText75.Wrap( -1 )
+		bSizer100.Add( self.m_staticText75, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.StartHealth = wx.TextCtrl( self, MISC_START_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer100.Add( self.StartHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer99.Add( bSizer100, 0, wx.EXPAND, 0 )
+		
+		bSizer1001 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText751 = wx.StaticText( self, wx.ID_ANY, u"Starting bullets", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText751.Wrap( -1 )
+		bSizer1001.Add( self.m_staticText751, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.StartBullets = wx.TextCtrl( self, MISC_START_BULLETS, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer1001.Add( self.StartBullets, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer99.Add( bSizer1001, 1, wx.EXPAND, 5 )
+		
+		bSizer1002 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText752 = wx.StaticText( self, wx.ID_ANY, u"Maximum health", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText752.Wrap( -1 )
+		bSizer1002.Add( self.m_staticText752, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.MaxHealth = wx.TextCtrl( self, MISC_MAX_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer1002.Add( self.MaxHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer99.Add( bSizer1002, 1, wx.EXPAND, 5 )
+		
+		bSizer10022 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7522 = wx.StaticText( self, wx.ID_ANY, u"Maximum armor", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7522.Wrap( -1 )
+		bSizer10022.Add( self.m_staticText7522, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.MaxArmor = wx.TextCtrl( self, MISC_MAX_ARMOR, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10022.Add( self.MaxArmor, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer99.Add( bSizer10022, 1, wx.EXPAND, 5 )
+		
+		bSizer1003 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText753 = wx.StaticText( self, wx.ID_ANY, u"Green armor class", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText753.Wrap( -1 )
+		bSizer1003.Add( self.m_staticText753, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.GreenArmorClass = wx.TextCtrl( self, MISC_ARMOR_CLASS_GREEN, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer1003.Add( self.GreenArmorClass, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer99.Add( bSizer1003, 1, wx.EXPAND, 5 )
+		
+		bSizer1004 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText754 = wx.StaticText( self, wx.ID_ANY, u"Blue armor class", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText754.Wrap( -1 )
+		bSizer1004.Add( self.m_staticText754, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.BlueArmorClass = wx.TextCtrl( self, MISC_ARMOR_CLASS_BLUE, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer1004.Add( self.BlueArmorClass, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer99.Add( bSizer1004, 1, wx.EXPAND, 5 )
+		
+		bSizer1005 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText755 = wx.StaticText( self, wx.ID_ANY, u"Max. soulsphere health", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText755.Wrap( -1 )
+		bSizer1005.Add( self.m_staticText755, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.MaxSoulHealth = wx.TextCtrl( self, MISC_MAX_SOULSPHERE_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer1005.Add( self.MaxSoulHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer99.Add( bSizer1005, 1, wx.EXPAND, 5 )
+		
+		bSizer1006 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText756 = wx.StaticText( self, wx.ID_ANY, u"Soulsphere health", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText756.Wrap( -1 )
+		bSizer1006.Add( self.m_staticText756, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.SoulHealth = wx.TextCtrl( self, MISC_SOULSPHERE_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer1006.Add( self.SoulHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer99.Add( bSizer1006, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer137.Add( bSizer99, 1, wx.ALL|wx.EXPAND, 6 )
+		
+		
+		bSizer137.AddSpacer( ( 12, 0), 0, wx.EXPAND, 0 )
+		
+		bSizer991 = wx.BoxSizer( wx.VERTICAL )
+		
+		bSizer1007 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText757 = wx.StaticText( self, wx.ID_ANY, u"Megasphere health", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText757.Wrap( -1 )
+		bSizer1007.Add( self.m_staticText757, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.MegaHealth = wx.TextCtrl( self, MISC_MEGASPHERE_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer1007.Add( self.MegaHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer991.Add( bSizer1007, 1, wx.EXPAND, 5 )
+		
+		bSizer1008 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText758 = wx.StaticText( self, wx.ID_ANY, u"God mode health", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText758.Wrap( -1 )
+		bSizer1008.Add( self.m_staticText758, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.GodHealth = wx.TextCtrl( self, MISC_GODMODE_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer1008.Add( self.GodHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer991.Add( bSizer1008, 0, wx.EXPAND, 0 )
+		
+		bSizer10011 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7511 = wx.StaticText( self, wx.ID_ANY, u"IDFA armor", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7511.Wrap( -1 )
+		bSizer10011.Add( self.m_staticText7511, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.IDFAArmor = wx.TextCtrl( self, MISC_IDFA_ARMOR, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10011.Add( self.IDFAArmor, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer991.Add( bSizer10011, 1, wx.EXPAND, 5 )
+		
+		bSizer10021 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7521 = wx.StaticText( self, wx.ID_ANY, u"IDFA armor class", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7521.Wrap( -1 )
+		bSizer10021.Add( self.m_staticText7521, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.IDFAArmorClass = wx.TextCtrl( self, MISC_IDFA_ARMOR_CLASS, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10021.Add( self.IDFAArmorClass, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer991.Add( bSizer10021, 1, wx.EXPAND, 5 )
+		
+		bSizer10031 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7531 = wx.StaticText( self, wx.ID_ANY, u"IDKFA armor", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7531.Wrap( -1 )
+		bSizer10031.Add( self.m_staticText7531, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.IDKFAArmor = wx.TextCtrl( self, MISC_IDKFA_ARMOR, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10031.Add( self.IDKFAArmor, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer991.Add( bSizer10031, 1, wx.EXPAND, 5 )
+		
+		bSizer10041 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7541 = wx.StaticText( self, wx.ID_ANY, u"IDKFA armor class", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7541.Wrap( -1 )
+		bSizer10041.Add( self.m_staticText7541, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.IDKFAArmorClass = wx.TextCtrl( self, MISC_IDKFA_ARMOR_CLASS, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10041.Add( self.IDKFAArmorClass, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer991.Add( bSizer10041, 1, wx.EXPAND, 5 )
+		
+		bSizer10051 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7551 = wx.StaticText( self, wx.ID_ANY, u"BFG ammo usage", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7551.Wrap( -1 )
+		bSizer10051.Add( self.m_staticText7551, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.BFGAmmo = wx.TextCtrl( self, MISC_BFG_AMMO, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10051.Add( self.BFGAmmo, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer991.Add( bSizer10051, 1, wx.EXPAND, 5 )
+		
+		bSizer10071 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText75611 = wx.StaticText( self, wx.ID_ANY, u"Monsters infight", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText75611.Wrap( -1 )
+		bSizer10071.Add( self.m_staticText75611, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.MonstersInfight = wx.CheckBox( self, MISC_MONSTERS_INFIGHT, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10071.Add( self.MonstersInfight, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		
+		
+		bSizer991.Add( bSizer10071, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer137.Add( bSizer991, 1, wx.ALL|wx.EXPAND, 6 )
+		
+		
+		bSizer41.Add( bSizer137, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer41.AddSpacer( ( 0, 6), 0, wx.EXPAND, 0 )
 		
 		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.Infight = wx.CheckBox( self, MISC_INFIGHT, u" Monsters infight", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer158.Add( self.Infight, 0, wx.ALL|wx.EXPAND, 6 )
 		
 		
 		bSizer158.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
-		self.Restore = wx.Button( self, MISC_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Restore.SetMinSize( wx.Size( 120,28 ) )
+		self.Restore = wx.Button( self, MISC_RESTORE, u"Restore all", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Restore.SetMinSize( wx.Size( 160,28 ) )
 		
 		bSizer158.Add( self.Restore, 0, wx.ALL, 6 )
 		
@@ -2147,14 +2368,82 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.Restore.Bind( wx.EVT_BUTTON, self.cheat_restore )
+		self.StartHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.StartHealth.Bind( wx.EVT_TEXT, self.set_value )
+		self.StartBullets.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.StartBullets.Bind( wx.EVT_TEXT, self.set_value )
+		self.MaxHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.MaxHealth.Bind( wx.EVT_TEXT, self.set_value )
+		self.MaxArmor.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.MaxArmor.Bind( wx.EVT_TEXT, self.set_value )
+		self.GreenArmorClass.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.GreenArmorClass.Bind( wx.EVT_TEXT, self.set_value )
+		self.BlueArmorClass.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.BlueArmorClass.Bind( wx.EVT_TEXT, self.set_value )
+		self.MaxSoulHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.MaxSoulHealth.Bind( wx.EVT_TEXT, self.set_value )
+		self.SoulHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.SoulHealth.Bind( wx.EVT_TEXT, self.set_value )
+		self.MegaHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.MegaHealth.Bind( wx.EVT_TEXT, self.set_value )
+		self.GodHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.GodHealth.Bind( wx.EVT_TEXT, self.set_value )
+		self.IDFAArmor.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.IDFAArmor.Bind( wx.EVT_TEXT, self.set_value )
+		self.IDFAArmorClass.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.IDFAArmorClass.Bind( wx.EVT_TEXT, self.set_value )
+		self.IDKFAArmor.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.IDKFAArmor.Bind( wx.EVT_TEXT, self.set_value )
+		self.IDKFAArmorClass.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.IDKFAArmorClass.Bind( wx.EVT_TEXT, self.set_value )
+		self.BFGAmmo.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.BFGAmmo.Bind( wx.EVT_TEXT, self.set_value )
+		self.MonstersInfight.Bind( wx.EVT_CHECKBOX, self.set_infight )
+		self.Restore.Bind( wx.EVT_BUTTON, self.restore )
 	
 	def __del__( self ):
 		pass
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def cheat_restore( self, event ):
+	def focus_text( self, event ):
+		pass
+	
+	def set_value( self, event ):
+		pass
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	def set_infight( self, event ):
+		pass
+	
+	def restore( self, event ):
 		pass
 	
 

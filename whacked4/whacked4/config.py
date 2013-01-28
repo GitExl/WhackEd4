@@ -55,7 +55,7 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
             'maximized': True,                       
         })
         self.register_setting('recent_files', [])
-        self.register_setting('undo_size', 128)
+        self.register_setting('undo_size', 64)
         self.register_setting('recent_files_count', 10)
         
         

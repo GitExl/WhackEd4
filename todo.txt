@@ -1,8 +1,6 @@
 Beta
 - Add misc. editor.
 - Tab key traversal barely works if at all.
-- Some list controls that expand the last column display a scrollbar when none is needed.
-- Change recent files and PWAD list to list controls.
 - Beta test.
 
 Release
