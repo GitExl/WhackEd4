@@ -126,11 +126,8 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         Selects a sound by sound index.
         """
         
-        sound = self.patch.sounds[sound_index]
         self.selected_index = sound_index
-        
-        self.Priority.ChangeValue(str(sound['priority']))
-        self.Singular.SetValue(sound['isSingular'] == True)
+        self.update_properties()
         
         
     def sound_restore(self, event):
@@ -142,6 +139,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         
         self.patch.sounds[self.selected_index] = copy.deepcopy(self.patch.engine.sounds[self.selected_index])
         self.soundlist_update_row(self.selected_index)
+        self.update_properties()
         self.is_modified(True)
         
         
@@ -151,6 +149,18 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         """
         
         utils.sound_play(self.patch.sound_names[self.selected_index], self.pwads)
+
+
+    def update_properties(self):
+        """
+        Update the displayed property controls.
+        """
+        
+        sound = self.patch.sounds[self.selected_index]
+        singular = (sound['isSingular'] == 1)
+        
+        self.Priority.ChangeValue(str(sound['priority']))
+        self.Singular.SetValue(singular)
 
 
     def set_singular(self, event):
@@ -214,6 +224,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         
         self.patch.sounds[item['index']] = item['item']
         self.soundlist_update_row(item['index'])
+        self.update_properties()
         
         
     def undo_store_item(self):
