@@ -146,27 +146,26 @@ PAR_TOOL_ADD = 1797
 PAR_TOOL_REMOVE = 1798
 PAR_LIST = 1799
 DIALOG_SPRITES = 1800
-SPRITES_NAMES = 1801
-SPRITES_FILTER = 1802
-SPRITES_FRAME = 1803
-SPRITES_FRAMESPIN = 1804
-SPRITES_OK = 1805
-SPRITES_CANCEL = 1806
-STRING_OLD = 1807
-STRING_NEW = 1808
-STRING_OK = 1809
-STRING_CANCEL = 1810
-DIALOG_PATCHINFO = 1811
-PATCHINFO_TOOLBAR = 1812
-PATCHINFO_TOOLBAR_ADD = 1813
-PATCHINFO_TOOLBAR_REMOVE = 1814
-DIALOG_START = 1815
-START_NEW = 1816
-START_OPEN = 1817
-START_RECENT = 1818
-START_CANCEL = 1819
-DIALOG_ABOUT = 1820
-ABOUT_OK = 1821
+SPRITES_FILTER = 1801
+SPRITES_FRAME = 1802
+SPRITES_FRAMESPIN = 1803
+SPRITES_OK = 1804
+SPRITES_CANCEL = 1805
+STRING_OLD = 1806
+STRING_NEW = 1807
+STRING_OK = 1808
+STRING_CANCEL = 1809
+DIALOG_PATCHINFO = 1810
+PATCHINFO_TOOLBAR = 1811
+PATCHINFO_TOOLBAR_ADD = 1812
+PATCHINFO_TOOLBAR_REMOVE = 1813
+DIALOG_START = 1814
+START_NEW = 1815
+START_OPEN = 1816
+START_RECENT = 1817
+START_CANCEL = 1818
+DIALOG_ABOUT = 1819
+ABOUT_OK = 1820
 
 ###########################################################################
 ## Class MainFrameBase
@@ -2299,11 +2298,7 @@ class SpritesDialogBase ( wx.Dialog ):
 		
 		bSizer42 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		SpriteNamesChoices = []
-		self.SpriteNames = wx.ListBox( self, SPRITES_NAMES, wx.DefaultPosition, wx.DefaultSize, SpriteNamesChoices, wx.LB_SINGLE )
-		self.SpriteNames.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 90, False, "Bitstream Vera Sans Mono" ) )
-		self.SpriteNames.SetMinSize( wx.Size( 60,-1 ) )
-		
+		self.SpriteNames = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 60,-1 ), wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.STATIC_BORDER )
 		bSizer42.Add( self.SpriteNames, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
 		bSizer40 = wx.BoxSizer( wx.VERTICAL )
@@ -2368,8 +2363,8 @@ class SpritesDialogBase ( wx.Dialog ):
 		self.Centre( wx.BOTH )
 		
 		# Connect Events
-		self.SpriteNames.Bind( wx.EVT_LISTBOX, self.sprite_select_list )
-		self.SpriteNames.Bind( wx.EVT_LISTBOX_DCLICK, self.ok )
+		self.SpriteNames.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.ok )
+		self.SpriteNames.Bind( wx.EVT_LIST_ITEM_SELECTED, self.sprite_select_list )
 		self.Filter.Bind( wx.EVT_CHAR, self.filter_key )
 		self.Filter.Bind( wx.EVT_TEXT, self.filter_update )
 		self.Filter.Bind( wx.EVT_TEXT_ENTER, self.ok )
@@ -2385,10 +2380,10 @@ class SpritesDialogBase ( wx.Dialog ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def sprite_select_list( self, event ):
+	def ok( self, event ):
 		pass
 	
-	def ok( self, event ):
+	def sprite_select_list( self, event ):
 		pass
 	
 	def filter_key( self, event ):
@@ -2574,8 +2569,7 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		
 		bSizer452.Add( self.m_staticText462, 0, wx.ALL, 6 )
 		
-		PWADListChoices = []
-		self.PWADList = wx.ListBox( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, PWADListChoices, 0 )
+		self.PWADList = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.STATIC_BORDER )
 		bSizer452.Add( self.PWADList, 1, wx.ALL|wx.EXPAND, 6 )
 		
 		bSizer63 = wx.BoxSizer( wx.VERTICAL )
@@ -2688,8 +2682,7 @@ class StartDialogBase ( wx.Dialog ):
 		self.m_staticText50.Wrap( -1 )
 		bSizer54.Add( self.m_staticText50, 0, wx.LEFT|wx.RIGHT|wx.TOP, 5 )
 		
-		FileListChoices = []
-		self.FileList = wx.ListBox( self, START_RECENT, wx.DefaultPosition, wx.DefaultSize, FileListChoices, 0 )
+		self.FileList = wx.ListCtrl( self, START_RECENT, wx.DefaultPosition, wx.DefaultSize, wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.STATIC_BORDER )
 		bSizer54.Add( self.FileList, 1, wx.ALL|wx.EXPAND, 6 )
 		
 		
@@ -2724,7 +2717,7 @@ class StartDialogBase ( wx.Dialog ):
 		# Connect Events
 		self.NewFile.Bind( wx.EVT_BUTTON, self.new_file )
 		self.OpenFile.Bind( wx.EVT_BUTTON, self.open_file )
-		self.FileList.Bind( wx.EVT_LISTBOX_DCLICK, self.open_file_list )
+		self.FileList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.open_file_list )
 		self.Cancel.Bind( wx.EVT_BUTTON, self.cancel )
 	
 	def __del__( self ):

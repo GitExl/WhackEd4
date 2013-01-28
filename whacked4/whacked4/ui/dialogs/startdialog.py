@@ -14,10 +14,13 @@ class StartDialog(windows.StartDialogBase):
     def __init__(self, parent):
         windows.StartDialogBase.__init__(self, parent)
         
+        client_width = self.FileList.GetClientSizeTuple()[0]
+        self.FileList.InsertColumn(0, 'Filename', width=client_width)
+        
         # Populate the list of recently accessed Dehacked patches.
         recent_files = config.settings['recent_files']
-        for filename in recent_files:
-            self.FileList.Append(filename)
+        for index, filename in enumerate(recent_files):
+            self.FileList.InsertStringItem(index, filename)
 
 
     def open_file_list(self, event):
@@ -26,7 +29,7 @@ class StartDialog(windows.StartDialogBase):
         """
         
         self.Hide()
-        filename = self.FileList.GetString(self.FileList.GetSelection())
+        filename = config.settings['recent_files'][event.GetIndex()]
         self.GetParent().open_file(filename)
         
         

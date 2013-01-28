@@ -1,9 +1,8 @@
 Beta
 - Add misc. editor.
-- Fix MaxLength in string dialog not counting any newlines. Why would the control do this???
 - Tab key traversal barely works if at all.
-- Some listcontrols that expand the last column display a scrollbar when none is needed.
-- CHange recent files and PWAD lsit to list controls.
+- Some list controls that expand the last column display a scrollbar when none is needed.
+- Change recent files and PWAD list to list controls.
 - Beta test.
 
 Release

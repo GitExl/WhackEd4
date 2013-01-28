@@ -33,7 +33,10 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         self.pwads = []
         
         self.EngineList.Clear()
-        self.PWADList.Clear()
+        
+        self.PWADList.ClearAll()
+        client_width = self.PWADList.GetClientSizeTuple()[0]
+        self.PWADList.InsertColumn(0, 'Filename', width=client_width)
         
     
     def set_state(self, patch, engines, workspace, modify_engine=True):
@@ -65,9 +68,9 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         
         # Build PWAD list.
         if workspace.pwads is not None:
-            for pwad in workspace.pwads:
+            for index, pwad in enumerate(workspace.pwads):
                 self.pwads.append(pwad)
-                self.PWADList.Append(pwad)
+                self.PWADList.InsertStringItem(index, pwad)
         
         # Display a list of engines that are supported by the patch.
         for name, engine in self.engines.iteritems():
@@ -175,7 +178,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
                     
                     # Append it to the relevant lists.
                     self.pwads.append(filename)
-                    self.PWADList.Append(filename)
+                    self.PWADList.InsertStringItem(len(self.pwads), filename)
         
             
     def pwad_remove(self, event):
@@ -183,11 +186,10 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         Removes the selected PWAD from the list.
         """
         
-        if self.PWADList.GetSelection() == wx.NOT_FOUND:
-            return
-        
-        del self.pwads[self.PWADList.GetSelection()]
-        self.PWADList.Delete(self.PWADList.GetSelection())
+        index = self.PWADList.GetFirstSelected()
+        if index > -1:
+            del self.pwads[index]
+            self.PWADList.DeleteItem(index)
 
 
     def cancel(self, event):

@@ -20,11 +20,9 @@ class SpritesDialog(windows.SpritesDialogBase):
         Called when the user clicks the Ok button.
         """
         
-        window = self.FindWindowById(windows.SPRITES_NAMES)
-        
         # Store selected details.
-        selection = window.GetSelection()
-        if selection == wx.NOT_FOUND:
+        selection = self.SpriteNames.GetFirstSelected()
+        if selection == -1:
             self.selected_sprite = -1
             self.selected_frame = -1
             
@@ -57,10 +55,10 @@ class SpritesDialog(windows.SpritesDialogBase):
         
         if list_index < 0:
             list_index = 0
-        elif list_index >= self.SpriteNames.GetCount():
-            list_index = self.SpriteNames.GetCount() - 1
+        elif list_index >= self.SpriteNames.GetItemCount():
+            list_index = self.SpriteNames.GetItemCount() - 1
                 
-        self.SpriteNames.Select(list_index)
+        self.SpriteNames.Select(list_index, True)
         self.update_preview()
         
         
@@ -69,9 +67,9 @@ class SpritesDialog(windows.SpritesDialogBase):
         Updates the displayed sprite.
         """
         
-        selected = self.SpriteNames.GetSelection()
+        selected = self.SpriteNames.GetFirstSelected()
         if selected != wx.NOT_FOUND:
-            sprite_name = self.SpriteNames.GetString(selected)
+            sprite_name = self.SpriteNames.GetItemText(selected, 0)
             sprite_frame = self.FrameIndex.GetValue()
             if sprite_frame != '':
                 sprite_frame = int(sprite_frame)
@@ -92,11 +90,12 @@ class SpritesDialog(windows.SpritesDialogBase):
         self.selected_sprite = -1
         self.selected_frame = -1
         
+        self.filter_list = None
         self.Filter.ChangeValue('')
         self.filter_build('')
         
         if sprite_index is not None:
-            self.SpriteNames.Select(sprite_index)
+            self.SpriteNames.Select(sprite_index, True)
         
         # Set the right frame index, or leave it blank if none was specified.
         if frame_index is not None:
@@ -141,7 +140,10 @@ class SpritesDialog(windows.SpritesDialogBase):
         """
         
         key = event.GetKeyCode()
-        list_index = self.SpriteNames.GetSelection()
+        list_index = self.SpriteNames.GetFirstSelected()
+        if list_index == -1:
+            event.Skip()
+            return
         
         # Move selection up.
         if key == wx.WXK_UP:
@@ -160,23 +162,23 @@ class SpritesDialog(windows.SpritesDialogBase):
         """
         
         # Create a filtered list of sprite name indices.
-        index = 0
         self.filter_list = []
-        for name in self.patch.sprite_names:
+        for index, name in enumerate(self.patch.sprite_names):
             if name.startswith(filter_string):
                 self.filter_list.append(index)
-            index += 1
+        
+        # Prepare sprite names list.
+        self.SpriteNames.ClearAll()
+        client_width = self.SpriteNames.GetClientSizeTuple()[0]
+        self.SpriteNames.InsertColumn(0, 'Name', width=client_width)
         
         # Add the filtered sprite names to the names list.
-        list_index = 0
-        self.SpriteNames.Clear()
         for index in self.filter_list:
-            self.SpriteNames.Insert(self.patch.sprite_names[index], list_index)
-            list_index += 1
+            self.SpriteNames.InsertStringItem(index, self.patch.sprite_names[index])
         
         # Select the first item by default.
         if len(self.filter_list) > 0:
-            self.SpriteNames.Select(0)
+            self.SpriteNames.Select(0, True)
         
         self.update_preview()
     
