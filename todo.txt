@@ -1,6 +1,6 @@
-Beta
-- Tab key traversal barely works if at all.
-- Beta test.
+Known issues
+- Tab key traversal barely works if at all. Probably a bug in wxWidgets 2.9.
+- When listview column widths are resized, a scrollbar is sometimes displayed for no reason. 
 
 Release
 - Set up changelog since WhackEd2\3.

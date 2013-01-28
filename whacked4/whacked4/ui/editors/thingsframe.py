@@ -386,6 +386,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.undo_add()
         
         flags_value = 0
+        projectile_before = self.patch.things[self.selected_index]['flags'] & self.FLAG_MISSILE
         
         # Iterate over the flags defined in the engine config, mark bits if the flag is set in the list.
         bits = 1
@@ -393,6 +394,14 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             if self.ThingFlags.IsChecked(flag) == True:
                 flags_value |= bits
             bits *= 2
+            
+        # Recast the fixed point speed property if the thing is now a projectile.
+        projectile_after = flags_value & self.FLAG_MISSILE
+        if projectile_before != projectile_after:
+            if (flags_value & self.FLAG_MISSILE) != 0:
+                self.patch.things[self.selected_index]['speed'] *= self.FIXED_UNIT
+            else:
+                self.patch.things[self.selected_index]['speed'] /= self.FIXED_UNIT
             
         self.patch.things[self.selected_index]['flags'] = flags_value
         self.is_modified(True)
