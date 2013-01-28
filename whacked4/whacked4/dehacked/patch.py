@@ -457,6 +457,7 @@ class Patch:
                     mode = MODE_THING
                     entry_index = int(line_words[1]) - 1
                     entry_name = ' '.join(line_words[2:])[1:-1]
+                    self.things.names[entry_index] = entry_name
                     continue
                 elif line.startswith('Frame ') and len(line_words) == 2:
                     mode = MODE_STATE
@@ -470,11 +471,13 @@ class Patch:
                     mode = MODE_WEAPON
                     entry_index = int(line_words[1])
                     entry_name = ' '.join(line_words[2:])[1:-1]
+                    self.weapons.names[entry_index] = entry_name
                     continue
                 elif line.startswith('Ammo ') and len(line_words) >= 3 and line_words[2][0] == '(':
                     mode = MODE_AMMO
                     entry_index = int(line_words[1])
                     entry_name = ' '.join(line_words[2:])[1:-1]
+                    self.ammo.names[entry_index] = entry_name
                     continue
                 elif line.startswith('Sprite ') and len(line_words) == 2:
                     mode = MODE_SPRITE
@@ -622,17 +625,14 @@ class Patch:
                 value = pair[1]
                  
                 if mode == MODE_THING:
-                    self.things.names[entry_index] = entry_name
                     self.things[entry_index].set_patch_key(key, value, self.things, self.extended)
                 elif mode == MODE_STATE:
                     self.states[entry_index].set_patch_key(key, value, self.states, False)
                 elif mode == MODE_SOUND:
                     self.sounds[entry_index].set_patch_key(key, value, self.sounds, False)
                 elif mode == MODE_WEAPON:
-                    self.weapons.names[entry_index] = entry_name
                     self.weapons[entry_index].set_patch_key(key, value, self.weapons, False)
                 elif mode == MODE_AMMO:
-                    self.ammo.names[entry_index] = entry_name
                     self.ammo[entry_index].set_patch_key(key, value, self.ammo, False)
                 elif mode == MODE_SPRITE:
                     pass

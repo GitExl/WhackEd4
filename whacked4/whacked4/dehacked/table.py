@@ -44,6 +44,11 @@ class Table:
             if patch_str is not None:
                 f.write(entry.get_patch_header(index, source_entry, self, offset=self.offset))
                 f.write(patch_str)
+            
+            # Write just a header if only the entry's name has changed.
+            elif hasattr(self, 'names') == True and self.names[index] != source_table.names[index]:
+                f.write(entry.get_patch_header(index, source_entry, self, offset=self.offset))
+                    
                 
     
     def __getitem__(self, index):
