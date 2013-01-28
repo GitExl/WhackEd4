@@ -33,6 +33,8 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         """
         
         self.patch = patch
+        if patch.extended == False:
+            return
         
         self.selected_index = 0
         
