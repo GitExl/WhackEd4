@@ -96,6 +96,7 @@ class SpritesDialog(windows.SpritesDialogBase):
         
         if sprite_index is not None:
             self.SpriteNames.Select(sprite_index, True)
+            self.SpriteNames.EnsureVisible(sprite_index)
         
         # Set the right frame index, or leave it blank if none was specified.
         if frame_index is not None:
