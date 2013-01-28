@@ -2587,7 +2587,7 @@ class SpritesDialogBase ( wx.Dialog ):
 		
 		bSizer42 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.SpriteNames = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 60,-1 ), wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.STATIC_BORDER )
+		self.SpriteNames = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 74,-1 ), wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.STATIC_BORDER )
 		bSizer42.Add( self.SpriteNames, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
 		bSizer40 = wx.BoxSizer( wx.VERTICAL )
@@ -2607,7 +2607,7 @@ class SpritesDialogBase ( wx.Dialog ):
 		
 		self.Filter = wx.TextCtrl( self, SPRITES_FILTER, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), wx.TE_PROCESS_ENTER )
 		self.Filter.SetMaxLength( 4 ) 
-		self.Filter.SetMinSize( wx.Size( 60,-1 ) )
+		self.Filter.SetMinSize( wx.Size( 74,-1 ) )
 		
 		bSizer431.Add( self.Filter, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		

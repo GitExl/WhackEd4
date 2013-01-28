@@ -14,7 +14,7 @@ class StartDialog(windows.StartDialogBase):
     def __init__(self, parent):
         windows.StartDialogBase.__init__(self, parent)
         
-        client_width = self.FileList.GetClientSizeTuple()[0]
+        client_width = self.FileList.GetClientSizeTuple()[0] - 4
         self.FileList.InsertColumn(0, 'Filename', width=client_width)
         
         # Populate the list of recently accessed Dehacked patches.
