@@ -55,7 +55,8 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
             self.AmmoList.InsertStringItem(ammo_index, '')            
             
             self.ammolist_update_row(ammo_index)
-            
+        
+        self.list_autosize(self.AmmoList)
         self.AmmoList.Select(0, True)
         
         

@@ -300,6 +300,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             list_index += 1
         
         self.update_colours()
+        self.list_autosize(self.StateList)
         
         # Select the first row if it is not state 0.
         if self.filter.state_indices[0] == 0 and len(self.filter.state_indices) > 1:

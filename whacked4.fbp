@@ -762,7 +762,7 @@
                 </object>
             </object>
         </object>
-        <object class="Frame" expanded="1">
+        <object class="Frame" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg">wxSYS_COLOUR_BTNFACE</property>
@@ -777,10 +777,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_THINGS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">840,540</property>
+            <property name="minimum_size">840,550</property>
             <property name="name">ThingsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">840,540</property>
+            <property name="size">840,550</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Things</property>
@@ -824,7 +824,7 @@
             <event name="OnSetFocus"></event>
             <event name="OnSize"></event>
             <event name="OnUpdateUI"></event>
-            <object class="wxBoxSizer" expanded="1">
+            <object class="wxBoxSizer" expanded="0">
                 <property name="minimum_size"></property>
                 <property name="name">Sizer26</property>
                 <property name="orient">wxHORIZONTAL</property>
@@ -7273,16 +7273,6 @@
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
-                            <property name="border">5</property>
-                            <property name="flag">wxEXPAND</property>
-                            <property name="proportion">0</property>
-                            <object class="spacer" expanded="0">
-                                <property name="height">9</property>
-                                <property name="permission">protected</property>
-                                <property name="width">0</property>
-                            </object>
-                        </object>
-                        <object class="sizeritem" expanded="0">
                             <property name="border">3</property>
                             <property name="flag">wxEXPAND</property>
                             <property name="proportion">1</property>
@@ -7613,10 +7603,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_STATES</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">678,480</property>
+            <property name="minimum_size">710,480</property>
             <property name="name">StatesFrameBase</property>
             <property name="pos"></property>
-            <property name="size">679,480</property>
+            <property name="size">710,480</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">States</property>
@@ -9955,10 +9945,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_SOUNDS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">420,480</property>
+            <property name="minimum_size">400,480</property>
             <property name="name">SoundsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">420,480</property>
+            <property name="size">400,480</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Sounds</property>
@@ -10668,7 +10658,7 @@
                         <event name="OnRightDown"></event>
                         <event name="OnRightUp"></event>
                         <event name="OnSetFocus"></event>
-                        <event name="OnSize">soundlist_resize</event>
+                        <event name="OnSize"></event>
                         <event name="OnUpdateUI"></event>
                     </object>
                 </object>
@@ -10689,10 +10679,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_STRINGS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">480,480</property>
+            <property name="minimum_size">640,480</property>
             <property name="name">StringsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">480,480</property>
+            <property name="size">640,480</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Strings</property>
@@ -14115,10 +14105,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_CHEATS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">350,401</property>
+            <property name="minimum_size">320,401</property>
             <property name="name">CheatsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">350,401</property>
+            <property name="size">320,401</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Cheats</property>
@@ -14398,10 +14388,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_MISC</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">440,340</property>
+            <property name="minimum_size">440,380</property>
             <property name="name">MiscFrameBase</property>
             <property name="pos"></property>
-            <property name="size">440,340</property>
+            <property name="size">440,380</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Miscellaneous</property>
@@ -14471,7 +14461,7 @@
                                 <object class="sizeritem" expanded="0">
                                     <property name="border">0</property>
                                     <property name="flag">wxEXPAND</property>
-                                    <property name="proportion">0</property>
+                                    <property name="proportion">1</property>
                                     <object class="wxBoxSizer" expanded="0">
                                         <property name="minimum_size"></property>
                                         <property name="name">bSizer100</property>
@@ -15970,7 +15960,7 @@
                                 <property name="orient">wxVERTICAL</property>
                                 <property name="permission">none</property>
                                 <object class="sizeritem" expanded="0">
-                                    <property name="border">5</property>
+                                    <property name="border">0</property>
                                     <property name="flag">wxEXPAND</property>
                                     <property name="proportion">1</property>
                                     <object class="wxBoxSizer" expanded="0">
@@ -16157,7 +16147,7 @@
                                 <object class="sizeritem" expanded="0">
                                     <property name="border">0</property>
                                     <property name="flag">wxEXPAND</property>
-                                    <property name="proportion">0</property>
+                                    <property name="proportion">1</property>
                                     <object class="wxBoxSizer" expanded="0">
                                         <property name="minimum_size"></property>
                                         <property name="name">bSizer1008</property>
@@ -19313,7 +19303,7 @@
             <property name="hidden">0</property>
             <property name="id">DIALOG_SPRITES</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">640,300</property>
+            <property name="minimum_size">640,480</property>
             <property name="name">StringDialogBase</property>
             <property name="pos"></property>
             <property name="size">640,480</property>

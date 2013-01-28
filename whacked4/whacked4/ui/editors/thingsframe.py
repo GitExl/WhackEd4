@@ -137,6 +137,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             
             self.thinglist_update_row(index)
         
+        self.list_autosize(self.ThingList)
         self.ThingList.Select(0, True)
         
         

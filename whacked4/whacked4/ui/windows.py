@@ -421,9 +421,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 840,540 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 840,550 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 840,540 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 840,550 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		Sizer26 = wx.BoxSizer( wx.HORIZONTAL )
@@ -895,9 +895,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer40.Add( bSizer43, 0, wx.ALIGN_TOP|wx.EXPAND, 5 )
 		
-		
-		bSizer40.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
-		
 		bSizer42 = wx.BoxSizer( wx.VERTICAL )
 		
 		
@@ -1194,9 +1191,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 679,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 710,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 678,480 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 710,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -1487,9 +1484,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 class SoundsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 420,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 400,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 420,480 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 400,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -1554,7 +1551,6 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		self.SoundList.Bind( wx.EVT_LIST_ITEM_DESELECTED, self.sound_deselect )
 		self.SoundList.Bind( wx.EVT_LIST_ITEM_RIGHT_CLICK, self.sound_play )
 		self.SoundList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.sound_select )
-		self.SoundList.Bind( wx.EVT_SIZE, self.soundlist_resize )
 	
 	def __del__( self ):
 		pass
@@ -1588,9 +1584,6 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 	def sound_select( self, event ):
 		pass
 	
-	def soundlist_resize( self, event ):
-		pass
-	
 
 ###########################################################################
 ## Class StringsFrameBase
@@ -1599,9 +1592,9 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 class StringsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STRINGS, title = u"Strings", pos = wx.DefaultPosition, size = wx.Size( 480,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STRINGS, title = u"Strings", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 480,480 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 640,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -2072,9 +2065,9 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 class CheatsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_CHEATS, title = u"Cheats", pos = wx.DefaultPosition, size = wx.Size( 350,401 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_CHEATS, title = u"Cheats", pos = wx.DefaultPosition, size = wx.Size( 320,401 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 350,401 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 320,401 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -2130,9 +2123,9 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 class MiscFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_MISC, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 440,340 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_MISC, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 440,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 440,340 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 440,380 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -2151,7 +2144,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		bSizer100.Add( self.StartHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
 		
-		bSizer99.Add( bSizer100, 0, wx.EXPAND, 0 )
+		bSizer99.Add( bSizer100, 1, wx.EXPAND, 0 )
 		
 		bSizer1001 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -2255,7 +2248,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		bSizer1007.Add( self.MegaHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
 		
-		bSizer991.Add( bSizer1007, 1, wx.EXPAND, 5 )
+		bSizer991.Add( bSizer1007, 1, wx.EXPAND, 0 )
 		
 		bSizer1008 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -2267,7 +2260,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		bSizer1008.Add( self.GodHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
 		
-		bSizer991.Add( bSizer1008, 0, wx.EXPAND, 0 )
+		bSizer991.Add( bSizer1008, 1, wx.EXPAND, 0 )
 		
 		bSizer10011 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -2708,7 +2701,7 @@ class StringDialogBase ( wx.Dialog ):
 	def __init__( self, parent ):
 		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"String", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 640,300 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 640,480 ), wx.DefaultSize )
 		
 		bSizer39 = wx.BoxSizer( wx.VERTICAL )
 		

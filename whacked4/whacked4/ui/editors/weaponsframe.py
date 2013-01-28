@@ -90,6 +90,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             self.WeaponList.InsertStringItem(index, '')
             self.weaponlist_update_row(index)
         
+        self.list_autosize(self.WeaponList)
         self.WeaponList.Select(0, True)
         
         

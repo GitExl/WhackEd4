@@ -59,6 +59,8 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
             
             self.parlist_update_row(index)
         
+        self.list_autosize(self.ParList)
+        
         # Select the first entry if it is available.
         if self.ParList.GetItemCount() > 0 and self.selected_index < len(self.patch.pars):
             self.ParList.Select(self.selected_index, True)

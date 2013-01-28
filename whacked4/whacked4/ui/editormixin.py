@@ -35,7 +35,16 @@ class EditorMixin:
         """
         
         raise NotImplementedError()
+    
+    
+    def list_autosize(self, list_control):
+        """
+        Sizes all the columns in a ListCtrl to match the widest value in it's contents or itself.
+        """
         
+        for i in range(list_control.GetColumnCount()):
+            list_control.SetColumnWidth(i, wx.LIST_AUTOSIZE_USEHEADER)
+    
     
     def undo_add(self):
         """

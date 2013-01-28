@@ -49,6 +49,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
             
             self.cheatlist_update_row(cheat_index)
             
+        self.list_autosize(self.CheatList)
         self.CheatList.Select(0, True)
         
         

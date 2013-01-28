@@ -65,6 +65,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
                 
                 self.stringlist_update_row(string_index)
 
+        self.list_autosize(self.StringList)
         self.StringList.Select(0, True)
         
         
