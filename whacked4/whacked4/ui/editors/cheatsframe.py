@@ -41,7 +41,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         
         # Add column headers if necessary.
         if self.CheatList.GetColumnCount() == 0:
-            self.CheatList.InsertColumn(0, 'Name', width=175)
+            self.CheatList.InsertColumn(0, 'Name', width=185)
             self.CheatList.InsertColumn(1, 'Code', width=138)
         
         for cheat_index, cheat in enumerate(self.patch.engine.cheat_data.itervalues()):

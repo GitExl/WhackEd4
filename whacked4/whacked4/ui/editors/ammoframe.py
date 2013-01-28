@@ -78,9 +78,10 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         Resize the ammo name column as wide as possible.
         """
         
-        column_width = self.AmmoList.GetClientSizeTuple()[0]
-        column_width -= self.AmmoList.GetColumnWidth(1) + self.AmmoList.GetColumnWidth(2) + 4
-        self.AmmoList.SetColumnWidth(0, column_width)
+        column_width = self.AmmoList.GetClientSizeTuple()[0] - 4
+        self.AmmoList.SetColumnWidth(0, column_width / 3)
+        self.AmmoList.SetColumnWidth(1, column_width / 3)
+        self.AmmoList.SetColumnWidth(2, column_width / 3)
         
         
     def ammo_select(self, event):

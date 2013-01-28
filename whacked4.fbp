@@ -14105,10 +14105,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_CHEATS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">320,401</property>
+            <property name="minimum_size">340,401</property>
             <property name="name">CheatsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">320,401</property>
+            <property name="size">340,401</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Cheats</property>
