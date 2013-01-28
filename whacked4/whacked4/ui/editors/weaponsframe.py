@@ -200,6 +200,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         text_ctrl = self.FindWindowById(self.PROPS_STATESET[event.GetId()])
         text_ctrl.SetValue(str(states_frame.selection_get_state_index()))
+        self.is_modified(True)
         
         
     def set_display_state(self, state_name):

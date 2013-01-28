@@ -435,6 +435,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         text_ctrl = self.FindWindowById(self.PROPS_STATESET[event.GetId()])
         text_ctrl.SetValue(str(states_frame.selection_get_state_index()))
+        self.is_modified(True)
         
         
     def set_sound_external(self, event):
@@ -450,6 +451,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         text_ctrl = self.FindWindowById(self.PROPS_SOUNDSET[event.GetId()])
         text_ctrl.SetValue(str(sounds_frame.selected_index))
+        self.is_modified(True)
     
     
     def thing_select(self, event):
