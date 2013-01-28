@@ -720,6 +720,7 @@ class MainWindow(windows.MainFrameBase):
         self.open_file_dialog(force_show_settings=True)
         
     def wads_reload(self, event):
+        self.workspace.store_windows(self, self.workspace_windows)
         self.load_wads()
         self.update_ui()
         
