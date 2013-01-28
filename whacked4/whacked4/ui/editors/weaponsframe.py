@@ -92,6 +92,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         
         self.list_autosize(self.WeaponList)
         self.WeaponList.Select(0, True)
+        self.WeaponList.Layout()
         
         
     def weaponlist_update_row(self, row_index):
@@ -111,8 +112,9 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         Resizes the weapon name column to fill as much space as is available.
         """
         
-        column_width = self.WeaponList.GetClientSizeTuple()[0] - self.WeaponList.GetColumnWidth(1) - 4
-        self.WeaponList.SetColumnWidth(0, column_width)
+        column_width = self.WeaponList.GetClientSizeTuple()[0] - 4
+        self.WeaponList.SetColumnWidth(0, column_width / 2)
+        self.WeaponList.SetColumnWidth(1, column_width / 2)
     
     
     def ammolist_build(self):
