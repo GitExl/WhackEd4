@@ -47,9 +47,9 @@ class StringDialog(windows.StringDialogBase):
         else:
             # Non-extended string lengths are limited by the padding room in the executable.
             if cheat == False:
-                self.max_length = int((len(old_string) / 4.0) * 4) + 3
+                self.max_length = int((len(engine_string) / 4.0) * 4) + 3
             else:
-                self.max_length = len(old_string)
+                self.max_length = len(engine_string)
             self.CharsLeft.Show()
             
         self.update_length()
