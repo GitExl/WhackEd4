@@ -44,6 +44,7 @@ class EditorMixin:
         
         for i in range(list_control.GetColumnCount()):
             list_control.SetColumnWidth(i, wx.LIST_AUTOSIZE_USEHEADER)
+        list_control.Layout()
     
     
     def undo_add(self):

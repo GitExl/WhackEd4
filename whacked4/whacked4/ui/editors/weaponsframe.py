@@ -92,7 +92,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         
         self.list_autosize(self.WeaponList)
         self.WeaponList.Select(0, True)
-        self.WeaponList.Layout()
         
         
     def weaponlist_update_row(self, row_index):
@@ -262,7 +261,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.patch.weapons[index] = item['item']
         self.patch.weapons.names[index] = item['name']
 
-        self.WeaponList.SetString(index, item['name'])        
+        self.weaponlist_update_row(self.selected_index)        
         self.update_properties()
         
         

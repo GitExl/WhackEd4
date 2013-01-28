@@ -552,7 +552,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		ThingFlagsChoices = []
 		self.ThingFlags = wx.CheckListBox( self, THING_FLAGS, wx.DefaultPosition, wx.Size( -1,-1 ), ThingFlagsChoices, 0 )
-		Sizer27.Add( self.ThingFlags, 1, wx.EXPAND, 0 )
+		Sizer27.Add( self.ThingFlags, 1, wx.EXPAND|wx.FIXED_MINSIZE, 0 )
 		
 		
 		Sizer26.Add( Sizer27, 0, wx.ALL|wx.EXPAND, 6 )
@@ -1484,7 +1484,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 class SoundsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 400,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 404,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
 		self.SetSizeHintsSz( wx.Size( 400,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )

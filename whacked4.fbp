@@ -2515,7 +2515,7 @@
                         </object>
                         <object class="sizeritem" expanded="0">
                             <property name="border">0</property>
-                            <property name="flag">wxEXPAND</property>
+                            <property name="flag">wxEXPAND|wxFIXED_MINSIZE</property>
                             <property name="proportion">1</property>
                             <object class="wxCheckListBox" expanded="0">
                                 <property name="BottomDockable">1</property>
@@ -9948,7 +9948,7 @@
             <property name="minimum_size">400,480</property>
             <property name="name">SoundsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">400,480</property>
+            <property name="size">404,480</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Sounds</property>
