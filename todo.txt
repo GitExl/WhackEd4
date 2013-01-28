@@ -1,5 +1,4 @@
 Beta
-- Add misc. editor.
 - Tab key traversal barely works if at all.
 - Beta test.
 
