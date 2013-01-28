@@ -115,14 +115,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
             self.patch.strings[string_key] = dup
             
             self.stringlist_update_row(self.selected_index)
-            
-            # Update name lists in case a relevant string was changed.
-            if self.patch.extended == False:
-                if len(dup) <= 6:
-                    self.patch.update_string_externals(self.patch.engine.sound_names, self.patch.sound_names)
-                if len(dup) == 4:
-                    self.patch.update_string_externals(self.patch.engine.sprite_names, self.patch.sprite_names)
-            
+            self.update_externals(dup)
             self.is_modified(True)
             
             
@@ -139,7 +132,22 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         self.patch.strings[string_key] = dup
         
         self.stringlist_update_row(self.selected_index)
+        self.update_externals(dup)
         self.is_modified(True)
+
+
+    def update_externals(self, new_string):
+        """
+        Updates name lists in case a relevant string was changed.
+        """
+        
+        if self.patch.extended == True:
+            return
+        
+        if len(new_string) <= 6:
+            self.patch.update_string_externals(self.patch.engine.sound_names, self.patch.sound_names)
+        if len(new_string) == 4:
+            self.patch.update_string_externals(self.patch.engine.sprite_names, self.patch.sprite_names)
         
         
     def get_string_key(self, string_index):
