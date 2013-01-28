@@ -565,6 +565,7 @@ class Patch:
                             par['map'] = int(line_words[2])
                             par['seconds'] = int(line_words[3])
                         elif len(line_words) == 3:
+                            par['episode'] = 0
                             par['map'] = int(line_words[1])
                             par['seconds'] = int(line_words[2])
                         else:
