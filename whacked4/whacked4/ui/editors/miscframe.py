@@ -56,7 +56,13 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
             window = self.FindWindowById(window_id)
             window.ChangeValue(str(self.patch.misc[key]))
         
-        self.MonstersInfight.SetValue(self.patch.misc['monstersInfight'])
+        data = self.patch.engine.misc_data['monstersInfight']
+        value = self.patch.misc['monstersInfight']
+        if value == data['on']:
+            value = True
+        else:
+            value = False
+        self.MonstersInfight.SetValue(value)
         
         
     def set_value(self, event):
