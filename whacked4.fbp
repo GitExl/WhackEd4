@@ -24,7 +24,7 @@
         <property name="skip_python_events">0</property>
         <property name="use_enum">0</property>
         <property name="use_microsoft_bom">0</property>
-        <object class="Frame" expanded="1">
+        <object class="Frame" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>
@@ -355,7 +355,7 @@
                     <event name="OnUpdateUI"></event>
                 </object>
             </object>
-            <object class="wxMenuBar" expanded="1">
+            <object class="wxMenuBar" expanded="0">
                 <property name="bg"></property>
                 <property name="context_help"></property>
                 <property name="context_menu">1</property>
@@ -400,7 +400,7 @@
                 <event name="OnSetFocus"></event>
                 <event name="OnSize"></event>
                 <event name="OnUpdateUI"></event>
-                <object class="wxMenu" expanded="1">
+                <object class="wxMenu" expanded="0">
                     <property name="label">File</property>
                     <property name="name">MenuFile</property>
                     <property name="permission">protected</property>
@@ -777,10 +777,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_THINGS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">840,550</property>
+            <property name="minimum_size">840,580</property>
             <property name="name">ThingsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">840,550</property>
+            <property name="size">840,580</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Things</property>
@@ -2864,7 +2864,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -3220,7 +3220,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -3576,7 +3576,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -3932,7 +3932,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -4288,7 +4288,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -4644,7 +4644,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -5000,7 +5000,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -5356,7 +5356,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -5722,7 +5722,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -6078,7 +6078,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -6434,7 +6434,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -6790,7 +6790,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -7146,7 +7146,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">50,-1</property>
+                                                <property name="size">60,-1</property>
                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -7603,10 +7603,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_STATES</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">710,480</property>
+            <property name="minimum_size">780,480</property>
             <property name="name">StatesFrameBase</property>
             <property name="pos"></property>
-            <property name="size">710,480</property>
+            <property name="size">780,480</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">States</property>
@@ -9945,10 +9945,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_SOUNDS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">400,480</property>
+            <property name="minimum_size">430,480</property>
             <property name="name">SoundsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">404,480</property>
+            <property name="size">430,480</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Sounds</property>
@@ -10962,10 +10962,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_WEAPONS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">550,360</property>
+            <property name="minimum_size">560,360</property>
             <property name="name">WeaponsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">550,360</property>
+            <property name="size">560,360</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Weapons</property>
@@ -11455,7 +11455,7 @@
                                                         <property name="pos"></property>
                                                         <property name="resize">Resizable</property>
                                                         <property name="show">1</property>
-                                                        <property name="size">50,-1</property>
+                                                        <property name="size">60,-1</property>
                                                         <property name="style">wxST_NO_AUTORESIZE</property>
                                                         <property name="subclass"></property>
                                                         <property name="toolbar_pane">0</property>
@@ -11822,7 +11822,7 @@
                                                         <property name="pos"></property>
                                                         <property name="resize">Resizable</property>
                                                         <property name="show">1</property>
-                                                        <property name="size">50,-1</property>
+                                                        <property name="size">60,-1</property>
                                                         <property name="style">wxST_NO_AUTORESIZE</property>
                                                         <property name="subclass"></property>
                                                         <property name="toolbar_pane">0</property>
@@ -12189,7 +12189,7 @@
                                                         <property name="pos"></property>
                                                         <property name="resize">Resizable</property>
                                                         <property name="show">1</property>
-                                                        <property name="size">50,-1</property>
+                                                        <property name="size">60,-1</property>
                                                         <property name="style">wxST_NO_AUTORESIZE</property>
                                                         <property name="subclass"></property>
                                                         <property name="toolbar_pane">0</property>
@@ -12556,7 +12556,7 @@
                                                         <property name="pos"></property>
                                                         <property name="resize">Resizable</property>
                                                         <property name="show">1</property>
-                                                        <property name="size">50,-1</property>
+                                                        <property name="size">60,-1</property>
                                                         <property name="style">wxST_NO_AUTORESIZE</property>
                                                         <property name="subclass"></property>
                                                         <property name="toolbar_pane">0</property>
@@ -12923,7 +12923,7 @@
                                                         <property name="pos"></property>
                                                         <property name="resize">Resizable</property>
                                                         <property name="show">1</property>
-                                                        <property name="size">50,-1</property>
+                                                        <property name="size">60,-1</property>
                                                         <property name="style">wxST_NO_AUTORESIZE</property>
                                                         <property name="subclass"></property>
                                                         <property name="toolbar_pane">0</property>
@@ -13372,10 +13372,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_AMMO</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">460,250</property>
+            <property name="minimum_size">520,250</property>
             <property name="name">AmmoFrameBase</property>
             <property name="pos"></property>
-            <property name="size">460,250</property>
+            <property name="size">520,250</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Ammo</property>
@@ -17348,7 +17348,7 @@
                                         </object>
                                         <object class="sizeritem" expanded="0">
                                             <property name="border">5</property>
-                                            <property name="flag">wxALIGN_CENTER_VERTICAL|wxALL</property>
+                                            <property name="flag">wxALIGN_CENTER_VERTICAL|wxALL|wxEXPAND</property>
                                             <property name="proportion">0</property>
                                             <object class="wxCheckBox" expanded="0">
                                                 <property name="BottomDockable">1</property>
@@ -21689,7 +21689,7 @@
             <property name="minimum_size"></property>
             <property name="name">AboutDialogBase</property>
             <property name="pos"></property>
-            <property name="size">640,340</property>
+            <property name="size">640,420</property>
             <property name="style">wxCAPTION</property>
             <property name="subclass"></property>
             <property name="title">About WhackEd4</property>
@@ -22416,7 +22416,7 @@
                                 <property name="gripper">0</property>
                                 <property name="hidden">0</property>
                                 <property name="id">wxID_ANY</property>
-                                <property name="label">Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, un4seen, XDelusion</property>
+                                <property name="label">Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, tempun, un4seen, XDelusion</property>
                                 <property name="max_size"></property>
                                 <property name="maximize_button">0</property>
                                 <property name="maximum_size"></property>

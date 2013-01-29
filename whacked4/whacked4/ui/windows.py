@@ -421,9 +421,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 840,550 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 840,580 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 840,550 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 840,580 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		Sizer26 = wx.BoxSizer( wx.HORIZONTAL )
@@ -574,7 +574,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateSpawn.SetMaxLength( 4 ) 
 		Sizer9.Add( self.ThingStateSpawn, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateSpawnName = wx.StaticText( self, THING_STATENAME_SPAWN, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateSpawnName = wx.StaticText( self, THING_STATENAME_SPAWN, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateSpawnName.Wrap( -1 )
 		self.ThingStateSpawnName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateSpawnName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -599,7 +599,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateWalk.SetMaxLength( 4 ) 
 		Sizer10.Add( self.ThingStateWalk, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateWalkName = wx.StaticText( self, THING_STATENAME_WALK, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateWalkName = wx.StaticText( self, THING_STATENAME_WALK, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateWalkName.Wrap( -1 )
 		self.ThingStateWalkName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateWalkName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -624,7 +624,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStatePain.SetMaxLength( 4 ) 
 		Sizer11.Add( self.ThingStatePain, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStatePainName = wx.StaticText( self, THING_STATENAME_PAIN, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStatePainName = wx.StaticText( self, THING_STATENAME_PAIN, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStatePainName.Wrap( -1 )
 		self.ThingStatePainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStatePainName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -649,7 +649,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateMelee.SetMaxLength( 4 ) 
 		Sizer12.Add( self.ThingStateMelee, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateMeleeName = wx.StaticText( self, THING_STATENAME_MELEE, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateMeleeName = wx.StaticText( self, THING_STATENAME_MELEE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateMeleeName.Wrap( -1 )
 		self.ThingStateMeleeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateMeleeName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -674,7 +674,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateAttack.SetMaxLength( 4 ) 
 		Sizer13.Add( self.ThingStateAttack, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateAttackName = wx.StaticText( self, THING_STATENAME_ATTACK, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateAttackName = wx.StaticText( self, THING_STATENAME_ATTACK, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateAttackName.Wrap( -1 )
 		self.ThingStateAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateAttackName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -699,7 +699,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateDeath.SetMaxLength( 4 ) 
 		Sizer14.Add( self.ThingStateDeath, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateDeathName = wx.StaticText( self, THING_STATENAME_DEATH, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateDeathName = wx.StaticText( self, THING_STATENAME_DEATH, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateDeathName.Wrap( -1 )
 		self.ThingStateDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateDeathName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -724,7 +724,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateExplode.SetMaxLength( 4 ) 
 		Sizer15.Add( self.ThingStateExplode, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateExplodeName = wx.StaticText( self, THING_STATENAME_EXPLODE, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateExplodeName = wx.StaticText( self, THING_STATENAME_EXPLODE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateExplodeName.Wrap( -1 )
 		self.ThingStateExplodeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateExplodeName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -749,7 +749,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateRaise.SetMaxLength( 4 ) 
 		Sizer152.Add( self.ThingStateRaise, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingStateRaiseName = wx.StaticText( self, THING_STATENAME_RAISE, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingStateRaiseName = wx.StaticText( self, THING_STATENAME_RAISE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateRaiseName.Wrap( -1 )
 		self.ThingStateRaiseName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingStateRaiseName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -777,7 +777,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundAlert.SetMaxLength( 4 ) 
 		Sizer151.Add( self.ThingSoundAlert, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundAlertName = wx.StaticText( self, THING_SOUNDNAME_ALERT, u"PLPAIN", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundAlertName = wx.StaticText( self, THING_SOUNDNAME_ALERT, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundAlertName.Wrap( -1 )
 		self.ThingSoundAlertName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundAlertName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -802,7 +802,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundAttack.SetMaxLength( 4 ) 
 		Sizer1511.Add( self.ThingSoundAttack, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundAttackName = wx.StaticText( self, THING_SOUNDNAME_ATTACK, u"PLPAIN", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundAttackName = wx.StaticText( self, THING_SOUNDNAME_ATTACK, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundAttackName.Wrap( -1 )
 		self.ThingSoundAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundAttackName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -827,7 +827,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundPain.SetMaxLength( 4 ) 
 		Sizer1512.Add( self.ThingSoundPain, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundPainName = wx.StaticText( self, THING_SOUNDNAME_PAIN, u"PLPAIN", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundPainName = wx.StaticText( self, THING_SOUNDNAME_PAIN, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundPainName.Wrap( -1 )
 		self.ThingSoundPainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundPainName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -852,7 +852,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundDeath.SetMaxLength( 4 ) 
 		Sizer1513.Add( self.ThingSoundDeath, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundDeathName = wx.StaticText( self, THING_SOUNDNAME_DEATH, u"PLPAIN", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundDeathName = wx.StaticText( self, THING_SOUNDNAME_DEATH, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundDeathName.Wrap( -1 )
 		self.ThingSoundDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundDeathName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -877,7 +877,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundActive.SetMaxLength( 4 ) 
 		Sizer1514.Add( self.ThingSoundActive, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.ThingSoundActiveName = wx.StaticText( self, THING_SOUNDNAME_ACTIVE, u"PLPAIN", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.ThingSoundActiveName = wx.StaticText( self, THING_SOUNDNAME_ACTIVE, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundActiveName.Wrap( -1 )
 		self.ThingSoundActiveName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.ThingSoundActiveName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1191,9 +1191,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 710,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 780,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 710,480 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 780,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -1484,9 +1484,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 class SoundsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 404,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 430,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 400,480 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 430,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -1652,9 +1652,9 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 550,360 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 560,360 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 550,360 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 560,360 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -1689,7 +1689,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateSelect.SetMaxLength( 4 ) 
 		bSizer124.Add( self.WeaponStateSelect, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.WeaponStateSelectName = wx.StaticText( self, WEAPON_STATENAME_SELECT, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.WeaponStateSelectName = wx.StaticText( self, WEAPON_STATENAME_SELECT, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateSelectName.Wrap( -1 )
 		self.WeaponStateSelectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.WeaponStateSelectName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1719,7 +1719,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateDeselect.SetMaxLength( 4 ) 
 		bSizer1241.Add( self.WeaponStateDeselect, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.WeaponStateDeselectName = wx.StaticText( self, WEAPON_STATENAME_DESELECT, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.WeaponStateDeselectName = wx.StaticText( self, WEAPON_STATENAME_DESELECT, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateDeselectName.Wrap( -1 )
 		self.WeaponStateDeselectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.WeaponStateDeselectName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1749,7 +1749,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateBob.SetMaxLength( 4 ) 
 		bSizer1242.Add( self.WeaponStateBob, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.WeaponStateBobName = wx.StaticText( self, WEAPON_STATENAME_BOB, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.WeaponStateBobName = wx.StaticText( self, WEAPON_STATENAME_BOB, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateBobName.Wrap( -1 )
 		self.WeaponStateBobName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.WeaponStateBobName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1779,7 +1779,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateFire.SetMaxLength( 4 ) 
 		bSizer1243.Add( self.WeaponStateFire, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.WeaponStateFireName = wx.StaticText( self, WEAPON_STATENAME_FIRE, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.WeaponStateFireName = wx.StaticText( self, WEAPON_STATENAME_FIRE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateFireName.Wrap( -1 )
 		self.WeaponStateFireName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.WeaponStateFireName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1809,7 +1809,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateMuzzle.SetMaxLength( 4 ) 
 		bSizer1244.Add( self.WeaponStateMuzzle, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.WeaponStateMuzzleName = wx.StaticText( self, WEAPON_STATENAME_MUZZLE, u"TROOA", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.WeaponStateMuzzleName = wx.StaticText( self, WEAPON_STATENAME_MUZZLE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateMuzzleName.Wrap( -1 )
 		self.WeaponStateMuzzleName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.WeaponStateMuzzleName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1967,9 +1967,9 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 class AmmoFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_AMMO, title = u"Ammo", pos = wx.DefaultPosition, size = wx.Size( 460,250 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_AMMO, title = u"Ammo", pos = wx.DefaultPosition, size = wx.Size( 520,250 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 460,250 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 520,250 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -2329,7 +2329,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		bSizer10071.Add( self.m_staticText75611, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
 		self.MonstersInfight = wx.CheckBox( self, MISC_MONSTERS_INFIGHT, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
-		bSizer10071.Add( self.MonstersInfight, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		bSizer10071.Add( self.MonstersInfight, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.EXPAND, 5 )
 		
 		
 		bSizer991.Add( bSizer10071, 1, wx.EXPAND, 5 )
@@ -3027,7 +3027,7 @@ class StartDialogBase ( wx.Dialog ):
 class AboutDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,340 ), style = wx.CAPTION )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,420 ), style = wx.CAPTION )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -3078,7 +3078,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText139.Wrap( -1 )
 		bSizer56.Add( self.m_staticText139, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, un4seen, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
+		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, tempun, un4seen, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
 		self.m_staticText138.Wrap( 450 )
 		bSizer56.Add( self.m_staticText138, 1, wx.ALL, 6 )
 		
