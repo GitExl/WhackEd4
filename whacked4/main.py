@@ -4,9 +4,7 @@
 from whacked4 import config
 from whacked4.ui import mainwindow
 import argparse
-import os.path
 import sys
-import traceback
 import wx
 
 
@@ -42,25 +40,5 @@ if __name__ == '__main__':
         faceName=config.FONT_MONOSPACED_NAME
     )
     
-    try:
-        main_window = mainwindow.MainWindow(None, args)
-        app.MainLoop()
-    
-    # Catch all exceptions and write them to stdout, and display if needed.
-    except Exception as e:
-        traceback.print_exc()
-        
-        if config.DEBUG == False:
-            exc_type, exc_value, exc_traceback = sys.exc_info()
-            tb = traceback.extract_tb(exc_traceback)
-            logpath = config.LOG_PATH
-            
-            # Concatenate a debug trace message.
-            trace = ''
-            for line in tb:
-                trace += '{}: {}: line {}: {}\n'.format(os.path.basename(line[0]), line[2], line[1], line[3])
-            
-            wx.MessageBox(message='A fatal exception occurred.\n\n{}\n{}\nThis error message can also be found in {}'.format(e, trace, logpath),
-                caption='Fatal exception',
-                style=wx.OK | wx.ICON_ERROR,
-                parent=None)
+    main_window = mainwindow.MainWindow(None, args)
+    app.MainLoop()
