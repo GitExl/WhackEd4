@@ -190,7 +190,14 @@ class MainWindow(windows.MainFrameBase):
         
         # Analyze the patch file to determine what engines support it.
         new_patch = patch.Patch()
-        new_patch.analyze_patch(filename, self.engines)
+        try:
+            new_patch.analyze_patch(filename, self.engines)
+        except patch.DehackedPatchError as e:
+            wx.MessageBox(message=e.__str__(),
+                caption='Patch error',
+                style=wx.OK | wx.ICON_ERROR,
+                parent=self)
+            return
         
         # Display the patch info dialog to let the user select patch settings.
         # Do not show the info dialog if a workspace was found, unless forced.
