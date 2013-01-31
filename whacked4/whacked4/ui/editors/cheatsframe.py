@@ -44,10 +44,10 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
             self.CheatList.InsertColumn(0, 'Name', width=185)
             self.CheatList.InsertColumn(1, 'Code', width=138)
         
-        for cheat_index, cheat in enumerate(self.patch.engine.cheat_data.itervalues()):
-            self.CheatList.InsertStringItem(cheat_index, cheat['name'])
+        for index, name in enumerate(self.patch.engine.cheat_data.iterkeys()):
+            self.CheatList.InsertStringItem(index, name)
             
-            self.cheatlist_update_row(cheat_index)
+            self.cheatlist_update_row(index)
             
         self.list_autosize(self.CheatList)
         self.CheatList.Select(0, True)
@@ -125,7 +125,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         Returns a cheat dict key for a cheat index.
         """
         
-        return self.patch.cheats.keys()[index]
+        return self.patch.engine.cheat_data.keys()[index]
 
     
     def undo_restore_item(self, item):
