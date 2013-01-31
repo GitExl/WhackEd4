@@ -84,5 +84,5 @@ class WhackEd4App(wx.App):
             dialog.ShowModal()
         finally:
             dialog.Destroy()
-            
-        self.ExitMainLoop()
+        
+        sys.exit(-1)
