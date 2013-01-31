@@ -182,7 +182,10 @@ class Patch:
             self.write_dict(f, self.misc, self.engine.misc, self.engine.misc_data, 'Misc 0')
             
             # Write code pointers.
-            self.write_patch_codepointers(f)
+            try:
+                self.write_patch_codepointers(f)
+            except LookupError as e:
+                return e.__str__()
             
             # Write simple strings.
             if self.extended == False:
@@ -192,6 +195,8 @@ class Patch:
             if self.extended == True:
                 self.write_patch_pars(f)
                 self.write_patch_ext_strings(f)
+        
+        return None
 
 
     def write_patch_strings(self, f):
@@ -640,11 +645,17 @@ class Patch:
                 elif mode == MODE_POINTER:
                     self.states[entry_index]['action'] = self.engine.states[int(value)]['action']
                 elif mode == MODE_CHEATS:
-                    key = self.engine.get_key_from_patchkey(self.engine.cheat_data, key)
-                    self.cheats[key] = value
+                    table_key = self.engine.get_key_from_patchkey(self.engine.cheat_data, key)
+                    if table_key is None:
+                        messages['PATCH_CHEAT_KEY_' + str(len(messages))] = 'Unknown patch cheat key {}. This entry will be ignored.'.format(key)
+                    else:
+                        self.cheats[table_key] = value
                 elif mode == MODE_MISC:
-                    key = self.engine.get_key_from_patchkey(self.engine.misc_data, key)
-                    self.misc[key] = value
+                    table_key = self.engine.get_key_from_patchkey(self.engine.misc_data, key)
+                    if table_key is None:
+                        messages['PATCH_MISC_KEY_' + str(len(messages))] = 'Unknown patch miscellaneous key {}. This entry will be ignored.'.format(key)
+                    else:
+                        self.misc[table_key] = value
         
         return messages
                     

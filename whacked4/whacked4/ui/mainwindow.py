@@ -351,7 +351,14 @@ class MainWindow(windows.MainFrameBase):
             shutil.copyfile(filename, filename + '.bak')
         
         # Write patch.
-        self.patch.write_dehacked(filename)
+        message = self.patch.write_dehacked(filename)
+        if message is not None:
+            wx.MessageBox(message=message,
+                caption='Patch write error',
+                style=wx.OK | wx.ICON_ERROR,
+                parent=self)
+            return
+        
         self.patch.filename = filename
         self.set_modified(False)
         

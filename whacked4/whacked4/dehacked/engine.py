@@ -399,7 +399,7 @@ class Engine:
             if item['patchKey'] == patch_key:
                 return key
             
-        raise LookupError('Cannot find patch key {}'.format(patch_key))
+        return None
     
     
     def get_action_from_name(self, name):
