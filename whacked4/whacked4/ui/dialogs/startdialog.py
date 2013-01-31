@@ -18,6 +18,7 @@ class StartDialog(windows.StartDialogBase):
         self.FileList.InsertColumn(0, 'Filename', width=client_width)
         
         # Populate the list of recently accessed Dehacked patches.
+        config.settings.recent_files_clean()
         recent_files = config.settings['recent_files']
         for index, filename in enumerate(recent_files):
             self.FileList.InsertStringItem(index, filename)
