@@ -28,7 +28,7 @@ class WhackEd4App(wx.App):
         args = parser.parse_known_args()[0]
         
         # Enable debugging mode.
-        if args.debug:
+        if args.debug == True:
             config.DEBUG = True
             print 'Debug mode enabled. Only writing exceptions to stdout.'
         else:
@@ -39,8 +39,7 @@ class WhackEd4App(wx.App):
         
         config.settings.load()
         
-        main_window = mainwindow.MainWindow(None, args)
-        self.SetTopWindow(main_window)
+        self.SetTopWindow(mainwindow.MainWindow(None, args))
         
         return True
 
@@ -86,4 +85,4 @@ class WhackEd4App(wx.App):
         finally:
             dialog.Destroy()
             
-        sys.exit(-1)
+        self.ExitMainLoop()

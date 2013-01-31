@@ -511,6 +511,8 @@ class MainWindow(windows.MainFrameBase):
         
         self.DestroyChildren()
         self.Destroy()
+        
+        wx.GetApp().ExitMainLoop()
                     
             
     def editor_window_toolid_for_instance(self, window):
