@@ -14594,7 +14594,7 @@
         }, 
         "ammoAndKeys": {
             "name": "Give ammo + keys",
-            "patchKey": "Ammo & keys", 
+            "patchKey": "Ammo & Keys", 
             "offset": 26, 
             "length": 5
         }, 

@@ -133,7 +133,7 @@
         }, 
         "ammoAndKeys": {
             "name": "Give ammo + keys",
-            "patchKey": "Ammo & keys"
+            "patchKey": "Ammo & Keys"
         }, 
         "ammo": {
             "name": "Give ammo",
