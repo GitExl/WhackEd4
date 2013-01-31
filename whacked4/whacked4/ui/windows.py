@@ -180,6 +180,10 @@ START_RECENT = 1831
 START_CANCEL = 1832
 DIALOG_ABOUT = 1833
 ABOUT_OK = 1834
+DIALOG_ERROR = 1835
+ERROR_REPORT = 1836
+ERROR_COPY = 1837
+ERROR_CLOSE = 1838
 
 ###########################################################################
 ## Class MainFrameBase
@@ -3078,7 +3082,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText139.Wrap( -1 )
 		bSizer56.Add( self.m_staticText139, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, tempun, un4seen, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
+		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, tempun, un4seen, WildWeasel, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
 		self.m_staticText138.Wrap( 450 )
 		bSizer56.Add( self.m_staticText138, 1, wx.ALL, 6 )
 		
@@ -3126,6 +3130,77 @@ class AboutDialogBase ( wx.Dialog ):
 		pass
 	
 	def ok( self, event ):
+		pass
+	
+
+###########################################################################
+## Class ErrorDialogBase
+###########################################################################
+
+class ErrorDialogBase ( wx.Dialog ):
+	
+	def __init__( self, parent ):
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_ERROR, title = u"WhackEd4 fatal error", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.SYSTEM_MENU )
+		
+		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		
+		bSizer118 = wx.BoxSizer( wx.VERTICAL )
+		
+		self.m_staticText91 = wx.StaticText( self, wx.ID_ANY, u"Oops! Something terrible has happened.", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText91.Wrap( -1 )
+		self.m_staticText91.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, wx.EmptyString ) )
+		
+		bSizer118.Add( self.m_staticText91, 0, wx.ALL, 12 )
+		
+		self.m_staticText92 = wx.StaticText( self, wx.ID_ANY, u"Below you can find more details about the error. You can copy it to the clipboard and send it to a developer who can fix this bug.", wx.DefaultPosition, wx.DefaultSize, wx.ST_NO_AUTORESIZE )
+		self.m_staticText92.Wrap( 592 )
+		self.m_staticText92.SetMinSize( wx.Size( -1,40 ) )
+		
+		bSizer118.Add( self.m_staticText92, 0, wx.BOTTOM|wx.LEFT|wx.RIGHT, 12 )
+		
+		self.Report = wx.TextCtrl( self, ERROR_REPORT, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE|wx.TE_READONLY )
+		self.Report.SetFont( wx.Font( 7, 70, 90, 90, False, "Bitstream Vera Sans Mono" ) )
+		self.Report.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		
+		bSizer118.Add( self.Report, 1, wx.ALL|wx.EXPAND, 12 )
+		
+		bSizer119 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_button43 = wx.Button( self, ERROR_COPY, u"Copy to clipboard", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button43.SetMinSize( wx.Size( 144,28 ) )
+		
+		bSizer119.Add( self.m_button43, 0, wx.ALL, 6 )
+		
+		
+		bSizer119.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		
+		self.m_button44 = wx.Button( self, ERROR_CLOSE, u"Close", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button44.SetMinSize( wx.Size( 144,28 ) )
+		
+		bSizer119.Add( self.m_button44, 0, wx.ALL, 6 )
+		
+		
+		bSizer118.Add( bSizer119, 0, wx.ALL|wx.EXPAND, 6 )
+		
+		
+		self.SetSizer( bSizer118 )
+		self.Layout()
+		
+		self.Centre( wx.BOTH )
+		
+		# Connect Events
+		self.m_button43.Bind( wx.EVT_BUTTON, self.copy )
+		self.m_button44.Bind( wx.EVT_BUTTON, self.close )
+	
+	def __del__( self ):
+		pass
+	
+	
+	# Virtual event handlers, overide them in your derived class
+	def copy( self, event ):
+		pass
+	
+	def close( self, event ):
 		pass
 	
 
