@@ -14,7 +14,8 @@ class ErrorDialog(windows.ErrorDialogBase):
     def __init__(self, parent):
         windows.ErrorDialogBase.__init__(self, parent)
         
-        wx.EndBusyCursor()
+        if wx.IsBusy() == True:
+            wx.EndBusyCursor()
         
         
     def set_log(self, log_file):
