@@ -742,12 +742,12 @@
 			"name": "CheckReload"
 		},
 		"185488": {
-			"description": "Weapon select.",
-			"name": "Lower"
+			"description": "Weapon deselect.",
+			"name": "Raise"			
 		},
 		"185552": {
-			"description": "Weapon deselect.",
-			"name": "Raise"
+			"description": "Weapon select.",
+			"name": "Lower"
 		},
 		"185616": {
 			"description": "Display the weapon's firing flash sprite over the regular weapon sprite.",

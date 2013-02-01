@@ -741,11 +741,11 @@
 			"description": "Check ammo.\n\nIf there is not enough ammo for another shot, skip the reloading states and select a different weapon.",
 			"name": "CheckReload"
 		},
-		"185808": {
+		"185872": {
 			"description": "Weapon select.",
 			"name": "Lower"
 		},
-		"185872": {
+		"185808": {
 			"description": "Weapon deselect.",
 			"name": "Raise"
 		},
