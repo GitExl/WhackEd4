@@ -122,7 +122,15 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         self.selected_pwads = self.pwads
         
         self.Hide()
+    
+    
+    def delete_iwad(self, event):
+        """
+        Deletes the currently selected IWAD.
+        """
         
+        self.IWAD.ChangeValue('')
+    
     
     def browse_iwad(self, event):
         """

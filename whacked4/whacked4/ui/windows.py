@@ -2841,8 +2841,11 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		
 		bSizer451.Add( self.IWAD, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
-		self.IWADBrowse = wx.Button( self, wx.ID_ANY, u"...", wx.DefaultPosition, wx.Size( 26,23 ), 0 )
+		self.IWADBrowse = wx.Button( self, wx.ID_ANY, u"...", wx.DefaultPosition, wx.Size( 32,23 ), 0 )
 		bSizer451.Add( self.IWADBrowse, 0, wx.ALIGN_CENTER_VERTICAL|wx.BOTTOM|wx.RIGHT|wx.TOP, 6 )
+		
+		self.IWADDelete = wx.Button( self, wx.ID_ANY, u"X", wx.DefaultPosition, wx.Size( 32,23 ), 0 )
+		bSizer451.Add( self.IWADDelete, 0, wx.ALIGN_CENTER_VERTICAL|wx.BOTTOM|wx.RIGHT|wx.TOP, 6 )
 		
 		
 		bSizer44.Add( bSizer451, 0, wx.EXPAND|wx.LEFT|wx.RIGHT, 6 )
@@ -2903,6 +2906,7 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		# Connect Events
 		self.EngineList.Bind( wx.EVT_CHOICE, self.engine_select )
 		self.IWADBrowse.Bind( wx.EVT_BUTTON, self.browse_iwad )
+		self.IWADDelete.Bind( wx.EVT_BUTTON, self.delete_iwad )
 		self.Bind( wx.EVT_TOOL, self.pwad_add, id = PATCHINFO_TOOLBAR_ADD )
 		self.Bind( wx.EVT_TOOL, self.pwad_remove, id = PATCHINFO_TOOLBAR_REMOVE )
 		self.ButtonOk.Bind( wx.EVT_BUTTON, self.ok )
@@ -2917,6 +2921,9 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		pass
 	
 	def browse_iwad( self, event ):
+		pass
+	
+	def delete_iwad( self, event ):
 		pass
 	
 	def pwad_add( self, event ):
