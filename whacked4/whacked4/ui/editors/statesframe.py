@@ -84,7 +84,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.build_filterlist()
         self.filter_update(0)
         
-        self.build_statelist()
+        self.statelist_build()
         self.build_actionlist()
                 
         
@@ -110,9 +110,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             if state_index in self.filter.state_indices:
                 list_index = self.filter.state_indices.index(state_index)
                 self.filter.states[list_index] = state
-                self.update_row(list_index)
+                self.statelist_update_row(list_index)
         
-        self.tools_update()
+        self.update_properties()
         self.update_sprite_preview()
         
         
@@ -169,13 +169,15 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 dup = copy.deepcopy(state)
                 state_index = self.filter.state_indices[list_index]
                 self.patch.states[state_index] = dup
-                self.update_row(list_index)
+                self.filter.states[list_index] = dup
+                self.statelist_update_row(list_index)
             
             list_index += 1
             if list_index >= len(self.patch.states):
                 break
         
-        self.tools_update()
+        self.update_properties()
+        self.update_colours()
         self.is_modified(True)
     
     
@@ -200,8 +202,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.patch.states[state_index] = copy.deepcopy(self.patch.engine.states[state_index])
             self.filter.states[list_index] = self.patch.states[state_index]
         
-        self.tools_update()
-        self.update_selected_rows()
+        self.update_properties()
+        self.statelist_update_selected_rows()
         self.update_colours()
         self.is_modified(True)
         
@@ -224,7 +226,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             state_index = self.filter.state_indices[list_index]
             self.NextStateIndex.ChangeValue(str(state_index))
             self.set_selected_property('nextState', state_index)
-            self.update_selected_rows()
+            self.statelist_update_selected_rows()
         
         else:
             event.Skip()
@@ -266,7 +268,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.Action.SetItems(action_items)
         
         
-    def build_statelist(self):
+    def statelist_build(self):
         """
         Builds the list of currently filtered states.
         """
@@ -295,7 +297,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.StateList.InsertStringItem(list_index, str(state_index))
             self.StateList.SetItemFont(list_index, config.FONT_MONOSPACED)
             
-            self.update_row(list_index)
+            self.statelist_update_row(list_index)
             
             list_index += 1
         
@@ -319,8 +321,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         """
         
         self.filter.update(index)
-        self.build_statelist()
-        self.tools_update()
+        self.statelist_build()
+        self.update_properties()
         
     
     def set_selected_property(self, key, value):
@@ -343,21 +345,21 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.is_modified(True)
         
         
-    def update_selected_rows(self):
+    def statelist_update_selected_rows(self):
         """
         Updates the contents of every selecte state list row.
         """
         
         for list_index in self.selected:
-            self.update_row(list_index)
+            self.statelist_update_row(list_index)
 
 
-    def tools_update(self):
+    def update_properties(self):
         """
         Updates the tool controls with the properties of the currently selected state(s).
         """
         
-        # If only one state is selected, fill the tools with that state's properties.
+        # If only one state is selected, fill the property controls with that state's data.
         if len(self.selected) == 1:
             state = self.filter.states[self.selected[0]]
             state_index = self.filter.state_indices[self.selected[0]] 
@@ -397,7 +399,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 else:
                     self.Action.Enable()
 
-        # If multiple states are selected, empty out all tools.
+        # If multiple states are selected, empty out all properties.
         else:
             self.SpriteIndex.ChangeValue('')
             self.SpriteName.SetLabel('')
@@ -476,7 +478,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                     state = self.filter.states[list_index]
                     state['spriteFrame'] = frame_index | (state['spriteFrame'] & self.FRAMEFLAG_LIT)
             
-            self.update_selected_rows()
+            self.statelist_update_selected_rows()
             self.update_colours()
             self.update_sprite_preview()
     
@@ -517,7 +519,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         key = self.PROPS_STATE[window_id]
         self.set_selected_property(key, value)
         
-        self.update_selected_rows()
+        self.statelist_update_selected_rows()
         self.update_sprite_preview()
         self.is_modified(True)
         
@@ -545,7 +547,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             
             state['spriteFrame'] = frame_index
     
-        self.update_selected_rows()
+        self.statelist_update_selected_rows()
         self.is_modified(True)
         
     
@@ -567,7 +569,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             if self.patch.engine.extended == True or self.patch.engine.states[state_index]['action'] != 0:
                 state['action'] = action_value
             
-        self.update_selected_rows()
+        self.statelist_update_selected_rows()
         self.is_modified(True)
             
     
@@ -595,7 +597,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             state = self.filter.states[list_index]
             state['spriteFrame'] = value | (state['spriteFrame'] & self.FRAMEFLAG_LIT)
             
-        self.update_selected_rows()
+        self.statelist_update_selected_rows()
         self.update_sprite_preview()
         self.is_modified(True)
         
@@ -650,7 +652,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 return 
         
     
-    def update_row(self, list_index):
+    def statelist_update_row(self, list_index):
         """
         Updates the list row with information of the state that it displays.
         """
@@ -780,11 +782,11 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     
     def state_select(self, event):
         self.selected.append(event.GetIndex())
-        self.tools_update()
+        self.update_properties()
             
     def state_deselect(self, event):
         self.selected.remove(event.GetIndex())
-        self.tools_update()
+        self.update_properties()
     
     def filter_select(self, event):
         self.filter_update(self.Filter.GetSelection())
