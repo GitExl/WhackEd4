@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="nl">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	
+	<title>WhackEd4</title>
+	
+	<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div id="ribbon">
+		<div id="top-container" class="ribbon-container">
+			<img id="logo" src="images/logo.png">
+
+			<div id="ribbon-content">
+				<p>
+					WhackEd4 is designed as a replacement for the old Dehacked DOS utility. It can read and modify any Doom Dehacked patches for versions 1.9 and up, and expands on
+					Dehacked's feature list with the following:
+				</p>
+				<ul>
+					<li>Display sprite previews of the items you are working on.</li>
+					<li>State filtering for things, weapons, or unused states.</li>
+					<li>Undo for each separate editor.</li>
+					<li>Copy and pasting of things and states.</li>
+					<li>Sprite selection filtering.</li>
+					<li>Doom 1.9, Ultimate Doom 1.9, Boom and Marine's Best Friend (MBF) table files.</li>
+					<li>State highlighting based on sprite index.</li>
+					<li>Editor window positions and sizes are stored inbetween sessions.</li>
+					<li>Multiple PWADs can be loaded.</li>
+					<li>IWAD, PWAD and window positions are stored separately from the Dehacked file.</li>
+				</ul>
+			</div>
+
+			<div id="thumbnails">
+				<a class="lightbox" href="images/screen01.png"><img src="images/screen01_thumb.png"></a>
+				<a class="lightbox" href="images/screen02.png"><img src="images/screen02_thumb.png"></a>
+				<a class="lightbox" href="images/screen03.png"><img src="images/screen03_thumb.png"></a>
+			</div>
+
+			<a class="button normal" href="files/whacked-1.0.0-setup.exe">Download</a>
+			<a class="button side" href="#section-changelog">Changelog</a>
+			<a class="button side" href="#section-source">Source code</a>
+
+			<p class="below-button">
+				<a href="files/whacked-1.0.0.7z">Download standalone 7zip archive</a>
+			</p>
+		</div>
+	</div>
+
+	<div id="container">
+		<div id="content">
+			<h1 id="section-changelog">Changelog</h1>
+			
+			<h2>Version 1.0.0</h2>
+			<ul>				
+				<li>Fixed: an ancient bug where the Raise and Lower actions are swapped.</li>
+				<li>Fixed: state pasting not updating the filtered list.</li>
+			</ul>
+			
+
+			<h2>Version 0.9.1 beta</h2>
+			<ul>				
+				<li>Changed: Allow patch load messages to be ignored.</li>
+				<li>Changed: Make patch reading and writing less exception-prone.</li>
+				<li>Changed: exit application after an exception has occurred.</li>				
+				<li>Changed: restructure startup into App object, and add exception dialog.</li>
+				<li>Changed: adjust UI sizes to work better with large fonts.</li>
+				<li>Fixed: exception dialog not closing application.</li>
+				<li>Fixed: exceptions not displaying if a busy cursor was set.</li>
+				<li>Fixed: clean the recent files list before displaying it in the startup dialog.</li>
+				<li>Fixed: Fix cheat keys being displayed instead of names.</li>
+				<li>Fixed: cheats being displayed in the wrong order.</li>
+				<li>Fixed: Ammo &amp; Keys patch key capitalization.</li>
+				<li>Fixed: state action editing issues in non-extended patches.</li>
+				<li>Fixed: do not fail silently when patch analysation fails.</li>
+				<li>Fixed: the license file not being included in the 7zip build. </li>
+			</ul>
+
+			<h2>Version 0.9.0 beta</h2>
+			<ul>
+				<li>Added: WAD reload menu option.</li>
+				<li>Added: license and additional credits to about, convert resources to PNG.</li>
+				<li>Added: sound editing functionality.</li>
+				<li>Added: miscellaneous editing functionality.</li>
+				<li>Added: par time editing functionality.</li>
+				<li>Added: new editor iconography.</li>
+				<li>Added: cheat editing functionality.</li>
+				<li>Added: ammo editing functionality.</li>
+				<li>Added: weapon editing functionality.</li>
+				<li>Added: string editing functionality.</li>
+				<li>Changed: write and read patch entries if only the entry's name has changed.</li>
+				<li>Changed: adjust UI sizes to work better with high-DPI display settings.</li>
+				<li>Changed: draw a "floor" in sprite previews.</li>
+				<li>Changed: move thing names list and display more data in it.</li>
+				<li>Changed: move license text to a messagebox.</li>
+				<li>Changed: sort action choices alphabetically.</li>
+				<li>Changed: do not hide patch settings when browsing for a file.</li>
+				<li>Changed: internal code comments and cleanups.</li>
+				<li>Fixed: miscellaneous UI bugs.</li>
+				<li>Fixed: mark patch as modified after setting a state or sound.</li>
+				<li>Fixed: toggling a thing projectile flag not updating it's speed.</li>
+				<li>Fixed: some listview columns being too wide. </li>
+				<li>Fixed: file dialogs not being modal when they should be.</li>
+				<li>Fixed: a patch engine detection bug.</li>
+			</ul>
+
+			<h2>Version 0.5.0 alpha</h2>
+			<ul>
+				<li>Initial release.</li>
+			</ul>
+
+
+			<h1 id="section-source">Source code</h1>
+			<p>The source code for WhackEd4 is available under a <a href="http://opensource.org/licenses/BSD-2-Clause">BSD 2-clause license</a>, and can be viewed or forked on <a href="http://github.com/">GitHub</a>. Any contributions are more than welcome, provided they retain the coding style used in other WhackEd4 code, and are actual useful features for WhackEd4 to have.</p>
+
+			<p class="logo-align">
+				<a href="https://github.com/GitExl/WhackEd4" target="_blank">View WhackEd4's source code on GitHub</a>
+			</p>
+
+			<p id="footer">Hosted by <a href="http://www.teamhellspawn.com/" target="_blank"><img src="images/teamhellspawn.png"></a><p>
+		</div>
+	</div>
+
+	<div id="darken"></div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript">
+			function scrollTo(dest, duration) {
+				$('html, body').animate({
+					scrollTop: $(dest).offset().top
+				}, duration);
+			}
+
+			$(document).ready(function() {
+				var darken = $('#darken');
+
+				$('.lightbox').each(function(index, element) {
+					element = $(element);
+
+					// Preload thumbnail.
+					var img = $('<img src="' + element.attr('href') + '">');
+
+					$(this).bind('click', function() {
+						darken.css('background-image', 'url("' + element.attr('href') + '")');
+						darken.fadeIn(200);
+
+						return false;
+					});
+				});
+
+				darken.bind('click', function() {
+					$(this).fadeOut(200);
+				})
+
+				$('.button').bind('click', function() {
+					var dest = $(this).attr('href');
+					if (dest.substr(0, 1) != '#') {
+						return true;
+					}
+
+					$('#container').fadeIn(250);
+					scrollTo(dest, 250);
+
+					return false;
+				});
+			});
+		</script>
+
+</body>
+</html>
