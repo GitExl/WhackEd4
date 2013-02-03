@@ -155,7 +155,7 @@ class MainWindow(windows.MainFrameBase):
             self.set_modified(True)
             self.workspace_modified = True
             
-            self.editor_windows[windows.MAIN_TOOL_STATES].tools_update()
+            self.editor_windows[windows.MAIN_TOOL_STATES].update_properties()
     
     
     def open_file_dialog(self, force_show_settings=False):
