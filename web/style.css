@@ -142,6 +142,7 @@ p {
 
 #footer {
 	text-align: right;
-	margin-top: 56px;
+	margin-top: 32px;
+	margin-right: 32px;
 	font-size: 0.9em;
 }
