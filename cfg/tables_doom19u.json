@@ -204,11 +204,11 @@
         }, 
         "166848": {
             "description": "Play sound 'dbopn'.", 
-            "name": "OpenShotgun"
+            "name": "OpenShotgun2"
         }, 
         "166864": {
             "description": "Play sound 'dbload'.", 
-            "name": "LoadShotgun"
+            "name": "LoadShotgun2"
         }, 
         "166880": {
             "description": "Play sound 'dbcls'.", 
