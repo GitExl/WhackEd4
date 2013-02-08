@@ -1,0 +1,57 @@
+Version 1.0.1
+-------------
+Fixed: OpenShotgun and CloseShotgun action names should be OpenShotgun2 and CloseShotgun2.
+
+Version 1.0.0
+-------------
+Added: a button to delete the selected IWAD in the patch settings dialog.
+Fixed: an ancient bug where the Raise and Lower actions are swapped.
+Fixed: state pasting not updating the filtered list.
+
+Version 0.9.1 beta
+------------------
+Changed: Allow patch load messages to be ignored.
+Changed: Make patch reading and writing less exception-prone.
+Changed: exit application after an exception has occurred.
+Changed: restructure startup into App object, and add exception dialog.
+Changed: adjust UI sizes to work better with large fonts.
+Fixed: exception dialog not closing application.
+Fixed: exceptions not displaying if a busy cursor was set.
+Fixed: clean the recent files list before displaying it in the startup dialog.
+Fixed: Fix cheat keys being displayed instead of names.
+Fixed: cheats being displayed in the wrong order.
+Fixed: Ammo & Keys patch key capitalization.
+Fixed: state action editing issues in non-extended patches.
+Fixed: do not fail silently when patch analysation fails.
+Fixed: the license file not being included in the 7zip build.
+
+Version 0.9.0 beta
+------------------
+Added: WAD reload menu option.
+Added: license and additional credits to about, convert resources to PNG.
+Added: sound editing functionality.
+Added: miscellaneous editing functionality.
+Added: par time editing functionality.
+Added: new editor iconography.
+Added: cheat editing functionality.
+Added: ammo editing functionality.
+Added: weapon editing functionality.
+Added: string editing functionality.
+Changed: write and read patch entries if only the entry's name has changed.
+Changed: adjust UI sizes to work better with high-DPI display settings.
+Changed: draw a "floor" in sprite previews.
+Changed: move thing names list and display more data in it.
+Changed: move license text to a messagebox.
+Changed: sort action choices alphabetically.
+Changed: do not hide patch settings when browsing for a file.
+Changed: internal code comments and cleanups.
+Fixed: miscellaneous UI bugs.
+Fixed: mark patch as modified after setting a state or sound.
+Fixed: toggling a thing projectile flag not updating it's speed.
+Fixed: some listview columns being too wide.
+Fixed: file dialogs not being modal when they should be.
+Fixed: a patch engine detection bug.
+
+Version 0.5.0 alpha
+-------------------
+Initial release.
