@@ -2148,7 +2148,7 @@
             "spriteFrame": 2
         }, 
         {
-            "action": "OpenShotgun", 
+            "action": "OpenShotgun2", 
             "duration": 7, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2166,7 +2166,7 @@
             "spriteFrame": 4
         }, 
         {
-            "action": "LoadShotgun", 
+            "action": "LoadShotgun2", 
             "duration": 7, 
             "parameter1": 0, 
             "parameter2": 0, 
