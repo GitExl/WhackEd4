@@ -703,6 +703,20 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             previous_sprite = state['sprite']
             
         self.StateList.Thaw()
+        
+        
+    def key_up(self, event):
+        """
+        Handles key press events.
+        """
+        
+        key = event.GetUnicodeKey()
+        
+        # Display animation preview.
+        if key == 'e':
+            pass
+        
+        print key
     
     
     def selection_clear(self):

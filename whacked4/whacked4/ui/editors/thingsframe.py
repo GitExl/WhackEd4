@@ -174,8 +174,12 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
         
         flaglist = []
-        for data in self.patch.engine.things.flags.itervalues():
-            flaglist.append(' ' + data['name'])
+        for index in range(0, 32):
+            for flag in self.patch.engine.things.flags.itervalues():
+                if flag['index'] == index:
+                    flaglist.append(' ' + flag['name'])
+                    break
+            
         self.ThingFlags.SetItems(flaglist)
         
     
@@ -253,8 +257,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         # Set flags.
         flags = thing['flags']
         bits = 1
-        for flag in range(len(self.patch.engine.things.flags)):
-            self.ThingFlags.Check(flag, (flags & bits != 0))
+        for index in range(self.ThingFlags.GetCount()):
+            checked = (flags & bits) != 0
+            self.ThingFlags.Check(index, checked)
             bits *= 2
         
         # Set state and sound values.
@@ -390,9 +395,16 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         
         # Iterate over the flags defined in the engine config, mark bits if the flag is set in the list.
         bits = 1
-        for flag in range(len(self.patch.engine.things.flags)):
-            if self.ThingFlags.IsChecked(flag) == True:
-                flags_value |= bits
+        for index in range(self.ThingFlags.GetCount()):
+            if self.ThingFlags.IsChecked(index) == False:
+                bits *= 2
+                continue
+            
+            for flag in self.patch.engine.things.flags.itervalues():
+                if flag['index'] == index:
+                    flags_value |= bits
+                    break
+            
             bits *= 2
             
         # Recast the fixed point speed property if the thing is now a projectile.

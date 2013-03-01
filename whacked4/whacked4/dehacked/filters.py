@@ -28,14 +28,10 @@ def filter_thing_flags_read(value, table):
         item = item.strip()
         
         # Find the index of the flag mnemonic and convert it to a flag value.
-        bit = -1
-        for i in range(len(table.flags)):
-            if table.flags.keys()[i] == item:
-                bit = int(math.pow(2, i))
-                
-        if bit == -1:
-            raise LookupError('Cannot find thing flag {}'.format(item))
-        
+        flag = table.flags.get(item)
+        if flag is None:
+            raise LookupError('Ignoring unknown thing flag {}.'.format(item))
+        bit = int(math.pow(2, flag['index']))
         out += bit
         
     return out
@@ -49,9 +45,15 @@ def filter_thing_flags_write(value, table):
     bit = 1
     out = []
     
-    for index in range(len(table.flags)):
-        if value & bit > 0:
-            out.append(table.flags.keys()[index])
+    for _ in range(0, 32):
+        if (value & bit) == 0:
+            bit *= 2
+            continue
+        
+        for key, flag in table.flags.iteritems():
+            if int(math.pow(2, flag['index'])) == bit:    
+                out.append(key)
+                break
         
         bit *= 2
         

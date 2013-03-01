@@ -11098,130 +11098,182 @@
     },
     "thingFlags": {
         "SPECIAL": {
+            "index": 0,
             "name": "Can be picked up", 
             "description": "This thing can be picked up."
         }, 
         "SOLID": {
+            "index": 1,
             "name": "Obstacle", 
             "description": "This thing blocks other things from moving through it."
         }, 
         "SHOOTABLE": {
+            "index": 2,
             "name": "Shootable", 
             "description": "This thing can get hit by projectiles and hitscan weapons."
         }, 
         "NOSECTOR": {
+            "index": 3,
             "name": "Invisible & touchable", 
             "description": "This thing is invisible, but touchable."
         }, 
         "NOBLOCKMAP": {
+            "index": 4,
             "name": "Visible & untouchable", 
             "description": "This thing is visible, but untouchable."
         }, 
         "AMBUSH": {
+            "index": 5,
             "name": "Deaf (ambush)", 
             "description": "This thing cannot be woken up by sounds, only by sight (internal flag)."
         }, 
         "JUSTHIT": {
+            "index": 6,
             "name": "Attack right back", 
             "description": "This thing is going to attack right after being attacked itself (internal flag)."
         }, 
         "JUSTATTACKED": {
+            "index": 7,
             "name": "Steps before attack", 
             "description": "This thing is going to take a single step before it attacks (internal flag)."
         }, 
         "SPAWNCEILING": {
+            "index": 8,
             "name": "Spawned on ceiling", 
             "description": "This thing will spawn hanging from the ceiling."
         }, 
         "NOGRAVITY": {
+            "index": 9,
             "name": "No gravity", 
             "description": "This thing is not affected by gravity."
         }, 
         "DROPOFF": {
+            "index": 10,
             "name": "Travels over cliffs", 
             "description": "This thing is able to travel over height differences bigger than 24 units."
         }, 
         "PICKUP": {
+            "index": 11,
             "name": "Picks up items", 
             "description": "This thing can pick up other things that can be picked up."
         }, 
         "NOCLIP": {
+            "index": 12,
             "name": "No clipping", 
             "description": "This thing can move through walls and through blocking obstacles."
         }, 
         "SLIDE": {
+            "index": 13,
             "name": "Keep wall-slide info", 
             "description": "This thing will remember wall-sliding information (internal flag)."
         }, 
         "FLOAT": {
+            "index": 14,
             "name": "Floating", 
             "description": "This thing floats."
         }, 
         "TELEPORT": {
+            "index": 15,
             "name": "Semi no-clipping", 
             "description": "This thing can walk through obstacles, but not through walls."
         }, 
         "MISSILE": {
+            "index": 16,
             "name": "Projectile", 
             "description": "This thing is a projectile."
         }, 
         "DROPPED": {
+            "index": 17,
             "name": "Dropped by enemy", 
             "description": "This thing was dropped dropped by an enemy (internal flag)."
         }, 
         "SHADOW": {
+            "index": 18,
             "name": "Draw as shadow", 
             "description": "This thing is drawn using the Spectre fuzz effect."
         }, 
         "NOBLOOD": {
+            "index": 19,
             "name": "Puffs (vs. bleeds)", 
             "description": "This thing emits puffs when hit instead of blood splats."
         }, 
         "CORPSE": {
+            "index": 20,
             "name": "Corpse slides off steps", 
             "description": "This thing slides off steps (internal flag)."
         }, 
         "INFLOAT": {
+            "index": 21,
             "name": "No auto-levelling", 
             "description": "This thing won't automatically get equal to the floor's level."
         }, 
         "COUNTKILL": {
+            "index": 22,
             "name": "Affects kill %", 
             "description": "This thing counts towards the 'killed' percentage in the intermission screen."
         }, 
         "COUNTITEM": {
+            "index": 23,
             "name": "Affects item %", 
             "description": "This thing counts towards the 'items' percentage in the intermission screen."
         }, 
         "SKULLFLY": {
+            "index": 24,
             "name": "Flying skull", 
             "description": "This thing is a skull (Lost Soul) in mid-flight (internal flag)."
         }, 
         "NOTDMATCH": {
+            "index": 25,
             "name": "Not in deathmatch", 
             "description": "This thing won't be spawned during deathmatch."
         }, 
         "TRANSLATION": {
+            "index": 26,
             "name": "Color 1 (grey\\red)", 
             "description": "This thing's green colors will be mapped to grey (or red if the Color 2 flag is also set)."
         }, 
         "TRANSLATION2": {
+            "index": 27,
+            "name": "Color 2 (brown\\red)", 
+            "description": "This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set)."
+        },
+        "UNUSED1": {
+            "index": 27,
             "name": "Color 2 (brown\\red)", 
             "description": "This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set)."
         },
         "TOUCHY": {
+            "index": 28,
+            "name": "Dies on impact", 
+            "description": "Died on impact with any solid object."
+        },
+        "UNUSED2": {
+            "index": 28,
             "name": "Dies on impact", 
             "description": "Died on impact with any solid object."
         },
         "BOUNCES": {
+            "index": 29,
+            "name": "Bounces", 
+            "description": "Bounces off floors, ceilings and maybe walls."
+        },
+        "UNUSED3": {
+            "index": 29,
             "name": "Bounces", 
             "description": "Bounces off floors, ceilings and maybe walls."
         },
         "FRIEND": {
+            "index": 30,
+            "name": "Friendly", 
+            "description": "A friend of the player."
+        },
+        "UNUSED4": {
+            "index": 30,
             "name": "Friendly", 
             "description": "A friend of the player."
         },
         "TRANSLUCENT": {
+            "index": 31,
             "name": "Translucent", 
             "description": "Apply translucency."
         }

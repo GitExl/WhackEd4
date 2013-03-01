@@ -630,32 +630,36 @@ class Patch:
                 key = pair[0]
                 value = pair[1]
                  
-                if mode == MODE_THING:
-                    self.things[entry_index].set_patch_key(key, value, self.things, self.extended)
-                elif mode == MODE_STATE:
-                    self.states[entry_index].set_patch_key(key, value, self.states, False)
-                elif mode == MODE_SOUND:
-                    self.sounds[entry_index].set_patch_key(key, value, self.sounds, False)
-                elif mode == MODE_WEAPON:
-                    self.weapons[entry_index].set_patch_key(key, value, self.weapons, False)
-                elif mode == MODE_AMMO:
-                    self.ammo[entry_index].set_patch_key(key, value, self.ammo, False)
-                elif mode == MODE_SPRITE:
-                    pass
-                elif mode == MODE_POINTER:
-                    self.states[entry_index]['action'] = self.engine.states[int(value)]['action']
-                elif mode == MODE_CHEATS:
-                    table_key = self.engine.get_key_from_patchkey(self.engine.cheat_data, key)
-                    if table_key is None:
-                        messages['PATCH_CHEAT_KEY_' + str(len(messages))] = 'Unknown patch cheat key {}. This entry will be ignored.'.format(key)
-                    else:
-                        self.cheats[table_key] = value
-                elif mode == MODE_MISC:
-                    table_key = self.engine.get_key_from_patchkey(self.engine.misc_data, key)
-                    if table_key is None:
-                        messages['PATCH_MISC_KEY_' + str(len(messages))] = 'Unknown patch miscellaneous key {}. This entry will be ignored.'.format(key)
-                    else:
-                        self.misc[table_key] = value
+                try:
+                    if mode == MODE_THING:
+                        self.things[entry_index].set_patch_key(key, value, self.things, self.extended)
+                    elif mode == MODE_STATE:
+                        self.states[entry_index].set_patch_key(key, value, self.states, False)
+                    elif mode == MODE_SOUND:
+                        self.sounds[entry_index].set_patch_key(key, value, self.sounds, False)
+                    elif mode == MODE_WEAPON:
+                        self.weapons[entry_index].set_patch_key(key, value, self.weapons, False)
+                    elif mode == MODE_AMMO:
+                        self.ammo[entry_index].set_patch_key(key, value, self.ammo, False)
+                    elif mode == MODE_SPRITE:
+                        pass
+                    elif mode == MODE_POINTER:
+                        self.states[entry_index]['action'] = self.engine.states[int(value)]['action']
+                    elif mode == MODE_CHEATS:
+                        table_key = self.engine.get_key_from_patchkey(self.engine.cheat_data, key)
+                        if table_key is None:
+                            messages['PATCH_CHEAT_KEY_' + str(len(messages))] = 'Unknown patch cheat key {}. This entry will be ignored.'.format(key)
+                        else:
+                            self.cheats[table_key] = value
+                    elif mode == MODE_MISC:
+                        table_key = self.engine.get_key_from_patchkey(self.engine.misc_data, key)
+                        if table_key is None:
+                            messages['PATCH_MISC_KEY_' + str(len(messages))] = 'Unknown patch miscellaneous key {}. This entry will be ignored.'.format(key)
+                        else:
+                            self.misc[table_key] = value
+                            
+                except Exception as e:
+                    messages['EXCEPTION_' + str(len(messages))] = str(e)
         
         return messages
                     
