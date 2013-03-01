@@ -1,5 +1,6 @@
 Version 1.0.1
 -------------
+Changed: multiple thing flags with the same name can now be defined in engine configurations.
 Fixed: OpenShotgun and CloseShotgun action names should be OpenShotgun2 and CloseShotgun2.
 
 Version 1.0.0

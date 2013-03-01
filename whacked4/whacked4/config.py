@@ -12,7 +12,7 @@ import os.path
 # Application info.
 APP_NAME = 'WhackEd4'
 APP_SIMPLE_NAME = 'whacked4'
-APP_VERSION = '1.0.0'
+APP_VERSION = '1.0.1'
 
 # Monospaced font for displays that use them.
 FONT_MONOSPACED_NAME = 'Bitstream Vera Sans Mono'
