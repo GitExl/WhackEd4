@@ -92,7 +92,9 @@
         "Scratch": "Scratch a nearby thing with damage defined in miscellaneous 1, with a sound defined in miscellaneous 2.",
         "PlaySound": "Play a sound defined in miscellaneous 2, or miscellaneous 1.",
         "RandomJump": "Jump a random value below miscellaneous 2, while going to state miscellaneous 1.",
-        "LineEffect": "Trigger the linedef effect type defined in miscellaneous 1, using sector tag defined in miscellaneous 2."
+        "LineEffect": "Trigger the linedef effect type defined in miscellaneous 1, using sector tag defined in miscellaneous 2.",
+        "FireOldBFG": "Fire the beta-style BFG.",
+        "BetaSkullAttack": "Perform the beta Lost Soul attack."
     },
     "ammo": [
         {
@@ -1793,10 +1795,14 @@
         "TLMP",
         "TLP2",
         "TNT1",
-        "DOGS"
+        "DOGS",
+        "PLS1",
+        "PLS2",
+        "BON3",
+        "BON4"
     ],
     "states": [
-          {
+        {
             "action": "NULL", 
             "duration": -1, 
             "parameter1": 0, 
@@ -10786,6 +10792,699 @@
             "nextState": 974,
             "sprite": 139,
             "spriteFrame": 8
+        },
+        {
+          "action": "BFGsound",
+          "duration": 10,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1000,
+          "sprite": 14,
+          "spriteFrame": 0
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1001,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1002,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1003,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1004,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1005,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1006,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1007,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1008,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1009,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1010,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1011,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1012,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1013,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1014,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1015,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1016,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1017,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1018,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1019,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1020,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1021,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1022,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1023,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1024,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1025,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1026,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1027,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1028,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1029,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1030,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1031,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1032,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1033,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1034,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1035,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1036,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1037,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1038,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1039,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "FireOldBFG",
+          "duration": 1,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1040,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "Light0",
+          "duration": 0,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1041,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "ReFire",
+          "duration": 20,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 81,
+          "sprite": 14,
+          "spriteFrame": 1
+        },
+        {
+          "action": "NULL",
+          "duration": 6,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1043,
+          "sprite": 140,
+          "spriteFrame": 32768
+        },
+        {
+          "action": "NULL",
+          "duration": 6,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1042,
+          "sprite": 140,
+          "spriteFrame": 32769
+        },
+        {
+          "action": "NULL",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1045,
+          "sprite": 140,
+          "spriteFrame": 32770
+        },
+        {
+          "action": "NULL",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1046,
+          "sprite": 140,
+          "spriteFrame": 32771
+        },
+        {
+          "action": "NULL",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1047,
+          "sprite": 140,
+          "spriteFrame": 32772
+        },
+        {
+          "action": "NULL",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1048,
+          "sprite": 140,
+          "spriteFrame": 32773
+        },
+        {
+          "action": "NULL",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 0,
+          "sprite": 140,
+          "spriteFrame": 32774
+        },
+        {
+          "action": "NULL",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1050,
+          "sprite": 141,
+          "spriteFrame": 32768
+        },
+        {
+          "action": "NULL",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1049,
+          "sprite": 141,
+          "spriteFrame": 32769
+        },
+        {
+          "action": "NULL",
+          "duration": 6,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1052,
+          "sprite": 141,
+          "spriteFrame": 32770
+        },
+        {
+          "action": "NULL",
+          "duration": 6,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1053,
+          "sprite": 141,
+          "spriteFrame": 32771
+        },
+        {
+          "action": "NULL",
+          "duration": 6,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 0,
+          "sprite": 141,
+          "spriteFrame": 32772
+        },
+        {
+          "action": "NULL",
+          "duration": 6,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1054,
+          "sprite": 142,
+          "spriteFrame": 0
+        },
+        {
+          "action": "NULL",
+          "duration": 6,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1055,
+          "sprite": 143,
+          "spriteFrame": 0
+        },
+        {
+          "action": "Look",
+          "duration": 10,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1056,
+          "sprite": 44,
+          "spriteFrame": 0
+        },
+        {
+          "action": "Chase",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1058,
+          "sprite": 44,
+          "spriteFrame": 1
+        },
+        {
+          "action": "Chase",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1059,
+          "sprite": 44,
+          "spriteFrame": 2
+        },
+        {
+          "action": "Chase",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1060,
+          "sprite": 44,
+          "spriteFrame": 3
+        },
+        {
+          "action": "Chase",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1057,
+          "sprite": 44,
+          "spriteFrame": 0
+        },
+        {
+          "action": "FaceTarget",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1062,
+          "sprite": 44,
+          "spriteFrame": 4
+        },
+        {
+          "action": "BetaSkullAttack",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1063,
+          "sprite": 44,
+          "spriteFrame": 5
+        },
+        {
+          "action": "NULL",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1057,
+          "sprite": 44,
+          "spriteFrame": 5
+        },
+        {
+          "action": "NULL",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1065,
+          "sprite": 44,
+          "spriteFrame": 6
+        },
+        {
+          "action": "Pain",
+          "duration": 2,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1057,
+          "sprite": 44,
+          "spriteFrame": 7
+        },
+        {
+          "action": "NULL",
+          "duration": 4,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1057,
+          "sprite": 44,
+          "spriteFrame": 8
+        },
+        {
+          "action": "NULL",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1068,
+          "sprite": 44,
+          "spriteFrame": 9
+        },
+        {
+          "action": "NULL",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1069,
+          "sprite": 44,
+          "spriteFrame": 10
+        },
+        {
+          "action": "NULL",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1070,
+          "sprite": 44,
+          "spriteFrame": 11
+        },
+        {
+          "action": "NULL",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1071,
+          "sprite": 44,
+          "spriteFrame": 12
+        },
+        {
+          "action": "Scream",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1072,
+          "sprite": 44,
+          "spriteFrame": 13
+        },
+        {
+          "action": "NULL",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1073,
+          "sprite": 44,
+          "spriteFrame": 14
+        },
+        {
+          "action": "Fall",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1074,
+          "sprite": 44,
+          "spriteFrame": 15
+        },
+        {
+          "action": "Stop",
+          "duration": 5,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 1074,
+          "sprite": 44,
+          "spriteFrame": 16
+        },
+        {
+          "action": "Mushroom",
+          "duration": 8,
+          "parameter1": 0,
+          "parameter2": 0,
+          "nextState": 128,
+          "sprite": 22,
+          "spriteFrame": 32769
         }
     ],
     "strings": {
@@ -11418,7 +12117,11 @@
         "Brain",
         "Pusher",
         "Puller",
-        "Dog"
+        "Dog",
+        "Beta Plasma 1",
+        "Beta Plasma 2",
+        "Beta Sceptre",
+        "Beta Bible"
     ],
     "things": [
         {
@@ -14920,6 +15623,106 @@
             "stateRaise": 993,
             "stateSpawn": 972,
             "radius": 784272
+        },
+        {
+            "flags": 536938000,
+            "health": 1000,
+            "height": 524288,
+            "id": -1,
+            "mass": 100,
+            "damage": 4,
+            "painChance": 0,
+            "reactionTime": 8,
+            "soundActive": 0,
+            "soundAlert": 8,
+            "soundAttack": 0,
+            "soundDeath": 17,
+            "soundPain": 0,
+            "speed": 1638400,
+            "stateAttack": 0,
+            "stateDeath": 1044,
+            "stateExplode": 0,
+            "stateMelee": 0,
+            "stateWalk": 0,
+            "statePain": 0,
+            "stateRaise": 0,
+            "stateSpawn": 1042,
+            "radius": 851968
+        },
+        {
+            "flags": 536938000,
+            "health": 1000,
+            "height": 524288,
+            "id": -1,
+            "mass": 100,
+            "damage": 4,
+            "painChance": 0,
+            "reactionTime": 8,
+            "soundActive": 0,
+            "soundAlert": 8,
+            "soundAttack": 0,
+            "soundDeath": 17,
+            "soundPain": 0,
+            "speed": 1638400,
+            "stateAttack": 0,
+            "stateDeath": 1051,
+            "stateExplode": 0,
+            "stateMelee": 0,
+            "stateWalk": 0,
+            "statePain": 0,
+            "stateRaise": 0,
+            "stateSpawn": 1049,
+            "radius": 393216
+        },
+        {
+            "flags": 8388609,
+            "health": 1000,
+            "height": 1048576,
+            "id": 2016,
+            "mass": 100,
+            "damage": 0,
+            "painChance": 0,
+            "reactionTime": 8,
+            "soundActive": 0,
+            "soundAlert": 0,
+            "soundAttack": 0,
+            "soundDeath": 0,
+            "soundPain": 0,
+            "speed": 0,
+            "stateAttack": 0,
+            "stateDeath": 0,
+            "stateExplode": 0,
+            "stateMelee": 0,
+            "stateWalk": 0,
+            "statePain": 0,
+            "stateRaise": 0,
+            "stateSpawn": 1054,
+            "radius": 655360
+        },
+        {
+            "flags": 8388609,
+            "health": 1000,
+            "height": 655360,
+            "id": 2017,
+            "mass": 100,
+            "damage": 0,
+            "painChance": 0,
+            "reactionTime": 8,
+            "soundActive": 0,
+            "soundAlert": 0,
+            "soundAttack": 0,
+            "soundDeath": 0,
+            "soundPain": 0,
+            "speed": 0,
+            "stateAttack": 0,
+            "stateDeath": 0,
+            "stateExplode": 0,
+            "stateMelee": 0,
+            "stateWalk": 0,
+            "statePain": 0,
+            "stateRaise": 0,
+            "stateSpawn": 1055,
+            "radius": 1310720
         }
     ],
     "weaponNames": [

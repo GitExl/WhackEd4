@@ -620,7 +620,10 @@ class Patch:
                     key = pair[0]
                     value = pair[1]
                     index = int(key.split(' ')[1])
-                    self.states[index]['action'] = value
+                    if index < 0 or index >= len(self.states):
+                        messages['INVALID_CODEPOINTER'] = 'Invalid codepointers were encountered.'
+                    else:
+                        self.states[index]['action'] = value
                     continue
             
                 # Key\value pairs.
@@ -658,8 +661,8 @@ class Patch:
                         else:
                             self.misc[table_key] = value
                             
-                except Exception as e:
-                    messages['EXCEPTION_' + str(len(messages))] = str(e)
+                except:
+                    messages['EXCEPTION'] = 'Exceptions occurred during loading. The patch may be corrupted.'
         
         return messages
                     
