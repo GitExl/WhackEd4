@@ -427,7 +427,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         index = self.ThingFlags.HitTest(wx.Point(event.GetX(), event.GetY()))
         if index != wx.NOT_FOUND:
             key = self.patch.engine.things.flags.keys()[index]
-            tip = self.patch.engine.things.flags[key]['description']
+            tip = self.patch.engine.things.flags[key]['description'] + '\n\nMnemonic: ' + key
         else:
             tip = ''
         

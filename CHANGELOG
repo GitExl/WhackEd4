@@ -1,5 +1,6 @@
 Version 1.0.1
 -------------
+Added: thing flag mnemonic name to thing flag tool tips.
 Changed: multiple thing flags with the same name can now be defined in engine configurations.
 Fixed: OpenShotgun and CloseShotgun action names should be OpenShotgun2 and CloseShotgun2.
 Fixed: added missing beta things, states and sprites to the MBF engine configuration. 
@@ -44,14 +45,14 @@ Changed: write and read patch entries if only the entry's name has changed.
 Changed: adjust UI sizes to work better with high-DPI display settings.
 Changed: draw a "floor" in sprite previews.
 Changed: move thing names list and display more data in it.
-Changed: move license text to a messagebox.
+Changed: move license text to a message box.
 Changed: sort action choices alphabetically.
 Changed: do not hide patch settings when browsing for a file.
 Changed: internal code comments and cleanups.
 Fixed: miscellaneous UI bugs.
 Fixed: mark patch as modified after setting a state or sound.
 Fixed: toggling a thing projectile flag not updating it's speed.
-Fixed: some listview columns being too wide.
+Fixed: some list view columns being too wide.
 Fixed: file dialogs not being modal when they should be.
 Fixed: a patch engine detection bug.
 
