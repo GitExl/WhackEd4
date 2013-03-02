@@ -2,6 +2,8 @@ Version 1.0.1
 -------------
 Changed: multiple thing flags with the same name can now be defined in engine configurations.
 Fixed: OpenShotgun and CloseShotgun action names should be OpenShotgun2 and CloseShotgun2.
+Fixed: added missing beta things, states and sprites to the MBF engine configuration. 
+Fixed: added missing translucent flags to the Boom and MBF engine configurations.
 
 Version 1.0.0
 -------------
