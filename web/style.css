@@ -10,6 +10,9 @@ body {
 	font-size: 0.85em;
 }
 
+a {
+	border: none;
+}
 
 #ribbon {
 	background-color: #888;
