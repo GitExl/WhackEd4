@@ -1,6 +1,7 @@
 Version 1.0.2
 -------------
 Fixed: -1 state durations could not be entered.
+Changed: Detect additional thing flag delimiters supported by some source ports.
 
 Version 1.0.1
 -------------

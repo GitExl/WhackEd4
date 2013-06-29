@@ -661,8 +661,8 @@ class Patch:
                         else:
                             self.misc[table_key] = value
                             
-                except:
-                    messages['EXCEPTION'] = 'Exceptions occurred during loading. The patch may be corrupted.'
+                except Exception as e:
+                    messages['EXCEPTION'] = 'Exceptions occurred during loading. The patch may be corrupted.\n\nLast exception:\n' + str(e)
         
         return messages
                     

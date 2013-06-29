@@ -7,6 +7,7 @@ them.
 """
 
 import math
+import re
 
 
 def filter_thing_flags_read(value, table):
@@ -17,13 +18,13 @@ def filter_thing_flags_read(value, table):
     
     @raise LookupError: if the value contains an unknown mnemonic.
     """ 
+   
+    items = re.split(r"[,+| \t\f\r]+", value)
     
-    if value.find('+') == -1 and value.isalpha() == False:
+    if len(items) <= 1 and value.isalpha() == True:
         return value
     
-    items = value.split('+')
     out = 0
-    
     for item in items:
         item = item.strip()
         
