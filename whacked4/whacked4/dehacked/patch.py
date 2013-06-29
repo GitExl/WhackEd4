@@ -620,10 +620,14 @@ class Patch:
                     key = pair[0]
                     value = pair[1]
                     index = int(key.split(' ')[1])
-                    if index < 0 or index >= len(self.states):
-                        messages['INVALID_CODEPOINTER'] = 'Invalid codepointers were encountered.'
+                    
+                    if not value in self.engine.actions:
+                        messages['UNKNOWN_ACTION_NAME'] = 'Unknown action name ' + value
+                    elif index < 0 or index >= len(self.states):
+                        messages['INVALID_CODEPOINTER'] = 'Invalid codepointer values were encountered.'
                     else:
                         self.states[index]['action'] = value
+                        
                     continue
             
                 # Key\value pairs.
