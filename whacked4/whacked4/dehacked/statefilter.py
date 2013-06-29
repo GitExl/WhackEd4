@@ -105,6 +105,12 @@ class StateFilter:
                         if next_state >= 0 and states_list[next_state] == False:
                             states_list[next_state] = True
                             added = True
+                        
+                        # Action-specific state jumps.
+                        # Randomly jump to state in param1
+                        state = self.patch.states[index]
+                        if state['action'] == 'RandomJump':
+                            states_list[state['parameter1']] = True
                     
                 if added == False:
                     break
@@ -149,7 +155,7 @@ class StateFilter:
         self.add_thing_states(states_list, thing)
         
         return states_list
-    
+
     
     def get_unused_states(self):
         """
