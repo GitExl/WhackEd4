@@ -2,6 +2,7 @@ Version 1.0.2
 -------------
 Added: an engine configuration file for MBF that includes the beta state actions, and removed the beta actions from the regular MBF configuration.
 Added: RandomJump states are now recognized as using the state in parameter1.
+Added: thing index numbers in the things editor.
 Fixed: -1 state durations could not be entered.
 Fixed: crash when trying to display a sprite with an invalid file format.
 Changed: Detect additional thing flag delimiters supported by some source ports.

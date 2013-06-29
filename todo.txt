@@ -3,8 +3,6 @@ Bugs
 
 Features
 - Allow sorting things list by name.
-- the thing table lacks numbers. I need to look up the things by numbers when using the Spawn codepointer with the number as argument.
-- the frame filter doesn't recognize RandomJump destinations, it only recognizes Next Frame destinations.
 
 Known issues
 - Tab key traversal barely works if at all. Probably a bug in wxWidgets 2.9.

@@ -126,11 +126,12 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingList.ClearAll()
         
         if self.ThingList.GetColumnCount() == 0:
-            self.ThingList.InsertColumn(0, 'Name', width=187)
-            self.ThingList.InsertColumn(1, 'Id', width=36)
-            self.ThingList.InsertColumn(2, 'Health', width=48)
-            self.ThingList.InsertColumn(3, 'Radius', width=48)
-            self.ThingList.InsertColumn(4, 'Height', width=48)
+            self.ThingList.InsertColumn(0, 'Idx', width=36)
+            self.ThingList.InsertColumn(1, 'Name', width=187)
+            self.ThingList.InsertColumn(2, 'Id', width=36)
+            self.ThingList.InsertColumn(3, 'Health', width=48)
+            self.ThingList.InsertColumn(4, 'Radius', width=48)
+            self.ThingList.InsertColumn(5, 'Height', width=48)
             
         for index in range(len(self.patch.things.names)):
             self.ThingList.InsertStringItem(index, '')
@@ -149,11 +150,12 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         thing = self.patch.things[row_index]
         thing_name = self.patch.things.names[row_index]
         
-        self.ThingList.SetItemText(row_index, thing_name)
-        self.ThingList.SetStringItem(row_index, 1, str(thing['id']))
-        self.ThingList.SetStringItem(row_index, 2, str(thing['health']))
-        self.ThingList.SetStringItem(row_index, 3, str(thing['radius'] / self.FIXED_UNIT))
-        self.ThingList.SetStringItem(row_index, 4, str(thing['height'] / self.FIXED_UNIT))
+        self.ThingList.SetItemText(row_index, str(row_index))
+        self.ThingList.SetStringItem(row_index, 1, thing_name)
+        self.ThingList.SetStringItem(row_index, 2, str(thing['id']))
+        self.ThingList.SetStringItem(row_index, 3, str(thing['health']))
+        self.ThingList.SetStringItem(row_index, 4, str(thing['radius'] / self.FIXED_UNIT))
+        self.ThingList.SetStringItem(row_index, 5, str(thing['height'] / self.FIXED_UNIT))
         
         
     def thinglist_resize(self, event):
@@ -161,11 +163,12 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         Resizes the thing name column to match the control's width.
         """
         
-        columns_width = self.ThingList.GetColumnWidth(1) + self.ThingList.GetColumnWidth(2)
-        columns_width += self.ThingList.GetColumnWidth(3) + self.ThingList.GetColumnWidth(4)
+        columns_width = self.ThingList.GetColumnWidth(0)
+        columns_width += self.ThingList.GetColumnWidth(2) + self.ThingList.GetColumnWidth(3)
+        columns_width += self.ThingList.GetColumnWidth(4) + self.ThingList.GetColumnWidth(5)
         
         width = self.ThingList.GetClientSizeTuple()[0] - columns_width - 4
-        self.ThingList.SetColumnWidth(0, width)
+        self.ThingList.SetColumnWidth(1, width)
         
         
     def flaglist_build(self):
