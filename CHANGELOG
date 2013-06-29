@@ -1,3 +1,7 @@
+Version 1.0.2
+-------------
+Fixed: -1 state durations could not be entered.
+
 Version 1.0.1
 -------------
 Added: thing flag mnemonic name to thing flag tool tips.

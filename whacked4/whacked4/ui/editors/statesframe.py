@@ -514,7 +514,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         elif window_id == windows.STATES_DURATION:
             if value < -1:
                 value = 0
-            window.ChangeValue(str(value))
+                window.ChangeValue(str(value))
 
         key = self.PROPS_STATE[window_id]
         self.set_selected_property(key, value)
