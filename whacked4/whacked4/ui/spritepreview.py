@@ -63,6 +63,8 @@ class SpritePreview(wx.Panel):
 
             if sprite_lump is not None:
                 self.sprite = self.wads.get_sprite_image(sprite_lump)
+                if self.sprite.image is None:
+                    self.sprite = None
         
         self.Refresh()
             

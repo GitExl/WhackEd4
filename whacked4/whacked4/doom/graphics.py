@@ -38,6 +38,11 @@ class Image:
         # Read header.
         width, height, top, left = self.S_HEADER.unpack_from(data)
         
+        # Attempt to detect bad file formats.
+        if width > 2048 or height > 2048 or top > 2048 or left > 2048:
+            self.set_empty()
+            return
+        
         # Initialize an empty bitmap.
         image_data = bytearray([0, 0, 0, 0] * width * height)
         
@@ -52,6 +57,11 @@ class Image:
         prev_delta = 0
         while column_index < width:
             offset = offsets[column_index]
+            
+            # Attempt to detect bad file formats.
+            if offset < 0 or offset > len(data):
+                self.set_empty()
+                return
             
             prev_delta = 0
             while True:
@@ -93,3 +103,11 @@ class Image:
         
         # Create usable bitmap.
         self.image = wx.BitmapFromBufferRGBA(width, height, image_data)
+    
+    def set_empty(self):
+        self.width = 0
+        self.height = 0
+        self.top = 0
+        self.left = 0
+        
+        self.image = None

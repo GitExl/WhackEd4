@@ -1,5 +1,4 @@
 Bugs
-- Whacked4 crashes if the sprite format from the WAD is invalid. A common SLADE mistake is to import the PNG files and forget to convert them to Doom format before loading the WAD in Whacked4.
 - I've been getting crashes when switching from the thing window to the frame window, or when using the frame filter. However, I was using Whacked4 through Wine so I can't be sure for now. I'll send you tracebacks if it happens later, on Windows.
 
 Features
