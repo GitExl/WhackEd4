@@ -1,5 +1,6 @@
 Version 1.0.2
 -------------
+Added: an engine configuration file for MBF that includes the beta state actions, and removed the beta actions from the regular MBF configuration.
 Fixed: -1 state durations could not be entered.
 Changed: Detect additional thing flag delimiters supported by some source ports.
 

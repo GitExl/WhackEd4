@@ -1,5 +1,4 @@
 Bugs
-- MBF strictly beta emulation codepointers such as BetaSkullAttack are not recognized in MBF normal mode (and it will crash on launch) but are probably recognized by Eternity, ZDoom and PrBoom+. Not a bug though, it's just that the user has to be careful when aiming the DEH for vanilla MBF.
 - Whacked4 crashes if the sprite format from the WAD is invalid. A common SLADE mistake is to import the PNG files and forget to convert them to Doom format before loading the WAD in Whacked4.
 - I've been getting crashes when switching from the thing window to the frame window, or when using the frame filter. However, I was using Whacked4 through Wine so I can't be sure for now. I'll send you tracebacks if it happens later, on Windows.
 

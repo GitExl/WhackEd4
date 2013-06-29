@@ -1,7 +1,7 @@
 {
     "versions": [19,21],
     "extended": true,
-    "name": "MBF",
+    "name": "MBF (Doom beta)",
 
     "hacks": {
         "plasmaFlashStateJitter": true
@@ -92,7 +92,9 @@
         "Scratch": "Scratch a nearby thing with damage defined in miscellaneous 1, with a sound defined in miscellaneous 2.",
         "PlaySound": "Play a sound defined in miscellaneous 2, or miscellaneous 1.",
         "RandomJump": "Jump a random value below miscellaneous 2, while going to state miscellaneous 1.",
-        "LineEffect": "Trigger the linedef effect type defined in miscellaneous 1, using sector tag defined in miscellaneous 2."
+        "LineEffect": "Trigger the linedef effect type defined in miscellaneous 1, using sector tag defined in miscellaneous 2.",
+        "FireOldBFG": "Fire the beta-style BFG.",
+        "BetaSkullAttack": "Perform the beta Lost Soul attack."
     },
     "ammo": [
         {
