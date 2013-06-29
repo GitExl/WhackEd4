@@ -17,14 +17,14 @@ def filter_thing_flags_read(value, table):
     Extended patches can use mnemonics for flag names, separated by plus signs.
     
     @raise LookupError: if the value contains an unknown mnemonic.
-    """ 
-   
-    items = re.split(r"[,+| \t\f\r]+", value)
-    
-    if len(items) <= 1 and value.isalpha() == True:
+        """ 
+
+    if value.isdigit() == True:
         return value
     
+    items = re.split(r"[,+| \t\f\r]+", value)
     out = 0
+    
     for item in items:
         item = item.strip()
         
