@@ -28,6 +28,7 @@ class SpritePreview(wx.Panel):
         
         # The icon to display instead of missing sprites.
         self.missing = wx.Bitmap('res/icon-missing.png', wx.BITMAP_TYPE_PNG)
+        self.invalid = wx.Bitmap('res/icon-invalid.png', wx.BITMAP_TYPE_PNG)
         
         # Create "floor" fill color.
         floor_colour = utils.mix_colours(self.GetBackgroundColour(), wx.Colour(0, 0, 0), 0.6)
@@ -63,8 +64,6 @@ class SpritePreview(wx.Panel):
 
             if sprite_lump is not None:
                 self.sprite = self.wads.get_sprite_image(sprite_lump)
-                if self.sprite.image is None:
-                    self.sprite = None
         
         self.Refresh()
             
@@ -85,8 +84,17 @@ class SpritePreview(wx.Panel):
         if self.sprite == self.CLEAR:
             return
         
+        # Determine what icon or sprite to render.
+        bitmap = None
+        if self.sprite is None:
+            bitmap = self.missing
+        elif self.sprite.invalid == True:
+            bitmap = self.invalid
+        elif self.sprite.image is None:
+            bitmap = self.missing
+            
         size = self.GetClientSizeTuple()
-        if self.sprite is not None:
+        if bitmap is None:
             baseline = size[1] * self.baseline_factor
             
             x = size[0] / 2 - self.sprite.width / 2
@@ -94,13 +102,12 @@ class SpritePreview(wx.Panel):
             x + self.sprite.left
             y + self.sprite.top
             dc.DrawBitmap(self.sprite.image, x, y, True)
-        
-        # Display the missing image bitmap if no sprite is set.
-        else:
-            x = size[0] / 2 - self.missing.GetWidth() / 2
-            y = size[1] / 2 - self.missing.GetHeight() / 2
-            dc.DrawBitmap(self.missing, x, y, True)
             
+        else:
+            x = size[0] / 2 - bitmap.GetWidth() / 2
+            y = size[1] / 2 - bitmap.GetHeight() / 2
+            dc.DrawBitmap(bitmap, x, y, True)
+
             
     def clear(self):
         """

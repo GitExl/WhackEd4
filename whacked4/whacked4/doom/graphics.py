@@ -35,14 +35,20 @@ class Image:
     
     
     def __init__(self, data, palette):
+        self.set_empty()
+        self.invalid = False
+        
         # Read header.
         width, height, top, left = self.S_HEADER.unpack_from(data)
         
         # Attempt to detect bad file formats.
         if width > 2048 or height > 2048 or top > 2048 or left > 2048:
-            self.set_empty()
+            self.set_invalid()
             return
-        
+        if width <= 0 or height <= 0:
+            self.set_invalid()
+            return 
+                
         # Initialize an empty bitmap.
         image_data = bytearray([0, 0, 0, 0] * width * height)
         
@@ -60,7 +66,7 @@ class Image:
             
             # Attempt to detect bad file formats.
             if offset < 0 or offset > len(data):
-                self.set_empty()
+                self.set_invalid()
                 return
             
             prev_delta = 0
@@ -111,3 +117,7 @@ class Image:
         self.left = 0
         
         self.image = None
+        
+    def set_invalid(self):
+        self.set_empty()
+        self.invalid = True
