@@ -1,3 +1,7 @@
+Version 1.0.3
+-------------
+Changed: invalid graphics are previewed as "INVALID" instead of crashing.
+
 Version 1.0.2
 -------------
 Added: an engine configuration file for MBF that includes the beta state actions, and removed the beta actions from the regular MBF configuration.
