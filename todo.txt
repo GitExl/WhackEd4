@@ -1,3 +1,7 @@
+wxWidgets upgrade bugs
+- Par times dialog left side is too wide.
+- Main toolbar width is wrong. Buttons too.
+
 Bugs
 - I've been getting crashes when switching from the thing window to the frame window, or when using the frame filter. However, I was using Whacked4 through Wine so I can't be sure for now. I'll send you tracebacks if it happens later, on Windows.
 
@@ -6,4 +10,4 @@ Features
 
 Known issues
 - Tab key traversal barely works if at all. Probably a bug in wxWidgets 2.9.
-- When listview column widths are resized, a scrollbar is sometimes displayed for no reason. 
+- When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
