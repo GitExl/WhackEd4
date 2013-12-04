@@ -1,6 +1,7 @@
 wxWidgets upgrade bugs
 - Par times dialog left side is too wide.
 - Main toolbar width is wrong. Buttons too.
+- iCCP incorrect color profile warnings.
 
 Bugs
 - I've been getting crashes when switching from the thing window to the frame window, or when using the frame filter. However, I was using Whacked4 through Wine so I can't be sure for now. I'll send you tracebacks if it happens later, on Windows.

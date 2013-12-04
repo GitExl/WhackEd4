@@ -5,18 +5,10 @@ Name: associate; Description: Associate with Dehacked patch files
 
 [Files]
 Source: .\build\exe.win32-2.7\*.*; DestDir: {app}; Flags: recursesubdirs createallsubdirs
-Source: C:\Windows\Fonts\VERAMONO_1.TTF; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono
-Source: C:\Windows\Fonts\VeraMono_0.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono
-Source: C:\Windows\Fonts\VeraMono.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono
-Source: C:\Windows\Fonts\VERAMOBD_1.TTF; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Bold
-Source: C:\Windows\Fonts\VeraMoBd_0.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Bold
-Source: C:\Windows\Fonts\VeraMoBd.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Bold
-Source: C:\Windows\Fonts\VERAMOBI_1.TTF; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Bold Oblique
-Source: C:\Windows\Fonts\VeraMoBI_0.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Bold Oblique
-Source: C:\Windows\Fonts\VeraMoBI.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Bold Oblique
-Source: C:\Windows\Fonts\VERAMOIT_1.TTF; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Oblique
-Source: C:\Windows\Fonts\VeraMoIt_0.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Oblique
-Source: C:\Windows\Fonts\VeraMoIt.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Oblique
+Source: .\fonts\ttf-bitstream-vera-1.10\VeraMono.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono
+Source: .\fonts\ttf-bitstream-vera-1.10\VeraMoBd.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Bold
+Source: .\fonts\ttf-bitstream-vera-1.10\VeraMoBi.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Bold Oblique
+Source: .\fonts\ttf-bitstream-vera-1.10\VeraMoIt.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Bitstream Vera Sans Mono Oblique
 
 
 [Icons]
@@ -46,7 +38,7 @@ AllowNoIcons=true
 PrivilegesRequired=admin
 ChangesAssociations=true
 InfoBeforeFile=
-LicenseFile=C:\Users\Dennis\Documents\GitHub\WhackEd4\LICENSE
+LicenseFile=LICENSE
 FlatComponentsList=true
 UninstallLogMode=overwrite
 LanguageDetectionMethod=none
