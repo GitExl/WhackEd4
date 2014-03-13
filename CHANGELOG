@@ -1,7 +1,8 @@
 Version 1.0.3
 -------------
+Fixed: Warnings about missing color profiles on some systems.
 Changed: invalid graphics are previewed as "BAD IMAGE" instead of crashing.
-Changed: updated wxWidgets to 2.9.5.
+Changed: updated wxWidgets to 3.0.0.
 
 Version 1.0.2
 -------------
