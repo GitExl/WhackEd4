@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version Feb 26 2014)
+## Python code generated with wxFormBuilder (version Jun  5 2014)
 ## http://www.wxformbuilder.org/
 ##
 ## PLEASE DO "NOT" EDIT THIS FILE!
@@ -199,23 +199,23 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.MainToolbar = self.CreateToolBar( wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL, wx.ID_ANY )
 		self.MainToolbar.SetToolBitmapSize( wx.Size( 40,40 ) )
 		self.MainToolbar.SetToolSeparation( 1 )
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u" Things", wx.Bitmap( u"res/editor-things.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.ToolThings = self.MainToolbar.AddLabelTool( MAIN_TOOL_THINGS, u" Things", wx.Bitmap( u"res/editor-things.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_STATES, u" States", wx.Bitmap( u"res/editor-states.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.ToolStates = self.MainToolbar.AddLabelTool( MAIN_TOOL_STATES, u" States", wx.Bitmap( u"res/editor-states.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_SOUNDS, u" Sounds", wx.Bitmap( u"res/editor-sounds.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.ToolSounds = self.MainToolbar.AddLabelTool( MAIN_TOOL_SOUNDS, u" Sounds", wx.Bitmap( u"res/editor-sounds.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_STRINGS, u" Strings", wx.Bitmap( u"res/editor-strings.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.ToolStrings = self.MainToolbar.AddLabelTool( MAIN_TOOL_STRINGS, u" Strings", wx.Bitmap( u"res/editor-strings.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_WEAPONS, u" Weapons", wx.Bitmap( u"res/editor-weapons.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.ToolsWeapons = self.MainToolbar.AddLabelTool( MAIN_TOOL_WEAPONS, u" Weapons", wx.Bitmap( u"res/editor-weapons.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_AMMO, u" Ammo", wx.Bitmap( u"res/editor-ammo.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.ToolAmmo = self.MainToolbar.AddLabelTool( MAIN_TOOL_AMMO, u" Ammo", wx.Bitmap( u"res/editor-ammo.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_CHEATS, u" Cheats", wx.Bitmap( u"res/editor-cheats.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.ToolCheats = self.MainToolbar.AddLabelTool( MAIN_TOOL_CHEATS, u" Cheats", wx.Bitmap( u"res/editor-cheats.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_MISC, u" Miscellaneous  ", wx.Bitmap( u"res/editor-misc.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.ToolMiscellaneous = self.MainToolbar.AddLabelTool( MAIN_TOOL_MISC, u" Miscellaneous  ", wx.Bitmap( u"res/editor-misc.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.MainToolbar.AddLabelTool( MAIN_TOOL_PAR, u" Par times", wx.Bitmap( u"res/editor-par.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
+		self.ToolPar = self.MainToolbar.AddLabelTool( MAIN_TOOL_PAR, u" Par times", wx.Bitmap( u"res/editor-par.ico", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.MainToolbar.Realize() 
 		
@@ -322,15 +322,15 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		
 		# Connect Events
 		self.Bind( wx.EVT_CLOSE, self.close )
-		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = MAIN_TOOL_THINGS )
-		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = MAIN_TOOL_STATES )
-		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = MAIN_TOOL_SOUNDS )
-		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = MAIN_TOOL_STRINGS )
-		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = MAIN_TOOL_WEAPONS )
-		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = MAIN_TOOL_AMMO )
-		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = MAIN_TOOL_CHEATS )
-		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = MAIN_TOOL_MISC )
-		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = MAIN_TOOL_PAR )
+		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = self.ToolThings.GetId() )
+		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = self.ToolStates.GetId() )
+		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = self.ToolSounds.GetId() )
+		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = self.ToolStrings.GetId() )
+		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = self.ToolsWeapons.GetId() )
+		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = self.ToolAmmo.GetId() )
+		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = self.ToolCheats.GetId() )
+		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = self.ToolMiscellaneous.GetId() )
+		self.Bind( wx.EVT_TOOL, self.editor_window_tooltoggle, id = self.ToolPar.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_new, id = self.MenuFileNew.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_open, id = self.MenuFileOpen.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_open_as, id = self.MenuFileOpenAs.GetId() )
@@ -1363,7 +1363,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.FilterTools.SetToolSeparation( 0 )
 		self.FilterTools.SetMargins( wx.Size( 0,0 ) )
 		self.FilterTools.SetToolPacking( 0 )
-		self.FilterTools.AddLabelTool( STATES_FILTERTOOLS_REFRESH, u"tool", wx.Bitmap( u"res/icon-refresh.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"Refreshes the state list.", wx.EmptyString, None ) 
+		self.FilterToolRefresh = self.FilterTools.AddLabelTool( STATES_FILTERTOOLS_REFRESH, u"tool", wx.Bitmap( u"res/icon-refresh.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"Refreshes the state list.", wx.EmptyString, None ) 
 		
 		self.FilterTools.Realize() 
 		
@@ -1410,7 +1410,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.Parameter2.Bind( wx.EVT_TEXT, self.set_value )
 		self.Restore.Bind( wx.EVT_BUTTON, self.state_restore )
 		self.Filter.Bind( wx.EVT_CHOICE, self.filter_select )
-		self.Bind( wx.EVT_TOOL, self.filter_select, id = STATES_FILTERTOOLS_REFRESH )
+		self.Bind( wx.EVT_TOOL, self.filter_select, id = self.FilterToolRefresh.GetId() )
 		self.StateList.Bind( wx.EVT_LEFT_DOWN, self.state_link )
 		self.StateList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.select_sprite )
 		self.StateList.Bind( wx.EVT_LIST_ITEM_DESELECTED, self.state_deselect )
@@ -2508,9 +2508,9 @@ class ParFrameBase ( wx.MDIChildFrame ):
 		bSizer97 = wx.BoxSizer( wx.VERTICAL )
 		
 		self.Tools = wx.ToolBar( self, PAR_TOOLS, wx.DefaultPosition, wx.DefaultSize, wx.TB_FLAT|wx.TB_NODIVIDER|wx.TB_VERTICAL ) 
-		self.Tools.AddLabelTool( PAR_TOOL_ADD, u"tool", wx.Bitmap( u"res/icon-plus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.Add = self.Tools.AddLabelTool( PAR_TOOL_ADD, u"tool", wx.Bitmap( u"res/icon-plus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.Tools.AddLabelTool( PAR_TOOL_REMOVE, u"tool", wx.Bitmap( u"res/icon-minus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.Remove = self.Tools.AddLabelTool( PAR_TOOL_REMOVE, u"tool", wx.Bitmap( u"res/icon-minus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.Tools.Realize() 
 		
@@ -2520,7 +2520,7 @@ class ParFrameBase ( wx.MDIChildFrame ):
 		bSizer98.Add( bSizer97, 0, wx.ALL|wx.EXPAND, 6 )
 		
 		
-		bSizer41.Add( bSizer98, 1, wx.EXPAND, 5 )
+		bSizer41.Add( bSizer98, 0, wx.EXPAND, 5 )
 		
 		self.ParList = wx.ListCtrl( self, PAR_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
 		bSizer41.Add( self.ParList, 1, wx.EXPAND, 5 )
@@ -2536,8 +2536,8 @@ class ParFrameBase ( wx.MDIChildFrame ):
 		self.Map.Bind( wx.EVT_TEXT, self.set_value )
 		self.Seconds.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Seconds.Bind( wx.EVT_TEXT, self.set_value )
-		self.Bind( wx.EVT_TOOL, self.par_add, id = PAR_TOOL_ADD )
-		self.Bind( wx.EVT_TOOL, self.par_remove, id = PAR_TOOL_REMOVE )
+		self.Bind( wx.EVT_TOOL, self.par_add, id = self.Add.GetId() )
+		self.Bind( wx.EVT_TOOL, self.par_remove, id = self.Remove.GetId() )
 		self.ParList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.par_select )
 		self.ParList.Bind( wx.EVT_SIZE, self.parlist_resize )
 	
@@ -2864,9 +2864,9 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		bSizer63 = wx.BoxSizer( wx.VERTICAL )
 		
 		self.m_toolBar3 = wx.ToolBar( self, PATCHINFO_TOOLBAR, wx.DefaultPosition, wx.DefaultSize, wx.TB_FLAT|wx.TB_NODIVIDER|wx.TB_VERTICAL ) 
-		self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_ADD, u"tool", wx.Bitmap( u"res/icon-plus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.AddPWAD = self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_ADD, u"tool", wx.Bitmap( u"res/icon-plus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
-		self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_REMOVE, u"tool", wx.Bitmap( u"res/icon-minus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
+		self.RemovePWAD = self.m_toolBar3.AddLabelTool( PATCHINFO_TOOLBAR_REMOVE, u"tool", wx.Bitmap( u"res/icon-minus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None ) 
 		
 		self.m_toolBar3.Realize() 
 		
@@ -2907,8 +2907,8 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		self.EngineList.Bind( wx.EVT_CHOICE, self.engine_select )
 		self.IWADBrowse.Bind( wx.EVT_BUTTON, self.browse_iwad )
 		self.IWADDelete.Bind( wx.EVT_BUTTON, self.delete_iwad )
-		self.Bind( wx.EVT_TOOL, self.pwad_add, id = PATCHINFO_TOOLBAR_ADD )
-		self.Bind( wx.EVT_TOOL, self.pwad_remove, id = PATCHINFO_TOOLBAR_REMOVE )
+		self.Bind( wx.EVT_TOOL, self.pwad_add, id = self.AddPWAD.GetId() )
+		self.Bind( wx.EVT_TOOL, self.pwad_remove, id = self.RemovePWAD.GetId() )
 		self.ButtonOk.Bind( wx.EVT_BUTTON, self.ok )
 		self.ButtonCancel.Bind( wx.EVT_BUTTON, self.cancel )
 	
@@ -3089,7 +3089,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText139.Wrap( -1 )
 		bSizer56.Add( self.m_staticText139, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, tempun, un4seen, WildWeasel, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
+		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Da Werecat, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, tempun, un4seen, WildWeasel, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
 		self.m_staticText138.Wrap( 450 )
 		bSizer56.Add( self.m_staticText138, 1, wx.ALL, 6 )
 		
