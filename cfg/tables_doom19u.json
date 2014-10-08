@@ -264,11 +264,11 @@
         }, 
         "185808": {
             "description": "Weapon deselect.", 
-            "name": "Raise"
+            "name": "Lower"
         }, 
         "185872": {
             "description": "Weapon select.", 
-            "name": "Lower"
+            "name": "Raise"
         }, 
         "185936": {
             "description": "Display the weapon's firing flash sprite over the regular weapon sprite.", 

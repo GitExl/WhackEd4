@@ -1830,7 +1830,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Raise", 
+            "action": "Lower", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -1839,7 +1839,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Lower", 
+            "action": "Raise", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -1902,7 +1902,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Raise", 
+            "action": "Lower", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -1911,7 +1911,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Lower", 
+            "action": "Raise", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -1974,7 +1974,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Raise", 
+            "action": "Lower", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -1983,7 +1983,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Lower", 
+            "action": "Raise", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2100,7 +2100,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Raise", 
+            "action": "Lower", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2109,7 +2109,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Lower", 
+            "action": "Raise", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2253,7 +2253,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Raise", 
+            "action": "Lower", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2262,7 +2262,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Lower", 
+            "action": "Raise", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2325,7 +2325,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Raise", 
+            "action": "Lower", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2334,7 +2334,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Lower", 
+            "action": "Raise", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2424,7 +2424,7 @@
             "spriteFrame": 3
         }, 
         {
-            "action": "Raise", 
+            "action": "Lower", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2433,7 +2433,7 @@
             "spriteFrame": 2
         }, 
         {
-            "action": "Lower", 
+            "action": "Raise", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2478,7 +2478,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Raise", 
+            "action": "Lower", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2487,7 +2487,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Lower", 
+            "action": "Raise", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2541,7 +2541,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Raise", 
+            "action": "Lower", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
@@ -2550,7 +2550,7 @@
             "spriteFrame": 0
         }, 
         {
-            "action": "Lower", 
+            "action": "Raise", 
             "duration": 1, 
             "parameter1": 0, 
             "parameter2": 0, 
