@@ -1,3 +1,7 @@
+Version 1.0.4
+-------------
+Changed: The weapon deselect and select state labels have been swapped. Internally they are still swapped to preserve the original erroneous Dehacked behaviour.
+
 Version 1.0.3
 -------------
 Fixed: Warnings about missing color profiles on some systems.
