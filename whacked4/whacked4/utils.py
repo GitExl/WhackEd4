@@ -57,6 +57,12 @@ def focus_text(event, parent):
     """
     
     window = parent.FindWindowById(event.GetId())
+
+    # Detect already selected characters.
+    selfrom, selto = window.GetSelection()
+    if selfrom != selto:
+        return
+
     window.SetSelection(-1, -1)
     
     
