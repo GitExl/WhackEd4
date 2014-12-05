@@ -11936,17 +11936,7 @@
             "name": "Color 2 (brown\\red)", 
             "description": "This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set)."
         },
-        "UNUSED1": {
-            "index": 27,
-            "name": "Color 2 (brown\\red)", 
-            "description": "This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set)."
-        },
         "TOUCHY": {
-            "index": 28,
-            "name": "Dies on impact", 
-            "description": "Died on impact with any solid object."
-        },
-        "UNUSED2": {
             "index": 28,
             "name": "Dies on impact", 
             "description": "Died on impact with any solid object."
@@ -11956,17 +11946,7 @@
             "name": "Bounces", 
             "description": "Bounces off floors, ceilings and maybe walls."
         },
-        "UNUSED3": {
-            "index": 29,
-            "name": "Bounces", 
-            "description": "Bounces off floors, ceilings and maybe walls."
-        },
         "FRIEND": {
-            "index": 30,
-            "name": "Friendly", 
-            "description": "A friend of the player."
-        },
-        "UNUSED4": {
             "index": 30,
             "name": "Friendly", 
             "description": "A friend of the player."
@@ -11975,6 +11955,26 @@
             "index": 31,
             "name": "Translucent", 
             "description": "Apply translucency."
+        },
+        "UNUSED1": {
+            "index": 27,
+            "name": "Color 2 (brown\\red)", 
+            "description": "This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set)."
+        },
+        "UNUSED2": {
+            "index": 28,
+            "name": "Dies on impact", 
+            "description": "Died on impact with any solid object."
+        },
+        "UNUSED3": {
+            "index": 29,
+            "name": "Bounces", 
+            "description": "Bounces off floors, ceilings and maybe walls."
+        },
+        "UNUSED4": {
+            "index": 30,
+            "name": "Friendly", 
+            "description": "A friend of the player."
         }
     },
     "thingNames": [
