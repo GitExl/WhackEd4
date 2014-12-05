@@ -1683,7 +1683,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer87 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText881 = wx.StaticText( self, wx.ID_ANY, u"Deselect state", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText881 = wx.StaticText( self, wx.ID_ANY, u"Lower state", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText881.Wrap( -1 )
 		bSizer87.Add( self.m_staticText881, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -1713,7 +1713,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer88 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText8811 = wx.StaticText( self, wx.ID_ANY, u"Select state", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText8811 = wx.StaticText( self, wx.ID_ANY, u"Raise state", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText8811.Wrap( -1 )
 		bSizer88.Add( self.m_staticText8811, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 		
