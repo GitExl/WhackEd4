@@ -52,10 +52,21 @@
 	<div id="container">
 		<div id="content">
 			<h1 id="section-changelog">Changelog</h1>
+			<h2>Version 1.0.4</h2>
+			<ul>
+				<li>Fixed: added missing state 895 to the list of hardcoded used states.</li>
+				<li>Fixed: added the second Chaingun muzzle flash state to the chaingun state filter.</li>
+				<li>Fixed: unused thing flag mnemonics being displayed and saved for the MBF engine configuration.</li>
+				<li>Changed: the weapon deselect and select state labels have been swapped. Internally they are still swapped to preserve the original erroneous Dehacked behaviour.</li>
+				<li>Changed: renamed the Deselect and Select weapon states to Lower and Raise states respectively, to better reflect what they are supposed to do.</li>
+				<li>Changed: characters can now be selected inside input fields without selecting the entire field.</li>
+				<li>Changed: updated to wxWidgets 3.0.2.</li>
+			</ul>
+
 			<h2>Version 1.0.3</h2>
 			<ul>
-				<li>Fixed: Warnings about missing color profiles on some systems.</li>
-        <li>Fixed: The Lower and Raise state were (still) erroneously swapped.</li>
+				<li>Fixed: warnings about missing color profiles on some systems.</li>
+        <li>Fixed: the Lower and Raise state were (still) erroneously swapped.</li>
 				<li>Changed: invalid graphics are previewed as "BAD IMAGE" instead of crashing.</li>
 				<li>Changed: updated wxWidgets to 3.0.0.</li>
 			</ul>
@@ -67,7 +78,7 @@
 				<li>Added: thing index numbers in the things editor.</li>
 				<li>Fixed: -1 state durations could not be entered.</li>
 				<li>Fixed: crash when trying to display a sprite with an invalid file format.</li>
-				<li>Changed: Detect additional thing flag delimiters supported by some source ports.</li>
+				<li>Changed: detect additional thing flag delimiters supported by some source ports.</li>
 			</ul>
 
 			<h2>Version 1.0.1</h2>
@@ -89,7 +100,7 @@
 
 			<h2>Version 0.9.1 beta</h2>
 			<ul>
-				<li>Changed: Allow patch load messages to be ignored.</li>
+				<li>Changed: allow patch load messages to be ignored.</li>
 				<li>Changed: Make patch reading and writing less exception-prone.</li>
 				<li>Changed: exit application after an exception has occurred.</li>
 				<li>Changed: restructure startup into App object, and add exception dialog.</li>
@@ -97,7 +108,7 @@
 				<li>Fixed: exception dialog not closing application.</li>
 				<li>Fixed: exceptions not displaying if a busy cursor was set.</li>
 				<li>Fixed: clean the recent files list before displaying it in the startup dialog.</li>
-				<li>Fixed: Fix cheat keys being displayed instead of names.</li>
+				<li>Fixed: fix cheat keys being displayed instead of names.</li>
 				<li>Fixed: cheats being displayed in the wrong order.</li>
 				<li>Fixed: Ammo &amp; Keys patch key capitalization.</li>
 				<li>Fixed: state action editing issues in non-extended patches.</li>
