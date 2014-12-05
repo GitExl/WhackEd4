@@ -1,11 +1,17 @@
 Version 1.0.4
 -------------
-Changed: The weapon deselect and select state labels have been swapped. Internally they are still swapped to preserve the original erroneous Dehacked behaviour.
+Fixed: added missing state 895 to the list of hardcoded used states.
+Fixed: added the second Chaingun muzzle flash state to the chaingun state filter.
+Fixed: unused thing flag mnemonics being displayed and saved for the MBF engine configuration.
+Changed: the weapon deselect and select state labels have been swapped. Internally they are still swapped to preserve the original erroneous Dehacked behaviour.
+Changed: renamed the Deselect and Select weapon states to Lower and Raise states respectively, to better reflect what they are supposed to do.
+Changed: characters can now be selected inside input fields without selecting the entire field.
+Changed: updated to wxWidgets 3.0.2.
 
 Version 1.0.3
 -------------
 Fixed: Warnings about missing color profiles on some systems.
-Fixed: The Lower and Raise state were (still) erroneously swapped.
+Fixed: the Lower and Raise state were (still) erroneously swapped.
 Changed: invalid graphics are previewed as "BAD IMAGE" instead of crashing.
 Changed: updated wxWidgets to 3.0.0.
 
@@ -16,7 +22,7 @@ Added: RandomJump states are now recognized as using the state in parameter1.
 Added: thing index numbers in the things editor.
 Fixed: -1 state durations could not be entered.
 Fixed: crash when trying to display a sprite with an invalid file format.
-Changed: Detect additional thing flag delimiters supported by some source ports.
+Changed: detect additional thing flag delimiters supported by some source ports.
 
 Version 1.0.1
 -------------
@@ -34,7 +40,7 @@ Fixed: state pasting not updating the filtered list.
 
 Version 0.9.1 beta
 ------------------
-Changed: Allow patch load messages to be ignored.
+Changed: allow patch load messages to be ignored.
 Changed: Make patch reading and writing less exception-prone.
 Changed: exit application after an exception has occurred.
 Changed: restructure startup into App object, and add exception dialog.
