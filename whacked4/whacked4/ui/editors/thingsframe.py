@@ -150,7 +150,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         thing = self.patch.things[row_index]
         thing_name = self.patch.things.names[row_index]
         
-        self.ThingList.SetItemText(row_index, str(row_index))
+        self.ThingList.SetItemText(row_index, str(row_index + 1))
         self.ThingList.SetStringItem(row_index, 1, thing_name)
         self.ThingList.SetStringItem(row_index, 2, str(thing['id']))
         self.ThingList.SetStringItem(row_index, 3, str(thing['health']))

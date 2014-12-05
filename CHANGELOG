@@ -1,6 +1,7 @@
 Version 1.0.5
 -------------
 Fixed: sound numbering and setting used sound 1 as the dummy sound.
+Changed: thing list indices start at 1 to make using state actions like MBF's Spawn easier.
 
 Version 1.0.4
 -------------
