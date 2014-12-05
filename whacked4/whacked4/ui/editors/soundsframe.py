@@ -19,6 +19,14 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
     def __init__(self, params):
         windows.SoundsFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
+
+        # A list of all tool windows for simple mass operations.
+        self.WINDOWS_TOOLS = [
+            self.Priority,
+            self.PrioritySpinner,
+            self.Singular,
+            self.Restore
+        ]
         
         self.SetIcon(wx.Icon('res/editor-sounds.ico'))
         
@@ -38,8 +46,9 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             return
         
         # Update sound names only.
+        self.SoundList.SetStringItem(0, 1, '-')
         for index, name in enumerate(self.patch.sound_names):
-            self.SoundList.SetStringItem(index, 1, name.upper())
+            self.SoundList.SetStringItem(index + 1, 1, name.upper())
         
         
     def build_colours(self):
@@ -72,6 +81,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         self.pwads = self.GetParent().pwads
         
         self.selected_index = -1
+        self.selected_row = -1
         
         self.soundlist_build()
         
@@ -90,43 +100,59 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             self.SoundList.InsertColumn(2, 'Priority', width=50)
             self.SoundList.InsertColumn(3, 'Singular', width=58)
         
+        # Add dummy sound.
+        self.SoundList.InsertStringItem(0, '0')
+        self.SoundList.SetItemFont(0, config.FONT_MONOSPACED)
+        self.soundlist_update_row(0, 0)
+
+        # Add real sounds.
         for sound_index in range(len(self.patch.sounds)):
-            self.SoundList.InsertStringItem(sound_index, str(sound_index))            
-            self.SoundList.SetItemFont(sound_index, config.FONT_MONOSPACED)
+            self.SoundList.InsertStringItem(sound_index + 1, str(sound_index + 1))
+            self.SoundList.SetItemFont(sound_index + 1, config.FONT_MONOSPACED)
             
-            self.soundlist_update_row(sound_index)
+            self.soundlist_update_row(sound_index + 1, sound_index)
             
         self.list_autosize(self.SoundList)
         self.SoundList.Select(0, True)
             
             
-    def soundlist_update_row(self, row_index):
+    def soundlist_update_row(self, row_index, sound_index):
         """
         Updates a sound list row with the data for that sound.
         """
-        
-        sound = self.patch.sounds[row_index]
-        sound_name = self.patch.sound_names[row_index]
+
+        if row_index == 0:
+            self.SoundList.SetStringItem(row_index, 1, '-')
+            self.SoundList.SetStringItem(row_index, 2, '')
+            self.SoundList.SetStringItem(row_index, 3, '')
             
-        if sound['isSingular'] == 1:
-            singular = 'X'
+            # Colour-code rows by priority.
+            self.SoundList.SetItemBackgroundColour(row_index, self.priority_colours[0])
+
         else:
-            singular = ''
-        
-        self.SoundList.SetStringItem(row_index, 1, sound_name.upper())
-        self.SoundList.SetStringItem(row_index, 2, str(sound['priority']))
-        self.SoundList.SetStringItem(row_index, 3, singular)
-        
-        # Colour-code rows by priority.
-        self.SoundList.SetItemBackgroundColour(row_index, self.priority_colours[sound['priority'] / 32])
+            sound = self.patch.sounds[sound_index]
+            sound_name = self.patch.sound_names[sound_index]
+                
+            if sound['isSingular'] == 1:
+                singular = 'X'
+            else:
+                singular = ''
+            
+            self.SoundList.SetStringItem(row_index, 1, sound_name.upper())
+            self.SoundList.SetStringItem(row_index, 2, str(sound['priority']))
+            self.SoundList.SetStringItem(row_index, 3, singular)
+            
+            # Colour-code rows by priority.
+            self.SoundList.SetItemBackgroundColour(row_index, self.priority_colours[sound['priority'] / 32])
     
         
-    def sound_select_index(self, sound_index):
+    def sound_select_index(self, row_index, sound_index):
         """
         Selects a sound by sound index.
         """
         
         self.selected_index = sound_index
+        self.selected_row = row_index
         self.update_properties()
         
         
@@ -138,7 +164,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         self.undo_add()
         
         self.patch.sounds[self.selected_index] = copy.deepcopy(self.patch.engine.sounds[self.selected_index])
-        self.soundlist_update_row(self.selected_index)
+        self.soundlist_update_row(self.selected_row, self.selected_index)
         self.update_properties()
         self.is_modified(True)
         
@@ -148,6 +174,9 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         Plays the currently selected sound.
         """
         
+        if self.selected_row == 0:
+            return
+
         utils.sound_play(self.patch.sound_names[self.selected_index], self.pwads)
 
 
@@ -156,11 +185,29 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         Update the displayed property controls.
         """
         
-        sound = self.patch.sounds[self.selected_index]
-        singular = (sound['isSingular'] == 1)
+        if self.selected_row == 0:
+            self.Priority.ChangeValue('')
+            self.Singular.SetValue(False)
+
+            self.tools_set_state(False)
+
+        else:
+            sound = self.patch.sounds[self.selected_index]
+            singular = (sound['isSingular'] == 1)
+            
+            self.Priority.ChangeValue(str(sound['priority']))
+            self.Singular.SetValue(singular)
+
+            self.tools_set_state(True)
+
+
+    def tools_set_state(self, enabled):
+        """
+        Sets the state of all tool controls.
+        """
         
-        self.Priority.ChangeValue(str(sound['priority']))
-        self.Singular.SetValue(singular)
+        for window in self.WINDOWS_TOOLS:
+            window.Enable(enabled)
 
 
     def set_singular(self, event):
@@ -178,7 +225,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         else:
             sound['isSingular'] = 0
             
-        self.soundlist_update_row(self.selected_index)
+        self.soundlist_update_row(self.selected_row, self.selected_index)
         self.is_modified(True)
 
 
@@ -203,7 +250,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         sound = self.patch.sounds[self.selected_index]
         sound['priority'] = value
         
-        self.soundlist_update_row(self.selected_index)
+        self.soundlist_update_row(self.selected_row, self.selected_index)
         self.is_modified(True)
         
         
@@ -221,9 +268,9 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         """
         @see: EditorMixin.undo_restore_item
         """
-        
+
         self.patch.sounds[item['index']] = item['item']
-        self.soundlist_update_row(item['index'])
+        self.soundlist_update_row(item['index'] + 1, item['index'])
         self.update_properties()
         
         
@@ -231,7 +278,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         """
         @see: EditorMixin.undo_store_item
         """
-        
+
         return {
             'item': copy.deepcopy(self.patch.sounds[self.selected_index]),
             'index': self.selected_index
@@ -243,7 +290,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         Called when a sound row is selected from the list.
         """
         
-        self.sound_select_index(event.GetIndex())
+        self.sound_select_index(event.GetIndex(), event.GetIndex() - 1)
         
         
     def priority_spin_up(self, event):

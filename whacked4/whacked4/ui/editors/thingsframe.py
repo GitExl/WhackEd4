@@ -465,7 +465,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         sounds_frame = parent.editor_windows[windows.MAIN_TOOL_SOUNDS]
 
         text_ctrl = self.FindWindowById(self.PROPS_SOUNDSET[event.GetId()])
-        text_ctrl.SetValue(str(sounds_frame.selected_index))
+        text_ctrl.SetValue(str(sounds_frame.selected_row))
         self.is_modified(True)
     
     

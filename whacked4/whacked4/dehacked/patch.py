@@ -700,11 +700,13 @@ class Patch:
         Returns a sound's name.
         """
         
+        sound_index -= 1
+
         # Index 0 indicates no sound.
-        if sound_index == 0:
+        if sound_index == -1:
             return '-'
         
         if sound_index > len(self.engine.sound_names):
             return '????'
         else:
-            return self.engine.sound_names[sound_index - 1].upper()
+            return self.engine.sound_names[sound_index].upper()
