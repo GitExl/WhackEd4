@@ -188,13 +188,16 @@ class StateFilter:
         Adds states that belong to a hack setting.
         """
 
-        # If a weapon uses the plasma firing action, mark it's 2nd muzzle state as used.
+        # If a weapon uses the plasma or chaingun firing action, mark it's 2nd muzzle state as used.
         plasma_action = self.patch.engine.get_action_from_name('FirePlasma')
+        cg_action = self.patch.engine.get_action_from_name('FireCGun')
+
         fire_state = weapon['stateFire']
-        if self.patch.states[fire_state]['action'] == plasma_action:
+        action = self.patch.states[fire_state]['action']
+        if action == plasma_action or action == cg_action:
             muzzle_state = weapon['stateMuzzle']
             states_list[muzzle_state + 1] = True
-    
+
     
     def add_thing_states(self, states_list, thing):
         """
