@@ -425,9 +425,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 840,580 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 840,600 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 840,580 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 840,600 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		Sizer26 = wx.BoxSizer( wx.HORIZONTAL )
@@ -559,7 +559,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		Sizer27.Add( self.ThingFlags, 1, wx.EXPAND|wx.FIXED_MINSIZE, 0 )
 		
 		
-		Sizer26.Add( Sizer27, 0, wx.ALL|wx.EXPAND, 6 )
+		Sizer26.Add( Sizer27, 1, wx.ALL|wx.EXPAND, 6 )
 		
 		
 		Sizer26.AddSpacer( ( 6, 0), 0, 0, 0 )
@@ -1195,9 +1195,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 780,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 780,500 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 780,480 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 780,500 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -1216,7 +1216,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer52 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText39 = wx.StaticText( self, wx.ID_ANY, u"Sprite", wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.m_staticText39 = wx.StaticText( self, wx.ID_ANY, u"Sprite", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText39.Wrap( -1 )
 		bSizer52.Add( self.m_staticText39, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -1241,7 +1241,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer521 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText391 = wx.StaticText( self, wx.ID_ANY, u"Frame", wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.m_staticText391 = wx.StaticText( self, wx.ID_ANY, u"Frame", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText391.Wrap( -1 )
 		bSizer521.Add( self.m_staticText391, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -1262,7 +1262,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer5211 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText3911 = wx.StaticText( self, wx.ID_ANY, u"Next state", wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.m_staticText3911 = wx.StaticText( self, wx.ID_ANY, u"Next state", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText3911.Wrap( -1 )
 		bSizer5211.Add( self.m_staticText3911, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -1285,7 +1285,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer5212 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText3912 = wx.StaticText( self, wx.ID_ANY, u"Duration", wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.m_staticText3912 = wx.StaticText( self, wx.ID_ANY, u"Duration", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText3912.Wrap( -1 )
 		bSizer5212.Add( self.m_staticText3912, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -1301,7 +1301,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer521211 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText54 = wx.StaticText( self, wx.ID_ANY, u"Action", wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.m_staticText54 = wx.StaticText( self, wx.ID_ANY, u"Action", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54.Wrap( -1 )
 		bSizer521211.Add( self.m_staticText54, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
@@ -1315,7 +1315,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer52121 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText541 = wx.StaticText( self, wx.ID_ANY, u"Parameters", wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.m_staticText541 = wx.StaticText( self, wx.ID_ANY, u"Parameters", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText541.Wrap( -1 )
 		bSizer52121.Add( self.m_staticText541, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
