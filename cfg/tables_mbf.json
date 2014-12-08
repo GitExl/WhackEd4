@@ -11811,12 +11811,12 @@
         }, 
         "NOSECTOR": {
             "index": 3,
-            "name": "Invisible & touchable", 
+            "name": "Invisible && touchable", 
             "description": "This thing is invisible, but touchable."
         }, 
         "NOBLOCKMAP": {
             "index": 4,
-            "name": "Visible & untouchable", 
+            "name": "Visible && untouchable", 
             "description": "This thing is visible, but untouchable."
         }, 
         "AMBUSH": {
