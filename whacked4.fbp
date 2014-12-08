@@ -835,7 +835,7 @@
                 <object class="sizeritem" expanded="0">
                     <property name="border">6</property>
                     <property name="flag">wxALL|wxEXPAND</property>
-                    <property name="proportion">1</property>
+                    <property name="proportion">0</property>
                     <object class="wxBoxSizer" expanded="0">
                         <property name="minimum_size">-1,-1</property>
                         <property name="name">Sizer27</property>
@@ -2334,7 +2334,7 @@
                                     <property name="border">5</property>
                                     <property name="flag">wxALIGN_CENTER_VERTICAL|wxALL</property>
                                     <property name="proportion">1</property>
-                                    <object class="wxStaticText" expanded="1">
+                                    <object class="wxStaticText" expanded="0">
                                         <property name="BottomDockable">1</property>
                                         <property name="LeftDockable">1</property>
                                         <property name="RightDockable">1</property>
@@ -2413,11 +2413,11 @@
                                         <event name="OnUpdateUI"></event>
                                     </object>
                                 </object>
-                                <object class="sizeritem" expanded="1">
+                                <object class="sizeritem" expanded="0">
                                     <property name="border">3</property>
                                     <property name="flag">wxALIGN_CENTER_VERTICAL|wxALL</property>
                                     <property name="proportion">0</property>
-                                    <object class="wxTextCtrl" expanded="1">
+                                    <object class="wxTextCtrl" expanded="0">
                                         <property name="BottomDockable">1</property>
                                         <property name="LeftDockable">1</property>
                                         <property name="RightDockable">1</property>
@@ -2506,21 +2506,21 @@
                                 </object>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">5</property>
                             <property name="flag">wxEXPAND</property>
                             <property name="proportion">0</property>
-                            <object class="spacer" expanded="1">
+                            <object class="spacer" expanded="0">
                                 <property name="height">12</property>
                                 <property name="permission">protected</property>
                                 <property name="width">0</property>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">0</property>
-                            <property name="flag">wxEXPAND|wxFIXED_MINSIZE</property>
+                            <property name="flag">wxEXPAND</property>
                             <property name="proportion">1</property>
-                            <object class="wxCheckListBox" expanded="1">
+                            <object class="wxCheckListBox" expanded="0">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
                                 <property name="RightDockable">1</property>
@@ -2554,7 +2554,7 @@
                                 <property name="maximum_size"></property>
                                 <property name="min_size"></property>
                                 <property name="minimize_button">0</property>
-                                <property name="minimum_size"></property>
+                                <property name="minimum_size">200,-1</property>
                                 <property name="moveable">1</property>
                                 <property name="name">ThingFlags</property>
                                 <property name="pane_border">1</property>
@@ -2940,7 +2940,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingStateSpawnSet</property>
                                                 <property name="pane_border">1</property>
@@ -3296,7 +3296,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingStateWalkSet</property>
                                                 <property name="pane_border">1</property>
@@ -3652,7 +3652,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingStatePainSet</property>
                                                 <property name="pane_border">1</property>
@@ -4008,7 +4008,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingStateMeleeSet</property>
                                                 <property name="pane_border">1</property>
@@ -4364,7 +4364,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingStateAttackSet</property>
                                                 <property name="pane_border">1</property>
@@ -4720,7 +4720,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingStateDeathSet</property>
                                                 <property name="pane_border">1</property>
@@ -5076,7 +5076,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingStateExplodeSet</property>
                                                 <property name="pane_border">1</property>
@@ -5432,7 +5432,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingStateRaiseSet</property>
                                                 <property name="pane_border">1</property>
@@ -5798,7 +5798,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingSoundAlertSet</property>
                                                 <property name="pane_border">1</property>
@@ -6154,7 +6154,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingSoundAttackSet</property>
                                                 <property name="pane_border">1</property>
@@ -6510,7 +6510,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingSoundPainSet</property>
                                                 <property name="pane_border">1</property>
@@ -6866,7 +6866,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingSoundDeathSet</property>
                                                 <property name="pane_border">1</property>
@@ -7222,7 +7222,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">22,22</property>
+                                                <property name="minimum_size">25,25</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">ThingSoundActiveSet</property>
                                                 <property name="pane_border">1</property>
@@ -8268,7 +8268,7 @@
                                                 <property name="pos"></property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">28,-1</property>
+                                                <property name="size">30,-1</property>
                                                 <property name="style"></property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
@@ -11531,7 +11531,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="min_size"></property>
                                                         <property name="minimize_button">0</property>
-                                                        <property name="minimum_size">22,22</property>
+                                                        <property name="minimum_size">25,25</property>
                                                         <property name="moveable">1</property>
                                                         <property name="name">WeaponStateSelectSet</property>
                                                         <property name="pane_border">1</property>
@@ -11898,7 +11898,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="min_size"></property>
                                                         <property name="minimize_button">0</property>
-                                                        <property name="minimum_size">22,22</property>
+                                                        <property name="minimum_size">25,25</property>
                                                         <property name="moveable">1</property>
                                                         <property name="name">WeaponStateDeselectSet</property>
                                                         <property name="pane_border">1</property>
@@ -12265,7 +12265,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="min_size"></property>
                                                         <property name="minimize_button">0</property>
-                                                        <property name="minimum_size">22,22</property>
+                                                        <property name="minimum_size">25,25</property>
                                                         <property name="moveable">1</property>
                                                         <property name="name">WeaponStateBobSet</property>
                                                         <property name="pane_border">1</property>
@@ -12632,7 +12632,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="min_size"></property>
                                                         <property name="minimize_button">0</property>
-                                                        <property name="minimum_size">22,22</property>
+                                                        <property name="minimum_size">25,25</property>
                                                         <property name="moveable">1</property>
                                                         <property name="name">WeaponStateFireSet</property>
                                                         <property name="pane_border">1</property>
@@ -12999,7 +12999,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="min_size"></property>
                                                         <property name="minimize_button">0</property>
-                                                        <property name="minimum_size">22,22</property>
+                                                        <property name="minimum_size">25,25</property>
                                                         <property name="moveable">1</property>
                                                         <property name="name">WeaponStateMuzzleSet</property>
                                                         <property name="pane_border">1</property>
@@ -20513,7 +20513,7 @@
                                 <property name="pos"></property>
                                 <property name="resize">Resizable</property>
                                 <property name="show">1</property>
-                                <property name="size">32,23</property>
+                                <property name="size">32,25</property>
                                 <property name="style"></property>
                                 <property name="subclass"></property>
                                 <property name="toolbar_pane">0</property>
@@ -20601,7 +20601,7 @@
                                 <property name="pos"></property>
                                 <property name="resize">Resizable</property>
                                 <property name="show">1</property>
-                                <property name="size">32,23</property>
+                                <property name="size">32,25</property>
                                 <property name="style"></property>
                                 <property name="subclass"></property>
                                 <property name="toolbar_pane">0</property>
