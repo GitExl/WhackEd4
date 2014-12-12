@@ -12,6 +12,9 @@ class SpritePreview(wx.Panel):
     
     # Indicates that no sprite should be drawn at all.
     CLEAR = 0xDEADBEEF
+
+    # The sensitivity of mouse dragging moving the sprite's rotation. Lower values are more sensitive.
+    DRAG_SENSITIVITY = 20
     
     
     def __init__(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.NO_BORDER):
@@ -35,8 +38,66 @@ class SpritePreview(wx.Panel):
         self.floor_brush = wx.Brush(floor_colour)
         self.create_floor_points()
         
+        # Sprite setup.
+        self.sprite_name = None
+        self.sprite_frame = None
+        self.angle = 1
+
+        # Paint setup.
         self.Bind(wx.EVT_PAINT, self.paint)
+
+        # Dragging setup.
+        self.drag_point_start = None
+        self.drag_angle_start = self.angle
+        self.lock_angle = False
+
+        self.Bind(wx.EVT_LEFT_DOWN, self.drag_start)
+        self.Bind(wx.EVT_LEFT_UP, self.drag_end)
+        self.Bind(wx.EVT_LEAVE_WINDOW, self.drag_end)
+        self.Bind(wx.EVT_MOTION, self.drag_move)
+
+        self.update_cursor()
         
+
+    def drag_start(self, event):
+        if self.lock_angle == True:
+            return
+
+        self.drag_point_start = event.GetLogicalPosition(wx.WindowDC(self))
+        self.drag_angle_start = self.angle
+        self.update_cursor()
+
+
+    def drag_end(self, event):
+        if self.drag_point_start is None:
+            return
+
+        self.drag_point_start = None
+        self.update_cursor()
+
+
+    def drag_move(self, event):
+        if self.drag_point_start is None:
+            return
+
+        drag_point_end = event.GetLogicalPosition(wx.WindowDC(self))
+        drag_distance = drag_point_end.x - self.drag_point_start.x
+        
+        drag_angle = (self.drag_angle_start - 1) - (drag_distance / SpritePreview.DRAG_SENSITIVITY)
+        drag_angle = (drag_angle % 8) + 1
+        
+        if self.angle != drag_angle:
+            self.angle = drag_angle
+            self.show_sprite(self.sprite_name, self.sprite_frame)
+
+
+    def update_cursor(self):
+        if self.lock_angle == True:
+            self.SetCursor(wx.StockCursor(wx.CURSOR_ARROW))
+        elif self.drag_point_start is None:
+            self.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
+        else:
+            self.SetCursor(wx.StockCursor(wx.CURSOR_SIZEWE))
         
     def set_source(self, wads):
         """
@@ -52,19 +113,25 @@ class SpritePreview(wx.Panel):
         """
         
         self.sprite = None
+        self.sprite_name = sprite_name
+        self.sprite_frame = sprite_frame
         
         # Refresh sprite preview with new sprite.
         if self.wads is not None:
-            # Try to get a no-rotation sprite.
-            sprite_lump = self.wads.get_sprite(sprite_name, sprite_frame, 0)
+
+            # Try to get a rotation sprite.
+            sprite_data = self.wads.get_sprite(sprite_name, sprite_frame, self.angle)
+            self.lock_angle = False
             
             # Try to get a 0 rotation (front-facing) sprite.
-            if sprite_lump is None:
-                sprite_lump = self.wads.get_sprite(sprite_name, sprite_frame, 1)
+            if sprite_data is None:
+                sprite_data = self.wads.get_sprite(sprite_name, sprite_frame, 0)
+                self.lock_angle = True
 
-            if sprite_lump is not None:
-                self.sprite = self.wads.get_sprite_image(sprite_lump)
+            if sprite_data is not None:
+                self.sprite = self.wads.get_sprite_image(sprite_data[0], sprite_data[1])
         
+        self.update_cursor()
         self.Refresh()
             
     
@@ -83,7 +150,7 @@ class SpritePreview(wx.Panel):
         
         if self.sprite == self.CLEAR:
             return
-        
+
         # Determine what icon or sprite to render.
         bitmap = None
         if self.sprite is None:
@@ -94,15 +161,20 @@ class SpritePreview(wx.Panel):
             bitmap = self.missing
             
         size = self.GetClientSizeTuple()
+
+        # Draw sprite.
         if bitmap is None:
+            bitmap = self.sprite.image
             baseline = size[1] * self.baseline_factor
             
             x = size[0] / 2 - self.sprite.width / 2
             y = baseline - self.sprite.height
             x + self.sprite.left
             y + self.sprite.top
-            dc.DrawBitmap(self.sprite.image, x, y, True)
-            
+
+            dc.DrawBitmap(bitmap, x, y, True)
+        
+        # Draw informational bitmap.
         else:
             x = size[0] / 2 - bitmap.GetWidth() / 2
             y = size[1] / 2 - bitmap.GetHeight() / 2

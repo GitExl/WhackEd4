@@ -34,7 +34,7 @@ class Image:
     S_HEADER = struct.Struct('<HHhh')
     
     
-    def __init__(self, data, palette):
+    def __init__(self, data, palette, mirror=False):
         self.set_empty()
         self.invalid = False
         
@@ -88,7 +88,10 @@ class Image:
                 pixel_index = 0
                 while pixel_index < pixel_count:
                     pixel = data[offset + pixel_index]
-                    dest = ((pixel_index + column_top) * width + column_index) * 4
+                    if mirror == True:
+                        dest = ((pixel_index + column_top) * width + ((width - 1) - column_index)) * 4
+                    else:
+                        dest = ((pixel_index + column_top) * width + column_index) * 4
                     
                     # Plot pixel from palette.
                     image_data[dest] = palette.colors[pixel][0]

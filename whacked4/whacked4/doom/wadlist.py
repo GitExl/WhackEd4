@@ -97,7 +97,7 @@ class WADList:
         return sprite[subsprite_string]
     
     
-    def get_sprite_image(self, lump):
+    def get_sprite_image(self, lump, mirror):
         """
         Returns an image object from a sprite lump.
         
@@ -107,14 +107,19 @@ class WADList:
         
         if self.palette is None:
             return None
+
+        if mirror == True:
+            lump_name = '{}M'.format(lump.name)
+        else:
+            lump_name = lump.name
         
-        if lump.name in self.sprite_image_cache:
-            return self.sprite_image_cache[lump.name]
+        if lump_name in self.sprite_image_cache:
+            return self.sprite_image_cache[lump_name]
         
-        image = graphics.Image(lump.get_data(), self.palette)
-        
+        image = graphics.Image(lump.get_data(), self.palette, mirror)
+
         # Add the loaded image to the cache.
-        self.sprite_image_cache[lump.name] = image
+        self.sprite_image_cache[lump_name] = image
         
         return image
             
@@ -145,13 +150,13 @@ class WADList:
                 
             # Add subsprite.
             subsprite = name[4:6]
-            sprite[subsprite] = lump
+            sprite[subsprite] = (lump, False)
             
             # Add mirrored sprite as well.
             if len(lump.name) == 8:
                 subsprite = name[6:8]
-                sprite[subsprite] = lump
-        
+                sprite[subsprite] = (lump, True)
+
         # Find a PLAYPAL lump to use as palette.
         playpal = self.get_lump('PLAYPAL')
         if playpal is not None:
