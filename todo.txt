@@ -1,5 +1,4 @@
 Features
-- If an editor dialog is maximized, clicking an already active editor in the toolbar should just bring that window to the front, maximized.
 - Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
 - Somewhere to display state action descriptions?
 - ESC should close dialogs where appropriate, for example the string editor.

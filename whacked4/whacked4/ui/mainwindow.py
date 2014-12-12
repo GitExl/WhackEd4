@@ -606,11 +606,20 @@ class MainWindow(windows.MainFrameBase):
         Toggles the visibility of an editor window from a toolbar item.
         """
         
-        window = self.editor_windows[event.GetId()]
+        toolid = event.GetId()
+        window = self.editor_windows[toolid]
+
         if window is not None:
-            state = self.MainToolbar.GetToolState(event.GetId())
-            window.Maximize(False)
-            window.Show(state)
+            state = self.MainToolbar.GetToolState(toolid)
+            active = self.GetActiveChild()
+
+            # Bring a window to front if it is activated but not the active one.
+            if state == False and active != window:
+                self.MainToolbar.ToggleTool(toolid, True)
+                window.Activate()
+            else:
+                window.Maximize(False)
+                window.Show(state)
 
             self.workspace_modified = True
         
