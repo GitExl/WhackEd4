@@ -1,7 +1,6 @@
 Features
 - Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
 - Somewhere to display state action descriptions?
-- ESC should close dialogs where appropriate, for example the string editor.
 - UI manual \ Dehacked tutorial.
 - Allow sorting things list by name.
 - Tab control traversal. Will need UI layout changes (put controls into panels instead of directly into frames).

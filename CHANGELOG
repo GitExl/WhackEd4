@@ -2,10 +2,12 @@ Version 1.0.5
 -------------
 Added: the ability to change the rotation in a sprite preview by dragging the mouse over it with the left button held down.
 Added: clicking an active editor window toolbar button will bring it to the front if it is not already, otherwise it will close it.
+Added: closing dialogs is now possible with ESC and a window close button.
 Fixed: sound numbering and setting used sound 1 as the dummy sound.
 Fixed: missing ampersands in thing flags.
 Changed: thing list indices start at 1 to make using state actions like MBF's Spawn easier.
 Changed: some control and window sizes have been altered to better fit with larger fonts.
+Changed: the string editor window will focus on the text to edit when activated, so the user can often begin typing immediately.
 Changed: updated to PyAudio 0.2.8.
 
 Version 1.0.4
