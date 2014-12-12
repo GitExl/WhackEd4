@@ -8,91 +8,376 @@
     },
 
     "actions": {
-        "NULL": "None.",
-        "KeenDie": "Same as the 'Fall' and 'BossDeath' actions together.",
-        "Look": "Wait to wake up.\n\nThis causes currently sleeping monsters to wake up when they see a player.",
-        "Chase": "Standard walking code pointer.\n\nThis chases the target object, regardless of a direct line of sight.",
-        "FaceTarget": "Turn to face the player's direction.",
-        "PosAttack": "Trooper pistol shot.",
-        "SPosAttack": "Shotgun Sargeant and Spiderdemon attack.",
-        "CPosAttack": "Chaingun Sargeant\\SS Nazi Chaingun attack.",
-        "CPosRefire": "Check line of sight to stop firing.\n\nIf the target is no longer visible, halt firing and continue chasing it.",
-        "SpidRefire": "Check line of sight to stop firing (Spiderdemon).",
-        "BspiAttack": "Arachnotron plasma shot.",
-        "TroopAttack": "Imp fireball shot or scratch if at close range.",
-        "SargAttack": "Demon bite attack.",
-        "HeadAttack": "Cacodemon fireball shot or bite at close range.",
-        "CyberAttack": "Cyberdemon attack (launch a single rocket).",
-        "BruisAttack": "Baron of Hell or Hell Knight fireball shot or scratch if at close range.",
-        "SkelMissile": "Launch a Revenant missile. Chance of launching a homing missile.",
-        "Tracer": "A Revenant's fireball homing action. Changes the angle to point towards the target and emits a puff of smoke.",
-        "SkelWhoosh": "Play sound 'skeswg'.",
-        "SkelFist": "Revenant punch.\n\nThis plays the sound 'skepch' if it hits it's target.",
-        "VileChase": "Arch-Vile walking code pointer.\n\nChecks to see if there is a dead monster in front of the Arch-Vile and ressurects it if so.",
-        "VileStart": "Play sound 'vilatk'.",
-        "StartFire": "Play sound 'flamest'.",
-        "FireCrackle": "Play sound 'flame'.",
-        "Fire": "Keep the Arch-Vile's flame at the same position as it's target.",
-        "VileTarget": "Creates an Arch-Vile flame at the target object's location.",
-        "VileAttack": "Arch-Vile targeted attack.",
-        "FatRaise": "Play sound 'manatk'.",
-        "FatAttack1": "Mancubus shot, 2 fireballs: one straight, one left.",
-        "FatAttack2": "Mancubus shot, 2 fireballs: one straight, one right.",
-        "FatAttack3": "Mancubus shot, 2 fireballs: one left, one right.",
-        "SkullAttack": "Lost soul attack.\n\nAn attack sound is REQUIRED.",
-        "PainAttack": "Spawn a lost soul.",
-        "PainDie": "Spawn 3 or 4 lost souls.",
-        "Scream": "Play the object's death sound.",
-        "XScream": "Play sound 'slop'.",
-        "Pain": "Play the object's pain sound.",
-        "Fall": "Dead body mode.\n\nThis action enabled the object's flags Obstacle, Corpse and Dropoff.",
-        "Explode": "Damage objects inside the explosion radius.",
-        "BossDeath": "Magic.\n\nDo special effects based on map number and enemy type.",
-        "Hoof": "Play sound 'hoof'.",
-        "Metal": "Play sound 'metal'.",
-        "BabyMetal": "Play sound 'bspwlk'.",
-        "OpenShotgun2": "Play sound 'dbopn'.",
-        "LoadShotgun2": "Play sound 'dbload'.",
-        "CloseShotgun2": "Play sound 'dbcls'.",
-        "BrainAwake": "Play sound 'bossit'.",
-        "BrainPain": "Play sound 'bospn'.",
-        "BrainScream": "Play sound 'bosdth' and make special explosions (states 799-801) about 320 units south of the object.",
-        "BrainExplode": "Creates an explosion (states 127-129).",
-        "BrainDie": "Immediately end the level.",
-        "BrainSpit": "Fire a spawn cube.\n\nA landing spot thing is REQUIRED.",
-        "SpawnSound": "Play sound 'boscub'.",
-        "SpawnFly": "Check for spawn point.\n\nSpawns a monster if it hits a spawn-point.",
-        "PlayerScream": "Play sound 'pldeth'",
-        "WeaponReady": "Weapon bobbing.",
-        "Refire": "Last shooting state.\n\nIf the fire button is still held, jump back to the first shooting state instead of the state with this action.",
-        "CheckReload": "Check ammo.\n\nIf there is not enough ammo for another shot, skip the reloading states and select a different weapon.",
-        "Lower": "Weapon deselect.",
-        "Raise": "Weapon select.",
-        "GunFlash": "Display the weapon's firing flash sprite over the regular weapon sprite.",
-        "Punch": "Player Punch attack.",
-        "Saw": "Player Chainsaw attack.\n\nEager Beaver to the rescue!",
-        "FireMissile": "Player Rocket Launcher attack.",
-        "FireBFG": "Player BFG9000 attack.",
-        "FirePlasma": "Player Plasma Rifle attack.",
-        "FirePistol": "Player Pistol shot.",
-        "FireShotgun": "Player Shotgun attack.",
-        "FireShotgun2": "Player Super Shotgun attack",
-        "FireCGun": "Player Chaingun shot.\n\nAlso checks ammo, does not go to -1 ammo, but changes the weapon instead.",
-        "Light0": "Restore the lighting level after a gun flash.",
-        "Light1": "Set the light flash to 'dim'.",
-        "Light2": "Set the light flash to bright.",
-        "BFGSpray": "BFG blast effect.\n\nCasts invisible BFG rays.",
-        "BFGSound": "Play sound 'bfg'.",
-        "Detonate": "Explode with variable damage (thing damage field).",
-        "Mushroom": "Mushroom explosion effect.",
-        "Die": "Kill this thing.",
-        "Spawn": "Spawn an object defined in miscellaneous 1 and 2.",
-        "Turn": "Turn by a value defined in miscellaneous 1.",
-        "Face": "Face an angle defined in miscellaneous 1.",
-        "Scratch": "Scratch a nearby thing with damage defined in miscellaneous 1, with a sound defined in miscellaneous 2.",
-        "PlaySound": "Play a sound defined in miscellaneous 2, or miscellaneous 1.",
-        "RandomJump": "Jump a random value below miscellaneous 2, while going to state miscellaneous 1.",
-        "LineEffect": "Trigger the linedef effect type defined in miscellaneous 1, using sector tag defined in miscellaneous 2."
+        "NULL": {
+            "name": "NULL",
+            "description": "None."
+        },
+        "KeenDie": {
+            "name": "KeenDie",
+            "description": "Same as the 'Fall' and 'BossDeath' actions together."
+        },
+        "Look": {
+            "name": "Look",
+            "description": "Wait to wake up.\n\nThis causes currently sleeping monsters to wake up when they see a player."
+        },
+        "Chase": {
+            "name": "Chase",
+            "description": "Standard walking code pointer.\n\nThis chases the target object, regardless of a direct line of sight."
+        },
+        "FaceTarget": {
+            "name": "FaceTarget",
+            "description": "Turn to face the player's direction."
+        },
+        "PosAttack": {
+            "name": "PosAttack",
+            "description": "Trooper pistol shot."
+        },
+        "SPosAttack": {
+            "name": "SPosAttack",
+            "description": "Shotgun Sargeant and Spiderdemon attack."
+        },
+        "CPosAttack": {
+            "name": "CPosAttack",
+            "description": "Chaingun Sargeant\\SS Nazi Chaingun attack."
+        },
+        "CPosRefire": {
+            "name": "CPosRefire",
+            "description": "Check line of sight to stop firing.\n\nIf the target is no longer visible, halt firing and continue chasing it."
+        },
+        "SpidRefire": {
+            "name": "SpidRefire",
+            "description": "Check line of sight to stop firing (Spiderdemon)."
+        },
+        "BspiAttack": {
+            "name": "BspiAttack",
+            "description": "Arachnotron plasma shot."
+        },
+        "TroopAttack": {
+            "name": "TroopAttack",
+            "description": "Imp fireball shot or scratch if at close range."
+        },
+        "SargAttack": {
+            "name": "SargAttack",
+            "description": "Demon bite attack."
+        },
+        "HeadAttack": {
+            "name": "HeadAttack",
+            "description": "Cacodemon fireball shot or bite at close range."
+        },
+        "CyberAttack": {
+            "name": "CyberAttack",
+            "description": "Cyberdemon attack (launch a single rocket)."
+        },
+        "BruisAttack": {
+            "name": "BruisAttack",
+            "description": "Baron of Hell or Hell Knight fireball shot or scratch if at close range."
+        },
+        "SkelMissile": {
+            "name": "SkelMissile",
+            "description": "Launch a Revenant missile. Chance of launching a homing missile."
+        },
+        "Tracer": {
+            "name": "Tracer",
+            "description": "A Revenant's fireball homing action. Changes the angle to point towards the target and emits a puff of smoke."
+        },
+        "SkelWhoosh": {
+            "name": "SkelWhoosh",
+            "description": "Play sound 'skeswg'."
+        },
+        "SkelFist": {
+            "name": "SkelFist",
+            "description": "Revenant punch.\n\nThis plays the sound 'skepch' if it hits it's target."
+        },
+        "VileChase": {
+            "name": "VileChase",
+            "description": "Arch-Vile walking code pointer.\n\nChecks to see if there is a dead monster in front of the Arch-Vile and ressurects it if so."
+        },
+        "VileStart": {
+            "name": "VileStart",
+            "description": "Play sound 'vilatk'."
+        },
+        "StartFire": {
+            "name": "StartFire",
+            "description": "Play sound 'flamest'."
+        },
+        "FireCrackle": {
+            "name": "FireCrackle",
+            "description": "Play sound 'flame'."
+        },
+        "Fire": {
+            "name": "Fire",
+            "description": "Keep the Arch-Vile's flame at the same position as it's target."
+        },
+        "VileTarget": {
+            "name": "VileTarget",
+            "description": "Creates an Arch-Vile flame at the target object's location."
+        },
+        "VileAttack": {
+            "name": "VileAttack",
+            "description": "Arch-Vile targeted attack."
+        },
+        "FatRaise": {
+            "name": "FatRaise",
+            "description": "Play sound 'manatk'."
+        },
+        "FatAttack1": {
+            "name": "FatAttack1",
+            "description": "Mancubus shot, 2 fireballs: one straight, one left."
+        },
+        "FatAttack2": {
+            "name": "FatAttack2",
+            "description": "Mancubus shot, 2 fireballs: one straight, one right."
+        },
+        "FatAttack3": {
+            "name": "FatAttack3",
+            "description": "Mancubus shot, 2 fireballs: one left, one right."
+        },
+        "SkullAttack": {
+            "name": "SkullAttack",
+            "description": "Lost soul attack.\n\nAn attack sound is REQUIRED."
+        },
+        "PainAttack": {
+            "name": "PainAttack",
+            "description": "Spawn a lost soul."
+        },
+        "PainDie": {
+            "name": "PainDie",
+            "description": "Spawn 3 or 4 lost souls."
+        },
+        "Scream": {
+            "name": "Scream",
+            "description": "Play the object's death sound."
+        },
+        "XScream": {
+            "name": "XScream",
+            "description": "Play sound 'slop'."
+        },
+        "Pain": {
+            "name": "Pain",
+            "description": "Play the object's pain sound."
+        },
+        "Fall": {
+            "name": "Fall",
+            "description": "Dead body mode.\n\nThis action enabled the object's flags Obstacle, Corpse and Dropoff."
+        },
+        "Explode": {
+            "name": "Explode",
+            "description": "Damage objects inside the explosion radius."
+        },
+        "BossDeath": {
+            "name": "BossDeath",
+            "description": "Magic.\n\nDo special effects based on map number and enemy type."
+        },
+        "Hoof": {
+            "name": "Hoof",
+            "description": "Play sound 'hoof'."
+        },
+        "Metal": {
+            "name": "Metal",
+            "description": "Play sound 'metal'."
+        },
+        "BabyMetal": {
+            "name": "BabyMetal",
+            "description": "Play sound 'bspwlk'."
+        },
+        "OpenShotgun2": {
+            "name": "OpenShotgun2",
+            "description": "Play sound 'dbopn'."
+        },
+        "LoadShotgun2": {
+            "name": "LoadShotgun2",
+            "description": "Play sound 'dbload'."
+        },
+        "CloseShotgun2": {
+            "name": "CloseShotgun2",
+            "description": "Play sound 'dbcls'."
+        },
+        "BrainAwake": {
+            "name": "BrainAwake",
+            "description": "Play sound 'bossit'."
+        },
+        "BrainPain": {
+            "name": "BrainPain",
+            "description": "Play sound 'bospn'."
+        },
+        "BrainScream": {
+            "name": "BrainScream",
+            "description": "Play sound 'bosdth' and make special explosions (states 799-801) about 320 units south of the object."
+        },
+        "BrainExplode": {
+            "name": "BrainExplode",
+            "description": "Creates an explosion (states 127-129)."
+        },
+        "BrainDie": {
+            "name": "BrainDie",
+            "description": "Immediately end the level."
+        },
+        "BrainSpit": {
+            "name": "BrainSpit",
+            "description": "Fire a spawn cube.\n\nA landing spot thing is REQUIRED."
+        },
+        "SpawnSound": {
+            "name": "SpawnSound",
+            "description": "Play sound 'boscub'."
+        },
+        "SpawnFly": {
+            "name": "SpawnFly",
+            "description": "Check for spawn point.\n\nSpawns a monster if it hits a spawn-point."
+        },
+        "PlayerScream": {
+            "name": "PlayerScream",
+            "description": "Play sound 'pldeth'"
+        },
+        "WeaponReady": {
+            "name": "WeaponReady",
+            "description": "Weapon bobbing."
+        },
+        "Refire": {
+            "name": "Refire",
+            "description": "Last shooting state.\n\nIf the fire button is still held, jump back to the first shooting state instead of the state with this action."
+        },
+        "CheckReload": {
+            "name": "CheckReload",
+            "description": "Check ammo.\n\nIf there is not enough ammo for another shot, skip the reloading states and select a different weapon."
+        },
+        "Lower": {
+            "name": "Lower",
+            "description": "Weapon deselect."
+        },
+        "Raise": {
+            "name": "Raise",
+            "description": "Weapon select."
+        },
+        "GunFlash": {
+            "name": "GunFlash",
+            "description": "Display the weapon's firing flash sprite over the regular weapon sprite."
+        },
+        "Punch": {
+            "name": "Punch",
+            "description": "Player Punch attack."
+        },
+        "Saw": {
+            "name": "Saw",
+            "description": "Player Chainsaw attack.\n\nEager Beaver to the rescue!"
+        },
+        "FireMissile": {
+            "name": "FireMissile",
+            "description": "Player Rocket Launcher attack."
+        },
+        "FireBFG": {
+            "name": "FireBFG",
+            "description": "Player BFG9000 attack."
+        },
+        "FirePlasma": {
+            "name": "FirePlasma",
+            "description": "Player Plasma Rifle attack."
+        },
+        "FirePistol": {
+            "name": "FirePistol",
+            "description": "Player Pistol shot."
+        },
+        "FireShotgun": {
+            "name": "FireShotgun",
+            "description": "Player Shotgun attack."
+        },
+        "FireShotgun2": {
+            "name": "FireShotgun2",
+            "description": "Player Super Shotgun attack"
+        },
+        "FireCGun": {
+            "name": "FireCGun",
+            "description": "Player Chaingun shot.\n\nAlso checks ammo, does not go to -1 ammo, but changes the weapon instead."
+        },
+        "Light0": {
+            "name": "Light0",
+            "description": "Restore the lighting level after a gun flash."
+        },
+        "Light1": {
+            "name": "Light1",
+            "description": "Set the light flash to 'dim'."
+        },
+        "Light2": {
+            "name": "Light2",
+            "description": "Set the light flash to bright."
+        },
+        "BFGSpray": {
+            "name": "BFGSpray",
+            "description": "BFG blast effect.\n\nCasts invisible BFG rays."
+        },
+        "BFGSound": {
+            "name": "BFGSound",
+            "description": "Play sound 'bfg'."
+        },
+        "Detonate": {
+            "name": "Detonate",
+            "description": "Explode with variable damage (thing damage field)."
+        },
+        "Mushroom": {
+            "name": "Mushroom",
+            "description": "Creates a mushroom explosion effect by throwing fireballs up in all directions and causing radius damage.",
+            "parameters": [
+                "The angle to throw the fireballs in. Fixed point value.",
+                "The speed to throw the fireballs at. Fixed point value."
+            ]
+        },
+        "Spawn": {
+            "name": "Spawn",
+            "description": "Spawns a thing at the position of this thing.",
+            "parameters": [
+                "The editor id of the thing to spawn.",
+                "The relative Z position to spawn the thing at."
+            ]
+        },
+        "Turn": {
+            "name": "Turn",
+            "description": "Turns this actor a certain amount.",
+            "parameters": [
+                "The angle to turn, in degrees."
+            ]
+        },
+        "Face": {
+            "name": "Face",
+            "description": "Sets this thing's angle directly.",
+            "parameters": [
+                "The angle to face, in degrees."
+            ]
+        },
+        "Scratch": {
+            "name": "Scratch",
+            "description": "Scratches a nearby thing.",
+            "parameters": [
+                "The amount of damage to inflict.",
+                "The number of the sound to play."
+            ]
+        },
+        "PlaySound": {
+            "name": "PlaySound",
+            "description": "Plays a sound.",
+            "parameters": [
+                "The sound number to play.",
+                "If non-zero, the sound effect will play at full volume regardless of the distance."
+            ]
+        },
+        "RandomJump": {
+            "name": "RandomJump",
+            "description": "A random chance to jump to a state. Duration must not be -1.",
+            "parameters": [
+                "The state number to jump to.",
+                "The chance that the jump is executed. Ranged 0 to 255."
+            ]
+        },
+        "LineEffect": {
+            "name": "LineEffect",
+            "description": "Triggers a linedef effect for a sector tag.",
+            "parameters": [
+                "The linedef effect number to trigger.",
+                "The sector tag to trigger the effect on."
+            ]
+        },
+        "Die": {
+            "name": "Die",
+            "description": "Kills this thing."
+        }
     },
     "ammo": [
         {

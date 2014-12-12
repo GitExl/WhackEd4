@@ -252,18 +252,11 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         action_items = []
         
-        if self.patch.engine.extended == True:
-            for name in self.patch.engine.actions.iterkeys():
-                if name == 'NULL':
-                    name = ''
-                action_items.append(name)
-        
-        else:
-            for action in self.patch.engine.actions.itervalues():
-                if action['name'] == 'NULL':
-                    action_items.append('')
-                else:
-                    action_items.append(action['name'])
+        for action in self.patch.engine.actions.itervalues():
+            if action['name'] == 'NULL':
+                action_items.append('')
+            else:
+                action_items.append(action['name'])
                     
         self.Action.SetItems(action_items)
         
@@ -623,19 +616,12 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         Returns an action name for an action value.
         
         'NULL'\0 is displayed as an empty string. Other action names depend on the type of patch.
-        """
-        
-        if self.patch.engine.extended == True:
-            if action_value == 'NULL':
-                return ''
-            else:
-                return str(action_value)
-            
+        """       
+
+        if action_value == 0 or action_value == 'NULL':
+            return ''
         else:
-            if action_value == 0:
-                return ''
-            else:
-                return self.patch.engine.actions[str(action_value)]['name']
+            return self.patch.engine.actions[str(action_value)]['name']
         
         return None
     
