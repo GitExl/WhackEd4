@@ -116,6 +116,9 @@ class StringDialog(windows.StringDialogBase):
         
         event.Skip()
 
+
+    def activate(self, event):
+        self.New.SetFocus()
         
     def ok(self, event):
         self.new_string = self.New.GetValue()

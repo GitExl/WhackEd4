@@ -2776,6 +2776,7 @@ class StringDialogBase ( wx.Dialog ):
 		self.Centre( wx.BOTH )
 		
 		# Connect Events
+		self.Bind( wx.EVT_ACTIVATE, self.activate )
 		self.New.Bind( wx.EVT_KEY_DOWN, self.text_keydown )
 		self.New.Bind( wx.EVT_TEXT, self.text_enter )
 		self.ButtonOk.Bind( wx.EVT_BUTTON, self.ok )
@@ -2786,6 +2787,9 @@ class StringDialogBase ( wx.Dialog ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def activate( self, event ):
+		pass
+	
 	def text_keydown( self, event ):
 		pass
 	
