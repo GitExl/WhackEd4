@@ -315,63 +315,128 @@
         "Mushroom": {
             "name": "Mushroom",
             "description": "Creates a mushroom explosion effect by throwing fireballs up in all directions and causing radius damage.",
-            "parameters": [
-                "The angle to throw the fireballs in. Fixed point value.",
-                "The speed to throw the fireballs at. Fixed point value."
+            "unused": [
+                {
+                    "name": "Fireball angle",
+                    "description": "The angle to throw the fireballs in. Fixed point value.",
+                    "type": "fixedpoint",
+                    "range": [-359, 359]
+                },
+                {
+                    "name": "Fireball speed",
+                    "description": "The speed to throw the fireballs at. Fixed point value.",
+                    "type": "fixedpoint",
+                    "range": [-32767, 32767]
+                }
             ]
         },
         "Spawn": {
             "name": "Spawn",
             "description": "Spawns a thing at the position of this thing.",
-            "parameters": [
-                "The editor id of the thing to spawn.",
-                "The relative Z position to spawn the thing at."
+            "unused": [
+                {
+                    "name": "Thing",
+                    "description": "The thing to spawn.",
+                    "type": "thing"
+                },
+                {
+                    "name": "Z",
+                    "description": "The relative Z position to spawn the thing at.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
             ]
         },
         "Turn": {
             "name": "Turn",
             "description": "Turns this actor a certain amount.",
-            "parameters": [
-                "The angle to turn, in degrees."
+            "unused": [
+                {
+                    "name": "Angle",
+                    "description": "The angle to turn, in degrees.",
+                    "type": "integer",
+                    "range": [-359, 359]
+                }
             ]
         },
         "Face": {
             "name": "Face",
             "description": "Sets this thing's angle directly.",
-            "parameters": [
-                "The angle to face, in degrees."
+            "unused": [
+                {
+                    "name": "Angle",
+                    "description": "The angle to face, in degrees.",
+                    "type": "integer",
+                    "range": [0, 359]
+                }
             ]
         },
         "Scratch": {
             "name": "Scratch",
             "description": "Scratches a nearby thing.",
-            "parameters": [
-                "The amount of damage to inflict.",
-                "The number of the sound to play."
+            "unused": [
+                {
+                    "name": "Damage",
+                    "description": "The amount of damage to inflict.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Sound",
+                    "description": "The sound to play.",
+                    "type": "sound"
+                }
             ]
         },
         "PlaySound": {
             "name": "PlaySound",
             "description": "Plays a sound.",
-            "parameters": [
-                "The sound number to play.",
-                "If non-zero, the sound effect will play at full volume regardless of the distance."
+            "unused": [
+                {
+                    "name": "Sound",
+                    "description": "The sound to play.",
+                    "type": "sound"
+                },
+                {
+                    "description": "If set to 1, the sound effect will play at full volume regardless of the distance.",
+                    "type": "integer",
+                    "range": [0, 1]
+                }
             ]
         },
         "RandomJump": {
             "name": "RandomJump",
             "description": "A random chance to jump to a state. Duration must not be -1.",
-            "parameters": [
-                "The state number to jump to.",
-                "The chance that the jump is executed. Ranged 0 to 255."
+            "unused": [
+                {
+                    "name": "State",
+                    "description": "The state number to jump to.",
+                    "type": "state"
+                },
+                {
+                    "name": "Chance",
+                    "description": "The chance that the jump is executed. Ranged 0 to 255.",
+                    "type": "integer",
+                    "range": [0, 255]
+                }
             ]
         },
         "LineEffect": {
             "name": "LineEffect",
             "description": "Triggers a linedef effect for a sector tag.",
-            "parameters": [
-                "The linedef effect number to trigger.",
-                "The sector tag to trigger the effect on."
+            "unused": [
+                {
+                    "name": "Linedef effect",
+                    "description": "The linedef effect number to trigger.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Sector tag",
+                    "description": "The sector tag to trigger the effect on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
             ]
         },
         "Die": {
