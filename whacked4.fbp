@@ -18472,13 +18472,13 @@
             <property name="name">SpritesDialogBase</property>
             <property name="pos"></property>
             <property name="size">500,490</property>
-            <property name="style">wxCAPTION</property>
+            <property name="style">wxCAPTION|wxCLOSE_BOX</property>
             <property name="subclass"></property>
             <property name="title">Sprites</property>
             <property name="tooltip"></property>
             <property name="window_extra_style"></property>
             <property name="window_name"></property>
-            <property name="window_style"></property>
+            <property name="window_style">wxWANTS_CHARS</property>
             <event name="OnActivate"></event>
             <event name="OnActivateApp"></event>
             <event name="OnAuiFindManager"></event>
@@ -19310,7 +19310,7 @@
             <property name="name">StringDialogBase</property>
             <property name="pos"></property>
             <property name="size">640,480</property>
-            <property name="style">wxCAPTION|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
+            <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass"></property>
             <property name="title">String</property>
             <property name="tooltip"></property>
@@ -20040,7 +20040,7 @@
             <property name="name">PatchInfoDialogBase</property>
             <property name="pos"></property>
             <property name="size">600,325</property>
-            <property name="style">wxCAPTION</property>
+            <property name="style">wxCAPTION|wxCLOSE_BOX</property>
             <property name="subclass"></property>
             <property name="title">Patch</property>
             <property name="tooltip"></property>
@@ -21117,7 +21117,7 @@
                                 <property name="font"></property>
                                 <property name="gripper">0</property>
                                 <property name="hidden">0</property>
-                                <property name="id">wxID_ANY</property>
+                                <property name="id">PATCHINFO_CANCEL</property>
                                 <property name="label">Cancel</property>
                                 <property name="max_size"></property>
                                 <property name="maximize_button">0</property>
@@ -21196,7 +21196,7 @@
             <property name="name">StartDialogBase</property>
             <property name="pos"></property>
             <property name="size">600,340</property>
-            <property name="style">wxCAPTION</property>
+            <property name="style">wxCAPTION|wxCLOSE_BOX</property>
             <property name="subclass"></property>
             <property name="title">WhackEd4</property>
             <property name="tooltip"></property>
@@ -21781,7 +21781,7 @@
             <property name="name">AboutDialogBase</property>
             <property name="pos"></property>
             <property name="size">640,420</property>
-            <property name="style">wxCAPTION</property>
+            <property name="style">wxCAPTION|wxCLOSE_BOX</property>
             <property name="subclass"></property>
             <property name="title">About WhackEd4</property>
             <property name="tooltip"></property>
@@ -22507,7 +22507,7 @@
                                 <property name="gripper">0</property>
                                 <property name="hidden">0</property>
                                 <property name="id">wxID_ANY</property>
-                                <property name="label">Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, tempun, un4seen, WildWeasel, XDelusion</property>
+                                <property name="label">Aeyesx, Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, tempun, un4seen, WildWeasel, XDelusion</property>
                                 <property name="max_size"></property>
                                 <property name="maximize_button">0</property>
                                 <property name="maximum_size"></property>

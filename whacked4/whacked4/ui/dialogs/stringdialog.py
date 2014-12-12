@@ -13,6 +13,8 @@ class StringDialog(windows.StringDialogBase):
     def __init__(self, parent):
         windows.StringDialogBase.__init__(self, parent)
 
+        self.SetEscapeId(windows.STRING_CANCEL)
+
         self.engine_string = None
         self.old_string = None
         self.new_string = None

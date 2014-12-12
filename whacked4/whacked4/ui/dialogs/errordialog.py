@@ -13,6 +13,8 @@ class ErrorDialog(windows.ErrorDialogBase):
 
     def __init__(self, parent):
         windows.ErrorDialogBase.__init__(self, parent)
+
+        self.SetEscapeId(windows.ERROR_CLOSE)
         
         if wx.IsBusy() == True:
             wx.EndBusyCursor()

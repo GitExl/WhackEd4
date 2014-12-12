@@ -13,7 +13,9 @@ class SpritesDialog(windows.SpritesDialogBase):
 
     def __init__(self, parent):
         windows.SpritesDialogBase.__init__(self, parent)
-                
+
+        self.SetEscapeId(windows.SPRITES_CANCEL)
+
         
     def ok(self, event):
         """
@@ -205,7 +207,7 @@ class SpritesDialog(windows.SpritesDialogBase):
     def focus_text(self, event):
         utils.focus_text(event, self)
         event.Skip()
-            
+
     def cancel(self, event):
         self.Hide()
         

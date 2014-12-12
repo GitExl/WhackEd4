@@ -13,6 +13,8 @@ class StartDialog(windows.StartDialogBase):
 
     def __init__(self, parent):
         windows.StartDialogBase.__init__(self, parent)
+
+        self.SetEscapeId(windows.START_CANCEL)
         
         client_width = self.FileList.GetClientSizeTuple()[0] - 4
         self.FileList.InsertColumn(0, 'Filename', width=client_width)

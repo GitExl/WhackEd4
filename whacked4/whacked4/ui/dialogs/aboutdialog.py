@@ -15,6 +15,8 @@ class AboutDialog(windows.AboutDialogBase):
     def __init__(self, parent):
         windows.AboutDialogBase.__init__(self, parent)
     
+        self.SetEscapeId(windows.ABOUT_OK)
+
         self.Version.SetLabel('Version ' + config.APP_VERSION)
         
         with open('LICENSE', 'r') as f:

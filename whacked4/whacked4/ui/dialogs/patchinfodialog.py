@@ -15,6 +15,8 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
 
     def __init__(self, parent):
         windows.PatchInfoDialogBase.__init__(self, parent)
+
+        self.SetEscapeId(windows.PATCHINFO_CANCEL)
         
         
     def reset(self):

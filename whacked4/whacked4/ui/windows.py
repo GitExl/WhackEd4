@@ -173,17 +173,18 @@ DIALOG_PATCHINFO = 1824
 PATCHINFO_TOOLBAR = 1825
 PATCHINFO_TOOLBAR_ADD = 1826
 PATCHINFO_TOOLBAR_REMOVE = 1827
-DIALOG_START = 1828
-START_NEW = 1829
-START_OPEN = 1830
-START_RECENT = 1831
-START_CANCEL = 1832
-DIALOG_ABOUT = 1833
-ABOUT_OK = 1834
-DIALOG_ERROR = 1835
-ERROR_REPORT = 1836
-ERROR_COPY = 1837
-ERROR_CLOSE = 1838
+PATCHINFO_CANCEL = 1828
+DIALOG_START = 1829
+START_NEW = 1830
+START_OPEN = 1831
+START_RECENT = 1832
+START_CANCEL = 1833
+DIALOG_ABOUT = 1834
+ABOUT_OK = 1835
+DIALOG_ERROR = 1836
+ERROR_REPORT = 1837
+ERROR_COPY = 1838
+ERROR_CLOSE = 1839
 
 ###########################################################################
 ## Class MainFrameBase
@@ -2578,7 +2579,7 @@ class ParFrameBase ( wx.MDIChildFrame ):
 class SpritesDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"Sprites", pos = wx.DefaultPosition, size = wx.Size( 500,490 ), style = wx.CAPTION )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"Sprites", pos = wx.DefaultPosition, size = wx.Size( 500,490 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.WANTS_CHARS )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -2705,7 +2706,7 @@ class SpritesDialogBase ( wx.Dialog ):
 class StringDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"String", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"String", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
 		self.SetSizeHintsSz( wx.Size( 640,480 ), wx.DefaultSize )
 		
@@ -2805,7 +2806,7 @@ class StringDialogBase ( wx.Dialog ):
 class PatchInfoDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_PATCHINFO, title = u"Patch", pos = wx.DefaultPosition, size = wx.Size( 600,325 ), style = wx.CAPTION )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_PATCHINFO, title = u"Patch", pos = wx.DefaultPosition, size = wx.Size( 600,325 ), style = wx.CAPTION|wx.CLOSE_BOX )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -2891,7 +2892,7 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		
 		bSizer4521.Add( self.ButtonOk, 0, wx.ALL, 5 )
 		
-		self.ButtonCancel = wx.Button( self, wx.ID_ANY, u"Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.ButtonCancel = wx.Button( self, PATCHINFO_CANCEL, u"Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ButtonCancel.SetMinSize( wx.Size( 120,28 ) )
 		
 		bSizer4521.Add( self.ButtonCancel, 0, wx.ALL, 5 )
@@ -2948,7 +2949,7 @@ class PatchInfoDialogBase ( wx.Dialog ):
 class StartDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_START, title = u"WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 600,340 ), style = wx.CAPTION )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_START, title = u"WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 600,340 ), style = wx.CAPTION|wx.CLOSE_BOX )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -3040,7 +3041,7 @@ class StartDialogBase ( wx.Dialog ):
 class AboutDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,420 ), style = wx.CAPTION )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,420 ), style = wx.CAPTION|wx.CLOSE_BOX )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -3091,7 +3092,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText139.Wrap( -1 )
 		bSizer56.Add( self.m_staticText139, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, tempun, un4seen, WildWeasel, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
+		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aeyesx, Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, Marc. A. Pullen, Palladium, Rellik, REZ, Skullers, SlayeR, tempun, un4seen, WildWeasel, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
 		self.m_staticText138.Wrap( 450 )
 		bSizer56.Add( self.m_staticText138, 1, wx.ALL, 6 )
 		
