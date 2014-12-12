@@ -1,12 +1,12 @@
-- Toolbar buttons clickable area does not extend to the side of the toolbar. Another wxWidgets bug.
-
-Bugs
-- "I've been getting crashes when switching from the thing window to the frame window, or when using the frame filter. However, I was using Whacked4 through Wine so I can't be sure for now. I'll send you tracebacks if it happens later, on Windows."
-
 Features
+- If an editor dialog is maximized, clicking an already active editor in the toolbar should just bring that window to the front, maximized.
+- Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
+- Somewhere to display state action descriptions?
+- ESC should close dialogs where appropriate, for example the string editor.
+- UI manual \ Dehacked tutorial.
 - Allow sorting things list by name.
-- Drag & drop for state, sounds, state parameters (MBF A_Spawn), etc.
 - Tab control traversal. Will need UI layout changes (put controls into panels instead of directly into frames).
 
 Known issues
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
+- Toolbar buttons clickable area does not extend to the side of the toolbar. Another wxWidgets bug.
