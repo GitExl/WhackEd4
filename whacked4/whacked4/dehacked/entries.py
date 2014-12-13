@@ -46,14 +46,23 @@ class SoundEntry(Entry):
 class StateEntry(Entry):
     NAME = 'Frame'
     STRUCTURE = struct.Struct('<iiiiiii')
-    FIELDS = OrderedDict([       
+    FIELDS = OrderedDict([
         ('sprite', 'Sprite number'),
         ('spriteFrame', 'Sprite subnumber'),
         ('duration', 'Duration'),
         ('action', 'Action pointer'),
         ('nextState', 'Next frame'),
-        ('parameter1', 'Unknown 1'),
-        ('parameter2', 'Unknown 2')
+        ('unused1', 'Unknown 1'),
+        ('unused2', 'Unknown 2'),
+        ('arg1', 'Args1'),
+        ('arg2', 'Args2'),
+        ('arg3', 'Args3'),
+        ('arg4', 'Args4'),
+        ('arg5', 'Args5'),
+        ('arg6', 'Args6'),
+        ('arg7', 'Args7'),
+        ('arg8', 'Args8'),
+        ('arg9', 'Args9')
     ])
     SKIP = {'action'}
     

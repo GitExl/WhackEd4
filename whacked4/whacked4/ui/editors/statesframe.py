@@ -19,15 +19,41 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     PROPS_STATE = {
         windows.STATES_DURATION: 'duration',
         windows.STATES_NEXT: 'nextState',
-        windows.STATES_PARM1: 'parameter1',
-        windows.STATES_PARM2: 'parameter2',
-        windows.STATES_SPRITE: 'sprite'
+        windows.STATES_SPRITE: 'sprite',
+        windows.STATES_UNUSED1: 'unused1',
+        windows.STATES_UNUSED2: 'unused2',
+        windows.STATES_ARG1: 'arg1',
+        windows.STATES_ARG2: 'arg2',
+        windows.STATES_ARG3: 'arg3',
+        windows.STATES_ARG4: 'arg4',
+        windows.STATES_ARG5: 'arg5',
+        windows.STATES_ARG6: 'arg6',
+        windows.STATES_ARG7: 'arg7',
+        windows.STATES_ARG8: 'arg8',
+        windows.STATES_ARG9: 'arg9'
     }
         
     # The colours used for color-coding sprite indices.
     SPRITE_COLOURS = [
         wx.Colour(red=255, green=48, blue=0),
-        wx.Colour(red=255, green=255, blue=255),
+        wx.Colour(red=255, green=255, blue=255)
+    ]
+
+    # Window ids grouped by state parameter value.
+    UNUSED_IDS = [
+        [windows.STATES_LABEL_UNUSED1, windows.STATES_UNUSED1],
+        [windows.STATES_LABEL_UNUSED2, windows.STATES_UNUSED2]
+    ]
+    ARG_IDS = [
+        [windows.STATES_LABEL_ARG1, windows.STATES_ARG1],
+        [windows.STATES_LABEL_ARG2, windows.STATES_ARG2],
+        [windows.STATES_LABEL_ARG3, windows.STATES_ARG3],
+        [windows.STATES_LABEL_ARG4, windows.STATES_ARG4],
+        [windows.STATES_LABEL_ARG5, windows.STATES_ARG5],
+        [windows.STATES_LABEL_ARG6, windows.STATES_ARG6],
+        [windows.STATES_LABEL_ARG7, windows.STATES_ARG7],
+        [windows.STATES_LABEL_ARG8, windows.STATES_ARG8],
+        [windows.STATES_LABEL_ARG9, windows.STATES_ARG9],
     ]
     
     # Doom lit flag. Frame indices with this flag set are always lit by Doom's rendering engine.
@@ -50,8 +76,17 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.NextStateIndex,
             self.Duration,
             self.Action,
-            self.Parameter1,
-            self.Parameter2,
+            self.Unused1,
+            self.Unused2,
+            self.Arg1,
+            self.Arg2,
+            self.Arg3,
+            self.Arg4,
+            self.Arg5,
+            self.Arg6,
+            self.Arg7,
+            self.Arg8,
+            self.Arg9,
             self.Restore,
             self.NextStateName,
             self.SpriteName
@@ -369,8 +404,17 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.NextStateIndex.ChangeValue(str(state['nextState']))
             self.NextStateName.SetLabel(self.patch.get_state_name(state['nextState']))
             self.Duration.ChangeValue(str(state['duration']))
-            self.Parameter1.ChangeValue(str(state['parameter1']))
-            self.Parameter2.ChangeValue(str(state['parameter2']))
+            self.Unused1.ChangeValue(str(state['unused1']))
+            self.Unused2.ChangeValue(str(state['unused2']))
+            self.Arg1.ChangeValue(str(state['arg1']))
+            self.Arg2.ChangeValue(str(state['arg2']))
+            self.Arg3.ChangeValue(str(state['arg3']))
+            self.Arg4.ChangeValue(str(state['arg4']))
+            self.Arg5.ChangeValue(str(state['arg5']))
+            self.Arg6.ChangeValue(str(state['arg6']))
+            self.Arg7.ChangeValue(str(state['arg7']))
+            self.Arg8.ChangeValue(str(state['arg8']))
+            self.Arg9.ChangeValue(str(state['arg9']))
             
             self.set_selected_action(state['action'])
             
@@ -386,11 +430,14 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 self.tools_set_state(True)
             
             # Do not allow editing an action on a state that has none for non-extended patches.
+            action_name = self.patch.engine.states[state_index]['action']
             if self.patch.engine.extended == False:
-                if self.patch.engine.states[state_index]['action'] == 0:
+                if action_name == 0:
                     self.Action.Disable()
                 else:
                     self.Action.Enable()
+
+            self.set_param_visibility(action_name)
 
         # If multiple states are selected, empty out all properties.
         else:
@@ -401,14 +448,87 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.NextStateName.SetLabel('')
             self.Duration.ChangeValue('')
             self.Action.Select(0)
-            self.Parameter1.ChangeValue('')
-            self.Parameter2.ChangeValue('')
             self.AlwaysLit.SetValue(False)
             self.Action.Enable()
             self.tools_set_state(True)
+            self.Unused1.ChangeValue('')
+            self.Unused2.ChangeValue('')
+            self.Arg1.ChangeValue('')
+            self.Arg2.ChangeValue('')
+            self.Arg3.ChangeValue('')
+            self.Arg4.ChangeValue('')
+            self.Arg5.ChangeValue('')
+            self.Arg6.ChangeValue('')
+            self.Arg7.ChangeValue('')
+            self.Arg8.ChangeValue('')
+            self.Arg9.ChangeValue('')
+
+            self.set_param_visibility('')
         
         self.update_sprite_preview()
+    
+
+    def set_param_visibility(self, action_name):
+        """
+        Sets the visibility of action parameters for the currently selected states.
+        """
+
+        if action_name in self.patch.engine.actions:
+            action = self.patch.engine.actions[action_name]
+        else:
+            action = None
+
+        if action is not None:
+            self.Action.SetToolTipString(action['description'])
         
+        unused_count, arg_count = self.get_action_param_counts(action)
+        
+        # Unused parameters.
+        for index in range(0, len(StatesFrame.UNUSED_IDS)):
+            label = self.FindWindowById(StatesFrame.UNUSED_IDS[index][0])
+            text = self.FindWindowById(StatesFrame.UNUSED_IDS[index][1])
+
+            if index < unused_count:
+                label.SetLabel(action['unused'][index]['name'])
+                label.Show()
+
+                text.Show()
+                text.SetToolTipString(action['unused'][index]['description'])
+            else:
+                label.Hide()
+                text.Hide()
+
+        # Arg0-9 parameters.
+        for index in range(0, len(StatesFrame.ARG_IDS)):
+            label = self.FindWindowById(StatesFrame.ARG_IDS[index][0])
+            text = self.FindWindowById(StatesFrame.ARG_IDS[index][1])
+
+            if index < arg_count:
+                label.SetLabel(action['arguments'][index]['name'])
+                label.Show()
+
+                text.Show()
+                text.SetToolTipString(action['arguments'][index]['description'])
+            else:
+                label.Hide()
+                text.Hide()
+
+        self.Layout()
+
+
+    def get_action_param_counts(self, action):
+        if action is None:
+            return 0, 0
+
+        unused_count = 0
+        arg_count = 0
+        if 'unused' in action:
+            unused_count = len(action['unused'])
+        if 'arguments' in action:
+            arg_count = len(action['arguments'])
+
+        return unused_count, arg_count
+
         
     def update_sprite_preview(self):
         """
@@ -561,7 +681,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             # Only allow modifying a state's action if the engine is extended, or if the state already has an action.
             if self.patch.engine.extended == True or self.patch.engine.states[state_index]['action'] != 0:
                 state['action'] = action_value
-            
+
+        self.set_param_visibility(value)
         self.statelist_update_selected_rows()
         self.is_modified(True)
             
@@ -650,8 +771,16 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             lit = 'X'
         else:
             lit = ''
-        parameters = str(state['parameter1']) + ', ' + str(state['parameter2'])
-        action = self.get_action_name_from_value(state['action'])
+
+        action_name = self.get_action_name_from_value(state['action'])
+        action = self.patch.engine.actions[state['action']]
+        unused_count, arg_count = self.get_action_param_counts(action)
+        print action
+        if unused_count or arg_count:
+            parameters = self.get_action_param_properties(unused_count, arg_count)
+            parameters = ', '.join([str(state[arg]) for arg in parameters])
+        else:
+            parameters = ''
         
         # Fill out column strings.
         self.StateList.SetStringItem(list_index, 1, self.patch.get_state_name(state_index))
@@ -660,9 +789,17 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.SetStringItem(list_index, 4, lit)
         self.StateList.SetStringItem(list_index, 5, str(state['nextState']))
         self.StateList.SetStringItem(list_index, 6, str(state['duration']))
-        self.StateList.SetStringItem(list_index, 7, action)
+        self.StateList.SetStringItem(list_index, 7, action_name)
         self.StateList.SetStringItem(list_index, 8, parameters)
     
+
+    def get_action_param_properties(self, unused_count, arg_count):
+        params = []
+        params.extend(['unused{}'.format(x) for x in range(1, unused_count + 1)])
+        params.extend(['arg{}'.format(x) for x in range(1, arg_count + 1)])
+        
+        return params
+
     
     def update_colours(self):
         """
@@ -778,6 +915,20 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.Select(filter_index, True)
         self.StateList.EnsureVisible(filter_index)
         self.StateList.SetFocus()
+
+
+    def statelist_resize(self, event):
+        """
+        Resizes the state parameters column to match the control's width.
+        """
+        
+        columns_width = self.StateList.GetColumnWidth(0) + self.StateList.GetColumnWidth(1)
+        columns_width += self.StateList.GetColumnWidth(2) + self.StateList.GetColumnWidth(3)
+        columns_width += self.StateList.GetColumnWidth(4) + self.StateList.GetColumnWidth(5)
+        columns_width += self.StateList.GetColumnWidth(6) + self.StateList.GetColumnWidth(7)
+        
+        width = self.StateList.GetClientSizeTuple()[0] - columns_width - 4
+        self.StateList.SetColumnWidth(8, width)
         
     
     def state_select(self, event):
