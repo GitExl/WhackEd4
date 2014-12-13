@@ -23,7 +23,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_VAL_DAMAGE: 'damage',
         windows.THING_VAL_REACTIONTIME: 'reactionTime',
         windows.THING_VAL_PAINCHANCE: 'painChance',
-        windows.THING_VAL_MASS: 'mass'
+        windows.THING_VAL_MASS: 'mass',
+        windows.THING_VAL_GAME: 'game',
+        windows.THING_VAL_SPAWNID: 'spawnId',
+        windows.THING_VAL_RESPAWNTIME: 'respawnTime',
+        windows.THING_VAL_RENDERSTYLE: 'renderStyle'
     }
     
     # State text control to partial internal key mappings.
@@ -35,7 +39,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_STATE_ATTACK: 'Attack',
         windows.THING_STATE_DEATH: 'Death',
         windows.THING_STATE_EXPLODE: 'Explode',
-        windows.THING_STATE_RAISE: 'Raise'
+        windows.THING_STATE_RAISE: 'Raise',
+        windows.THING_STATE_CRASH: 'Crash',
+        windows.THING_STATE_FREEZE: 'Freeze',
+        windows.THING_STATE_BURN: 'Burn'
     }
     
     # State name label to partial internal key mappings.
@@ -47,7 +54,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_STATENAME_ATTACK: 'Attack',
         windows.THING_STATENAME_DEATH: 'Death',
         windows.THING_STATENAME_EXPLODE: 'Explode',
-        windows.THING_STATENAME_RAISE: 'Raise'
+        windows.THING_STATENAME_RAISE: 'Raise',
+        windows.THING_STATENAME_CRASH: 'Crash',
+        windows.THING_STATENAME_FREEZE: 'Freeze',
+        windows.THING_STATENAME_BURN: 'Burn'
     }
     
     # State set button to partial internal key mappings.
@@ -59,7 +69,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_STATESET_ATTACK: windows.THING_STATE_ATTACK,
         windows.THING_STATESET_DEATH: windows.THING_STATE_DEATH,
         windows.THING_STATESET_EXPLODE: windows.THING_STATE_EXPLODE,
-        windows.THING_STATESET_RAISE: windows.THING_STATE_RAISE
+        windows.THING_STATESET_RAISE: windows.THING_STATE_RAISE,
+        windows.THING_STATESET_CRASH: windows.THING_STATE_CRASH,
+        windows.THING_STATESET_FREEZE: windows.THING_STATE_FREEZE,
+        windows.THING_STATESET_BURN: windows.THING_STATE_BURN
     }
 
     # Sound text control to partial internal key mappings.
@@ -99,7 +112,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     def __init__(self, params):
         windows.ThingsFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
-        
+
         self.SetIcon(wx.Icon('res/editor-things.ico'))
         
         
@@ -116,7 +129,23 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         
         self.flaglist_build()
         self.thinglist_build()
+        self.game_build()
+        self.renderstyle_build()
         
+
+    def game_build(self):
+        self.ThingGame.AppendItems([
+            'Any',
+            'Doom',
+            'Heretic',
+            'Hexen',
+            'Raven'
+        ])
+
+
+    def renderstyle_build(self):
+        self.ThingRenderStyle.AppendItems(self.patch.engine.render_styles.values())
+
         
     def thinglist_build(self):
         """
@@ -128,10 +157,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         if self.ThingList.GetColumnCount() == 0:
             self.ThingList.InsertColumn(0, 'Idx', width=36)
             self.ThingList.InsertColumn(1, 'Name', width=187)
-            self.ThingList.InsertColumn(2, 'Id', width=36)
-            self.ThingList.InsertColumn(3, 'Health', width=48)
-            self.ThingList.InsertColumn(4, 'Radius', width=48)
-            self.ThingList.InsertColumn(5, 'Height', width=48)
+            self.ThingList.InsertColumn(2, 'Game', width=80)
+            self.ThingList.InsertColumn(3, 'Id', width=36)
+            self.ThingList.InsertColumn(4, 'Health', width=48)
+            self.ThingList.InsertColumn(5, 'Radius', width=48)
+            self.ThingList.InsertColumn(6, 'Height', width=48)
             
         for index in range(len(self.patch.things.names)):
             self.ThingList.InsertStringItem(index, '')
@@ -152,10 +182,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         
         self.ThingList.SetItemText(row_index, str(row_index + 1))
         self.ThingList.SetStringItem(row_index, 1, thing_name)
-        self.ThingList.SetStringItem(row_index, 2, str(thing['id']))
-        self.ThingList.SetStringItem(row_index, 3, str(thing['health']))
-        self.ThingList.SetStringItem(row_index, 4, str(thing['radius'] / self.FIXED_UNIT))
-        self.ThingList.SetStringItem(row_index, 5, str(thing['height'] / self.FIXED_UNIT))
+        self.ThingList.SetStringItem(row_index, 2, thing['game'])
+        self.ThingList.SetStringItem(row_index, 3, str(thing['id']))
+        self.ThingList.SetStringItem(row_index, 4, str(thing['health']))
+        self.ThingList.SetStringItem(row_index, 5, str(thing['radius'] / self.FIXED_UNIT))
+        self.ThingList.SetStringItem(row_index, 6, str(thing['height'] / self.FIXED_UNIT))
         
         
     def thinglist_resize(self, event):
@@ -166,6 +197,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         columns_width = self.ThingList.GetColumnWidth(0)
         columns_width += self.ThingList.GetColumnWidth(2) + self.ThingList.GetColumnWidth(3)
         columns_width += self.ThingList.GetColumnWidth(4) + self.ThingList.GetColumnWidth(5)
+        columns_width += self.ThingList.GetColumnWidth(6)
         
         width = self.ThingList.GetClientSizeTuple()[0] - columns_width - 4
         self.ThingList.SetColumnWidth(1, width)
@@ -239,6 +271,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
         
         thing = self.patch.things[self.selected_index]
+        renderstyle = self.patch.engine.render_styles[thing['renderStyle']]
         
         # Set basic property text control values.
         self.ThingId.ChangeValue(str(thing['id']))
@@ -249,6 +282,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingReactionTime.ChangeValue(str(thing['reactionTime']))
         self.ThingPainChance.ChangeValue(str(thing['painChance']))
         self.ThingMass.ChangeValue(str(thing['mass']))
+        self.ThingGame.SetSelection(self.ThingGame.FindString(thing['game']))
+        self.ThingSpawnId.ChangeValue(str(thing['spawnId']))
+        self.ThingRespawnTime.ChangeValue(str(thing['respawnTime']))
+        self.ThingRenderStyle.SetSelection(self.ThingRenderStyle.FindString(renderstyle))
         
         # Speed is in fixed point if this thing is a missile, normal otherwise
         if (thing['flags'] & self.FLAG_MISSILE) != 0:
@@ -353,6 +390,30 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         key = self.PROPS_STATES[window_id]
         thing['state' + key] = value
         self.__dict__['ThingState' + key + 'Name'].SetLabel(self.patch.get_state_name(value))
+        self.is_modified(True)
+
+
+    def set_game(self, event):
+        """
+        Sets the currently selected thing's game property.
+        """
+
+        game = event.GetString()
+        self.patch.things[self.selected_index]['game'] = game
+
+        self.thinglist_update_row(self.selected_index)
+        self.is_modified(True)
+
+
+    def set_renderstyle(self, event):
+        """
+        Sets the currently selected thing's render style property.
+        """
+
+        index = event.GetSelection()
+        renderstyle = self.patch.engine.render_styles.keys()[index]
+        self.patch.things[self.selected_index]['renderStyle'] = renderstyle
+        
         self.is_modified(True)
         
         
@@ -577,4 +638,4 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             'item': copy.deepcopy(self.patch.things[self.selected_index]),
             'name': copy.copy(self.patch.things.names[self.selected_index]),
             'index': self.selected_index
-        }  
+        }

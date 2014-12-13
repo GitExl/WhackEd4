@@ -22179,7 +22179,14 @@
             "statePain": 156,
             "stateRaise": 0,
             "stateSpawn": 149,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22204,7 +22211,14 @@
             "statePain": 187,
             "stateRaise": 203,
             "stateSpawn": 174,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22229,7 +22243,14 @@
             "statePain": 220,
             "stateRaise": 236,
             "stateSpawn": 207,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22254,7 +22275,14 @@
             "statePain": 269,
             "stateRaise": 0,
             "stateSpawn": 241,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147484176,
@@ -22279,7 +22307,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 281,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22304,7 +22339,14 @@
             "statePain": 343,
             "stateRaise": 351,
             "stateSpawn": 321,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 67088,
@@ -22329,7 +22371,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 316,
-            "radius": 720896
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 720896,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147484176,
@@ -22354,7 +22403,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 311,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22379,7 +22435,14 @@
             "statePain": 386,
             "stateRaise": 398,
             "stateSpawn": 362,
-            "radius": 3145728
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 3145728,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147550736,
@@ -22404,7 +22467,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 357,
-            "radius": 393216
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 393216,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22429,7 +22499,14 @@
             "statePain": 420,
             "stateRaise": 435,
             "stateSpawn": 406,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22454,7 +22531,14 @@
             "statePain": 455,
             "stateRaise": 470,
             "stateSpawn": 442,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22479,7 +22563,14 @@
             "statePain": 488,
             "stateRaise": 496,
             "stateSpawn": 475,
-            "radius": 1966080
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1966080,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4456454,
@@ -22504,7 +22595,14 @@
             "statePain": 488,
             "stateRaise": 496,
             "stateSpawn": 475,
-            "radius": 1966080
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1966080,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4211206,
@@ -22529,7 +22627,14 @@
             "statePain": 507,
             "stateRaise": 516,
             "stateSpawn": 502,
-            "radius": 2031616
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 2031616,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22554,7 +22659,14 @@
             "statePain": 540,
             "stateRaise": 549,
             "stateSpawn": 527,
-            "radius": 1572864
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1572864,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147550736,
@@ -22579,7 +22691,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 522,
-            "radius": 393216
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 393216,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22604,7 +22723,14 @@
             "statePain": 569,
             "stateRaise": 578,
             "stateSpawn": 556,
-            "radius": 1572864
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1572864,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 16902,
@@ -22629,7 +22755,14 @@
             "statePain": 593,
             "stateRaise": 0,
             "stateSpawn": 585,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22654,7 +22787,14 @@
             "statePain": 619,
             "stateRaise": 0,
             "stateSpawn": 601,
-            "radius": 8388608
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 8388608,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22679,7 +22819,14 @@
             "statePain": 651,
             "stateRaise": 660,
             "stateSpawn": 632,
-            "radius": 4194304
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 4194304,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22704,7 +22851,14 @@
             "statePain": 690,
             "stateRaise": 0,
             "stateSpawn": 674,
-            "radius": 2621440
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 2621440,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4211206,
@@ -22729,7 +22883,14 @@
             "statePain": 712,
             "stateRaise": 720,
             "stateSpawn": 701,
-            "radius": 2031616
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 2031616,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -22754,7 +22915,14 @@
             "statePain": 742,
             "stateRaise": 758,
             "stateSpawn": 726,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4195078,
@@ -22779,7 +22947,14 @@
             "statePain": 776,
             "stateRaise": 0,
             "stateSpawn": 763,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 6,
@@ -22804,7 +22979,14 @@
             "statePain": 779,
             "stateRaise": 0,
             "stateSpawn": 778,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 24,
@@ -22829,7 +23011,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 784,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 24,
@@ -22854,7 +23043,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 0,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 71184,
@@ -22879,7 +23075,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 787,
-            "radius": 393216
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 393216,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147484176,
@@ -22904,7 +23107,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 791,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 524294,
@@ -22929,7 +23139,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 806,
-            "radius": 655360
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 655360,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147550736,
@@ -22954,7 +23171,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 97,
-            "radius": 393216
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 393216,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147550736,
@@ -22979,7 +23203,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 102,
-            "radius": 393216
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 393216,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 67088,
@@ -23004,7 +23235,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 114,
-            "radius": 720896
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 720896,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147550736,
@@ -23029,7 +23267,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 107,
-            "radius": 851968
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 851968,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147550736,
@@ -23054,7 +23299,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 115,
-            "radius": 851968
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 851968,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147550736,
@@ -23079,7 +23331,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 667,
-            "radius": 851968
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 851968,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147484176,
@@ -23104,7 +23363,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 93,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 16,
@@ -23129,7 +23395,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 90,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147484176,
@@ -23154,7 +23427,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 130,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2147484176,
@@ -23179,7 +23459,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 142,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 24,
@@ -23204,7 +23491,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 0,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 528,
@@ -23229,7 +23523,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 123,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23254,7 +23555,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 802,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23279,7 +23587,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 804,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 8388609,
@@ -23304,7 +23619,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 816,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 8388609,
@@ -23329,7 +23651,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 822,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 33554433,
@@ -23354,7 +23683,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 828,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 33554433,
@@ -23379,7 +23715,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 830,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 33554433,
@@ -23404,7 +23747,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 832,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 33554433,
@@ -23429,7 +23779,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 838,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 33554433,
@@ -23454,7 +23811,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 836,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 33554433,
@@ -23479,7 +23843,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 834,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23504,7 +23875,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 840,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23529,7 +23907,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 841,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2155872257,
@@ -23554,7 +23939,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 842,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2155872257,
@@ -23579,7 +23971,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 848,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 8388609,
@@ -23604,7 +24003,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 852,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2155872257,
@@ -23629,7 +24035,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 853,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23654,7 +24067,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 861,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 8388609,
@@ -23679,7 +24099,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 862,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 8388609,
@@ -23704,7 +24131,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 868,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2155872257,
@@ -23729,7 +24163,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 857,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23754,7 +24195,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 870,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23779,7 +24227,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 871,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23804,7 +24259,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 872,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23829,7 +24291,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 873,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23854,7 +24323,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 874,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23879,7 +24355,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 875,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23904,7 +24387,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 876,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23929,7 +24419,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 877,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23954,7 +24451,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 878,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -23979,7 +24483,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 879,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -24004,7 +24515,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 880,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -24029,7 +24547,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 881,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -24054,7 +24579,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 882,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -24079,7 +24611,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 883,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -24104,7 +24643,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 884,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 1,
@@ -24129,7 +24675,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 885,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24154,7 +24707,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 959,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24179,7 +24739,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 963,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24204,7 +24771,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 886,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24229,7 +24803,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 907,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24254,7 +24835,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 908,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24279,7 +24867,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 909,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24304,7 +24899,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 910,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24329,7 +24931,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 913,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24354,7 +24963,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 924,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24379,7 +24995,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 917,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24404,7 +25027,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 921,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24429,7 +25059,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 914,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24454,7 +25091,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 926,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24479,7 +25123,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 930,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24504,7 +25155,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 934,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24529,7 +25187,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 938,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24554,7 +25219,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 942,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24579,7 +25251,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 946,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24604,7 +25283,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 906,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24629,7 +25315,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 916,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -24654,7 +25347,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 911,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -24679,7 +25379,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 912,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -24704,7 +25411,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 888,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -24729,7 +25443,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 902,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -24754,7 +25475,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 903,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -24779,7 +25507,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 904,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -24804,7 +25539,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 905,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 768,
@@ -24829,7 +25571,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 902,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 768,
@@ -24854,7 +25603,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 904,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 768,
@@ -24879,7 +25635,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 903,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 768,
@@ -24904,7 +25667,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 905,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 768,
@@ -24929,7 +25699,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 888,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -24954,7 +25731,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 515,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -24979,7 +25763,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 164,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -25004,7 +25795,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 193,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -25029,7 +25827,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 495,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -25054,7 +25859,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 600,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -25079,7 +25891,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 461,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -25104,7 +25923,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 226,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -25129,7 +25955,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 173,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -25154,7 +25987,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 173,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -25179,7 +26019,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 894,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 0,
@@ -25204,7 +26051,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 895,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -25229,7 +26083,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 896,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -25254,7 +26115,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 897,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -25279,7 +26147,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 899,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -25304,7 +26179,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 900,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -25329,7 +26211,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 915,
-            "radius": 2097152
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 2097152,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 2,
@@ -25354,7 +26243,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 813,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -25379,7 +26275,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 950,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -25404,7 +26307,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 951,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -25429,7 +26339,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 952,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -25454,7 +26371,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 953,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -25479,7 +26403,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 954,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 770,
@@ -25504,7 +26435,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 955,
-            "radius": 1048576
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1048576,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 16,
@@ -25529,7 +26467,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 956,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 16,
@@ -25554,7 +26499,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 957,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 16,
@@ -25579,7 +26531,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 958,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 16,
@@ -25604,7 +26563,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 967,
-            "radius": 8
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 8,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 16,
@@ -25629,7 +26595,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 967,
-            "radius": 8
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 8,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 4194310,
@@ -25654,7 +26627,14 @@
             "statePain": 985,
             "stateRaise": 993,
             "stateSpawn": 972,
-            "radius": 784272
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 784272,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 536938000,
@@ -25679,7 +26659,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 1042,
-            "radius": 851968
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 851968,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 536938000,
@@ -25704,7 +26691,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 1049,
-            "radius": 393216
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 393216,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 8388609,
@@ -25729,7 +26723,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 1054,
-            "radius": 655360
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 655360,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         },
         {
             "flags": 8388609,
@@ -25754,7 +26755,14 @@
             "statePain": 0,
             "stateRaise": 0,
             "stateSpawn": 1055,
-            "radius": 1310720
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "radius": 1310720,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }
     ],
     "weaponNames": [

@@ -93,7 +93,14 @@ class ThingEntry(Entry):
         ('damage', 'Missile damage'),
         ('soundActive', 'Action sound'),
         ('flags', 'Bits'),
-        ('stateRaise', 'Respawn frame')
+        ('spawnId', 'SpawnID'),
+        ('game', 'Game'),
+        ('respawnTime', 'Respawn Time'),
+        ('renderStyle', 'Render Style'),
+        ('stateRaise', 'Respawn frame'),
+        ('stateCrash', 'Crash frame'),
+        ('stateFreeze', 'Ice death frame'),
+        ('stateBurn', 'Burning death frame')
     ])
     FILTER = {
         'flags': 'filter_thing_flags'

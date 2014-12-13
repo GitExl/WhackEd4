@@ -19085,7 +19085,14 @@
             "statePain": 156, 
             "stateAttack": 154, 
             "stateWalk": 150, 
-            "painChance": 255
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 255,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 75, 
@@ -19110,7 +19117,14 @@
             "statePain": 187, 
             "stateAttack": 184, 
             "stateWalk": 176, 
-            "painChance": 200
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 200,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 75, 
@@ -19135,7 +19149,14 @@
             "statePain": 220, 
             "stateAttack": 217, 
             "stateWalk": 209, 
-            "painChance": 170
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 170,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 80, 
@@ -19160,7 +19181,14 @@
             "statePain": 269, 
             "stateAttack": 255, 
             "stateWalk": 243, 
-            "painChance": 10
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 10,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19185,7 +19213,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 105, 
@@ -19210,7 +19245,14 @@
             "statePain": 343, 
             "stateAttack": 339, 
             "stateWalk": 323, 
-            "painChance": 100
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 100,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19235,7 +19277,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19260,7 +19309,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 75, 
@@ -19285,7 +19341,14 @@
             "statePain": 386, 
             "stateAttack": 376, 
             "stateWalk": 364, 
-            "painChance": 80
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 80,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19310,7 +19373,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 75, 
@@ -19335,7 +19405,14 @@
             "statePain": 420, 
             "stateAttack": 416, 
             "stateWalk": 408, 
-            "painChance": 170
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 170,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 76, 
@@ -19360,7 +19437,14 @@
             "statePain": 455, 
             "stateAttack": 452, 
             "stateWalk": 444, 
-            "painChance": 200
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 200,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 77, 
@@ -19385,7 +19469,14 @@
             "statePain": 488, 
             "stateAttack": 0, 
             "stateWalk": 477, 
-            "painChance": 180
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 180,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 77, 
@@ -19410,7 +19501,14 @@
             "statePain": 488, 
             "stateAttack": 0, 
             "stateWalk": 477, 
-            "painChance": 180
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 180,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 77, 
@@ -19435,7 +19533,14 @@
             "statePain": 507, 
             "stateAttack": 504, 
             "stateWalk": 503, 
-            "painChance": 128
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 128,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 77, 
@@ -19460,7 +19565,14 @@
             "statePain": 540, 
             "stateAttack": 537, 
             "stateWalk": 529, 
-            "painChance": 50
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 50,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19485,7 +19597,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 77, 
@@ -19510,7 +19629,14 @@
             "statePain": 569, 
             "stateAttack": 566, 
             "stateWalk": 558, 
-            "painChance": 50
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 50,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 77, 
@@ -19535,7 +19661,14 @@
             "statePain": 593, 
             "stateAttack": 589, 
             "stateWalk": 587, 
-            "painChance": 256
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 256,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 77, 
@@ -19560,7 +19693,14 @@
             "statePain": 619, 
             "stateAttack": 615, 
             "stateWalk": 603, 
-            "painChance": 40
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 40,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 78, 
@@ -19585,7 +19725,14 @@
             "statePain": 651, 
             "stateAttack": 647, 
             "stateWalk": 634, 
-            "painChance": 128
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 128,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 77, 
@@ -19610,7 +19757,14 @@
             "statePain": 690, 
             "stateAttack": 684, 
             "stateWalk": 676, 
-            "painChance": 20
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 20,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 77, 
@@ -19635,7 +19789,14 @@
             "statePain": 712, 
             "stateAttack": 708, 
             "stateWalk": 702, 
-            "painChance": 128
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 128,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 75, 
@@ -19660,7 +19821,14 @@
             "statePain": 742, 
             "stateAttack": 736, 
             "stateWalk": 728, 
-            "painChance": 170
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 170,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19685,7 +19853,14 @@
             "statePain": 776, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 256
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 256,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19710,7 +19885,14 @@
             "statePain": 779, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 255
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 255,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19735,7 +19917,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 785, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19760,7 +19949,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19785,7 +19981,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19810,7 +20013,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19835,7 +20045,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19860,7 +20077,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19885,7 +20109,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19910,7 +20141,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19935,7 +20173,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19960,7 +20205,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -19985,7 +20237,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20010,7 +20269,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20035,7 +20301,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20060,7 +20333,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20085,7 +20365,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20110,7 +20397,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20135,7 +20429,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20160,7 +20461,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20185,7 +20493,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20210,7 +20525,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20235,7 +20557,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20260,7 +20589,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20285,7 +20621,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20310,7 +20653,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20335,7 +20685,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20360,7 +20717,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20385,7 +20749,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20410,7 +20781,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20435,7 +20813,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20460,7 +20845,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20485,7 +20877,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20510,7 +20909,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20535,7 +20941,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20560,7 +20973,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20585,7 +21005,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20610,7 +21037,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20635,7 +21069,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20660,7 +21101,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20685,7 +21133,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20710,7 +21165,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20735,7 +21197,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20760,7 +21229,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20785,7 +21261,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20810,7 +21293,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20835,7 +21325,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20860,7 +21357,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20885,7 +21389,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20910,7 +21421,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20935,7 +21453,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20960,7 +21485,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -20985,7 +21517,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21010,7 +21549,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21035,7 +21581,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21060,7 +21613,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21085,7 +21645,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21110,7 +21677,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21135,7 +21709,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21160,7 +21741,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21185,7 +21773,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21210,7 +21805,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21235,7 +21837,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21260,7 +21869,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21285,7 +21901,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21310,7 +21933,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21335,7 +21965,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21360,7 +21997,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21385,7 +22029,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21410,7 +22061,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21435,7 +22093,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21460,7 +22125,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21485,7 +22157,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21510,7 +22189,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21535,7 +22221,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21560,7 +22253,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21585,7 +22285,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21610,7 +22317,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21635,7 +22349,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21660,7 +22381,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21685,7 +22413,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21710,7 +22445,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21735,7 +22477,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21760,7 +22509,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21785,7 +22541,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21810,7 +22573,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21835,7 +22605,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21860,7 +22637,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21885,7 +22669,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21910,7 +22701,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21935,7 +22733,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21960,7 +22765,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -21985,7 +22797,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22010,7 +22829,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22035,7 +22861,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22060,7 +22893,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22085,7 +22925,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22110,7 +22957,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22135,7 +22989,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22160,7 +23021,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22185,7 +23053,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22210,7 +23085,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22235,7 +23117,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22260,7 +23149,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22285,7 +23181,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22310,7 +23213,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22335,7 +23245,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22360,7 +23277,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22385,7 +23309,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22410,7 +23341,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22435,7 +23373,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22460,7 +23405,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }, 
         {
             "soundActive": 0, 
@@ -22485,7 +23437,14 @@
             "statePain": 0, 
             "stateAttack": 0, 
             "stateWalk": 0, 
-            "painChance": 0
+            "stateCrash": 0,
+            "stateBurn": 0,
+            "stateFreeze": 0,
+            "painChance": 0,
+            "spawnId": 0,
+            "game": "Doom",
+            "respawnTime": 0,
+            "renderStyle": "STYLE_Normal"
         }
     ], 
     "weapons": [

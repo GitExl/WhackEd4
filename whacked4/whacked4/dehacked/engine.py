@@ -76,6 +76,9 @@ class Engine:
         
         # A list of hacks to enable for this engine.
         self.hacks = None
+
+        # A list of supported render styles.
+        self.render_styles = None
         
         
     def read_table(self, filename):
@@ -122,6 +125,11 @@ class Engine:
             self.sprite_names = data['spriteNames']
             self.used_states = data['usedStates']
             self.hacks = data['hacks']
+
+            if 'renderStyles' in data:
+                self.render_styles = data['renderStyles']
+            else:
+                self.render_styles = {}
             
             self.sound_names = data['soundNames']
             if len(self.sound_names) != len(self.sounds):
