@@ -288,10 +288,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         action_items = []
         
         for action in self.patch.engine.actions.itervalues():
-            if action['name'] == 'NULL':
-                action_items.append('')
-            else:
-                action_items.append(action['name'])
+            action_items.append(self.filter_action_name(action['name']))
                     
         self.Action.SetItems(action_items)
         
@@ -341,7 +338,21 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.Thaw()
         
         wx.EndBusyCursor()
-        
+    
+
+    def filter_action_name(self, name):
+        if name == 0 or name == 'NULL':
+            return ''
+
+        return name
+
+
+    def filter_action_name_reverse(self, name):
+        if name == '':
+            return 'NULL'
+
+        return name
+
         
     def filter_update(self, index):
         """
@@ -430,14 +441,14 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 self.tools_set_state(True)
             
             # Do not allow editing an action on a state that has none for non-extended patches.
-            action_name = self.patch.engine.states[state_index]['action']
+            action_key = self.patch.engine.states[state_index]['action']
             if self.patch.engine.extended == False:
-                if action_name == 0:
+                if action_key == 0:
                     self.Action.Disable()
                 else:
                     self.Action.Enable()
 
-            self.set_param_visibility(action_name)
+            self.set_param_visibility(action_key)
 
         # If multiple states are selected, empty out all properties.
         else:
@@ -468,13 +479,13 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.update_sprite_preview()
     
 
-    def set_param_visibility(self, action_name):
+    def set_param_visibility(self, action_key):
         """
         Sets the visibility of action parameters for the currently selected states.
         """
 
-        if action_name in self.patch.engine.actions:
-            action = self.patch.engine.actions[action_name]
+        if action_key in self.patch.engine.actions:
+            action = self.patch.engine.actions[action_key]
         else:
             action = None
 
@@ -671,8 +682,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         self.undo_add()
         
-        value = self.Action.GetStringSelection()
-        action_value = self.get_action_value_from_name(value)
+        action_name = self.filter_action_name_reverse(self.Action.GetStringSelection())
+        action_key = self.get_action_key_from_name(action_name)
         
         for list_index in self.selected:
             state = self.filter.states[list_index]
@@ -680,11 +691,19 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             
             # Only allow modifying a state's action if the engine is extended, or if the state already has an action.
             if self.patch.engine.extended == True or self.patch.engine.states[state_index]['action'] != 0:
-                state['action'] = action_value
+                state['action'] = action_key
 
-        self.set_param_visibility(value)
+        self.set_param_visibility(action_key)
         self.statelist_update_selected_rows()
         self.is_modified(True)
+
+
+    def get_action_key_from_name(self, action_name):
+        for key, item in self.patch.engine.actions.iteritems():
+            if item['name'] == action_name:
+                return key
+
+        return None
             
     
     def set_frame(self, event):
@@ -714,49 +733,15 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.statelist_update_selected_rows()
         self.update_sprite_preview()
         self.is_modified(True)
-        
-        
-    def get_action_value_from_name(self, action_name):
-        """
-        Returns an action value for an action name.
-        
-        'NULL'\0 is displayed as an empty string. Other action values depend on the type of patch.
-        """
-        
-        if action_name == '':
-            if self.patch.engine.extended == True:
-                return 'NULL'
-            else:
-                return 0
-        
-        return self.patch.engine.get_action_from_name(action_name)
-    
-    
-    def get_action_name_from_value(self, action_value):
-        """
-        Returns an action name for an action value.
-        
-        'NULL'\0 is displayed as an empty string. Other action names depend on the type of patch.
-        """       
 
-        if action_value == 0 or action_value == 'NULL':
-            return ''
-        else:
-            return self.patch.engine.actions[str(action_value)]['name']
-        
-        return None
     
-    
-    def set_selected_action(self, action_value):
+    def set_selected_action(self, action_key):
         """
         Sets the action choice box' index to reflect the specified action value.
         """
         
-        action_name = self.get_action_name_from_value(action_value)
-        for index in range(self.Action.GetCount()):
-            if self.Action.GetString(index) == action_name:
-                self.Action.Select(index)
-                return 
+        action = self.patch.engine.get_action_from_key(action_key)
+        self.Action.Select(self.Action.FindString(self.filter_action_name_reverse(action['name'])))
         
     
     def statelist_update_row(self, list_index):
@@ -772,10 +757,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         else:
             lit = ''
 
-        action_name = self.get_action_name_from_value(state['action'])
-        action = self.patch.engine.actions[state['action']]
+        action = self.patch.engine.get_action_from_key(state['action'])
         unused_count, arg_count = self.get_action_param_counts(action)
-        print action
+
         if unused_count or arg_count:
             parameters = self.get_action_param_properties(unused_count, arg_count)
             parameters = ', '.join([str(state[arg]) for arg in parameters])
@@ -789,7 +773,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.SetStringItem(list_index, 4, lit)
         self.StateList.SetStringItem(list_index, 5, str(state['nextState']))
         self.StateList.SetStringItem(list_index, 6, str(state['duration']))
-        self.StateList.SetStringItem(list_index, 7, action_name)
+        self.StateList.SetStringItem(list_index, 7, self.filter_action_name(action['name']))
         self.StateList.SetStringItem(list_index, 8, parameters)
     
 

@@ -189,8 +189,8 @@ class StateFilter:
         """
 
         # If a weapon uses the plasma or chaingun firing action, mark it's 2nd muzzle state as used.
-        plasma_action = self.patch.engine.get_action_from_name('FirePlasma')
-        cg_action = self.patch.engine.get_action_from_name('FireCGun')
+        plasma_action = self.patch.engine.get_action_from_name('FirePlasma')['name']
+        cg_action = self.patch.engine.get_action_from_name('FireCGun')['name']
 
         fire_state = weapon['stateFire']
         action = self.patch.states[fire_state]['action']

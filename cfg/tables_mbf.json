@@ -26859,5 +26859,8 @@
         266,
         799,
         895
-    ]
+    ],
+    "renderStyles": {
+        "STYLE_Normal": "Normal"
+    }
 }

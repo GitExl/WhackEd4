@@ -410,25 +410,18 @@ class Engine:
         return None
     
     
-    def get_action_from_name(self, name):
+    def get_action_from_key(self, key):
         """
-        Returns an action value from an action name.
+        Returns an action value from an action key.
         
-        In a non-extended engine, action values are integers. In an extended engine they are identical to the name, but
-        still need to be verified for existence.
-        
-        @raise LookupError: if there is no such action name.
+        @raise LookupError: if there is no such action key.
         """
         
-        if self.extended == True:
-            if name in self.actions:
-                return name
-        else:
-            for key, action in self.actions.iteritems():
-                if action['name'] == name:
-                    return int(key)
+        key = str(key)
+        if key in self.actions:
+            return self.actions[key]
         
-        raise LookupError('Cannot find an action with the name {}'.format(name))
+        raise LookupError('Cannot find an action with key {}'.format(key))
         
         return None
     
