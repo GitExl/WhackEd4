@@ -1,6 +1,17 @@
 {
     "versions": [19,21],
     "extended": true,
+    "features": [
+        "thing.stateCrash",
+        "thing.stateFreeze",
+        "thing.stateBurn",
+        "thing.spawnId",
+        "thing.game",
+        "thing.respawnTime",
+        "thing.renderStyle",
+        "thing.flags2",
+        "thing.flags3",
+    ],
     "name": "ZDaemon",
 
     "hacks": {
@@ -9,7 +20,7 @@
 
     "actions": {
         "NULL": {
-            "name": "NULL",
+            "name": "",
             "description": "None."
         },
         "KeenDie": {
@@ -438,7 +449,12 @@
         "monstersInfight": 202,
         "soulSphereHealth": 100,
         "startAmmo": 50,
-        "startHealth": 100
+        "startHealth": 100,
+        "armorClassSilver": 3,
+        "armorClassEnchanted": 4,
+        "vampireMaxHealth": 200,
+        "vampirePlayerFactor": 50,
+        "vampireMonsterFactor": 25
     },
     "miscData": {
         "armorClassBlue": {
@@ -505,6 +521,26 @@
         },
         "startHealth": {
             "patchKey": "Initial Health",
+            "type": "int"
+        },
+        "armorClassSilver": {
+            "patchKey": "Silver Armor Class",
+            "type": "int"
+        },
+        "armorClassEnchanted": {
+            "patchKey": "Enchanted Armor Class",
+            "type": "int"
+        },
+        "vampireMaxHealth": {
+            "patchKey": "Vampire Max Health",
+            "type": "int"
+        },
+        "vampirePlayerFactor": {
+            "patchKey": "Vampire Player Factor",
+            "type": "int"
+        },
+        "vampireMonsterFactor": {
+            "patchKey": "Vampire Monster Factor",
             "type": "int"
         }
     },
