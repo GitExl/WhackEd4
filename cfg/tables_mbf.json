@@ -9,7 +9,7 @@
 
     "actions": {
         "NULL": {
-            "name": "NULL",
+            "name": "",
             "description": "None."
         },
         "KeenDie": {

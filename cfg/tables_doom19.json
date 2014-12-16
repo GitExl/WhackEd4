@@ -32,7 +32,7 @@
     "actions": {
         "0": {
             "description": "None.", 
-            "name": "NULL"
+            "name": ""
         }, 
         "161376": {
             "description": "Same as the 'Fall' and 'BossDeath' actions together.", 

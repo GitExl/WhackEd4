@@ -288,7 +288,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         action_items = []
         
         for action in self.patch.engine.actions.itervalues():
-            action_items.append(self.filter_action_name(action['name']))
+            action_items.append(action['name'])
                     
         self.Action.SetItems(action_items)
         
@@ -338,22 +338,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.Thaw()
         
         wx.EndBusyCursor()
-    
 
-    def filter_action_name(self, name):
-        if name == 0 or name == 'NULL':
-            return ''
-
-        return name
-
-
-    def filter_action_name_reverse(self, name):
-        if name == '':
-            return 'NULL'
-
-        return name
-
-        
+       
     def filter_update(self, index):
         """
         Updates the current state filter and rebuilds the state list accordingly.
@@ -682,7 +668,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         
         self.undo_add()
         
-        action_name = self.filter_action_name_reverse(self.Action.GetStringSelection())
+        action_name = self.Action.GetStringSelection()
         action_key = self.get_action_key_from_name(action_name)
         
         for list_index in self.selected:
@@ -741,7 +727,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         """
         
         action = self.patch.engine.get_action_from_key(action_key)
-        self.Action.Select(self.Action.FindString(self.filter_action_name_reverse(action['name'])))
+        self.Action.Select(self.Action.FindString(action['name']))
         
     
     def statelist_update_row(self, list_index):
@@ -773,7 +759,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.SetStringItem(list_index, 4, lit)
         self.StateList.SetStringItem(list_index, 5, str(state['nextState']))
         self.StateList.SetStringItem(list_index, 6, str(state['duration']))
-        self.StateList.SetStringItem(list_index, 7, self.filter_action_name(action['name']))
+        self.StateList.SetStringItem(list_index, 7, action['name'])
         self.StateList.SetStringItem(list_index, 8, parameters)
     
 
