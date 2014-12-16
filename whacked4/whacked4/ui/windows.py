@@ -166,58 +166,68 @@ AMMO_LIST = 1817
 FRAME_CHEATS = 1818
 CHEATS_LIST = 1819
 CHEATS_RESTORE = 1820
-FRAME_MISC = 1821
-MISC_START_HEALTH = 1822
-MISC_START_BULLETS = 1823
-MISC_MAX_HEALTH = 1824
-MISC_MAX_ARMOR = 1825
-MISC_ARMOR_CLASS_GREEN = 1826
-MISC_ARMOR_CLASS_BLUE = 1827
-MISC_MAX_SOULSPHERE_HEALTH = 1828
-MISC_SOULSPHERE_HEALTH = 1829
-MISC_MEGASPHERE_HEALTH = 1830
-MISC_GODMODE_HEALTH = 1831
-MISC_IDFA_ARMOR = 1832
-MISC_IDFA_ARMOR_CLASS = 1833
-MISC_IDKFA_ARMOR = 1834
-MISC_IDKFA_ARMOR_CLASS = 1835
-MISC_BFG_AMMO = 1836
-MISC_MONSTERS_INFIGHT = 1837
-MISC_RESTORE = 1838
-FRAME_PAR = 1839
-PAR_EPISODE = 1840
-PAR_MAP = 1841
-PAR_SECONDS = 1842
-PAR_TOOLS = 1843
-PAR_TOOL_ADD = 1844
-PAR_TOOL_REMOVE = 1845
-PAR_LIST = 1846
-DIALOG_SPRITES = 1847
-SPRITES_FILTER = 1848
-SPRITES_FRAME = 1849
-SPRITES_FRAMESPIN = 1850
-SPRITES_OK = 1851
-SPRITES_CANCEL = 1852
-STRING_OLD = 1853
-STRING_NEW = 1854
-STRING_OK = 1855
-STRING_CANCEL = 1856
-DIALOG_PATCHINFO = 1857
-PATCHINFO_TOOLBAR = 1858
-PATCHINFO_TOOLBAR_ADD = 1859
-PATCHINFO_TOOLBAR_REMOVE = 1860
-PATCHINFO_CANCEL = 1861
-DIALOG_START = 1862
-START_NEW = 1863
-START_OPEN = 1864
-START_RECENT = 1865
-START_CANCEL = 1866
-DIALOG_ABOUT = 1867
-ABOUT_OK = 1868
-DIALOG_ERROR = 1869
-ERROR_REPORT = 1870
-ERROR_COPY = 1871
-ERROR_CLOSE = 1872
+FRAME_MISC2 = 1821
+MISC2_VALUE = 1822
+MISC2_VALUE_ENABLED = 1823
+MISC2_RESTORE = 1824
+MISC2_LIST = 1825
+FRAME_MISC = 1826
+MISC_START_HEALTH = 1827
+MISC_START_BULLETS = 1828
+MISC_MAX_HEALTH = 1829
+MISC_MAX_ARMOR = 1830
+MISC_ARMOR_CLASS_GREEN = 1831
+MISC_ARMOR_CLASS_BLUE = 1832
+MISC_ARMOR_CLASS_SILVER = 1833
+MISC_ARMOR_CLASS_ENCHANTED = 1834
+MISC_MAX_SOULSPHERE_HEALTH = 1835
+MISC_SOULSPHERE_HEALTH = 1836
+MISC_MEGASPHERE_HEALTH = 1837
+MISC_GODMODE_HEALTH = 1838
+MISC_IDFA_ARMOR = 1839
+MISC_IDFA_ARMOR_CLASS = 1840
+MISC_IDKFA_ARMOR = 1841
+MISC_IDKFA_ARMOR_CLASS = 1842
+MISC_BFG_AMMO = 1843
+MISC_VAMPIRE_MAX_HEALTH = 1844
+MISC_VAMPIRE_PLAYER_FACTOR = 1845
+MISC_VAMPIRE_MONSTER_FACTOR = 1846
+MISC_MONSTERS_INFIGHT = 1847
+MISC_RESTORE = 1848
+FRAME_PAR = 1849
+PAR_EPISODE = 1850
+PAR_MAP = 1851
+PAR_SECONDS = 1852
+PAR_TOOLS = 1853
+PAR_TOOL_ADD = 1854
+PAR_TOOL_REMOVE = 1855
+PAR_LIST = 1856
+DIALOG_SPRITES = 1857
+SPRITES_FILTER = 1858
+SPRITES_FRAME = 1859
+SPRITES_FRAMESPIN = 1860
+SPRITES_OK = 1861
+SPRITES_CANCEL = 1862
+STRING_OLD = 1863
+STRING_NEW = 1864
+STRING_OK = 1865
+STRING_CANCEL = 1866
+DIALOG_PATCHINFO = 1867
+PATCHINFO_TOOLBAR = 1868
+PATCHINFO_TOOLBAR_ADD = 1869
+PATCHINFO_TOOLBAR_REMOVE = 1870
+PATCHINFO_CANCEL = 1871
+DIALOG_START = 1872
+START_NEW = 1873
+START_OPEN = 1874
+START_RECENT = 1875
+START_CANCEL = 1876
+DIALOG_ABOUT = 1877
+ABOUT_OK = 1878
+DIALOG_ERROR = 1879
+ERROR_REPORT = 1880
+ERROR_COPY = 1881
+ERROR_CLOSE = 1882
 
 ###########################################################################
 ## Class MainFrameBase
@@ -2523,15 +2533,74 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 	
 
 ###########################################################################
+## Class Misc2FrameBase
+###########################################################################
+
+class Misc2FrameBase ( wx.Frame ):
+	
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = FRAME_MISC2, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 350,350 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		
+		self.SetSizeHintsSz( wx.Size( 350,350 ), wx.DefaultSize )
+		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+		
+		bSizer152 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		bSizer153 = wx.BoxSizer( wx.VERTICAL )
+		
+		self.m_panel2 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer154 = wx.BoxSizer( wx.VERTICAL )
+		
+		bSizer154.SetMinSize( wx.Size( 100,-1 ) ) 
+		self.Value = wx.TextCtrl( self.m_panel2, MISC2_VALUE, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		bSizer154.Add( self.Value, 0, wx.ALL|wx.EXPAND, 3 )
+		
+		self.ValueEnabled = wx.CheckBox( self.m_panel2, MISC2_VALUE_ENABLED, u"Enabled", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer154.Add( self.ValueEnabled, 0, wx.ALL|wx.EXPAND, 9 )
+		
+		self.Restore = wx.Button( self.m_panel2, MISC2_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Restore.SetMinSize( wx.Size( -1,28 ) )
+		
+		bSizer154.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 3 )
+		
+		
+		self.m_panel2.SetSizer( bSizer154 )
+		self.m_panel2.Layout()
+		bSizer154.Fit( self.m_panel2 )
+		bSizer153.Add( self.m_panel2, 1, wx.ALL, 6 )
+		
+		
+		bSizer152.Add( bSizer153, 0, wx.EXPAND, 0 )
+		
+		self.MiscList = wx.ListCtrl( self, MISC2_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_SORT_HEADER|wx.LC_REPORT|wx.NO_BORDER )
+		bSizer152.Add( self.MiscList, 1, wx.ALL|wx.EXPAND, 0 )
+		
+		
+		self.SetSizer( bSizer152 )
+		self.Layout()
+		
+		# Connect Events
+		self.Restore.Bind( wx.EVT_BUTTON, self.restore )
+	
+	def __del__( self ):
+		pass
+	
+	
+	# Virtual event handlers, overide them in your derived class
+	def restore( self, event ):
+		pass
+	
+
+###########################################################################
 ## Class MiscFrameBase
 ###########################################################################
 
 class MiscFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_MISC, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 440,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_MISC, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 440,470 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 440,380 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 440,470 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -2550,7 +2619,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		bSizer100.Add( self.StartHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
 		
-		bSizer99.Add( bSizer100, 1, wx.EXPAND, 0 )
+		bSizer99.Add( bSizer100, 1, wx.EXPAND, 5 )
 		
 		bSizer1001 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -2612,6 +2681,30 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer99.Add( bSizer1004, 1, wx.EXPAND, 5 )
 		
+		bSizer10042 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7542 = wx.StaticText( self, wx.ID_ANY, u"Silver armor class", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7542.Wrap( -1 )
+		bSizer10042.Add( self.m_staticText7542, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.SilverArmorClass = wx.TextCtrl( self, MISC_ARMOR_CLASS_SILVER, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10042.Add( self.SilverArmorClass, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer99.Add( bSizer10042, 1, wx.EXPAND, 5 )
+		
+		bSizer10043 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7543 = wx.StaticText( self, wx.ID_ANY, u"Enchanted armor class", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7543.Wrap( -1 )
+		bSizer10043.Add( self.m_staticText7543, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.EnchantedArmorClass = wx.TextCtrl( self, MISC_ARMOR_CLASS_ENCHANTED, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10043.Add( self.EnchantedArmorClass, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer99.Add( bSizer10043, 1, wx.EXPAND, 5 )
+		
 		bSizer1005 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText755 = wx.StaticText( self, wx.ID_ANY, u"Max. soulsphere health", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -2654,7 +2747,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		bSizer1007.Add( self.MegaHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
 		
-		bSizer991.Add( bSizer1007, 1, wx.EXPAND, 0 )
+		bSizer991.Add( bSizer1007, 1, wx.EXPAND, 5 )
 		
 		bSizer1008 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -2666,7 +2759,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		bSizer1008.Add( self.GodHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
 		
-		bSizer991.Add( bSizer1008, 1, wx.EXPAND, 0 )
+		bSizer991.Add( bSizer1008, 1, wx.EXPAND, 5 )
 		
 		bSizer10011 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -2728,6 +2821,53 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer991.Add( bSizer10051, 1, wx.EXPAND, 5 )
 		
+		bSizer10081 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7581 = wx.StaticText( self, wx.ID_ANY, u"Maximum vampire health", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7581.Wrap( -1 )
+		bSizer10081.Add( self.m_staticText7581, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.VampireMaxHealth = wx.TextCtrl( self, MISC_VAMPIRE_MAX_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10081.Add( self.VampireMaxHealth, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer991.Add( bSizer10081, 1, wx.EXPAND, 5 )
+		
+		bSizer10082 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7582 = wx.StaticText( self, wx.ID_ANY, u"Vampire player factor", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7582.Wrap( -1 )
+		bSizer10082.Add( self.m_staticText7582, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.VampirePlayerFactor = wx.TextCtrl( self, MISC_VAMPIRE_PLAYER_FACTOR, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10082.Add( self.VampirePlayerFactor, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer991.Add( bSizer10082, 1, wx.EXPAND, 5 )
+		
+		bSizer10083 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText7583 = wx.StaticText( self, wx.ID_ANY, u"Vampire monster factor", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText7583.Wrap( -1 )
+		bSizer10083.Add( self.m_staticText7583, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.VampireMonsterFactor = wx.TextCtrl( self, MISC_VAMPIRE_MONSTER_FACTOR, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		bSizer10083.Add( self.VampireMonsterFactor, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		
+		bSizer991.Add( bSizer10083, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer137.Add( bSizer991, 1, wx.ALL|wx.EXPAND, 6 )
+		
+		
+		bSizer41.Add( bSizer137, 1, 0, 5 )
+		
+		
+		bSizer41.AddSpacer( ( 0, 6), 0, wx.EXPAND, 0 )
+		
+		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
+		
 		bSizer10071 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText75611 = wx.StaticText( self, wx.ID_ANY, u"Monsters infight", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -2738,18 +2878,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		bSizer10071.Add( self.MonstersInfight, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.EXPAND, 5 )
 		
 		
-		bSizer991.Add( bSizer10071, 1, wx.EXPAND, 5 )
-		
-		
-		bSizer137.Add( bSizer991, 1, wx.ALL|wx.EXPAND, 6 )
-		
-		
-		bSizer41.Add( bSizer137, 1, wx.EXPAND, 5 )
-		
-		
-		bSizer41.AddSpacer( ( 0, 6), 0, wx.EXPAND, 0 )
-		
-		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
+		bSizer158.Add( bSizer10071, 0, wx.ALL|wx.EXPAND, 6 )
 		
 		
 		bSizer158.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
@@ -2779,6 +2908,10 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		self.GreenArmorClass.Bind( wx.EVT_TEXT, self.set_value )
 		self.BlueArmorClass.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.BlueArmorClass.Bind( wx.EVT_TEXT, self.set_value )
+		self.SilverArmorClass.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.SilverArmorClass.Bind( wx.EVT_TEXT, self.set_value )
+		self.EnchantedArmorClass.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.EnchantedArmorClass.Bind( wx.EVT_TEXT, self.set_value )
 		self.MaxSoulHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.MaxSoulHealth.Bind( wx.EVT_TEXT, self.set_value )
 		self.SoulHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
@@ -2797,6 +2930,12 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		self.IDKFAArmorClass.Bind( wx.EVT_TEXT, self.set_value )
 		self.BFGAmmo.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.BFGAmmo.Bind( wx.EVT_TEXT, self.set_value )
+		self.VampireMaxHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.VampireMaxHealth.Bind( wx.EVT_TEXT, self.set_value )
+		self.VampirePlayerFactor.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.VampirePlayerFactor.Bind( wx.EVT_TEXT, self.set_value )
+		self.VampireMonsterFactor.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.VampireMonsterFactor.Bind( wx.EVT_TEXT, self.set_value )
 		self.MonstersInfight.Bind( wx.EVT_CHECKBOX, self.set_infight )
 		self.Restore.Bind( wx.EVT_BUTTON, self.restore )
 	
@@ -2810,6 +2949,16 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 	
 	def set_value( self, event ):
 		pass
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
