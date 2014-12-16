@@ -17,8 +17,17 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         windows.PatchInfoDialogBase.__init__(self, parent)
 
         self.SetEscapeId(windows.PATCHINFO_CANCEL)
-        
-        
+
+        self.selected_engine = None
+        self.selected_iwad = None
+        self.selected_pwads = None
+
+        self.patch = None
+        self.engines = None
+        self.workspace = None
+
+        self.pwads = None
+
     def reset(self):
         """
         Resets this dialog's state.
@@ -39,8 +48,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         self.PWADList.ClearAll()
         client_width = self.PWADList.GetClientSizeTuple()[0]
         self.PWADList.InsertColumn(0, 'Filename', width=client_width)
-        
-    
+
     def set_state(self, patch, engines, workspace, modify_engine=True):
         """
         Sets this dialog's state.
@@ -86,12 +94,11 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         if self.EngineList.GetSelection() == wx.NOT_FOUND and self.EngineList.GetCount() > 0:
             self.EngineList.Select(0)
         
-        if modify_engine == False:
+        if not modify_engine:
             self.EngineList.Disable()
         else:
             self.EngineList.Enable()
 
-    
     def ok(self, event):
         """
         Called when the user presses the Ok button.
@@ -101,18 +108,14 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         
         # An engine must always be selected.
         if self.EngineList.GetSelection() == -1:
-            wx.MessageBox(message='No engine selected.',
-                caption='Patch settings',
-                style=wx.OK | wx.ICON_EXCLAMATION,
-                parent=self)
+            wx.MessageBox(message='No engine selected.', caption='Patch settings', style=wx.OK | wx.ICON_EXCLAMATION,
+                          parent=self)
             return
         
         # Without an IWAD, sprite previews are not possible.
         if self.IWAD.GetValue() == '':
             result = wx.MessageBox(message='No IWAD selected. Sprite previews will not be available.',
-                caption='Missing IWAD',
-                style=wx.OK | wx.CANCEL | wx.ICON_EXCLAMATION,
-                parent=self)
+                                   caption='Missing IWAD', style=wx.OK | wx.CANCEL | wx.ICON_EXCLAMATION, parent=self)
             if result == wx.CANCEL:
                 return
         
@@ -124,16 +127,14 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         self.selected_pwads = self.pwads
         
         self.Hide()
-    
-    
+
     def delete_iwad(self, event):
         """
         Deletes the currently selected IWAD.
         """
         
         self.IWAD.ChangeValue('')
-    
-    
+
     def browse_iwad(self, event):
         """
         Displays the IWAD file browser.
@@ -147,20 +148,15 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
             try:
                 iwad = wad.WADReader(filename)
             except wad.WADTypeError:
-                wx.MessageBox(message='The selected WAD is not a valid WAD file.',
-                    caption='Invalid WAD file',
-                    style=wx.OK | wx.ICON_EXCLAMATION,
-                    parent=self)
+                wx.MessageBox(message='The selected WAD is not a valid WAD file.', caption='Invalid WAD file',
+                              style=wx.OK | wx.ICON_EXCLAMATION, parent=self)
             else:
                 if iwad.type != 'IWAD':
-                    wx.MessageBox(message='The selected WAD is not an IWAD.',
-                        caption='Invalid WAD file',
-                        style=wx.OK | wx.ICON_EXCLAMATION,
-                        parent=self)
+                    wx.MessageBox(message='The selected WAD is not an IWAD.', caption='Invalid WAD file',
+                                  style=wx.OK | wx.ICON_EXCLAMATION, parent=self)
                 else:
                     self.IWAD.SetValue(filename)
-            
-    
+
     def pwad_add(self, event):
         """
         Displays the PWAD file browser.
@@ -174,23 +170,18 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
             try:
                 pwad = wad.WADReader(filename)
             except wad.WADTypeError:
-                wx.MessageBox(message='The selected WAD is not a valid WAD file.',
-                    caption='Invalid WAD file',
-                    style=wx.OK | wx.ICON_EXCLAMATION,
-                    parent=self)
+                wx.MessageBox(message='The selected WAD is not a valid WAD file.', caption='Invalid WAD file',
+                              style=wx.OK | wx.ICON_EXCLAMATION, parent=self)
             else:
                 if pwad.type != 'PWAD':
-                    wx.MessageBox(message='The selected WAD is not a PWAD.',
-                        caption='Invalid WAD file',
-                        style=wx.OK | wx.ICON_EXCLAMATION,
-                        parent=self)
+                    wx.MessageBox(message='The selected WAD is not a PWAD.', caption='Invalid WAD file',
+                                  style=wx.OK | wx.ICON_EXCLAMATION, parent=self)
                 else:
                     
                     # Append it to the relevant lists.
                     self.pwads.append(filename)
                     self.PWADList.InsertStringItem(len(self.pwads), filename)
-        
-            
+
     def pwad_remove(self, event):
         """
         Removes the selected PWAD from the list.
@@ -200,7 +191,6 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         if index > -1:
             del self.pwads[index]
             self.PWADList.DeleteItem(index)
-
 
     def cancel(self, event):
         self.Hide()

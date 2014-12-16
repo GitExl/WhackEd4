@@ -38,13 +38,11 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
     """
     Settings for WhackEd4.
     """
-
     
     def __init__(self, path):
         settingshandler.SettingsHandler.__init__(self, path)
         
         self.recent_files_clean()
-    
     
     def register(self):
         self.register_setting('main_window_state', {
@@ -55,9 +53,8 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
             'maximized': True,                       
         })
         self.register_setting('recent_files', [])
-        self.register_setting('undo_size', 64)
+        self.register_setting('undo_size', 256)
         self.register_setting('recent_files_count', 10)
-        
         
     def main_window_state_store(self, x, y, width, height, is_maximized):
         """
@@ -72,7 +69,6 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
             'maximized': is_maximized
         }
         self.put_setting('main_window_state', main_window)
-        
         
     def main_window_state_restore(self, window):
         """
@@ -89,7 +85,6 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
         )
         window.Maximize(main_window['maximized'])
         window.Refresh()
-     
      
     def recent_files_add(self, filename):
         """
@@ -109,7 +104,6 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
         recent_files.insert(0, filename)
         
         self.put_setting('recent_files', recent_files)
-    
     
     def recent_files_clean(self):
         """

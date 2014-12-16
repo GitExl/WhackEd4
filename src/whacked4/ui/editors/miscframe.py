@@ -37,6 +37,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         
         self.SetIcon(wx.Icon('res/editor-misc.ico'))
 
+        self.patch = None
 
     def build(self, patch):
         """
@@ -45,7 +46,6 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         
         self.patch = patch
         self.update_properties()
-        
         
     def update_properties(self):
         """
@@ -63,8 +63,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         else:
             value = False
         self.MonstersInfight.SetValue(value)
-        
-        
+
     def set_value(self, event):
         """
         Validates and sets a misc. property.
@@ -94,8 +93,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         
         self.patch.misc[key] = value 
         self.is_modified(True)
-        
-        
+
     def set_infight(self, event):
         """
         Sets the monsters infight misc. data.
@@ -105,14 +103,13 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         
         data = self.patch.engine.misc_data['monstersInfight']
         value = self.MonstersInfight.GetValue()
-        if value == True:
+        if value:
             value = data['on']
         else:
             value = data['off']
         
         self.patch.misc['monstersInfight'] = value
-        
-    
+
     def restore(self, event):
         """
         Restore all misc. values to their engine state.
@@ -126,7 +123,6 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         
         self.update_properties()
 
-        
     def undo_restore_item(self, item):
         """
         @see: EditorMixin.undo_restore_item
@@ -134,8 +130,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         
         self.patch.misc = item
         self.update_properties()
-        
-        
+
     def undo_store_item(self):
         """
         @see: EditorMixin.undo_store_item

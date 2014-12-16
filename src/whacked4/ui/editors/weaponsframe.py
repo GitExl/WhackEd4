@@ -46,6 +46,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         
         self.SetIcon(wx.Icon('res/editor-weapons.ico'))
 
+        self.patch = None
+        self.selected_index = 0
 
     def build(self, patch):
         """
@@ -58,7 +60,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
     
         self.ammolist_build()
         self.weaponlist_build()
-        
     
     def activate(self, event):
         """
@@ -73,8 +74,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         
         self.ammolist_build()
         self.update_properties()
-    
-    
+
     def weaponlist_build(self):
         """
         Builds the list of weapon names.
@@ -93,7 +93,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.list_autosize(self.WeaponList)
         self.WeaponList.Select(0, True)
         
-        
     def weaponlist_update_row(self, row_index):
         """
         Updates a row in the weapons list.
@@ -104,7 +103,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         
         self.WeaponList.SetItemText(row_index, weapon_name)
         self.WeaponList.SetStringItem(row_index, 1, self.patch.get_ammo_name(weapon['ammoType']))
-        
     
     def weaponlist_resize(self, event):
         """
@@ -115,7 +113,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.WeaponList.SetColumnWidth(0, column_width / 2)
         self.WeaponList.SetColumnWidth(1, column_width / 2)
     
-    
     def ammolist_build(self):
         """
         Builds the choice box with ammo types.
@@ -125,7 +122,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.AmmoType.AppendItems(self.patch.ammo.names)
         self.AmmoType.Append('Unknown')
         self.AmmoType.Append('Infinite')
-        
         
     def update_properties(self):
         """
@@ -146,7 +142,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             self.set_display_state(name)
             
         self.WeaponList.SetItemText(self.selected_index, self.patch.weapons.names[self.selected_index])
-        
         
     def set_state_index(self, event):
         """
@@ -172,7 +167,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.patch.weapons[self.selected_index]['state' + key] = value
         self.__dict__['WeaponState' + key + 'Name'].SetLabel(self.patch.get_state_name(value))
         self.is_modified(True)
-        
     
     def set_ammo(self, event):
         """
@@ -186,7 +180,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         
         self.weaponlist_update_row(self.selected_index)
         self.is_modified(True)
-        
     
     def set_state_external(self, event):
         """
@@ -203,7 +196,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         text_ctrl.SetValue(str(states_frame.selection_get_state_index()))
         self.is_modified(True)
         
-        
     def set_display_state(self, state_name):
         """
         Sets state control values based on the partial name of a weapon state property.
@@ -213,7 +205,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.__dict__['WeaponState' + state_name].ChangeValue(str(state_index))
         self.__dict__['WeaponState' + state_name + 'Name'].SetLabel(self.patch.get_state_name(state_index))
 
-
     def weapon_rename(self, event):
         """
         Called when the current weapon needs to be renamed.
@@ -221,14 +212,14 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         
         self.weapon_rename_action()
 
-
     def weapon_rename_action(self):
         """
         Renames the currently selected thing.
         """
         
         weapon_name = self.patch.weapons.names[self.selected_index]
-        new_name = wx.GetTextFromUser('Enter a new name for ' + weapon_name, caption='Change name', default_value=weapon_name, parent=self)
+        new_name = wx.GetTextFromUser('Enter a new name for ' + weapon_name, caption='Change name',
+                                      default_value=weapon_name, parent=self)
         
         if new_name != '':
             self.undo_add()
@@ -236,7 +227,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             self.patch.weapons.names[self.selected_index] = new_name
             self.update_properties()
             self.is_modified(True)
-            
             
     def weapon_restore(self, event):
         """
@@ -250,7 +240,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         
         self.update_properties()
         self.is_modified(True)
-
         
     def undo_restore_item(self, item):
         """
@@ -264,7 +253,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.weaponlist_update_row(self.selected_index)        
         self.update_properties()
         
-        
     def undo_store_item(self):
         """
         @see: EditorMixin.undo_store_item
@@ -276,7 +264,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             'index': self.selected_index
         }
     
-    
     def goto_state_event(self, event):
         """
         Changes the selected state in the states editor window to the one of a weapon's state property.
@@ -286,7 +273,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         state_index = self.patch.weapons[self.selected_index]['state' + key]
         
         self.goto_state(state_index, statefilter.FILTER_TYPE_WEAPON, self.selected_index)
-    
     
     def weapon_select(self, event):
         """

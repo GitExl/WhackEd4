@@ -18,7 +18,8 @@ class WADError(Exception):
         
     def __str__(self):
         return self.msg
-    
+
+
 class WADTypeError(WADError):
     """
     The WAD file has an invalid type.
@@ -40,7 +41,6 @@ class Lump:
         self.data = None
         self.owner = owner
 
-        
     def get_data(self):
         """
         Returns this lump's data.
@@ -67,15 +67,13 @@ class WADReader:
     S_HEADER = struct.Struct("<4sII")
     S_LUMP = struct.Struct("<II8s")
 
-    
     def __init__(self, filename):
         self.filename = None
         self.lumps = None
         self.type = None
         
         self.read(filename)
-    
-    
+
     def read(self, filename):
         """
         Reads a WAD file's header and lump directory.
@@ -104,8 +102,7 @@ class WADReader:
             
         self.filename = filename
         self.type = wad_type
-            
-    
+
     def get_lump(self, lump_name):
         """
         Searches this WAD's lump directory for a lump by name.
@@ -119,7 +116,6 @@ class WADReader:
         
         return None
 
-
     def get_sprite_list(self, sprites_dict):
         section_active = False
         
@@ -130,5 +126,5 @@ class WADReader:
             elif lump.name == 'SS_END' or lump.name == 'S_END':
                 section_active = True
                 continue
-            elif section_active == True:
+            elif section_active:
                 sprites_dict[lump.name] = lump

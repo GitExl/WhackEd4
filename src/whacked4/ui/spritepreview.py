@@ -15,8 +15,7 @@ class SpritePreview(wx.Panel):
 
     # The sensitivity of mouse dragging moving the sprite's rotation. Lower values are more sensitive.
     DRAG_SENSITIVITY = 20
-    
-    
+
     def __init__(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.NO_BORDER):
         wx.Panel.__init__(self, parent, id=id, pos=pos, size=size, style=wx.STATIC_BORDER)
         
@@ -36,6 +35,7 @@ class SpritePreview(wx.Panel):
         # Create "floor" fill color.
         floor_colour = utils.mix_colours(self.GetBackgroundColour(), wx.Colour(0, 0, 0), 0.6)
         self.floor_brush = wx.Brush(floor_colour)
+        self.floor_points = None
         self.create_floor_points()
         
         # Sprite setup.
@@ -57,16 +57,14 @@ class SpritePreview(wx.Panel):
         self.Bind(wx.EVT_MOTION, self.drag_move)
 
         self.update_cursor()
-        
 
     def drag_start(self, event):
-        if self.lock_angle == True:
+        if self.lock_angle:
             return
 
         self.drag_point_start = event.GetLogicalPosition(wx.WindowDC(self))
         self.drag_angle_start = self.angle
         self.update_cursor()
-
 
     def drag_end(self, event):
         if self.drag_point_start is None:
@@ -74,7 +72,6 @@ class SpritePreview(wx.Panel):
 
         self.drag_point_start = None
         self.update_cursor()
-
 
     def drag_move(self, event):
         if self.drag_point_start is None:
@@ -90,9 +87,8 @@ class SpritePreview(wx.Panel):
             self.angle = drag_angle
             self.show_sprite(self.sprite_name, self.sprite_frame)
 
-
     def update_cursor(self):
-        if self.lock_angle == True:
+        if self.lock_angle:
             self.SetCursor(wx.StockCursor(wx.CURSOR_ARROW))
         elif self.drag_point_start is None:
             self.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
@@ -105,8 +101,7 @@ class SpritePreview(wx.Panel):
         """
         
         self.wads = wads
-        
-        
+
     def show_sprite(self, sprite_name, sprite_frame):
         """
         Shows a sprite.
@@ -133,8 +128,7 @@ class SpritePreview(wx.Panel):
         
         self.update_cursor()
         self.Refresh()
-            
-    
+
     def paint(self, event):
         """
         Called when this control is painted.
@@ -155,7 +149,7 @@ class SpritePreview(wx.Panel):
         bitmap = None
         if self.sprite is None:
             bitmap = self.missing
-        elif self.sprite.invalid == True:
+        elif self.sprite.invalid:
             bitmap = self.invalid
         elif self.sprite.image is None:
             bitmap = self.missing
@@ -166,11 +160,17 @@ class SpritePreview(wx.Panel):
         if bitmap is None:
             bitmap = self.sprite.image
             baseline = size[1] * self.baseline_factor
-            
-            x = size[0] / 2 - self.sprite.width / 2
-            y = baseline - self.sprite.height
-            x + self.sprite.left
-            y + self.sprite.top
+
+            x = size[0] / 2
+            y = baseline
+
+            # Adjust sprite coordinates on whether it is to be used as a thing, or a screen graphic (like weapons).
+            if self.sprite.left > 0 and self.sprite.top > 0:
+                x -= self.sprite.left
+                y -= self.sprite.top
+            else:
+                x -= bitmap.GetWidth() / 2
+                y -= bitmap.GetHeight()
 
             dc.DrawBitmap(bitmap, x, y, True)
         
@@ -180,7 +180,6 @@ class SpritePreview(wx.Panel):
             y = size[1] / 2 - bitmap.GetHeight() / 2
             dc.DrawBitmap(bitmap, x, y, True)
 
-            
     def clear(self):
         """
         Clears this sprite preview.
@@ -188,8 +187,7 @@ class SpritePreview(wx.Panel):
         
         self.sprite = self.CLEAR
         self.Refresh()
-            
-            
+
     def set_baseline_factor(self, factor):
         """
         Sets the baseline at which to draw the sprite preview.
@@ -202,8 +200,7 @@ class SpritePreview(wx.Panel):
             
         self.baseline_factor = factor
         self.create_floor_points()
-        
-        
+
     def create_floor_points(self):
         size = self.GetClientSizeTuple()
         baseline = size[1] * self.baseline_factor

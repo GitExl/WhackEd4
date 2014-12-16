@@ -27,15 +27,13 @@ class EditorMixin:
         self.Bind(wx.EVT_SIZE, self.workspace_update_data)
         self.Bind(wx.EVT_ACTIVATE, self.activate)
         self.Bind(wx.EVT_CLOSE, self.close)
-        
-        
+
     def build(self, patch):
         """
         Called when this editor window needs to build it's UI contents.
         """
         
         raise NotImplementedError()
-    
     
     def list_autosize(self, list_control):
         """
@@ -45,7 +43,6 @@ class EditorMixin:
         for i in range(list_control.GetColumnCount()):
             list_control.SetColumnWidth(i, wx.LIST_AUTOSIZE_USEHEADER)
         list_control.Layout()
-    
     
     def undo_add(self):
         """
@@ -62,8 +59,7 @@ class EditorMixin:
 
         self.undo.append(self.undo_store_item())
         self.undo_index += 1
-        
-        
+
     def undo_do_undo(self):
         """
         Restores an item from the undo stack.
@@ -76,7 +72,6 @@ class EditorMixin:
         self.undo_index -= 1
         self.undo_restore_item(undo_item)
         
-        
     def undo_restore_item(self, item):
         """
         Called when an undo item needs to be restored.
@@ -85,7 +80,6 @@ class EditorMixin:
         """
         
         raise NotImplementedError()
-        
         
     def undo_store_item(self):
         """
@@ -96,7 +90,6 @@ class EditorMixin:
         
         raise NotImplementedError()
     
-    
     def workspace_update_data(self, event):
         """
         Updates this editor window's position data.
@@ -104,7 +97,7 @@ class EditorMixin:
         
         self.GetParent().workspace_modified = True
         
-        if self.IsMaximized() == True:
+        if self.IsMaximized():
             event.Skip()
             return
         
@@ -117,7 +110,6 @@ class EditorMixin:
         self.workspace_data['height'] = size[1]
         
         event.Skip()
-                
         
     def enter_state(self, event):
         """
@@ -129,7 +121,6 @@ class EditorMixin:
         window.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
         window.Refresh()
         
-        
     def leave_state(self, event):
         """
         Called when the mouse leaves a state label.
@@ -139,7 +130,6 @@ class EditorMixin:
         window.SetCursor(wx.StockCursor(wx.CURSOR_ARROW))
         window.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_WINDOWTEXT))
         window.Refresh()
-        
     
     def is_modified(self, modified):
         """
@@ -147,7 +137,6 @@ class EditorMixin:
         """
         
         self.GetParent().set_modified(modified)
-        
         
     def focus_text(self, event):
         """
@@ -157,14 +146,12 @@ class EditorMixin:
         utils.focus_text(event, self)
         event.Skip()
         
-        
     def activate(self, event):
         """
         Called when this window is activated.
         """
         
-        self.GetParent().editor_window_activate(self)
-
+        self.GetParent().editor_window_activate()
 
     def close(self, event):
         """
@@ -173,7 +160,6 @@ class EditorMixin:
         
         self.Maximize(False)
         self.GetParent().editor_window_closed(self)
-
         
     def goto_state(self, state_index, filter_type, filter_index):
         """
@@ -187,7 +173,6 @@ class EditorMixin:
         states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
         states_frame.goto_state_index(state_index, filter_type=filter_type, filter_index=filter_index)
         states_frame.Raise()
-        
     
     def goto_sound(self, sound_index):
         """

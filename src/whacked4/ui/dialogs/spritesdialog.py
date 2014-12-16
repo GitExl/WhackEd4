@@ -16,7 +16,14 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         self.SetEscapeId(windows.SPRITES_CANCEL)
 
-        
+        self.selected_sprite = None
+        self.selected_frame = None
+
+        self.patch = None
+        self.pwads = None
+
+        self.filter_list = None
+
     def ok(self, event):
         """
         Called when the user clicks the Ok button.
@@ -39,8 +46,7 @@ class SpritesDialog(windows.SpritesDialogBase):
                 self.selected_frame = int(frame_index)
                  
         self.Hide()
-        
-        
+
     def sprite_select_list(self, event):
         """
         Called when a sprite name is selected in the list.
@@ -48,7 +54,6 @@ class SpritesDialog(windows.SpritesDialogBase):
         
         self.FrameIndex.SetValue('0')
         self.update_preview()
-        
         
     def sprite_select_index(self, list_index):
         """
@@ -62,7 +67,6 @@ class SpritesDialog(windows.SpritesDialogBase):
                 
         self.SpriteNames.Select(list_index, True)
         self.update_preview()
-        
         
     def update_preview(self):
         """
@@ -79,8 +83,7 @@ class SpritesDialog(windows.SpritesDialogBase):
                 sprite_frame = 0
             
             self.SpritePreview.show_sprite(sprite_name, sprite_frame)
-        
-        
+
     def set_state(self, patch, pwads, sprite_index=None, frame_index=None):
         """
         Sets this dialog's user interface state.
@@ -111,7 +114,6 @@ class SpritesDialog(windows.SpritesDialogBase):
         self.SpritePreview.set_source(self.pwads)
         self.SpritePreview.set_baseline_factor(0.7)
         self.update_preview()
-        
     
     def update_frame(self, event):
         """
@@ -133,7 +135,6 @@ class SpritesDialog(windows.SpritesDialogBase):
             window.ChangeValue(str(value))
             
         self.update_preview()
-            
             
     def filter_key(self, event):
         """
@@ -157,7 +158,6 @@ class SpritesDialog(windows.SpritesDialogBase):
             self.sprite_select_index(list_index + 1)
             
         event.Skip()
-        
         
     def filter_build(self, filter_string):
         """
@@ -185,7 +185,6 @@ class SpritesDialog(windows.SpritesDialogBase):
         
         self.update_preview()
     
-    
     def frameindex_set(self, modifier):
         """
         Modifies the frame index value by a specified amount.
@@ -196,8 +195,7 @@ class SpritesDialog(windows.SpritesDialogBase):
         else:    
             index = int(self.FrameIndex.GetValue())
             self.FrameIndex.SetValue(str(index + modifier))
-    
-    
+
     def frameindex_spin_up(self, event):
         self.frameindex_set(1)
     

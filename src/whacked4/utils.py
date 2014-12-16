@@ -23,10 +23,10 @@ def validate_numeric(window):
         return 0
 
     # Handle negative values.        
-    if value.startswith('-') == True:
+    if value.startswith('-'):
         # If the value contains more than just a minus sign, attempt to get the integer value.
         if len(value) > 1:
-            if value[1:].isnumeric() == False:
+            if not value[1:].isnumeric():
                 value = 0
             else:
                 value = int(value)
@@ -37,7 +37,7 @@ def validate_numeric(window):
     
     else:
         # Non-numeric values are set to 0.
-        if value.isnumeric() == False:
+        if not value.isnumeric():
             value = 0
         
         # Others are parsed.
@@ -76,7 +76,7 @@ def sound_play(name, pwads):
     
     name = 'DS' + name.upper()
     sound_data = pwads.get_sound(name)
-    if sound_data != None:
+    if sound_data is not None:
         sound_data.play()
 
 
@@ -123,7 +123,7 @@ def seconds_to_minutes(seconds):
 
 
 def file_dialog(parent, message=wx.FileSelectorPromptStr, default_dir=wx.EmptyString, default_file=wx.EmptyString,
-                     wildcard=wx.FileSelectorDefaultWildcardStr, style=wx.FD_DEFAULT_STYLE, pos=wx.DefaultPosition):
+                wildcard=wx.FileSelectorDefaultWildcardStr, style=wx.FD_DEFAULT_STYLE, pos=wx.DefaultPosition):
     """
     Wrapper around the wxWidgets file dialog class.
     

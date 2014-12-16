@@ -21,7 +21,7 @@ class MainWindow(windows.MainFrameBase):
     The main MDI parent window.
     """
 
-    def __init__(self, parent, arguments):
+    def __init__(self, parent):
         windows.MainFrameBase.__init__(self, parent)
         
         wx.BeginBusyCursor()
@@ -95,7 +95,7 @@ class MainWindow(windows.MainFrameBase):
         
         wx.EndBusyCursor()
         
-        self.parse_options(arguments)
+        self.parse_options()
         
         # Late bind these to prevent bad workspace data from being saved.
         self.Bind(wx.EVT_MOVE, self.workspace_update_data)
@@ -103,9 +103,8 @@ class MainWindow(windows.MainFrameBase):
         
         self.editor_window_set_edit()
         self.file_set_state()
-    
-    
-    def parse_options(self, args):
+
+    def parse_options(self):
         """
         Parses commandline options and acts on them.
         """
@@ -116,7 +115,6 @@ class MainWindow(windows.MainFrameBase):
                 return
                 
         self.start_dialog.ShowModal()
-    
         
     def load_engines(self):
         """
@@ -129,15 +127,12 @@ class MainWindow(windows.MainFrameBase):
                 new_engine.read_table(file_name)
             except engine.DehackedEngineError:
                 wx.MessageBox(message='Invalid engine configuration file {}'.format(file_name),
-                    caption='Engine configuration error',
-                    style=wx.OK | wx.ICON_EXCLAMATION,
-                    parent=self)
+                              caption='Engine configuration error', style=wx.OK | wx.ICON_EXCLAMATION, parent=self)
             else:
                 name = os.path.basename(file_name)
                 name = os.path.splitext(name)[0]
                 self.engines[name] = new_engine
-                    
-        
+
     def view_patch_settings(self, event):
         """
         Displays the patch settings dialog.
@@ -157,22 +152,21 @@ class MainWindow(windows.MainFrameBase):
             
             self.editor_windows[windows.MAIN_TOOL_STATES].update_properties()
     
-    
     def open_file_dialog(self, force_show_settings=False):
         """
         Displays an open file dialog to open a patch file.
         """
         
-        if self.save_if_needed() == False:
+        if not self.save_if_needed():
             return
         
         filename = utils.file_dialog(self, message='Choose a Dehacked file to open.',
-                                     wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|Extended Dehacked files (*.bex)|*.bex|All files|*.*',
+                                     wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|'
+                                              'Extended Dehacked files (*.bex)|*.bex|All files|*.*',
                                      style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
         
         if filename is not None:
             self.open_file(filename, force_show_settings)
-            
     
     def open_file(self, filename, force_show_settings=False):
         """
@@ -193,17 +187,14 @@ class MainWindow(windows.MainFrameBase):
         try:
             new_patch.analyze_patch(filename, self.engines)
         except patch.DehackedPatchError as e:
-            wx.MessageBox(message=e.__str__(),
-                caption='Patch error',
-                style=wx.OK | wx.ICON_ERROR,
-                parent=self)
+            wx.MessageBox(message=e.__str__(), caption='Patch error', style=wx.OK | wx.ICON_ERROR, parent=self)
             return
         
         # Display the patch info dialog to let the user select patch settings.
         # Do not show the info dialog if a workspace was found, unless forced.
         patch_info = patchinfodialog.PatchInfoDialog(self)
         patch_info.set_state(new_patch, self.engines, new_workspace)
-        if new_workspace.engine is None or force_show_settings == True:
+        if new_workspace.engine is None or force_show_settings:
             patch_info.ShowModal()
             
             # User cancelled out of the patch info dialog.
@@ -217,32 +208,25 @@ class MainWindow(windows.MainFrameBase):
             new_workspace.save(workspace_file)
             
         # Initialize the patch with tables from the selected engine.
-        engine = self.engines[new_workspace.engine]
-        new_patch.initialize_from_engine(engine)
+        selected_engine = self.engines[new_workspace.engine]
+        new_patch.initialize_from_engine(selected_engine)
 
         # Attempt to parse the patch file.
         try:
             messages = new_patch.read_dehacked(filename)
         except patch.DehackedVersionError as e:
-            wx.MessageBox(message=e.__str__(),
-                caption='Patch version error',
-                style=wx.OK | wx.ICON_ERROR,
-                parent=self)
+            wx.MessageBox(message=e.__str__(), caption='Patch version error', style=wx.OK | wx.ICON_ERROR, parent=self)
             return
         except patch.DehackedPatchError as e:
-            wx.MessageBox(message=e.__str__(),
-                caption='Patch error',
-                style=wx.OK | wx.ICON_ERROR,
-                parent=self)
+            wx.MessageBox(message=e.__str__(), caption='Patch error', style=wx.OK | wx.ICON_ERROR, parent=self)
             return
         
         # Display any messages from the patch load process.
         for message in messages.itervalues():
-            message += '\n\nPress Yes to continue loading, No to stop displaying messages or Cancel to abort loading this patch.'
-            result = wx.MessageBox(message=message,
-                caption='Patch message',
-                style=wx.YES_NO | wx.CANCEL | wx.ICON_EXCLAMATION,
-                parent=self)
+            message += '\n\nPress Yes to continue loading, No to stop displaying messages or Cancel to abort' \
+                       'loading this patch.'
+            result = wx.MessageBox(message=message, caption='Patch message',
+                                   style=wx.YES_NO | wx.CANCEL | wx.ICON_EXCLAMATION, parent=self)
             if result == wx.NO:
                 break
             elif result == wx.CANCEL:
@@ -265,8 +249,7 @@ class MainWindow(windows.MainFrameBase):
         # Add item to recent files.
         config.settings.recent_files_add(filename)
         self.update_recent_files_menu()
-        
-        
+
     def load_wads(self):
         """
         Loads the WAD files that are selected in the current workspace.
@@ -279,11 +262,10 @@ class MainWindow(windows.MainFrameBase):
             return
         
         # Verify if the IWAD file exists at all.
-        if os.path.exists(self.workspace.iwad) == False:
-            wx.MessageBox(message='The IWAD {} could not be found. Sprite previews will be disabled.'.format(self.workspace.iwad),
-                caption='Missing IWAD',
-                style=wx.OK | wx.ICON_INFORMATION,
-                parent=self)
+        if not os.path.exists(self.workspace.iwad):
+            wx.MessageBox(message='The IWAD {} could not be found. Sprite previews will be'
+                                  'disabled.'.format(self.workspace.iwad),
+                          caption='Missing IWAD', style=wx.OK | wx.ICON_INFORMATION, parent=self)
             self.workspace.iwad = None
             self.patch_modified = True
             return
@@ -296,11 +278,9 @@ class MainWindow(windows.MainFrameBase):
         
         # Load PWADs.
         for pwad_file in self.workspace.pwads:
-            if os.path.exists(pwad_file) == False:
-                wx.MessageBox(message='The PWAD {} could not be found.'.format(pwad_file),
-                    caption='Missing PWAD',
-                    style=wx.OK | wx.ICON_EXCLAMATION,
-                    parent=self)
+            if not os.path.exists(pwad_file):
+                wx.MessageBox(message='The PWAD {} could not be found.'.format(pwad_file), caption='Missing PWAD',
+                              style=wx.OK | wx.ICON_EXCLAMATION, parent=self)
                 self.workspace.pwads.remove(pwad_file)
                 self.patch_modified = True
             
@@ -311,15 +291,13 @@ class MainWindow(windows.MainFrameBase):
         # Build the sprite lookup tables.
         self.pwads.build_sprite_list()
         if self.pwads.palette is None:
-            wx.MessageBox(message='No PLAYPAL lump could be found in any of the loaded WAD files. Sprite previews will be disabled.',
-                caption='Missing PLAYPAL',
-                style=wx.OK | wx.ICON_INFORMATION,
-                parent=self)
+            wx.MessageBox(message='No PLAYPAL lump could be found in any of the loaded WAD files. Sprite previews'
+                                  'will be disabled.', caption='Missing PLAYPAL', style=wx.OK | wx.ICON_INFORMATION,
+                          parent=self)
             self.workspace.iwad = None
         
         wx.EndBusyCursor()
-        
-        
+
     def save_file_dialog(self):
         """
         Displays a save file dialog to save the current patch file.
@@ -331,19 +309,19 @@ class MainWindow(windows.MainFrameBase):
         
         # Otherwise use a default filename and extension.
         else:
-            if self.patch.extended == True:
+            if self.patch.extended:
                 use_filename = 'unnamed.bex'
             else:
                 use_filename = 'unnamed.deh'
         
         filename = utils.file_dialog(self, message='Save Dehacked file.', default_file=use_filename,
-                             wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|Extended Dehacked files (*.bex)|*.bex|All files|*.*',
-                             style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
+                                     wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|'
+                                              'Extended Dehacked files (*.bex)|*.bex|All files|*.*',
+                                     style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
         
         if filename is not None:
             self.save_file(filename)
-        
-        
+
     def save_file(self, filename):
         """
         Saves a Dehacked patch file.
@@ -358,10 +336,7 @@ class MainWindow(windows.MainFrameBase):
         # Write patch.
         message = self.patch.write_dehacked(filename)
         if message is not None:
-            wx.MessageBox(message=message,
-                caption='Patch write error',
-                style=wx.OK | wx.ICON_ERROR,
-                parent=self)
+            wx.MessageBox(message=message, caption='Patch write error', style=wx.OK | wx.ICON_ERROR, parent=self)
             return
         
         self.patch.filename = filename
@@ -376,14 +351,13 @@ class MainWindow(windows.MainFrameBase):
         
         wx.EndBusyCursor()
         
-        
     def update_recent_files_menu(self):
         """
         Updates the recent files submenu.
         """
         
         # Remove the old items.
-        while(self.MenuFileRecent.GetMenuItemCount() > 0):
+        while self.MenuFileRecent.GetMenuItemCount() > 0:
             item = self.MenuFileRecent.FindItemByPosition(0)
             self.MenuFileRecent.DestroyItem(item)
         
@@ -392,8 +366,7 @@ class MainWindow(windows.MainFrameBase):
         for recent_file in recent_files:
             item = self.MenuFileRecent.Append(wx.ID_ANY, recent_file, '', wx.ITEM_NORMAL)
             self.Bind(wx.EVT_MENU, self.file_open_recent, id=item.GetId())
-        
-    
+
     def update_ui(self):
         """
         Updates the user interface contents of this main window and all available editor windows.
@@ -417,7 +390,6 @@ class MainWindow(windows.MainFrameBase):
         self.set_modified(self.patch_modified)
         
         wx.EndBusyCursor()
-        
     
     def set_modified(self, is_modified):
         """
@@ -428,8 +400,7 @@ class MainWindow(windows.MainFrameBase):
         
         self.patch_modified = is_modified
         self.update_label()
-    
-    
+
     def update_label(self):
         """
         Updates this window's label (titlebar text).
@@ -441,12 +412,11 @@ class MainWindow(windows.MainFrameBase):
         else:
             label += 'New file'
 
-        if self.patch_modified == True:
+        if self.patch_modified:
             label += ' *' 
             
         self.SetLabel(label)
-    
-    
+
     def new_file(self):
         """
         Creates a new Dehacked patch file.
@@ -471,10 +441,10 @@ class MainWindow(windows.MainFrameBase):
         new_workspace.engine = patch_info.selected_engine
         
         # Initialize patch table data.
-        engine = self.engines[patch_info.selected_engine]
-        new_patch.version = max(engine.versions)
-        new_patch.extended = engine.extended
-        new_patch.initialize_from_engine(engine)
+        selected_engine = self.engines[patch_info.selected_engine]
+        new_patch.version = max(selected_engine.versions)
+        new_patch.extended = selected_engine.extended
+        new_patch.initialize_from_engine(selected_engine)
         
         # Store new patch info.        
         self.patch = new_patch
@@ -487,18 +457,15 @@ class MainWindow(windows.MainFrameBase):
         self.editor_windows_show(False)
         self.update_ui()
         self.file_set_state()
-            
-            
+
     def save_if_needed(self):
         """
         Requests the user to save the current patch file if it has been modified.
         """
         
-        if self.patch_modified == True:
-            result = wx.MessageBox(message='The file has been modified. Save changes?',
-                caption='Save file',
-                style=wx.YES_NO | wx.CANCEL | wx.ICON_QUESTION,
-                parent=self)
+        if self.patch_modified:
+            result = wx.MessageBox(message='The file has been modified. Save changes?', caption='Save file',
+                                   style=wx.YES_NO | wx.CANCEL | wx.ICON_QUESTION, parent=self)
             
             if result == wx.YES:
                 self.save_file(self.patch.filename)
@@ -506,17 +473,16 @@ class MainWindow(windows.MainFrameBase):
                 return False
         
         return True
-    
-    
+
     def close(self, event):
         """
         Called when this window is being closed.
         """
         
-        if self.save_if_needed() == False:
+        if not self.save_if_needed():
             return
         
-        if self.workspace_modified == True:
+        if self.workspace_modified:
             self.workspace_save()
         
         config.settings.save()
@@ -525,7 +491,6 @@ class MainWindow(windows.MainFrameBase):
         self.Destroy()
         
         wx.GetApp().ExitMainLoop()
-                    
             
     def editor_window_toolid_for_instance(self, window):
         """
@@ -539,16 +504,14 @@ class MainWindow(windows.MainFrameBase):
                 return tool_id
             
         return wx.NOT_FOUND
-    
-    
-    def editor_window_activate(self, window):
+
+    def editor_window_activate(self):
         """
         Called by a window that is being activated.
         """
         
         self.editor_window_set_edit()
-        
-        
+
     def editor_window_set_edit(self):
         """
         Sets the state of some edit menu tools.
@@ -556,7 +519,7 @@ class MainWindow(windows.MainFrameBase):
         
         # Disable edit menu tools if no window is active.
         active_child = self.GetActiveChild()
-        if active_child is None or active_child.IsShown() == False:
+        if active_child is None or not active_child.IsShown():
             edit_state = False
             undo_state = False
         else:
@@ -566,8 +529,7 @@ class MainWindow(windows.MainFrameBase):
         self.MenuEditCopy.Enable(edit_state)
         self.MenuEditPaste.Enable(edit_state)
         self.MenuEditUndo.Enable(undo_state)
-    
-        
+
     def editor_window_show(self, tool_id):
         """
         Shows an editor window.
@@ -581,7 +543,6 @@ class MainWindow(windows.MainFrameBase):
         
         self.MainToolbar.ToggleTool(tool_id, True)
         self.workspace_modified = True
-    
     
     def editor_window_menutoggle(self, event):
         """
@@ -599,7 +560,6 @@ class MainWindow(windows.MainFrameBase):
             self.workspace_modified = True
            
         self.editor_window_set_edit()
-    
      
     def editor_window_tooltoggle(self, event):
         """
@@ -614,7 +574,7 @@ class MainWindow(windows.MainFrameBase):
             active = self.GetActiveChild()
 
             # Bring a window to front if it is activated but not the active one.
-            if state == False and active != window:
+            if not state and active != window:
                 self.MainToolbar.ToggleTool(toolid, True)
                 window.Activate()
             else:
@@ -624,8 +584,7 @@ class MainWindow(windows.MainFrameBase):
             self.workspace_modified = True
         
         self.editor_window_set_edit()
-            
-            
+
     def editor_windows_show(self, show):
         """
         Sets the visibility of all editor windows at once.
@@ -633,8 +592,7 @@ class MainWindow(windows.MainFrameBase):
         
         for window in self.editor_windows.itervalues():
             window.Show(show)
-            
-    
+
     def editor_window_closed(self, window):
         tool_id = self.editor_window_toolid_for_instance(window)
         if tool_id == wx.NOT_FOUND:
@@ -645,7 +603,6 @@ class MainWindow(windows.MainFrameBase):
         self.workspace_modified = True
         
         self.editor_window_set_edit()
-
 
     def toolbar_set_enabled(self, enabled):
         """
@@ -667,7 +624,7 @@ class MainWindow(windows.MainFrameBase):
         self.MenuViewMiscellaneous.Enable(enabled)
         self.MenuViewPatchSettings.Enable(enabled)
         
-        if self.patch is not None and self.patch.extended == True:
+        if self.patch is not None and self.patch.extended:
             self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, True)
             self.MenuViewPar.Enable(True)
         else:
@@ -675,8 +632,7 @@ class MainWindow(windows.MainFrameBase):
             self.MenuViewPar.Enable(False)
             
         self.editor_window_set_edit()
-                
-                
+
     def toolbar_update_state(self):
         """
         Updates the toolbar button's state to reflect whether they are shown or not.
@@ -684,8 +640,7 @@ class MainWindow(windows.MainFrameBase):
         
         for tool_id, window in self.editor_windows.iteritems():
             self.MainToolbar.ToggleTool(tool_id, window.IsShown())
-    
-    
+
     def workspace_save(self):
         """
         Stores window positions and saves the current workspace.
@@ -697,8 +652,7 @@ class MainWindow(windows.MainFrameBase):
         self.workspace.store_windows(self, self.workspace_windows)
         self.workspace.save(self.patch.filename)
         self.workspace_modified = False
-        
-        
+
     def file_set_state(self):
         """
         Set the state of file related menu options.
@@ -709,15 +663,14 @@ class MainWindow(windows.MainFrameBase):
         self.MenuFileReloadWADs.Enable(state)
         self.MenuFileSave.Enable(state)
         self.MenuFileSaveAs.Enable(state)
-    
-        
+
     def workspace_update_data(self, event):
         """
         Update the current workspace with this window's size, position and state.
         """
         
         # Only update size and position if the window is not maximized.
-        if self.IsMaximized() == True or self.IsShown() == False:
+        if self.IsMaximized() or not self.IsShown():
             main_window_state = config.settings['main_window_state']
             
             pos = (main_window_state['x'], main_window_state['y'])
@@ -729,8 +682,7 @@ class MainWindow(windows.MainFrameBase):
         config.settings.main_window_state_store(pos[0], pos[1], size[0], size[1], self.IsMaximized())
         
         event.Skip()
-    
-    
+
     def file_new(self, event):
         self.new_file()
     
@@ -758,15 +710,14 @@ class MainWindow(windows.MainFrameBase):
         item = self.FindItemInMenuBar(event.GetId())
         filename = item.GetItemLabel()
         self.open_file(filename)
-        
-    
+
     def edit_undo(self, event):
         window = self.GetActiveChild()
         if window is None:
             return
         window.undo_do_undo()
         
-    def edit_redo(self, event):
+    def edit_redo(self):
         window = self.GetActiveChild()
         if window is None:
             return
@@ -783,7 +734,6 @@ class MainWindow(windows.MainFrameBase):
         if window is None:
             return
         window.edit_paste()
-        
     
     def help_about(self, event):
         self.about_dialog.ShowModal()

@@ -10,9 +10,16 @@ class WADList:
     """
     
     def __init__(self):
+        self.wads = None
+
+        self.sprites = None
+        self.sprite_image_cache = None
+        self.palette = None
+
+        self.sound_cache = None
+
         self.clear()
-        
-        
+
     def clear(self):
         """
         Empties this WAD list of all data.
@@ -25,16 +32,14 @@ class WADList:
         self.palette = None
         
         self.sound_cache = {}
-    
-    
+
     def add_wad(self, wad):
         """
         Adds a new WAD to this list.
         """
         
         self.wads.append(wad)
-        
-    
+
     def get_lump(self, lump_name):
         """
         Returns a lump with the specified name.
@@ -51,8 +56,7 @@ class WADList:
                 return lump
         
         return None
-    
-    
+
     def get_sound(self, lump_name):
         """
         Returns a sound object for a lump name.
@@ -64,7 +68,7 @@ class WADList:
             return self.sound_cache[lump_name]
         
         lump = self.get_lump(lump_name)
-        if lump == None:
+        if lump is None:
             return
         
         sound_data = sound.Sound()
@@ -72,7 +76,6 @@ class WADList:
         self.sound_cache[lump_name] = sound_data
         
         return sound_data
-    
     
     def get_sprite(self, sprite_name, frame_index=0, rotation=0):
         """
@@ -85,17 +88,16 @@ class WADList:
         @return: a lump of the requested sprite.
         """ 
         
-        if not sprite_name in self.sprites:
+        if sprite_name not in self.sprites:
             return None
         
         sprite = self.sprites[sprite_name]
         subsprite_string = chr(frame_index + 65) + str(rotation)
         
-        if not subsprite_string in sprite:
+        if subsprite_string not in sprite:
             return None
         
         return sprite[subsprite_string]
-    
     
     def get_sprite_image(self, lump, mirror):
         """
@@ -108,7 +110,7 @@ class WADList:
         if self.palette is None:
             return None
 
-        if mirror == True:
+        if mirror:
             lump_name = '{}M'.format(lump.name)
         else:
             lump_name = lump.name
@@ -122,7 +124,6 @@ class WADList:
         self.sprite_image_cache[lump_name] = image
         
         return image
-            
     
     def build_sprite_list(self):
         """
@@ -161,7 +162,6 @@ class WADList:
         playpal = self.get_lump('PLAYPAL')
         if playpal is not None:
             self.palette = graphics.Palette(playpal.get_data())
-            
-    
+
     def __len__(self):
         return len(self.wads)

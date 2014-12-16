@@ -19,7 +19,7 @@ def filter_thing_flags_read(value, table):
     @raise LookupError: if the value contains an unknown mnemonic.
         """ 
 
-    if value.isdigit() == True:
+    if value.isdigit():
         return value
     
     items = re.split(r"[,+| \t\f\r]+", value)

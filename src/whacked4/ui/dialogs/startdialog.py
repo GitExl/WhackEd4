@@ -25,7 +25,6 @@ class StartDialog(windows.StartDialogBase):
         for index, filename in enumerate(recent_files):
             self.FileList.InsertStringItem(index, filename)
 
-
     def open_file_list(self, event):
         """
         Opens a Dehacked patch directly from the file list.
@@ -34,8 +33,7 @@ class StartDialog(windows.StartDialogBase):
         self.Hide()
         filename = config.settings['recent_files'][event.GetIndex()]
         self.GetParent().open_file(filename)
-        
-        
+
     def new_file(self, event):
         self.Hide()
         self.GetParent().new_file()
@@ -46,4 +44,3 @@ class StartDialog(windows.StartDialogBase):
     
     def cancel(self, event):
         self.Hide()
-        

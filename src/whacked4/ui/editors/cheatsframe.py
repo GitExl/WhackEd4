@@ -18,6 +18,10 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         
         self.SetIcon(wx.Icon('res/editor-cheats.ico'))
 
+        self.patch = None
+        self.selected_index = 0
+
+        self.string_dialog = None
 
     def build(self, patch):
         """
@@ -30,7 +34,6 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         self.string_dialog = stringdialog.StringDialog(self.GetParent())
         
         self.cheatlist_build()
-        
         
     def cheatlist_build(self):
         """
@@ -52,7 +55,6 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         self.list_autosize(self.CheatList)
         self.CheatList.Select(0, True)
         
-        
     def cheatlist_update_row(self, row_index):
         """
         Updates a row in the cheats list.
@@ -61,7 +63,6 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         key = self.cheat_get_key(row_index)
         cheat = self.patch.cheats[key]
         self.CheatList.SetStringItem(row_index, 1, cheat)
-        
         
     def cheatlist_resize(self, row_index):
         """
@@ -72,7 +73,6 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         
         width = self.CheatList.GetClientSizeTuple()[0] - self.CheatList.GetColumnWidth(0) - 4 
         self.CheatList.SetColumnWidth(1, width)
-                
         
     def cheat_edit(self, event):
         """
@@ -89,15 +89,14 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         self.string_dialog.set_state(engine_cheat, cheat, self.patch.extended, name, cheat=True)
         self.string_dialog.ShowModal()
         
-        if self.string_dialog.new_string != None:
+        if self.string_dialog.new_string is not None:
             self.undo_add()
             
             self.patch.cheats[key] = self.string_dialog.new_string
             
             self.cheatlist_update_row(row_index)
             self.is_modified(True)
-            
-            
+
     def cheat_restore(self, event):
         """
         Restores a cheat to it's engine state.
@@ -111,7 +110,6 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         self.cheatlist_update_row(self.selected_index)
         self.is_modified(True)
         
-        
     def cheat_select(self, event):
         """
         Stores the index of the currently selected cheat.
@@ -119,14 +117,12 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         
         self.selected_index = event.GetIndex()
         
-        
     def cheat_get_key(self, index):
         """
         Returns a cheat dict key for a cheat index.
         """
         
         return self.patch.engine.cheat_data.keys()[index]
-
     
     def undo_restore_item(self, item):
         """
@@ -139,7 +135,6 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         
         self.cheatlist_update_row(index)
         self.is_modified(True)
-        
         
     def undo_store_item(self):
         """

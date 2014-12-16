@@ -17,14 +17,15 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         windows.AMMO_VAL_MAXIMUM: 'maximum',
         windows.AMMO_VAL_PICKUP: 'clip'
     }
-    
-    
+
     def __init__(self, params):
         windows.AmmoFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
         
         self.SetIcon(wx.Icon('res/editor-ammo.ico'))
 
+        self.patch = None
+        self.selected_index = -1
 
     def build(self, patch):
         """
@@ -36,7 +37,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.selected_index = -1
         
         self.ammolist_build()
-        
         
     def ammolist_build(self):
         """
@@ -59,7 +59,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.list_autosize(self.AmmoList)
         self.AmmoList.Select(0, True)
         
-        
     def ammolist_update_row(self, row_index):
         """
         Updates a row in the ammo list.
@@ -72,7 +71,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.AmmoList.SetStringItem(row_index, 1, str(ammo['maximum']))
         self.AmmoList.SetStringItem(row_index, 2, str(ammo['clip']))
         
-        
     def ammolist_resize(self, event):
         """
         Resize the ammo name column as wide as possible.
@@ -83,7 +81,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.AmmoList.SetColumnWidth(1, column_width / 3)
         self.AmmoList.SetColumnWidth(2, column_width / 3)
         
-        
     def ammo_select(self, event):
         """
         Selects a new ammo entry.
@@ -91,7 +88,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         
         self.selected_index = event.GetIndex()
         self.update_properties()
-        
     
     def ammo_rename(self, event):
         """
@@ -100,22 +96,21 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         
         self.ammo_rename_action()
 
-
     def ammo_rename_action(self):
         """
         Renames the currently selected ammo entry.
         """
         
         ammo_name = self.patch.ammo.names[self.selected_index]
-        new_name = wx.GetTextFromUser('Enter a new name for ' + ammo_name, caption='Change name', default_value=ammo_name, parent=self)
-        
+        new_name = wx.GetTextFromUser('Enter a new name for ' + ammo_name, caption='Change name',
+                                      default_value=ammo_name, parent=self)
+
         if new_name != '':
             self.undo_add()
             
             self.patch.ammo.names[self.selected_index] = new_name
             self.update_properties()
             self.is_modified(True)
-            
             
     def ammo_restore(self, event):
         """
@@ -129,7 +124,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         
         self.update_properties()
         self.ammolist_update_row(self.selected_index)
-        
         
     def update_properties(self):
         """
@@ -150,7 +144,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
             self.Restore.Enable()
             self.Rename.Enable()
             
-            
     def set_value(self, event):
         """
         Sets the currently selected ammo entry's property value.
@@ -168,7 +161,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.ammolist_update_row(self.selected_index)
         self.is_modified(True)
 
-        
     def undo_restore_item(self, item):
         """
         @see: EditorMixin.undo_restore_item
@@ -180,8 +172,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         
         self.ammolist_update_row(index)
         self.update_properties()
-        
-        
+
     def undo_store_item(self):
         """
         @see: EditorMixin.undo_store_item

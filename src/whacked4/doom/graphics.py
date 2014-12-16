@@ -32,14 +32,13 @@ class Image:
     """
     
     S_HEADER = struct.Struct('<HHhh')
-    
-    
+
     def __init__(self, data, palette, mirror=False):
         self.set_empty()
         self.invalid = False
         
         # Read header.
-        width, height, top, left = self.S_HEADER.unpack_from(data)
+        width, height, left, top = self.S_HEADER.unpack_from(data)
         
         # Attempt to detect bad file formats.
         if width > 2048 or height > 2048 or top > 2048 or left > 2048:
@@ -59,8 +58,6 @@ class Image:
         # Read columns.
         data = bytearray(data)
         column_index = 0
-        column_top = 0
-        prev_delta = 0
         while column_index < width:
             offset = offsets[column_index]
             
@@ -88,7 +85,7 @@ class Image:
                 pixel_index = 0
                 while pixel_index < pixel_count:
                     pixel = data[offset + pixel_index]
-                    if mirror == True:
+                    if mirror:
                         dest = ((pixel_index + column_top) * width + ((width - 1) - column_index)) * 4
                     else:
                         dest = ((pixel_index + column_top) * width + column_index) * 4

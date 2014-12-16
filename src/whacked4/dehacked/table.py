@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #coding=utf8
 
+
 class Table:
     """
     A table containing Dehacked entry objects.
@@ -10,8 +11,7 @@ class Table:
         self.entries = []
         self.cls = cls
         self.offset = 0
-        
-        
+
     def read_from_executable(self, count, f):
         """
         Reads a number of entries from an executable.
@@ -19,8 +19,7 @@ class Table:
         
         for _ in range(count):
             self.entries.append(self.cls().read_from_executable(f))
-            
-            
+
     def read_from_json(self, json):
         """
         Reads this table's entries from a JSON object.
@@ -28,8 +27,7 @@ class Table:
         
         for entry in json:
             self.entries.append(self.cls().from_json(entry))
-       
-        
+
     def write_patch_data(self, source_table, f, use_filter):
         """
         Writes this table's entry to a Dehacked patch file.
@@ -42,15 +40,13 @@ class Table:
             # Write the current entry index if it returns any data to be written.
             patch_str = entry.get_patch_string(source_entry, self, use_filter)
             if patch_str is not None:
-                f.write(entry.get_patch_header(index, source_entry, self, offset=self.offset))
+                f.write(entry.get_patch_header(index, self, offset=self.offset))
                 f.write(patch_str)
             
             # Write just a header if only the entry's name has changed.
-            elif hasattr(self, 'names') == True and self.names[index] != source_table.names[index]:
-                f.write(entry.get_patch_header(index, source_entry, self, offset=self.offset))
-                    
-                
-    
+            elif hasattr(self, 'names') and self.names[index] != source_table.names[index]:
+                f.write(entry.get_patch_header(index, self, offset=self.offset))
+
     def __getitem__(self, index):
         return self.entries[index]
     

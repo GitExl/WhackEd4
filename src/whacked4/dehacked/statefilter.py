@@ -28,8 +28,7 @@ class StateFilter:
         # These lists should always be synchronized.
         self.state_indices = []
         self.states = []
-        
-    
+
     def build_filters(self):
         """
         Builds a list of available filters.
@@ -64,8 +63,7 @@ class StateFilter:
                 'type': FILTER_TYPE_WEAPON,
                 'index': index
             })
-    
-        
+
     def update(self, index):
         """
         Updates the list of filtered states from a filter index.
@@ -100,9 +98,9 @@ class StateFilter:
                 added = False
                 
                 for index in range(len(states_list)):
-                    if states_list[index] == True:
+                    if states_list[index]:
                         next_state = self.patch.states[index]['nextState']
-                        if next_state >= 0 and states_list[next_state] == False:
+                        if next_state >= 0 and not states_list[next_state]:
                             states_list[next_state] = True
                             added = True
                         
@@ -112,7 +110,7 @@ class StateFilter:
                         if state['action'] == 'RandomJump':
                             states_list[state['parameter1']] = True
                     
-                if added == False:
+                if not added:
                     break
                 
             # If a unused filter type is active, invert the list to reveal unused states.
@@ -122,11 +120,10 @@ class StateFilter:
             
             # Create the final filtered lists.
             for index in range(len(states_list)):
-                if states_list[index] == True:
+                if states_list[index]:
                     self.state_indices.append(index)
                     self.states.append(self.patch.states[index])
-    
-    
+
     def get_weapon_states(self, weapon_index):
         """
         Returns a new states list with the states for a particular weapon index.
@@ -135,15 +132,14 @@ class StateFilter:
         states_list = [False] * len(self.patch.states)
         
         weapon = self.patch.weapons[weapon_index]
-        self.add_weapon_states(states_list, weapon)
+        add_weapon_states(states_list, weapon)
         
         # Add plasma rifle muzzle flash jitter states.
-        if self.patch.engine.hacks['plasmaFlashStateJitter'] == True:
+        if self.patch.engine.hacks['plasmaFlashStateJitter']:
             self.add_hack_states(states_list, weapon)
             
         return states_list
-    
-    
+
     def get_thing_states(self, thing_index):
         """
         Returns a new states list with the states for a particular thing index.
@@ -152,11 +148,10 @@ class StateFilter:
         states_list = [False] * len(self.patch.states)
         
         thing = self.patch.things[thing_index]
-        self.add_thing_states(states_list, thing)
+        add_thing_states(states_list, thing)
         
         return states_list
 
-    
     def get_unused_states(self):
         """
         Returns a new states list with all used states marked.
@@ -166,14 +161,14 @@ class StateFilter:
         
         # Add thing states.
         for thing in self.patch.things:
-            self.add_thing_states(states_list, thing)
+            add_thing_states(states_list, thing)
             
         # Add weapon states.
         for weapon in self.patch.weapons:
-            self.add_weapon_states(states_list, weapon)
+            add_weapon_states(states_list, weapon)
             
             # Add plasma rifle muzzle flash jitter states.
-            if self.patch.engine.hacks['plasmaFlashStateJitter'] == True:
+            if self.patch.engine.hacks['plasmaFlashStateJitter']:
                 self.add_hack_states(states_list, weapon)
             
         # Add used states from the engine table.
@@ -181,16 +176,15 @@ class StateFilter:
             states_list[state_index] = True
             
         return states_list
-    
-        
+
     def add_hack_states(self, states_list, weapon):
         """
         Adds states that belong to a hack setting.
         """
 
         # If a weapon uses the plasma or chaingun firing action, mark it's 2nd muzzle state as used.
-        plasma_action = self.patch.engine.get_action_from_name('FirePlasma')['name']
-        cg_action = self.patch.engine.get_action_from_name('FireCGun')['name']
+        plasma_action = self.patch.engine.get_action_from_key('FirePlasma')['name']
+        cg_action = self.patch.engine.get_action_from_key('FireCGun')['name']
 
         fire_state = weapon['stateFire']
         action = self.patch.states[fire_state]['action']
@@ -198,34 +192,6 @@ class StateFilter:
             muzzle_state = weapon['stateMuzzle']
             states_list[muzzle_state + 1] = True
 
-    
-    def add_thing_states(self, states_list, thing):
-        """
-        Adds states that belong to a thing.
-        """
-        
-        states_list[thing['stateAttack']] = True
-        states_list[thing['stateDeath']] = True
-        states_list[thing['stateExplode']] = True
-        states_list[thing['stateMelee']] = True
-        states_list[thing['stateWalk']] = True
-        states_list[thing['statePain']] = True
-        states_list[thing['stateRaise']] = True
-        states_list[thing['stateSpawn']] = True
-        
-        
-    def add_weapon_states(self, states_list, weapon):
-        """
-        Adds states that belong to a weapon.
-        """
-        
-        states_list[weapon['stateBob']] = True
-        states_list[weapon['stateDeselect']] = True
-        states_list[weapon['stateFire']] = True
-        states_list[weapon['stateMuzzle']] = True
-        states_list[weapon['stateSelect']] = True
-    
-    
     def find_index(self, filter_type, item_index):
         """
         Returns the index of a filter by specifying a type and item index. Returns -1 if no index could be found.
@@ -239,3 +205,30 @@ class StateFilter:
             index += 1
             
         return -1
+
+
+def add_thing_states(states_list, thing):
+    """
+    Adds states that belong to a thing.
+    """
+
+    states_list[thing['stateAttack']] = True
+    states_list[thing['stateDeath']] = True
+    states_list[thing['stateExplode']] = True
+    states_list[thing['stateMelee']] = True
+    states_list[thing['stateWalk']] = True
+    states_list[thing['statePain']] = True
+    states_list[thing['stateRaise']] = True
+    states_list[thing['stateSpawn']] = True
+
+
+def add_weapon_states(states_list, weapon):
+    """
+    Adds states that belong to a weapon.
+    """
+
+    states_list[weapon['stateBob']] = True
+    states_list[weapon['stateDeselect']] = True
+    states_list[weapon['stateFire']] = True
+    states_list[weapon['stateMuzzle']] = True
+    states_list[weapon['stateSelect']] = True

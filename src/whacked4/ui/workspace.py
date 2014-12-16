@@ -18,7 +18,6 @@ class Workspace:
     WINDOW_STATE_NORMAL = 0
     WINDOW_STATE_MAXIMIZED = 1
 
-
     def __init__(self):
         self.engine = None
         
@@ -26,7 +25,6 @@ class Workspace:
         self.pwads = None
         
         self.windows = None
-        
         
     def load(self, base_filename):
         """
@@ -46,8 +44,7 @@ class Workspace:
         self.pwads = data['pwads']
         
         self.windows = data['windows']
-              
-        
+
     def save(self, base_filename):
         """
         Writes a workspace to a JSON file.
@@ -65,8 +62,7 @@ class Workspace:
         filename = self.get_filename(base_filename)
         with open(filename, 'w') as f:
             json.dump(data, f, indent=4)
-        
-        
+
     def restore_windows(self, workspace_windows):
         """
         Restores all editor windows' state.
@@ -81,15 +77,15 @@ class Workspace:
             window_data = self.windows[window_name]
             
             # Set window dimensions.
-            x = int(self.get_dict_value(window_data, 'x', 0))
-            y = int(self.get_dict_value(window_data, 'y', 0))
-            width = int(self.get_dict_value(window_data, 'width', 640))
-            height = int(self.get_dict_value(window_data, 'height', 480))
+            x = int(get_dict_value(window_data, 'x', 0))
+            y = int(get_dict_value(window_data, 'y', 0))
+            width = int(get_dict_value(window_data, 'width', 640))
+            height = int(get_dict_value(window_data, 'height', 480))
             window.SetDimensions(x, y, width, height)
             
             # Set window visibility.
-            visible = int(int(self.get_dict_value(window_data, 'visible', 0)))
-            if visible == True:
+            visible = int(int(get_dict_value(window_data, 'visible', 0)))
+            if visible:
                 window.Show(True)
             else:
                 window.Show(False)
@@ -106,8 +102,7 @@ class Workspace:
             window = workspace_windows[active_window]
             window.Raise()
             window.SetFocus()
-            
-            
+
     def store_windows(self, frame, workspace_windows):
         """
         Stores all editor windows' state.
@@ -118,22 +113,22 @@ class Workspace:
         
         self.windows = {}
         for window_name, window in workspace_windows.iteritems():
-            window_data = {}
-            
             # Store dimensions.
-            window_data['x'] = window.workspace_data['x']
-            window_data['y'] = window.workspace_data['y']
-            window_data['width'] = window.workspace_data['width']
-            window_data['height'] = window.workspace_data['height']
-            
+            window_data = {
+                'x': window.workspace_data['x'],
+                'y': window.workspace_data['y'],
+                'width': window.workspace_data['width'],
+                'height': window.workspace_data['height']
+            }
+
             # Store visibility.
-            if window.IsShown() == True:
+            if window.IsShown():
                 window_data['visible'] = 1
             else:
                 window_data['visible'] = 0
             
             # Store one window name as maximized.
-            if window.IsMaximized() == True:
+            if window.IsMaximized():
                 self.windows['maximized'] = window_name
             
             # Store the active window name.
@@ -141,24 +136,22 @@ class Workspace:
                 self.windows['active'] = window_name
                 
             self.windows[window_name] = window_data
-            
-    
-    def get_dict_value(self, src, value, default):
-        """
-        Returns a default value for a dict key if it was not found, otherwise returns the dict item.
-        """
-        
-        if value in src:
-            return src[value]
-        else:
-            return default
-        
-    
+
     def get_filename(self, base_filename):
         """
         Returns a workspace filename from any full path.
         """
-        
+
         # Replace the path's file extension with .whacked
         return os.path.splitext(base_filename)[0] + '.whacked'
-            
+
+
+def get_dict_value(src, value, default):
+    """
+    Returns a default value for a dict key if it was not found, otherwise returns the dict item.
+    """
+
+    if value in src:
+        return src[value]
+    else:
+        return default

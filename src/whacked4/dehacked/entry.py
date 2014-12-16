@@ -5,6 +5,10 @@ from whacked4.dehacked import filters
 
 
 class Entry:
+
+    # The name of this patch entry.
+    NAME = None
+
     # The struct module structure definition to use when reading this entry directly from an executable.
     STRUCTURE = None
     
@@ -19,15 +23,13 @@ class Entry:
     # See dehacked.filters module.
     # [internal key] = filter function base name
     FILTER = None
-    
-    
+
     def __init__(self):
         self.values = {}
         
         for key in self.FIELDS.keys():
             self.values[key] = None
-            
-        
+
     def __getitem__(self, key):
         """
         Returns an item from the fields list.
@@ -35,12 +37,11 @@ class Entry:
         @raise KeyError: If the key cannot be found.
         """
         
-        if not key in self.FIELDS:
+        if key not in self.FIELDS:
             raise KeyError('Cannot find {}'.format(key))
         
         return self.values[key]
-    
-    
+
     def __setitem__(self, key, value):
         """
         Sets an item in the fields list.
@@ -48,11 +49,10 @@ class Entry:
         @raise KeyError: if the key cannot be found.
         """
         
-        if not key in self.FIELDS:
+        if key not in self.FIELDS:
             raise KeyError('Cannot find {}'.format(key))
         
         self.values[key] = value
-
 
     def set_patch_key(self, key, value, table, enable_filter):
         """
@@ -61,7 +61,7 @@ class Entry:
         @param key: The key as used in a Dehacked patch.
         @param value: The value read from a Dehacked patch.
         @param table: The table that this entry is a part of.
-        @param enable_fitler: Set to True if this entry needs a filter applied.  
+        @param enable_filter: Set to True if this entry needs a filter applied.
         
         @raise ValueError: if the read value is not a number.
         @raise LookupError: if the patch key cannot be found in this entry.
@@ -73,7 +73,7 @@ class Entry:
                 # Filter the read value first.
                 # Filter only if filtering is enabled for this entry's table, if this entry has a FILTER and
                 # if the internal key has a filter function associated with it.
-                if enable_filter == True and self.FILTER is not None and internalKey in self.FILTER:
+                if enable_filter and self.FILTER is not None and internalKey in self.FILTER:
                     value = filters.__dict__[self.FILTER[internalKey] + '_read'](value, table)
                 
                 # Attempt to cast all values to an integer.
@@ -86,7 +86,6 @@ class Entry:
                 return
         
         raise LookupError('Cannot find patch key {}'.format(key))                
-        
 
     def read_from_executable(self, f):
         """
@@ -102,8 +101,7 @@ class Entry:
             index += 1
         
         return self
-    
-    
+
     def from_json(self, json):
         """
         Reads this entry's values from a JSON object.
@@ -115,17 +113,15 @@ class Entry:
             self.values[key] = json[key]
 
         return self
-    
-    
+
     def to_json(self):
         """
         Writes this entry's values to a JSON object. Currently just returns it's values dict.
         """
         
         return self.values
-    
-    
-    def get_patch_header(self, index, original, table, offset=0):
+
+    def get_patch_header(self, index, table, offset=0):
         """
         Returns a string representing this entry's header in a Dehacked file.
         """
@@ -134,8 +130,7 @@ class Entry:
             return '\n{} {} ({})\n'.format(self.NAME, index + offset, table.names[index])
         else:
             return '\n{} {}\n'.format(self.NAME, index + offset)
-            
-    
+
     def get_patch_string(self, original, table, use_filter):
         """
         Returns a string with all of this entry's modified values.
@@ -163,7 +158,7 @@ class Entry:
             for key, value in output.iteritems():
                 
                 # Filter the value about to be written to the patch.
-                if use_filter == True and self.FILTER is not None and key in self.FILTER:
+                if use_filter and self.FILTER is not None and key in self.FILTER:
                     value = filters.__dict__[self.FILTER[key] + '_write'](value, table)
                     
                 output_list.append('{} = {}\n'.format(self.FIELDS[key], value))

@@ -26,6 +26,8 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         
         self.SetIcon(wx.Icon('res/editor-par.ico'))
 
+        self.patch = None
+        self.selected_index = 0
 
     def build(self, patch):
         """
@@ -33,13 +35,12 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         """
         
         self.patch = patch
-        if patch.extended == False:
+        if not patch.extended:
             return
         
         self.selected_index = 0
         
         self.parlist_build()
-        
     
     def parlist_build(self):
         """
@@ -68,8 +69,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         else:
             self.selected_index = -1
             self.properties_set_state(False)
-            
-            
+
     def parlist_update_row(self, row_index):
         """
         Updates a row in the par times list.
@@ -80,8 +80,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         self.ParList.SetStringItem(row_index, 0, utils.get_map_name(par['episode'], par['map']))
         self.ParList.SetStringItem(row_index, 1, str(par['seconds']))
         self.ParList.SetStringItem(row_index, 2, utils.seconds_to_minutes(par['seconds']))
-        
-        
+
     def parlist_resize(self, event):
         """
         Resize the parlist columns to divide them over the width of the client area.
@@ -91,8 +90,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         self.ParList.SetColumnWidth(0, column_width)
         self.ParList.SetColumnWidth(1, column_width)
         self.ParList.SetColumnWidth(2, column_width)
-    
-    
+
     def properties_set_state(self, state):
         """
         Sets the state of the properties controls.
@@ -102,8 +100,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         self.Map.Enable(state)
         self.Seconds.Enable(state)
         self.Tools.EnableTool(windows.PAR_TOOL_REMOVE, state)
-    
-    
+
     def par_select(self, event):
         """
         Selects a par time from the list.
@@ -112,8 +109,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         self.selected_index = event.GetIndex()
         self.update_properties()
         self.properties_set_state(True)
-        
-        
+
     def par_add(self, event):
         """
         Adds a new par time to the list.
@@ -130,8 +126,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         
         self.parlist_build()
         self.ParList.Select(len(self.patch.pars) - 1, True)
-        
-        
+
     def par_remove(self, event):
         """
         Removes the currently selected par time from the list.
@@ -141,8 +136,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         
         del self.patch.pars[self.selected_index]
         self.parlist_build()
-        
-        
+
     def update_properties(self):
         """
         Updates the property controls of the currently displayed par time.
@@ -153,7 +147,6 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         self.Episode.ChangeValue(str(par['episode']))
         self.Map.ChangeValue(str(par['map']))
         self.Seconds.ChangeValue(str(par['seconds']))
-    
 
     def set_value(self, event):
         """
@@ -193,7 +186,6 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         if window_id == windows.STATES_SPRITE:
             self.update_colours()
 
-        
     def undo_restore_item(self, item):
         """
         @see: EditorMixin.undo_restore_item
@@ -201,7 +193,6 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         
         self.patch.pars = item
         self.parlist_build()
-        
         
     def undo_store_item(self):
         """

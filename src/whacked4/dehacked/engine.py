@@ -79,8 +79,7 @@ class Engine:
 
         # A list of supported render styles.
         self.render_styles = None
-        
-        
+
     def read_table(self, filename):
         """
         Reads engine data from a JSON table configuration file.
@@ -135,13 +134,12 @@ class Engine:
             if len(self.sound_names) != len(self.sounds):
                 raise DehackedEngineError('Sounds size and sound names size does not match.')
             
-            if self.extended == False:
+            if not self.extended:
                 self.action_index_to_state = data['actionIndexToState']
         
         except KeyError:
             raise DehackedEngineError('Invalid engine table data.')
-            
-        
+
     def read_executable(self, engine_filename, exe_filename):
         """
         Reads engine data from a game executable, using a JSON file as base.
@@ -198,9 +196,7 @@ class Engine:
         
         except KeyError:
             raise DehackedEngineError('Invalid executable data.')
-            
-    
-    
+
     def write_table(self, filename):
         """
         Writes this engine's table data to a JSON file.
@@ -242,8 +238,7 @@ class Engine:
         
         with open(filename, 'w') as f:
             f.write(json.dumps(obj, indent=4, sort_keys=False, cls=EngineJSONEncoder))            
-    
-    
+
     def read_executable_sound_names(self, f, exe_config):
         """
         Reads sound names from an executable.
@@ -252,10 +247,9 @@ class Engine:
         self.sound_names = []
         for sound in self.sounds:
             f.seek(sound['namePointer'] + exe_config['dataSegment'])
-            text = self.read_string(f)
+            text = read_string(f)
             self.sound_names.append(text)
-    
-    
+
     def read_executable_strings(self, f, exe_config):
         """
         Reads strings from an executable.
@@ -265,15 +259,14 @@ class Engine:
         
         self.strings = []
         for _ in range(exe_config['stringCount']):
-            text = self.read_string(f)
+            text = read_string(f)
             
-            # Seek ahead to the next offset divisable by 4.
+            # Seek ahead to the next offset dividable by 4.
             if f.tell() % 4 != 0:
                 f.read(4 - (f.tell() % 4))
                 
             self.strings.append(text)
-    
-    
+
     def read_executable_misc(self, f):
         """
         Reads miscellaneous data from an executable.
@@ -295,33 +288,31 @@ class Engine:
             else:
                 raise DehackedEngineError('Unknown miscellaneous data type {}'.format(data_type))
 
-    
     def read_executable_ammo(self, f, exe_config):
         """
         Reads ammo data from an executable.
         """
         
         single_struct = struct.Struct('<i')
-        count = exe_config['ammoCount'];
+        count = exe_config['ammoCount']
         
         # Read the maximum ammo amounts first.
         f.seek(exe_config['ammoOffset'])
         for index in range(count):
-            entry = entries.AmmoEntry()
+            ammo_entry = entries.AmmoEntry()
             
             data = single_struct.unpack(f.read(single_struct.size))
-            entry['maximum'] = data[0]
+            ammo_entry['maximum'] = data[0]
             
-            self.ammo.entries.append(entry)
+            self.ammo.entries.append(ammo_entry)
         
         # Read the clip sizes second.
         for index in range(count):
             data = single_struct.unpack(f.read(single_struct.size))    
             
-            entry = self.ammo.entries[index]
-            entry['clip'] = data[0]
-            
-    
+            ammo_entry = self.ammo.entries[index]
+            ammo_entry['clip'] = data[0]
+
     def read_executable_cheats(self, f, exe_config):
         """
         Reads and decrypts cheat code strings from an executable.
@@ -332,9 +323,8 @@ class Engine:
             f.seek(exe_config['cheatOffset'] + data['offset'])
             text = f.read(data['length'])
             
-            self.cheats[name] = self.decrypt_cheat_string(text)
-    
-    
+            self.cheats[name] = decrypt_cheat_string(text)
+
     def read_executable_sprite_names(self, f, exe_config):
         """
         Reads sprite names from an executable.
@@ -354,62 +344,7 @@ class Engine:
         for index in range(exe_config['spriteCount']):
             f.seek(pointers[index] + exe_config['dataSegment'])
             self.sprite_names.append(f.read(4))
-    
-    
-    def read_string(self, f):
-        """
-        Reads a null-terminated string from a file.
-        """
-        
-        chars = []
-        while True:
-            char = f.read(1)
-            if char == b'\0':
-                break
-            chars.append(char)
-        
-        return ''.join(chars)
-    
-            
-    def decrypt_cheat_string(self, text):
-        """
-        Decrypts an executable cheat string into a readable one.
-        """
-        
-        text = bytearray(text)
-        output = bytearray(text)
 
-        i = 0        
-        while i < len(text) and text[i] != 0:
-            output[i] = text[i] & 36
-            output[i] |= (text[i] & 128) >> 7
-            output[i] |= (text[i] & 64) >> 5
-            output[i] |= (text[i] & 16) >> 1
-            output[i] |= (text[i] & 8) << 1
-            output[i] |= (text[i] & 2) << 5
-            output[i] |= (text[i] & 1) << 7
-            
-            i += 1
-
-        return bytes(output).encode('ascii')
-    
-    
-    def get_key_from_patchkey(self, data, patch_key):
-        """
-        Returns an internal entry key from a key used in a Dehacked patch file.
-        
-        This is used by the cheats and miscellaneous sections, since they do not have an associated table.
-        
-        @raise LookupError: if the patch key cannot be found.
-        """ 
-        
-        for key, item in data.iteritems():
-            if item['patchKey'] == patch_key:
-                return key
-            
-        return None
-    
-    
     def get_action_from_key(self, key):
         """
         Returns an action value from an action key.
@@ -422,9 +357,17 @@ class Engine:
             return self.actions[key]
         
         raise LookupError('Cannot find an action with key {}'.format(key))
-        
+
+    def get_action_key_from_name(self, action_name):
+        """
+        Returns an action key from an action name.
+        """
+
+        for key, item in self.actions.iteritems():
+            if item['name'] == action_name:
+                return key
+
         return None
-    
     
     def is_compatible(self, patch):
         """
@@ -432,12 +375,12 @@ class Engine:
         """
         
         version_match = (patch.version in self.versions)
-        if patch.extended == True and self.extended == False:
+        if patch.extended and not self.extended:
             extension_match = False
         else:
             extension_match = True
         
-        return (version_match and extension_match)
+        return version_match and extension_match
     
     
 class EngineJSONEncoder(JSONEncoder):
@@ -457,3 +400,57 @@ class EngineJSONEncoder(JSONEncoder):
             return list(iterable)
         
         return JSONEncoder.default(self, o)
+
+
+def read_string(f):
+    """
+    Reads a null-terminated string from a file.
+    """
+
+    chars = []
+    while True:
+        char = f.read(1)
+        if char == b'\0':
+            break
+        chars.append(char)
+
+    return ''.join(chars)
+
+
+def decrypt_cheat_string(text):
+    """
+    Decrypts an executable cheat string into a readable one.
+    """
+
+    text = bytearray(text)
+    output = bytearray(text)
+
+    i = 0
+    while i < len(text) and text[i] != 0:
+        output[i] = text[i] & 36
+        output[i] |= (text[i] & 128) >> 7
+        output[i] |= (text[i] & 64) >> 5
+        output[i] |= (text[i] & 16) >> 1
+        output[i] |= (text[i] & 8) << 1
+        output[i] |= (text[i] & 2) << 5
+        output[i] |= (text[i] & 1) << 7
+
+        i += 1
+
+    return bytes(output).encode('ascii')
+
+
+def get_key_from_patchkey(data, patch_key):
+    """
+    Returns an internal entry key from a key used in a Dehacked patch file.
+
+    This is used by the cheats and miscellaneous sections, since they do not have an associated table.
+
+    @raise LookupError: if the patch key cannot be found.
+    """
+
+    for key, item in data.iteritems():
+        if item['patchKey'] == patch_key:
+            return key
+
+    return None

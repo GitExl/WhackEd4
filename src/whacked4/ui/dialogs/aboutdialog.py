@@ -21,11 +21,9 @@ class AboutDialog(windows.AboutDialogBase):
         
         with open('LICENSE', 'r') as f:
             self.license_text = f.read()
-    
-    
+
     def ok(self, event):
         self.Hide()
-        
-        
+
     def license(self, event):
         wx.MessageBox(message=self.license_text, caption='License', style=wx.OK, parent=self)

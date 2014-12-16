@@ -14,8 +14,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
     
     # The colour used for color-coding priorities.
     PRIORITY_COLOUR = wx.Colour(red=255, green=48, blue=0)
-    
-    
+
     def __init__(self, params):
         windows.SoundsFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
@@ -32,8 +31,13 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         
         self.priority_colours = []
         self.build_colours()
-        
-        
+
+        self.patch = None
+        self.pwads = None
+
+        self.selected_index = -1
+        self.selected_row = -1
+
     def activate(self, event):
         """
         Called when this editor window is activated by the user.
@@ -50,16 +54,13 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         for index, name in enumerate(self.patch.sound_names):
             self.SoundList.SetStringItem(index + 1, 1, name.upper())
         
-        
     def build_colours(self):
         """
         Builds priority colour coding colours and blends them with the system's window background color.
         """
         
         sys_col = self.SoundList.GetBackgroundColour()
-        factor = 0
-        sys_factor = 0
-        
+
         for index in range(128 / 32):
             factor = 0.06 * index
             sys_factor = 1 - factor
@@ -70,7 +71,6 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
                 int(self.PRIORITY_COLOUR.Blue() * factor + sys_col.Blue() * sys_factor)
             )
             self.priority_colours.append(colour)
-
 
     def build(self, patch):
         """
@@ -84,7 +84,6 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         self.selected_row = -1
         
         self.soundlist_build()
-        
         
     def soundlist_build(self):
         """
@@ -115,7 +114,6 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         self.list_autosize(self.SoundList)
         self.SoundList.Select(0, True)
             
-            
     def soundlist_update_row(self, row_index, sound_index):
         """
         Updates a sound list row with the data for that sound.
@@ -144,7 +142,6 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             
             # Colour-code rows by priority.
             self.SoundList.SetItemBackgroundColour(row_index, self.priority_colours[sound['priority'] / 32])
-    
         
     def sound_select_index(self, row_index, sound_index):
         """
@@ -154,8 +151,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         self.selected_index = sound_index
         self.selected_row = row_index
         self.update_properties()
-        
-        
+
     def sound_restore(self, event):
         """
         Restores the currently selected sound to it's engine state.
@@ -167,8 +163,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         self.soundlist_update_row(self.selected_row, self.selected_index)
         self.update_properties()
         self.is_modified(True)
-        
-        
+
     def sound_play(self, event):
         """
         Plays the currently selected sound.
@@ -178,7 +173,6 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             return
 
         utils.sound_play(self.patch.sound_names[self.selected_index], self.pwads)
-
 
     def update_properties(self):
         """
@@ -200,7 +194,6 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
             self.tools_set_state(True)
 
-
     def tools_set_state(self, enabled):
         """
         Sets the state of all tool controls.
@@ -208,7 +201,6 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         
         for window in self.WINDOWS_TOOLS:
             window.Enable(enabled)
-
 
     def set_singular(self, event):
         """
@@ -220,14 +212,13 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         value = self.Singular.GetValue()
         sound = self.patch.sounds[self.selected_index]
         
-        if value == True:
+        if value:
             sound['isSingular'] = 1
         else:
             sound['isSingular'] = 0
             
         self.soundlist_update_row(self.selected_row, self.selected_index)
         self.is_modified(True)
-
 
     def set_priority(self, event):
         """
@@ -252,8 +243,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         
         self.soundlist_update_row(self.selected_row, self.selected_index)
         self.is_modified(True)
-        
-        
+
     def goto_sound_index(self, sound_index):
         """
         Selects a sound from the list.
@@ -262,8 +252,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         self.SoundList.Select(sound_index, True)
         self.SoundList.EnsureVisible(sound_index)
         self.SoundList.SetFocus()
-        
-                
+
     def undo_restore_item(self, item):
         """
         @see: EditorMixin.undo_restore_item
@@ -272,8 +261,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         self.patch.sounds[item['index']] = item['item']
         self.soundlist_update_row(item['index'] + 1, item['index'])
         self.update_properties()
-        
-        
+
     def undo_store_item(self):
         """
         @see: EditorMixin.undo_store_item
@@ -283,16 +271,14 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             'item': copy.deepcopy(self.patch.sounds[self.selected_index]),
             'index': self.selected_index
         }
-    
-    
+
     def sound_select(self, event):
         """
         Called when a sound row is selected from the list.
         """
         
         self.sound_select_index(event.GetIndex(), event.GetIndex() - 1)
-        
-        
+
     def priority_spin_up(self, event):
         priority = int(self.Priority.GetValue())
         self.Priority.SetValue(str(priority + 1))

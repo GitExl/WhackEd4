@@ -16,9 +16,8 @@ class ErrorDialog(windows.ErrorDialogBase):
 
         self.SetEscapeId(windows.ERROR_CLOSE)
         
-        if wx.IsBusy() == True:
+        if wx.IsBusy():
             wx.EndBusyCursor()
-        
         
     def set_log(self, log_file):
         """
@@ -29,7 +28,6 @@ class ErrorDialog(windows.ErrorDialogBase):
         log_file.seek(0)
 
         self.Report.ChangeValue(log_file.read())
-        
     
     def copy(self, event):
         self.Report.SelectAll()

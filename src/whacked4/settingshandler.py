@@ -18,7 +18,6 @@ class SettingsHandler:
         
         self.register()
         self.load()
-
         
     def register(self):
         """
@@ -27,14 +26,12 @@ class SettingsHandler:
         
         raise NotImplementedError
 
-
     def register_setting(self, name, default):
         """
         Registers a setting with this handler.
         """
         
         self.defaults[name] = default
-        
         
     def get_setting(self, name):
         """
@@ -52,7 +49,6 @@ class SettingsHandler:
         else:
             raise LookupError('The setting with name {} has not been registered.'.format(name))
         
-        
     def put_setting(self, name, value):
         """
         Stores a setting in this handler.
@@ -65,7 +61,6 @@ class SettingsHandler:
         else:
             raise LookupError('The setting with name {} has not been registered.'.format(name))
         
-        
     def load(self):
         """
         Loads settings data from a JSON file.
@@ -75,11 +70,11 @@ class SettingsHandler:
         
         # Create config directory if needed.
         dirname = os.path.split(self.path)[0]
-        if os.path.exists(dirname) == False:
+        if not os.path.exists(dirname):
             os.makedirs(dirname)
         
         # Create a new configuration file if needed.
-        if os.path.exists(self.path) == False:
+        if not os.path.exists(self.path):
             self.save()
             return
         
@@ -92,7 +87,6 @@ class SettingsHandler:
                     self.settings[setting_name] = settings[setting_name]
                 else:
                     print 'Ignoring unknown setting {}'.format(setting_name)
-
     
     def save(self):
         """
@@ -103,8 +97,7 @@ class SettingsHandler:
         
         with open(self.path, 'w') as f:
             json.dump(self.settings, f, indent=4) 
-            
-    
+
     def __getitem__(self, name):
         return self.get_setting(name)
     
