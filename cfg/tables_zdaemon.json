@@ -10,7 +10,7 @@
         "thing.respawnTime",
         "thing.renderStyle",
         "thing.flags2",
-        "thing.flags3",
+        "thing.flags3"
     ],
     "name": "ZDaemon",
 
