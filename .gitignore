@@ -134,6 +134,7 @@ test
 releases
 *.exe
 *.7z
+.idea
 
 
 #############
