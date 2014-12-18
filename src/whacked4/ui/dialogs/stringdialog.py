@@ -25,15 +25,15 @@ class StringDialog(windows.StringDialogBase):
         """
         Sets a new state for this string dialog.
         """
-        
+
         self.engine_string = engine_string
         self.old_string = old_string
         self.extended = extended
-        
+
         # Set displayed text.
         self.Original.ChangeValue(engine_string)
         self.New.ChangeValue(old_string)
-        
+
         if cheat:
             self.SetLabel('Cheat - {}'.format(name))
             self.New.SetWindowStyleFlag(wx.TE_DONTWRAP)
@@ -53,15 +53,15 @@ class StringDialog(windows.StringDialogBase):
                 self.max_length = int((len(engine_string) / 4.0) * 4) + 3
 
             self.CharsLeft.Show()
-            
+
         self.update_length()
-        
+
         self.New.SelectAll()
         self.New.SetFocus()
 
     def text_enter(self, event):
         """
-        Called when text is entered. 
+        Called when text is entered.
         """
 
         self.update_length()
@@ -70,14 +70,14 @@ class StringDialog(windows.StringDialogBase):
     def update_length(self):
         """
         Updates the amount of characters left.
-        """        
-        
+        """
+
         if self.extended:
             return
-        
+
         text = self.New.GetValue()
         chars_left = self.max_length - len(text)
-        
+
         # Plural formatting.
         if chars_left == 1:
             plural = ''
@@ -85,41 +85,41 @@ class StringDialog(windows.StringDialogBase):
             plural = 's'
         if chars_left == 0:
             chars_left = 'No'
-            
+
         self.CharsLeft.SetLabel('{} character{} left'.format(chars_left, plural))
-        
+
     def text_keydown(self, event):
         """
         Process key down events.
-        
+
         Handles the fact that a text control's MaxLength setting does not count newlines.
         """
-        
+
         if not self.extended:
             text = self.New.GetValue()
-            
+
             # Add the number of newlines to the text control's true MaxLength.
             newline_count = text.count('\n')
             max_len = self.max_length + newline_count
-           
+
             # Allow the last key to be entered to be a newline.
             # Without this, the last character that fills up the textbox cannot be a newline, since the new length is
-            # calculated after the key was pressed. 
+            # calculated after the key was pressed.
             key_code = event.GetKeyCode()
             if self.max_length - 1 == len(text) and (key_code == wx.WXK_RETURN or key_code == wx.WXK_NUMPAD_ENTER):
                 max_len += 1
-            
+
             self.New.SetMaxLength(max_len)
-        
+
         event.Skip()
 
     def activate(self, event):
         self.New.SetFocus()
-        
+
     def ok(self, event):
         self.new_string = self.New.GetValue()
         self.Hide()
-        
+
     def cancel(self, event):
         self.new_string = None
         self.Hide()

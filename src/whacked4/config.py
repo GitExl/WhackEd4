@@ -50,7 +50,7 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
             'y': 0,
             'width': 1024,
             'height': 560,
-            'maximized': True,                       
+            'maximized': True
         })
         self.register_setting('recent_files', [])
         self.register_setting('undo_size', 256)

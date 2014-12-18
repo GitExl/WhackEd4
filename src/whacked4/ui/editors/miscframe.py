@@ -11,7 +11,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
     """
     Misc editor window.
     """
-    
+
     # Window Id to property key dict.
     PROPS_VALUES = {
         windows.MISC_START_HEALTH: 'startHealth',
@@ -30,11 +30,11 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         windows.MISC_IDKFA_ARMOR_CLASS: 'idkfaArmorClass',
         windows.MISC_BFG_AMMO: 'bfgAmmoUsage'
     }
-    
+
     def __init__(self, params):
         windows.MiscFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
-        
+
         self.SetIcon(wx.Icon('res/editor-misc.ico'))
 
         self.patch = None
@@ -43,19 +43,19 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         """
         @see: EditorMixin.build
         """
-        
+
         self.patch = patch
         self.update_properties()
-        
+
     def update_properties(self):
         """
         Update all property control values.
         """
-        
+
         for window_id, key in self.PROPS_VALUES.iteritems():
             window = self.FindWindowById(window_id)
             window.ChangeValue(str(self.patch.misc[key]))
-        
+
         data = self.patch.engine.misc_data['monstersInfight']
         value = self.patch.misc['monstersInfight']
         if value == data['on']:
@@ -68,16 +68,16 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         """
         Validates and sets a misc. property.
         """
-                
+
         self.undo_add()
-        
-        window_id = event.GetId() 
+
+        window_id = event.GetId()
         window = self.FindWindowById(window_id)
-        
+
         value = utils.validate_numeric(window)
         key = self.PROPS_VALUES[window_id]
         data = self.patch.engine.misc_data[key]
-        
+
         # Clamp values to their data type range.
         if data['type'] == 'int':
             if value < -0x80000000:
@@ -90,44 +90,44 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
             elif value > 255:
                 value = 255
         window.ChangeValue(str(value))
-        
-        self.patch.misc[key] = value 
+
+        self.patch.misc[key] = value
         self.is_modified(True)
 
     def set_infight(self, event):
         """
         Sets the monsters infight misc. data.
         """
-        
+
         self.undo_add()
-        
+
         data = self.patch.engine.misc_data['monstersInfight']
         value = self.MonstersInfight.GetValue()
         if value:
             value = data['on']
         else:
             value = data['off']
-        
+
         self.patch.misc['monstersInfight'] = value
 
     def restore(self, event):
         """
         Restore all misc. values to their engine state.
         """
-        
+
         self.undo_add()
-        
+
         for key in self.PROPS_VALUES.itervalues():
             self.patch.misc[key] = self.patch.engine.misc[key]
         self.patch.misc['monstersInfight'] = self.patch.engine.misc['monstersInfight']
-        
+
         self.update_properties()
 
     def undo_restore_item(self, item):
         """
         @see: EditorMixin.undo_restore_item
         """
-        
+
         self.patch.misc = item
         self.update_properties()
 
@@ -135,5 +135,5 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         """
         @see: EditorMixin.undo_store_item
         """
-        
+
         return copy.deepcopy(self.patch.misc)

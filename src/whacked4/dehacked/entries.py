@@ -12,25 +12,25 @@ import struct
 
 class AmmoEntry(Entry):
     NAME = 'Ammo'
-    FIELDS = OrderedDict([       
+    FIELDS = OrderedDict([
         ('maximum', 'Max ammo'),
         ('clip', 'Per ammo')
     ])
-    
+
 
 class ParEntry(Entry):
     NAME = 'Par'
-    FIELDS = OrderedDict([       
+    FIELDS = OrderedDict([
         ('episode', 'Episode'),
         ('map', 'Map'),
         ('seconds', 'Seconds')
     ])
-    
-    
+
+
 class SoundEntry(Entry):
     NAME = 'Sound'
     STRUCTURE = struct.Struct('<iiiiiiiii')
-    FIELDS = OrderedDict([       
+    FIELDS = OrderedDict([
         ('namePointer', 'Offset'),
         ('isSingular', 'Zero/One'),
         ('priority', 'Value'),
@@ -41,7 +41,7 @@ class SoundEntry(Entry):
         ('internalRefCount', 'Zero 3'),
         ('internalLumpindex', 'Zero 4')
     ])
-    
+
 
 class StateEntry(Entry):
     NAME = 'Frame'
@@ -65,7 +65,7 @@ class StateEntry(Entry):
         ('arg9', 'Args9')
     ])
     SKIP = {'action'}
-    
+
 
 class ThingEntry(Entry):
     NAME = 'Thing'
@@ -105,12 +105,12 @@ class ThingEntry(Entry):
     FILTER = {
         'flags': 'filter_thing_flags'
     }
-    
+
 
 class WeaponEntry(Entry):
     NAME = 'Weapon'
     STRUCTURE = struct.Struct('<iiiiii')
-    FIELDS = OrderedDict([       
+    FIELDS = OrderedDict([
         ('ammoType', 'Ammo type'),
         ('stateDeselect', 'Deselect frame'),
         ('stateSelect', 'Select frame'),
@@ -118,11 +118,11 @@ class WeaponEntry(Entry):
         ('stateFire', 'Shooting frame'),
         ('stateMuzzle', 'Firing frame')
     ])
-    
+
 
 class SpriteEntry(Entry):
     NAME = 'Sprite'
     STRUCTURE = None
-    FIELDS = OrderedDict([       
+    FIELDS = OrderedDict([
         ('offset', 'Offset')
     ])

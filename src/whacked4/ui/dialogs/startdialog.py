@@ -15,10 +15,10 @@ class StartDialog(windows.StartDialogBase):
         windows.StartDialogBase.__init__(self, parent)
 
         self.SetEscapeId(windows.START_CANCEL)
-        
+
         client_width = self.FileList.GetClientSizeTuple()[0] - 4
         self.FileList.InsertColumn(0, 'Filename', width=client_width)
-        
+
         # Populate the list of recently accessed Dehacked patches.
         config.settings.recent_files_clean()
         recent_files = config.settings['recent_files']
@@ -29,7 +29,7 @@ class StartDialog(windows.StartDialogBase):
         """
         Opens a Dehacked patch directly from the file list.
         """
-        
+
         self.Hide()
         filename = config.settings['recent_files'][event.GetIndex()]
         self.GetParent().open_file(filename)
@@ -37,10 +37,10 @@ class StartDialog(windows.StartDialogBase):
     def new_file(self, event):
         self.Hide()
         self.GetParent().new_file()
-        
+
     def open_file(self, event):
         self.Hide()
-        self.GetParent().open_file_dialog()        
-    
+        self.GetParent().open_file_dialog()
+
     def cancel(self, event):
         self.Hide()

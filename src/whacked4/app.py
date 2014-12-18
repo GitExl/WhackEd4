@@ -13,15 +13,15 @@ import wx
 class WhackEd4App(wx.App):
     """
     The main wxWidgets application object.
-    
+
     See http://wiki.wxpython.org/CustomExceptionHandling
     """
-    
+
     def OnInit(self):
         """
         Run after the wxWidgets app has initialized.
         """
-        
+
         # Parse common commandline arguments.
         parser = argparse.ArgumentParser()
         parser.add_argument('-debug', action='store_true', help='Enable debug mode.')
@@ -38,16 +38,16 @@ class WhackEd4App(wx.App):
         set_monospace_font()
 
         config.settings.load()
-        
+
         self.SetTopWindow(mainwindow.MainWindow(None))
-        
+
         return True
-        
+
     def redirect_logs(self):
         """
         Redirects stdout and stderr to a single text file.
         """
-        
+
         self.log = file(config.LOG_PATH, 'w+')
 
         sys.stdout = self.log
@@ -57,7 +57,7 @@ class WhackEd4App(wx.App):
         """
         Handles exceptions thrown from wxWidgets MainLoop.
         """
-       
+
         traceback.print_exception(exception_type, value, trace_back, file=sys.stderr)
 
         dialog = errordialog.ErrorDialog(None)
@@ -67,7 +67,7 @@ class WhackEd4App(wx.App):
             dialog.ShowModal()
         finally:
             dialog.Destroy()
-        
+
         sys.exit(-1)
 
 

@@ -14,7 +14,7 @@ class Sound:
     """
     Doom sound data.
     """
-    
+
     # Doom sound lump header.
     SOUND_HEADER = struct.Struct('<HHI')
 
@@ -28,16 +28,16 @@ class Sound:
         """
         Reads sound data from a lump.
         """
-        
+
         header = self.SOUND_HEADER.unpack_from(data)
-        
+
         self.format = header[0]
         self.sample_rate = header[1]
         self.sample_count = header[2]
-        
+
         if self.format != 3:
             return
-        
+
         # Slice sample data from the rest of the lump.
         self.samples = data[self.SOUND_HEADER.size:]
 
@@ -55,10 +55,10 @@ class PlaybackThread(threading.Thread):
     """
     A thread that uses PyAudio to play back raw sample data.
     """
-    
+
     def __init__(self, sample_rate, samples):
         threading.Thread.__init__(self)
-        
+
         self.sample_rate = sample_rate
         self.samples = samples
 
@@ -69,5 +69,5 @@ class PlaybackThread(threading.Thread):
         stream.write(self.samples)
         stream.stop_stream()
         stream.close()
-        
+
         aud.terminate()
