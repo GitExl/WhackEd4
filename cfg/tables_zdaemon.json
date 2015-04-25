@@ -243,8 +243,8 @@
             "name": "WeaponReady",
             "description": "Weapon bobbing."
         },
-        "Refire": {
-            "name": "Refire",
+        "ReFire": {
+            "name": "ReFire",
             "description": "Last shooting state.\n\nIf the fire button is still held, jump back to the first shooting state instead of the state with this action."
         },
         "CheckReload": {
@@ -458,88 +458,109 @@
     },
     "miscData": {
         "armorClassBlue": {
+            "name": "Blue armor class",
             "patchKey": "Blue Armor Class",
             "type": "int"
         },
         "armorClassGreen": {
+            "name": "Green armor class",
             "patchKey": "Green Armor Class",
             "type": "int"
         },
         "bfgAmmoUsage": {
+            "name": "BFG cells per shot",
             "patchKey": "BFG Cells/Shot",
             "type": "byte"
         },
         "godModeHealth": {
+            "name": "God mode health",
             "patchKey": "God Mode Health",
             "type": "int"
         },
         "idfaArmor": {
+            "name": "IDFA cheat armor",
             "patchKey": "IDFA Armor",
             "type": "int"
         },
         "idfaArmorClass": {
+            "name": "IDFA cheat armor class",
             "patchKey": "IDFA Armor Class",
             "type": "int"
         },
         "idkfaArmor": {
+            "name": "IDKFA cheat armor",
             "patchKey": "IDKFA Armor",
             "type": "int"
         },
         "idkfaArmorClass": {
+            "name": "IDKFA cheat armor class",
             "patchKey": "IDKFA Armor Class",
             "type": "int"
         },
         "maxArmor": {
+            "name": "Maximum armor",
             "patchKey": "Max Armor",
             "type": "int"
         },
         "maxHealth": {
+            "name": "Maximum health",
             "patchKey": "Max Health",
             "type": "int"
         },
         "maxSoulSphereHealth": {
+            "name": "Maximum Soulsphere health",
             "patchKey": "Max Soulsphere",
             "type": "int"
         },
         "megaSphereHealth": {
+            "name": "Megasphere health",
             "patchKey": "Megasphere Health",
             "type": "int"
         },
         "monstersInfight": {
+            "name": "Monsters fight own species",
             "off": 220,
             "on": 221,
             "patchKey": "Monsters Infight",
             "type": "boolean"
         },
         "soulSphereHealth": {
+            "name": "Soulsphere health",
             "patchKey": "Soulsphere Health",
             "type": "byte"
         },
         "startAmmo": {
+            "name": "Starting bullet ammo",
             "patchKey": "Initial Bullets",
             "type": "int"
         },
         "startHealth": {
+            "name": "Starting health",
             "patchKey": "Initial Health",
             "type": "int"
         },
         "armorClassSilver": {
+            "name": "Silver armor class",
             "patchKey": "Silver Armor Class",
             "type": "int"
         },
         "armorClassEnchanted": {
+            "name": "Enchanted armor class",
             "patchKey": "Enchanted Armor Class",
             "type": "int"
         },
         "vampireMaxHealth": {
+            "name": "Vampire maximum health",
             "patchKey": "Vampire Max Health",
             "type": "int"
         },
         "vampirePlayerFactor": {
+            "name": "Vampire player factor",
             "patchKey": "Vampire Player Factor",
             "type": "int"
         },
         "vampireMonsterFactor": {
+            "name": "Vampire monster factor",
             "patchKey": "Vampire Monster Factor",
             "type": "int"
         }
@@ -2149,7 +2170,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 5, 
             "unused1": 0, 
             "unused2": 0, 
@@ -2275,7 +2296,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 5, 
             "unused1": 0, 
             "unused2": 0, 
@@ -2509,7 +2530,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 7, 
             "unused1": 0, 
             "unused2": 0, 
@@ -2779,7 +2800,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 5, 
             "unused1": 0, 
             "unused2": 0, 
@@ -2959,7 +2980,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 0, 
             "unused1": 0, 
             "unused2": 0, 
@@ -3103,7 +3124,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 0, 
             "unused1": 0, 
             "unused2": 0, 
@@ -3301,7 +3322,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 0, 
             "unused1": 0, 
             "unused2": 0, 
@@ -3391,7 +3412,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 20, 
             "unused1": 0, 
             "unused2": 0, 
@@ -3553,7 +3574,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 20, 
             "unused1": 0, 
             "unused2": 0, 

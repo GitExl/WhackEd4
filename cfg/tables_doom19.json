@@ -256,7 +256,7 @@
         }, 
         "185328": {
             "description": "Last shooting state.\n\nIf the fire button is still held, jump back to the first shooting state instead of the state with this action.", 
-            "name": "Refire"
+            "name": "ReFire"
         }, 
         "185440": {
             "description": "Check ammo.\n\nIf there is not enough ammo for another shot, skip the reloading states and select a different weapon.", 
@@ -24115,6 +24115,7 @@
     ], 
     "miscData": {
         "startHealth": {
+            "name": "Starting health",
             "offsets": [
                 403896
             ], 
@@ -24122,6 +24123,7 @@
             "patchKey": "Initial Health"
         }, 
         "startAmmo": {
+            "name": "Starting bullet ammo",
             "offsets": [
                 403927
             ], 
@@ -24129,6 +24131,7 @@
             "patchKey": "Initial Bullets"
         }, 
         "maxHealth": {
+            "name": "Maximum health",
             "offsets": [
                 441274, 
                 441283
@@ -24137,6 +24140,7 @@
             "patchKey": "Max Health"
         }, 
         "maxArmor": {
+            "name": "Maximum armor",
             "offsets": [
                 441319, 
                 441328
@@ -24145,6 +24149,7 @@
             "patchKey": "Max Armor"
         }, 
         "armorClassGreen": {
+            "name": "Green armor class",
             "offsets": [
                 441159
             ], 
@@ -24152,6 +24157,7 @@
             "patchKey": "Green Armor Class"
         }, 
         "armorClassBlue": {
+            "name": "Blue armor class",
             "offsets": [
                 441211
             ], 
@@ -24159,6 +24165,7 @@
             "patchKey": "Blue Armor Class"
         }, 
         "maxSoulSphereHealth": {
+            "name": "Maximum Soulsphere health",
             "offsets": [
                 441370, 
                 441379
@@ -24167,6 +24174,7 @@
             "patchKey": "Max Soulsphere"
         }, 
         "soulSphereHealth": {
+            "name": "Soulsphere health",
             "offsets": [
                 441365
             ], 
@@ -24174,6 +24182,7 @@
             "patchKey": "Soulsphere Health"
         }, 
         "megaSphereHealth": {
+            "name": "Megasphere health",
             "offsets": [
                 441427
             ], 
@@ -24181,6 +24190,7 @@
             "patchKey": "Megasphere Health"
         }, 
         "godModeHealth": {
+            "name": "God mode health",
             "offsets": [
                 506723, 
                 506735
@@ -24189,6 +24199,7 @@
             "patchKey": "God Mode Health"
         }, 
         "idfaArmor": {
+            "name": "IDFA cheat armor",
             "offsets": [
                 506803
             ], 
@@ -24196,6 +24207,7 @@
             "patchKey": "IDFA Armor"
         }, 
         "idfaArmorClass": {
+            "name": "IDFA cheat armor class",
             "offsets": [
                 506815
             ], 
@@ -24203,6 +24215,7 @@
             "patchKey": "IDFA Armor Class"
         }, 
         "idkfaArmor": {
+            "name": "IDKFA cheat armor",
             "offsets": [
                 506903
             ], 
@@ -24210,6 +24223,7 @@
             "patchKey": "IDKFA Armor"
         }, 
         "idkfaArmorClass": {
+            "name": "IDKFA cheat armor class",
             "offsets": [
                 506915
             ], 
@@ -24217,6 +24231,7 @@
             "patchKey": "IDKFA Armor Class"
         }, 
         "bfgAmmoUsage": {
+            "name": "BFG cells per shot",
             "offsets": [
                 455832, 
                 456545, 
@@ -24226,6 +24241,7 @@
             "patchKey": "BFG Cells/Shot"
         }, 
         "monstersInfight": {
+            "name": "Monsters fight own species",
             "offsets": [
                 446370
             ], 

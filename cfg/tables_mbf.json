@@ -1,7 +1,7 @@
 {
     "versions": [19,21],
     "extended": true,
-    "name": "MBF",
+    "name": "Marine's Best Friend (MBF)",
 
     "hacks": {
         "plasmaFlashStateJitter": true
@@ -232,8 +232,8 @@
             "name": "WeaponReady",
             "description": "Weapon bobbing."
         },
-        "Refire": {
-            "name": "Refire",
+        "ReFire": {
+            "name": "ReFire",
             "description": "Last shooting state.\n\nIf the fire button is still held, jump back to the first shooting state instead of the state with this action."
         },
         "CheckReload": {
@@ -426,8 +426,8 @@
             "description": "Triggers a linedef effect for a sector tag.",
             "unused": [
                 {
-                    "name": "Linedef effect",
-                    "description": "The linedef effect number to trigger.",
+                    "name": "Type",
+                    "description": "The linedef effect type number to trigger.",
                     "type": "integer",
                     "range": [-32767, 32767]
                 },
@@ -442,6 +442,18 @@
         "Die": {
             "name": "Die",
             "description": "Kills this thing."
+        },
+        "FireOldBFG": {
+            "name": "FireOldBFG",
+            "description": "Fires the beta-style BFG."
+        },
+        "BetaSkullAttack": {
+            "name": "BetaSkullAttack",
+            "description": "Performs the beta Lost Soul attack."
+        },
+        "Stop": {
+            "name": "Stop",
+            "description": "Stops the actor's movement by setting its momentum to 0."
         }
     },
     "ammo": [
@@ -577,68 +589,84 @@
     },
     "miscData": {
         "armorClassBlue": {
+            "name": "Blue armor class",
             "patchKey": "Blue Armor Class",
             "type": "int"
         },
         "armorClassGreen": {
+            "name": "Green armor class",
             "patchKey": "Green Armor Class",
             "type": "int"
         },
         "bfgAmmoUsage": {
+            "name": "BFG cells per shot",
             "patchKey": "BFG Cells/Shot",
             "type": "byte"
         },
         "godModeHealth": {
+            "name": "God mode health",
             "patchKey": "God Mode Health",
             "type": "int"
         },
         "idfaArmor": {
+            "name": "IDFA cheat armor",
             "patchKey": "IDFA Armor",
             "type": "int"
         },
         "idfaArmorClass": {
+            "name": "IDFA cheat armor class",
             "patchKey": "IDFA Armor Class",
             "type": "int"
         },
         "idkfaArmor": {
+            "name": "IDKFA cheat armor",
             "patchKey": "IDKFA Armor",
             "type": "int"
         },
         "idkfaArmorClass": {
+            "name": "IDKFA cheat armor class",
             "patchKey": "IDKFA Armor Class",
             "type": "int"
         },
         "maxArmor": {
+            "name": "Maximum armor",
             "patchKey": "Max Armor",
             "type": "int"
         },
         "maxHealth": {
+            "name": "Maximum health",
             "patchKey": "Max Health",
             "type": "int"
         },
         "maxSoulSphereHealth": {
+            "name": "Maximum Soulsphere health",
             "patchKey": "Max Soulsphere",
             "type": "int"
         },
         "megaSphereHealth": {
+            "name": "Megasphere health",
             "patchKey": "Megasphere Health",
             "type": "int"
         },
         "monstersInfight": {
+            "name": "Monsters fight own species",
             "off": 220,
             "on": 221,
             "patchKey": "Monsters Infight",
             "type": "boolean"
         },
         "soulSphereHealth": {
+            "name": "Soulsphere health",
             "patchKey": "Soulsphere Health",
             "type": "byte"
         },
         "startAmmo": {
+            "name": "Starting bullet ammo",
             "patchKey": "Initial Bullets",
             "type": "int"
         },
         "startHealth": {
+            "name": "Starting health",
             "patchKey": "Initial Health",
             "type": "int"
         }
@@ -2313,7 +2341,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 5, 
             "unused1": 0, 
             "unused2": 0, 
@@ -2439,7 +2467,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 5, 
             "unused1": 0, 
             "unused2": 0, 
@@ -2673,7 +2701,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 7, 
             "unused1": 0, 
             "unused2": 0, 
@@ -2943,7 +2971,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 5, 
             "unused1": 0, 
             "unused2": 0, 
@@ -3123,7 +3151,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 0, 
             "unused1": 0, 
             "unused2": 0, 
@@ -3267,7 +3295,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 0, 
             "unused1": 0, 
             "unused2": 0, 
@@ -3465,7 +3493,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 0, 
             "unused1": 0, 
             "unused2": 0, 
@@ -3555,7 +3583,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 20, 
             "unused1": 0, 
             "unused2": 0, 
@@ -3717,7 +3745,7 @@
             "arg9": 0
         }, 
         {
-            "action": "Refire", 
+            "action": "ReFire", 
             "duration": 20, 
             "unused1": 0, 
             "unused2": 0, 
@@ -20133,7 +20161,7 @@
             "arg9": 0
         },
         {
-          "action": "BFGsound",
+          "action": "BFGSound",
           "duration": 10,
           "unused1": 0,
           "unused2": 0,
