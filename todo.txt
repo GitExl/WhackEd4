@@ -1,10 +1,24 @@
-Bug
-- VGA: MBF (non-beta) config has beta states including beta actions. http://www.doomworld.com/vb/post/1358105
-- VGA: "Can you also make the States filter list update itself after the player renames something? Because now it keeps showing the old thing names until it reloads the file."
+Patch extensions
+- Thing editor Translucency (?), alpha, scale, decal options.
+- Thing editor MF2 and MF3 flag fields (tabs?).
+- Armor classes can accept fixed point ("1.5") value types for some configs. Also expose as config feature.
+- ZDaemon\ZDoom:
+  - CLIENTSIDE, CLIENSTIDEONLY, SERVERONLY flags. Check with ZDaemon docs or Github ZDaemon issue.
+  - Disable Sounds and Cheats editors. See tables_zdaemon.cfg features object for a start.
+  - Ammo: determine supported ammo types, and if any need to be added.
+  - Weapons: Ammo use, Min ammo and Decal fields.
+  - States: new state actions. Spawn, PlaySound, FireCustomRailgun, RandomJump, FastChase, CPA_*. Some are already in MBF.
+  - Misc: Rocket explosion style (?) and rocket explosion alpha options.
+- Toggle new Thing editor field state based on engine capability. Most new features unavailabel for ZDaemon config.
+- Verify that new thing, state, misc and other features for ZDaemon\MBF are written and read from patch files properly.
+
+Bugs
+- Misc. editor undo\redo does not work.
+- State Editor: flash when selecting states. Related to parameters UI.
 
 Features
+- '...' button for actions to browse through list of actions plus a description.
 - Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
-- Somewhere to display state action descriptions?
 - UI manual \ Dehacked tutorial.
 - Allow sorting things list by name.
 - Tab control traversal. Will need UI layout changes (put controls into panels instead of directly into frames).
@@ -12,4 +26,7 @@ Features
 
 Known issues
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
-- Toolbar buttons clickable area does not extend to the side of the toolbar. Another wxWidgets bug.
+- Toolbar buttons clickable area does not extend to the side of the toolbar. A wxWidgets bug.
+
+Other
+- VGA: "If you want an active tester PM me the WIP version please :-D"
