@@ -519,7 +519,7 @@
         },
         "monstersInfight": {
             "name": "Monsters fight own species",
-            "off": 220,
+            "off": 202,
             "on": 221,
             "patchKey": "Monsters Infight",
             "type": "boolean"

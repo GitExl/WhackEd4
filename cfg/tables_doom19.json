@@ -24246,8 +24246,8 @@
                 446370
             ], 
             "type": "boolean", 
-            "on": 221, 
-            "off": 220, 
+            "off": 202,
+            "on": 221,
             "patchKey": "Monsters Infight"
         }
     }, 
