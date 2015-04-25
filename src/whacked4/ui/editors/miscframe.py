@@ -167,6 +167,34 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         self.is_modified(True)
         self.misclist_update_row(self.selected_index)
 
+    def misc_action(self, event):
+        """
+        Performs the default action for a misc. item.
+        """
+
+        key = self.patch.engine.misc_data.keys()[self.selected_index]
+        data = self.patch.engine.misc_data[key]
+
+        # Booleans are toggled.
+        if data['type'] == 'boolean':
+            self.undo_add()
+
+            value = self.patch.misc[key]
+            if value == data['on']:
+                self.patch.misc[key] = data['off']
+            elif value == data['off']:
+                self.patch.misc[key] = data['on']
+
+            self.is_modified(True)
+            self.update_properties()
+            self.misclist_update_row(self.selected_index)
+
+        # Other values shift focus to the value to edit.
+        else:
+            self.Value.SetFocus()
+            self.Value.SetSelection(-1, -1)
+
+
     def restore(self, event):
         """
         Restore the selected misc item to it's engine state.

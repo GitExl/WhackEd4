@@ -2588,6 +2588,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		self.Value.Bind( wx.EVT_TEXT, self.set_value )
 		self.ValueEnabled.Bind( wx.EVT_CHECKBOX, self.set_bool_value )
 		self.Restore.Bind( wx.EVT_BUTTON, self.restore )
+		self.MiscList.Bind( wx.EVT_LEFT_DCLICK, self.misc_action )
 		self.MiscList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.misc_select )
 		self.MiscList.Bind( wx.EVT_SIZE, self.misclist_resize )
 	
@@ -2606,6 +2607,9 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		pass
 	
 	def restore( self, event ):
+		pass
+	
+	def misc_action( self, event ):
 		pass
 	
 	def misc_select( self, event ):
