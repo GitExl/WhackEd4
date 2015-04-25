@@ -158,12 +158,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         if self.ThingList.GetColumnCount() == 0:
             self.ThingList.InsertColumn(0, 'Idx', width=36)
-            self.ThingList.InsertColumn(1, 'Name', width=187)
-            self.ThingList.InsertColumn(2, 'Game', width=80)
-            self.ThingList.InsertColumn(3, 'Id', width=36)
-            self.ThingList.InsertColumn(4, 'Health', width=48)
-            self.ThingList.InsertColumn(5, 'Radius', width=48)
-            self.ThingList.InsertColumn(6, 'Height', width=48)
+            self.ThingList.InsertColumn(1, 'Name', width=200)
+            self.ThingList.InsertColumn(2, 'Id', width=36)
+            self.ThingList.InsertColumn(3, 'Game', width=65)
 
         for index in range(len(self.patch.things.names)):
             self.ThingList.InsertStringItem(index, '')
@@ -183,11 +180,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.ThingList.SetItemText(row_index, str(row_index + 1))
         self.ThingList.SetStringItem(row_index, 1, thing_name)
-        self.ThingList.SetStringItem(row_index, 2, thing['game'])
-        self.ThingList.SetStringItem(row_index, 3, str(thing['id']))
-        self.ThingList.SetStringItem(row_index, 4, str(thing['health']))
-        self.ThingList.SetStringItem(row_index, 5, str(thing['radius'] / self.FIXED_UNIT))
-        self.ThingList.SetStringItem(row_index, 6, str(thing['height'] / self.FIXED_UNIT))
+        self.ThingList.SetStringItem(row_index, 2, str(thing['id']))
+        self.ThingList.SetStringItem(row_index, 3, thing['game'])
 
     def thinglist_resize(self, event):
         """
@@ -196,8 +190,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         columns_width = self.ThingList.GetColumnWidth(0)
         columns_width += self.ThingList.GetColumnWidth(2) + self.ThingList.GetColumnWidth(3)
-        columns_width += self.ThingList.GetColumnWidth(4) + self.ThingList.GetColumnWidth(5)
-        columns_width += self.ThingList.GetColumnWidth(6)
 
         width = self.ThingList.GetClientSizeTuple()[0] - columns_width - 4
         self.ThingList.SetColumnWidth(1, width)
