@@ -220,6 +220,9 @@ def add_thing_states(states_list, thing):
     states_list[thing['statePain']] = True
     states_list[thing['stateRaise']] = True
     states_list[thing['stateSpawn']] = True
+    states_list[thing['stateCrash']] = True
+    states_list[thing['stateFreeze']] = True
+    states_list[thing['stateBurn']] = True
 
 
 def add_weapon_states(states_list, weapon):
