@@ -268,12 +268,25 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         Build the list of available filters.
         """
 
+        selected = self.Filter.GetSelection()
+
         list_items = []
         for filter_data in self.filter.filters:
             list_items.append(filter_data['name'])
         self.Filter.SetItems(list_items)
 
-        self.Filter.Select(0)
+        if selected != -1:
+            self.Filter.Select(selected)
+        else:
+            self.Filter.Select(0)
+
+    def update_filterlist(self):
+        """
+        Refreshes the filter list with the current filter selection.
+        """
+
+        self.filter.build_filters()
+        self.build_filterlist()
 
     def build_actionlist(self):
         """

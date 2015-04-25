@@ -545,6 +545,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             self.update_properties()
             self.is_modified(True)
 
+            parent = self.GetParent()
+            parent.editor_windows[windows.MAIN_TOOL_STATES].update_filterlist()
+
     def thing_restore(self, event):
         """
         Restores the currently selected thing to the one stored in the engine configuration.
