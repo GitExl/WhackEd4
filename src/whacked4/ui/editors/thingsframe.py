@@ -137,6 +137,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.renderstyle_build()
 
     def game_build(self):
+        self.ThingGame.Clear()
         self.ThingGame.AppendItems([
             'Any',
             'Doom',
