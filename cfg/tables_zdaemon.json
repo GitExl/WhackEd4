@@ -25040,10 +25040,13 @@
     "renderStyles": {
         "STYLE_None": "None",
         "STYLE_Normal": "Normal",
+        "STYLE_Fuzzy": "Fuzzy",
+        "STYLE_SoulTrans": "Lost soul trans.",
+        "STYLE_OptFuzzy": "Optional fuzzy",
+        "STYLE_Shaded": "Shaded",
         "STYLE_Translucent": "Translucent",
         "STYLE_Add": "Additive",
-        "STYLE_Fuzzy": "Fuzzy",
-        "STYLE_OptFuzzy": "Optional fuzzy",
-        "STYLE_SoulTrans": "Lost soul trans."
+        "STYLE_Stencil": "Stencil",
+        "STYLE_TranslucentStencil": "Trans. stencil"
     }
 }
