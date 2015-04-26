@@ -869,8 +869,8 @@
         "warp": "idclev"
     },
     "misc": {
-        "armorClassBlue": 2,
         "armorClassGreen": 1,
+        "armorClassBlue": 2,
         "armorClassSilver": 3,
         "armorClassEnchanted": 4,
         "idfaArmor": 200,
@@ -878,7 +878,6 @@
         "idkfaArmor": 200,
         "idkfaArmorClass": 2,
         "maxArmor": 200,
-        "bfgAmmoUsage": 40,
         "maxHealth": 200,
         "godModeHealth": 100,
         "soulSphereHealth": 100,
@@ -889,7 +888,11 @@
         "vampireMaxHealth": 200,
         "vampirePlayerFactor": 50,
         "vampireMonsterFactor": 25,
-        "monstersInfight": 202
+        "monstersInfight": 202,
+        "bfgAmmoUsage": 40,
+        "rocketExplosionAlpha": 0.67,
+        "rocketExplosionStyle": 255,
+        "noAutoFreeze": 0
     },
     "miscData": {
         "armorClassBlue": {
@@ -998,6 +1001,23 @@
             "name": "Vampire monster factor",
             "patchKey": "Vampire Monster Factor",
             "type": "int"
+        },
+        "rocketExplosionAlpha": {
+            "name": "Rocket explosion alpha",
+            "patchKey": "Rocket Explosion Alpha",
+            "type": "float"
+        },
+        "rocketExplosionStyle": {
+            "name": "Rocket explosion style",
+            "patchKey": "Rocket Explosion Style",
+            "type": "int"
+        },
+        "noAutoFreeze": {
+            "name": "No auto-freeze",
+            "patchKey": "No Autofreeze",
+            "type": "boolean",
+            "on": 1,
+            "off": 0
         }
     },
     "sounds": [

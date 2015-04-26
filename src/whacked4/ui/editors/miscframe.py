@@ -128,7 +128,13 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         window_id = event.GetId()
         window = self.FindWindowById(window_id)
 
-        value = utils.validate_numeric(window)
+        if self.data_type == 'int' or self.data_type == 'byte':
+            value = utils.validate_numeric(window)
+        elif self.data_type == 'float':
+            value = utils.validate_numeric_float(window)
+        else:
+            value = window.GetValue()
+
         key = self.patch.engine.misc_data.keys()[self.selected_index]
 
         # Clamp values to their data type range.
@@ -137,12 +143,14 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
                 value = -0x80000000
             elif value > 0x80000000:
                 value = 0x80000000
+            window.ChangeValue(str(value))
+
         elif self.data_type == 'byte':
             if value < 0:
                 value = 0
             elif value > 255:
                 value = 255
-        window.ChangeValue(str(value))
+            window.ChangeValue(str(value))
 
         self.patch.misc[key] = value
 
