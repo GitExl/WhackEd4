@@ -1,19 +1,16 @@
 Patch extensions
 - Thing editor Translucency (?), alpha, scale, decal options.
-- Thing editor MF2 and MF3 flag fields (tabs?).
+- Thing editor MF2 and MF3 flags.
 - Armor classes can accept fixed point ("1.5") value types for some configs. Also expose as config feature.
 - ZDaemon\ZDoom:
-  - CLIENTSIDE, CLIENSTIDEONLY, SERVERONLY flags. Check with ZDaemon docs or Github ZDaemon issue.
-  - Disable Sounds and Cheats editors. See tables_zdaemon.cfg features object for a start.
+  - Disable Sounds and Cheats editing. See tables_zdaemon.cfg features object for a start.
   - Ammo: determine supported ammo types, and if any need to be added.
   - Weapons: Ammo use, Min ammo and Decal fields.
-  - States: new state actions. Spawn, PlaySound, FireCustomRailgun, RandomJump, FastChase, CPA_*. Some are already in MBF.
   - Misc: Rocket explosion style (?) and rocket explosion alpha options.
 - Toggle new Thing editor field state based on engine capability. Most new features unavailabel for ZDaemon config.
 - Verify that new thing, state, misc and other features for ZDaemon\MBF are written and read from patch files properly.
 
 Bugs
-- Misc. editor undo\redo does not work.
 - State Editor: flash when selecting states. Related to parameters UI.
 
 Features
@@ -21,7 +18,7 @@ Features
 - Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
 - UI manual \ Dehacked tutorial.
 - Allow sorting things list by name.
-- Tab control traversal. Will need UI layout changes (put controls into panels instead of directly into frames).
+- Tab control traversal. Will need UI layout changes (put controls into panels instead of directly into frames, see Misc editor sidebar).
 - Read\write DEHACKED lumps directly from a WAD file.
 
 Known issues

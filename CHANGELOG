@@ -3,9 +3,10 @@ Version 1.1.0
 Added: the ability to change the rotation in a sprite preview by dragging the mouse over it with the left button held down.
 Added: a number of new state, thing, weapon and miscellaneous options for advanced ZDaemon\ZDoom support.
 Added: better defined state action parameter support, inclusing support for arguments.
-Added: a new miscellaneous editor UI that supports an arbitrary number of options.
+Added: a new miscellaneous editor UI that supports an arbitrary number of options. Double click items to quickly edit them.
 Added: clicking an active editor window toolbar button will bring it to the front if it is not already, otherwise it will close it.
 Added: closing dialogs is now possible with ESC and a window close button.
+Added: a ZDaemon engine configuration file supporting some of ZDaemon's Dehacked extensions.
 Fixed: sound numbering and setting used sound 1 as the dummy sound.
 Fixed: missing ampersands in thing flags.
 Fixed: thing names not being updated in the state filter list when a thing is renamed.
