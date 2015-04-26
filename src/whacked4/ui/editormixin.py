@@ -186,3 +186,10 @@ class EditorMixin(wx.Frame):
         sounds_frame = parent.editor_windows[windows.MAIN_TOOL_SOUNDS]
         sounds_frame.goto_sound_index(sound_index)
         sounds_frame.Raise()
+
+    def dummy(self, event):
+        """
+        Dummy event consumer.
+        """
+
+        pass

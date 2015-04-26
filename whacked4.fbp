@@ -765,7 +765,7 @@
                 </object>
             </object>
         </object>
-        <object class="Frame" expanded="1">
+        <object class="Frame" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg">wxSYS_COLOUR_BTNFACE</property>
@@ -901,7 +901,7 @@
                                 <property name="wrap">-1</property>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
-                                <event name="OnEraseBackground"></event>
+                                <event name="OnEraseBackground">dummy</event>
                                 <event name="OnKeyDown"></event>
                                 <event name="OnKeyUp"></event>
                                 <event name="OnKillFocus"></event>
@@ -993,7 +993,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -1178,7 +1178,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -1363,7 +1363,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -1548,7 +1548,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -1733,7 +1733,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -1918,7 +1918,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -2103,7 +2103,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -2288,7 +2288,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -2473,7 +2473,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -2589,11 +2589,11 @@
                                 </object>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">5</property>
                             <property name="flag">wxEXPAND</property>
                             <property name="proportion">0</property>
-                            <object class="spacer" expanded="1">
+                            <object class="spacer" expanded="0">
                                 <property name="height">16</property>
                                 <property name="permission">protected</property>
                                 <property name="width">0</property>
@@ -2668,7 +2668,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -2850,7 +2850,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -3035,7 +3035,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -3220,7 +3220,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -3333,7 +3333,7 @@
                                 </object>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">0</property>
                             <property name="flag">wxEXPAND</property>
                             <property name="proportion">0</property>
@@ -3402,7 +3402,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -3518,7 +3518,7 @@
                                 </object>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">0</property>
                             <property name="flag">wxEXPAND</property>
                             <property name="proportion">0</property>
@@ -3587,7 +3587,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -3703,7 +3703,7 @@
                                 </object>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">0</property>
                             <property name="flag">wxEXPAND</property>
                             <property name="proportion">0</property>
@@ -3772,7 +3772,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -4176,7 +4176,7 @@
                                 <property name="wrap">-1</property>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
-                                <event name="OnEraseBackground"></event>
+                                <event name="OnEraseBackground">dummy</event>
                                 <event name="OnKeyDown"></event>
                                 <event name="OnKeyUp"></event>
                                 <event name="OnKillFocus"></event>
@@ -4268,7 +4268,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -4442,7 +4442,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -4624,7 +4624,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -4798,7 +4798,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -4980,7 +4980,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -5154,7 +5154,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -5336,7 +5336,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -5510,7 +5510,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -5692,7 +5692,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -5866,7 +5866,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -6048,7 +6048,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -6222,7 +6222,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -6404,7 +6404,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -6578,7 +6578,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -6760,7 +6760,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -6934,7 +6934,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -7116,7 +7116,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -7290,7 +7290,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -7472,7 +7472,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -7646,7 +7646,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -7828,7 +7828,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -8002,7 +8002,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -8185,7 +8185,7 @@
                                 <property name="wrap">-1</property>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
-                                <event name="OnEraseBackground"></event>
+                                <event name="OnEraseBackground">dummy</event>
                                 <event name="OnKeyDown"></event>
                                 <event name="OnKeyUp"></event>
                                 <event name="OnKillFocus"></event>
@@ -8277,7 +8277,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -8451,7 +8451,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -8633,7 +8633,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -8807,7 +8807,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -8989,7 +8989,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -9163,7 +9163,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -9345,7 +9345,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -9519,7 +9519,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -9701,7 +9701,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -9875,7 +9875,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow">enter_state</event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -10069,7 +10069,7 @@
                                 <property name="wrap">-1</property>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
-                                <event name="OnEraseBackground"></event>
+                                <event name="OnEraseBackground">dummy</event>
                                 <event name="OnKeyDown"></event>
                                 <event name="OnKeyUp"></event>
                                 <event name="OnKillFocus"></event>
@@ -10652,7 +10652,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -10826,7 +10826,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -11008,7 +11008,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -11375,7 +11375,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -11549,7 +11549,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow">enter_state</event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -11653,7 +11653,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -11848,7 +11848,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -12030,7 +12030,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -12215,7 +12215,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -12400,7 +12400,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -12585,7 +12585,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -12770,7 +12770,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -12955,7 +12955,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -13140,7 +13140,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -13325,7 +13325,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -13510,7 +13510,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -13695,7 +13695,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -13880,7 +13880,7 @@
                                                                     <property name="wrap">-1</property>
                                                                     <event name="OnChar"></event>
                                                                     <event name="OnEnterWindow"></event>
-                                                                    <event name="OnEraseBackground"></event>
+                                                                    <event name="OnEraseBackground">dummy</event>
                                                                     <event name="OnKeyDown"></event>
                                                                     <event name="OnKeyUp"></event>
                                                                     <event name="OnKillFocus"></event>
@@ -14179,7 +14179,7 @@
                                                 <property name="wrap">-1</property>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -14267,7 +14267,7 @@
                                                 <event name="OnChar"></event>
                                                 <event name="OnChoice">filter_select</event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -14435,7 +14435,7 @@
                                         <property name="maximum_size"></property>
                                         <property name="min_size"></property>
                                         <property name="minimize_button">0</property>
-                                        <property name="minimum_size"></property>
+                                        <property name="minimum_size">-1,-1</property>
                                         <property name="moveable">1</property>
                                         <property name="name">StateList</property>
                                         <property name="pane_border">1</property>
@@ -14654,7 +14654,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -14923,7 +14923,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -15526,7 +15526,7 @@
                 </object>
             </object>
         </object>
-        <object class="Frame" expanded="0">
+        <object class="Frame" expanded="1">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg">wxSYS_COLOUR_BTNFACE</property>
@@ -15680,7 +15680,7 @@
                                                 <property name="wrap">-1</property>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -15705,8 +15705,8 @@
                                         </object>
                                         <object class="sizeritem" expanded="0">
                                             <property name="border">3</property>
-                                            <property name="flag">wxALIGN_CENTER_VERTICAL|wxALL|wxEXPAND|wxFIXED_MINSIZE</property>
-                                            <property name="proportion">0</property>
+                                            <property name="flag">wxALIGN_CENTER_VERTICAL|wxALL|wxEXPAND</property>
+                                            <property name="proportion">1</property>
                                             <object class="wxChoice" expanded="0">
                                                 <property name="BottomDockable">1</property>
                                                 <property name="LeftDockable">1</property>
@@ -15862,7 +15862,7 @@
                                                 <property name="wrap">-1</property>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -16045,7 +16045,7 @@
                                                         <property name="wrap">-1</property>
                                                         <event name="OnChar"></event>
                                                         <event name="OnEnterWindow">enter_state</event>
-                                                        <event name="OnEraseBackground"></event>
+                                                        <event name="OnEraseBackground">dummy</event>
                                                         <event name="OnKeyDown"></event>
                                                         <event name="OnKeyUp"></event>
                                                         <event name="OnKillFocus"></event>
@@ -16229,7 +16229,7 @@
                                                 <property name="wrap">-1</property>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -16412,7 +16412,7 @@
                                                         <property name="wrap">-1</property>
                                                         <event name="OnChar"></event>
                                                         <event name="OnEnterWindow">enter_state</event>
-                                                        <event name="OnEraseBackground"></event>
+                                                        <event name="OnEraseBackground">dummy</event>
                                                         <event name="OnKeyDown"></event>
                                                         <event name="OnKeyUp"></event>
                                                         <event name="OnKillFocus"></event>
@@ -16596,7 +16596,7 @@
                                                 <property name="wrap">-1</property>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -16779,7 +16779,7 @@
                                                         <property name="wrap">-1</property>
                                                         <event name="OnChar"></event>
                                                         <event name="OnEnterWindow">enter_state</event>
-                                                        <event name="OnEraseBackground"></event>
+                                                        <event name="OnEraseBackground">dummy</event>
                                                         <event name="OnKeyDown"></event>
                                                         <event name="OnKeyUp"></event>
                                                         <event name="OnKillFocus"></event>
@@ -16963,7 +16963,7 @@
                                                 <property name="wrap">-1</property>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -17146,7 +17146,7 @@
                                                         <property name="wrap">-1</property>
                                                         <event name="OnChar"></event>
                                                         <event name="OnEnterWindow">enter_state</event>
-                                                        <event name="OnEraseBackground"></event>
+                                                        <event name="OnEraseBackground">dummy</event>
                                                         <event name="OnKeyDown"></event>
                                                         <event name="OnKeyUp"></event>
                                                         <event name="OnKillFocus"></event>
@@ -17330,7 +17330,7 @@
                                                 <property name="wrap">-1</property>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -17513,7 +17513,7 @@
                                                         <property name="wrap">-1</property>
                                                         <event name="OnChar"></event>
                                                         <event name="OnEnterWindow">enter_state</event>
-                                                        <event name="OnEraseBackground"></event>
+                                                        <event name="OnEraseBackground">dummy</event>
                                                         <event name="OnKeyDown"></event>
                                                         <event name="OnKeyUp"></event>
                                                         <event name="OnKillFocus"></event>
@@ -18084,7 +18084,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -18258,7 +18258,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -18952,7 +18952,7 @@
                 </object>
             </object>
         </object>
-        <object class="Frame" expanded="1">
+        <object class="Frame" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg">wxSYS_COLOUR_BTNFACE</property>
@@ -19014,7 +19014,7 @@
             <event name="OnSetFocus"></event>
             <event name="OnSize"></event>
             <event name="OnUpdateUI"></event>
-            <object class="wxBoxSizer" expanded="1">
+            <object class="wxBoxSizer" expanded="0">
                 <property name="minimum_size"></property>
                 <property name="name">bSizer152</property>
                 <property name="orient">wxHORIZONTAL</property>
@@ -19644,7 +19644,7 @@
                                                 <property name="wrap">-1</property>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -19829,7 +19829,7 @@
                                                 <property name="wrap">-1</property>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -20014,7 +20014,7 @@
                                                 <property name="wrap">-1</property>
                                                 <event name="OnChar"></event>
                                                 <event name="OnEnterWindow"></event>
-                                                <event name="OnEraseBackground"></event>
+                                                <event name="OnEraseBackground">dummy</event>
                                                 <event name="OnKeyDown"></event>
                                                 <event name="OnKeyUp"></event>
                                                 <event name="OnKillFocus"></event>
@@ -20379,7 +20379,7 @@
                 </object>
             </object>
         </object>
-        <object class="Dialog" expanded="0">
+        <object class="Dialog" expanded="1">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>
@@ -21217,7 +21217,7 @@
                 </object>
             </object>
         </object>
-        <object class="Dialog" expanded="0">
+        <object class="Dialog" expanded="1">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>
@@ -21362,7 +21362,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -21547,7 +21547,7 @@
                                         <property name="wrap">-1</property>
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
-                                        <event name="OnEraseBackground"></event>
+                                        <event name="OnEraseBackground">dummy</event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
@@ -21734,7 +21734,7 @@
                                 <property name="wrap">-1</property>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
-                                <event name="OnEraseBackground"></event>
+                                <event name="OnEraseBackground">dummy</event>
                                 <event name="OnKeyDown"></event>
                                 <event name="OnKeyUp"></event>
                                 <event name="OnKillFocus"></event>
@@ -21947,7 +21947,7 @@
                 </object>
             </object>
         </object>
-        <object class="Dialog" expanded="0">
+        <object class="Dialog" expanded="1">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>
@@ -23103,7 +23103,7 @@
                 </object>
             </object>
         </object>
-        <object class="Dialog" expanded="0">
+        <object class="Dialog" expanded="1">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>
@@ -23688,7 +23688,7 @@
                 </object>
             </object>
         </object>
-        <object class="Dialog" expanded="1">
+        <object class="Dialog" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>
@@ -24695,7 +24695,7 @@
                 </object>
             </object>
         </object>
-        <object class="Dialog" expanded="0">
+        <object class="Dialog" expanded="1">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>

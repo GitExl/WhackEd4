@@ -1155,139 +1155,191 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
+		self.PropertiesLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.ThingIdLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingId.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingId.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingHealthLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingHealth.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingSpeeLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSpeed.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSpeed.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingRadiusLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingRadius.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingRadius.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingHeightLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingHeight.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingHeight.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingDamageLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingDamage.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingDamage.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingReactionTimeLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingReactionTime.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingReactionTime.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingPainChanceLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingPainChance.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingPainChance.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingMassLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingMass.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingMass.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingGameLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingGame.Bind( wx.EVT_CHOICE, self.set_game )
+		self.ThingSpawnIdLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSpawnId.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSpawnId.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingRespawnTimeLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingRespawnTime.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingRespawnTime.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingRenderStyleLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingRenderStyle.Bind( wx.EVT_CHOICE, self.set_renderstyle )
+		self.ThingAlphaLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingAlpha.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingAlpha.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingScaleLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingScale.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingScale.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingDecalLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingDecal.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingDecal.Bind( wx.EVT_TEXT, self.set_value )
 		self.ButtonRename.Bind( wx.EVT_BUTTON, self.thing_rename )
 		self.ButtonRestore.Bind( wx.EVT_BUTTON, self.thing_restore )
+		self.StatesLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.ThingStateSpawnLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateSpawn.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateSpawn.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateSpawnName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStateSpawnName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateSpawnName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateSpawnName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateSpawnSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.ThingStateWalkLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateWalk.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateWalk.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateWalkName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStateWalkName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateWalkName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateWalkName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateWalkSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.ThingStatePainLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStatePain.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStatePain.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStatePainName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStatePainName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStatePainName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStatePainName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStatePainSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.ThingStateMeleeLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateMelee.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateMelee.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateMeleeName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStateMeleeName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateMeleeName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateMeleeName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateMeleeSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.ThingStateAttackLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateAttack.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateAttack.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateAttackName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStateAttackName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateAttackName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateAttackName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateAttackSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.ThingStateDeathLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateDeath.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateDeath.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateDeathName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStateDeathName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateDeathName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateDeathName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateDeathSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.ThingStateExplodeLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateExplode.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateExplode.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateExplodeName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStateExplodeName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateExplodeName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateExplodeName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateExplodeSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.ThingStateRaiseLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateRaise.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateRaise.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateRaiseName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStateRaiseName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateRaiseName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateRaiseName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateRaiseSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.ThingStateCrashLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateCrash.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateCrash.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateCrashName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStateCrashName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateCrashName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateCrashName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateCrashSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.ThingStateFreezeLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateFreeze.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateFreeze.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateFreezeName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStateFreezeName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateFreezeName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateFreezeName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateFreezeSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.ThingStateBurnLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateBurn.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateBurn.Bind( wx.EVT_TEXT, self.set_state )
 		self.ThingStateBurnName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingStateBurnName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateBurnName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingStateBurnName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateBurnSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.SoundsLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.ThingSoundAlertLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundAlert.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundAlert.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundAlertName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingSoundAlertName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundAlertName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingSoundAlertName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
 		self.ThingSoundAlertName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundAlertSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
+		self.ThingSoundAttackLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundAttack.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundAttack.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundAttackName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingSoundAttackName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundAttackName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingSoundAttackName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
 		self.ThingSoundAttackName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundAttackSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
+		self.ThingSoundPainLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundPain.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundPain.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundPainName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingSoundPainName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundPainName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingSoundPainName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
 		self.ThingSoundPainName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundPainSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
+		self.ThingSoundDeathLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundDeath.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundDeath.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundDeathName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingSoundDeathName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundDeathName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingSoundDeathName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
 		self.ThingSoundDeathName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundDeathSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
+		self.ThingSoundActiveLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundActive.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundActive.Bind( wx.EVT_TEXT, self.set_sound )
 		self.ThingSoundActiveName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.ThingSoundActiveName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundActiveName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.ThingSoundActiveName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
 		self.ThingSoundActiveName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundActiveSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
+		self.FlagsLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingFlags.Bind( wx.EVT_CHECKLISTBOX, self.set_flags )
 		self.ThingFlags.Bind( wx.EVT_MOTION, self.set_flag_tooltip )
 		self.ThingList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.thing_rename )
@@ -1299,11 +1351,24 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def dummy( self, event ):
+		pass
+	
+	
 	def focus_text( self, event ):
 		pass
 	
 	def set_value( self, event ):
 		pass
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -1328,8 +1393,14 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	
+	
+	
 	def set_renderstyle( self, event ):
 		pass
+	
+	
+	
 	
 	
 	
@@ -1344,11 +1415,14 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		pass
 	
 	
+	
+	
 	def set_state( self, event ):
 		pass
 	
 	def enter_state( self, event ):
 		pass
+	
 	
 	def leave_state( self, event ):
 		pass
@@ -1420,8 +1494,31 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	def set_sound( self, event ):
 		pass
+	
 	
 	
 	
@@ -1433,6 +1530,15 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	def set_sound_external( self, event ):
 		pass
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -1823,46 +1929,66 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
+		self.m_staticText39.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.SpriteIndex.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.SpriteIndex.Bind( wx.EVT_TEXT, self.set_value )
+		self.SpriteName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.SpriteSelect.Bind( wx.EVT_BUTTON, self.select_sprite )
+		self.m_staticText391.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.FrameIndex.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.FrameIndex.Bind( wx.EVT_TEXT, self.set_frame )
 		self.FrameIndexSpinner.Bind( wx.EVT_SPIN_DOWN, self.frame_spin_down )
 		self.FrameIndexSpinner.Bind( wx.EVT_SPIN_UP, self.frame_spin_up )
 		self.AlwaysLit.Bind( wx.EVT_CHECKBOX, self.set_lit )
+		self.m_staticText3911.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.NextStateIndex.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.NextStateIndex.Bind( wx.EVT_TEXT, self.set_value )
 		self.NextStateName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.NextStateName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.NextStateName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.NextStateName.Bind( wx.EVT_LEFT_UP, self.goto_next_state )
+		self.m_staticText3912.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Duration.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Duration.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText54.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Action.Bind( wx.EVT_CHOICE, self.set_action )
+		self.m_staticText541.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Unused1.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Unused1.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText5411.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Unused2.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Unused2.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText54111.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Arg1.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Arg1.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText54112.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Arg2.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Arg2.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText54113.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Arg3.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Arg3.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText54114.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Arg4.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Arg4.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText54115.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Arg5.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Arg5.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText54116.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Arg6.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Arg6.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText54117.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Arg7.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Arg7.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText54118.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Arg8.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Arg8.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText54119.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Arg9.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Arg9.Bind( wx.EVT_TEXT, self.set_value )
 		self.Restore.Bind( wx.EVT_BUTTON, self.state_restore )
+		self.m_staticText45.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Filter.Bind( wx.EVT_CHOICE, self.filter_select )
+		self.Filter.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Bind( wx.EVT_TOOL, self.filter_select, id = self.FilterToolRefresh.GetId() )
 		self.StateList.Bind( wx.EVT_LEFT_DOWN, self.state_link )
 		self.StateList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.select_sprite )
@@ -1875,14 +2001,19 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def dummy( self, event ):
+		pass
+	
 	def focus_text( self, event ):
 		pass
 	
 	def set_value( self, event ):
 		pass
 	
+	
 	def select_sprite( self, event ):
 		pass
+	
 	
 	
 	def set_frame( self, event ):
@@ -1899,14 +2030,18 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	
 	def enter_state( self, event ):
 		pass
+	
 	
 	def leave_state( self, event ):
 		pass
 	
 	def goto_next_state( self, event ):
 		pass
+	
+	
 	
 	
 	
@@ -1935,11 +2070,24 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	def state_restore( self, event ):
 		pass
 	
+	
 	def filter_select( self, event ):
 		pass
+	
 	
 	
 	def state_link( self, event ):
@@ -2021,10 +2169,12 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
+		self.m_staticText39.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Priority.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Priority.Bind( wx.EVT_TEXT, self.set_priority )
 		self.PrioritySpinner.Bind( wx.EVT_SPIN_DOWN, self.priority_spin_down )
 		self.PrioritySpinner.Bind( wx.EVT_SPIN_UP, self.priority_spin_up )
+		self.m_staticText391.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Singular.Bind( wx.EVT_CHECKBOX, self.set_singular )
 		self.Restore.Bind( wx.EVT_BUTTON, self.sound_restore )
 		self.SoundList.Bind( wx.EVT_LIST_ITEM_DESELECTED, self.sound_deselect )
@@ -2036,6 +2186,9 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def dummy( self, event ):
+		pass
+	
 	def focus_text( self, event ):
 		pass
 	
@@ -2047,6 +2200,7 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 	
 	def priority_spin_up( self, event ):
 		pass
+	
 	
 	def set_singular( self, event ):
 		pass
@@ -2151,7 +2305,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		AmmoTypeChoices = []
 		self.AmmoType = wx.Choice( self, WEAPON_AMMOTYPE, wx.DefaultPosition, wx.DefaultSize, AmmoTypeChoices, 0 )
 		self.AmmoType.SetSelection( 0 )
-		bSizer86.Add( self.AmmoType, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.EXPAND|wx.FIXED_MINSIZE, 3 )
+		bSizer86.Add( self.AmmoType, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.EXPAND, 3 )
 		
 		
 		bSizer139.Add( bSizer86, 1, wx.EXPAND, 5 )
@@ -2338,34 +2492,45 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
+		self.m_staticText88.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.AmmoType.Bind( wx.EVT_CHOICE, self.set_ammo )
+		self.m_staticText881.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateSelect.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateSelect.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateSelectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.WeaponStateSelectName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateSelectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateSelectName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.WeaponStateSelectSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.m_staticText8811.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateDeselect.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateDeselect.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateDeselectName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.WeaponStateDeselectName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateDeselectName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.WeaponStateDeselectSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.m_staticText8812.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateBob.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateBob.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateBobName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.WeaponStateBobName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateBobName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateBobName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.WeaponStateBobSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.m_staticText8813.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateFire.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateFire.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateFireName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.WeaponStateFireName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateFireName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateFireName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.WeaponStateFireSet.Bind( wx.EVT_BUTTON, self.set_state_external )
+		self.m_staticText8814.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateMuzzle.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateMuzzle.Bind( wx.EVT_TEXT, self.set_state_index )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_ENTER_WINDOW, self.enter_state )
+		self.WeaponStateMuzzleName.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEAVE_WINDOW, self.leave_state )
 		self.WeaponStateMuzzleName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.WeaponStateMuzzleSet.Bind( wx.EVT_BUTTON, self.set_state_external )
@@ -2380,8 +2545,12 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def dummy( self, event ):
+		pass
+	
 	def set_ammo( self, event ):
 		pass
+	
 	
 	def focus_text( self, event ):
 		pass
@@ -2392,6 +2561,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	def enter_state( self, event ):
 		pass
 	
+	
 	def leave_state( self, event ):
 		pass
 	
@@ -2400,6 +2570,14 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	def set_state_external( self, event ):
 		pass
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -2500,8 +2678,10 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
+		self.m_staticText88.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Maximum.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Maximum.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText881.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Pickup.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Pickup.Bind( wx.EVT_TEXT, self.set_value )
 		self.Rename.Bind( wx.EVT_BUTTON, self.ammo_rename )
@@ -2515,11 +2695,15 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def dummy( self, event ):
+		pass
+	
 	def focus_text( self, event ):
 		pass
 	
 	def set_value( self, event ):
 		pass
+	
 	
 	
 	
@@ -2764,10 +2948,13 @@ class ParFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
+		self.m_staticText88.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Episode.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Episode.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText881.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Map.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Map.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText8811.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Seconds.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Seconds.Bind( wx.EVT_TEXT, self.set_value )
 		self.Bind( wx.EVT_TOOL, self.par_add, id = self.Add.GetId() )
@@ -2780,11 +2967,16 @@ class ParFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def dummy( self, event ):
+		pass
+	
 	def focus_text( self, event ):
 		pass
 	
 	def set_value( self, event ):
 		pass
+	
+	
 	
 	
 	
@@ -3008,8 +3200,11 @@ class StringDialogBase ( wx.Dialog ):
 		
 		# Connect Events
 		self.Bind( wx.EVT_ACTIVATE, self.activate )
+		self.m_staticText81.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.m_staticText811.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.New.Bind( wx.EVT_KEY_DOWN, self.text_keydown )
 		self.New.Bind( wx.EVT_TEXT, self.text_enter )
+		self.CharsLeft.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ButtonOk.Bind( wx.EVT_BUTTON, self.ok )
 		self.ButtonCancel.Bind( wx.EVT_BUTTON, self.cancel )
 	
@@ -3021,11 +3216,16 @@ class StringDialogBase ( wx.Dialog ):
 	def activate( self, event ):
 		pass
 	
+	def dummy( self, event ):
+		pass
+	
+	
 	def text_keydown( self, event ):
 		pass
 	
 	def text_enter( self, event ):
 		pass
+	
 	
 	def ok( self, event ):
 		pass
