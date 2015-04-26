@@ -10,7 +10,10 @@
         "thing.respawnTime",
         "thing.renderStyle",
         "thing.flags2",
-        "thing.flags3"
+        "thing.flags3",
+        "thing.alpha",
+        "thing.scale",
+        "thing.decal"
     ],
     "name": "ZDaemon",
 
@@ -318,6 +321,438 @@
         "BFGSound": {
             "name": "BFGSound",
             "description": "Play sound 'bfg'."
+        },
+        "FastChase": {
+            "name": "FastChase",
+            "description": "Fast version of the standard walking code pointer."
+        },
+        "Spawn": {
+            "name": "Spawn",
+            "description": "Spawns a thing at the position of this thing.",
+            "unused": [
+                {
+                    "name": "Thing",
+                    "description": "The thing to spawn.",
+                    "type": "thing"
+                },
+                {
+                    "name": "Z",
+                    "description": "The relative Z position to spawn the thing at.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "PlaySound": {
+            "name": "PlaySound",
+            "description": "Plays a sound.",
+            "unused": [
+                {
+                    "name": "Sound",
+                    "description": "The sound to play.",
+                    "type": "sound"
+                },
+                {
+                    "description": "If set to 1, the sound effect will play at full volume regardless of the distance.",
+                    "type": "integer",
+                    "range": [0, 1]
+                }
+            ]
+        },
+        "RandomJump": {
+            "name": "RandomJump",
+            "description": "A random chance to jump to a state. Duration must not be -1.",
+            "unused": [
+                {
+                    "name": "State",
+                    "description": "The state number to jump to.",
+                    "type": "state"
+                },
+                {
+                    "name": "Chance",
+                    "description": "The chance that the jump is executed. Ranged 0 to 255.",
+                    "type": "integer",
+                    "range": [0, 255]
+                }
+            ]
+        },
+        "FireCustomRailgun": {
+            "name": "FireCustomRailgun",
+            "description": "Fires a Railgun shot.",
+            "arguments": [
+                {
+                    "name": "Damage",
+                    "description": "The amount of damage the Railgun shot will do.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Offset",
+                    "description": "The offset of the Railgun shot.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPA_Execute": {
+            "name": "CPA_Execute",
+            "description": "Executes an ACS script from an actor state.",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to execute.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to execute the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 1",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 2",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 3",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPW_Execute": {
+            "name": "CPW_Execute",
+            "description": "Executes an ACS script from a weapon state.",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to execute.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to execute the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 1",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 2",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 3",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPA_ExecuteAlways": {
+            "name": "CPA_ExecuteAlways",
+            "description": "Executes an ACS script from an actor state. Multiple instances of the script index will be run.",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to execute.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to execute the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 1",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 2",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 3",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPW_ExecuteAlways": {
+            "name": "CPW_ExecuteAlways",
+            "description": "Executes an ACS script from a weapon state. Multiple instances of the script index will be run.",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to execute.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to execute the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 1",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 2",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 3",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPA_LockedExecute": {
+            "name": "CPA_LockedExecute",
+            "description": "Executes an ACS script from an actor state, if the activator has the right key. A remote message will be printed if the activator does not have the right key combination ('You need ... to activate this object').",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to execute.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to execute the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 1",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 2",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Lock keys",
+                    "description": "The key combination needed to execute the script.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPW_LockedExecute": {
+            "name": "CPW_LockedExecute",
+            "description": "Executes an ACS script from a weapon state, if the activator has the right key. A remote message will be printed if the activator does not have the right key combination ('You need ... to activate this object').",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to execute.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to execute the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 1",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 2",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Lock keys",
+                    "description": "The key combination needed to execute the script.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPA_LockedExecuteDoor": {
+            "name": "CPA_LockedExecuteDoor",
+            "description": "Executes an ACS script from an actor state, if the activator has the right key. A local door message will be printed if the activator does not have the right key combination ('You need ... to open this door').",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to execute.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to execute the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 1",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 2",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Lock keys",
+                    "description": "The key combination needed to execute the script.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPW_LockedExecuteDoor": {
+            "name": "CPW_LockedExecuteDoor",
+            "description": "Executes an ACS script from a weapon state, if the activator has the right key. A local door message will be printed if the activator does not have the right key combination ('You need ... to open this door').",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to execute.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to execute the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 1",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Parameter 2",
+                    "description": "",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Lock keys",
+                    "description": "The key combination needed to execute the script.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPA_Suspend": {
+            "name": "CPA_Suspend",
+            "description": "Suspends a script from an actor state.",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to suspend.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to suspend the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPW_Suspend": {
+            "name": "CPW_Suspend",
+            "description": "Suspends a script from a weapon state.",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to suspend.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to suspend the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPA_Terminate": {
+            "name": "CPA_Terminate",
+            "description": "Terminates a script from an actor state.",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to terminate.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to terminate the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "CPW_Terminate": {
+            "name": "CPW_Terminate",
+            "description": "Terminates a script from a weapon state.",
+            "arguments": [
+                {
+                    "name": "Script",
+                    "description": "The script index to terminate.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Map",
+                    "description": "The map to terminate the script on.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                }
+            ]
         }
     },
     "ammo": [
@@ -436,25 +871,25 @@
     "misc": {
         "armorClassBlue": 2,
         "armorClassGreen": 1,
-        "bfgAmmoUsage": 40,
-        "godModeHealth": 100,
+        "armorClassSilver": 3,
+        "armorClassEnchanted": 4,
         "idfaArmor": 200,
         "idfaArmorClass": 2,
         "idkfaArmor": 200,
         "idkfaArmorClass": 2,
         "maxArmor": 200,
+        "bfgAmmoUsage": 40,
         "maxHealth": 200,
-        "maxSoulSphereHealth": 200,
-        "megaSphereHealth": 200,
-        "monstersInfight": 202,
+        "godModeHealth": 100,
         "soulSphereHealth": 100,
+        "megaSphereHealth": 200,
+        "maxSoulSphereHealth": 200,
         "startAmmo": 50,
         "startHealth": 100,
-        "armorClassSilver": 3,
-        "armorClassEnchanted": 4,
         "vampireMaxHealth": 200,
         "vampirePlayerFactor": 50,
-        "vampireMonsterFactor": 25
+        "vampireMonsterFactor": 25,
+        "monstersInfight": 202
     },
     "miscData": {
         "armorClassBlue": {
@@ -19900,6 +20335,21 @@
             "index": 31,
             "name": "Translucent", 
             "description": "Apply translucency."
+        },
+        "CLIENTSIDEONLY": {
+            "index": 32,
+            "name": "Client-side only", 
+            "description": "This thing will only exist on clients."
+        },
+        "CLIENTSIDE": {
+            "index": 32,
+            "name": "Client-side only", 
+            "description": "This thing will only exist on clients."
+        },
+        "SERVERONLY": {
+            "index": 33,
+            "name": "Server-side only", 
+            "description": "This thing will only exist on servers."
         }
     },
     "thingNames": [
