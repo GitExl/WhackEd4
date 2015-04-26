@@ -31,180 +31,183 @@ MAIN_MENU_CHEATS = 1682
 MAIN_MENU_MISC = 1683
 MAIN_MENU_PAR = 1684
 FRAME_THINGS = 1685
-THING_VAL_GAME = 1686
-THING_VAL_ID = 1687
-THING_VAL_SPAWNID = 1688
-THING_VAL_HEALTH = 1689
-THING_VAL_SPEED = 1690
-THING_VAL_RADIUS = 1691
-THING_VAL_HEIGHT = 1692
-THING_VAL_DAMAGE = 1693
-THING_VAL_REACTIONTIME = 1694
-THING_VAL_RESPAWNTIME = 1695
-THING_VAL_PAINCHANCE = 1696
-THING_VAL_MASS = 1697
+THING_VAL_ID = 1686
+THING_VAL_HEALTH = 1687
+THING_VAL_SPEED = 1688
+THING_VAL_RADIUS = 1689
+THING_VAL_HEIGHT = 1690
+THING_VAL_DAMAGE = 1691
+THING_VAL_REACTIONTIME = 1692
+THING_VAL_PAINCHANCE = 1693
+THING_VAL_MASS = 1694
+THING_VAL_GAME = 1695
+THING_VAL_SPAWNID = 1696
+THING_VAL_RESPAWNTIME = 1697
 THING_VAL_RENDERSTYLE = 1698
-THING_RENAME = 1699
-THING_RESTORE = 1700
-THING_STATE_SPAWN = 1701
-THING_STATENAME_SPAWN = 1702
-THING_STATESET_SPAWN = 1703
-THING_STATE_WALK = 1704
-THING_STATENAME_WALK = 1705
-THING_STATESET_WALK = 1706
-THING_STATE_PAIN = 1707
-THING_STATENAME_PAIN = 1708
-THING_STATESET_PAIN = 1709
-THING_STATE_MELEE = 1710
-THING_STATENAME_MELEE = 1711
-THING_STATESET_MELEE = 1712
-THING_STATE_ATTACK = 1713
-THING_STATENAME_ATTACK = 1714
-THING_STATESET_ATTACK = 1715
-THING_STATE_DEATH = 1716
-THING_STATENAME_DEATH = 1717
-THING_STATESET_DEATH = 1718
-THING_STATE_EXPLODE = 1719
-THING_STATENAME_EXPLODE = 1720
-THING_STATESET_EXPLODE = 1721
-THING_STATE_RAISE = 1722
-THING_STATENAME_RAISE = 1723
-THING_STATESET_RAISE = 1724
-THING_STATE_CRASH = 1725
-THING_STATENAME_CRASH = 1726
-THING_STATESET_CRASH = 1727
-THING_STATE_FREEZE = 1728
-THING_STATENAME_FREEZE = 1729
-THING_STATESET_FREEZE = 1730
-THING_STATE_BURN = 1731
-THING_STATENAME_BURN = 1732
-THING_STATESET_BURN = 1733
-THING_SOUND_ALERT = 1734
-THING_SOUNDNAME_ALERT = 1735
-THING_SOUNDSET_ALERT = 1736
-THING_SOUND_ATTACK = 1737
-THING_SOUNDNAME_ATTACK = 1738
-THING_SOUNDSET_ATTACK = 1739
-THING_SOUND_PAIN = 1740
-THING_SOUNDNAME_PAIN = 1741
-THING_SOUNDSET_PAIN = 1742
-THING_SOUND_DEATH = 1743
-THING_SOUNDNAME_DEATH = 1744
-THING_SOUNDSET_DEATH = 1745
-THING_SOUND_ACTIVE = 1746
-THING_SOUNDNAME_ACTIVE = 1747
-THING_SOUNDSET_ACTIVE = 1748
-THING_FLAGS = 1749
-THING_LIST = 1750
-FRAME_STATES = 1751
-STATES_SPRITE = 1752
-STATES_FRAME = 1753
-STATES_FRAMESPIN = 1754
-STATES_LIT = 1755
-STATES_NEXT = 1756
-STATES_DURATION = 1757
-STATES_ACTION = 1758
-STATES_LABEL_UNUSED1 = 1759
-STATES_UNUSED1 = 1760
-STATES_LABEL_UNUSED2 = 1761
-STATES_UNUSED2 = 1762
-STATES_LABEL_ARG1 = 1763
-STATES_ARG1 = 1764
-STATES_LABEL_ARG2 = 1765
-STATES_ARG2 = 1766
-STATES_LABEL_ARG3 = 1767
-STATES_ARG3 = 1768
-STATES_LABEL_ARG4 = 1769
-STATES_ARG4 = 1770
-STATES_LABEL_ARG5 = 1771
-STATES_ARG5 = 1772
-STATES_LABEL_ARG6 = 1773
-STATES_ARG6 = 1774
-STATES_LABEL_ARG7 = 1775
-STATES_ARG7 = 1776
-STATES_LABEL_ARG8 = 1777
-STATES_ARG8 = 1778
-STATES_LABEL_ARG9 = 1779
-STATES_ARG9 = 1780
-STATES_FILTER = 1781
-STATES_FILTERTOOLS = 1782
-STATES_FILTERTOOLS_REFRESH = 1783
-FRAME_SOUNDS = 1784
-SOUNDS_PRIORITY = 1785
-SOUNDS_PRIORITYSPIN = 1786
-SOUNDS_SINGULAR = 1787
-SOUNDS_RESTORE = 1788
-SOUNDS_LIST = 1789
-FRAME_STRINGS = 1790
-STRINGS_LIST = 1791
-STRINGS_RESTORE = 1792
-FRAME_WEAPONS = 1793
-WEAPON_AMMOTYPE = 1794
-WEAPON_STATE_SELECT = 1795
-WEAPON_STATENAME_SELECT = 1796
-WEAPON_STATESET_SELECT = 1797
-WEAPON_STATE_DESELECT = 1798
-WEAPON_STATENAME_DESELECT = 1799
-WEAPON_STATESET_DESELECT = 1800
-WEAPON_STATE_BOB = 1801
-WEAPON_STATENAME_BOB = 1802
-WEAPON_STATESET_BOB = 1803
-WEAPON_STATE_FIRE = 1804
-WEAPON_STATENAME_FIRE = 1805
-WEAPON_STATESET_FIRE = 1806
-WEAPON_STATE_MUZZLE = 1807
-WEAPON_STATENAME_MUZZLE = 1808
-WEAPON_STATESET_MUZZLE = 1809
-WEAPON_RENAME = 1810
-WEAPON_RESTORE = 1811
-FRAME_AMMO = 1812
-AMMO_VAL_MAXIMUM = 1813
-AMMO_VAL_PICKUP = 1814
-AMMO_RENAME = 1815
-AMMO_RESTORE = 1816
-AMMO_LIST = 1817
-FRAME_CHEATS = 1818
-CHEATS_LIST = 1819
-CHEATS_RESTORE = 1820
-FRAME_MISC = 1821
-MISC_VALUE = 1822
-MISC_VALUE_ENABLED = 1823
-MISC_RESTORE = 1824
-MISC_LIST = 1825
-FRAME_PAR = 1826
-PAR_EPISODE = 1827
-PAR_MAP = 1828
-PAR_SECONDS = 1829
-PAR_TOOLS = 1830
-PAR_TOOL_ADD = 1831
-PAR_TOOL_REMOVE = 1832
-PAR_LIST = 1833
-DIALOG_SPRITES = 1834
-SPRITES_FILTER = 1835
-SPRITES_FRAME = 1836
-SPRITES_FRAMESPIN = 1837
-SPRITES_OK = 1838
-SPRITES_CANCEL = 1839
-STRING_OLD = 1840
-STRING_NEW = 1841
-STRING_OK = 1842
-STRING_CANCEL = 1843
-DIALOG_PATCHINFO = 1844
-PATCHINFO_TOOLBAR = 1845
-PATCHINFO_TOOLBAR_ADD = 1846
-PATCHINFO_TOOLBAR_REMOVE = 1847
-PATCHINFO_CANCEL = 1848
-DIALOG_START = 1849
-START_NEW = 1850
-START_OPEN = 1851
-START_RECENT = 1852
-START_CANCEL = 1853
-DIALOG_ABOUT = 1854
-ABOUT_OK = 1855
-DIALOG_ERROR = 1856
-ERROR_REPORT = 1857
-ERROR_COPY = 1858
-ERROR_CLOSE = 1859
+THING_VAL_ALPHA = 1699
+THING_VAL_SCALE = 1700
+THING_VAL_DECAL = 1701
+THING_RENAME = 1702
+THING_RESTORE = 1703
+THING_STATE_SPAWN = 1704
+THING_STATENAME_SPAWN = 1705
+THING_STATESET_SPAWN = 1706
+THING_STATE_WALK = 1707
+THING_STATENAME_WALK = 1708
+THING_STATESET_WALK = 1709
+THING_STATE_PAIN = 1710
+THING_STATENAME_PAIN = 1711
+THING_STATESET_PAIN = 1712
+THING_STATE_MELEE = 1713
+THING_STATENAME_MELEE = 1714
+THING_STATESET_MELEE = 1715
+THING_STATE_ATTACK = 1716
+THING_STATENAME_ATTACK = 1717
+THING_STATESET_ATTACK = 1718
+THING_STATE_DEATH = 1719
+THING_STATENAME_DEATH = 1720
+THING_STATESET_DEATH = 1721
+THING_STATE_EXPLODE = 1722
+THING_STATENAME_EXPLODE = 1723
+THING_STATESET_EXPLODE = 1724
+THING_STATE_RAISE = 1725
+THING_STATENAME_RAISE = 1726
+THING_STATESET_RAISE = 1727
+THING_STATE_CRASH = 1728
+THING_STATENAME_CRASH = 1729
+THING_STATESET_CRASH = 1730
+THING_STATE_FREEZE = 1731
+THING_STATENAME_FREEZE = 1732
+THING_STATESET_FREEZE = 1733
+THING_STATE_BURN = 1734
+THING_STATENAME_BURN = 1735
+THING_STATESET_BURN = 1736
+THING_SOUND_ALERT = 1737
+THING_SOUNDNAME_ALERT = 1738
+THING_SOUNDSET_ALERT = 1739
+THING_SOUND_ATTACK = 1740
+THING_SOUNDNAME_ATTACK = 1741
+THING_SOUNDSET_ATTACK = 1742
+THING_SOUND_PAIN = 1743
+THING_SOUNDNAME_PAIN = 1744
+THING_SOUNDSET_PAIN = 1745
+THING_SOUND_DEATH = 1746
+THING_SOUNDNAME_DEATH = 1747
+THING_SOUNDSET_DEATH = 1748
+THING_SOUND_ACTIVE = 1749
+THING_SOUNDNAME_ACTIVE = 1750
+THING_SOUNDSET_ACTIVE = 1751
+THING_FLAGS = 1752
+THING_LIST = 1753
+FRAME_STATES = 1754
+STATES_SPRITE = 1755
+STATES_FRAME = 1756
+STATES_FRAMESPIN = 1757
+STATES_LIT = 1758
+STATES_NEXT = 1759
+STATES_DURATION = 1760
+STATES_ACTION = 1761
+STATES_LABEL_UNUSED1 = 1762
+STATES_UNUSED1 = 1763
+STATES_LABEL_UNUSED2 = 1764
+STATES_UNUSED2 = 1765
+STATES_LABEL_ARG1 = 1766
+STATES_ARG1 = 1767
+STATES_LABEL_ARG2 = 1768
+STATES_ARG2 = 1769
+STATES_LABEL_ARG3 = 1770
+STATES_ARG3 = 1771
+STATES_LABEL_ARG4 = 1772
+STATES_ARG4 = 1773
+STATES_LABEL_ARG5 = 1774
+STATES_ARG5 = 1775
+STATES_LABEL_ARG6 = 1776
+STATES_ARG6 = 1777
+STATES_LABEL_ARG7 = 1778
+STATES_ARG7 = 1779
+STATES_LABEL_ARG8 = 1780
+STATES_ARG8 = 1781
+STATES_LABEL_ARG9 = 1782
+STATES_ARG9 = 1783
+STATES_FILTER = 1784
+STATES_FILTERTOOLS = 1785
+STATES_FILTERTOOLS_REFRESH = 1786
+FRAME_SOUNDS = 1787
+SOUNDS_PRIORITY = 1788
+SOUNDS_PRIORITYSPIN = 1789
+SOUNDS_SINGULAR = 1790
+SOUNDS_RESTORE = 1791
+SOUNDS_LIST = 1792
+FRAME_STRINGS = 1793
+STRINGS_LIST = 1794
+STRINGS_RESTORE = 1795
+FRAME_WEAPONS = 1796
+WEAPON_AMMOTYPE = 1797
+WEAPON_STATE_SELECT = 1798
+WEAPON_STATENAME_SELECT = 1799
+WEAPON_STATESET_SELECT = 1800
+WEAPON_STATE_DESELECT = 1801
+WEAPON_STATENAME_DESELECT = 1802
+WEAPON_STATESET_DESELECT = 1803
+WEAPON_STATE_BOB = 1804
+WEAPON_STATENAME_BOB = 1805
+WEAPON_STATESET_BOB = 1806
+WEAPON_STATE_FIRE = 1807
+WEAPON_STATENAME_FIRE = 1808
+WEAPON_STATESET_FIRE = 1809
+WEAPON_STATE_MUZZLE = 1810
+WEAPON_STATENAME_MUZZLE = 1811
+WEAPON_STATESET_MUZZLE = 1812
+WEAPON_RENAME = 1813
+WEAPON_RESTORE = 1814
+FRAME_AMMO = 1815
+AMMO_VAL_MAXIMUM = 1816
+AMMO_VAL_PICKUP = 1817
+AMMO_RENAME = 1818
+AMMO_RESTORE = 1819
+AMMO_LIST = 1820
+FRAME_CHEATS = 1821
+CHEATS_LIST = 1822
+CHEATS_RESTORE = 1823
+FRAME_MISC = 1824
+MISC_VALUE = 1825
+MISC_VALUE_ENABLED = 1826
+MISC_RESTORE = 1827
+MISC_LIST = 1828
+FRAME_PAR = 1829
+PAR_EPISODE = 1830
+PAR_MAP = 1831
+PAR_SECONDS = 1832
+PAR_TOOLS = 1833
+PAR_TOOL_ADD = 1834
+PAR_TOOL_REMOVE = 1835
+PAR_LIST = 1836
+DIALOG_SPRITES = 1837
+SPRITES_FILTER = 1838
+SPRITES_FRAME = 1839
+SPRITES_FRAMESPIN = 1840
+SPRITES_OK = 1841
+SPRITES_CANCEL = 1842
+STRING_OLD = 1843
+STRING_NEW = 1844
+STRING_OK = 1845
+STRING_CANCEL = 1846
+DIALOG_PATCHINFO = 1847
+PATCHINFO_TOOLBAR = 1848
+PATCHINFO_TOOLBAR_ADD = 1849
+PATCHINFO_TOOLBAR_REMOVE = 1850
+PATCHINFO_CANCEL = 1851
+DIALOG_START = 1852
+START_NEW = 1853
+START_OPEN = 1854
+START_RECENT = 1855
+START_CANCEL = 1856
+DIALOG_ABOUT = 1857
+ABOUT_OK = 1858
+DIALOG_ERROR = 1859
+ERROR_REPORT = 1860
+ERROR_COPY = 1861
+ERROR_CLOSE = 1862
 
 ###########################################################################
 ## Class MainFrameBase
@@ -446,9 +449,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 980,600 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 980,650 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 980,600 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 980,650 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		Sizer26 = wx.BoxSizer( wx.HORIZONTAL )
@@ -460,20 +463,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PropertiesLabel.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, wx.EmptyString ) )
 		
 		Sizer27.Add( self.PropertiesLabel, 0, wx.ALL, 3 )
-		
-		Sizer82 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.ThingGameLabel = wx.StaticText( self, wx.ID_ANY, u"Game", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
-		self.ThingGameLabel.Wrap( -1 )
-		Sizer82.Add( self.ThingGameLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
-		
-		ThingGameChoices = []
-		self.ThingGame = wx.Choice( self, THING_VAL_GAME, wx.DefaultPosition, wx.Size( 100,-1 ), ThingGameChoices, 0 )
-		self.ThingGame.SetSelection( 0 )
-		Sizer82.Add( self.ThingGame, 0, wx.ALL, 3 )
-		
-		
-		Sizer27.Add( Sizer82, 0, wx.EXPAND, 0 )
 		
 		Sizer28 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -487,19 +476,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		
 		Sizer27.Add( Sizer28, 0, wx.ALL|wx.EXPAND, 0 )
-		
-		Sizer81 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.ThingSpawnIdLabel = wx.StaticText( self, wx.ID_ANY, u"Spawn Id", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
-		self.ThingSpawnIdLabel.Wrap( -1 )
-		Sizer81.Add( self.ThingSpawnIdLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
-		
-		self.ThingSpawnId = wx.TextCtrl( self, THING_VAL_SPAWNID, wx.EmptyString, wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.ThingSpawnId.SetMaxLength( 6 ) 
-		Sizer81.Add( self.ThingSpawnId, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
-		
-		
-		Sizer27.Add( Sizer81, 0, wx.EXPAND, 0 )
 		
 		Sizer1 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -579,19 +555,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		Sizer27.Add( Sizer6, 0, wx.EXPAND, 0 )
 		
-		Sizer83 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.ThingRespawnTimeLabel = wx.StaticText( self, wx.ID_ANY, u"Respawn time", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
-		self.ThingRespawnTimeLabel.Wrap( -1 )
-		Sizer83.Add( self.ThingRespawnTimeLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
-		
-		self.ThingRespawnTime = wx.TextCtrl( self, THING_VAL_RESPAWNTIME, wx.EmptyString, wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.ThingRespawnTime.SetMaxLength( 6 ) 
-		Sizer83.Add( self.ThingRespawnTime, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
-		
-		
-		Sizer27.Add( Sizer83, 0, wx.EXPAND, 0 )
-		
 		Sizer7 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.ThingPainChanceLabel = wx.StaticText( self, wx.ID_ANY, u"Pain chance", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
@@ -618,6 +581,49 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		Sizer27.Add( Sizer8, 0, wx.EXPAND, 0 )
 		
+		
+		Sizer27.AddSpacer( ( 0, 16), 0, wx.EXPAND, 5 )
+		
+		Sizer82 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.ThingGameLabel = wx.StaticText( self, wx.ID_ANY, u"Game", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.ThingGameLabel.Wrap( -1 )
+		Sizer82.Add( self.ThingGameLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		ThingGameChoices = []
+		self.ThingGame = wx.Choice( self, THING_VAL_GAME, wx.DefaultPosition, wx.Size( 100,-1 ), ThingGameChoices, 0 )
+		self.ThingGame.SetSelection( 0 )
+		Sizer82.Add( self.ThingGame, 0, wx.ALL, 3 )
+		
+		
+		Sizer27.Add( Sizer82, 0, wx.EXPAND, 0 )
+		
+		Sizer81 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.ThingSpawnIdLabel = wx.StaticText( self, wx.ID_ANY, u"Spawn Id", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.ThingSpawnIdLabel.Wrap( -1 )
+		Sizer81.Add( self.ThingSpawnIdLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		self.ThingSpawnId = wx.TextCtrl( self, THING_VAL_SPAWNID, wx.EmptyString, wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.ThingSpawnId.SetMaxLength( 6 ) 
+		Sizer81.Add( self.ThingSpawnId, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		
+		Sizer27.Add( Sizer81, 0, wx.EXPAND, 0 )
+		
+		Sizer83 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.ThingRespawnTimeLabel = wx.StaticText( self, wx.ID_ANY, u"Respawn time", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.ThingRespawnTimeLabel.Wrap( -1 )
+		Sizer83.Add( self.ThingRespawnTimeLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		self.ThingRespawnTime = wx.TextCtrl( self, THING_VAL_RESPAWNTIME, wx.EmptyString, wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.ThingRespawnTime.SetMaxLength( 6 ) 
+		Sizer83.Add( self.ThingRespawnTime, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		
+		Sizer27.Add( Sizer83, 0, wx.EXPAND, 0 )
+		
 		Sizer84 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.ThingRenderStyleLabel = wx.StaticText( self, wx.ID_ANY, u"Render style", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
@@ -631,6 +637,45 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		
 		Sizer27.Add( Sizer84, 0, wx.EXPAND, 0 )
+		
+		Sizer85 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.ThingAlphaLabel = wx.StaticText( self, wx.ID_ANY, u"Alpha", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.ThingAlphaLabel.Wrap( -1 )
+		Sizer85.Add( self.ThingAlphaLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		self.ThingAlpha = wx.TextCtrl( self, THING_VAL_ALPHA, wx.EmptyString, wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.ThingAlpha.SetMaxLength( 6 ) 
+		Sizer85.Add( self.ThingAlpha, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		
+		Sizer27.Add( Sizer85, 0, wx.EXPAND, 0 )
+		
+		Sizer86 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.ThingScaleLabel = wx.StaticText( self, wx.ID_ANY, u"Scale", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.ThingScaleLabel.Wrap( -1 )
+		Sizer86.Add( self.ThingScaleLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		self.ThingScale = wx.TextCtrl( self, THING_VAL_SCALE, wx.EmptyString, wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.ThingScale.SetMaxLength( 6 ) 
+		Sizer86.Add( self.ThingScale, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		
+		Sizer27.Add( Sizer86, 0, wx.EXPAND, 0 )
+		
+		Sizer87 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.ThingDecalLabel = wx.StaticText( self, wx.ID_ANY, u"Decal", wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.ThingDecalLabel.Wrap( -1 )
+		Sizer87.Add( self.ThingDecalLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		self.ThingDecal = wx.TextCtrl( self, THING_VAL_DECAL, wx.EmptyString, wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.ThingDecal.SetMaxLength( 6 ) 
+		Sizer87.Add( self.ThingDecal, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		
+		Sizer27.Add( Sizer87, 0, wx.EXPAND, 0 )
 		
 		
 		Sizer27.AddSpacer( ( 0, 16), 0, wx.EXPAND, 5 )
@@ -1092,7 +1137,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		ThingFlagsChoices = []
 		self.ThingFlags = wx.CheckListBox( self, THING_FLAGS, wx.DefaultPosition, wx.Size( -1,-1 ), ThingFlagsChoices, 0|wx.SIMPLE_BORDER )
-		self.ThingFlags.SetMinSize( wx.Size( 200,-1 ) )
+		self.ThingFlags.SetMinSize( wx.Size( 190,-1 ) )
 		
 		bSizer122.Add( self.ThingFlags, 1, wx.EXPAND, 3 )
 		
@@ -1110,11 +1155,8 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		
 		# Connect Events
-		self.ThingGame.Bind( wx.EVT_CHOICE, self.set_game )
 		self.ThingId.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingId.Bind( wx.EVT_TEXT, self.set_value )
-		self.ThingSpawnId.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingSpawnId.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingHealth.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingSpeed.Bind( wx.EVT_LEFT_UP, self.focus_text )
@@ -1127,13 +1169,22 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingDamage.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingReactionTime.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingReactionTime.Bind( wx.EVT_TEXT, self.set_value )
-		self.ThingRespawnTime.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingRespawnTime.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingPainChance.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingPainChance.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingMass.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingMass.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingGame.Bind( wx.EVT_CHOICE, self.set_game )
+		self.ThingSpawnId.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.ThingSpawnId.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingRespawnTime.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.ThingRespawnTime.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingRenderStyle.Bind( wx.EVT_CHOICE, self.set_renderstyle )
+		self.ThingAlpha.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.ThingAlpha.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingScale.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.ThingScale.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingDecal.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.ThingDecal.Bind( wx.EVT_TEXT, self.set_value )
 		self.ButtonRename.Bind( wx.EVT_BUTTON, self.thing_rename )
 		self.ButtonRestore.Bind( wx.EVT_BUTTON, self.thing_restore )
 		self.ThingStateSpawn.Bind( wx.EVT_LEFT_UP, self.focus_text )
@@ -1248,9 +1299,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
-	def set_game( self, event ):
-		pass
-	
 	def focus_text( self, event ):
 		pass
 	
@@ -1273,12 +1321,21 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	def set_game( self, event ):
+		pass
+	
 	
 	
 	
 	
 	def set_renderstyle( self, event ):
 		pass
+	
+	
+	
+	
+	
+	
 	
 	def thing_rename( self, event ):
 		pass
@@ -1426,9 +1483,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 780,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 860,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 780,700 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 860,700 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -1461,11 +1518,11 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText39.Wrap( -1 )
 		bSizer52.Add( self.m_staticText39, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.SpriteIndex = wx.TextCtrl( self.PropertyPanel, STATES_SPRITE, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		self.SpriteIndex = wx.TextCtrl( self.PropertyPanel, STATES_SPRITE, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
 		self.SpriteIndex.SetMaxLength( 3 ) 
 		bSizer52.Add( self.SpriteIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.SpriteName = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"TROO", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.SpriteName = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"TROO", wx.DefaultPosition, wx.Size( 63,-1 ), wx.ST_NO_AUTORESIZE )
 		self.SpriteName.Wrap( -1 )
 		self.SpriteName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
 		self.SpriteName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
@@ -1486,7 +1543,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText391.Wrap( -1 )
 		bSizer521.Add( self.m_staticText391, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.FrameIndex = wx.TextCtrl( self.PropertyPanel, STATES_FRAME, wx.EmptyString, wx.DefaultPosition, wx.Size( 30,-1 ), 0 )
+		self.FrameIndex = wx.TextCtrl( self.PropertyPanel, STATES_FRAME, wx.EmptyString, wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
 		bSizer521.Add( self.FrameIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.BOTTOM|wx.LEFT|wx.TOP, 3 )
 		
 		self.FrameIndexSpinner = wx.SpinButton( self.PropertyPanel, STATES_FRAMESPIN, wx.DefaultPosition, wx.Size( 17,24 ), 0 )
@@ -1547,8 +1604,10 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		bSizer521211.Add( self.m_staticText54, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		ActionChoices = []
-		self.Action = wx.Choice( self.PropertyPanel, STATES_ACTION, wx.DefaultPosition, wx.DefaultSize, ActionChoices, wx.CB_SORT )
+		self.Action = wx.Choice( self.PropertyPanel, STATES_ACTION, wx.DefaultPosition, wx.Size( -1,-1 ), ActionChoices, wx.CB_SORT )
 		self.Action.SetSelection( 0 )
+		self.Action.SetMinSize( wx.Size( 160,-1 ) )
+		
 		bSizer521211.Add( self.Action, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
 		
@@ -1560,9 +1619,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText541.Wrap( -1 )
 		bSizer52121.Add( self.m_staticText541, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Unused1 = wx.TextCtrl( self.PropertyPanel, STATES_UNUSED1, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Unused1 = wx.TextCtrl( self.PropertyPanel, STATES_UNUSED1, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Unused1.SetMaxLength( 9 ) 
-		bSizer52121.Add( self.Unused1, 1, wx.ALL, 3 )
+		bSizer52121.Add( self.Unused1, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer52121, 0, wx.EXPAND, 5 )
@@ -1573,9 +1632,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText5411.Wrap( -1 )
 		bSizer521212.Add( self.m_staticText5411, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Unused2 = wx.TextCtrl( self.PropertyPanel, STATES_UNUSED2, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Unused2 = wx.TextCtrl( self.PropertyPanel, STATES_UNUSED2, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Unused2.SetMaxLength( 9 ) 
-		bSizer521212.Add( self.Unused2, 1, wx.ALL, 3 )
+		bSizer521212.Add( self.Unused2, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer521212, 0, wx.EXPAND, 5 )
@@ -1586,9 +1645,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText54111.Wrap( -1 )
 		bSizer5212121.Add( self.m_staticText54111, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Arg1 = wx.TextCtrl( self.PropertyPanel, STATES_ARG1, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Arg1 = wx.TextCtrl( self.PropertyPanel, STATES_ARG1, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg1.SetMaxLength( 9 ) 
-		bSizer5212121.Add( self.Arg1, 1, wx.ALL, 3 )
+		bSizer5212121.Add( self.Arg1, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer5212121, 0, wx.EXPAND, 5 )
@@ -1599,9 +1658,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText54112.Wrap( -1 )
 		bSizer5212122.Add( self.m_staticText54112, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Arg2 = wx.TextCtrl( self.PropertyPanel, STATES_ARG2, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Arg2 = wx.TextCtrl( self.PropertyPanel, STATES_ARG2, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg2.SetMaxLength( 9 ) 
-		bSizer5212122.Add( self.Arg2, 1, wx.ALL, 3 )
+		bSizer5212122.Add( self.Arg2, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer5212122, 0, wx.EXPAND, 5 )
@@ -1612,9 +1671,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText54113.Wrap( -1 )
 		bSizer5212123.Add( self.m_staticText54113, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Arg3 = wx.TextCtrl( self.PropertyPanel, STATES_ARG3, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Arg3 = wx.TextCtrl( self.PropertyPanel, STATES_ARG3, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg3.SetMaxLength( 9 ) 
-		bSizer5212123.Add( self.Arg3, 1, wx.ALL, 3 )
+		bSizer5212123.Add( self.Arg3, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer5212123, 0, wx.EXPAND, 5 )
@@ -1625,9 +1684,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText54114.Wrap( -1 )
 		bSizer5212124.Add( self.m_staticText54114, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Arg4 = wx.TextCtrl( self.PropertyPanel, STATES_ARG4, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Arg4 = wx.TextCtrl( self.PropertyPanel, STATES_ARG4, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg4.SetMaxLength( 9 ) 
-		bSizer5212124.Add( self.Arg4, 1, wx.ALL, 3 )
+		bSizer5212124.Add( self.Arg4, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer5212124, 0, wx.EXPAND, 5 )
@@ -1638,9 +1697,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText54115.Wrap( -1 )
 		bSizer5212125.Add( self.m_staticText54115, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Arg5 = wx.TextCtrl( self.PropertyPanel, STATES_ARG5, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Arg5 = wx.TextCtrl( self.PropertyPanel, STATES_ARG5, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg5.SetMaxLength( 9 ) 
-		bSizer5212125.Add( self.Arg5, 1, wx.ALL, 3 )
+		bSizer5212125.Add( self.Arg5, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer5212125, 0, wx.EXPAND, 5 )
@@ -1651,9 +1710,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText54116.Wrap( -1 )
 		bSizer5212126.Add( self.m_staticText54116, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Arg6 = wx.TextCtrl( self.PropertyPanel, STATES_ARG6, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Arg6 = wx.TextCtrl( self.PropertyPanel, STATES_ARG6, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg6.SetMaxLength( 9 ) 
-		bSizer5212126.Add( self.Arg6, 1, wx.ALL, 3 )
+		bSizer5212126.Add( self.Arg6, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer5212126, 0, wx.EXPAND, 5 )
@@ -1664,9 +1723,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText54117.Wrap( -1 )
 		bSizer5212127.Add( self.m_staticText54117, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Arg7 = wx.TextCtrl( self.PropertyPanel, STATES_ARG7, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Arg7 = wx.TextCtrl( self.PropertyPanel, STATES_ARG7, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg7.SetMaxLength( 9 ) 
-		bSizer5212127.Add( self.Arg7, 1, wx.ALL, 3 )
+		bSizer5212127.Add( self.Arg7, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer5212127, 0, wx.EXPAND, 5 )
@@ -1677,9 +1736,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText54118.Wrap( -1 )
 		bSizer5212128.Add( self.m_staticText54118, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Arg8 = wx.TextCtrl( self.PropertyPanel, STATES_ARG8, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Arg8 = wx.TextCtrl( self.PropertyPanel, STATES_ARG8, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg8.SetMaxLength( 9 ) 
-		bSizer5212128.Add( self.Arg8, 1, wx.ALL, 3 )
+		bSizer5212128.Add( self.Arg8, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer5212128, 0, wx.EXPAND, 5 )
@@ -1690,9 +1749,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText54119.Wrap( -1 )
 		bSizer5212129.Add( self.m_staticText54119, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 		
-		self.Arg9 = wx.TextCtrl( self.PropertyPanel, STATES_ARG9, wx.EmptyString, wx.DefaultPosition, wx.Size( 60,-1 ), 0 )
+		self.Arg9 = wx.TextCtrl( self.PropertyPanel, STATES_ARG9, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg9.SetMaxLength( 9 ) 
-		bSizer5212129.Add( self.Arg9, 1, wx.ALL, 3 )
+		bSizer5212129.Add( self.Arg9, 0, wx.ALL, 3 )
 		
 		
 		PropertySizer.Add( bSizer5212129, 0, wx.EXPAND, 5 )

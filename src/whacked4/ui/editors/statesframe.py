@@ -320,8 +320,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.StateList.InsertColumn(4, 'Lit', width=25)
             self.StateList.InsertColumn(5, 'Next', width=36)
             self.StateList.InsertColumn(6, 'Dur', width=40)
-            self.StateList.InsertColumn(7, 'Action', width=103)
-            self.StateList.InsertColumn(8, 'Parameters', width=77)
+            self.StateList.InsertColumn(7, 'Action', width=160)
+            self.StateList.InsertColumn(8, 'Parameters', width=107)
 
         # Add all items in the filtered list.
         list_index = 0
@@ -334,7 +334,6 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             list_index += 1
 
         self.update_colours()
-        self.list_autosize(self.StateList)
 
         # Select the first row if it is not state 0.
         if self.filter.state_indices[0] == 0 and len(self.filter.state_indices) > 1:
