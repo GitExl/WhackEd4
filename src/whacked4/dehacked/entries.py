@@ -100,7 +100,10 @@ class ThingEntry(Entry):
         ('stateRaise', 'Respawn frame'),
         ('stateCrash', 'Crash frame'),
         ('stateFreeze', 'Ice death frame'),
-        ('stateBurn', 'Burning death frame')
+        ('stateBurn', 'Burning death frame'),
+        ('alpha', 'Alpha'),
+        ('decal', 'Decal'),
+        ('scale', 'Scale'),
     ])
     FILTER = {
         'flags': 'filter_thing_flags'

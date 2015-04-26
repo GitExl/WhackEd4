@@ -27,7 +27,30 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_VAL_GAME: 'game',
         windows.THING_VAL_SPAWNID: 'spawnId',
         windows.THING_VAL_RESPAWNTIME: 'respawnTime',
-        windows.THING_VAL_RENDERSTYLE: 'renderStyle'
+        windows.THING_VAL_RENDERSTYLE: 'renderStyle',
+        windows.THING_VAL_ALPHA: 'alpha',
+        windows.THING_VAL_SCALE: 'scale',
+        windows.THING_VAL_DECAL: 'decal',
+    }
+
+    # Value types for text control validation.
+    PROPS_VALUE_TYPES = {
+        windows.THING_VAL_ID: 'int',
+        windows.THING_VAL_HEALTH: 'int',
+        windows.THING_VAL_SPEED: 'int',
+        windows.THING_VAL_RADIUS: 'int',
+        windows.THING_VAL_HEIGHT: 'int',
+        windows.THING_VAL_DAMAGE: 'int',
+        windows.THING_VAL_REACTIONTIME: 'int',
+        windows.THING_VAL_PAINCHANCE: 'int',
+        windows.THING_VAL_MASS: 'int',
+        windows.THING_VAL_GAME: 'int',
+        windows.THING_VAL_SPAWNID: 'int',
+        windows.THING_VAL_RESPAWNTIME: 'int',
+        windows.THING_VAL_RENDERSTYLE: 'int',
+        windows.THING_VAL_ALPHA: 'float',
+        windows.THING_VAL_SCALE: 'float',
+        windows.THING_VAL_DECAL: 'str',
     }
 
     # State text control to partial internal key mappings.
@@ -158,13 +181,12 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         if self.ThingList.GetColumnCount() == 0:
             self.ThingList.InsertColumn(0, 'Idx', width=36)
-            self.ThingList.InsertColumn(1, 'Name', width=200)
-            self.ThingList.InsertColumn(2, 'Id', width=36)
-            self.ThingList.InsertColumn(3, 'Game', width=65)
+            self.ThingList.InsertColumn(1, 'Name', width=225)
+            self.ThingList.InsertColumn(2, 'Id', width=46)
+            self.ThingList.InsertColumn(3, 'Game', width=50)
 
         for index in range(len(self.patch.things.names)):
             self.ThingList.InsertStringItem(index, '')
-
             self.thinglist_update_row(index)
 
         self.list_autosize(self.ThingList)
@@ -273,6 +295,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingSpawnId.ChangeValue(str(thing['spawnId']))
         self.ThingRespawnTime.ChangeValue(str(thing['respawnTime']))
         self.ThingRenderStyle.SetSelection(self.ThingRenderStyle.FindString(renderstyle))
+        self.ThingAlpha.ChangeValue(str(thing['alpha']))
+        self.ThingScale.ChangeValue(str(thing['scale']))
+        self.ThingDecal.ChangeValue(thing['decal'])
 
         # Speed is in fixed point if this thing is a missile, normal otherwise
         if (thing['flags'] & self.FLAG_MISSILE) != 0:
@@ -329,7 +354,13 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         window_id = event.GetId()
         window = self.FindWindowById(window_id)
-        value = utils.validate_numeric(window)
+        value_type = self.PROPS_VALUE_TYPES[window_id]
+        if value_type == 'int':
+            value = utils.validate_numeric(window)
+        elif value_type == 'float':
+            value = utils.validate_numeric_float(window)
+        elif value_type == 'str':
+            value = window.GetValue()
 
         thing = self.patch.things[self.selected_index]
 

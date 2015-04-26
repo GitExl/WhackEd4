@@ -22214,7 +22214,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22246,7 +22249,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22278,7 +22284,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22310,7 +22319,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147484176,
@@ -22342,7 +22354,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22374,7 +22389,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 67088,
@@ -22406,7 +22424,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147484176,
@@ -22438,7 +22459,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22470,7 +22494,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147550736,
@@ -22502,7 +22529,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22534,7 +22564,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22566,7 +22599,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22598,7 +22634,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4456454,
@@ -22630,7 +22669,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4211206,
@@ -22662,7 +22704,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22694,7 +22739,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147550736,
@@ -22726,7 +22774,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22758,7 +22809,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 16902,
@@ -22790,7 +22844,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22822,7 +22879,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22854,7 +22914,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22886,7 +22949,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4211206,
@@ -22918,7 +22984,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -22950,7 +23019,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4195078,
@@ -22982,7 +23054,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 6,
@@ -23014,7 +23089,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 24,
@@ -23046,7 +23124,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 24,
@@ -23078,7 +23159,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 71184,
@@ -23110,7 +23194,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147484176,
@@ -23142,7 +23229,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 524294,
@@ -23174,7 +23264,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147550736,
@@ -23206,7 +23299,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147550736,
@@ -23238,7 +23334,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 67088,
@@ -23270,7 +23369,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147550736,
@@ -23302,7 +23404,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147550736,
@@ -23334,7 +23439,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147550736,
@@ -23366,7 +23474,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147484176,
@@ -23398,7 +23509,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 16,
@@ -23430,7 +23544,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147484176,
@@ -23462,7 +23579,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2147484176,
@@ -23494,7 +23614,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 24,
@@ -23526,7 +23649,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 528,
@@ -23558,7 +23684,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -23590,7 +23719,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -23622,7 +23754,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 8388609,
@@ -23654,7 +23789,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 8388609,
@@ -23686,7 +23824,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 33554433,
@@ -23718,7 +23859,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 33554433,
@@ -23750,7 +23894,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 33554433,
@@ -23782,7 +23929,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 33554433,
@@ -23814,7 +23964,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 33554433,
@@ -23846,7 +23999,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 33554433,
@@ -23878,7 +24034,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -23910,7 +24069,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -23942,7 +24104,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2155872257,
@@ -23974,7 +24139,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2155872257,
@@ -24006,7 +24174,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 8388609,
@@ -24038,7 +24209,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2155872257,
@@ -24070,7 +24244,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24102,7 +24279,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 8388609,
@@ -24134,7 +24314,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 8388609,
@@ -24166,7 +24349,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2155872257,
@@ -24198,7 +24384,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24230,7 +24419,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24262,7 +24454,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24294,7 +24489,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24326,7 +24524,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24358,7 +24559,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24390,7 +24594,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24422,7 +24629,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24454,7 +24664,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24486,7 +24699,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24518,7 +24734,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24550,7 +24769,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24582,7 +24804,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24614,7 +24839,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24646,7 +24874,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24678,7 +24909,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 1,
@@ -24710,7 +24944,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -24742,7 +24979,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -24774,7 +25014,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -24806,7 +25049,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -24838,7 +25084,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -24870,7 +25119,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -24902,7 +25154,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -24934,7 +25189,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -24966,7 +25224,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -24998,7 +25259,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25030,7 +25294,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25062,7 +25329,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25094,7 +25364,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25126,7 +25399,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25158,7 +25434,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25190,7 +25469,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25222,7 +25504,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25254,7 +25539,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25286,7 +25574,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25318,7 +25609,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25350,7 +25644,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -25382,7 +25679,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -25414,7 +25714,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -25446,7 +25749,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -25478,7 +25784,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -25510,7 +25819,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -25542,7 +25854,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -25574,7 +25889,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 768,
@@ -25606,7 +25924,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 768,
@@ -25638,7 +25959,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 768,
@@ -25670,7 +25994,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 768,
@@ -25702,7 +26029,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 768,
@@ -25734,7 +26064,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -25766,7 +26099,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -25798,7 +26134,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -25830,7 +26169,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -25862,7 +26204,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -25894,7 +26239,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -25926,7 +26274,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -25958,7 +26309,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -25990,7 +26344,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -26022,7 +26379,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -26054,7 +26414,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 0,
@@ -26086,7 +26449,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -26118,7 +26484,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -26150,7 +26519,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -26182,7 +26554,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -26214,7 +26589,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -26246,7 +26624,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 2,
@@ -26278,7 +26659,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -26310,7 +26694,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -26342,7 +26729,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -26374,7 +26764,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -26406,7 +26799,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -26438,7 +26834,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 770,
@@ -26470,7 +26869,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 16,
@@ -26502,7 +26904,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 16,
@@ -26534,7 +26939,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 16,
@@ -26566,7 +26974,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 16,
@@ -26598,7 +27009,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 16,
@@ -26630,7 +27044,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 4194310,
@@ -26662,7 +27079,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 536938000,
@@ -26694,7 +27114,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 536938000,
@@ -26726,7 +27149,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 8388609,
@@ -26758,7 +27184,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         },
         {
             "flags": 8388609,
@@ -26790,7 +27219,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }
     ],
     "weaponNames": [

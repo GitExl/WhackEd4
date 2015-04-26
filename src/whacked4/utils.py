@@ -51,6 +51,57 @@ def validate_numeric(window):
     return value
 
 
+def validate_numeric_float(window):
+    """
+    Validates the contents of a window (usually a text control), to make sure it is numeric, and floating point.
+
+    The window's contents are altered if the user entered any non-numeric input. 0 is returned if only a minus sign
+    is present in the control, to allow the user to enter negative numbers.
+
+    @return: the validated floating point value that is present in the control.
+    """
+
+    value = window.GetValue()
+
+    if len(value) == 0:
+        return 0
+
+    if '.' not in value:
+        return validate_numeric(window)
+    elif value[-1] == '.':
+        return 0
+
+    # Handle negative values.
+    if value.startswith('-'):
+
+        # If the value contains more than just a minus sign, attempt to get the integer value.
+        if len(value) > 1:
+            try:
+                temp = float(value)
+            except ValueError:
+                value = 0
+            else:
+                value = temp
+
+        # Otherwise directly return 0 as a temporary value until the user finishes entering a valid value.
+        else:
+            return 0
+
+    else:
+        try:
+            temp = float(value)
+        except ValueError:
+            value = 0
+        else:
+            value = temp
+
+    # Update the text control if the validated value is now different.
+    if str(value) != window.GetValue():
+        window.ChangeValue(str(value))
+
+    return value
+
+
 def focus_text(event, parent):
     """
     Selects the entire contents of a text control so that the user can immediately type to replace it.

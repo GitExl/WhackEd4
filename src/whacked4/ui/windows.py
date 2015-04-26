@@ -449,9 +449,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 class ThingsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 980,650 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 980,666 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 980,650 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 980,666 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		Sizer26 = wx.BoxSizer( wx.HORIZONTAL )
@@ -582,7 +582,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		Sizer27.Add( Sizer8, 0, wx.EXPAND, 0 )
 		
 		
-		Sizer27.AddSpacer( ( 0, 16), 0, wx.EXPAND, 5 )
+		Sizer27.AddSpacer( ( 0, 30), 0, wx.EXPAND, 5 )
 		
 		Sizer82 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -988,9 +988,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		bSizer43.Add( Sizer1523, 0, wx.EXPAND, 0 )
 		
 		
-		bSizer43.AddSpacer( ( 0, 16), 0, wx.EXPAND, 3 )
+		bSizer43.AddSpacer( ( 0, 37), 0, wx.EXPAND, 3 )
 		
-		self.SoundsLabel = wx.StaticText( self, wx.ID_ANY, u"Sounds", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.SoundsLabel = wx.StaticText( self, wx.ID_ANY, u"Sounds", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.SoundsLabel.Wrap( -1 )
 		self.SoundsLabel.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, wx.EmptyString ) )
 		

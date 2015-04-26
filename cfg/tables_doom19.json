@@ -19092,7 +19092,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 75, 
@@ -19124,7 +19127,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 75, 
@@ -19156,7 +19162,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 80, 
@@ -19188,7 +19197,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -19220,7 +19232,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 105, 
@@ -19252,7 +19267,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -19284,7 +19302,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -19316,7 +19337,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 75, 
@@ -19348,7 +19372,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -19380,7 +19407,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 75, 
@@ -19412,7 +19442,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 76, 
@@ -19444,7 +19477,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 77, 
@@ -19476,7 +19512,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 77, 
@@ -19508,7 +19547,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 77, 
@@ -19540,7 +19582,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 77, 
@@ -19572,7 +19617,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -19604,7 +19652,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 77, 
@@ -19636,7 +19687,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 77, 
@@ -19668,7 +19722,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 77, 
@@ -19700,7 +19757,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 78, 
@@ -19732,7 +19792,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 77, 
@@ -19764,7 +19827,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 77, 
@@ -19796,7 +19862,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 75, 
@@ -19828,7 +19897,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -19860,7 +19932,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -19892,7 +19967,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -19924,7 +20002,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -19956,7 +20037,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -19988,7 +20072,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20020,7 +20107,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20052,7 +20142,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20084,7 +20177,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20116,7 +20212,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20148,7 +20247,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20180,7 +20282,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20212,7 +20317,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20244,7 +20352,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20276,7 +20387,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20308,7 +20422,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20340,7 +20457,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20372,7 +20492,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20404,7 +20527,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20436,7 +20562,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20468,7 +20597,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20500,7 +20632,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20532,7 +20667,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20564,7 +20702,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20596,7 +20737,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20628,7 +20772,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20660,7 +20807,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20692,7 +20842,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20724,7 +20877,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20756,7 +20912,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20788,7 +20947,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20820,7 +20982,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20852,7 +21017,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20884,7 +21052,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20916,7 +21087,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20948,7 +21122,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -20980,7 +21157,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21012,7 +21192,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21044,7 +21227,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21076,7 +21262,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21108,7 +21297,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21140,7 +21332,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21172,7 +21367,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21204,7 +21402,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21236,7 +21437,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21268,7 +21472,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21300,7 +21507,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21332,7 +21542,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21364,7 +21577,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21396,7 +21612,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21428,7 +21647,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21460,7 +21682,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21492,7 +21717,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21524,7 +21752,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21556,7 +21787,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21588,7 +21822,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21620,7 +21857,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21652,7 +21892,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21684,7 +21927,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21716,7 +21962,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21748,7 +21997,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21780,7 +22032,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21812,7 +22067,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21844,7 +22102,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21876,7 +22137,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21908,7 +22172,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21940,7 +22207,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -21972,7 +22242,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22004,7 +22277,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22036,7 +22312,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22068,7 +22347,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22100,7 +22382,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22132,7 +22417,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22164,7 +22452,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22196,7 +22487,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22228,7 +22522,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22260,7 +22557,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22292,7 +22592,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22324,7 +22627,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22356,7 +22662,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22388,7 +22697,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22420,7 +22732,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22452,7 +22767,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22484,7 +22802,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22516,7 +22837,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22548,7 +22872,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22580,7 +22907,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22612,7 +22942,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22644,7 +22977,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22676,7 +23012,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22708,7 +23047,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22740,7 +23082,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22772,7 +23117,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22804,7 +23152,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22836,7 +23187,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22868,7 +23222,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22900,7 +23257,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22932,7 +23292,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22964,7 +23327,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -22996,7 +23362,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23028,7 +23397,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23060,7 +23432,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23092,7 +23467,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23124,7 +23502,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23156,7 +23537,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23188,7 +23572,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23220,7 +23607,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23252,7 +23642,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23284,7 +23677,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23316,7 +23712,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23348,7 +23747,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23380,7 +23782,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23412,7 +23817,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }, 
         {
             "soundActive": 0, 
@@ -23444,7 +23852,10 @@
             "spawnId": 0,
             "game": "Doom",
             "respawnTime": 0,
-            "renderStyle": "STYLE_Normal"
+            "renderStyle": "STYLE_Normal",
+            "alpha": 1.0,
+            "decal": "",
+            "scale": 1.0
         }
     ], 
     "weapons": [
