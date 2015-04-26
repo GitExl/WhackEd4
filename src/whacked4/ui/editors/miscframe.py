@@ -145,8 +145,8 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         window.ChangeValue(str(value))
 
         self.patch.misc[key] = value
-        self.is_modified(True)
 
+        self.is_modified(True)
         self.misclist_update_row(self.selected_index)
 
     def set_bool_value(self, event):
@@ -227,7 +227,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         key = self.patch.engine.misc_data.keys()[self.selected_index]
 
         return {
-            'item': copy.deepcopy(self.patch.misc[key]),
+            'item': self.patch.misc[key],
             'index': self.selected_index,
             'key': key
         }
