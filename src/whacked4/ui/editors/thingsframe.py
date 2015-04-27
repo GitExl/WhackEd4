@@ -170,6 +170,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         ])
 
     def renderstyle_build(self):
+        self.ThingRenderStyle.Clear()
         self.ThingRenderStyle.AppendItems(self.patch.engine.render_styles.values())
 
     def thinglist_build(self):
@@ -182,7 +183,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         if self.ThingList.GetColumnCount() == 0:
             self.ThingList.InsertColumn(0, 'Idx', width=36)
             self.ThingList.InsertColumn(1, 'Name', width=225)
-            self.ThingList.InsertColumn(2, 'Id', width=46)
+            self.ThingList.InsertColumn(2, 'ID', width=46)
             self.ThingList.InsertColumn(3, 'Game', width=50)
 
         for index in range(len(self.patch.things.names)):
@@ -500,7 +501,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         index = self.ThingFlags.HitTest(wx.Point(event.GetX(), event.GetY()))
         if index != wx.NOT_FOUND:
             key = self.patch.engine.things.flags.keys()[index]
-            tip = self.patch.engine.things.flags[key]['description'] + '\n\nMnemonic: ' + key
+            tip = self.patch.engine.things.flags[key]['description'] + '\nMnemonic: ' + key
         else:
             tip = ''
 
