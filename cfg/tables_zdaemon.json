@@ -362,6 +362,22 @@
                 }
             ]
         },
+        "PlayWeaponSound": {
+            "name": "PlayWeaponSound",
+            "description": "Plays a sound from the weapon sound channel.",
+            "arguments": [
+                {
+                    "name": "Sound",
+                    "description": "The sound to play.",
+                    "type": "sound"
+                },
+                {
+                    "description": "If set to 1, the sound effect will play at full volume regardless of the distance.",
+                    "type": "integer",
+                    "range": [0, 1]
+                }
+            ]
+        },
         "RandomJump": {
             "name": "RandomJump",
             "description": "A random chance to jump to a state. Duration must not be -1.",
@@ -378,6 +394,32 @@
                     "range": [0, 255]
                 }
             ]
+        },
+        "Mushroom": {
+            "name": "Mushroom",
+            "description": "Creates a mushroom explosion effect by throwing fireballs up in all directions and causing radius damage.",
+            "unused": [
+                {
+                    "name": "Fireball angle",
+                    "description": "The angle to throw the fireballs in.",
+                    "type": "fixedpoint",
+                    "range": [-359, 359]
+                },
+                {
+                    "name": "Fireball speed",
+                    "description": "The speed to throw the fireballs at.",
+                    "type": "fixedpoint",
+                    "range": [-32767, 32767]
+                }
+            ]
+        },
+        "Die": {
+            "name": "Die",
+            "description": "Kills this thing."
+        },
+        "Detonate": {
+            "name": "Detonate",
+            "description": "Explode with variable damage (thing damage field)."
         },
         "FireCustomRailgun": {
             "name": "FireCustomRailgun",
@@ -756,6 +798,66 @@
                     "range": [-32767, 32767]
                 }
             ]
+        },
+        "SetReflective": {
+          "name": "SetReflective",
+          "description": "Makes the thing reflective. Any projectiles that strike it will bounce off of it, though it will still take damage."
+        },
+        "UnSetReflective": {
+          "name": "UnSetReflective",
+          "description": "The thing will no longer be reflective."
+        },
+        "SetInvulnerable": {
+          "name": "SetInvulnerable",
+          "description": "Makes the thing impervious to damage."
+        },
+        "UnSetInvulnerable": {
+          "name": "UnSetInvulnerable",
+          "description": "Makes the thing able to take damage again."
+        },
+        "SetShootable": {
+          "name": "SetShootable",
+          "description": "The thing can be hit by projectiles and hitscan weapons."
+        },
+        "UnSetShootable": {
+          "name": "UnSetShootable",
+          "description": "The thing cannot be hit by projectiles and hitscan weapons."
+        },
+        "FireRailgun": {
+          "name": "FireRailgun",
+          "description": "Fires a railgun from the center of the player's screen. Only for player weapons."
+        },
+        "FireRailgunRight": {
+          "name": "FireRailgunRight",
+          "description": "Fires a railgun from the right side of the player's screen. Only for player weapons."
+        },
+        "FireRailgunLeft": {
+          "name": "FireRailgunLeft",
+          "description": "Fires a railgun from the left side of the player's screen. Only for player weapons."
+        },
+        "MonsterRail": {
+          "name": "MonsterRail",
+          "description": "Makes a monster fire a railgun. The amount of damage dealt by the railgun is determined by the monster's Missile Damage field."
+        },
+        "RailWait": {
+          "name": "RailWait",
+          "description": "Deprecated, exactly the same as NULL."
+        },
+        "SetReflectiveInvulnerable": {
+          "name": "SetReflectiveInvulnerable",
+          "description": "Makes the thing reflect projectiles, and makes it impervious to other types of damage."
+        },
+        "UnSetReflectiveInvulnerable": {
+          "name": "UnSetReflectiveInvulnerable",
+          "description": "Makes the thing no longer reflect projectiles, and makes it susceptible to other types of damage again."
+        },
+        "Gravity": {
+          "name": "Gravity",
+          "description": "Allows the thing to fall under the effects of gravity."
+        },
+        "NoGravity": {
+          "name": "NoGravity",
+          "description": "Causes the thing to float in the air instead of fall."
         }
     },
     "ammo": [
@@ -895,7 +997,8 @@
         "bfgAmmoUsage": 40,
         "rocketExplosionAlpha": 0.67,
         "rocketExplosionStyle": 255,
-        "noAutoFreeze": 0
+        "noAutoFreeze": 0,
+        "bfgAiming": 1
     },
     "miscData": {
         "armorClassBlue": {
@@ -1018,6 +1121,13 @@
         "noAutoFreeze": {
             "name": "No auto-freeze",
             "patchKey": "No Autofreeze",
+            "type": "boolean",
+            "on": 1,
+            "off": 0
+        },
+        "bfgAiming": {
+            "name": "Allow BFG aiming",
+            "patchKey": "BFG Aiming",
             "type": "boolean",
             "on": 1,
             "off": 0
