@@ -119,7 +119,10 @@ class WeaponEntry(Entry):
         ('stateSelect', 'Select frame'),
         ('stateBob', 'Bobbing frame'),
         ('stateFire', 'Shooting frame'),
-        ('stateMuzzle', 'Firing frame')
+        ('stateMuzzle', 'Firing frame'),
+        ('minAmmo', 'Min ammo'),
+        ('ammoUse', 'Ammo use'),
+        ('decal', 'Decal')
     ])
 
 

@@ -143,71 +143,74 @@ STRINGS_LIST = 1794
 STRINGS_RESTORE = 1795
 FRAME_WEAPONS = 1796
 WEAPON_AMMOTYPE = 1797
-WEAPON_STATE_SELECT = 1798
-WEAPON_STATENAME_SELECT = 1799
-WEAPON_STATESET_SELECT = 1800
-WEAPON_STATE_DESELECT = 1801
-WEAPON_STATENAME_DESELECT = 1802
-WEAPON_STATESET_DESELECT = 1803
-WEAPON_STATE_BOB = 1804
-WEAPON_STATENAME_BOB = 1805
-WEAPON_STATESET_BOB = 1806
-WEAPON_STATE_FIRE = 1807
-WEAPON_STATENAME_FIRE = 1808
-WEAPON_STATESET_FIRE = 1809
-WEAPON_STATE_MUZZLE = 1810
-WEAPON_STATENAME_MUZZLE = 1811
-WEAPON_STATESET_MUZZLE = 1812
-WEAPON_RENAME = 1813
-WEAPON_RESTORE = 1814
-FRAME_AMMO = 1815
-AMMO_VAL_MAXIMUM = 1816
-AMMO_VAL_PICKUP = 1817
-AMMO_RENAME = 1818
-AMMO_RESTORE = 1819
-AMMO_LIST = 1820
-FRAME_CHEATS = 1821
-CHEATS_LIST = 1822
-CHEATS_RESTORE = 1823
-FRAME_MISC = 1824
-MISC_VALUE = 1825
-MISC_VALUE_ENABLED = 1826
-MISC_RESTORE = 1827
-MISC_LIST = 1828
-FRAME_PAR = 1829
-PAR_EPISODE = 1830
-PAR_MAP = 1831
-PAR_SECONDS = 1832
-PAR_TOOLS = 1833
-PAR_TOOL_ADD = 1834
-PAR_TOOL_REMOVE = 1835
-PAR_LIST = 1836
-DIALOG_SPRITES = 1837
-SPRITES_FILTER = 1838
-SPRITES_FRAME = 1839
-SPRITES_FRAMESPIN = 1840
-SPRITES_OK = 1841
-SPRITES_CANCEL = 1842
-STRING_OLD = 1843
-STRING_NEW = 1844
-STRING_OK = 1845
-STRING_CANCEL = 1846
-DIALOG_PATCHINFO = 1847
-PATCHINFO_TOOLBAR = 1848
-PATCHINFO_TOOLBAR_ADD = 1849
-PATCHINFO_TOOLBAR_REMOVE = 1850
-PATCHINFO_CANCEL = 1851
-DIALOG_START = 1852
-START_NEW = 1853
-START_OPEN = 1854
-START_RECENT = 1855
-START_CANCEL = 1856
-DIALOG_ABOUT = 1857
-ABOUT_OK = 1858
-DIALOG_ERROR = 1859
-ERROR_REPORT = 1860
-ERROR_COPY = 1861
-ERROR_CLOSE = 1862
+WEAPON_VAL_AMMO_USE = 1798
+WEAPON_VAL_MIN_AMMO = 1799
+WEAPON_VAL_DECAL = 1800
+WEAPON_STATE_SELECT = 1801
+WEAPON_STATENAME_SELECT = 1802
+WEAPON_STATESET_SELECT = 1803
+WEAPON_STATE_DESELECT = 1804
+WEAPON_STATENAME_DESELECT = 1805
+WEAPON_STATESET_DESELECT = 1806
+WEAPON_STATE_BOB = 1807
+WEAPON_STATENAME_BOB = 1808
+WEAPON_STATESET_BOB = 1809
+WEAPON_STATE_FIRE = 1810
+WEAPON_STATENAME_FIRE = 1811
+WEAPON_STATESET_FIRE = 1812
+WEAPON_STATE_MUZZLE = 1813
+WEAPON_STATENAME_MUZZLE = 1814
+WEAPON_STATESET_MUZZLE = 1815
+WEAPON_RENAME = 1816
+WEAPON_RESTORE = 1817
+FRAME_AMMO = 1818
+AMMO_VAL_MAXIMUM = 1819
+AMMO_VAL_PICKUP = 1820
+AMMO_RENAME = 1821
+AMMO_RESTORE = 1822
+AMMO_LIST = 1823
+FRAME_CHEATS = 1824
+CHEATS_LIST = 1825
+CHEATS_RESTORE = 1826
+FRAME_MISC = 1827
+MISC_VALUE = 1828
+MISC_VALUE_ENABLED = 1829
+MISC_RESTORE = 1830
+MISC_LIST = 1831
+FRAME_PAR = 1832
+PAR_EPISODE = 1833
+PAR_MAP = 1834
+PAR_SECONDS = 1835
+PAR_TOOLS = 1836
+PAR_TOOL_ADD = 1837
+PAR_TOOL_REMOVE = 1838
+PAR_LIST = 1839
+DIALOG_SPRITES = 1840
+SPRITES_FILTER = 1841
+SPRITES_FRAME = 1842
+SPRITES_FRAMESPIN = 1843
+SPRITES_OK = 1844
+SPRITES_CANCEL = 1845
+STRING_OLD = 1846
+STRING_NEW = 1847
+STRING_OK = 1848
+STRING_CANCEL = 1849
+DIALOG_PATCHINFO = 1850
+PATCHINFO_TOOLBAR = 1851
+PATCHINFO_TOOLBAR_ADD = 1852
+PATCHINFO_TOOLBAR_REMOVE = 1853
+PATCHINFO_CANCEL = 1854
+DIALOG_START = 1855
+START_NEW = 1856
+START_OPEN = 1857
+START_RECENT = 1858
+START_CANCEL = 1859
+DIALOG_ABOUT = 1860
+ABOUT_OK = 1861
+DIALOG_ERROR = 1862
+ERROR_REPORT = 1863
+ERROR_COPY = 1864
+ERROR_CLOSE = 1865
 
 ###########################################################################
 ## Class MainFrameBase
@@ -2285,9 +2288,9 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 560,360 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 560,430 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 560,360 ), wx.DefaultSize )
+		self.SetSizeHintsSz( wx.Size( 560,430 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -2305,10 +2308,66 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		AmmoTypeChoices = []
 		self.AmmoType = wx.Choice( self, WEAPON_AMMOTYPE, wx.DefaultPosition, wx.DefaultSize, AmmoTypeChoices, 0 )
 		self.AmmoType.SetSelection( 0 )
-		bSizer86.Add( self.AmmoType, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.EXPAND, 3 )
+		bSizer86.Add( self.AmmoType, 1, wx.ALL, 3 )
 		
 		
 		bSizer139.Add( bSizer86, 1, wx.EXPAND, 5 )
+		
+		bSizer911 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText88141 = wx.StaticText( self, wx.ID_ANY, u"Ammo per use", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText88141.Wrap( -1 )
+		bSizer911.Add( self.m_staticText88141, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		
+		bSizer12441 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.AmmoUse = wx.TextCtrl( self, WEAPON_VAL_AMMO_USE, u"2", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		self.AmmoUse.SetMaxLength( 4 ) 
+		bSizer12441.Add( self.AmmoUse, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		
+		bSizer911.Add( bSizer12441, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer139.Add( bSizer911, 1, wx.EXPAND, 5 )
+		
+		bSizer912 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText88142 = wx.StaticText( self, wx.ID_ANY, u"Ammo needed", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText88142.Wrap( -1 )
+		bSizer912.Add( self.m_staticText88142, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		
+		bSizer12442 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.MinAmmo = wx.TextCtrl( self, WEAPON_VAL_MIN_AMMO, u"2", wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		self.MinAmmo.SetMaxLength( 4 ) 
+		bSizer12442.Add( self.MinAmmo, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		
+		bSizer912.Add( bSizer12442, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer139.Add( bSizer912, 1, wx.EXPAND, 5 )
+		
+		bSizer913 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText88143 = wx.StaticText( self, wx.ID_ANY, u"Decal", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText88143.Wrap( -1 )
+		bSizer913.Add( self.m_staticText88143, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		
+		bSizer12443 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.Decal = wx.TextCtrl( self, WEAPON_VAL_DECAL, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		bSizer12443.Add( self.Decal, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		
+		
+		bSizer913.Add( bSizer12443, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer139.Add( bSizer913, 1, wx.EXPAND, 5 )
+		
+		
+		bSizer139.AddSpacer( ( 0, 16), 0, wx.EXPAND, 0 )
 		
 		bSizer87 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -2494,6 +2553,15 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		# Connect Events
 		self.m_staticText88.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.AmmoType.Bind( wx.EVT_CHOICE, self.set_ammo )
+		self.m_staticText88141.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.AmmoUse.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.AmmoUse.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText88142.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.MinAmmo.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.MinAmmo.Bind( wx.EVT_TEXT, self.set_value )
+		self.m_staticText88143.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.Decal.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.Decal.Bind( wx.EVT_TEXT, self.set_value )
 		self.m_staticText881.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.WeaponStateSelect.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.WeaponStateSelect.Bind( wx.EVT_TEXT, self.set_state_index )
@@ -2554,6 +2622,17 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	def focus_text( self, event ):
 		pass
+	
+	def set_value( self, event ):
+		pass
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	def set_state_index( self, event ):
 		pass

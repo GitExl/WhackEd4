@@ -13,6 +13,13 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
     Sounds editor window.
     """
 
+    # Text control to internal key mappings.
+    PROPS_VALUES = {
+        windows.WEAPON_VAL_AMMO_USE: 'ammoUse',
+        windows.WEAPON_VAL_MIN_AMMO: 'minAmmo',
+        windows.WEAPON_VAL_DECAL: 'decal',
+    }
+
     # State text control to partial internal key mappings.
     PROPS_STATES = {
         windows.WEAPON_STATE_SELECT: 'Select',
@@ -83,14 +90,13 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.WeaponList.ClearAll()
 
         if self.WeaponList.GetColumnCount() == 0:
-            self.WeaponList.InsertColumn(0, 'Name', width=135)
-            self.WeaponList.InsertColumn(1, 'Ammo', width=69)
+            self.WeaponList.InsertColumn(0, 'Name', width=120)
+            self.WeaponList.InsertColumn(1, 'Ammo', width=120)
 
         for index in range(len(self.patch.weapons)):
             self.WeaponList.InsertStringItem(index, '')
             self.weaponlist_update_row(index)
 
-        self.list_autosize(self.WeaponList)
         self.WeaponList.Select(0, True)
 
     def weaponlist_update_row(self, row_index):
@@ -106,7 +112,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
     def weaponlist_resize(self, event):
         """
-        Resizes the weapon name column to fill as much space as is available.
+        Resizes the weapon list to fill as much space as is available.
         """
 
         column_width = self.WeaponList.GetClientSizeTuple()[0] - 4
@@ -131,6 +137,10 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         weapon = self.patch.weapons[self.selected_index]
 
         self.AmmoType.Select(weapon['ammoType'])
+        self.AmmoUse.SetValue(str(weapon['ammoUse']))
+        self.MinAmmo.SetValue(str(weapon['minAmmo']))
+        self.Decal.SetValue(weapon['decal'])
+
         self.WeaponStateSelect.ChangeValue(str(weapon['stateSelect']))
         self.WeaponStateDeselect.ChangeValue(str(weapon['stateDeselect']))
         self.WeaponStateBob.ChangeValue(str(weapon['stateBob']))
@@ -166,6 +176,26 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         key = self.PROPS_STATES[window_id]
         self.patch.weapons[self.selected_index]['state' + key] = value
         self.__dict__['WeaponState' + key + 'Name'].SetLabel(self.patch.get_state_name(value))
+        self.is_modified(True)
+
+    def set_value(self, event):
+        """
+        Sets the currently selected weapon entry's property value.
+        """
+
+        self.undo_add()
+
+        window_id = event.GetId()
+        window = self.FindWindowById(window_id)
+        if window_id == windows.WEAPON_VAL_DECAL:
+            value = window.GetValue()
+        else:
+            value = utils.validate_numeric(window)
+
+        key = self.PROPS_VALUES[window_id]
+        self.patch.weapons[self.selected_index][key] = value
+
+        self.weaponlist_update_row(self.selected_index)
         self.is_modified(True)
 
     def set_ammo(self, event):

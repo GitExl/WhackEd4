@@ -24887,7 +24887,10 @@
             "stateDeselect": 4,
             "stateFire": 5,
             "stateMuzzle": 0,
-            "stateSelect": 3
+            "stateSelect": 3,
+            "ammoUse": 0,
+            "minAmmo": 0,
+            "decal": ""
         },
         {
             "ammoType": 0,
@@ -24895,7 +24898,10 @@
             "stateDeselect": 12,
             "stateFire": 13,
             "stateMuzzle": 17,
-            "stateSelect": 11
+            "stateSelect": 11,
+            "ammoUse": 0,
+            "minAmmo": 0,
+            "decal": ""
         },
         {
             "ammoType": 1,
@@ -24903,7 +24909,10 @@
             "stateDeselect": 20,
             "stateFire": 21,
             "stateMuzzle": 30,
-            "stateSelect": 19
+            "stateSelect": 19,
+            "ammoUse": 0,
+            "minAmmo": 0,
+            "decal": ""
         },
         {
             "ammoType": 0,
@@ -24911,7 +24920,10 @@
             "stateDeselect": 51,
             "stateFire": 52,
             "stateMuzzle": 55,
-            "stateSelect": 50
+            "stateSelect": 50,
+            "ammoUse": 0,
+            "minAmmo": 0,
+            "decal": ""
         },
         {
             "ammoType": 3,
@@ -24919,7 +24931,10 @@
             "stateDeselect": 59,
             "stateFire": 60,
             "stateMuzzle": 63,
-            "stateSelect": 58
+            "stateSelect": 58,
+            "ammoUse": 0,
+            "minAmmo": 0,
+            "decal": ""
         },
         {
             "ammoType": 2,
@@ -24927,7 +24942,10 @@
             "stateDeselect": 76,
             "stateFire": 77,
             "stateMuzzle": 79,
-            "stateSelect": 75
+            "stateSelect": 75,
+            "ammoUse": 0,
+            "minAmmo": 0,
+            "decal": ""
         },
         {
             "ammoType": 2,
@@ -24935,7 +24953,10 @@
             "stateDeselect": 83,
             "stateFire": 84,
             "stateMuzzle": 88,
-            "stateSelect": 82
+            "stateSelect": 82,
+            "ammoUse": 0,
+            "minAmmo": 0,
+            "decal": ""
         },
         {
             "ammoType": 5,
@@ -24943,7 +24964,10 @@
             "stateDeselect": 70,
             "stateFire": 71,
             "stateMuzzle": 0,
-            "stateSelect": 69
+            "stateSelect": 69,
+            "ammoUse": 0,
+            "minAmmo": 0,
+            "decal": ""
         },
         {
             "stateDeselect": 34, 
@@ -24951,7 +24975,10 @@
             "stateMuzzle": 47, 
             "ammoType": 1, 
             "stateSelect": 33, 
-            "stateFire": 35
+            "stateFire": 35,
+            "ammoUse": 0,
+            "minAmmo": 0,
+            "decal": ""
         }
     ],
 
