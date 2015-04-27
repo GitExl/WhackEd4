@@ -38,8 +38,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_VAL_ID: 'int',
         windows.THING_VAL_HEALTH: 'int',
         windows.THING_VAL_SPEED: 'int',
-        windows.THING_VAL_RADIUS: 'int',
-        windows.THING_VAL_HEIGHT: 'int',
+        windows.THING_VAL_RADIUS: 'fixed',
+        windows.THING_VAL_HEIGHT: 'fixed',
         windows.THING_VAL_DAMAGE: 'int',
         windows.THING_VAL_REACTIONTIME: 'int',
         windows.THING_VAL_PAINCHANCE: 'int',
@@ -357,9 +357,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         value_type = self.PROPS_VALUE_TYPES[window_id]
         if value_type == 'int':
             value = utils.validate_numeric(window)
-        elif value_type == 'float':
+        elif value_type == 'float' or value_type == 'fixed':
             value = utils.validate_numeric_float(window)
-        elif value_type == 'str':
+        else:
             value = window.GetValue()
 
         thing = self.patch.things[self.selected_index]
@@ -367,7 +367,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         # Apply fixed point divisor if the value needs it.
         # This is also necessary for the speed property if the thing has it's MISSILE flag set.
         key = self.PROPS_VALUES[window_id]
-        if key == 'radius' or key == 'height':
+        if value_type == 'fixed':
             value *= self.FIXED_UNIT
         elif key == 'speed' and (thing['flags'] & self.FLAG_MISSILE) != 0:
             value *= self.FIXED_UNIT
