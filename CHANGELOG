@@ -2,12 +2,12 @@ Version 1.1.0
 -------------
 Added: the ability to change the rotation in a sprite preview by dragging the mouse over it with the left button held down.
 Added: a number of new state, thing, weapon and miscellaneous options for advanced ZDaemon\ZDoom support.
-Added: better defined state action parameter support, inclusing support for arguments.
+Added: better defined state action parameter support, including support for arguments.
 Added: a new miscellaneous editor UI that supports an arbitrary number of options. Double click items to quickly edit them.
 Added: clicking an active editor window toolbar button will bring it to the front if it is not already, otherwise it will close it.
-Added: closing dialogs is now possible with ESC and a window close button.
+Added: closing dialogs is now possible with the ESC and a window close button.
 Added: a ZDaemon engine configuration file supporting some of ZDaemon's Dehacked extensions.
-Fixed: sound numbering and setting used sound 1 as the dummy sound.
+Fixed: sound numbering and sound assignment used sound 1 as the dummy sound erroneously.
 Fixed: missing ampersands in thing flags.
 Fixed: thing names not being updated in the state filter list when a thing is renamed.
 Fixed: misspelling of ReFire and BFGSound actions.
@@ -17,6 +17,7 @@ Changed: editing action parameters is now made easier by only displaying paramet
 Changed: thing list indices start at 1 to make using state actions like MBF's Spawn easier.
 Changed: some control and window sizes have been altered to better fit with larger fonts.
 Changed: the string editor window will focus on the text to edit when activated, so the user can often begin typing immediately.
+Changed: reduced flickering when resizing editor windows.
 Changed: updated to PyAudio 0.2.8.
 
 Version 1.0.4

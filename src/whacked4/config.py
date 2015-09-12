@@ -19,6 +19,7 @@ FONT_MONOSPACED_NAME = 'Bitstream Vera Sans Mono'
 FONT_MONOSPACED = None
 
 # Application configuration path.
+# TODO: rely on something non-platform specific for APPDATA.
 CONFIG_DIR = os.environ['APPDATA'] + '/' + APP_SIMPLE_NAME
 
 # Path to the settings file.
