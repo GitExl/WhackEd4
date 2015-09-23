@@ -491,7 +491,8 @@
                     "type": "fixedpoint",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 0
         },
         "Die": {
             "name": "Die",
@@ -1303,7 +1304,7 @@
                 {
                     "name": "Puff",
                     "description": "The puff thing type.",
-                    "type": "thing",
+                    "type": "thing"
                 },
                 {
                     "name": "Range",
