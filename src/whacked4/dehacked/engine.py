@@ -95,23 +95,23 @@ class Engine:
             self.extended = data['extended']
             self.name = data['name']
 
-            self.things.read_from_json(data['things'])
             self.things.names = data['thingNames']
             self.things.flags = data['thingFlags']
+            self.things.read_from_json(data['things'], self.extended)
             if len(self.things.names) != len(self.things):
                 raise DehackedEngineError('Things size and thing names size does not match.')
 
-            self.weapons.read_from_json(data['weapons'])
             self.weapons.names = data['weaponNames']
+            self.weapons.read_from_json(data['weapons'], self.extended)
             if len(self.weapons.names) != len(self.weapons):
                 raise DehackedEngineError('Weapons size and weapon names size does not match.')
 
-            self.ammo.read_from_json(data['ammo'])
             self.ammo.names = data['ammoNames']
+            self.ammo.read_from_json(data['ammo'], self.extended)
 
             self.actions = data['actions']
-            self.states.read_from_json(data['states'])
-            self.sounds.read_from_json(data['sounds'])
+            self.states.read_from_json(data['states'], self.extended)
+            self.sounds.read_from_json(data['sounds'], self.extended)
 
             self.strings = data['strings']
 

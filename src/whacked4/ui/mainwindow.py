@@ -223,7 +223,7 @@ class MainWindow(windows.MainFrameBase):
 
         # Display any messages from the patch load process.
         for message in messages.itervalues():
-            message += '\n\nPress Yes to continue loading, No to stop displaying messages or Cancel to abort' \
+            message += '\n\nPress Yes to continue loading, No to stop displaying messages or Cancel to abort ' \
                        'loading this patch.'
             result = wx.MessageBox(message=message, caption='Patch message',
                                    style=wx.YES_NO | wx.CANCEL | wx.ICON_EXCLAMATION, parent=self)

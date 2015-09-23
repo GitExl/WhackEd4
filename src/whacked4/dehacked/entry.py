@@ -54,14 +54,14 @@ class Entry:
 
         self.values[key] = value
 
-    def set_patch_key(self, key, value, table, enable_filter):
+    def set_patch_key(self, key, value, table, extended):
         """
         Sets a field's value directly from a Dehacked patch key.
 
         @param key: The key as used in a Dehacked patch.
         @param value: The value read from a Dehacked patch.
         @param table: The table that this entry is a part of.
-        @param enable_filter: Set to True if this entry needs a filter applied.
+        @param extended: Set to True if this entry is from an extended engine.
 
         @raise ValueError: if the read value is not a number.
         @raise LookupError: if the patch key cannot be found in this entry.
@@ -71,16 +71,17 @@ class Entry:
 
             if patchKey == key:
                 # Filter the read value first.
-                # Filter only if filtering is enabled for this entry's table, if this entry has a FILTER and
-                # if the internal key has a filter function associated with it.
-                if enable_filter and self.FILTER is not None and internalKey in self.FILTER:
-                    value = filters.__dict__[self.FILTER[internalKey] + '_read'](value, table)
+                # Filter only if this entry has a FILTER and if the internal key has a filter function
+                # associated with it.
+                if self.FILTER is not None and internalKey in self.FILTER:
+                    value = filters.__dict__[self.FILTER[internalKey] + '_read'](value, table, extended)
 
-                # Attempt to cast all values to an integer.
-                try:
-                    value = int(value)
-                except ValueError:
-                    raise ValueError('Value {} for {} is not a number.'.format(value, key))
+                # Validate expected integer values.
+                if type(value) is not set:
+                    try:
+                        value = int(value)
+                    except ValueError:
+                        raise ValueError('Value {} for {} is not a number.'.format(value, key))
 
                 self[internalKey] = value
                 return
@@ -102,7 +103,7 @@ class Entry:
 
         return self
 
-    def from_json(self, json):
+    def from_json(self, json, table, extended):
         """
         Reads this entry's values from a JSON object.
         """
@@ -110,7 +111,10 @@ class Entry:
         self.values = {}
 
         for key in self.FIELDS.keys():
-            self.values[key] = json[key]
+            value = json[key]
+            if self.FILTER is not None and key in self.FILTER:
+                value = filters.__dict__[self.FILTER[key] + '_read'](value, table, extended)
+            self.values[key] = value
 
         return self
 
@@ -131,13 +135,13 @@ class Entry:
         else:
             return '\n{} {}\n'.format(self.NAME, index + offset)
 
-    def get_patch_string(self, original, table, use_filter):
+    def get_patch_string(self, original, table, extended):
         """
         Returns a string with all of this entry's modified values.
 
         @param original: The original entry containing unmodified engine data.
         @param table: The table that this entry belongs to.
-        @param use_filter: Set to True if a filter needs to be used for this entry.
+        @param extended: Set to True if a filter is for an extended engine.
         """
 
         output = {}
@@ -158,8 +162,8 @@ class Entry:
             for key, value in output.iteritems():
 
                 # Filter the value about to be written to the patch.
-                if use_filter and self.FILTER is not None and key in self.FILTER:
-                    value = filters.__dict__[self.FILTER[key] + '_write'](value, table)
+                if self.FILTER is not None and key in self.FILTER:
+                    value = filters.__dict__[self.FILTER[key] + '_write'](value, table, extended)
 
                 output_list.append('{} = {}\n'.format(self.FIELDS[key], value))
 
@@ -167,3 +171,6 @@ class Entry:
 
         # No values were modified.
         return None
+
+    def __repr__(self):
+        return '{}: {}'.format(self.NAME, self.values)

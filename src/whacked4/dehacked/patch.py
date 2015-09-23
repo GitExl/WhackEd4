@@ -165,10 +165,10 @@ class Patch:
 
             # Write tables.
             self.things.write_patch_data(self.engine.things, f, self.extended)
-            self.states.write_patch_data(self.engine.states, f, False)
-            self.sounds.write_patch_data(self.engine.sounds, f, False)
-            self.weapons.write_patch_data(self.engine.weapons, f, False)
-            self.ammo.write_patch_data(self.engine.ammo, f, False)
+            self.states.write_patch_data(self.engine.states, f, self.extended)
+            self.sounds.write_patch_data(self.engine.sounds, f, self.extended)
+            self.weapons.write_patch_data(self.engine.weapons, f, self.extended)
+            self.ammo.write_patch_data(self.engine.ammo, f, self.extended)
 
             # Write simple sections.
             write_dict(f, self.cheats, self.engine.cheats, self.engine.cheat_data, 'Cheat 0')
@@ -585,37 +585,37 @@ class Patch:
                 key = pair[0]
                 value = pair[1]
 
-                try:
-                    if mode == ParseMode.THING:
-                        self.things[entry_index].set_patch_key(key, value, self.things, self.extended)
-                    elif mode == ParseMode.STATE:
-                        self.states[entry_index].set_patch_key(key, value, self.states, False)
-                    elif mode == ParseMode.SOUND:
-                        self.sounds[entry_index].set_patch_key(key, value, self.sounds, False)
-                    elif mode == ParseMode.WEAPON:
-                        self.weapons[entry_index].set_patch_key(key, value, self.weapons, False)
-                    elif mode == ParseMode.AMMO:
-                        self.ammo[entry_index].set_patch_key(key, value, self.ammo, False)
-                    elif mode == ParseMode.POINTER:
-                        self.states[entry_index]['action'] = self.engine.states[int(value)]['action']
-                    elif mode == ParseMode.CHEATS:
-                        table_key = self.engine.get_key_from_patchkey(self.engine.cheat_data, key)
-                        if table_key is None:
-                            messages['PATCH_CHEAT_KEY_' + str(len(messages))] = 'Unknown patch cheat key {}. This' \
-                                                                                'entry will be ignored.'.format(key)
-                        else:
-                            self.cheats[table_key] = value
-                    elif mode == ParseMode.MISC:
-                        table_key = self.engine.get_key_from_patchkey(self.engine.misc_data, key)
-                        if table_key is None:
-                            messages['PATCH_MISC_KEY_' + str(len(messages))] = 'Unknown patch miscellaneous key {}.' \
-                                                                               'This entry will be ignored.'.format(key)
-                        else:
-                            self.misc[table_key] = value
+                #try:
+                if mode == ParseMode.THING:
+                    self.things[entry_index].set_patch_key(key, value, self.things, self.extended)
+                elif mode == ParseMode.STATE:
+                    self.states[entry_index].set_patch_key(key, value, self.states, self.extended)
+                elif mode == ParseMode.SOUND:
+                    self.sounds[entry_index].set_patch_key(key, value, self.sounds, self.extended)
+                elif mode == ParseMode.WEAPON:
+                    self.weapons[entry_index].set_patch_key(key, value, self.weapons, self.extended)
+                elif mode == ParseMode.AMMO:
+                    self.ammo[entry_index].set_patch_key(key, value, self.ammo, self.extended)
+                elif mode == ParseMode.POINTER:
+                    self.states[entry_index]['action'] = self.engine.states[int(value)]['action']
+                elif mode == ParseMode.CHEATS:
+                    table_key = self.engine.get_key_from_patchkey(self.engine.cheat_data, key)
+                    if table_key is None:
+                        messages['PATCH_CHEAT_KEY_' + str(len(messages))] = 'Unknown patch cheat key {}. This' \
+                                                                            'entry will be ignored.'.format(key)
+                    else:
+                        self.cheats[table_key] = value
+                elif mode == ParseMode.MISC:
+                    table_key = self.engine.get_key_from_patchkey(self.engine.misc_data, key)
+                    if table_key is None:
+                        messages['PATCH_MISC_KEY_' + str(len(messages))] = 'Unknown patch miscellaneous key {}.' \
+                                                                           'This entry will be ignored.'.format(key)
+                    else:
+                        self.misc[table_key] = value
 
-                except Exception as e:
-                    messages['EXCEPTION'] = 'Exceptions occurred during loading. The patch may be corrupted.\n\n' \
-                                            'Last exception:\n' + str(e)
+                #except Exception as e:
+                #    messages['EXCEPTION'] = 'Exceptions occurred during loading. The patch may be corrupted.\n\n' \
+                #                            'Last exception:\n' + str(e)
 
         return messages
 

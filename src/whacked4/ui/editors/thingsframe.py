@@ -128,9 +128,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     # Fixed point unit divisor for certain thing properties.
     FIXED_UNIT = 0x10000
 
-    # Doom missile thing flag.
-    FLAG_MISSILE = 0x10000
-
     def __init__(self, params):
         windows.ThingsFrameBase.__init__(self, params)
         editormixin.EditorMixin.__init__(self)
@@ -143,6 +140,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.selected_index = 0
 
+        self.thingflag_mnemonics = None
+
     def build(self, patch):
         """
         @see EditorMixin.build
@@ -153,6 +152,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.clipboard = None
 
         self.selected_index = 0
+
+        self.thingflag_mnemonics = None
 
         self.flaglist_build()
         self.thinglist_build()
@@ -223,11 +224,13 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         flaglist = []
-        for index in range(0, 32):
-            for flag in self.patch.engine.things.flags.itervalues():
-                if flag['index'] == index:
-                    flaglist.append(' ' + flag['name'])
-                    break
+        self.thingflag_mnemonics = []
+
+        for mnemonic, flag in self.patch.engine.things.flags.iteritems():
+            if 'alias' in flag:
+                continue
+            flaglist.append(' ' + flag['name'])
+            self.thingflag_mnemonics.append(mnemonic)
 
         self.ThingFlags.SetItems(flaglist)
 
@@ -301,7 +304,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingDecal.ChangeValue(thing['decal'])
 
         # Speed is in fixed point if this thing is a missile, normal otherwise
-        if (thing['flags'] & self.FLAG_MISSILE) != 0:
+        if 'MISSILE' in thing['flags']:
             speed = thing['speed'] / self.FIXED_UNIT
         else:
             speed = thing['speed']
@@ -309,11 +312,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         # Set flags.
         flags = thing['flags']
-        bits = 1
         for index in range(self.ThingFlags.GetCount()):
-            checked = (flags & bits) != 0
+            mnemonic = self.thingflag_mnemonics[index]
+            checked = (mnemonic in flags)
             self.ThingFlags.Check(index, checked)
-            bits *= 2
 
         # Set state and sound values.
         for name in self.PROPS_STATES.values():
@@ -370,7 +372,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         key = self.PROPS_VALUES[window_id]
         if value_type == 'fixed':
             value *= self.FIXED_UNIT
-        elif key == 'speed' and (thing['flags'] & self.FLAG_MISSILE) != 0:
+        elif key == 'speed' and 'MISSILE' in thing['flags']:
             value *= self.FIXED_UNIT
 
         thing[key] = value
@@ -465,27 +467,19 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.undo_add()
 
-        flags_value = 0
-        projectile_before = self.patch.things[self.selected_index]['flags'] & self.FLAG_MISSILE
+        flags_value = set()
+        projectile_before = 'MISSILE' in self.patch.things[self.selected_index]['flags']
 
-        # Iterate over the flags defined in the engine config, mark bits if the flag is set in the list.
-        bits = 1
+        # Iterate over the flags defined in the flags list, adding mnemonics that are set.
         for index in range(self.ThingFlags.GetCount()):
             if not self.ThingFlags.IsChecked(index):
-                bits *= 2
                 continue
+            flags_value.add(self.thingflag_mnemonics[index])
 
-            for flag in self.patch.engine.things.flags.itervalues():
-                if flag['index'] == index:
-                    flags_value |= bits
-                    break
-
-            bits *= 2
-
-        # Recast the fixed point speed property if the thing is now a projectile.
-        projectile_after = flags_value & self.FLAG_MISSILE
+        # Recast the fixed point speed property if the thing is now a projectile (or not anymore).
+        projectile_after = 'MISSILE' in flags_value
         if projectile_before != projectile_after:
-            if (flags_value & self.FLAG_MISSILE) != 0:
+            if projectile_after:
                 self.patch.things[self.selected_index]['speed'] *= self.FIXED_UNIT
             else:
                 self.patch.things[self.selected_index]['speed'] /= self.FIXED_UNIT
@@ -500,8 +494,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         index = self.ThingFlags.HitTest(wx.Point(event.GetX(), event.GetY()))
         if index != wx.NOT_FOUND:
-            key = self.patch.engine.things.flags.keys()[index]
-            tip = self.patch.engine.things.flags[key]['description'] + '\nMnemonic: ' + key
+            mnemonic = self.thingflag_mnemonics[index]
+            tip = '{}\n\nMnemonic: {}'.format(self.patch.engine.things.flags[mnemonic]['description'], mnemonic)
         else:
             tip = ''
 

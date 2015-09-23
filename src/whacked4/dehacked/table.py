@@ -20,15 +20,15 @@ class Table:
         for _ in range(count):
             self.entries.append(self.cls().read_from_executable(f))
 
-    def read_from_json(self, json):
+    def read_from_json(self, json, extended):
         """
         Reads this table's entries from a JSON object.
         """
 
         for entry in json:
-            self.entries.append(self.cls().from_json(entry))
+            self.entries.append(self.cls().from_json(entry, self, extended))
 
-    def write_patch_data(self, source_table, f, use_filter):
+    def write_patch_data(self, source_table, f, extended):
         """
         Writes this table's entry to a Dehacked patch file.
         """
@@ -38,7 +38,7 @@ class Table:
             source_entry = source_table.entries[index]
 
             # Write the current entry index if it returns any data to be written.
-            patch_str = entry.get_patch_string(source_entry, self, use_filter)
+            patch_str = entry.get_patch_string(source_entry, self, extended)
             if patch_str is not None:
                 f.write(entry.get_patch_header(index, self, offset=self.offset))
                 f.write(patch_str)
@@ -46,6 +46,9 @@ class Table:
             # Write just a header if only the entry's name has changed.
             elif hasattr(self, 'names') and self.names[index] != source_table.names[index]:
                 f.write(entry.get_patch_header(index, self, offset=self.offset))
+
+    def __repr__(self):
+        return '{}: {}'.format(self.cls, self.entries)
 
     def __getitem__(self, index):
         return self.entries[index]
