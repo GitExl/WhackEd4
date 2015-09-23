@@ -50,6 +50,10 @@ class WhackEd4App(wx.App):
         mainwind = mainwindow.MainWindow(None)
         self.SetTopWindow(mainwind)
 
+        if config.APP_BETA:
+            wx.MessageBox(message='This is a beta version. Please beware of bugs, and report them on the GitHub issue ' \
+                                  'tracker.', caption=config.APP_NAME, style=wx.OK | wx.ICON_INFORMATION, parent=mainwind)
+
         if args.open and os.path.exists(args.open):
             mainwind.open_file(args.open)
         else:
