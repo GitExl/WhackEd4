@@ -1,5 +1,4 @@
 Patch extensions
-- Armor classes can accept fixed point ("1.5") value types for some configs. Also expose as config feature.
 - ZDaemon:
   - Update with actions from here: https://github.com/GitExl/WhackEd4/issues/1 (Aeyesx post 6-sept-2015)
   - Disable Sounds editing (but not selection) and disable Cheats editor. See tables_zdaemon.cfg features object for a start.
