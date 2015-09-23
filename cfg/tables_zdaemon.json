@@ -530,13 +530,13 @@
                     "name": "Script",
                     "description": "The script index to execute.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to execute the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Parameter 1",
@@ -567,13 +567,13 @@
                     "name": "Script",
                     "description": "The script index to execute.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to execute the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Parameter 1",
@@ -604,13 +604,13 @@
                     "name": "Script",
                     "description": "The script index to execute.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to execute the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Parameter 1",
@@ -641,13 +641,13 @@
                     "name": "Script",
                     "description": "The script index to execute.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to execute the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Parameter 1",
@@ -678,13 +678,13 @@
                     "name": "Script",
                     "description": "The script index to execute.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to execute the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Parameter 1",
@@ -715,13 +715,13 @@
                     "name": "Script",
                     "description": "The script index to execute.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to execute the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Parameter 1",
@@ -752,13 +752,13 @@
                     "name": "Script",
                     "description": "The script index to execute.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to execute the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Parameter 1",
@@ -776,7 +776,7 @@
                     "name": "Lock keys",
                     "description": "The key combination needed to execute the script.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 }
             ],
             "type": 0
@@ -789,13 +789,13 @@
                     "name": "Script",
                     "description": "The script index to execute.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to execute the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Parameter 1",
@@ -813,7 +813,7 @@
                     "name": "Lock keys",
                     "description": "The key combination needed to execute the script.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 }
             ],
             "type": 1
@@ -826,13 +826,13 @@
                     "name": "Script",
                     "description": "The script index to suspend.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to suspend the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 }
             ],
             "type": 0
@@ -845,13 +845,13 @@
                     "name": "Script",
                     "description": "The script index to suspend.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to suspend the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 }
             ],
             "type": 1
@@ -864,13 +864,13 @@
                     "name": "Script",
                     "description": "The script index to terminate.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to terminate the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 }
             ],
             "type": 0
@@ -883,13 +883,13 @@
                     "name": "Script",
                     "description": "The script index to terminate.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 },
                 {
                     "name": "Map",
                     "description": "The map to terminate the script on.",
                     "type": "integer",
-                    "range": [-32767, 32767]
+                    "range": [0, 32767]
                 }
             ],
             "type": 1
@@ -1256,17 +1256,120 @@
         },
         "CPA_BulletAttack": {
             "name": "CPA_BulletAttack",
-            "description": "",
+            "description": "Performs a bullet attack.",
+            "arguments": [
+                {
+                    "name": "Amount",
+                    "description": "The number of bullets to fire.",
+                    "type": "integer",
+                    "range": [0, 32767]
+                },
+                {
+                    "name": "Sound",
+                    "description": "The sound to play when firing.",
+                    "type": "sound"
+                }
+            ],
             "type": 0
         },
         "CPA_CustomBulletAttack": {
             "name": "CPA_CustomBulletAttack",
-            "description": "",
+            "description": "Performs a customizable bullet attack.",
+            "arguments": [
+                {
+                    "name": "Spread H",
+                    "description": "The horizontal spread of the bullets.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Spread V",
+                    "description": "The vertical spread ot the bullets.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Amount",
+                    "description": "The amount of bullets to fire.",
+                    "type": "integer",
+                    "range": [0, 32767]
+                },
+                {
+                    "name": "Damage",
+                    "description": "The damage per bullet.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Puff",
+                    "description": "The puff thing type.",
+                    "type": "thing",
+                },
+                {
+                    "name": "Range",
+                    "description": "The maximum range of the bullets. 0 is the same as the default of 2048 units.",
+                    "type": "integer",
+                    "range": [0, 32767]
+                },
+                {
+                    "name": "Flags",
+                    "description": "A flag bitmask. See the ZDaemon documentation for more info.",
+                    "type": "integer",
+                    "range": [0, 32767]
+                },
+                {
+                    "name": "Sound",
+                    "description": "The sound to play when firing.",
+                    "type": "sound"
+                }
+            ],
             "type": 0
         },
         "CPA_CustomMissile": {
             "name": "CPA_CustomMissile",
-            "description": "",
+            "description": "A customizable projectile attack for monsters.",
+            "arguments": [
+                {
+                    "name": "Type",
+                    "description": "The thing type to spawn.",
+                    "type": "thing"
+                },
+                {
+                    "name": "Z",
+                    "description": "The Z height to spawn at, relative to the thing's feet.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Offset H",
+                    "description": "Horizontal spawn offset",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Angle",
+                    "description": "The direction relative to the thing's facing angle in which to shoot the projectile.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Pitch",
+                    "description": "Used with one of the flag values.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Sound",
+                    "description": "The sound number to play when firing.",
+                    "type": "sound"
+                },
+                {
+                    "name": "Flags",
+                    "description": "Bitmask of flags to use. See ZDaemon documentation for more info.",
+                    "type": "integer",
+                    "range": [0, 32767]
+                }
+            ],
             "type": 0
         },
         "CStaffMissileSlither": {
@@ -2486,17 +2589,125 @@
         },
         "CPW_BulletAttack": {
             "name": "CPW_BulletAttack",
-            "description": "",
+            "description": "Performs a bullet attack.",
+            "arguments": [
+                {
+                    "name": "Amount",
+                    "description": "The number of bullets to fire.",
+                    "type": "integer",
+                    "range": [0, 32767]
+                },
+                {
+                    "name": "Sound",
+                    "description": "The sound to play when firing.",
+                    "type": "sound"
+                }
+            ],
             "type": 1
         },
         "CPW_CustomBulletAttack": {
             "name": "CPW_CustomBulletAttack",
-            "description": "",
+            "description": "Performs a customizable bullet attack.",
+            "arguments": [
+                {
+                    "name": "Spread H",
+                    "description": "The horizontal spread of the bullets.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Spread V",
+                    "description": "The vertical spread ot the bullets.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Amount",
+                    "description": "The amount of bullets to fire.",
+                    "type": "integer",
+                    "range": [0, 32767]
+                },
+                {
+                    "name": "Damage",
+                    "description": "The damage per bullet.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Puff",
+                    "description": "The puff thing type.",
+                    "type": "thing"
+                },
+                {
+                    "name": "Range",
+                    "description": "The maximum range of the bullets. 0 is the same as the default of 2048 units.",
+                    "type": "integer",
+                    "range": [0, 32767]
+                },
+                {
+                    "name": "Flags",
+                    "description": "A flag bitmask. See the ZDaemon documentation for more info.",
+                    "type": "integer",
+                    "range": [0, 32767]
+                },
+                {
+                    "name": "Sound",
+                    "description": "The sound to play when firing.",
+                    "type": "sound"
+                }
+            ],
             "type": 1
         },
         "CPW_CustomMissile": {
             "name": "CPW_CustomMissile",
-            "description": "",
+            "description": "A customizable projectile attack for player weapons.",
+            "arguments": [
+                {
+                    "name": "Type",
+                    "description": "The thing type to spawn.",
+                    "type": "thing"
+                },
+                {
+                    "name": "Z",
+                    "description": "The Z height to spawn at, relative to the thing's feet.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Offset H",
+                    "description": "Horizontal spawn offset",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Angle",
+                    "description": "The direction relative to the thing's facing angle in which to shoot the projectile.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Pitch",
+                    "description": "Used with one of the flag values.",
+                    "type": "integer",
+                    "range": [-32767, 32767]
+                },
+                {
+                    "name": "Sound",
+                    "description": "The sound number to play when firing.",
+                    "type": "sound"
+                },
+                {
+                    "name": "Flags",
+                    "description": "Bitmask of flags to use. See ZDaemon documentation for more info.",
+                    "type": "integer",
+                    "range": [0, 32767]
+                },
+                {
+                    "name": "Ammo",
+                    "description": "The ammo type index to use if set in flags.",
+                    "type": "ammo"
+                }
+            ],
             "type": 1
         },
         "CStaffAttack": {

@@ -1,5 +1,9 @@
 Patch extensions
 - ZDaemon:
+  - Add relevant actors from http://www.zdaemon.org/?CMD=info&NAME=deh
+  - Add DamageFactor thing property (float) from changelog (http://www.zdaemon.org/?CMD=info&NAME=hist-109-110). Default is 1.0.
+  - Add Gravity thing property (float) from changelog. Default is 1.0.
+  - "Monsters Ignore Each Other" boolean misc property from changelog. Default is False.
   - Disable Sounds editing (but not selection) and disable Cheats editor. See tables_zdaemon.cfg features object for a start.
 - Toggle new Thing editor field state based on engine capability. Most new features unavailable for non-ZDaemon configs.
 - Verify that new thing, state, misc and other features for ZDaemon\MBF are written and read from patch files properly.
