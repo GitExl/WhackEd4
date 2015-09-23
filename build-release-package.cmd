@@ -12,7 +12,7 @@ set build_path=".\build\exe.win32-2.7"
 
 set python_interpreter="c:\python27\python.exe"
 set setup_compiler="C:\Program Files (x86)\Inno Setup 5\ISCC.exe"
-set zip=7zr
+set zip=7za
 
 
 rmdir .\build /S /Q

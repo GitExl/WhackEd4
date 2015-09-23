@@ -1,16 +1,10 @@
 Patch extensions
 - ZDaemon:
-  - Update with actions from here: https://github.com/GitExl/WhackEd4/issues/1 (Aeyesx post 6-sept-2015)
   - Disable Sounds editing (but not selection) and disable Cheats editor. See tables_zdaemon.cfg features object for a start.
 - Toggle new Thing editor field state based on engine capability. Most new features unavailable for non-ZDaemon configs.
 - Verify that new thing, state, misc and other features for ZDaemon\MBF are written and read from patch files properly.
 
 Bugs
-- When opening a Dehacked file directly from Explorer, res files cannot be found because they are loaded from the current path, and not the application path.
-- VGA: "Second problem is that when loading my wad, which has SS Nazi gfx replacements, the SSWVE* and some of the next frames show the originals, not the modified ones."
-       The 0 rotation takes precedence in WhackEd4. I don't think it should be this way, because the game does the opposite.
-       http://www.doomworld.com/vb/post/1416759
-- VGA: "On another note, I believe the beta items should not exist in the MBF preset."
 
 Low priority bugs
 - State Editor: flash when selecting states. Related to parameters UI.
@@ -20,13 +14,12 @@ Low priority bugs
 Features
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
 - '...' button for actions to browse through list of actions plus a description.
-- Allow changing of the used engine while a patch is loaded. Swapping engine now requires unobvious "open as" option.
+- Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
 - UI manual \ Dehacked tutorial.
 - Allow sorting things list by name.
 - Tab control traversal. Will need UI layout changes (put controls into panels instead of directly into frames, see Misc editor sidebar).
 - Read\write DEHACKED lumps directly from a WAD file.
-- Mark some actions as weapon or monster only, and allow checking to see if any things use states that use the wrong type of action.
 
 Other
 - VGA: "If you want an active tester PM me the WIP version please :-D"

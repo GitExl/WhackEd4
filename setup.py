@@ -22,7 +22,7 @@ if sys.platform == 'win32':
     base = 'Win32GUI'
 
 exe = Executable(
-	'whacked4/main.py',
+	'src/main.py',
 	base=base,
 	targetName=os.environ['app_name_lower'] + '.exe'
 )
