@@ -1004,12 +1004,12 @@
         "armorClassBlue": {
             "name": "Blue armor class",
             "patchKey": "Blue Armor Class",
-            "type": "int"
+            "type": "float"
         },
         "armorClassGreen": {
             "name": "Green armor class",
             "patchKey": "Green Armor Class",
-            "type": "int"
+            "type": "float"
         },
         "bfgAmmoUsage": {
             "name": "BFG cells per shot",
@@ -1029,7 +1029,7 @@
         "idfaArmorClass": {
             "name": "IDFA cheat armor class",
             "patchKey": "IDFA Armor Class",
-            "type": "int"
+            "type": "float"
         },
         "idkfaArmor": {
             "name": "IDKFA cheat armor",
@@ -1039,7 +1039,7 @@
         "idkfaArmorClass": {
             "name": "IDKFA cheat armor class",
             "patchKey": "IDKFA Armor Class",
-            "type": "int"
+            "type": "float"
         },
         "maxArmor": {
             "name": "Maximum armor",
@@ -1086,12 +1086,12 @@
         "armorClassSilver": {
             "name": "Silver armor class",
             "patchKey": "Silver Armor Class",
-            "type": "int"
+            "type": "float"
         },
         "armorClassEnchanted": {
             "name": "Enchanted armor class",
             "patchKey": "Enchanted Armor Class",
-            "type": "int"
+            "type": "float"
         },
         "vampireMaxHealth": {
             "name": "Vampire maximum health",
