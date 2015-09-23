@@ -4,9 +4,10 @@
 """
 Contains program configuration constants and a settings object which contains user-definable configuration details.
 """
+import os.path
+import sys
 
 from whacked4 import settingshandler
-import os.path
 
 
 # Application info.
@@ -19,8 +20,10 @@ FONT_MONOSPACED_NAME = 'Bitstream Vera Sans Mono'
 FONT_MONOSPACED = None
 
 # Application configuration path.
-# TODO: rely on something non-platform specific for APPDATA.
-CONFIG_DIR = os.environ['APPDATA'] + '/' + APP_SIMPLE_NAME
+if sys.platform == 'win32':
+    CONFIG_DIR = os.environ['APPDATA'] + '/' + APP_SIMPLE_NAME
+else:
+    CONFIG_DIR = os.path.join(os.path.expanduser("~"), '.' + APP_SIMPLE_NAME)
 
 # Path to the settings file.
 SETTINGS_PATH = CONFIG_DIR + '/settings.json'

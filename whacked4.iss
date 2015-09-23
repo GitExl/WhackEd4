@@ -51,6 +51,10 @@ AppID={{A8A56AC6-E82B-49AD-9093-5AC204830F89}
 Filename: {app}\whacked4.exe; WorkingDir: {app}; Description: Run WhackEd4; Flags: nowait postinstall hidewizard skipifsilent
 
 
+[InstallDelete]
+Name: {app}\cfg\tables_mbf_beta.json; Type: files
+
+
 [UninstallDelete]
 Name: {app}\res; Type: filesandordirs
 Name: {app}\cfg; Type: filesandordirs
@@ -60,8 +64,10 @@ Name: {userappdata}\whacked4; Type: filesandordirs
 
 
 [Registry]
-Root: HKCR; SubKey: .deh; ValueType: string; ValueData: WhackEd4; Flags: uninsdeletekey; Tasks: associate
-Root: HKCR; SubKey: .bex; ValueType: string; ValueData: WhackEd4; Flags: uninsdeletekey; Tasks: associate
-Root: HKCR; SubKey: WhackEd4; ValueType: string; ValueData: WhackEd4 patch file; Flags: uninsdeletekey; Tasks: associate
-Root: HKCR; SubKey: WhackEd4\Shell\Open\Command; ValueType: string; ValueData: """{app}\whacked4.exe"" ""%1"""; Flags: uninsdeletevalue; Tasks: associate
-Root: HKCR; Subkey: WhackEd4\DefaultIcon; ValueType: string; ValueData: {app}\res\icon-document.ico,0; Flags: uninsdeletevalue; Tasks: associate
+Root: HKCR; SubKey: "WhackEd4"; ValueType: String; ValueName: ""; ValueData: "WhackEd4 patch file"; Flags: uninsdeletekey; Tasks: associate
+Root: HKCR; Subkey: "WhackEd4\DefaultIcon"; ValueType: String; ValueName: ""; ValueData: "{app}\res\icon-document.ico,0"; Flags: uninsdeletekey; Tasks: associate
+
+Root: HKCR; SubKey: "WhackEd4\Shell\Open\Command"; ValueType: String; ValueName: ""; ValueData: """{app}\whacked4.exe"" -workdir ""{app}"" -open ""%1"""; Flags: uninsdeletekey; Tasks: associate
+
+Root: HKCR; SubKey: ".deh"; ValueType: String; ValueName: ""; ValueData: "WhackEd4"; Flags: uninsdeletekey; Tasks: associate
+Root: HKCR; SubKey: ".bex"; ValueType: String; ValueName: ""; ValueData: "WhackEd4"; Flags: uninsdeletekey; Tasks: associate

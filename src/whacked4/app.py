@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from whacked4 import config
-from whacked4.ui import mainwindow
-from whacked4.ui.dialogs import errordialog
 import argparse
 import sys
 import traceback
 import wx
+import os
+
+from whacked4 import config
+from whacked4.ui import mainwindow
+from whacked4.ui.dialogs import errordialog
 
 
 class WhackEd4App(wx.App):
@@ -25,6 +27,8 @@ class WhackEd4App(wx.App):
         # Parse common commandline arguments.
         parser = argparse.ArgumentParser()
         parser.add_argument('-debug', action='store_true', help='Enable debug mode.')
+        parser.add_argument('-open', action='store', help='Open patch file.')
+        parser.add_argument('-workdir', action='store', help='Set application working directory (for opening from shell).')
         args = parser.parse_known_args()[0]
 
         # Enable debugging mode.
@@ -35,11 +39,21 @@ class WhackEd4App(wx.App):
             self.redirect_logs()
             sys.excepthook = self.exception_handler
 
+        # Set working directory.
+        if args.workdir:
+            os.chdir(args.workdir)
+
         set_monospace_font()
 
         config.settings.load()
 
-        self.SetTopWindow(mainwindow.MainWindow(None))
+        mainwind = mainwindow.MainWindow(None)
+        self.SetTopWindow(mainwind)
+
+        if args.open and os.path.exists(args.open):
+            mainwind.open_file(args.open)
+        else:
+            mainwind.show_start()
 
         return True
 

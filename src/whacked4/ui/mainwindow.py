@@ -95,8 +95,6 @@ class MainWindow(windows.MainFrameBase):
 
         wx.EndBusyCursor()
 
-        self.parse_options()
-
         # Late bind these to prevent bad workspace data from being saved.
         self.Bind(wx.EVT_MOVE, self.workspace_update_data)
         self.Bind(wx.EVT_SIZE, self.workspace_update_data)
@@ -104,15 +102,10 @@ class MainWindow(windows.MainFrameBase):
         self.editor_window_set_edit()
         self.file_set_state()
 
-    def parse_options(self):
+    def show_start(self):
         """
-        Parses commandline options and acts on them.
+        Displays starting dialog.
         """
-
-        for arg in sys.argv[1:]:
-            if os.path.exists(arg):
-                self.open_file(arg)
-                return
 
         self.start_dialog.ShowModal()
 
