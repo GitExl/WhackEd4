@@ -5,7 +5,7 @@ import json
 import os
 
 
-class SettingsHandler:
+class SettingsHandler(object):
     """
     Stores application related settings.
     """

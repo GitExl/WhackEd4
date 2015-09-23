@@ -14,7 +14,7 @@ class DehackedEngineError(Exception):
     """
 
 
-class Engine:
+class Engine(object):
     """
     An engine contains all the data needed to be able to edit Dehacked patches. This data can be extracted from a
     game executable, or loaded from a JSON file.

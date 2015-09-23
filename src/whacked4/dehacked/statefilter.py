@@ -12,7 +12,7 @@ FILTER_TYPE_THING = 0x2
 FILTER_TYPE_WEAPON = 0x4
 
 
-class StateFilter:
+class StateFilter(object):
     """
     A state filter. Can filter by thing states, weapon states and unused states.
     """

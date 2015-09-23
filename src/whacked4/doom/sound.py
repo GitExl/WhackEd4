@@ -10,7 +10,7 @@ import struct
 import threading
 
 
-class Sound:
+class Sound(object):
     """
     Doom sound data.
     """

@@ -4,7 +4,7 @@
 from whacked4.doom import sound, graphics
 
 
-class WADList:
+class WADList(object):
     """
     Maintains a list of WAD files that can be queried for specific lump data.
     """

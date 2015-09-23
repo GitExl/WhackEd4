@@ -41,7 +41,7 @@ class DehackedLookupError(DehackedPatchError):
     """
 
 
-class ParseMode:
+class ParseMode(object):
     """
     Modes for the dehacked patch parser.
     """
@@ -65,7 +65,31 @@ class ParseMode:
     POINTERS_EXT = 13
 
 
-class Patch:
+def write_dict(f, items, source_items, data, header):
+    """
+    Writes a dictionary of key\\value pairs to a Dehacked patch file, if they have been modified compared to a
+    source dict.
+
+    @param f: the file object to write to.
+    @param items: the modified item dict.
+    @param source_items: the original item dict.
+    @param data: a dictionary containing information about each key\\value pair that is written to the Dehacked
+    file. Each value is another dict containing at least a 'patchKey' item that describes what key to write to the file.
+    """
+
+    # Build a list of modified items.
+    out = {}
+    for key, item in items.iteritems():
+        if item != source_items[key]:
+            out[data[key]['patchKey']] = item
+
+    if len(out) > 0:
+        f.write('\n{}\n'.format(header))
+        for key in out:
+            f.write('{} = {}\n'.format(key, out[key]))
+
+
+class Patch(object):
     """
     A Dehacked patch object.
 
@@ -658,30 +682,6 @@ class Patch:
             return '????'
         else:
             return self.engine.sound_names[sound_index].upper()
-
-
-def write_dict(f, items, source_items, data, header):
-    """
-    Writes a dictionary of key\\value pairs to a Dehacked patch file, if they have been modified compared to a
-    source dict.
-
-    @param f: the file object to write to.
-    @param items: the modified item dict.
-    @param source_items: the original item dict.
-    @param data: a dictionary containing information about each key\\value pair that is written to the Dehacked
-    file. Each value is another dict containing at least a 'patchKey' item that describes what key to write to the file.
-    """
-
-    # Build a list of modified items.
-    out = {}
-    for key, item in items.iteritems():
-        if item != source_items[key]:
-            out[data[key]['patchKey']] = item
-
-    if len(out) > 0:
-        f.write('\n{}\n'.format(header))
-        for key in out:
-            f.write('{} = {}\n'.format(key, out[key]))
 
 
 def string_escape(string):

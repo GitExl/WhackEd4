@@ -10,7 +10,7 @@ import json
 import os.path
 
 
-class Workspace:
+class Workspace(object):
     """
     Describes a workspace, and provides functionality for it to be saved and restored.
     """

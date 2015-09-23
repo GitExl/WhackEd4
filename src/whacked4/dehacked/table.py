@@ -2,7 +2,7 @@
 #coding=utf8
 
 
-class Table:
+class Table(object):
     """
     A table containing Dehacked entry objects.
     """

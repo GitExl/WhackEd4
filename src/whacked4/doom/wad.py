@@ -26,7 +26,7 @@ class WADTypeError(WADError):
     """
 
 
-class Lump:
+class Lump(object):
     """
     A lump that is part of a WAD file.
 
@@ -56,7 +56,7 @@ class Lump:
         return self.data
 
 
-class WADReader:
+class WADReader(object):
     """
     Reads Doom WAD files.
     """

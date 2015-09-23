@@ -4,7 +4,7 @@
 from whacked4.dehacked import filters
 
 
-class Entry:
+class Entry(object):
 
     # The name of this patch entry.
     NAME = None
