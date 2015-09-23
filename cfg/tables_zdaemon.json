@@ -27,307 +27,383 @@
     "actions": {
         "NULL": {
             "name": "",
-            "description": "None."
+            "description": "None.",
+            "type": 0
         },
         "KeenDie": {
             "name": "KeenDie",
-            "description": "Same as the 'Fall' and 'BossDeath' actions together."
+            "description": "Same as the 'Fall' and 'BossDeath' actions together.",
+            "type": 0
         },
         "Look": {
             "name": "Look",
-            "description": "Wait to wake up.\n\nThis causes currently sleeping monsters to wake up when they see a player."
+            "description": "Wait to wake up.\n\nThis causes currently sleeping monsters to wake up when they see a player.",
+            "type": 0
         },
         "Chase": {
             "name": "Chase",
-            "description": "Standard walking code pointer.\n\nThis chases the target object, regardless of a direct line of sight."
+            "description": "Standard walking code pointer.\n\nThis chases the target object, regardless of a direct line of sight.",
+            "type": 0
         },
         "FaceTarget": {
             "name": "FaceTarget",
-            "description": "Turn to face the player's direction."
+            "description": "Turn to face the player's direction.",
+            "type": 0
         },
         "PosAttack": {
             "name": "PosAttack",
-            "description": "Trooper pistol shot."
+            "description": "Trooper pistol shot.",
+            "type": 0
         },
         "SPosAttack": {
             "name": "SPosAttack",
-            "description": "Shotgun Sargeant and Spiderdemon attack."
+            "description": "Shotgun Sargeant and Spiderdemon attack.",
+            "type": 0
         },
         "CPosAttack": {
             "name": "CPosAttack",
-            "description": "Chaingun Sargeant\\SS Nazi Chaingun attack."
+            "description": "Chaingun Sargeant\\SS Nazi Chaingun attack.",
+            "type": 0
         },
         "CPosRefire": {
             "name": "CPosRefire",
-            "description": "Check line of sight to stop firing.\n\nIf the target is no longer visible, halt firing and continue chasing it."
+            "description": "Check line of sight to stop firing.\n\nIf the target is no longer visible, halt firing and continue chasing it.",
+            "type": 0
         },
         "SpidRefire": {
             "name": "SpidRefire",
-            "description": "Check line of sight to stop firing (Spiderdemon)."
+            "description": "Check line of sight to stop firing (Spiderdemon).",
+            "type": 0
         },
         "BspiAttack": {
             "name": "BspiAttack",
-            "description": "Arachnotron plasma shot."
+            "description": "Arachnotron plasma shot.",
+            "type": 0
         },
         "TroopAttack": {
             "name": "TroopAttack",
-            "description": "Imp fireball shot or scratch if at close range."
+            "description": "Imp fireball shot or scratch if at close range.",
+            "type": 0
         },
         "SargAttack": {
             "name": "SargAttack",
-            "description": "Demon bite attack."
+            "description": "Demon bite attack.",
+            "type": 0
         },
         "HeadAttack": {
             "name": "HeadAttack",
-            "description": "Cacodemon fireball shot or bite at close range."
+            "description": "Cacodemon fireball shot or bite at close range.",
+            "type": 0
         },
         "CyberAttack": {
             "name": "CyberAttack",
-            "description": "Cyberdemon attack (launch a single rocket)."
+            "description": "Cyberdemon attack (launch a single rocket).",
+            "type": 0
         },
         "BruisAttack": {
             "name": "BruisAttack",
-            "description": "Baron of Hell or Hell Knight fireball shot or scratch if at close range."
+            "description": "Baron of Hell or Hell Knight fireball shot or scratch if at close range.",
+            "type": 0
         },
         "SkelMissile": {
             "name": "SkelMissile",
-            "description": "Launch a Revenant missile. Chance of launching a homing missile."
+            "description": "Launch a Revenant missile. Chance of launching a homing missile.",
+            "type": 0
         },
         "Tracer": {
             "name": "Tracer",
-            "description": "A Revenant's fireball homing action. Changes the angle to point towards the target and emits a puff of smoke."
+            "description": "A Revenant's fireball homing action. Changes the angle to point towards the target and emits a puff of smoke.",
+            "type": 0
         },
         "SkelWhoosh": {
             "name": "SkelWhoosh",
-            "description": "Play sound 'skeswg'."
+            "description": "Play sound 'skeswg'.",
+            "type": 0
         },
         "SkelFist": {
             "name": "SkelFist",
-            "description": "Revenant punch.\n\nThis plays the sound 'skepch' if it hits it's target."
+            "description": "Revenant punch.\n\nThis plays the sound 'skepch' if it hits it's target.",
+            "type": 0
         },
         "VileChase": {
             "name": "VileChase",
-            "description": "Arch-Vile walking code pointer.\n\nChecks to see if there is a dead monster in front of the Arch-Vile and ressurects it if so."
+            "description": "Arch-Vile walking code pointer.\n\nChecks to see if there is a dead monster in front of the Arch-Vile and ressurects it if so.",
+            "type": 0
         },
         "VileStart": {
             "name": "VileStart",
-            "description": "Play sound 'vilatk'."
+            "description": "Play sound 'vilatk'.",
+            "type": 0
         },
         "StartFire": {
             "name": "StartFire",
-            "description": "Play sound 'flamest'."
+            "description": "Play sound 'flamest'.",
+            "type": 0
         },
         "FireCrackle": {
             "name": "FireCrackle",
-            "description": "Play sound 'flame'."
+            "description": "Play sound 'flame'.",
+            "type": 0
         },
         "Fire": {
             "name": "Fire",
-            "description": "Keep the Arch-Vile's flame at the same position as it's target."
+            "description": "Keep the Arch-Vile's flame at the same position as it's target.",
+            "type": 0
         },
         "VileTarget": {
             "name": "VileTarget",
-            "description": "Creates an Arch-Vile flame at the target object's location."
+            "description": "Creates an Arch-Vile flame at the target object's location.",
+            "type": 0
         },
         "VileAttack": {
             "name": "VileAttack",
-            "description": "Arch-Vile targeted attack."
+            "description": "Arch-Vile targeted attack.",
+            "type": 0
         },
         "FatRaise": {
             "name": "FatRaise",
-            "description": "Play sound 'manatk'."
+            "description": "Play sound 'manatk'.",
+            "type": 0
         },
         "FatAttack1": {
             "name": "FatAttack1",
-            "description": "Mancubus shot, 2 fireballs: one straight, one left."
+            "description": "Mancubus shot, 2 fireballs: one straight, one left.",
+            "type": 0
         },
         "FatAttack2": {
             "name": "FatAttack2",
-            "description": "Mancubus shot, 2 fireballs: one straight, one right."
+            "description": "Mancubus shot, 2 fireballs: one straight, one right.",
+            "type": 0
         },
         "FatAttack3": {
             "name": "FatAttack3",
-            "description": "Mancubus shot, 2 fireballs: one left, one right."
+            "description": "Mancubus shot, 2 fireballs: one left, one right.",
+            "type": 0
         },
         "SkullAttack": {
             "name": "SkullAttack",
-            "description": "Lost soul attack.\n\nAn attack sound is REQUIRED."
+            "description": "Lost soul attack.\n\nAn attack sound is REQUIRED.",
+            "type": 0
         },
         "PainAttack": {
             "name": "PainAttack",
-            "description": "Spawn a lost soul."
+            "description": "Spawn a lost soul.",
+            "type": 0
         },
         "PainDie": {
             "name": "PainDie",
-            "description": "Spawn 3 or 4 lost souls."
+            "description": "Spawn 3 or 4 lost souls.",
+            "type": 0
         },
         "Scream": {
             "name": "Scream",
-            "description": "Play the object's death sound."
+            "description": "Play the object's death sound.",
+            "type": 0
         },
         "XScream": {
             "name": "XScream",
-            "description": "Play sound 'slop'."
+            "description": "Play sound 'slop'.",
+            "type": 0
         },
         "Pain": {
             "name": "Pain",
-            "description": "Play the object's pain sound."
+            "description": "Play the object's pain sound.",
+            "type": 0
         },
         "Fall": {
             "name": "Fall",
-            "description": "Dead body mode.\n\nThis action enabled the object's flags Obstacle, Corpse and Dropoff."
+            "description": "Dead body mode.\n\nThis action enabled the object's flags Obstacle, Corpse and Dropoff.",
+            "type": 0
         },
         "Explode": {
             "name": "Explode",
-            "description": "Damage objects inside the explosion radius."
+            "description": "Damage objects inside the explosion radius.",
+            "type": 0
         },
         "BossDeath": {
             "name": "BossDeath",
-            "description": "Magic.\n\nDo special effects based on map number and enemy type."
+            "description": "Magic.\n\nDo special effects based on map number and enemy type.",
+            "type": 0
         },
         "Hoof": {
             "name": "Hoof",
-            "description": "Play sound 'hoof'."
+            "description": "Play sound 'hoof'.",
+            "type": 0
         },
         "Metal": {
             "name": "Metal",
-            "description": "Play sound 'metal'."
+            "description": "Play sound 'metal'.",
+            "type": 0
         },
         "BabyMetal": {
             "name": "BabyMetal",
-            "description": "Play sound 'bspwlk'."
+            "description": "Play sound 'bspwlk'.",
+            "type": 0
         },
         "OpenShotgun2": {
             "name": "OpenShotgun2",
-            "description": "Play sound 'dbopn'."
+            "description": "Play sound 'dbopn'.",
+            "type": 1
         },
         "LoadShotgun2": {
             "name": "LoadShotgun2",
-            "description": "Play sound 'dbload'."
+            "description": "Play sound 'dbload'.",
+            "type": 1
         },
         "CloseShotgun2": {
             "name": "CloseShotgun2",
-            "description": "Play sound 'dbcls'."
+            "description": "Play sound 'dbcls'.",
+            "type": 1
         },
         "BrainAwake": {
             "name": "BrainAwake",
-            "description": "Play sound 'bossit'."
+            "description": "Play sound 'bossit'.",
+            "type": 0
         },
         "BrainPain": {
             "name": "BrainPain",
-            "description": "Play sound 'bospn'."
+            "description": "Play sound 'bospn'.",
+            "type": 0
         },
         "BrainScream": {
             "name": "BrainScream",
-            "description": "Play sound 'bosdth' and make special explosions (states 799-801) about 320 units south of the object."
+            "description": "Play sound 'bosdth' and make special explosions (states 799-801) about 320 units south of the object.",
+            "type": 0
         },
         "BrainExplode": {
             "name": "BrainExplode",
-            "description": "Creates an explosion (states 127-129)."
+            "description": "Creates an explosion (states 127-129).",
+            "type": 0
         },
         "BrainDie": {
             "name": "BrainDie",
-            "description": "Immediately end the level."
+            "description": "Immediately end the level.",
+            "type": 0
         },
         "BrainSpit": {
             "name": "BrainSpit",
-            "description": "Fire a spawn cube.\n\nA landing spot thing is REQUIRED."
+            "description": "Fire a spawn cube.\n\nA landing spot thing is REQUIRED.",
+            "type": 0
         },
         "SpawnSound": {
             "name": "SpawnSound",
-            "description": "Play sound 'boscub'."
+            "description": "Play sound 'boscub'.",
+            "type": 0
         },
         "SpawnFly": {
             "name": "SpawnFly",
-            "description": "Check for spawn point.\n\nSpawns a monster if it hits a spawn-point."
+            "description": "Check for spawn point.\n\nSpawns a monster if it hits a spawn-point.",
+            "type": 0
         },
         "PlayerScream": {
             "name": "PlayerScream",
-            "description": "Play sound 'pldeth'"
+            "description": "Play sound 'pldeth'",
+            "type": 0
         },
         "WeaponReady": {
             "name": "WeaponReady",
-            "description": "Weapon bobbing."
+            "description": "Weapon bobbing.",
+            "type": 1
         },
         "ReFire": {
             "name": "ReFire",
-            "description": "Last shooting state.\n\nIf the fire button is still held, jump back to the first shooting state instead of the state with this action."
+            "description": "Last shooting state.\n\nIf the fire button is still held, jump back to the first shooting state instead of the state with this action.",
+            "type": 1
         },
         "CheckReload": {
             "name": "CheckReload",
-            "description": "Check ammo.\n\nIf there is not enough ammo for another shot, skip the reloading states and select a different weapon."
+            "description": "Check ammo.\n\nIf there is not enough ammo for another shot, skip the reloading states and select a different weapon.",
+            "type": 1
         },
         "Lower": {
             "name": "Lower",
-            "description": "Weapon deselect."
+            "description": "Weapon deselect.",
+            "type": 1
         },
         "Raise": {
             "name": "Raise",
-            "description": "Weapon select."
+            "description": "Weapon select.",
+            "type": 1
         },
         "GunFlash": {
             "name": "GunFlash",
-            "description": "Display the weapon's firing flash sprite over the regular weapon sprite."
+            "description": "Display the weapon's firing flash sprite over the regular weapon sprite.",
+            "type": 1
         },
         "Punch": {
             "name": "Punch",
-            "description": "Player Punch attack."
+            "description": "Player Punch attack.",
+            "type": 1
         },
         "Saw": {
             "name": "Saw",
-            "description": "Player Chainsaw attack.\n\nEager Beaver to the rescue!"
+            "description": "Player Chainsaw attack.\n\nEager Beaver to the rescue!",
+            "type": 1
         },
         "FireMissile": {
             "name": "FireMissile",
-            "description": "Player Rocket Launcher attack."
+            "description": "Player Rocket Launcher attack.",
+            "type": 1
         },
         "FireBFG": {
             "name": "FireBFG",
-            "description": "Player BFG9000 attack."
+            "description": "Player BFG9000 attack.",
+            "type": 1
         },
         "FirePlasma": {
             "name": "FirePlasma",
-            "description": "Player Plasma Rifle attack."
+            "description": "Player Plasma Rifle attack.",
+            "type": 1
         },
         "FirePistol": {
             "name": "FirePistol",
-            "description": "Player Pistol shot."
+            "description": "Player Pistol shot.",
+            "type": 1
         },
         "FireShotgun": {
             "name": "FireShotgun",
-            "description": "Player Shotgun attack."
+            "description": "Player Shotgun attack.",
+            "type": 1
         },
         "FireShotgun2": {
             "name": "FireShotgun2",
-            "description": "Player Super Shotgun attack"
+            "description": "Player Super Shotgun attack",
+            "type": 1
         },
         "FireCGun": {
             "name": "FireCGun",
-            "description": "Player Chaingun shot.\n\nAlso checks ammo, does not go to -1 ammo, but changes the weapon instead."
+            "description": "Player Chaingun shot.\n\nAlso checks ammo, does not go to -1 ammo, but changes the weapon instead.",
+            "type": 1
         },
         "Light0": {
             "name": "Light0",
-            "description": "Restore the lighting level after a gun flash."
+            "description": "Restore the lighting level after a gun flash.",
+            "type": 1
         },
         "Light1": {
             "name": "Light1",
-            "description": "Set the light flash to 'dim'."
+            "description": "Set the light flash to 'dim'.",
+            "type": 1
         },
         "Light2": {
             "name": "Light2",
-            "description": "Set the light flash to bright."
+            "description": "Set the light flash to bright.",
+            "type": 1
         },
         "BFGSpray": {
             "name": "BFGSpray",
-            "description": "BFG blast effect.\n\nCasts invisible BFG rays."
+            "description": "BFG blast effect.\n\nCasts invisible BFG rays.",
+            "type": 1
         },
         "BFGSound": {
             "name": "BFGSound",
-            "description": "Play sound 'bfg'."
+            "description": "Play sound 'bfg'.",
+            "type": 1
         },
         "FastChase": {
             "name": "FastChase",
-            "description": "Fast version of the standard walking code pointer."
+            "description": "Fast version of the standard walking code pointer.",
+            "type": 0
         },
         "Spawn": {
             "name": "Spawn",
@@ -344,7 +420,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 0
         },
         "PlaySound": {
             "name": "PlaySound",
@@ -360,7 +437,8 @@
                     "type": "integer",
                     "range": [0, 1]
                 }
-            ]
+            ],
+            "type": 0
         },
         "PlayWeaponSound": {
             "name": "PlayWeaponSound",
@@ -376,7 +454,8 @@
                     "type": "integer",
                     "range": [0, 1]
                 }
-            ]
+            ],
+            "type": 1
         },
         "RandomJump": {
             "name": "RandomJump",
@@ -393,7 +472,8 @@
                     "type": "integer",
                     "range": [0, 255]
                 }
-            ]
+            ],
+            "type": 0
         },
         "Mushroom": {
             "name": "Mushroom",
@@ -415,11 +495,13 @@
         },
         "Die": {
             "name": "Die",
-            "description": "Kills this thing."
+            "description": "Kills this thing.",
+            "type": 0
         },
         "Detonate": {
             "name": "Detonate",
-            "description": "Explode with variable damage (thing damage field)."
+            "description": "Explode with variable damage (thing damage field).",
+            "type": 0
         },
         "FireCustomRailgun": {
             "name": "FireCustomRailgun",
@@ -437,7 +519,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 1
         },
         "CPA_Execute": {
             "name": "CPA_Execute",
@@ -473,7 +556,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 0
         },
         "CPW_Execute": {
             "name": "CPW_Execute",
@@ -509,7 +593,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 1
         },
         "CPA_ExecuteAlways": {
             "name": "CPA_ExecuteAlways",
@@ -545,7 +630,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 0
         },
         "CPW_ExecuteAlways": {
             "name": "CPW_ExecuteAlways",
@@ -581,7 +667,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 1
         },
         "CPA_LockedExecute": {
             "name": "CPA_LockedExecute",
@@ -617,7 +704,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 0
         },
         "CPW_LockedExecute": {
             "name": "CPW_LockedExecute",
@@ -653,7 +741,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 1
         },
         "CPA_LockedExecuteDoor": {
             "name": "CPA_LockedExecuteDoor",
@@ -689,7 +778,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 0
         },
         "CPW_LockedExecuteDoor": {
             "name": "CPW_LockedExecuteDoor",
@@ -725,7 +815,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 1
         },
         "CPA_Suspend": {
             "name": "CPA_Suspend",
@@ -743,7 +834,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 0
         },
         "CPW_Suspend": {
             "name": "CPW_Suspend",
@@ -761,7 +853,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 1
         },
         "CPA_Terminate": {
             "name": "CPA_Terminate",
@@ -779,7 +872,8 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 0
         },
         "CPW_Terminate": {
             "name": "CPW_Terminate",
@@ -797,67 +891,1813 @@
                     "type": "integer",
                     "range": [-32767, 32767]
                 }
-            ]
+            ],
+            "type": 1
         },
         "SetReflective": {
-          "name": "SetReflective",
-          "description": "Makes the thing reflective. Any projectiles that strike it will bounce off of it, though it will still take damage."
+            "name": "SetReflective",
+            "description": "Makes the thing reflective. Any projectiles that strike it will bounce off of it, though it will still take damage.",
+            "type": 0
         },
         "UnSetReflective": {
-          "name": "UnSetReflective",
-          "description": "The thing will no longer be reflective."
+            "name": "UnSetReflective",
+            "description": "The thing will no longer be reflective.",
+            "type": 0
         },
         "SetInvulnerable": {
-          "name": "SetInvulnerable",
-          "description": "Makes the thing impervious to damage."
+            "name": "SetInvulnerable",
+            "description": "Makes the thing impervious to damage.",
+            "type": 0
         },
         "UnSetInvulnerable": {
-          "name": "UnSetInvulnerable",
-          "description": "Makes the thing able to take damage again."
+            "name": "UnSetInvulnerable",
+            "description": "Makes the thing able to take damage again.",
+            "type": 0
         },
         "SetShootable": {
-          "name": "SetShootable",
-          "description": "The thing can be hit by projectiles and hitscan weapons."
+            "name": "SetShootable",
+            "description": "The thing can be hit by projectiles and hitscan weapons.",
+            "type": 0
         },
         "UnSetShootable": {
-          "name": "UnSetShootable",
-          "description": "The thing cannot be hit by projectiles and hitscan weapons."
+            "name": "UnSetShootable",
+            "description": "The thing cannot be hit by projectiles and hitscan weapons.",
+            "type": 0
         },
         "FireRailgun": {
-          "name": "FireRailgun",
-          "description": "Fires a railgun from the center of the player's screen. Only for player weapons."
+            "name": "FireRailgun",
+            "description": "Fires a railgun from the center of the player's screen. Only for player weapons.",
+            "type": 1
         },
         "FireRailgunRight": {
-          "name": "FireRailgunRight",
-          "description": "Fires a railgun from the right side of the player's screen. Only for player weapons."
+            "name": "FireRailgunRight",
+            "description": "Fires a railgun from the right side of the player's screen. Only for player weapons.",
+            "type": 1
         },
         "FireRailgunLeft": {
-          "name": "FireRailgunLeft",
-          "description": "Fires a railgun from the left side of the player's screen. Only for player weapons."
+            "name": "FireRailgunLeft",
+            "description": "Fires a railgun from the left side of the player's screen. Only for player weapons.",
+            "type": 1
         },
         "MonsterRail": {
-          "name": "MonsterRail",
-          "description": "Makes a monster fire a railgun. The amount of damage dealt by the railgun is determined by the monster's Missile Damage field."
+            "name": "MonsterRail",
+            "description": "Makes a monster fire a railgun. The amount of damage dealt by the railgun is determined by the monster's Missile Damage field.",
+            "type": 0
         },
         "RailWait": {
-          "name": "RailWait",
-          "description": "Deprecated, exactly the same as NULL."
+            "name": "RailWait",
+            "description": "Deprecated, exactly the same as NULL.",
+            "type": 1
         },
         "SetReflectiveInvulnerable": {
-          "name": "SetReflectiveInvulnerable",
-          "description": "Makes the thing reflect projectiles, and makes it impervious to other types of damage."
+            "name": "SetReflectiveInvulnerable",
+            "description": "Makes the thing reflect projectiles, and makes it impervious to other types of damage.",
+            "type": 0
         },
         "UnSetReflectiveInvulnerable": {
-          "name": "UnSetReflectiveInvulnerable",
-          "description": "Makes the thing no longer reflect projectiles, and makes it susceptible to other types of damage again."
+            "name": "UnSetReflectiveInvulnerable",
+            "description": "Makes the thing no longer reflect projectiles, and makes it susceptible to other types of damage again.",
+            "type": 0
         },
         "Gravity": {
-          "name": "Gravity",
-          "description": "Allows the thing to fall under the effects of gravity."
+            "name": "Gravity",
+            "description": "Allows the thing to fall under the effects of gravity.",
+            "type": 0
         },
         "NoGravity": {
-          "name": "NoGravity",
-          "description": "Causes the thing to float in the air instead of fall."
+            "name": "NoGravity",
+            "description": "Causes the thing to float in the air instead of fall.",
+            "type": 0
+        },
+        "AccTeleGlitter": {
+            "name": "AccTeleGlitter",
+            "description": "",
+            "type": 0
+        },
+        "AddPlayerRain": {
+            "name": "AddPlayerRain",
+            "description": "",
+            "type": 0
+        },
+        "AxeSound": {
+            "name": "AxeSound",
+            "description": "",
+            "type": 0
+        },
+        "BarrelDestroy": {
+            "name": "BarrelDestroy",
+            "description": "",
+            "type": 0
+        },
+        "BarrelRespawn": {
+            "name": "BarrelRespawn",
+            "description": "",
+            "type": 0
+        },
+        "BatMove": {
+            "name": "BatMove",
+            "description": "",
+            "type": 0
+        },
+        "BatSpawn": {
+            "name": "BatSpawn",
+            "description": "",
+            "type": 0
+        },
+        "BatSpawnInit": {
+            "name": "BatSpawnInit",
+            "description": "",
+            "type": 0
+        },
+        "BeAdditive": {
+            "name": "BeAdditive",
+            "description": "",
+            "type": 0
+        },
+        "BeastAttack": {
+            "name": "BeastAttack",
+            "description": "",
+            "type": 0
+        },
+        "BeastPuff": {
+            "name": "BeastPuff",
+            "description": "",
+            "type": 0
+        },
+        "BellReset1": {
+            "name": "BellReset1",
+            "description": "",
+            "type": 0
+        },
+        "BellReset2": {
+            "name": "BellReset2",
+            "description": "",
+            "type": 0
+        },
+        "BFGSpray": {
+            "name": "BFGSpray",
+            "description": "",
+            "type": 0
+        },
+        "BishopAttack": {
+            "name": "BishopAttack",
+            "description": "",
+            "type": 0
+        },
+        "BishopAttack2": {
+            "name": "BishopAttack2",
+            "description": "",
+            "type": 0
+        },
+        "BishopChase": {
+            "name": "BishopChase",
+            "description": "",
+            "type": 0
+        },
+        "BishopDecide": {
+            "name": "BishopDecide",
+            "description": "",
+            "type": 0
+        },
+        "BishopDoBlur": {
+            "name": "BishopDoBlur",
+            "description": "",
+            "type": 0
+        },
+        "BishopMissileSeek": {
+            "name": "BishopMissileSeek",
+            "description": "",
+            "type": 0
+        },
+        "BishopMissileWeave": {
+            "name": "BishopMissileWeave",
+            "description": "",
+            "type": 0
+        },
+        "BishopPainBlur": {
+            "name": "BishopPainBlur",
+            "description": "",
+            "type": 0
+        },
+        "BishopPuff": {
+            "name": "BishopPuff",
+            "description": "",
+            "type": 0
+        },
+        "BishopSpawnBlur": {
+            "name": "BishopSpawnBlur",
+            "description": "",
+            "type": 0
+        },
+        "BlueSpark": {
+            "name": "BlueSpark",
+            "description": "",
+            "type": 0
+        },
+        "BoltSpark": {
+            "name": "BoltSpark",
+            "description": "",
+            "type": 0
+        },
+        "BounceCheck": {
+            "name": "BounceCheck",
+            "description": "",
+            "type": 0
+        },
+        "BridgeInit": {
+            "name": "BridgeInit",
+            "description": "",
+            "type": 0
+        },
+        "BridgeOrbit": {
+            "name": "BridgeOrbit",
+            "description": "",
+            "type": 0
+        },
+        "BridgeRemove": {
+            "name": "BridgeRemove",
+            "description": "",
+            "type": 0
+        },
+        "CentaurAttack": {
+            "name": "CentaurAttack",
+            "description": "",
+            "type": 0
+        },
+        "CentaurAttack2": {
+            "name": "CentaurAttack2",
+            "description": "",
+            "type": 0
+        },
+        "CentaurDefend": {
+            "name": "CentaurDefend",
+            "description": "",
+            "type": 0
+        },
+        "CentaurDropStuff": {
+            "name": "CentaurDropStuff",
+            "description": "",
+            "type": 0
+        },
+        "CFlameMissile": {
+            "name": "CFlameMissile",
+            "description": "",
+            "type": 0
+        },
+        "CFlamePuff": {
+            "name": "CFlamePuff",
+            "description": "",
+            "type": 0
+        },
+        "CFlameRotate": {
+            "name": "CFlameRotate",
+            "description": "",
+            "type": 0
+        },
+        "CheckBurnGone": {
+            "name": "CheckBurnGone",
+            "description": "",
+            "type": 0
+        },
+        "CheckFloor": {
+            "name": "CheckFloor",
+            "description": "",
+            "type": 0
+        },
+        "CheckSkullDone": {
+            "name": "CheckSkullDone",
+            "description": "",
+            "type": 0
+        },
+        "CheckSkullFloor": {
+            "name": "CheckSkullFloor",
+            "description": "",
+            "type": 0
+        },
+        "CheckTeleRing": {
+            "name": "CheckTeleRing",
+            "description": "",
+            "type": 0
+        },
+        "CheckThrowBomb": {
+            "name": "CheckThrowBomb",
+            "description": "",
+            "type": 0
+        },
+        "ChicAttack": {
+            "name": "ChicAttack",
+            "description": "",
+            "type": 0
+        },
+        "ChicChase": {
+            "name": "ChicChase",
+            "description": "",
+            "type": 0
+        },
+        "ChicLook": {
+            "name": "ChicLook",
+            "description": "",
+            "type": 0
+        },
+        "ChicPain": {
+            "name": "ChicPain",
+            "description": "",
+            "type": 0
+        },
+        "CHolyAttack2": {
+            "name": "CHolyAttack2",
+            "description": "",
+            "type": 0
+        },
+        "CHolyCheckScream": {
+            "name": "CHolyCheckScream",
+            "description": "",
+            "type": 0
+        },
+        "CHolySeek": {
+            "name": "CHolySeek",
+            "description": "",
+            "type": 0
+        },
+        "CHolySpawnPuff": {
+            "name": "CHolySpawnPuff",
+            "description": "",
+            "type": 0
+        },
+        "CHolyTail": {
+            "name": "CHolyTail",
+            "description": "",
+            "type": 0
+        },
+        "ClassBossHealth": {
+            "name": "ClassBossHealth",
+            "description": "",
+            "type": 0
+        },
+        "ClericAttack": {
+            "name": "ClericAttack",
+            "description": "",
+            "type": 0
+        },
+        "ClericBurnScream": {
+            "name": "ClericBurnScream",
+            "description": "",
+            "type": 0
+        },
+        "ClinkAttack": {
+            "name": "ClinkAttack",
+            "description": "",
+            "type": 0
+        },
+        "CorpseBloodDrip": {
+            "name": "CorpseBloodDrip",
+            "description": "",
+            "type": 0
+        },
+        "CorpseExplode": {
+            "name": "CorpseExplode",
+            "description": "",
+            "type": 0
+        },
+        "CPA_BulletAttack": {
+            "name": "CPA_BulletAttack",
+            "description": "",
+            "type": 0
+        },
+        "CPA_CustomBulletAttack": {
+            "name": "CPA_CustomBulletAttack",
+            "description": "",
+            "type": 0
+        },
+        "CPA_CustomMissile": {
+            "name": "CPA_CustomMissile",
+            "description": "",
+            "type": 0
+        },
+        "CStaffMissileSlither": {
+            "name": "CStaffMissileSlither",
+            "description": "",
+            "type": 0
+        },
+        "DeathBallImpact": {
+            "name": "DeathBallImpact",
+            "description": "",
+            "type": 0
+        },
+        "DelayGib": {
+            "name": "DelayGib",
+            "description": "",
+            "type": 0
+        },
+        "Demon2Death": {
+            "name": "Demon2Death",
+            "description": "",
+            "type": 0
+        },
+        "DemonAttack1": {
+            "name": "DemonAttack1",
+            "description": "",
+            "type": 0
+        },
+        "DemonAttack2_1": {
+            "name": "DemonAttack2_1",
+            "description": "",
+            "type": 0
+        },
+        "DemonAttack2_2": {
+            "name": "DemonAttack2_2",
+            "description": "",
+            "type": 0
+        },
+        "DemonDeath": {
+            "name": "DemonDeath",
+            "description": "",
+            "type": 0
+        },
+        "DeQueueCorpse": {
+            "name": "DeQueueCorpse",
+            "description": "",
+            "type": 0
+        },
+        "DragonAttack": {
+            "name": "DragonAttack",
+            "description": "",
+            "type": 0
+        },
+        "DragonCheckCrash": {
+            "name": "DragonCheckCrash",
+            "description": "",
+            "type": 0
+        },
+        "DragonFlap": {
+            "name": "DragonFlap",
+            "description": "",
+            "type": 0
+        },
+        "DragonFlight": {
+            "name": "DragonFlight",
+            "description": "",
+            "type": 0
+        },
+        "DragonFX2": {
+            "name": "DragonFX2",
+            "description": "",
+            "type": 0
+        },
+        "DragonInitFlight": {
+            "name": "DragonInitFlight",
+            "description": "",
+            "type": 0
+        },
+        "DragonPain": {
+            "name": "DragonPain",
+            "description": "",
+            "type": 0
+        },
+        "DripBlood": {
+            "name": "DripBlood",
+            "description": "",
+            "type": 0
+        },
+        "DropBloodscourgePieces": {
+            "name": "DropBloodscourgePieces",
+            "description": "",
+            "type": 0
+        },
+        "DropMace": {
+            "name": "DropMace",
+            "description": "",
+            "type": 0
+        },
+        "DropQuietusPieces": {
+            "name": "DropQuietusPieces",
+            "description": "",
+            "type": 0
+        },
+        "DropWraithvergePieces": {
+            "name": "DropWraithvergePieces",
+            "description": "",
+            "type": 0
+        },
+        "EttinAttack": {
+            "name": "EttinAttack",
+            "description": "",
+            "type": 0
+        },
+        "Feathers": {
+            "name": "Feathers",
+            "description": "",
+            "type": 0
+        },
+        "FighterAttack": {
+            "name": "FighterAttack",
+            "description": "",
+            "type": 0
+        },
+        "FighterBurnScream": {
+            "name": "FighterBurnScream",
+            "description": "",
+            "type": 0
+        },
+        "FiredAttack": {
+            "name": "FiredAttack",
+            "description": "",
+            "type": 0
+        },
+        "FiredChase": {
+            "name": "FiredChase",
+            "description": "",
+            "type": 0
+        },
+        "FiredRocks": {
+            "name": "FiredRocks",
+            "description": "",
+            "type": 0
+        },
+        "FiredSplotch": {
+            "name": "FiredSplotch",
+            "description": "",
+            "type": 0
+        },
+        "FireScream": {
+            "name": "FireScream",
+            "description": "",
+            "type": 0
+        },
+        "FlameCheck": {
+            "name": "FlameCheck",
+            "description": "",
+            "type": 0
+        },
+        "FlameEnd": {
+            "name": "FlameEnd",
+            "description": "",
+            "type": 0
+        },
+        "FlameSnd": {
+            "name": "FlameSnd",
+            "description": "",
+            "type": 0
+        },
+        "FloatGib": {
+            "name": "FloatGib",
+            "description": "",
+            "type": 0
+        },
+        "FloatPuff": {
+            "name": "FloatPuff",
+            "description": "",
+            "type": 0
+        },
+        "FogMove": {
+            "name": "FogMove",
+            "description": "",
+            "type": 0
+        },
+        "FogSpawn": {
+            "name": "FogSpawn",
+            "description": "",
+            "type": 0
+        },
+        "FreeTargMobj": {
+            "name": "FreeTargMobj",
+            "description": "",
+            "type": 0
+        },
+        "FreezeDeath": {
+            "name": "FreezeDeath",
+            "description": "",
+            "type": 0
+        },
+        "FreezeDeathChunks": {
+            "name": "FreezeDeathChunks",
+            "description": "",
+            "type": 0
+        },
+        "FSwordFlames": {
+            "name": "FSwordFlames",
+            "description": "",
+            "type": 0
+        },
+        "GenWizard": {
+            "name": "GenWizard",
+            "description": "",
+            "type": 0
+        },
+        "GhostOff": {
+            "name": "GhostOff",
+            "description": "",
+            "type": 0
+        },
+        "HammerSound": {
+            "name": "HammerSound",
+            "description": "",
+            "type": 0
+        },
+        "HideInCeiling": {
+            "name": "HideInCeiling",
+            "description": "",
+            "type": 0
+        },
+        "HideThing": {
+            "name": "HideThing",
+            "description": "",
+            "type": 0
+        },
+        "IceCheckHeadDone": {
+            "name": "IceCheckHeadDone",
+            "description": "",
+            "type": 0
+        },
+        "IceGuyAttack": {
+            "name": "IceGuyAttack",
+            "description": "",
+            "type": 0
+        },
+        "IceGuyChase": {
+            "name": "IceGuyChase",
+            "description": "",
+            "type": 0
+        },
+        "IceGuyDie": {
+            "name": "IceGuyDie",
+            "description": "",
+            "type": 0
+        },
+        "IceGuyLook": {
+            "name": "IceGuyLook",
+            "description": "",
+            "type": 0
+        },
+        "IceGuyMissileExplode": {
+            "name": "IceGuyMissileExplode",
+            "description": "",
+            "type": 0
+        },
+        "IceGuyMissilePuff": {
+            "name": "IceGuyMissilePuff",
+            "description": "",
+            "type": 0
+        },
+        "IceSetTics": {
+            "name": "IceSetTics",
+            "description": "",
+            "type": 0
+        },
+        "ImpDeath": {
+            "name": "ImpDeath",
+            "description": "",
+            "type": 0
+        },
+        "ImpExplode": {
+            "name": "ImpExplode",
+            "description": "",
+            "type": 0
+        },
+        "ImpMeAttack": {
+            "name": "ImpMeAttack",
+            "description": "",
+            "type": 0
+        },
+        "ImpMsAttack": {
+            "name": "ImpMsAttack",
+            "description": "",
+            "type": 0
+        },
+        "ImpMsAttack2": {
+            "name": "ImpMsAttack2",
+            "description": "",
+            "type": 0
+        },
+        "ImpXDeath1": {
+            "name": "ImpXDeath1",
+            "description": "",
+            "type": 0
+        },
+        "ImpXDeath2": {
+            "name": "ImpXDeath2",
+            "description": "",
+            "type": 0
+        },
+        "InitKeyGizmo": {
+            "name": "InitKeyGizmo",
+            "description": "",
+            "type": 0
+        },
+        "KBolt": {
+            "name": "KBolt",
+            "description": "",
+            "type": 0
+        },
+        "KBoltRaise": {
+            "name": "KBoltRaise",
+            "description": "",
+            "type": 0
+        },
+        "KnightAttack": {
+            "name": "KnightAttack",
+            "description": "",
+            "type": 0
+        },
+        "KoraxBonePop": {
+            "name": "KoraxBonePop",
+            "description": "",
+            "type": 0
+        },
+        "KoraxChase": {
+            "name": "KoraxChase",
+            "description": "",
+            "type": 0
+        },
+        "KoraxCommand": {
+            "name": "KoraxCommand",
+            "description": "",
+            "type": 0
+        },
+        "KoraxDecide": {
+            "name": "KoraxDecide",
+            "description": "",
+            "type": 0
+        },
+        "KoraxMissile": {
+            "name": "KoraxMissile",
+            "description": "",
+            "type": 0
+        },
+        "KoraxStep": {
+            "name": "KoraxStep",
+            "description": "",
+            "type": 0
+        },
+        "KoraxStep2": {
+            "name": "KoraxStep2",
+            "description": "",
+            "type": 0
+        },
+        "KSpiritRoam": {
+            "name": "KSpiritRoam",
+            "description": "",
+            "type": 0
+        },
+        "LastZap": {
+            "name": "LastZap",
+            "description": "",
+            "type": 0
+        },
+        "LeafCheck": {
+            "name": "LeafCheck",
+            "description": "",
+            "type": 0
+        },
+        "LeafSpawn": {
+            "name": "LeafSpawn",
+            "description": "",
+            "type": 0
+        },
+        "LeafThrust": {
+            "name": "LeafThrust",
+            "description": "",
+            "type": 0
+        },
+        "LichAttack": {
+            "name": "LichAttack",
+            "description": "",
+            "type": 0
+        },
+        "LichFireGrow": {
+            "name": "LichFireGrow",
+            "description": "",
+            "type": 0
+        },
+        "LichIceImpact": {
+            "name": "LichIceImpact",
+            "description": "",
+            "type": 0
+        },
+        "LightningClip": {
+            "name": "LightningClip",
+            "description": "",
+            "type": 0
+        },
+        "LightningRemove": {
+            "name": "LightningRemove",
+            "description": "",
+            "type": 0
+        },
+        "LightningZap": {
+            "name": "LightningZap",
+            "description": "",
+            "type": 0
+        },
+        "LowGravity": {
+            "name": "LowGravity",
+            "description": "",
+            "type": 0
+        },
+        "M_BerserkPunch": {
+            "name": "M_BerserkPunch",
+            "description": "",
+            "type": 0
+        },
+        "M_BFGsound": {
+            "name": "M_BFGsound",
+            "description": "",
+            "type": 0
+        },
+        "M_CheckAttack": {
+            "name": "M_CheckAttack",
+            "description": "",
+            "type": 0
+        },
+        "M_FireBFG": {
+            "name": "M_FireBFG",
+            "description": "",
+            "type": 0
+        },
+        "M_FireCGun": {
+            "name": "M_FireCGun",
+            "description": "",
+            "type": 0
+        },
+        "M_FireCGunAccurate": {
+            "name": "M_FireCGunAccurate",
+            "description": "",
+            "type": 0
+        },
+        "M_FireMissile": {
+            "name": "M_FireMissile",
+            "description": "",
+            "type": 0
+        },
+        "M_FirePistol": {
+            "name": "M_FirePistol",
+            "description": "",
+            "type": 0
+        },
+        "M_FirePistolInaccurate": {
+            "name": "M_FirePistolInaccurate",
+            "description": "",
+            "type": 0
+        },
+        "M_FirePlasma": {
+            "name": "M_FirePlasma",
+            "description": "",
+            "type": 0
+        },
+        "M_FireRailgun": {
+            "name": "M_FireRailgun",
+            "description": "",
+            "type": 0
+        },
+        "M_FireShotgun": {
+            "name": "M_FireShotgun",
+            "description": "",
+            "type": 0
+        },
+        "M_FireShotgun2": {
+            "name": "M_FireShotgun2",
+            "description": "",
+            "type": 0
+        },
+        "M_Punch": {
+            "name": "M_Punch",
+            "description": "",
+            "type": 0
+        },
+        "M_Refire": {
+            "name": "M_Refire",
+            "description": "",
+            "type": 0
+        },
+        "M_Saw": {
+            "name": "M_Saw",
+            "description": "",
+            "type": 0
+        },
+        "M_SawRefire": {
+            "name": "M_SawRefire",
+            "description": "",
+            "type": 0
+        },
+        "MaceBallImpact": {
+            "name": "MaceBallImpact",
+            "description": "",
+            "type": 0
+        },
+        "MaceBallImpact2": {
+            "name": "MaceBallImpact2",
+            "description": "",
+            "type": 0
+        },
+        "MacePL1Check": {
+            "name": "MacePL1Check",
+            "description": "",
+            "type": 0
+        },
+        "MageAttack": {
+            "name": "MageAttack",
+            "description": "",
+            "type": 0
+        },
+        "MageBurnScream": {
+            "name": "MageBurnScream",
+            "description": "",
+            "type": 0
+        },
+        "MakePod": {
+            "name": "MakePod",
+            "description": "",
+            "type": 0
+        },
+        "MarineChase": {
+            "name": "MarineChase",
+            "description": "",
+            "type": 0
+        },
+        "MarineLook": {
+            "name": "MarineLook",
+            "description": "",
+            "type": 0
+        },
+        "MarineNoise": {
+            "name": "MarineNoise",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurAtk1": {
+            "name": "MinotaurAtk1",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurAtk2": {
+            "name": "MinotaurAtk2",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurAtk3": {
+            "name": "MinotaurAtk3",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurCharge": {
+            "name": "MinotaurCharge",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurChase": {
+            "name": "MinotaurChase",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurDecide": {
+            "name": "MinotaurDecide",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurFade0": {
+            "name": "MinotaurFade0",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurFade1": {
+            "name": "MinotaurFade1",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurFade2": {
+            "name": "MinotaurFade2",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurLook": {
+            "name": "MinotaurLook",
+            "description": "",
+            "type": 0
+        },
+        "MinotaurRoam": {
+            "name": "MinotaurRoam",
+            "description": "",
+            "type": 0
+        },
+        "MntrFloorFire": {
+            "name": "MntrFloorFire",
+            "description": "",
+            "type": 0
+        },
+        "MStaffTrack": {
+            "name": "MStaffTrack",
+            "description": "",
+            "type": 0
+        },
+        "MummyAttack": {
+            "name": "MummyAttack",
+            "description": "",
+            "type": 0
+        },
+        "MummyAttack2": {
+            "name": "MummyAttack2",
+            "description": "",
+            "type": 0
+        },
+        "MummyFX1Seek": {
+            "name": "MummyFX1Seek",
+            "description": "",
+            "type": 0
+        },
+        "MummyFXSound": {
+            "name": "MummyFXSound",
+            "description": "",
+            "type": 0
+        },
+        "MummySoul": {
+            "name": "MummySoul",
+            "description": "",
+            "type": 0
+        },
+        "NoBlocking": {
+            "name": "NoBlocking",
+            "description": "",
+            "type": 0
+        },
+        "PhoenixPuff": {
+            "name": "PhoenixPuff",
+            "description": "",
+            "type": 0
+        },
+        "PigAttack": {
+            "name": "PigAttack",
+            "description": "",
+            "type": 0
+        },
+        "PigChase": {
+            "name": "PigChase",
+            "description": "",
+            "type": 0
+        },
+        "PigLook": {
+            "name": "PigLook",
+            "description": "",
+            "type": 0
+        },
+        "PigPain": {
+            "name": "PigPain",
+            "description": "",
+            "type": 0
+        },
+        "PodPain": {
+            "name": "PodPain",
+            "description": "",
+            "type": 0
+        },
+        "PoisonBagCheck": {
+            "name": "PoisonBagCheck",
+            "description": "",
+            "type": 0
+        },
+        "PoisonBagDamage": {
+            "name": "PoisonBagDamage",
+            "description": "",
+            "type": 0
+        },
+        "PoisonBagInit": {
+            "name": "PoisonBagInit",
+            "description": "",
+            "type": 0
+        },
+        "PoisonShroom": {
+            "name": "PoisonShroom",
+            "description": "",
+            "type": 0
+        },
+        "PotteryCheck": {
+            "name": "PotteryCheck",
+            "description": "",
+            "type": 0
+        },
+        "PotteryChooseBit": {
+            "name": "PotteryChooseBit",
+            "description": "",
+            "type": 0
+        },
+        "PotteryExplode": {
+            "name": "PotteryExplode",
+            "description": "",
+            "type": 0
+        },
+        "QueueCorpse": {
+            "name": "QueueCorpse",
+            "description": "",
+            "type": 0
+        },
+        "RainImpact": {
+            "name": "RainImpact",
+            "description": "",
+            "type": 0
+        },
+        "RemovePod": {
+            "name": "RemovePod",
+            "description": "",
+            "type": 0
+        },
+        "SerpentBirthScream": {
+            "name": "SerpentBirthScream",
+            "description": "",
+            "type": 0
+        },
+        "SerpentChase": {
+            "name": "SerpentChase",
+            "description": "",
+            "type": 0
+        },
+        "SerpentCheckForAttack": {
+            "name": "SerpentCheckForAttack",
+            "description": "",
+            "type": 0
+        },
+        "SerpentChooseAttack": {
+            "name": "SerpentChooseAttack",
+            "description": "",
+            "type": 0
+        },
+        "SerpentDiveSound": {
+            "name": "SerpentDiveSound",
+            "description": "",
+            "type": 0
+        },
+        "SerpentFXSound": {
+            "name": "SerpentFXSound",
+            "description": "",
+            "type": 0
+        },
+        "SerpentHeadCheck": {
+            "name": "SerpentHeadCheck",
+            "description": "",
+            "type": 0
+        },
+        "SerpentHeadPop": {
+            "name": "SerpentHeadPop",
+            "description": "",
+            "type": 0
+        },
+        "SerpentHide": {
+            "name": "SerpentHide",
+            "description": "",
+            "type": 0
+        },
+        "SerpentHumpDecide": {
+            "name": "SerpentHumpDecide",
+            "description": "",
+            "type": 0
+        },
+        "SerpentLowerHump": {
+            "name": "SerpentLowerHump",
+            "description": "",
+            "type": 0
+        },
+        "SerpentMeleeAttack": {
+            "name": "SerpentMeleeAttack",
+            "description": "",
+            "type": 0
+        },
+        "SerpentMissileAttack": {
+            "name": "SerpentMissileAttack",
+            "description": "",
+            "type": 0
+        },
+        "SerpentRaiseHump": {
+            "name": "SerpentRaiseHump",
+            "description": "",
+            "type": 0
+        },
+        "SerpentSpawnGibs": {
+            "name": "SerpentSpawnGibs",
+            "description": "",
+            "type": 0
+        },
+        "SerpentUnHide": {
+            "name": "SerpentUnHide",
+            "description": "",
+            "type": 0
+        },
+        "SerpentWalk": {
+            "name": "SerpentWalk",
+            "description": "",
+            "type": 0
+        },
+        "SetAltShadow": {
+            "name": "SetAltShadow",
+            "description": "",
+            "type": 0
+        },
+        "SetFloorClip": {
+            "name": "SetFloorClip",
+            "description": "",
+            "type": 0
+        },
+        "ShedShard": {
+            "name": "ShedShard",
+            "description": "",
+            "type": 0
+        },
+        "SinkGib": {
+            "name": "SinkGib",
+            "description": "",
+            "type": 0
+        },
+        "SkullPop": {
+            "name": "SkullPop",
+            "description": "",
+            "type": 0
+        },
+        "SkullRodPL2Seek": {
+            "name": "SkullRodPL2Seek",
+            "description": "",
+            "type": 0
+        },
+        "SkullRodStorm": {
+            "name": "SkullRodStorm",
+            "description": "",
+            "type": 0
+        },
+        "SmBounce": {
+            "name": "SmBounce",
+            "description": "",
+            "type": 0
+        },
+        "SmokePuffExit": {
+            "name": "SmokePuffExit",
+            "description": "",
+            "type": 0
+        },
+        "SnakeAttack": {
+            "name": "SnakeAttack",
+            "description": "",
+            "type": 0
+        },
+        "SnakeAttack2": {
+            "name": "SnakeAttack2",
+            "description": "",
+            "type": 0
+        },
+        "SoAExplode": {
+            "name": "SoAExplode",
+            "description": "",
+            "type": 0
+        },
+        "Sor1Chase": {
+            "name": "Sor1Chase",
+            "description": "",
+            "type": 0
+        },
+        "Sor1Pain": {
+            "name": "Sor1Pain",
+            "description": "",
+            "type": 0
+        },
+        "Sor2DthInit": {
+            "name": "Sor2DthInit",
+            "description": "",
+            "type": 0
+        },
+        "Sor2DthLoop": {
+            "name": "Sor2DthLoop",
+            "description": "",
+            "type": 0
+        },
+        "SorcBallOrbit": {
+            "name": "SorcBallOrbit",
+            "description": "",
+            "type": 0
+        },
+        "SorcBallPop": {
+            "name": "SorcBallPop",
+            "description": "",
+            "type": 0
+        },
+        "SorcBossAttack": {
+            "name": "SorcBossAttack",
+            "description": "",
+            "type": 0
+        },
+        "SorcererBishopEntry": {
+            "name": "SorcererBishopEntry",
+            "description": "",
+            "type": 0
+        },
+        "SorcererRise": {
+            "name": "SorcererRise",
+            "description": "",
+            "type": 0
+        },
+        "SorcFX1Seek": {
+            "name": "SorcFX1Seek",
+            "description": "",
+            "type": 0
+        },
+        "SorcFX2Orbit": {
+            "name": "SorcFX2Orbit",
+            "description": "",
+            "type": 0
+        },
+        "SorcFX2Split": {
+            "name": "SorcFX2Split",
+            "description": "",
+            "type": 0
+        },
+        "SorcFX4Check": {
+            "name": "SorcFX4Check",
+            "description": "",
+            "type": 0
+        },
+        "SorcSpinBalls": {
+            "name": "SorcSpinBalls",
+            "description": "",
+            "type": 0
+        },
+        "SorDBon": {
+            "name": "SorDBon",
+            "description": "",
+            "type": 0
+        },
+        "SorDExp": {
+            "name": "SorDExp",
+            "description": "",
+            "type": 0
+        },
+        "SorDSph": {
+            "name": "SorDSph",
+            "description": "",
+            "type": 0
+        },
+        "SorRise": {
+            "name": "SorRise",
+            "description": "",
+            "type": 0
+        },
+        "SorSightSnd": {
+            "name": "SorSightSnd",
+            "description": "",
+            "type": 0
+        },
+        "SorZap": {
+            "name": "SorZap",
+            "description": "",
+            "type": 0
+        },
+        "SpawnBishop": {
+            "name": "SpawnBishop",
+            "description": "",
+            "type": 0
+        },
+        "SpawnFizzle": {
+            "name": "SpawnFizzle",
+            "description": "",
+            "type": 0
+        },
+        "SpawnMace": {
+            "name": "SpawnMace",
+            "description": "",
+            "type": 0
+        },
+        "SpawnRippers": {
+            "name": "SpawnRippers",
+            "description": "",
+            "type": 0
+        },
+        "SpawnTeleGlitter": {
+            "name": "SpawnTeleGlitter",
+            "description": "",
+            "type": 0
+        },
+        "SpawnTeleGlitter2": {
+            "name": "SpawnTeleGlitter2",
+            "description": "",
+            "type": 0
+        },
+        "SpeedBalls": {
+            "name": "SpeedBalls",
+            "description": "",
+            "type": 0
+        },
+        "SPosAttackUseAtkSound": {
+            "name": "SPosAttackUseAtkSound",
+            "description": "",
+            "type": 0
+        },
+        "Srcr1Attack": {
+            "name": "Srcr1Attack",
+            "description": "",
+            "type": 0
+        },
+        "Srcr2Attack": {
+            "name": "Srcr2Attack",
+            "description": "",
+            "type": 0
+        },
+        "Srcr2Decide": {
+            "name": "Srcr2Decide",
+            "description": "",
+            "type": 0
+        },
+        "StopSerpentFXSound": {
+            "name": "StopSerpentFXSound",
+            "description": "",
+            "type": 0
+        },
+        "Summon": {
+            "name": "Summon",
+            "description": "",
+            "type": 0
+        },
+        "TeloSpawnA": {
+            "name": "TeloSpawnA",
+            "description": "",
+            "type": 0
+        },
+        "TeloSpawnB": {
+            "name": "TeloSpawnB",
+            "description": "",
+            "type": 0
+        },
+        "TeloSpawnC": {
+            "name": "TeloSpawnC",
+            "description": "",
+            "type": 0
+        },
+        "TeloSpawnD": {
+            "name": "TeloSpawnD",
+            "description": "",
+            "type": 0
+        },
+        "TreeDeath": {
+            "name": "TreeDeath",
+            "description": "",
+            "type": 0
+        },
+        "UnHideThing": {
+            "name": "UnHideThing",
+            "description": "",
+            "type": 0
+        },
+        "UnSetFloorClip": {
+            "name": "UnSetFloorClip",
+            "description": "",
+            "type": 0
+        },
+        "VileAttack": {
+            "name": "VileAttack",
+            "description": "",
+            "type": 0
+        },
+        "VolcanoBlast": {
+            "name": "VolcanoBlast",
+            "description": "",
+            "type": 0
+        },
+        "VolcanoSet": {
+            "name": "VolcanoSet",
+            "description": "",
+            "type": 0
+        },
+        "VolcBallImpact": {
+            "name": "VolcBallImpact",
+            "description": "",
+            "type": 0
+        },
+        "Wander": {
+            "name": "Wander",
+            "description": "",
+            "type": 0
+        },
+        "WaterfallSound": {
+            "name": "WaterfallSound",
+            "description": "",
+            "type": 0
+        },
+        "WhirlwindSeek": {
+            "name": "WhirlwindSeek",
+            "description": "",
+            "type": 0
+        },
+        "WindSound": {
+            "name": "WindSound",
+            "description": "",
+            "type": 0
+        },
+        "WizAtk1": {
+            "name": "WizAtk1",
+            "description": "",
+            "type": 0
+        },
+        "WizAtk2": {
+            "name": "WizAtk2",
+            "description": "",
+            "type": 0
+        },
+        "WizAtk3": {
+            "name": "WizAtk3",
+            "description": "",
+            "type": 0
+        },
+        "WraithChase": {
+            "name": "WraithChase",
+            "description": "",
+            "type": 0
+        },
+        "WraithFX2": {
+            "name": "WraithFX2",
+            "description": "",
+            "type": 0
+        },
+        "WraithFX3": {
+            "name": "WraithFX3",
+            "description": "",
+            "type": 0
+        },
+        "WraithInit": {
+            "name": "WraithInit",
+            "description": "",
+            "type": 0
+        },
+        "WraithLook": {
+            "name": "WraithLook",
+            "description": "",
+            "type": 0
+        },
+        "WraithMelee": {
+            "name": "WraithMelee",
+            "description": "",
+            "type": 0
+        },
+        "WraithMissile": {
+            "name": "WraithMissile",
+            "description": "",
+            "type": 0
+        },
+        "WraithRaise": {
+            "name": "WraithRaise",
+            "description": "",
+            "type": 0
+        },
+        "WraithRaiseInit": {
+            "name": "WraithRaiseInit",
+            "description": "",
+            "type": 0
+        },
+        "ZapMimic": {
+            "name": "ZapMimic",
+            "description": "",
+            "type": 0
+        },
+        "BeakAttackPL1": {
+            "name": "BeakAttackPL1",
+            "description": "",
+            "type": 1
+        },
+        "BeakAttackPL2": {
+            "name": "BeakAttackPL2",
+            "description": "",
+            "type": 1
+        },
+        "BeakRaise": {
+            "name": "BeakRaise",
+            "description": "",
+            "type": 1
+        },
+        "BeakReady": {
+            "name": "BeakReady",
+            "description": "",
+            "type": 1
+        },
+        "CFlameAttack": {
+            "name": "CFlameAttack",
+            "description": "",
+            "type": 1
+        },
+        "CHolyAttack": {
+            "name": "CHolyAttack",
+            "description": "",
+            "type": 1
+        },
+        "CHolyPalette": {
+            "name": "CHolyPalette",
+            "description": "",
+            "type": 1
+        },
+        "CMaceAttack": {
+            "name": "CMaceAttack",
+            "description": "",
+            "type": 1
+        },
+        "CPW_BulletAttack": {
+            "name": "CPW_BulletAttack",
+            "description": "",
+            "type": 1
+        },
+        "CPW_CustomBulletAttack": {
+            "name": "CPW_CustomBulletAttack",
+            "description": "",
+            "type": 1
+        },
+        "CPW_CustomMissile": {
+            "name": "CPW_CustomMissile",
+            "description": "",
+            "type": 1
+        },
+        "CStaffAttack": {
+            "name": "CStaffAttack",
+            "description": "",
+            "type": 1
+        },
+        "CStaffCheck": {
+            "name": "CStaffCheck",
+            "description": "",
+            "type": 1
+        },
+        "CStaffCheckBlink": {
+            "name": "CStaffCheckBlink",
+            "description": "",
+            "type": 1
+        },
+        "CStaffInitBlink": {
+            "name": "CStaffInitBlink",
+            "description": "",
+            "type": 1
+        },
+        "FAxeAttack": {
+            "name": "FAxeAttack",
+            "description": "",
+            "type": 1
+        },
+        "FAxeCheckAtk": {
+            "name": "FAxeCheckAtk",
+            "description": "",
+            "type": 1
+        },
+        "FAxeCheckReady": {
+            "name": "FAxeCheckReady",
+            "description": "",
+            "type": 1
+        },
+        "FAxeCheckReadyG": {
+            "name": "FAxeCheckReadyG",
+            "description": "",
+            "type": 1
+        },
+        "FAxeCheckUp": {
+            "name": "FAxeCheckUp",
+            "description": "",
+            "type": 1
+        },
+        "FAxeCheckUpG": {
+            "name": "FAxeCheckUpG",
+            "description": "",
+            "type": 1
+        },
+        "FHammerAttack": {
+            "name": "FHammerAttack",
+            "description": "",
+            "type": 1
+        },
+        "FHammerThrow": {
+            "name": "FHammerThrow",
+            "description": "",
+            "type": 1
+        },
+        "FireBlasterPL1": {
+            "name": "FireBlasterPL1",
+            "description": "",
+            "type": 1
+        },
+        "FireBlasterPL2": {
+            "name": "FireBlasterPL2",
+            "description": "",
+            "type": 1
+        },
+        "FireConePL1": {
+            "name": "FireConePL1",
+            "description": "",
+            "type": 1
+        },
+        "FireCrossbowPL1": {
+            "name": "FireCrossbowPL1",
+            "description": "",
+            "type": 1
+        },
+        "FireCrossbowPL2": {
+            "name": "FireCrossbowPL2",
+            "description": "",
+            "type": 1
+        },
+        "FireGoldWandPL1": {
+            "name": "FireGoldWandPL1",
+            "description": "",
+            "type": 1
+        },
+        "FireGoldWandPL2": {
+            "name": "FireGoldWandPL2",
+            "description": "",
+            "type": 1
+        },
+        "FireMacePL1": {
+            "name": "FireMacePL1",
+            "description": "",
+            "type": 1
+        },
+        "FireMacePL1B": {
+            "name": "FireMacePL1B",
+            "description": "",
+            "type": 1
+        },
+        "FireMacePL2": {
+            "name": "FireMacePL2",
+            "description": "",
+            "type": 1
+        },
+        "FirePhoenixPL1": {
+            "name": "FirePhoenixPL1",
+            "description": "",
+            "type": 1
+        },
+        "FirePhoenixPL2": {
+            "name": "FirePhoenixPL2",
+            "description": "",
+            "type": 1
+        },
+        "FireSkullRodPL1": {
+            "name": "FireSkullRodPL1",
+            "description": "",
+            "type": 1
+        },
+        "FireSkullRodPL2": {
+            "name": "FireSkullRodPL2",
+            "description": "",
+            "type": 1
+        },
+        "FPunchAttack": {
+            "name": "FPunchAttack",
+            "description": "",
+            "type": 1
+        },
+        "FSwordAttack": {
+            "name": "FSwordAttack",
+            "description": "",
+            "type": 1
+        },
+        "GauntletAttack": {
+            "name": "GauntletAttack",
+            "description": "",
+            "type": 1
+        },
+        "InitPhoenixPL2": {
+            "name": "InitPhoenixPL2",
+            "description": "",
+            "type": 1
+        },
+        "LightningReady": {
+            "name": "LightningReady",
+            "description": "",
+            "type": 1
+        },
+        "MLightningAttack": {
+            "name": "MLightningAttack",
+            "description": "",
+            "type": 1
+        },
+        "MStaffAttack": {
+            "name": "MStaffAttack",
+            "description": "",
+            "type": 1
+        },
+        "MStaffPalette": {
+            "name": "MStaffPalette",
+            "description": "",
+            "type": 1
+        },
+        "MWandAttack": {
+            "name": "MWandAttack",
+            "description": "",
+            "type": 1
+        },
+        "ShutdownPhoenixPL2": {
+            "name": "ShutdownPhoenixPL2",
+            "description": "",
+            "type": 1
+        },
+        "SnoutAttack": {
+            "name": "SnoutAttack",
+            "description": "",
+            "type": 1
+        },
+        "StaffAttackPL1": {
+            "name": "StaffAttackPL1",
+            "description": "",
+            "type": 1
+        },
+        "StaffAttackPL2": {
+            "name": "StaffAttackPL2",
+            "description": "",
+            "type": 1
         }
     },
     "ammo": [
