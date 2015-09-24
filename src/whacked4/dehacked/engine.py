@@ -21,6 +21,7 @@ class Engine(object):
     """
 
     def __init__(self):
+
         # A list of versions supported by this engine.
         self.versions = None
 
@@ -97,21 +98,21 @@ class Engine(object):
 
             self.things.names = data['thingNames']
             self.things.flags = data['thingFlags']
-            self.things.read_from_json(data['things'], self.extended)
+            self.things.read_from_json(data['things'])
             if len(self.things.names) != len(self.things):
-                raise DehackedEngineError('Things size and thing names size does not match.')
+                raise DehackedEngineError('Thing and thing names sizes do not match.')
 
             self.weapons.names = data['weaponNames']
-            self.weapons.read_from_json(data['weapons'], self.extended)
+            self.weapons.read_from_json(data['weapons'])
             if len(self.weapons.names) != len(self.weapons):
-                raise DehackedEngineError('Weapons size and weapon names size does not match.')
+                raise DehackedEngineError('Weapon and weapon name sizes do not match.')
 
             self.ammo.names = data['ammoNames']
-            self.ammo.read_from_json(data['ammo'], self.extended)
+            self.ammo.read_from_json(data['ammo'])
 
             self.actions = data['actions']
-            self.states.read_from_json(data['states'], self.extended)
-            self.sounds.read_from_json(data['sounds'], self.extended)
+            self.states.read_from_json(data['states'])
+            self.sounds.read_from_json(data['sounds'])
 
             self.strings = data['strings']
 
@@ -132,13 +133,13 @@ class Engine(object):
 
             self.sound_names = data['soundNames']
             if len(self.sound_names) != len(self.sounds):
-                raise DehackedEngineError('Sounds size and sound names size does not match.')
+                raise DehackedEngineError('Sound and sound names sizes do not match.')
 
             if not self.extended:
                 self.action_index_to_state = data['actionIndexToState']
 
-        except KeyError:
-            raise DehackedEngineError('Invalid engine table data.')
+        except KeyError as e:
+            raise DehackedEngineError('Invalid engine table data. Exception: {}'.format(e))
 
     def read_executable(self, engine_filename, exe_filename):
         """
@@ -299,7 +300,7 @@ class Engine(object):
         # Read the maximum ammo amounts first.
         f.seek(exe_config['ammoOffset'])
         for index in range(count):
-            ammo_entry = entries.AmmoEntry()
+            ammo_entry = entries.AmmoEntry(self)
 
             data = single_struct.unpack(f.read(single_struct.size))
             ammo_entry['maximum'] = data[0]

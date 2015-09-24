@@ -8,33 +8,8 @@ Contains all entry definition objects used by an engine's tables.
 import struct
 
 from collections import OrderedDict
-from collections import namedtuple
-from whacked4.dehacked.entry import Entry
 
-
-class FieldType(object):
-    """
-    Known field data types.
-    """
-
-    def __init__(self):
-        pass
-
-    INT = 'int'
-    FLOAT = 'float'
-    STRING = 'string'
-    STATE = 'state'
-    SOUND = 'sound'
-    AMMO = 'ammo'
-    SPRITE = 'sprite'
-    FLAGS = 'flags'
-    ACTION = 'action'
-    ENUM_GAME = 'enum_game'
-    ENUM_RENDERSTYLE = 'enum_renderstyle'
-
-
-# Stores information about a Dehacked field.
-Field = namedtuple('Field', ['patch_key', 'type'])
+from whacked4.dehacked.entry import Entry, Field, FieldType
 
 
 class AmmoEntry(Entry):

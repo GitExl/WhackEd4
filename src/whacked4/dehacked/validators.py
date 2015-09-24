@@ -2,7 +2,7 @@
 #coding=utf8
 
 """
-This module contains functions used by a Dehacked table entry to filter certain values when reading or writing
+This module contains functions used by Dehacked table entries to validate certain values when reading or writing
 them.
 """
 
@@ -10,10 +10,9 @@ import math
 import re
 
 
-def filter_thing_flags_read(value, table):
+def thing_flags_read(value, table):
     """
     Filters a thing's flags value.
-
     Extended patches can use mnemonics for flag names, separated by plus signs.
 
     @raise LookupError: if the value contains an unknown mnemonic.
@@ -28,7 +27,7 @@ def filter_thing_flags_read(value, table):
 
         # Flag is any number of bits.
         if item.isdigit():
-            mnemonics = get_thing_flag_mnemonics(int(item), table)
+            mnemonics = _get_thing_flag_mnemonics(int(item), table)
             out.update(mnemonics)
 
         # Flag is a mnemonic.
@@ -51,7 +50,7 @@ def filter_thing_flags_read(value, table):
     return out
 
 
-def get_thing_flag_mnemonics(bits, table):
+def _get_thing_flag_mnemonics(bits, table):
     out = set()
 
     for bit in range(0, 32):
@@ -67,18 +66,18 @@ def get_thing_flag_mnemonics(bits, table):
     return out
 
 
-def filter_thing_flags_write(value, table):
+def thing_flags_write(value, table):
     """
     Returns a thing flags value as a string of mnemonics.
     """
 
     if table.extended:
-        return filter_thing_flags_write_extended(value, table)
+        return _thing_flags_write_extended(value, table)
     else:
-        return filter_thing_flags_write_vanilla(value, table)
+        return _thing_flags_write_vanilla(value, table)
 
 
-def filter_thing_flags_write_vanilla(value, table):
+def _thing_flags_write_vanilla(value, table):
     """
     Returns a thing flags value as a 32 bit integer bitfield.
     """
@@ -95,7 +94,7 @@ def filter_thing_flags_write_vanilla(value, table):
     return bits
 
 
-def filter_thing_flags_write_extended(value, table):
+def _thing_flags_write_extended(value, table):
     """
     Returns a thing flags value as a string of extended engine mnemonics.
     """

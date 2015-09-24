@@ -118,8 +118,8 @@ class MainWindow(windows.MainFrameBase):
             new_engine = engine.Engine()
             try:
                 new_engine.read_table(file_name)
-            except engine.DehackedEngineError:
-                wx.MessageBox(message='Invalid engine configuration file {}'.format(file_name),
+            except engine.DehackedEngineError as e:
+                wx.MessageBox(message='Invalid engine configuration file "{}". Exception: {}'.format(file_name, e),
                               caption='Engine configuration error', style=wx.OK | wx.ICON_EXCLAMATION, parent=self)
             else:
                 name = os.path.basename(file_name)

@@ -1,8 +1,34 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from whacked4.dehacked import filters
-from whacked4.dehacked.entries import FieldType
+from collections import namedtuple
+
+from whacked4.dehacked import validators
+
+
+class FieldType(object):
+    """
+    Known field data types.
+    """
+
+    def __init__(self):
+        pass
+
+    INT = 'int'
+    FLOAT = 'float'
+    STRING = 'string'
+    STATE = 'state'
+    SOUND = 'sound'
+    AMMO = 'ammo'
+    SPRITE = 'sprite'
+    FLAGS = 'flags'
+    ACTION = 'action'
+    ENUM_GAME = 'enum_game'
+    ENUM_RENDERSTYLE = 'enum_renderstyle'
+
+
+# Stores information about a Dehacked field.
+Field = namedtuple('Field', ['patch_key', 'type'])
 
 
 class Entry(object):
@@ -14,7 +40,6 @@ class Entry(object):
     STRUCTURE = None
 
     # A dict of fields in this entry.
-    # [internal key] = Dehacked patch key
     FIELDS = None
 
     def __init__(self, table):
@@ -32,7 +57,7 @@ class Entry(object):
         """
 
         if key not in self.FIELDS:
-            raise KeyError('Cannot find {}'.format(key))
+            raise KeyError('Cannot find patch key "{}".'.format(key))
 
         return self.values[key]
 
@@ -44,27 +69,27 @@ class Entry(object):
         """
 
         if key not in self.FIELDS:
-            raise KeyError('Cannot find {}'.format(key))
+            raise KeyError('Cannot find patch key "{}".'.format(key))
 
         self.values[key] = value
 
-    def validate_field_value(self, value, key):
+    def validate_field_value(self, key, value):
         """
         Validates a patch field value.
 
-        @param value: The value to filter.
-        @param key: The field key to filter the value against.
+        @param key: The field key to validate the value against.
+        @param value: The value to validate.
 
-        @returns: A filtered value.
+        @returns: A validated value.
         """
 
         field = self.FIELDS[key]
 
         if field.type == FieldType.FLAGS:
-            value = filters.filter_thing_flags_read(value, self.table)
+            value = validators.thing_flags_read(value, self.table)
 
-        elif field.type == FieldType.INT or field.type == FieldType.ACTION or field.type == FieldType.AMMO or \
-                field.type == FieldType.SOUND or field.type == FieldType.SPRITE or field.type == FieldType.STATE:
+        elif field.type == FieldType.INT or field.type == FieldType.AMMO or field.type == FieldType.SOUND or \
+                field.type == FieldType.SPRITE or field.type == FieldType.STATE:
             try:
                 value = int(value)
             except ValueError:
@@ -76,30 +101,30 @@ class Entry(object):
             except ValueError:
                 raise ValueError('Value "{}" for field "{}" is not a float.'.format(value, key))
 
-        elif field.type == FieldType.STRING:
+        elif field.type == FieldType.STRING or field.type == FieldType.ACTION or field.type == FieldType.ENUM_GAME or \
+                field.type == FieldType.ENUM_RENDERSTYLE:
             value = str(value)
 
         return value
 
-    def set_patch_key(self, key, value):
+    def set_patch_key(self, patch_key, value):
         """
         Sets a field's value directly from a Dehacked patch key.
 
-        @param key: The key as used in a Dehacked patch.
+        @param patch_key: The key as used in a Dehacked patch.
         @param value: The value read from a Dehacked patch.
 
-        @raise ValueError: if the read value is not a number.
         @raise LookupError: if the patch key cannot be found in this entry.
         """
-
-        for internal_key, field in self.FIELDS.iteritems():
-            if field.patch_key != key:
+        print 'set {} to {}'.format(patch_key, value)
+        for key, field in self.FIELDS.iteritems():
+            if field.patch_key != patch_key:
                 continue
 
-            self[internal_key] = self.validate_field_value(value, field)
+            self.values[key] = self.validate_field_value(key, value)
             return
 
-        raise LookupError('Cannot find patch key {}'.format(key))
+        raise LookupError('Cannot find patch key {}'.format(patch_key))
 
     def read_from_executable(self, f):
         """
@@ -109,10 +134,8 @@ class Entry(object):
         self.values = {}
         data = self.STRUCTURE.unpack(f.read(self.STRUCTURE.size))
 
-        index = 0
-        for key in self.FIELDS.keys():
+        for index, key in enumerate(self.FIELDS.keys()):
             self.values[key] = data[index]
-            index += 1
 
         return self
 
@@ -123,7 +146,7 @@ class Entry(object):
 
         self.values = {}
         for key, field in self.FIELDS.iteritems():
-            self.values[key] = self.validate_field_value(json[key], field)
+            self.values[key] = self.validate_field_value(key, json[key])
 
         return self
 
@@ -152,16 +175,15 @@ class Entry(object):
         """
 
         output = {}
-
         for key, field in self.FIELDS.iteritems():
 
-            # Skip this entry if needed.
+            # Skip actions, these are stored in a separate "fake" table.
             if field.type == FieldType.ACTION:
                 continue
 
             # Store modified keys in an output dict.
-            if self[key] != original[key]:
-                output[key] = self[key]
+            if self.values[key] != original.values[key]:
+                output[key] = self.values[key]
 
         # No values were modified.
         if len(output) == 0:
@@ -173,11 +195,11 @@ class Entry(object):
             field = self.FIELDS[key]
 
             if field.type == FieldType.FLAGS:
-                value = filters.filter_thing_flags_write(value, self.table)
+                value = validators.thing_flags_write(value, self.table)
 
-            output_list.append('{} = {}\n'.format(field.patch_key, value))
+            output_list.append('{} = {}'.format(field.patch_key, value))
 
-        return ''.join(output_list)
+        return '\n'.join(output_list) + '\n'
 
     def __repr__(self):
         return '{}: {}'.format(self.NAME, self.values)

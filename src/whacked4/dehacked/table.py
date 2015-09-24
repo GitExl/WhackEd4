@@ -7,9 +7,9 @@ class Table(object):
     A table containing Dehacked entry objects.
     """
 
-    def __init__(self, cls, engine):
+    def __init__(self, entry_class, engine):
         self.entries = []
-        self.cls = cls
+        self.entry_class = entry_class
         self.offset = 0
         self.extended = engine.extended
 
@@ -19,17 +19,17 @@ class Table(object):
         """
 
         for _ in range(count):
-            self.entries.append(self.cls().read_from_executable(f))
+            self.entries.append(self.entry_class(self).read_from_executable(f))
 
-    def read_from_json(self, json, extended):
+    def read_from_json(self, json):
         """
         Reads this table's entries from a JSON object.
         """
 
-        for entry in json:
-            self.entries.append(self.cls().from_json(entry, self, extended))
+        for json_entry in json:
+            self.entries.append(self.entry_class(self).from_json(json_entry))
 
-    def write_patch_data(self, source_table, f, extended):
+    def write_patch_data(self, source_table, f):
         """
         Writes this table's entry to a Dehacked patch file.
         """
@@ -39,7 +39,7 @@ class Table(object):
             source_entry = source_table.entries[index]
 
             # Write the current entry index if it returns any data to be written.
-            patch_str = entry.get_patch_string(source_entry, self, extended)
+            patch_str = entry.get_patch_string(source_entry)
             if patch_str is not None:
                 f.write(entry.get_patch_header(index, self, offset=self.offset))
                 f.write(patch_str)
@@ -49,7 +49,7 @@ class Table(object):
                 f.write(entry.get_patch_header(index, self, offset=self.offset))
 
     def __repr__(self):
-        return '{}: {}'.format(self.cls, self.entries)
+        return '{}: {}'.format(self.entry_class, self.entries)
 
     def __getitem__(self, index):
         return self.entries[index]

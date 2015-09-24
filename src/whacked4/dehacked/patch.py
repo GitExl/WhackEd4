@@ -126,16 +126,16 @@ class Patch(object):
         self.engine = parent_engine
         self.extended = parent_engine.extended
 
-        self.things = copy.copy(parent_engine.things)
-        self.states = copy.copy(parent_engine.states)
-        self.sounds = copy.copy(parent_engine.sounds)
-        self.weapons = copy.copy(parent_engine.weapons)
-        self.ammo = copy.copy(parent_engine.ammo)
-        self.strings = copy.copy(parent_engine.strings)
-        self.cheats = copy.copy(parent_engine.cheats)
-        self.misc = copy.copy(parent_engine.misc)
-        self.sprite_names = copy.copy(parent_engine.sprite_names)
-        self.sound_names = copy.copy(parent_engine.sound_names)
+        self.things = copy.deepcopy(parent_engine.things)
+        self.states = copy.deepcopy(parent_engine.states)
+        self.sounds = copy.deepcopy(parent_engine.sounds)
+        self.weapons = copy.deepcopy(parent_engine.weapons)
+        self.ammo = copy.deepcopy(parent_engine.ammo)
+        self.strings = copy.deepcopy(parent_engine.strings)
+        self.cheats = copy.deepcopy(parent_engine.cheats)
+        self.misc = copy.deepcopy(parent_engine.misc)
+        self.sprite_names = copy.deepcopy(parent_engine.sprite_names)
+        self.sound_names = copy.deepcopy(parent_engine.sound_names)
 
         if parent_engine.extended:
             self.pars = []
@@ -189,11 +189,11 @@ class Patch(object):
             f.write('Patch format = 6\n\n')
 
             # Write tables.
-            self.things.write_patch_data(self.engine.things, f, self.extended)
-            self.states.write_patch_data(self.engine.states, f, self.extended)
-            self.sounds.write_patch_data(self.engine.sounds, f, self.extended)
-            self.weapons.write_patch_data(self.engine.weapons, f, self.extended)
-            self.ammo.write_patch_data(self.engine.ammo, f, self.extended)
+            self.things.write_patch_data(self.engine.things, f)
+            self.states.write_patch_data(self.engine.states, f)
+            self.sounds.write_patch_data(self.engine.sounds, f)
+            self.weapons.write_patch_data(self.engine.weapons, f)
+            self.ammo.write_patch_data(self.engine.ammo, f)
 
             # Write simple sections.
             write_dict(f, self.cheats, self.engine.cheats, self.engine.cheat_data, 'Cheat 0')
@@ -612,15 +612,15 @@ class Patch(object):
 
                 try:
                     if mode == ParseMode.THING:
-                        self.things[entry_index].set_patch_key(key, value, self.things, self.extended)
+                        self.things[entry_index].set_patch_key(key, value)
                     elif mode == ParseMode.STATE:
-                        self.states[entry_index].set_patch_key(key, value, self.states, self.extended)
+                        self.states[entry_index].set_patch_key(key, value)
                     elif mode == ParseMode.SOUND:
-                        self.sounds[entry_index].set_patch_key(key, value, self.sounds, self.extended)
+                        self.sounds[entry_index].set_patch_key(key, value)
                     elif mode == ParseMode.WEAPON:
-                        self.weapons[entry_index].set_patch_key(key, value, self.weapons, self.extended)
+                        self.weapons[entry_index].set_patch_key(key, value)
                     elif mode == ParseMode.AMMO:
-                        self.ammo[entry_index].set_patch_key(key, value, self.ammo, self.extended)
+                        self.ammo[entry_index].set_patch_key(key, value)
                     elif mode == ParseMode.POINTER:
                         self.states[entry_index]['action'] = self.engine.states[int(value)]['action']
                     elif mode == ParseMode.CHEATS:
