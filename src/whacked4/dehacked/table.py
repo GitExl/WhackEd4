@@ -7,10 +7,11 @@ class Table(object):
     A table containing Dehacked entry objects.
     """
 
-    def __init__(self, cls):
+    def __init__(self, cls, engine):
         self.entries = []
         self.cls = cls
         self.offset = 0
+        self.extended = engine.extended
 
     def read_from_executable(self, count, f):
         """

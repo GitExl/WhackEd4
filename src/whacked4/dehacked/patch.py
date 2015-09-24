@@ -118,26 +118,26 @@ class Patch(object):
         self.sprite_names = None
         self.sound_names = None
 
-    def initialize_from_engine(self, engine):
+    def initialize_from_engine(self, parent_engine):
         """
         Initializes this patch with the data from an engine.
         """
 
-        self.engine = engine
-        self.extended = engine.extended
+        self.engine = parent_engine
+        self.extended = parent_engine.extended
 
-        self.things = copy.deepcopy(engine.things)
-        self.states = copy.deepcopy(engine.states)
-        self.sounds = copy.deepcopy(engine.sounds)
-        self.weapons = copy.deepcopy(engine.weapons)
-        self.ammo = copy.deepcopy(engine.ammo)
-        self.strings = copy.deepcopy(engine.strings)
-        self.cheats = copy.deepcopy(engine.cheats)
-        self.misc = copy.deepcopy(engine.misc)
-        self.sprite_names = copy.deepcopy(engine.sprite_names)
-        self.sound_names = copy.deepcopy(engine.sound_names)
+        self.things = copy.copy(parent_engine.things)
+        self.states = copy.copy(parent_engine.states)
+        self.sounds = copy.copy(parent_engine.sounds)
+        self.weapons = copy.copy(parent_engine.weapons)
+        self.ammo = copy.copy(parent_engine.ammo)
+        self.strings = copy.copy(parent_engine.strings)
+        self.cheats = copy.copy(parent_engine.cheats)
+        self.misc = copy.copy(parent_engine.misc)
+        self.sprite_names = copy.copy(parent_engine.sprite_names)
+        self.sound_names = copy.copy(parent_engine.sound_names)
 
-        if engine.extended:
+        if parent_engine.extended:
             self.pars = []
 
     def update_string_externals(self, engine_names, patch_names):
@@ -355,8 +355,8 @@ class Patch(object):
                 # Searches the engines list for an engine that supports loading this patch.
                 if line.startswith('Doom version = '):
                     version = int(line[15:])
-                    for engine in engines.itervalues():
-                        if version in engine.versions and self.extended == engine.extended:
+                    for find_engine in engines.itervalues():
+                        if version in find_engine.versions and self.extended == find_engine.extended:
                             self.version = version
                             break
 
@@ -457,8 +457,8 @@ class Patch(object):
                 elif line.startswith('Sprite ') and len(line_words) == 2:
                     mode = ParseMode.SPRITE
                     entry_index = int(line_words[1])
-                    messages['UNSUPPORTED_SPRITE'] = 'The patch contains sprite blocks, which are unsupported and will' \
-                                                     'not be loaded.'
+                    messages['UNSUPPORTED_SPRITE'] = 'The patch contains sprite blocks, which are unsupported and ' \
+                                                     'will not be loaded.'
                     continue
                 elif line.startswith('Pointer ') and len(line_words) >= 4:
                     mode = ParseMode.POINTER
@@ -536,7 +536,7 @@ class Patch(object):
                 # Extended mode section contents.
                 if mode == ParseMode.PARS:
                     if line_words[0] == 'par':
-                        par = entries.ParEntry()
+                        par = entries.ParEntry(self.engine)
 
                         if len(line_words) == 4:
                             par['episode'] = int(line_words[1])

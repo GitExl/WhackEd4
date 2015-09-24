@@ -31,21 +31,21 @@ class Engine(object):
         self.name = None
 
         # Things table.
-        self.things = table.Table(entries.ThingEntry)
+        self.things = table.Table(entries.ThingEntry, self)
         self.things.offset = 1
         self.things.names = None
         self.things.flags = None
 
         # Weapons table.
-        self.weapons = table.Table(entries.WeaponEntry)
+        self.weapons = table.Table(entries.WeaponEntry, self)
         self.weapons.names = None
 
         # Ammo table.
-        self.ammo = table.Table(entries.AmmoEntry)
+        self.ammo = table.Table(entries.AmmoEntry, self)
         self.ammo.names = None
 
         # Sound table.
-        self.sounds = table.Table(entries.SoundEntry)
+        self.sounds = table.Table(entries.SoundEntry, self)
         self.sound_names = None
 
         # Cheats table.
@@ -57,7 +57,7 @@ class Engine(object):
         self.misc_data = None
 
         # States table.
-        self.states = table.Table(entries.StateEntry)
+        self.states = table.Table(entries.StateEntry, self)
 
         # Strings dictionary.
         self.strings = None

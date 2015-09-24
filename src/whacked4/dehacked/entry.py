@@ -2,6 +2,7 @@
 #coding=utf8
 
 from whacked4.dehacked import filters
+from whacked4.dehacked.entries import FieldType
 
 
 class Entry(object):
@@ -16,17 +17,10 @@ class Entry(object):
     # [internal key] = Dehacked patch key
     FIELDS = None
 
-    # A list of fields to skip when writing a Dehacked patch.
-    SKIP = None
+    def __init__(self, table):
+        self.table = table
 
-    # A dict of fields that are run through a filter when read or written.
-    # See dehacked.filters module.
-    # [internal key] = filter function base name
-    FILTER = None
-
-    def __init__(self):
         self.values = {}
-
         for key in self.FIELDS.keys():
             self.values[key] = None
 
@@ -54,37 +48,56 @@ class Entry(object):
 
         self.values[key] = value
 
-    def set_patch_key(self, key, value, table, extended):
+    def validate_field_value(self, value, key):
+        """
+        Validates a patch field value.
+
+        @param value: The value to filter.
+        @param key: The field key to filter the value against.
+
+        @returns: A filtered value.
+        """
+
+        field = self.FIELDS[key]
+
+        if field.type == FieldType.FLAGS:
+            value = filters.filter_thing_flags_read(value, self.table)
+
+        elif field.type == FieldType.INT or field.type == FieldType.ACTION or field.type == FieldType.AMMO or \
+                field.type == FieldType.SOUND or field.type == FieldType.SPRITE or field.type == FieldType.STATE:
+            try:
+                value = int(value)
+            except ValueError:
+                raise ValueError('Value "{}" for field "{}" is not an integer.'.format(value, key))
+
+        elif field.type == FieldType.FLOAT:
+            try:
+                value = float(value)
+            except ValueError:
+                raise ValueError('Value "{}" for field "{}" is not a float.'.format(value, key))
+
+        elif field.type == FieldType.STRING:
+            value = str(value)
+
+        return value
+
+    def set_patch_key(self, key, value):
         """
         Sets a field's value directly from a Dehacked patch key.
 
         @param key: The key as used in a Dehacked patch.
         @param value: The value read from a Dehacked patch.
-        @param table: The table that this entry is a part of.
-        @param extended: Set to True if this entry is from an extended engine.
 
         @raise ValueError: if the read value is not a number.
         @raise LookupError: if the patch key cannot be found in this entry.
         """
 
-        for internalKey, patchKey in self.FIELDS.iteritems():
+        for internal_key, field in self.FIELDS.iteritems():
+            if field.patch_key != key:
+                continue
 
-            if patchKey == key:
-                # Filter the read value first.
-                # Filter only if this entry has a FILTER and if the internal key has a filter function
-                # associated with it.
-                if self.FILTER is not None and internalKey in self.FILTER:
-                    value = filters.__dict__[self.FILTER[internalKey] + '_read'](value, table, extended)
-
-                # Validate expected integer values.
-                if type(value) is not set:
-                    try:
-                        value = int(value)
-                    except ValueError:
-                        raise ValueError('Value {} for {} is not a number.'.format(value, key))
-
-                self[internalKey] = value
-                return
+            self[internal_key] = self.validate_field_value(value, field)
+            return
 
         raise LookupError('Cannot find patch key {}'.format(key))
 
@@ -103,18 +116,14 @@ class Entry(object):
 
         return self
 
-    def from_json(self, json, table, extended):
+    def from_json(self, json):
         """
         Reads this entry's values from a JSON object.
         """
 
         self.values = {}
-
-        for key in self.FIELDS.keys():
-            value = json[key]
-            if self.FILTER is not None and key in self.FILTER:
-                value = filters.__dict__[self.FILTER[key] + '_read'](value, table, extended)
-            self.values[key] = value
+        for key, field in self.FIELDS.iteritems():
+            self.values[key] = self.validate_field_value(json[key], field)
 
         return self
 
@@ -135,42 +144,40 @@ class Entry(object):
         else:
             return '\n{} {}\n'.format(self.NAME, index + offset)
 
-    def get_patch_string(self, original, table, extended):
+    def get_patch_string(self, original):
         """
-        Returns a string with all of this entry's modified values.
+        Returns a string with all of this entry's modified values, for writing to a Dehacked patch.
 
         @param original: The original entry containing unmodified engine data.
-        @param table: The table that this entry belongs to.
-        @param extended: Set to True if a filter is for an extended engine.
         """
 
         output = {}
 
-        for key in self.FIELDS.keys():
+        for key, field in self.FIELDS.iteritems():
+
             # Skip this entry if needed.
-            if self.SKIP is not None and key in self.SKIP:
+            if field.type == FieldType.ACTION:
                 continue
 
             # Store modified keys in an output dict.
             if self[key] != original[key]:
                 output[key] = self[key]
 
-        if len(output) > 0:
-            output_list = []
-
-            # Create a list of patch key\value pairs to output.
-            for key, value in output.iteritems():
-
-                # Filter the value about to be written to the patch.
-                if self.FILTER is not None and key in self.FILTER:
-                    value = filters.__dict__[self.FILTER[key] + '_write'](value, table, extended)
-
-                output_list.append('{} = {}\n'.format(self.FIELDS[key], value))
-
-            return ''.join(output_list)
-
         # No values were modified.
-        return None
+        if len(output) == 0:
+            return None
+
+        # Create a list of patch key\value pairs to output.
+        output_list = []
+        for key, value in output.iteritems():
+            field = self.FIELDS[key]
+
+            if field.type == FieldType.FLAGS:
+                value = filters.filter_thing_flags_write(value, self.table)
+
+            output_list.append('{} = {}\n'.format(field.patch_key, value))
+
+        return ''.join(output_list)
 
     def __repr__(self):
         return '{}: {}'.format(self.NAME, self.values)

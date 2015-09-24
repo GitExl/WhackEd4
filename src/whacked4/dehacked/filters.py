@@ -10,7 +10,7 @@ import math
 import re
 
 
-def filter_thing_flags_read(value, table, extended):
+def filter_thing_flags_read(value, table):
     """
     Filters a thing's flags value.
 
@@ -33,7 +33,7 @@ def filter_thing_flags_read(value, table, extended):
 
         # Flag is a mnemonic.
         else:
-            if not extended:
+            if not table.extended:
                 raise LookupError('Encountered thing flag mnemonic {} in a non-extended patch.'.format(item))
 
             flag = table.flags.get(item)
@@ -67,12 +67,12 @@ def get_thing_flag_mnemonics(bits, table):
     return out
 
 
-def filter_thing_flags_write(value, table, extended):
+def filter_thing_flags_write(value, table):
     """
     Returns a thing flags value as a string of mnemonics.
     """
 
-    if extended:
+    if table.extended:
         return filter_thing_flags_write_extended(value, table)
     else:
         return filter_thing_flags_write_vanilla(value, table)
