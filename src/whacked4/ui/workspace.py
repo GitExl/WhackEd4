@@ -33,7 +33,7 @@ class Workspace(object):
         @param base_filename: the filename of the file that this workspace belongs to.
         """
 
-        filename = self.get_filename(base_filename)
+        filename = _get_filename(base_filename)
 
         with open(filename, 'r') as f:
             data = json.load(f)
@@ -59,7 +59,7 @@ class Workspace(object):
             'windows': self.windows
         }
 
-        filename = self.get_filename(base_filename)
+        filename = _get_filename(base_filename)
         with open(filename, 'w') as f:
             json.dump(data, f, indent=4)
 
@@ -77,14 +77,14 @@ class Workspace(object):
             window_data = self.windows[window_name]
 
             # Set window dimensions.
-            x = int(get_dict_value(window_data, 'x', 0))
-            y = int(get_dict_value(window_data, 'y', 0))
-            width = int(get_dict_value(window_data, 'width', 640))
-            height = int(get_dict_value(window_data, 'height', 480))
+            x = int(_get_dict_value(window_data, 'x', 0))
+            y = int(_get_dict_value(window_data, 'y', 0))
+            width = int(_get_dict_value(window_data, 'width', 640))
+            height = int(_get_dict_value(window_data, 'height', 480))
             window.SetDimensions(x, y, width, height)
 
             # Set window visibility.
-            visible = int(int(get_dict_value(window_data, 'visible', 0)))
+            visible = int(int(_get_dict_value(window_data, 'visible', 0)))
             if visible:
                 window.Show(True)
             else:
@@ -137,16 +137,17 @@ class Workspace(object):
 
             self.windows[window_name] = window_data
 
-    def get_filename(self, base_filename):
-        """
-        Returns a workspace filename from any full path.
-        """
 
-        # Replace the path's file extension with .whacked
-        return os.path.splitext(base_filename)[0] + '.whacked'
+def _get_filename(base_filename):
+    """
+    Returns a workspace filename from any full path.
+    """
+
+    # Replace the path's file extension with .whacked
+    return os.path.splitext(base_filename)[0] + '.whacked'
 
 
-def get_dict_value(src, value, default):
+def _get_dict_value(src, value, default):
     """
     Returns a default value for a dict key if it was not found, otherwise returns the dict item.
     """

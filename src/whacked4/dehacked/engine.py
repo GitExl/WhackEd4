@@ -248,7 +248,7 @@ class Engine(object):
         self.sound_names = []
         for sound in self.sounds:
             f.seek(sound['namePointer'] + exe_config['dataSegment'])
-            text = read_string(f)
+            text = _read_string(f)
             self.sound_names.append(text)
 
     def read_executable_strings(self, f, exe_config):
@@ -260,7 +260,7 @@ class Engine(object):
 
         self.strings = []
         for _ in range(exe_config['stringCount']):
-            text = read_string(f)
+            text = _read_string(f)
 
             # Seek ahead to the next offset dividable by 4.
             if f.tell() % 4 != 0:
@@ -324,7 +324,7 @@ class Engine(object):
             f.seek(exe_config['cheatOffset'] + data['offset'])
             text = f.read(data['length'])
 
-            self.cheats[name] = decrypt_cheat_string(text)
+            self.cheats[name] = _decrypt_cheat_string(text)
 
     def read_executable_sprite_names(self, f, exe_config):
         """
@@ -403,7 +403,7 @@ class EngineJSONEncoder(JSONEncoder):
         return JSONEncoder.default(self, o)
 
 
-def read_string(f):
+def _read_string(f):
     """
     Reads a null-terminated string from a file.
     """
@@ -418,7 +418,7 @@ def read_string(f):
     return ''.join(chars)
 
 
-def decrypt_cheat_string(text):
+def _decrypt_cheat_string(text):
     """
     Decrypts an executable cheat string into a readable one.
     """

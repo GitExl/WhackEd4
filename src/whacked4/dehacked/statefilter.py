@@ -132,7 +132,7 @@ class StateFilter(object):
         states_list = [False] * len(self.patch.states)
 
         weapon = self.patch.weapons[weapon_index]
-        add_weapon_states(states_list, weapon)
+        _add_weapon_states(states_list, weapon)
 
         # Add plasma rifle muzzle flash jitter states.
         if self.patch.engine.hacks['plasmaFlashStateJitter']:
@@ -148,7 +148,7 @@ class StateFilter(object):
         states_list = [False] * len(self.patch.states)
 
         thing = self.patch.things[thing_index]
-        add_thing_states(states_list, thing)
+        _add_thing_states(states_list, thing)
 
         return states_list
 
@@ -161,11 +161,11 @@ class StateFilter(object):
 
         # Add thing states.
         for thing in self.patch.things:
-            add_thing_states(states_list, thing)
+            _add_thing_states(states_list, thing)
 
         # Add weapon states.
         for weapon in self.patch.weapons:
-            add_weapon_states(states_list, weapon)
+            _add_weapon_states(states_list, weapon)
 
             # Add plasma rifle muzzle flash jitter states.
             if self.patch.engine.hacks['plasmaFlashStateJitter']:
@@ -207,7 +207,7 @@ class StateFilter(object):
         return -1
 
 
-def add_thing_states(states_list, thing):
+def _add_thing_states(states_list, thing):
     """
     Adds states that belong to a thing.
     """
@@ -225,7 +225,7 @@ def add_thing_states(states_list, thing):
     states_list[thing['stateBurn']] = True
 
 
-def add_weapon_states(states_list, weapon):
+def _add_weapon_states(states_list, weapon):
     """
     Adds states that belong to a weapon.
     """
