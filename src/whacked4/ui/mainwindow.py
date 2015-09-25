@@ -171,7 +171,7 @@ class MainWindow(windows.MainFrameBase):
 
         # Load the accompanying workspace file if it exists.
         new_workspace = workspace.Workspace()
-        workspace_file = new_workspace.get_filename(filename)
+        workspace_file = workspace.get_filename(filename)
         if os.path.exists(workspace_file):
             new_workspace.load(filename)
 

@@ -33,7 +33,7 @@ class Workspace(object):
         @param base_filename: the filename of the file that this workspace belongs to.
         """
 
-        filename = _get_filename(base_filename)
+        filename = get_filename(base_filename)
 
         with open(filename, 'r') as f:
             data = json.load(f)
@@ -59,7 +59,7 @@ class Workspace(object):
             'windows': self.windows
         }
 
-        filename = _get_filename(base_filename)
+        filename = get_filename(base_filename)
         with open(filename, 'w') as f:
             json.dump(data, f, indent=4)
 
@@ -138,7 +138,7 @@ class Workspace(object):
             self.windows[window_name] = window_data
 
 
-def _get_filename(base_filename):
+def get_filename(base_filename):
     """
     Returns a workspace filename from any full path.
     """

@@ -259,7 +259,7 @@ class Patch(object):
         if len(out) > 0:
             f.write('\n[STRINGS]\n')
             for name, string in out.iteritems():
-                f.write('{} = {}\n'.format(name, _string_escape(string)))
+                f.write('{} = {}\n'.format(name, string_escape(string)))
 
     def write_patch_pars(self, f):
         """
@@ -587,7 +587,7 @@ class Patch(object):
                             else:
                                 value += line.lstrip()[:-1]
 
-                    self.strings[key] = _string_unescape(value)
+                    self.strings[key] = string_unescape(value)
                     continue
 
                 elif mode == ParseMode.POINTERS_EXT:
@@ -689,7 +689,7 @@ class Patch(object):
             return self.engine.sound_names[sound_index].upper()
 
 
-def _string_escape(string):
+def string_escape(string):
     """
     Returns an escaped string for use in Dehacked patch writing.
     """
@@ -703,7 +703,7 @@ def _string_escape(string):
     return string
 
 
-def _string_unescape(string):
+def string_unescape(string):
     """
     Returns an escaped string for use in Dehacked patch reading.
     """
