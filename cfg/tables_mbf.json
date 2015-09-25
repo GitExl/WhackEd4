@@ -2,6 +2,7 @@
     "versions": [19,21],
     "extended": true,
     "name": "Marine's Best Friend (MBF)",
+    "features": [],
 
     "hacks": {
         "plasmaFlashStateJitter": true

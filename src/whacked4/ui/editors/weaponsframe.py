@@ -65,8 +65,23 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         self.selected_index = 0
 
+        self.set_feature_visibility()
         self.ammolist_build()
         self.weaponlist_build()
+
+    def set_feature_visibility(self):
+        """
+        Sets the visibility of controls based on enabled engine features.
+        """
+
+        features = self.patch.engine.features
+
+        self.PanelAmmoNeeded.Show(('weapon.minAmmo' in features))
+        self.PanelDecal.Show(('weapon.decal' in features))
+        self.PanelAmmoPerUse.Show(('weapon.ammoUse' in features))
+
+        self.Layout()
+
 
     def activate(self, event):
         """

@@ -2,6 +2,7 @@
     "versions": [19,21],
     "extended": true,
     "name": "Boom",
+    "features": [],
 
     "hacks": {
         "plasmaFlashStateJitter": true

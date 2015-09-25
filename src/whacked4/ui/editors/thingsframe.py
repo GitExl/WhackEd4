@@ -159,12 +159,40 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.thingflag_mnemonics = None
 
+        self.set_feature_visibility()
         self.flaglist_build()
         self.thinglist_build()
         self.game_build()
         self.renderstyle_build()
 
+    def set_feature_visibility(self):
+        """
+        Sets the visibility of controls based on enabled engine features.
+        """
+
+        features = self.patch.engine.features
+
+        self.PanelDamageFactor.Show(('thing.damageFactor' in features))
+        self.PanelGravity.Show(('thing.gravity' in features))
+        self.PanelGame.Show(('thing.game' in features))
+        self.PanelSpawnID.Show(('thing.spawnId' in features))
+        self.PanelRespawnTime.Show(('thing.respawnTime' in features))
+        self.PanelRenderStyle.Show(('thing.renderStyle' in features))
+        self.PanelAlpha.Show(('thing.alpha' in features))
+        self.PanelScale.Show(('thing.scale' in features))
+        self.PanelDecal.Show(('thing.decal' in features))
+
+        self.PanelStateCrash.Show(('thing.stateCrash' in features))
+        self.PanelStateFreeze.Show(('thing.stateFreeze' in features))
+        self.PanelStateBurn.Show(('thing.stateBurn' in features))
+
+        self.Layout()
+
     def game_build(self):
+        """
+        Builds the list of game types.
+        """
+
         self.ThingGame.Clear()
         self.ThingGame.AppendItems([
             'Any',
@@ -175,6 +203,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         ])
 
     def renderstyle_build(self):
+        """
+        Builds the list of render styles.
+        """
+
         self.ThingRenderStyle.Clear()
         self.ThingRenderStyle.AppendItems(self.patch.engine.render_styles.values())
 

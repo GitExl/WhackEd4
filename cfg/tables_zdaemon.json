@@ -9,14 +9,14 @@
         "thing.game",
         "thing.respawnTime",
         "thing.renderStyle",
-        "thing.flags2",
-        "thing.flags3",
         "thing.alpha",
         "thing.scale",
         "thing.decal",
-        "weapon.minammo",
+        "thing.damageFactor",
+        "thing.gravity",
+        "weapon.minAmmo",
         "weapon.decal",
-        "weapon.ammouse"
+        "weapon.ammoUse"
     ],
     "name": "ZDaemon",
 

@@ -81,6 +81,9 @@ class Engine(object):
         # A list of supported render styles.
         self.render_styles = None
 
+        # A dict of supported features.
+        self.features = None
+
     def read_table(self, filename):
         """
         Reads engine data from a JSON table configuration file.
@@ -95,6 +98,7 @@ class Engine(object):
             self.versions = data['versions']
             self.extended = data['extended']
             self.name = data['name']
+            self.features = set(data['features'])
 
             self.things.names = data['thingNames']
             self.things.flags = data['thingFlags']
