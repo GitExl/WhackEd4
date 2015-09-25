@@ -97,7 +97,7 @@ class ThingEntry(Entry):
         ('spawnId',      Field('SpawnID',             FieldType.INT)),
         ('game',         Field('Game',                FieldType.ENUM_GAME)),
         ('respawnTime',  Field('Respawn Time',        FieldType.INT)),
-        ('renderStyle',  Field('Render Style',        FieldType.ENUM_RENDERSTYLE)),
+        ('renderStyle',  Field('Render Style',        FieldType.ENUM_RENDER_STYLE)),
         ('stateRaise',   Field('Respawn frame',       FieldType.STATE)),
         ('stateCrash',   Field('Crash frame',         FieldType.STATE)),
         ('stateFreeze',  Field('Ice death frame',     FieldType.STATE)),

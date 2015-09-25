@@ -467,24 +467,24 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.undo_add()
 
-        flags_value = set()
+        flags_set = set()
         projectile_before = 'MISSILE' in self.patch.things[self.selected_index]['flags']
 
         # Iterate over the flags defined in the flags list, adding mnemonics that are set.
         for index in range(self.ThingFlags.GetCount()):
             if not self.ThingFlags.IsChecked(index):
                 continue
-            flags_value.add(self.thingflag_mnemonics[index])
+            flags_set.add(self.thingflag_mnemonics[index])
 
         # Recast the fixed point speed property if the thing is now a projectile (or not anymore).
-        projectile_after = 'MISSILE' in flags_value
+        projectile_after = 'MISSILE' in flags_set
         if projectile_before != projectile_after:
             if projectile_after:
                 self.patch.things[self.selected_index]['speed'] *= self.FIXED_UNIT
             else:
                 self.patch.things[self.selected_index]['speed'] /= self.FIXED_UNIT
 
-        self.patch.things[self.selected_index]['flags'] = flags_value
+        self.patch.things[self.selected_index]['flags'] = flags_set
         self.is_modified(True)
 
     def set_flag_tooltip(self, event):

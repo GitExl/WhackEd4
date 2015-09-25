@@ -24,7 +24,7 @@ class FieldType(object):
     FLAGS = 'flags'
     ACTION = 'action'
     ENUM_GAME = 'enum_game'
-    ENUM_RENDERSTYLE = 'enum_renderstyle'
+    ENUM_RENDER_STYLE = 'enum_render_style'
 
 
 # Stores information about a Dehacked field.
@@ -102,7 +102,7 @@ class Entry(object):
                 raise ValueError('Value "{}" for field "{}" is not a float.'.format(value, key))
 
         elif field.type == FieldType.STRING or field.type == FieldType.ACTION or field.type == FieldType.ENUM_GAME or \
-                field.type == FieldType.ENUM_RENDERSTYLE:
+                field.type == FieldType.ENUM_RENDER_STYLE:
             value = str(value)
 
         return value
@@ -116,7 +116,7 @@ class Entry(object):
 
         @raise LookupError: if the patch key cannot be found in this entry.
         """
-        print 'set {} to {}'.format(patch_key, value)
+
         for key, field in self.FIELDS.iteritems():
             if field.patch_key != patch_key:
                 continue
@@ -124,7 +124,7 @@ class Entry(object):
             self.values[key] = self.validate_field_value(key, value)
             return
 
-        raise LookupError('Cannot find patch key {}'.format(patch_key))
+        raise LookupError('Cannot find patch key "{}".'.format(patch_key))
 
     def read_from_executable(self, f):
         """

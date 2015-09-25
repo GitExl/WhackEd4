@@ -54,8 +54,8 @@ def _get_thing_flag_mnemonics(bits, table):
     out = set()
 
     for bit in range(0, 32):
-        bitval = int(math.pow(2, bit))
-        if (bits & bitval) == 0:
+        mask = int(math.pow(2, bit))
+        if (bits & mask) == 0:
             continue
 
         for mnemonic, flag in table.flags.iteritems():
@@ -77,30 +77,12 @@ def thing_flags_write(value, table):
         return _thing_flags_write_vanilla(value, table)
 
 
-def _thing_flags_write_vanilla(value, table):
-    """
-    Returns a thing flags value as a 32 bit integer bitfield.
-    """
-
-    bits = 0
-
-    for mnemonic in value:
-        flag = table.flags.get(mnemonic)
-        if 'index' not in flag:
-            raise LookupError('Cannot write non-bitfield thing flag {} into a non-extended patch.'.format(mnemonic))
-
-        bits |= int(math.pow(2, flag['index']))
-
-    return bits
-
-
 def _thing_flags_write_extended(value, table):
     """
     Returns a thing flags value as a string of extended engine mnemonics.
     """
 
     out = []
-
     for mnemonic in value:
         if mnemonic not in table.flags:
             raise LookupError('Unknown thing flag mnemonic {}.'.format(mnemonic))
@@ -111,3 +93,19 @@ def _thing_flags_write_extended(value, table):
         return 0
 
     return '+'.join(out)
+
+
+def _thing_flags_write_vanilla(value, table):
+    """
+    Returns a thing flags value as a 32 bit integer bitfield.
+    """
+
+    bits = 0
+    for mnemonic in value:
+        flag = table.flags.get(mnemonic)
+        if 'index' not in flag:
+            raise LookupError('Cannot write non-bitfield thing flag {} into a non-extended patch.'.format(mnemonic))
+
+        bits |= int(math.pow(2, flag['index']))
+
+    return bits
