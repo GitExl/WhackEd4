@@ -71,7 +71,7 @@ def thing_flags_write(value, table):
     Returns a thing flags value as a string of mnemonics.
     """
 
-    if table.extended:
+    if table.engine.extended:
         return _thing_flags_write_extended(value, table)
     else:
         return _thing_flags_write_vanilla(value, table)

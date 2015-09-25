@@ -11,7 +11,7 @@ class Table(object):
         self.entries = []
         self.entry_class = entry_class
         self.offset = 0
-        self.extended = engine.extended
+        self.engine = engine
 
     def read_from_executable(self, count, f):
         """
