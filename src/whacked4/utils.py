@@ -7,6 +7,15 @@ General utility functions.
 import wx
 
 
+class Enum(object):
+    """
+    Generic enumeration object.
+    """
+
+    def __init__(self):
+        pass
+
+
 def validate_numeric(window):
     """
     Validates the contents of a window (usually a text control), to make sure it is numeric.

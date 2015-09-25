@@ -5,10 +5,13 @@
 This module contains classes to create, read and write Dehacked patches.
 """
 
+import copy
+
 from whacked4 import config
 from whacked4.dehacked import entries
 from whacked4.dehacked import engine
-import copy
+from whacked4.utils import Enum
+
 
 
 class DehackedPatchError(Exception):
@@ -41,13 +44,10 @@ class DehackedLookupError(DehackedPatchError):
     """
 
 
-class ParseMode(object):
+class ParseMode(Enum):
     """
     Modes for the dehacked patch parser.
     """
-
-    def __init__(self):
-        pass
 
     NOTHING = 0
     THING = 1
@@ -96,7 +96,7 @@ class Patch(object):
     This is initialized from an engine object's data tables.
     """
 
-    FRAMEFLAG_LIT = 0x8000
+    FRAME_FLAG_LIT = 0x8000
 
     def __init__(self):
         self.filename = None
@@ -660,7 +660,7 @@ class Patch(object):
         state = self.states[state_index]
 
         # Get sprite frame character.
-        sprite_frame = state['spriteFrame'] & ~self.FRAMEFLAG_LIT
+        sprite_frame = state['spriteFrame'] & ~self.FRAME_FLAG_LIT
         sprite_frame = chr(sprite_frame + 65)
 
         # Get sprite name.

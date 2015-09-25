@@ -4,15 +4,13 @@
 from collections import namedtuple
 
 from whacked4.dehacked import validators
+from whacked4.utils import Enum
 
 
-class FieldType(object):
+class FieldType(Enum):
     """
     Known field data types.
     """
-
-    def __init__(self):
-        pass
 
     INT = 'int'
     FLOAT = 'float'
