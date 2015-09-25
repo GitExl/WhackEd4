@@ -19170,7 +19170,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 75,
@@ -19205,7 +19207,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 75,
@@ -19240,7 +19244,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 80,
@@ -19275,7 +19281,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -19310,7 +19318,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 105,
@@ -19345,7 +19355,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -19380,7 +19392,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -19415,7 +19429,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 75,
@@ -19450,7 +19466,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -19485,7 +19503,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 75,
@@ -19520,7 +19540,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 76,
@@ -19555,7 +19577,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 77,
@@ -19590,7 +19614,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 77,
@@ -19625,7 +19651,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 77,
@@ -19660,7 +19688,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 77,
@@ -19695,7 +19725,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -19730,7 +19762,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 77,
@@ -19765,7 +19799,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 77,
@@ -19800,7 +19836,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 77,
@@ -19835,7 +19873,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 78,
@@ -19870,7 +19910,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 77,
@@ -19905,7 +19947,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 77,
@@ -19940,7 +19984,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 75,
@@ -19975,7 +20021,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20010,7 +20058,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20045,7 +20095,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20080,7 +20132,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20115,7 +20169,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20150,7 +20206,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20185,7 +20243,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20220,7 +20280,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20255,7 +20317,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20290,7 +20354,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20325,7 +20391,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20360,7 +20428,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20395,7 +20465,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20430,7 +20502,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20465,7 +20539,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20500,7 +20576,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20535,7 +20613,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20570,7 +20650,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20605,7 +20687,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20640,7 +20724,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20675,7 +20761,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20710,7 +20798,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20745,7 +20835,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20780,7 +20872,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20815,7 +20909,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20850,7 +20946,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20885,7 +20983,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20920,7 +21020,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20955,7 +21057,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -20990,7 +21094,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21025,7 +21131,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21060,7 +21168,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21095,7 +21205,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21130,7 +21242,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21165,7 +21279,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21200,7 +21316,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21235,7 +21353,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21270,7 +21390,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21305,7 +21427,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21340,7 +21464,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21375,7 +21501,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21410,7 +21538,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21445,7 +21575,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21480,7 +21612,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21515,7 +21649,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21550,7 +21686,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21585,7 +21723,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21620,7 +21760,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21655,7 +21797,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21690,7 +21834,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21725,7 +21871,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21760,7 +21908,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21795,7 +21945,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21830,7 +21982,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21865,7 +22019,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21900,7 +22056,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21935,7 +22093,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -21970,7 +22130,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22005,7 +22167,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22040,7 +22204,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22075,7 +22241,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22110,7 +22278,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22145,7 +22315,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22180,7 +22352,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22215,7 +22389,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22250,7 +22426,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22285,7 +22463,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22320,7 +22500,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22355,7 +22537,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22390,7 +22574,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22425,7 +22611,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22460,7 +22648,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22495,7 +22685,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22530,7 +22722,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22565,7 +22759,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22600,7 +22796,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22635,7 +22833,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22670,7 +22870,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22705,7 +22907,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22740,7 +22944,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22775,7 +22981,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22810,7 +23018,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22845,7 +23055,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22880,7 +23092,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22915,7 +23129,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22950,7 +23166,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -22985,7 +23203,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23020,7 +23240,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23055,7 +23277,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23090,7 +23314,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23125,7 +23351,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23160,7 +23388,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23195,7 +23425,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23230,7 +23462,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23265,7 +23499,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23300,7 +23536,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23335,7 +23573,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23370,7 +23610,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23405,7 +23647,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23440,7 +23684,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23475,7 +23721,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23510,7 +23758,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23545,7 +23795,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23580,7 +23832,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23615,7 +23869,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23650,7 +23906,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23685,7 +23943,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23720,7 +23980,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23755,7 +24017,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23790,7 +24054,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23825,7 +24091,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23860,7 +24128,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23895,7 +24165,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "soundActive": 0,
@@ -23930,7 +24202,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         }
     ],
     "weapons": [

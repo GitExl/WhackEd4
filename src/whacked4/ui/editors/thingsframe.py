@@ -31,6 +31,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_VAL_ALPHA: 'alpha',
         windows.THING_VAL_SCALE: 'scale',
         windows.THING_VAL_DECAL: 'decal',
+        windows.THING_VAL_DAMAGEFACTOR: 'damageFactor',
+        windows.THING_VAL_GRAVITY: 'gravity',
     }
 
     # Value types for text control validation.
@@ -51,6 +53,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_VAL_ALPHA: 'float',
         windows.THING_VAL_SCALE: 'float',
         windows.THING_VAL_DECAL: 'str',
+        windows.THING_VAL_DAMAGEFACTOR: 'float',
+        windows.THING_VAL_GRAVITY: 'float',
     }
 
     # State text control to partial internal key mappings.
@@ -302,6 +306,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingAlpha.ChangeValue(str(thing['alpha']))
         self.ThingScale.ChangeValue(str(thing['scale']))
         self.ThingDecal.ChangeValue(thing['decal'])
+        self.ThingDamageFactor.ChangeValue(str(thing['damageFactor']))
+        self.ThingGravity.ChangeValue(str(thing['gravity']))
 
         # Speed is in fixed point if this thing is a missile, normal otherwise
         if 'MISSILE' in thing['flags']:

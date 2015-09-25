@@ -23088,7 +23088,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23123,7 +23125,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23158,7 +23162,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23193,7 +23199,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147484176,
@@ -23228,7 +23236,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23263,7 +23273,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 67088,
@@ -23298,7 +23310,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147484176,
@@ -23333,7 +23347,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23368,7 +23384,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147550736,
@@ -23403,7 +23421,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23438,7 +23458,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23473,7 +23495,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23508,7 +23532,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4456454,
@@ -23543,7 +23569,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4211206,
@@ -23578,7 +23606,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23613,7 +23643,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147550736,
@@ -23648,7 +23680,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23683,7 +23717,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 16902,
@@ -23718,7 +23754,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23753,7 +23791,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23788,7 +23828,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23823,7 +23865,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4211206,
@@ -23858,7 +23902,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4194310,
@@ -23893,7 +23939,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 4195078,
@@ -23928,7 +23976,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 6,
@@ -23963,7 +24013,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 24,
@@ -23998,7 +24050,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 24,
@@ -24033,7 +24087,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 71184,
@@ -24068,7 +24124,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147484176,
@@ -24103,7 +24161,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 524294,
@@ -24138,7 +24198,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147550736,
@@ -24173,7 +24235,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147550736,
@@ -24208,7 +24272,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 67088,
@@ -24243,7 +24309,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147550736,
@@ -24278,7 +24346,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147550736,
@@ -24313,7 +24383,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147550736,
@@ -24348,7 +24420,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147484176,
@@ -24383,7 +24457,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 16,
@@ -24418,7 +24494,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147484176,
@@ -24453,7 +24531,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2147484176,
@@ -24488,7 +24568,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 24,
@@ -24523,7 +24605,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 528,
@@ -24558,7 +24642,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -24593,7 +24679,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -24628,7 +24716,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 8388609,
@@ -24663,7 +24753,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 8388609,
@@ -24698,7 +24790,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 33554433,
@@ -24733,7 +24827,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 33554433,
@@ -24768,7 +24864,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 33554433,
@@ -24803,7 +24901,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 33554433,
@@ -24838,7 +24938,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 33554433,
@@ -24873,7 +24975,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 33554433,
@@ -24908,7 +25012,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -24943,7 +25049,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -24978,7 +25086,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2155872257,
@@ -25013,7 +25123,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2155872257,
@@ -25048,7 +25160,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 8388609,
@@ -25083,7 +25197,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2155872257,
@@ -25118,7 +25234,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25153,7 +25271,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 8388609,
@@ -25188,7 +25308,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 8388609,
@@ -25223,7 +25345,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2155872257,
@@ -25258,7 +25382,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25293,7 +25419,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25328,7 +25456,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25363,7 +25493,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25398,7 +25530,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25433,7 +25567,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25468,7 +25604,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25503,7 +25641,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25538,7 +25678,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25573,7 +25715,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25608,7 +25752,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25643,7 +25789,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25678,7 +25826,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25713,7 +25863,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25748,7 +25900,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25783,7 +25937,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 1,
@@ -25818,7 +25974,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -25853,7 +26011,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -25888,7 +26048,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -25923,7 +26085,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -25958,7 +26122,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -25993,7 +26159,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26028,7 +26196,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26063,7 +26233,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26098,7 +26270,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26133,7 +26307,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26168,7 +26344,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26203,7 +26381,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26238,7 +26418,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26273,7 +26455,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26308,7 +26492,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26343,7 +26529,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26378,7 +26566,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26413,7 +26603,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26448,7 +26640,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26483,7 +26677,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26518,7 +26714,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -26553,7 +26751,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -26588,7 +26788,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -26623,7 +26825,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -26658,7 +26862,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -26693,7 +26899,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -26728,7 +26936,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -26763,7 +26973,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 768,
@@ -26798,7 +27010,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 768,
@@ -26833,7 +27047,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 768,
@@ -26868,7 +27084,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 768,
@@ -26903,7 +27121,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 768,
@@ -26938,7 +27158,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -26973,7 +27195,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -27008,7 +27232,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -27043,7 +27269,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -27078,7 +27306,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -27113,7 +27343,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -27148,7 +27380,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -27183,7 +27417,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -27218,7 +27454,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -27253,7 +27491,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -27288,7 +27528,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 0,
@@ -27323,7 +27565,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -27358,7 +27602,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -27393,7 +27639,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -27428,7 +27676,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -27463,7 +27713,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -27498,7 +27750,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 2,
@@ -27533,7 +27787,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -27568,7 +27824,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -27603,7 +27861,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -27638,7 +27898,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -27673,7 +27935,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -27708,7 +27972,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 770,
@@ -27743,7 +28009,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 16,
@@ -27778,7 +28046,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 16,
@@ -27813,7 +28083,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 16,
@@ -27848,7 +28120,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 16,
@@ -27883,7 +28157,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         },
         {
             "flags": 16,
@@ -27918,7 +28194,9 @@
             "renderStyle": "STYLE_Normal",
             "alpha": 1.0,
             "decal": "",
-            "scale": 1.0
+            "scale": 1.0,
+            "damageFactor": 1.0,
+            "gravity": 1.0
         }
     ],
     "weaponNames": [

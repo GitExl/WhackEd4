@@ -104,7 +104,9 @@ class ThingEntry(Entry):
         ('stateBurn',    Field('Burning death frame', FieldType.STATE)),
         ('alpha',        Field('Alpha',               FieldType.FLOAT)),
         ('decal',        Field('Decal',               FieldType.STRING)),
-        ('scale',        Field('Scale',               FieldType.FLOAT))
+        ('scale',        Field('Scale',               FieldType.FLOAT)),
+        ('damageFactor', Field('DamageFactor',        FieldType.FLOAT)),
+        ('gravity',      Field('Gravity',             FieldType.FLOAT))
     ])
 
 
