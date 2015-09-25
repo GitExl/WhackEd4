@@ -32,18 +32,18 @@ def thing_flags_read(value, table):
 
         # Flag is a mnemonic.
         else:
-            if not table.extended:
-                raise LookupError('Encountered thing flag mnemonic {} in a non-extended patch.'.format(item))
+            if not table.engine.extended:
+                raise LookupError('Encountered thing flag mnemonic "{}" in a non-extended patch.'.format(item))
 
             flag = table.flags.get(item)
             if flag is None:
-                raise LookupError('Ignoring unknown thing flag {}.'.format(item))
+                raise LookupError('Ignoring unknown thing flag "{}".'.format(item))
 
             if 'alias' in flag:
                 item = flag['alias']
                 flag = table.flags.get(flag['alias'])
                 if flag is None:
-                    raise LookupError('Ignoring unknown thing flag alias {}.'.format(item))
+                    raise LookupError('Ignoring unknown thing flag alias "{}".'.format(item))
 
             out.add(item)
 
@@ -85,7 +85,7 @@ def _thing_flags_write_extended(value, table):
     out = []
     for mnemonic in value:
         if mnemonic not in table.flags:
-            raise LookupError('Unknown thing flag mnemonic {}.'.format(mnemonic))
+            raise LookupError('Unknown thing flag mnemonic "{}".'.format(mnemonic))
 
         out.append(mnemonic)
 
@@ -104,7 +104,7 @@ def _thing_flags_write_vanilla(value, table):
     for mnemonic in value:
         flag = table.flags.get(mnemonic)
         if 'index' not in flag:
-            raise LookupError('Cannot write non-bitfield thing flag {} into a non-extended patch.'.format(mnemonic))
+            raise LookupError('Cannot write non-bitfield thing flag "{}" into a non-extended patch.'.format(mnemonic))
 
         bits |= int(math.pow(2, flag['index']))
 
