@@ -118,7 +118,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         self.undo_add()
 
         # Add a new par time.
-        par = entries.ParEntry()
+        par = entries.ParEntry(self.patch.pars)
         par['episode'] = 0
         par['map'] = 1
         par['seconds'] = 666
@@ -150,7 +150,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
 
     def set_value(self, event):
         """
-        Validates and sets a property..
+        Validates and sets a property.
         """
 
         self.undo_add()
@@ -181,10 +181,6 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
 
         self.parlist_update_row(self.selected_index)
         self.is_modified(True)
-
-        # Update sprite index colour coding.
-        if window_id == windows.STATES_SPRITE:
-            self.update_colours()
 
     def undo_restore_item(self, item):
         """
