@@ -1,8 +1,6 @@
 Patch extensions
 - ZDaemon:
-  - "Monsters Ignore Each Other" boolean misc property from changelog. Default is False.
   - Disable Sounds editing (but not selection) and disable Cheats editor. See tables_zdaemon.cfg features object for a start.
-- Toggle new Thing editor field state based on engine capability. Most new features unavailable for non-ZDaemon configs.
 
 Bugs
 
@@ -19,9 +17,9 @@ Features
 - Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
 - UI manual \ Dehacked tutorial.
 - Allow sorting things list by name.
-- Tab control traversal. Will need UI layout changes (put controls into panels instead of directly into frames, see Misc editor sidebar).
 - Read\write DEHACKED lumps directly from a WAD file.
 - Allow includes for cfg files to modularize them.
+- Improve tab traversal everywhere.
 
 Other
 - VGA: "If you want an active tester PM me the WIP version please :-D"

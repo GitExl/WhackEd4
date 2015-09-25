@@ -1,6 +1,8 @@
 {
     "name": "Ultimate Doom 1.9",
-    "features": [],
+    "features": [
+        "nosupport.pars"
+    ],
     "weaponNames": [
         "Fist",
         "Pistol",

@@ -617,12 +617,11 @@ class MainWindow(windows.MainFrameBase):
         self.MenuViewMiscellaneous.Enable(enabled)
         self.MenuViewPatchSettings.Enable(enabled)
 
-        if self.patch is not None and self.patch.extended:
-            self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, True)
-            self.MenuViewPar.Enable(True)
-        else:
-            self.ToolBar.EnableTool(windows.MAIN_TOOL_PAR, False)
-            self.MenuViewPar.Enable(False)
+        # Disable unsupported editor tabs.
+        if self.patch is not None:
+            enable = ('nosupport.pars' not in self.patch.engine.features)
+            self.MainToolbar.EnableTool(windows.MAIN_TOOL_PAR, enable)
+            self.MenuViewPar.Enable(enable)
 
         self.editor_window_set_edit()
 

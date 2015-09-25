@@ -199,6 +199,10 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         Sets the state of all tool controls.
         """
 
+        # Override editing controls if sound support is disabled.
+        if 'nosupport.sounds' in self.patch.engine.features:
+            enabled = False
+
         for window in self.WINDOWS_TOOLS:
             window.Enable(enabled)
 

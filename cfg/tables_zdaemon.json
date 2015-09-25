@@ -16,7 +16,8 @@
         "thing.gravity",
         "weapon.minAmmo",
         "weapon.decal",
-        "weapon.ammoUse"
+        "weapon.ammoUse",
+        "nosupport.sounds"
     ],
     "name": "ZDaemon",
 
