@@ -3041,6 +3041,7 @@
         "vampirePlayerFactor": 50,
         "vampireMonsterFactor": 25,
         "monstersInfight": 202,
+        "monstersIgnoreMonsters": 0,
         "bfgAmmoUsage": 40,
         "rocketExplosionAlpha": 0.67,
         "rocketExplosionStyle": 255,
@@ -3114,6 +3115,13 @@
             "on": 221,
             "patchKey": "Monsters Infight",
             "type": "boolean"
+        },
+        "monstersIgnoreMonsters": {
+            "name": "Monsters ignore monsters",
+            "patchKey": "Monsters Ignore Each Other",
+            "type": "boolean",
+            "on": 1,
+            "off": 0
         },
         "soulSphereHealth": {
             "name": "Soulsphere health",
