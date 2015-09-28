@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 #coding=utf8
 
+from collections import namedtuple
+
 from whacked4.doom import sound, graphics
+
+
+SpriteEntry = namedtuple('SpriteEntry', ['lump', 'is_mirrored'])
 
 
 class WADList(object):
@@ -77,15 +82,15 @@ class WADList(object):
 
         return sound_data
 
-    def get_sprite(self, sprite_name, frame_index=0, rotation=0):
+    def get_sprite_entry(self, sprite_name, frame_index=0, rotation=0):
         """
-        Returns a sprite lump of a sprite in this WAD list.
+        Returns a sprite entry from this WAD list.
 
         @param sprite_name: the 4 character name of the sprite to return.
         @param frame_index: the index of the sprite frame to return.
         @param rotation: the rotation of the sprite to return.
 
-        @return: a lump of the requested sprite.
+        @return: a SpriteEntry namedtuple of the requested sprite.
         """
 
         if sprite_name not in self.sprites:
@@ -136,7 +141,7 @@ class WADList(object):
 
         sprites = {}
         for wad in self.wads:
-            wad.get_sprite_list(sprites)
+            sprites.update(wad.get_sprite_lumps())
 
         # Build the lookup table by splitting sprite lump names into relevant parts.
         for name, lump in sprites.iteritems():
@@ -151,12 +156,12 @@ class WADList(object):
 
             # Add subsprite.
             subsprite = name[4:6]
-            sprite[subsprite] = (lump, False)
+            sprite[subsprite] = SpriteEntry(lump, False)
 
             # Add mirrored sprite as well.
             if len(lump.name) == 8:
                 subsprite = name[6:8]
-                sprite[subsprite] = (lump, True)
+                sprite[subsprite] = SpriteEntry(lump, True)
 
         # Find a PLAYPAL lump to use as palette.
         playpal = self.get_lump('PLAYPAL')

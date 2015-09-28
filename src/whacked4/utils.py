@@ -126,16 +126,16 @@ def focus_text(event, parent):
     window.SetSelection(-1, -1)
 
 
-def sound_play(name, pwads):
+def sound_play(name, wadlist):
     """
     Plays back a sound.
     """
 
-    if pwads is None:
+    if wadlist is None:
         return
 
     name = 'DS' + name.upper()
-    sound_data = pwads.get_sound(name)
+    sound_data = wadlist.get_sound(name)
     if sound_data is not None:
         sound_data.play()
 
