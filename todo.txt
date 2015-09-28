@@ -1,8 +1,5 @@
-Patch extensions
-- ZDaemon:
-  - Disable Sounds editing (but not selection) and disable Cheats editor. See tables_zdaemon.cfg features object for a start.
-
-Bugs
+Known bugs
+-
 
 Low priority bugs
 - State Editor: flash when selecting states. Related to parameters UI.
