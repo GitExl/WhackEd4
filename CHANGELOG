@@ -21,6 +21,8 @@ Changed: some control and window sizes have been altered to better fit with larg
 Changed: the string editor window will focus on the text to edit when activated, so the user can often begin typing immediately.
 Changed: reduced flickering when resizing editor windows.
 Changed: tab traversal between controls is now possible in most cases.
+Changed: the sprite selector will now not hide when pressing enter or clicking Ok if no sprite is selected.
+Changed: the sprite selector puts focus on the filter field for faster filtering.
 
 Version 1.0.4
 -------------
