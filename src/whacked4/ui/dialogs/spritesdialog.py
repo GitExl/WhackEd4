@@ -32,8 +32,7 @@ class SpritesDialog(windows.SpritesDialogBase):
         # Store selected details.
         selection = self.SpriteNames.GetFirstSelected()
         if selection == -1:
-            self.selected_sprite = -1
-            self.selected_frame = -1
+            return
 
         else:
             self.selected_sprite = self.filter_list[selection]
