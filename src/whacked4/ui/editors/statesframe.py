@@ -232,7 +232,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         for list_index in self.selected:
             state_index = self.filter.state_indices[list_index]
-            self.patch.states[state_index] = copy.deepcopy(self.patch.engine.states[state_index])
+            self.patch.states[state_index] = self.patch.engine.states[state_index].clone()
             self.filter.states[list_index] = self.patch.states[state_index]
 
         self.update_properties()

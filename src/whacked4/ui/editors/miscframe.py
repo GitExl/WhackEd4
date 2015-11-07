@@ -211,8 +211,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         self.undo_add()
 
         key = self.patch.engine.misc_data.keys()[self.selected_index]
-
-        self.patch.misc[key] = self.patch.engine.misc[key]
+        self.patch.misc[key] = copy.copy(self.patch.engine.misc[key])
 
         self.misclist_update_row(self.selected_index)
         self.update_properties()

@@ -280,7 +280,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         self.undo_add()
 
-        self.patch.weapons[self.selected_index] = copy.deepcopy(self.patch.engine.weapons[self.selected_index])
+        self.patch.weapons[self.selected_index] = self.patch.engine.weapons[self.selected_index].clone()
         self.patch.weapons.names[self.selected_index] = copy.copy(self.patch.engine.weapons.names[self.selected_index])
 
         self.update_properties()

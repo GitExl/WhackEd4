@@ -611,7 +611,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.undo_add()
 
-        self.patch.things[self.selected_index] = copy.deepcopy(self.patch.engine.things[self.selected_index])
+        self.patch.things[self.selected_index] = self.patch.engine.things[self.selected_index].clone()
         self.patch.things.names[self.selected_index] = copy.copy(self.patch.engine.things.names[self.selected_index])
 
         self.update_properties()

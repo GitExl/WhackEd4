@@ -119,7 +119,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
 
         self.undo_add()
 
-        self.patch.ammo[self.selected_index] = copy.deepcopy(self.patch.engine.ammo[self.selected_index])
+        self.patch.ammo[self.selected_index] = self.patch.engine.ammo[self.selected_index].clone()
         self.patch.ammo.names[self.selected_index] = copy.copy(self.patch.engine.ammo.names[self.selected_index])
 
         self.update_properties()

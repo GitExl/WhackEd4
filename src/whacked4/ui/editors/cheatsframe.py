@@ -105,7 +105,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         self.undo_add()
 
         key = self.cheat_get_key(self.selected_index)
-        self.patch.cheats[key] = copy.deepcopy(self.patch.engine.cheats[key])
+        self.patch.cheats[key] = copy.copy(self.patch.engine.cheats[key])
 
         self.cheatlist_update_row(self.selected_index)
         self.is_modified(True)

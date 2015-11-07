@@ -159,7 +159,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
         self.undo_add()
 
-        self.patch.sounds[self.selected_index] = copy.deepcopy(self.patch.engine.sounds[self.selected_index])
+        self.patch.sounds[self.selected_index] = self.patch.engine.sounds[self.selected_index].clone()
         self.soundlist_update_row(self.selected_row, self.selected_index)
         self.update_properties()
         self.is_modified(True)
