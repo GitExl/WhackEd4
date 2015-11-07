@@ -2788,6 +2788,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		# Connect Events
 		self.m_staticText88.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.AmmoType.Bind( wx.EVT_CHOICE, self.set_ammo )
 		self.m_staticText88141.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.AmmoUse.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.AmmoUse.Bind( wx.EVT_TEXT, self.set_value )
@@ -2849,6 +2850,9 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	
 	# Virtual event handlers, overide them in your derived class
 	def dummy( self, event ):
+		pass
+	
+	def set_ammo( self, event ):
 		pass
 	
 	
@@ -3415,6 +3419,7 @@ class SpritesDialogBase ( wx.Dialog ):
 		self.Centre( wx.BOTH )
 		
 		# Connect Events
+		self.Bind( wx.EVT_ACTIVATE, self.activate )
 		self.SpriteNames.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.ok )
 		self.SpriteNames.Bind( wx.EVT_LIST_ITEM_SELECTED, self.sprite_select_list )
 		self.Filter.Bind( wx.EVT_CHAR, self.filter_key )
@@ -3432,6 +3437,9 @@ class SpritesDialogBase ( wx.Dialog ):
 	
 	
 	# Virtual event handlers, overide them in your derived class
+	def activate( self, event ):
+		pass
+	
 	def ok( self, event ):
 		pass
 	

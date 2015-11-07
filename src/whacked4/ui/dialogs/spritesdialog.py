@@ -24,6 +24,13 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         self.filter_list = None
 
+    def activate(self, event):
+        """
+        Called when the dialog is activated.
+        """
+        
+        self.Filter.SetFocus()
+
     def ok(self, event):
         """
         Called when the user clicks the Ok button.
