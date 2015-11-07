@@ -1,5 +1,4 @@
 Known bugs
--
 
 Low priority bugs
 - State Editor: flash when selecting states. Related to parameters UI.
@@ -7,10 +6,11 @@ Low priority bugs
 - Toolbar buttons clickable area does not extend to the side of the toolbar. A wxWidgets bug.
 
 Features
+- Mark and display items as modified compared to engine config.
 - ZDaemon: Add and parse relevant actors from http://www.zdaemon.org/?CMD=info&NAME=deh. Is this related to DEHSUPP?
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
+  - Check to see if any things use states that use the wrong type of action (weapon or monster).
 - '...' button for actions to browse through list of actions plus a description.
-- Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
 - UI manual \ Dehacked tutorial.
 - Allow sorting things list by name.

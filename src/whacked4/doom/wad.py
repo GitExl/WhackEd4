@@ -116,7 +116,8 @@ class WADReader(object):
 
         return None
 
-    def get_sprite_list(self, sprites_dict):
+    def get_sprite_lumps(self):
+        sprites = {}
         section_active = False
 
         for lump in reversed(self.lumps):
@@ -127,4 +128,4 @@ class WADReader(object):
                 section_active = True
                 continue
             elif section_active:
-                sprites_dict[lump.name] = lump
+                sprites[lump.name] = lump

@@ -17,11 +17,14 @@ class Palette(object):
     def __init__(self, data):
         self.colors = []
 
+        if len(data) != 768:
+            raise Exception('Not enough data for a 256 RGB color palette.')
+
         data = bytearray(data)
 
         offset = 0
         while offset < 768:
-            entry = [data[offset], data[offset + 1], data[offset + 2], 255]
+            entry = (data[offset], data[offset + 1], data[offset + 2], 255)
             self.colors.append(entry)
             offset += 3
 
@@ -37,10 +40,9 @@ class Image(object):
         self.set_empty()
         self.invalid = False
 
-        # Read header.
         width, height, left, top = self.S_HEADER.unpack_from(data)
 
-        # Attempt to detect bad file formats.
+        # Attempt to detect invalid data.
         if width > 2048 or height > 2048 or top > 2048 or left > 2048:
             self.set_invalid()
             return
@@ -61,7 +63,7 @@ class Image(object):
         while column_index < width:
             offset = offsets[column_index]
 
-            # Attempt to detect bad file formats.
+            # Attempt to detect invalid data.
             if offset < 0 or offset > len(data):
                 self.set_invalid()
                 return
