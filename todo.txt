@@ -1,4 +1,4 @@
-Known bugs
+K-nown bugs
 
 Low priority bugs
 - State Editor: flash when selecting states. Related to parameters UI.
@@ -17,6 +17,3 @@ Features
 - Read\write DEHACKED lumps directly from a WAD file.
 - Allow includes for cfg files to modularize them.
 - Improve tab traversal everywhere.
-
-Other
-- VGA: "If you want an active tester PM me the WIP version please :-D"

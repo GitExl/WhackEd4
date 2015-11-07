@@ -63,7 +63,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
 
         else:
             self.Value.Enable()
-            self.Value.SetValue(str(value))
+            self.Value.ChangeValue(str(value))
 
     def misclist_build(self):
         """
