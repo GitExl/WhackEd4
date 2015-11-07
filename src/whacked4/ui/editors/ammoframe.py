@@ -179,7 +179,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         """
 
         return {
-            'item': copy.deepcopy(self.patch.ammo[self.selected_index]),
+            'item': self.patch.ammo[self.selected_index].clone(),
             'name': copy.copy(self.patch.ammo.names[self.selected_index]),
             'index': self.selected_index
         }

@@ -272,7 +272,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         """
 
         return {
-            'item': copy.deepcopy(self.patch.sounds[self.selected_index]),
+            'item': self.patch.sounds[self.selected_index].clone(),
             'index': self.selected_index
         }
 

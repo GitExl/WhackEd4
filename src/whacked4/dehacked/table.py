@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #coding=utf8
 
+import copy
+
 
 class Table(object):
     """
@@ -47,6 +49,20 @@ class Table(object):
             # Write just a header if only the entry's name has changed.
             elif hasattr(self, 'names') and self.names[index] != source_table.names[index]:
                 f.write(entry.get_patch_header(index, self, offset=self.offset))
+
+    def clone(self):
+        """
+        Returns a clone of this table.
+        """
+
+        dup = copy.copy(self)
+        dup_entries = []
+        for entry in self.entries:
+            dup_entries.append(entry.clone())
+        dup.entries = dup_entries
+
+        return dup
+
 
     def __repr__(self):
         return '{}: {}'.format(self.entry_class, self.entries)

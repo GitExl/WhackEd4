@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #coding=utf8
 
+import copy
+
 from collections import namedtuple
 
 from whacked4.dehacked import validators
@@ -198,6 +200,16 @@ class Entry(object):
             output_list.append('{} = {}'.format(field.patch_key, value))
 
         return '\n'.join(output_list) + '\n'
+
+    def clone(self):
+        """
+        Returns a clone of this entry.
+        """
+
+        dup = copy.copy(self)
+        dup.values = copy.copy(self.values)
+
+        return dup
 
     def __repr__(self):
         return '{}: {}'.format(self.NAME, self.values)

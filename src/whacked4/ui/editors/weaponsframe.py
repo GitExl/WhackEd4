@@ -304,8 +304,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         """
 
         return {
-            'item': copy.deepcopy(self.patch.weapons[self.selected_index]),
-            'name': copy.deepcopy(self.patch.weapons.names[self.selected_index]),
+            'item': self.patch.weapons[self.selected_index].clone(),
+            'name': copy.copy(self.patch.weapons.names[self.selected_index]),
             'index': self.selected_index
         }
 

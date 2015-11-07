@@ -126,11 +126,11 @@ class Patch(object):
         self.engine = parent_engine
         self.extended = parent_engine.extended
 
-        self.things = copy.deepcopy(parent_engine.things)
-        self.states = copy.deepcopy(parent_engine.states)
-        self.sounds = copy.deepcopy(parent_engine.sounds)
-        self.weapons = copy.deepcopy(parent_engine.weapons)
-        self.ammo = copy.deepcopy(parent_engine.ammo)
+        self.things = parent_engine.things.clone()
+        self.states = parent_engine.states.clone()
+        self.sounds = parent_engine.sounds.clone()
+        self.weapons = parent_engine.weapons.clone()
+        self.ammo = parent_engine.ammo.clone()
         self.strings = copy.deepcopy(parent_engine.strings)
         self.cheats = copy.deepcopy(parent_engine.cheats)
         self.misc = copy.deepcopy(parent_engine.misc)

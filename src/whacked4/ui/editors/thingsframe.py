@@ -670,7 +670,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         return {
-            'item': copy.deepcopy(self.patch.things[self.selected_index]),
+            'item': self.patch.things[self.selected_index].clone(),
             'name': copy.copy(self.patch.things.names[self.selected_index]),
             'index': self.selected_index
         }

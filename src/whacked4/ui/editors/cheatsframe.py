@@ -144,6 +144,6 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         key = self.cheat_get_key(self.selected_index)
 
         return {
-            'item': copy.deepcopy(self.patch.cheats[key]),
+            'item': copy.copy(self.patch.cheats[key]),
             'index': self.selected_index
         }

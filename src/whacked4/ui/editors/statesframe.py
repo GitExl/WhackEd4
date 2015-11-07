@@ -162,7 +162,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         items = OrderedDict()
         for list_index in self.selected:
             state_index = self.filter.state_indices[list_index]
-            state = copy.deepcopy(self.filter.states[list_index])
+            state = self.filter.states[list_index].clone()
 
             items[state_index] = state
 
@@ -378,8 +378,12 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         Updates the contents of every selected state list row.
         """
 
+        self.StateList.Freeze()
+
         for list_index in self.selected:
             self.statelist_update_row(list_index)
+
+        self.StateList.Thaw()
 
     def update_properties(self):
         """

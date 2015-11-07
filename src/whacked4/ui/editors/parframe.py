@@ -197,4 +197,8 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         Undo for this editor works by storing *all* par entries in a single undo item.
         """
 
-        return copy.deepcopy(self.patch.pars)
+        dup = []
+        for par in self.patch.pars:
+            dup.append(par.clone())
+
+        return dup
