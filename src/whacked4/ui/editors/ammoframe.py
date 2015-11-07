@@ -173,6 +173,8 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.ammolist_update_row(index)
         self.update_properties()
 
+        self.is_modified(True)
+
     def undo_store_item(self):
         """
         @see: EditorMixin.undo_store_item

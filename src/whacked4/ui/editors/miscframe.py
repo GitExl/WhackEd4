@@ -226,6 +226,8 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         self.misclist_update_row(item['index'])
         self.update_properties()
 
+        self.is_modified(True)
+
     def undo_store_item(self):
         """
         @see: EditorMixin.undo_store_item

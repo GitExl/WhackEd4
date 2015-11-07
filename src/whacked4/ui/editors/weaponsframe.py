@@ -298,6 +298,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.weaponlist_update_row(self.selected_index)
         self.update_properties()
 
+        self.is_modified(True)
+
     def undo_store_item(self):
         """
         @see: EditorMixin.undo_store_item

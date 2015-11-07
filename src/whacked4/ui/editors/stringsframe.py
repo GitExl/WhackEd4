@@ -130,6 +130,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
 
         self.stringlist_update_row(self.selected_index)
         self.update_externals(dup)
+
         self.is_modified(True)
 
     def update_externals(self, new_string):
@@ -163,6 +164,8 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         string_key = self.get_string_key(item['index'])
         self.patch.strings[string_key] = item['item']
         self.stringlist_update_row(item['index'])
+
+        self.is_modified(True)
 
     def undo_store_item(self):
         """

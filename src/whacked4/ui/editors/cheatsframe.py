@@ -130,10 +130,10 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         """
         index = item['index']
         key = self.cheat_get_key(index)
-
         self.patch.cheats[key] = item['item']
 
         self.cheatlist_update_row(index)
+
         self.is_modified(True)
 
     def undo_store_item(self):

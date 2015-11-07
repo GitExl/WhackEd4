@@ -190,6 +190,8 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         self.patch.pars = item
         self.parlist_build()
 
+        self.is_modified(True)
+
     def undo_store_item(self):
         """
         @see: EditorMixin.undo_store_item

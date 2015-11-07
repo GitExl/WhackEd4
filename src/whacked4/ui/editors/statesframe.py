@@ -153,6 +153,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.update_properties()
         self.update_sprite_preview()
 
+        self.is_modified(True)
+
     def undo_store_item(self):
         """
         @see: EditorMixin.undo_store_item

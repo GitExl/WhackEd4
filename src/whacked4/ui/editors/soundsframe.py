@@ -266,6 +266,8 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         self.soundlist_update_row(item['index'] + 1, item['index'])
         self.update_properties()
 
+        self.is_modified(True)
+
     def undo_store_item(self):
         """
         @see: EditorMixin.undo_store_item
