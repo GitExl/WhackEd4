@@ -152,9 +152,9 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         weapon = self.patch.weapons[self.selected_index]
 
         self.AmmoType.Select(weapon['ammoType'])
-        self.AmmoUse.SetValue(str(weapon['ammoUse']))
-        self.MinAmmo.SetValue(str(weapon['minAmmo']))
-        self.Decal.SetValue(weapon['decal'])
+        self.AmmoUse.ChangeValue(str(weapon['ammoUse']))
+        self.MinAmmo.ChangeValue(str(weapon['minAmmo']))
+        self.Decal.ChangeValue(weapon['decal'])
 
         self.WeaponStateSelect.ChangeValue(str(weapon['stateSelect']))
         self.WeaponStateDeselect.ChangeValue(str(weapon['stateDeselect']))
@@ -179,6 +179,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         window = self.FindWindowById(window_id)
         value = utils.validate_numeric(window)
 
+        weapon = self.patch.weapons[self.selected_index]
+
         # Clamp to valid state indices.
         if value < 0:
             value = 0
@@ -189,7 +191,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             window.ChangeValue(str(value))
 
         key = self.PROPS_STATES[window_id]
-        self.patch.weapons[self.selected_index]['state' + key] = value
+        weapon['state' + key] = value
         self.__dict__['WeaponState' + key + 'Name'].SetLabel(self.patch.get_state_name(value))
         self.is_modified(True)
 
@@ -206,6 +208,9 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             value = window.GetValue()
         else:
             value = utils.validate_numeric(window)
+
+        if str(value) != window.GetValue():
+            window.ChangeValue(str(value))
 
         key = self.PROPS_VALUES[window_id]
         self.patch.weapons[self.selected_index][key] = value
