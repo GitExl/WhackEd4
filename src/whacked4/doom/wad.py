@@ -129,3 +129,5 @@ class WADReader(object):
                 continue
             elif section_active:
                 sprites[lump.name] = lump
+
+        return sprites

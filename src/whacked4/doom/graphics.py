@@ -17,7 +17,7 @@ class Palette(object):
     def __init__(self, data):
         self.colors = []
 
-        if len(data) != 768:
+        if len(data) < 768:
             raise Exception('Not enough data for a 256 RGB color palette.')
 
         data = bytearray(data)
