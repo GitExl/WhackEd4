@@ -1,5 +1,4 @@
-Known bugs
-- Sprite preview rotation is broken.
+K-nown bugs
 
 Low priority bugs
 - State Editor: flash when selecting states. Related to parameters UI.
