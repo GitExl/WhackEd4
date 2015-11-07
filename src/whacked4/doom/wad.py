@@ -120,6 +120,8 @@ class WADReader(object):
         sprites = {}
         section_active = False
 
+        # Note that these are iterated in reverse, so reverse logic applies for deleting the start and end of
+        # the sprite list.
         for lump in reversed(self.lumps):
             if lump.name == 'SS_START' or lump.name == 'S_START':
                 section_active = False
