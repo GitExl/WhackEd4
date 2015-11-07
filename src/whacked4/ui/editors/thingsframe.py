@@ -283,6 +283,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         # Update the properties being displayed by this window, in case state or sound names have changed.
         self.update_properties()
+        self.Layout()
 
     def edit_copy(self):
         """

@@ -28,7 +28,7 @@ class SpritesDialog(windows.SpritesDialogBase):
         """
         Called when the dialog is activated.
         """
-        
+
         self.Filter.SetFocus()
 
     def ok(self, event):
