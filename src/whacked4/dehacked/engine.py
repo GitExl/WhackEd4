@@ -88,6 +88,8 @@ class Engine(object):
         """
         Reads engine data from a JSON table configuration file.
 
+        @param filename: the name of the file to read table data from.
+
         @raise KeyError: if the table file is missing data.
         """
 
@@ -205,6 +207,8 @@ class Engine(object):
     def write_table(self, filename):
         """
         Writes this engine's table data to a JSON file.
+
+        @param filename: the name of the file to write table data to.
         """
 
         obj = {
@@ -247,6 +251,9 @@ class Engine(object):
     def read_executable_sound_names(self, f, exe_config):
         """
         Reads sound names from an executable.
+
+        @param f: the file handle to read from.
+        @param exe_config: the executable configuration to use.
         """
 
         self.sound_names = []
@@ -258,6 +265,9 @@ class Engine(object):
     def read_executable_strings(self, f, exe_config):
         """
         Reads strings from an executable.
+
+        @param f: the file handle to read from.
+        @param exe_config: the executable configuration to use.
         """
 
         f.seek(exe_config['stringOffset'])
@@ -275,6 +285,8 @@ class Engine(object):
     def read_executable_misc(self, f):
         """
         Reads miscellaneous data from an executable.
+
+        @param f: the file handle to read from.
         """
 
         int_struct = struct.Struct('<i')
@@ -296,6 +308,9 @@ class Engine(object):
     def read_executable_ammo(self, f, exe_config):
         """
         Reads ammo data from an executable.
+
+        @param f: the file handle to read from.
+        @param exe_config: the executable configuration to use.
         """
 
         single_struct = struct.Struct('<i')
@@ -321,6 +336,9 @@ class Engine(object):
     def read_executable_cheats(self, f, exe_config):
         """
         Reads and decrypts cheat code strings from an executable.
+
+        @param f: the file handle to read from.
+        @param exe_config: the executable configuration to use.
         """
 
         self.cheats = {}
@@ -333,6 +351,9 @@ class Engine(object):
     def read_executable_sprite_names(self, f, exe_config):
         """
         Reads sprite names from an executable.
+
+        @param f: the file handle to read from.
+        @param exe_config: the executable configuration to use.
         """
 
         pointers = []
@@ -354,6 +375,8 @@ class Engine(object):
         """
         Returns an action value from an action key.
 
+        @param key: the key, as stored in the actions list for this engine, to get the action of.
+
         @raise LookupError: if there is no such action key.
         """
 
@@ -365,7 +388,9 @@ class Engine(object):
 
     def get_action_key_from_name(self, action_name):
         """
-        Returns an action key from an action name.
+        Returns an action key from an action name. Useful for getting action names for non-extended engines.
+
+        @param action_name: the name of the action to find the key of.
         """
 
         for key, item in self.actions.iteritems():
@@ -377,6 +402,8 @@ class Engine(object):
     def is_compatible(self, patch):
         """
         Returns True if the patch can be loaded with this engine.
+
+        @param patch: the patch to examine.
         """
 
         version_match = (patch.version in self.versions)
@@ -390,7 +417,7 @@ class Engine(object):
 
 class EngineJSONEncoder(JSONEncoder):
     """
-    A small encoder object to assist the json module in encoding engine table objects and entries.
+    A small encoder object to assist the json module in encoding engine Table and Entry objects.
     """
 
     def default(self, o):
@@ -448,8 +475,10 @@ def _decrypt_cheat_string(text):
 def get_key_from_patchkey(data, patch_key):
     """
     Returns an internal entry key from a key used in a Dehacked patch file.
-
     This is used by the cheats and miscellaneous sections, since they do not have an associated table.
+
+    @param data: a dict of cheat or misc data.
+    @param patch_key: the string used in a patch file to identify.
 
     @raise LookupError: if the patch key cannot be found.
     """

@@ -38,6 +38,8 @@ class EditorMixin(wx.Frame):
     def list_autosize(self, list_control):
         """
         Sizes all the columns in a ListCtrl to match the widest value in it's contents or itself.
+
+        @param list_control: the list control whose columns should be sized.
         """
 
         for i in range(list_control.GetColumnCount()):
@@ -134,6 +136,8 @@ class EditorMixin(wx.Frame):
     def is_modified(self, modified):
         """
         Marks the currently loaded patch as modified or not.
+
+        @param modified: True if the patch was modified.
         """
 
         self.GetParent().set_modified(modified)
@@ -163,7 +167,11 @@ class EditorMixin(wx.Frame):
 
     def goto_state(self, state_index, filter_type, filter_index):
         """
-        Displays a state in the states editor, and enabled a filter.
+        Displays a state in the states editor, and enables a filter.
+
+        @param state_index: the index of the state to go to.
+        @param filter_type: the type of state filter to enable.
+        @param filter_index: the index of the item to select in the state filter.
         """
 
         parent = self.GetParent()
@@ -177,6 +185,8 @@ class EditorMixin(wx.Frame):
     def goto_sound(self, sound_index):
         """
         Displays a sound in the sounds editor.
+
+        @param sound_index: the index of the sound to go to.
         """
 
         parent = self.GetParent()
