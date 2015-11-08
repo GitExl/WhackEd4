@@ -21,7 +21,7 @@ Name: {group}\{cm:UninstallProgram, WhackEd4}; Filename: {uninstallexe}
 InternalCompressLevel=ultra64
 SolidCompression=true
 AppName=WhackEd4
-AppVerName=WhackEd4 1.1.0 beta
+AppVerName=WhackEd4 1.1.0
 DefaultDirName={pf}\WhackEd4
 AlwaysUsePersonalGroup=false
 ShowLanguageDialog=no
@@ -33,7 +33,7 @@ DefaultGroupName=WhackEd4
 Compression=lzma/ultra64
 OutputDir=.
 SourceDir=.
-OutputBaseFilename=whacked4-setup-1.1.0-beta
+OutputBaseFilename=whacked4-setup-1.1.0
 AllowNoIcons=true
 PrivilegesRequired=admin
 ChangesAssociations=true
