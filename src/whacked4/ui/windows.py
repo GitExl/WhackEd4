@@ -1789,8 +1789,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer40 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_panel42 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		bSizer132 = wx.BoxSizer( wx.VERTICAL )
+		bSizer139 = wx.BoxSizer( wx.VERTICAL )
 		
 		bSizer130 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -1800,7 +1799,10 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		bSizer130.Add( self.SpritePreview, 0, wx.EXPAND, 5 )
 		
 		
-		bSizer132.Add( bSizer130, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 6 )
+		bSizer139.Add( bSizer130, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 6 )
+		
+		self.m_panel42 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer132 = wx.BoxSizer( wx.VERTICAL )
 		
 		bSizer131 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -2075,7 +2077,10 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_panel42.SetSizer( bSizer132 )
 		self.m_panel42.Layout()
 		bSizer132.Fit( self.m_panel42 )
-		bSizer40.Add( self.m_panel42, 0, 0, 0 )
+		bSizer139.Add( self.m_panel42, 0, 0, 0 )
+		
+		
+		bSizer40.Add( bSizer139, 0, wx.EXPAND, 5 )
 		
 		bSizer421 = wx.BoxSizer( wx.VERTICAL )
 		
