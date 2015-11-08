@@ -182,9 +182,12 @@ class StateFilter(object):
         Adds states that belong to a hack setting.
         """
 
+        action_plasma = self.patch.engine.get_action_key_from_name('FirePlasma')
+        action_cgun = self.patch.engine.get_action_key_from_name('FireCGun')
+
         # If a weapon uses the plasma or chaingun firing action, mark it's 2nd muzzle state as used.
-        plasma_action = self.patch.engine.get_action_from_key('FirePlasma')['name']
-        cg_action = self.patch.engine.get_action_from_key('FireCGun')['name']
+        plasma_action = self.patch.engine.get_action_from_key(action_plasma)['name']
+        cg_action = self.patch.engine.get_action_from_key(action_cgun)['name']
 
         fire_state = weapon['stateFire']
         action = self.patch.states[fire_state]['action']
