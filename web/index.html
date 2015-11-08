@@ -20,16 +20,17 @@
 					Dehacked's feature list with the following:
 				</p>
 				<ul>
-					<li>Display sprite previews of the items you are working on.</li>
-					<li>State filtering for things, weapons, or unused states.</li>
-					<li>Undo for each separate editor.</li>
-					<li>Copy and pasting of things and states.</li>
-					<li>Sprite selection filtering.</li>
-					<li>Doom 1.9, Ultimate Doom 1.9, Boom and Marine's Best Friend (MBF) table files.</li>
-					<li>State highlighting based on sprite index.</li>
-					<li>Editor window positions and sizes are stored inbetween sessions.</li>
-					<li>Multiple PWADs can be loaded.</li>
-					<li>IWAD, PWAD and window positions are stored separately from the Dehacked file.</li>
+					<li>Display sprite previews of the items you are working on;</li>
+					<li>state filtering for things, weapons, or unused states;</li>
+					<li>undo for each separate editor;</li>
+					<li>copy and pasting of things and states;</li>
+					<li>sprite selection filtering;</li>
+					<li>Doom 1.9, Ultimate Doom 1.9, Boom and Marine's Best Friend (MBF) table files;</li>
+					<li>state highlighting based on sprite index;</li>
+					<li>editor window positions and sizes are stored inbetween sessions;</li>
+					<li>multiple PWADs can be loaded;</li>
+					<li>IWAD, PWAD and window positions are stored separately from the Dehacked file;</li>
+					<li>support for advanced engines like MBF and ZDaemon.</li>
 				</ul>
 			</div>
 
@@ -39,12 +40,12 @@
 				<a class="lightbox" href="images/screen03.png"><img src="images/screen03_thumb.png"></a>
 			</div>
 
-			<a class="button normal" href="files/whacked4-setup-1.0.5.exe">Download</a>
+			<a class="button normal" href="files/whacked4-setup-1.1.0.exe">Download 1.1.0</a>
 			<a class="button side" href="#section-changelog">Changelog</a>
 			<a class="button side" href="#section-source">Source code</a>
 
 			<p class="below-button">
-				<a href="files/whacked4-1.0.5.7z">Download standalone 7zip archive</a>
+				<a href="files/whacked4-1.1.0.7z">Download standalone 7zip archive</a>
 			</p>
 		</div>
 	</div>
@@ -52,9 +53,31 @@
 	<div id="container">
 		<div id="content">
 			<h1 id="section-changelog">Changelog</h1>
-			<h2>Version 1.0.5</h2>
+			<h2>Version 1.1.0</h2>
 			<ul>
-				<li>Fixed: sound numbering and setting used sound 1 as the dummy sound.</li>
+				<li>Added: the ability to change the rotation in a sprite preview by dragging the mouse over it with the left button held down.</li>
+				<li>Added: a number of new state, thing, weapon and miscellaneous options for advanced ZDaemon\ZDoom support.</li>
+				<li>Added: better defined state action parameter support, including support for arguments.</li>
+				<li>Added: a new miscellaneous editor UI that supports an arbitrary number of options. Double click items to quickly edit them.</li>
+				<li>Added: clicking an active editor window toolbar button will bring it to the front if it is not already, otherwise it will close it.</li>
+				<li>Added: closing dialogs is now possible with the ESC and a window close button.</li>
+				<li>Added: a ZDaemon engine configuration file supporting some of ZDaemon's Dehacked extensions.</li>
+				<li>Fixed: sound numbering and sound assignment used sound 1 as the dummy sound erroneously.</li>
+				<li>Fixed: missing ampersands in thing flags.</li>
+				<li>Fixed: thing names not being updated in the state filter list when a thing is renamed.</li>
+				<li>Fixed: misspelling of ReFire and BFGSound actions.</li>
+				<li>Fixed: monster infighting flag used the wrong value when enabled.</li>
+				<li>Fixed: loading a patch through explorer no longer causes a crash on startup.</li>
+				<li>Fixed: weapon editor undo functionality did not work properly.</li>
+				<li>Changed: removed the MBF Beta configuration. The regular MBF configuration now also contains the beta functionality.</li>
+				<li>Changed: editing action parameters is now made easier by only displaying parameters for actions that support them, complete with name labels and descriptions in tooltips.</li>
+				<li>Changed: thing list indices start at 1 to make using state actions like MBF's Spawn easier.</li>
+				<li>Changed: some control and window sizes have been altered to better fit with larger fonts.</li>
+				<li>Changed: the string editor window will focus on the text to edit when activated, so the user can often begin typing immediately.</li>
+				<li>Changed: reduced flickering when resizing editor windows.</li>
+				<li>Changed: tab traversal between controls is now possible in most cases.</li>
+				<li>Changed: the sprite selector will now not hide when pressing enter or clicking Ok if no sprite is selected.</li>
+				<li>Changed: the sprite selector puts focus on the filter field for faster filtering.</li>
 			</ul>
 
 			<h2>Version 1.0.4</h2>
@@ -173,45 +196,50 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript">
-			function scrollTo(dest, duration) {
-				jQuery('html, body').animate({
-					scrollTop: jQuery(dest).offset().top
-				}, duration);
-			}
+			/* global jQuery */
+			(function() {
+				'use strict';
 
-			jQuery(document).ready(function() {
-				var darken = jQuery('#darken');
+				function scrollTo(dest, duration) {
+					jQuery('html, body').animate({
+						scrollTop: jQuery(dest).offset().top
+					}, duration);
+				}
 
-				jQuery('.lightbox').each(function(index, element) {
-					element = jQuery(element);
+				jQuery(document).ready(function() {
+					var darken = jQuery('#darken');
 
-					// Preload thumbnail.
-					var img = jQuery('<img src="' + element.attr('href') + '">');
+					jQuery('.lightbox').each(function(index, element) {
+						element = jQuery(element);
 
-					jQuery(this).bind('click', function() {
-						darken.css('background-image', 'url("' + element.attr('href') + '")');
-						darken.fadeIn(200);
+						// Preload thumbnail.
+						var img = jQuery('<img src="' + element.attr('href') + '">');
+
+						jQuery(this).bind('click', function() {
+							darken.css('background-image', 'url("' + element.attr('href') + '")');
+							darken.fadeIn(200);
+
+							return false;
+						});
+					});
+
+					darken.bind('click', function() {
+						jQuery(this).fadeOut(200);
+					});
+
+					jQuery('.button').bind('click', function() {
+						var dest = jQuery(this).attr('href');
+						if (dest.substr(0, 1) !== '#') {
+							return true;
+						}
+
+						jQuery('#container').fadeIn(250);
+						scrollTo(dest, 250);
 
 						return false;
 					});
 				});
-
-				darken.bind('click', function() {
-					jQuery(this).fadeOut(200);
-				})
-
-				jQuery('.button').bind('click', function() {
-					var dest = jQuery(this).attr('href');
-					if (dest.substr(0, 1) != '#') {
-						return true;
-					}
-
-					jQuery('#container').fadeIn(250);
-					scrollTo(dest, 250);
-
-					return false;
-				});
-			});
+			})();
 		</script>
 
     <script>
