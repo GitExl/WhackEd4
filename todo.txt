@@ -1,6 +1,5 @@
 Known bugs
-- Sprite preview rotation is broken.
-
+-
 Low priority bugs
 - State Editor: flash when selecting states. Related to parameters UI.
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
