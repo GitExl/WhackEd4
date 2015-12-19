@@ -1,3 +1,7 @@
+Version 1.1.1
+-------------
+Fixed: missing parameter names for the PlaySound and PlayWeaponSound state actions.
+
 Version 1.1.0
 -------------
 Added: the ability to change the rotation in a sprite preview by dragging the mouse over it with the left button held down.
