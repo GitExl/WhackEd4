@@ -434,6 +434,7 @@
                     "type": "sound"
                 },
                 {
+                    "name": "Full volume",
                     "description": "If set to 1, the sound effect will play at full volume regardless of the distance.",
                     "type": "integer",
                     "range": [0, 1]
@@ -451,6 +452,7 @@
                     "type": "sound"
                 },
                 {
+                    "name": "Full volume",
                     "description": "If set to 1, the sound effect will play at full volume regardless of the distance.",
                     "type": "integer",
                     "range": [0, 1]
