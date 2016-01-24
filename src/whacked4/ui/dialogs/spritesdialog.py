@@ -51,7 +51,7 @@ class SpritesDialog(windows.SpritesDialogBase):
             else:
                 self.selected_frame = int(frame_index)
 
-        self.Hide()
+        self.EndModal(0)
 
     def sprite_select_list(self, event):
         """
@@ -213,7 +213,7 @@ class SpritesDialog(windows.SpritesDialogBase):
         event.Skip()
 
     def cancel(self, event):
-        self.Hide()
+        self.EndModal(0)
 
     def filter_update(self, event):
         window = self.FindWindowById(event.GetId())

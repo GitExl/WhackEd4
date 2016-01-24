@@ -35,4 +35,4 @@ class ErrorDialog(windows.ErrorDialogBase):
         self.Report.SetSelection(-1, -1)
 
     def close(self, event):
-        self.Hide()
+        self.EndModal(0)

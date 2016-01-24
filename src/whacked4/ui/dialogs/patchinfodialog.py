@@ -126,7 +126,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
             self.selected_iwad = None
         self.selected_pwads = self.pwads
 
-        self.Hide()
+        self.EndModal(0)
 
     def delete_iwad(self, event):
         """
@@ -193,4 +193,4 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
             self.PWADList.DeleteItem(index)
 
     def cancel(self, event):
-        self.Hide()
+        self.EndModal(0)

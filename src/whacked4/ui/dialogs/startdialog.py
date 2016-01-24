@@ -30,17 +30,17 @@ class StartDialog(windows.StartDialogBase):
         Opens a Dehacked patch directly from the file list.
         """
 
-        self.Hide()
+        self.EndModal(0)
         filename = config.settings['recent_files'][event.GetIndex()]
         self.GetParent().open_file(filename)
 
     def new_file(self, event):
-        self.Hide()
+        self.EndModal(0)
         self.GetParent().new_file()
 
     def open_file(self, event):
-        self.Hide()
+        self.EndModal(0)
         self.GetParent().open_file_dialog()
 
     def cancel(self, event):
-        self.Hide()
+        self.EndModal(0)
