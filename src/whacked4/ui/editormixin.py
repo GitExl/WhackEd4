@@ -119,6 +119,8 @@ class EditorMixin(wx.Frame):
         """
 
         window = self.GetParent().FindWindowById(event.GetId())
+        if window is None:
+            return
         window.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
         window.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
         window.Refresh()
@@ -129,6 +131,8 @@ class EditorMixin(wx.Frame):
         """
 
         window = self.GetParent().FindWindowById(event.GetId())
+        if window is None:
+            return
         window.SetCursor(wx.StockCursor(wx.CURSOR_ARROW))
         window.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_WINDOWTEXT))
         window.Refresh()
