@@ -248,11 +248,15 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         Resizes the thing name column to match the control's width.
         """
 
-        columns_width = self.ThingList.GetColumnWidth(0)
-        columns_width += self.ThingList.GetColumnWidth(2) + self.ThingList.GetColumnWidth(3)
+        # ioanch 20160124: check bounds
+        col_count = self.ThingList.GetColumnCount()
+        columns_width = self.ThingList.GetColumnWidth(0) if col_count > 0 else 0
+        if col_count > 3:
+            columns_width += self.ThingList.GetColumnWidth(2) + self.ThingList.GetColumnWidth(3)
 
         width = self.ThingList.GetClientSizeTuple()[0] - columns_width - 4
-        self.ThingList.SetColumnWidth(1, width)
+        if col_count > 1:
+            self.ThingList.SetColumnWidth(1, width)
 
     def flaglist_build(self):
         """

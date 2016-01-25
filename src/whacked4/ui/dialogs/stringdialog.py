@@ -118,8 +118,8 @@ class StringDialog(windows.StringDialogBase):
 
     def ok(self, event):
         self.new_string = self.New.GetValue()
-        self.Hide()
+        self.EndModal(0)
 
     def cancel(self, event):
         self.new_string = None
-        self.Hide()
+        self.EndModal(0)
