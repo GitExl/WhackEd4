@@ -571,8 +571,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             sprite_index = self.sprites_dialog.selected_sprite
             frame_index = self.sprites_dialog.selected_frame
 
-            self.SpriteIndex.ChangeValue(str(sprite_index))
-            self.set_selected_property('sprite', sprite_index)
+            self.SpriteIndex.SetValue(str(sprite_index))
 
             # Change the frame index if it was altered.
             if frame_index != -1:

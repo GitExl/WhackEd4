@@ -1,6 +1,7 @@
 Version 1.1.1
 -------------
 Fixed: missing parameter names for the PlaySound and PlayWeaponSound state actions.
+Fixed: the sprite label property not updating after selecting a sprite in the state editor.
 
 Version 1.1.0
 -------------
