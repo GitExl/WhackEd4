@@ -8,16 +8,17 @@ Low priority bugs
 
 Features
 - Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
+- Allow sorting things list by name.
 - Mark and display items as modified compared to engine config.
+- '...' button for actions to browse through list of actions plus a description.
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
   - Check to see if any things use states that use the wrong type of action (weapon or monster).
-- '...' button for actions to browse through list of actions plus a description.
+
 - Simplify engine config structure for faster parsing.
 - Merge patches by loading a patch "over" the current one.
 - DEHSUPP support. See GitHub issue.
 - ZDaemon: Add and parse relevant actors from http://www.zdaemon.org/?CMD=info&NAME=deh. Is this related to DEHSUPP?
 - UI manual \ Dehacked tutorial.
-- Allow sorting things list by name.
 - Read\write DEHACKED lumps directly from a WAD file.
 - Allow includes for cfg files to modularize them.
 - Improve tab traversal everywhere.
