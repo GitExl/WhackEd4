@@ -108,7 +108,7 @@ class StateFilter(object):
                         # Randomly jump to state in param1
                         state = self.patch.states[index]
                         if state['action'] == 'RandomJump':
-                            states_list[state['parameter1']] = True
+                            states_list[state['unused1']] = True
 
                 if not added:
                     break
