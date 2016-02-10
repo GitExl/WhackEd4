@@ -437,7 +437,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             # For non-extended patches, do not allow editing an action on a state that has none.
             if not self.patch.engine.extended:
                 engine_action_key = self.patch.engine.states[state_index]['action']
-                if engine_action_key == 0:
+                if engine_action_key == '0':
                     self.Action.Disable()
                 else:
                     self.Action.Enable()
@@ -665,7 +665,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             state_index = self.filter.state_indices[list_index]
 
             # Only allow modifying a state's action if the engine is extended, or if the state already has an action.
-            if self.patch.engine.extended or self.patch.engine.states[state_index]['action'] != 0:
+            if self.patch.engine.extended or self.patch.engine.states[state_index]['action'] != '0':
                 state['action'] = action_key
 
         self.set_param_visibility(action_key)
