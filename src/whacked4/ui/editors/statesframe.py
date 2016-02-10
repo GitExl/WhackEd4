@@ -434,15 +434,13 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             else:
                 self.tools_set_state(True)
 
-            # Do not allow editing an action on a state that has none for non-extended patches.
-            action_key = self.patch.engine.states[state_index]['action']
+            # For non-extended patches, do not allow editing an action on a state that has none.
             if not self.patch.engine.extended:
-                if action_key == 0:
+                engine_action_key = self.patch.engine.states[state_index]['action']
+                if engine_action_key == 0:
                     self.Action.Disable()
                 else:
                     self.Action.Enable()
-
-            self.set_param_visibility(action_key)
 
         # If multiple states are selected, empty out all properties.
         else:
@@ -709,6 +707,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         action = self.patch.engine.get_action_from_key(action_key)
         self.Action.Select(self.Action.FindString(action['name']))
+
+        self.set_param_visibility(action_key)
 
     def statelist_update_row(self, list_index):
         """
