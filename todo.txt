@@ -1,14 +1,15 @@
 Known bugs
--
+- Thing editor property fields do not scale well when resized.
+- Fix column widths with different font sizes. Auto-sizing based on font and text contents?
 
 Low priority bugs
 - State Editor: flash when selecting states. Related to parameters UI.
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
-- Toolbar buttons clickable area does not extend to the side of the toolbar. A wxWidgets bug.
+- Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
 
 Features
-- Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
 - Allow sorting things list by name.
+- Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
 - Mark and display items as modified compared to engine config.
 - '...' button for actions to browse through list of actions plus a description.
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
@@ -16,6 +17,7 @@ Features
 
 - Simplify engine config structure for faster parsing.
 - Merge patches by loading a patch "over" the current one.
+  - Or like https://www.doomworld.com/vb/post/1556253
 - DEHSUPP support. See GitHub issue.
 - ZDaemon: Add and parse relevant actors from http://www.zdaemon.org/?CMD=info&NAME=deh. Is this related to DEHSUPP?
 - UI manual \ Dehacked tutorial.

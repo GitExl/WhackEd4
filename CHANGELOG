@@ -3,6 +3,10 @@ Version 1.1.1
 Added: A Doom Retro engine configuration (thanks to VGA).
 Fixed: missing parameter names for the PlaySound and PlayWeaponSound state actions.
 Fixed: the sprite label property not updating after selecting a sprite in the state editor.
+Fixed: a crash when jumping to a state with the RandomJump action.
+Fixed: choosing a 30th sprite frame.
+Fixed: state parameters dissapearing when selecting a state.
+Fixed: state action editing was possible in non-extended patches.
 
 Version 1.1.0
 -------------
