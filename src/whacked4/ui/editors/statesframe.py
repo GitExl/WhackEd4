@@ -687,8 +687,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         # Clamp to a valid index.
         if value < 0:
             value = 0
-        elif value > config.MAX_SPRITE_FRAME:
-            value = config.MAX_SPRITE_FRAME
+        elif value >= config.MAX_SPRITE_FRAME:
+            value = config.MAX_SPRITE_FRAME - 1
 
         if window.GetValue() != str(value):
             window.ChangeValue(str(value))

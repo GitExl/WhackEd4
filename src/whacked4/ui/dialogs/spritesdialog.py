@@ -134,8 +134,8 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         if value < 0:
             value = 0
-        elif value > config.MAX_SPRITE_FRAME:
-            value = config.MAX_SPRITE_FRAME
+        elif value >= config.MAX_SPRITE_FRAME:
+            value = config.MAX_SPRITE_FRAME - 1
 
         if str(value) != window.GetValue():
             window.ChangeValue(str(value))
