@@ -8,7 +8,24 @@ Low priority bugs
 - Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
 
 Features
+1.2.0
+- Allow 0-rotation sprites to replace rotation sprites. SKELC0 replaces all of SKELC* rotations if present in a later
+  loaded WAD. Configurable in patch settings dialog, since vanilla Doom and Chocolate Doom do not allow this, but most
+  source ports do. See https://www.doomworld.com/vb/post/1558457
+- Add DooMRetro "Gib health" thing property. See https://github.com/bradharding/doomretro/commit/64cba7dbb9e952a6d56ddccf25c650c64ffdc389
+- Being able to copy/paste the properties of a state. About the copy paste, I think all lines should be copied and when
+  pasted they should be pasted all at once again. If the lines selected when copying are more than the ones when
+  pasting, then the extra copied ones would be ignored. If they were less, then only that nummber of lines will be
+  modified, the rest of the selected lines will be unmodified. So if the user selects 9 frames (f.e. a death
+  animation), he can then select haphazardly some blank frames from 1300 to 1350, not caring too much, then he pastes
+  over and the frames from 1300 to 1308 get modified/overwritten, not the rest.
+- Being able to select some states, right click and select "link frames" or something. And that would make each state's
+  "next" point to the next higher one that is selected, until the last one. For example, I select states 4, 5, 9, 10
+  (order of selection doesn't matter). With that button Whacked would make each lower one point to the higher one,
+  the last one's "next" stays the same I guess.
 - Allow sorting things list by name.
+
+1.3.0
 - Press space in the state editor or right mouse button on a state label to start a preview animation at that state.
 - Mark and display items as modified compared to engine config.
 - '...' button for actions to browse through list of actions plus a description.
@@ -18,7 +35,7 @@ Features
 - Simplify engine config structure for faster parsing.
 - Merge patches by loading a patch "over" the current one.
   - Or like https://www.doomworld.com/vb/post/1556253
-- DEHSUPP support. See GitHub issue.
+- DEHSUPP support. See GitHub issue #1.
 - ZDaemon: Add and parse relevant actors from http://www.zdaemon.org/?CMD=info&NAME=deh. Is this related to DEHSUPP?
 - UI manual \ Dehacked tutorial.
 - Read\write DEHACKED lumps directly from a WAD file.
