@@ -439,11 +439,11 @@ class Patch(object):
                     entry_name = ' '.join(line_words[2:])[1:-1]
                     self.things.names[entry_index] = entry_name
                     continue
-                elif line.startswith('Frame ') and len(line_words) == 2:
+                elif line.startswith('Frame ') and len(line_words) >= 2:
                     mode = ParseMode.STATE
                     entry_index = int(line_words[1])
                     continue
-                elif line.startswith('Sound ') and len(line_words) == 2:
+                elif line.startswith('Sound ') and len(line_words) >= 2:
                     mode = ParseMode.SOUND
                     entry_index = int(line_words[1])
                     continue
