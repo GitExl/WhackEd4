@@ -47,10 +47,11 @@ class StringDialog(windows.StringDialogBase):
             self.CharsLeft.Hide()
         else:
             # Non-extended string lengths are limited by the padding room in the executable.
+            # Rounded to the next multiple of 4, excluding the terminating NULL character.
             if cheat:
                 self.max_length = len(engine_string)
             else:
-                self.max_length = int((len(engine_string) / 4.0) * 4) + 3
+                self.max_length = len(engine_string) + (4 - (len(engine_string) % 4)) - 1
 
             self.CharsLeft.Show()
 
