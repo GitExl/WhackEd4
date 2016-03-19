@@ -44,6 +44,7 @@ class Entry(object):
 
     def __init__(self, table):
         self.table = table
+        self.extra_values = {}
 
         self.values = {}
         for key in self.FIELDS.keys():
@@ -124,7 +125,8 @@ class Entry(object):
             self.values[key] = self.validate_field_value(key, value)
             return
 
-        raise LookupError('Cannot find patch key "{}".'.format(patch_key))
+        # No known patch key found, store it as extra values.
+        self.extra_values[patch_key] = value
 
     def read_from_executable(self, f):
         """
@@ -198,6 +200,10 @@ class Entry(object):
                 value = validators.thing_flags_write(value, self.table)
 
             output_list.append('{} = {}'.format(field.patch_key, value))
+
+        # Add extra values.
+        for key, value in self.extra_values.iteritems():
+            output_list.append('{} = {}'.format(key, value))
 
         return '\n'.join(output_list) + '\n'
 
