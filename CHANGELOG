@@ -2,6 +2,7 @@ Version 1.1.2
 -------------
 Fixed: Doom Retro's PlaySound action was missing a parameter name, causing a crash when it was selected. Thanks to AnotherLife.
 Fixed: rewrote sprite name, frame and rotation handling to better emulate Doom's behaviour. As a result, zero-rotation sprites can now replace sprites with multiple rotations. Thanks to VGA, AnotherLife.
+Fixed: when selecting a new sprite for a state, all selected state's frames were set to 0 when no specific frame was selected. Thanks to VGA.
 
 Version 1.1.1
 -------------

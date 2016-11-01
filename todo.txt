@@ -23,8 +23,6 @@ Features
   (order of selection doesn't matter). With that button Whacked would make each lower one point to the higher one,
   the last one's "next" stays the same I guess.
 - Allow sorting things list by name.
-- "When having multiple states selected, and you change only the sprite family, the sprite numbers also all become 0.
-  Can you make them stay the same as they were?"
 
 1.3.0
 - Press space in the state editor or right mouse button on a state label to start a preview animation at that state.

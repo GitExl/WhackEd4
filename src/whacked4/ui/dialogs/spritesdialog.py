@@ -58,7 +58,9 @@ class SpritesDialog(windows.SpritesDialogBase):
         Called when a sprite name is selected in the list.
         """
 
-        self.FrameIndex.SetValue('0')
+        if self.FrameIndex.GetValue() != '':
+            self.FrameIndex.SetValue('0')
+
         self.update_preview()
 
     def sprite_select_index(self, list_index):
@@ -130,6 +132,10 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         window_id = event.GetId()
         window = self.FindWindowById(window_id)
+
+        if window.GetValue() == '':
+            return
+
         value = utils.validate_numeric(window)
 
         if value < 0:
@@ -198,9 +204,9 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         if self.FrameIndex.GetValue() == '':
             self.FrameIndex.SetValue('0')
-        else:
-            index = int(self.FrameIndex.GetValue())
-            self.FrameIndex.SetValue(str(index + modifier))
+
+        index = int(self.FrameIndex.GetValue())
+        self.FrameIndex.SetValue(str(index + modifier))
 
     def frameindex_spin_up(self, event):
         self.frameindex_set(1)
