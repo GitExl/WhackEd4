@@ -13,7 +13,7 @@ from whacked4 import settingshandler
 # Application info.
 APP_NAME = 'WhackEd4'
 APP_SIMPLE_NAME = 'whacked4'
-APP_VERSION = '1.1.1'
+APP_VERSION = '1.1.2'
 APP_BETA = False
 
 # Monospaced font for displays that use them.

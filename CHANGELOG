@@ -1,6 +1,11 @@
+Version 1.1.2
+-------------
+Fixed: Doom Retro's PlaySound action was missing a parameter name, causing a crash when it was selected. Thanks to AnotherLife.
+Fixed: rewrote sprite name, frame and rotation handling to better emulate Doom's behaviour. As a result, zero-rotation sprites can now replace sprites with multiple rotations. Thanks to VGA, AnotherLife.
+
 Version 1.1.1
 -------------
-Added: A Doom Retro engine configuration (thanks to VGA).
+Added: A Doom Retro engine configuration. Thanks to VGA.
 Added: Unknown Dehacked fields are now ignored, but also saved unaltered.
 Fixed: missing parameter names for the PlaySound and PlayWeaponSound state actions.
 Fixed: the sprite label property not updating after selecting a sprite in the state editor.
