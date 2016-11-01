@@ -1,12 +1,67 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from collections import namedtuple
+from collections import OrderedDict
 
 from whacked4.doom import sound, graphics
 
 
-SpriteEntry = namedtuple('SpriteEntry', ['lump', 'is_mirrored'])
+class SpriteFrame(object):
+    """
+    Describes a sprite'a animation frame and all of it's possible rotations.
+    """
+
+    def __init__(self, index):
+        self.index = index
+        self.rotations = {}
+        self.is_mirrored = {}
+        self.has_rotations = False
+
+    def add_rotation(self, rotation, lump, is_mirrored):
+        """
+        Adds a new rotation to this frame. Any 0-rotations will overwrite all others.
+        Also see https://github.com/id-Software/DOOM/blob/master/linuxdoom-1.10/r_things.c#L101
+        """
+
+        if rotation == '0':
+            self.rotations = {'0': lump}
+            self.is_mirrored = {'0': False}
+            self.has_rotations = False
+
+        else:
+            self.rotations[rotation] = lump
+            self.is_mirrored[rotation] = is_mirrored
+            self.has_rotations = True
+
+    def get_rotation_lump(self, rotation):
+        return self.rotations.get(rotation, None), self.is_mirrored.get(rotation, False)
+
+
+class SpriteEntry(object):
+    """
+    Defines a sprite entry and it's frames and rotations.
+    """
+
+    def __init__(self, name):
+        self.name = name
+
+        self.frames = {}
+
+    def add_frame(self, frame_name, rotation, lump, is_mirrored):
+        if frame_name not in self.frames:
+            frame = SpriteFrame(frame_name)
+            self.frames[frame_name] = frame
+        else:
+            frame = self.frames[frame_name]
+
+        frame.add_rotation(rotation, lump, is_mirrored)
+
+    def get_frame_lump(self, frame_name, rotation):
+        frame = self.frames.get(frame_name, None)
+        if frame:
+            return frame.get_rotation_lump(rotation)
+
+        return None, False
 
 
 class WADList(object):
@@ -82,7 +137,7 @@ class WADList(object):
 
         return sound_data
 
-    def get_sprite_entry(self, sprite_name, frame_index=0, rotation=0):
+    def get_sprite_lump(self, sprite_name, frame_index=0, rotation=0):
         """
         Returns a sprite entry from this WAD list.
 
@@ -90,19 +145,17 @@ class WADList(object):
         @param frame_index: the index of the sprite frame to return.
         @param rotation: the rotation of the sprite to return.
 
-        @return: a SpriteEntry namedtuple of the requested sprite.
+        @return: a Lump and is_mirrored bool of the requested sprite.
         """
 
         if sprite_name not in self.sprites:
-            return None
+            return None, False
 
         sprite = self.sprites[sprite_name]
-        subsprite_string = chr(frame_index + 65) + str(rotation)
+        frame_name = chr(frame_index + 65)
+        rotation = str(rotation)
 
-        if subsprite_string not in sprite:
-            return None
-
-        return sprite[subsprite_string]
+        return sprite.get_frame_lump(frame_name, rotation)
 
     def get_sprite_image(self, lump, mirror):
         """
@@ -133,35 +186,33 @@ class WADList(object):
     def build_sprite_list(self):
         """
         Builds a lookup table of sprite lumps, and loads a PLAYPAL palette from the current WAD list.
-
-        The lookup table consists of a dict with sprite names as key, in which dicts with rotations and frames
-        are stored. For example, the sprite lump TROOA1E1 would create an entry for TROO, which contains a dict
-        with lump data for subsprite A1 and E1, both pointing to the same lump.
         """
 
-        sprites = {}
+        sprite_lumps = OrderedDict()
         for wad in self.wads:
-            sprites.update(wad.get_sprite_lumps())
+            sprite_lumps.update(wad.get_sprite_lumps())
 
-        # Build the lookup table by splitting sprite lump names into relevant parts.
-        for name, lump in sprites.iteritems():
-            sprite_name = name[:4]
+        # Create a list of sprite names.
+        for name in sprite_lumps.iterkeys():
+            sprite_name = name[0:4]
+            self.sprites[sprite_name] = SpriteEntry(sprite_name)
 
-            # Use current or create a new sprite dict.
-            if sprite_name in self.sprites:
-                sprite = self.sprites[sprite_name]
-            else:
-                sprite = {}
-                self.sprites[sprite_name] = sprite
+        # Add sprite lumps for each sprite.
+        for sprite_key, sprite_entry in self.sprites.iteritems():
 
-            # Add subsprite.
-            subsprite = name[4:6]
-            sprite[subsprite] = SpriteEntry(lump, False)
+            for lump_name, lump in sprite_lumps.iteritems():
+                if lump_name[0:4] != sprite_key:
+                    continue
 
-            # Add mirrored sprite as well.
-            if len(lump.name) == 8:
-                subsprite = name[6:8]
-                sprite[subsprite] = SpriteEntry(lump, True)
+                frame = lump_name[4]
+                rotation = lump_name[5]
+                sprite_entry.add_frame(frame, rotation, lump, False)
+
+                # Mirrored sprite lump.
+                if len(lump_name) == 8:
+                    frame = lump_name[6]
+                    rotation = lump_name[7]
+                    sprite_entry.add_frame(frame, rotation, lump, True)
 
         # Find a PLAYPAL lump to use as palette.
         playpal = self.get_lump('PLAYPAL')

@@ -115,16 +115,16 @@ class SpritePreview(wx.Panel):
         if self.wads is not None:
 
             # Try to get a rotation sprite.
-            sprite_entry = self.wads.get_sprite_entry(sprite_name, sprite_frame, self.angle)
+            sprite_lump, is_mirrored = self.wads.get_sprite_lump(sprite_name, sprite_frame, self.angle)
             self.lock_angle = False
 
             # Try to get a 0 rotation (front-facing) sprite.
-            if sprite_entry is None:
-                sprite_entry = self.wads.get_sprite_entry(sprite_name, sprite_frame, 0)
+            if sprite_lump is None:
+                sprite_lump, is_mirrored = self.wads.get_sprite_lump(sprite_name, sprite_frame, 0)
                 self.lock_angle = True
 
-            if sprite_entry is not None:
-                self.sprite = self.wads.get_sprite_image(sprite_entry.lump, sprite_entry.is_mirrored)
+            if sprite_lump is not None:
+                self.sprite = self.wads.get_sprite_image(sprite_lump, is_mirrored)
 
         self.update_cursor()
         self.Refresh()

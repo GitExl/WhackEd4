@@ -1,4 +1,5 @@
 Known bugs
+- settings.json ended up being empty: https://www.doomworld.com/vb/doom-editing/89861-whacked4-problem/
 - Thing editor property fields do not scale well when resized.
 - Fix column widths with different font sizes. Auto-sizing based on font and text contents?
 
@@ -10,9 +11,6 @@ Low priority bugs
 Features
 1.2.0
 - Allow multiple flag fields for things (and implement Doom Retro's "Retro Bits" field).
-- Allow 0-rotation sprites to replace rotation sprites. SKELC0 replaces all of SKELC* rotations if present in a later
-  loaded WAD. Configurable in patch settings dialog, since vanilla Doom and Chocolate Doom do not allow this, but most
-  source ports do. See https://www.doomworld.com/vb/post/1558457
 - Add DooMRetro "Gib health" thing property. See https://github.com/bradharding/doomretro/commit/64cba7dbb9e952a6d56ddccf25c650c64ffdc389
 - Being able to copy/paste the properties of a state. "About the copy paste, I think all lines should be copied and when
   pasted they should be pasted all at once again. If the lines selected when copying are more than the ones when
