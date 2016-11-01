@@ -25,7 +25,7 @@
 					<li>undo for each separate editor;</li>
 					<li>copy and pasting of things and states;</li>
 					<li>sprite selection filtering;</li>
-					<li>Doom 1.9, Ultimate Doom 1.9, Boom and Marine's Best Friend (MBF) table files;</li>
+					<li>Doom 1.9, Ultimate Doom 1.9, Boom, Marine's Best Friend (MBF), ZDaemon and Doom Retro table files;</li>
 					<li>state highlighting based on sprite index;</li>
 					<li>editor window positions and sizes are stored inbetween sessions;</li>
 					<li>multiple PWADs can be loaded;</li>
@@ -40,12 +40,12 @@
 				<a class="lightbox" href="images/screen03.png"><img src="images/screen03_thumb.png"></a>
 			</div>
 
-			<a class="button normal" href="files/whacked4-setup-1.1.1.exe">Download 1.1.1</a>
+			<a class="button normal" href="files/whacked4-setup-1.1.2.exe">Download 1.1.2</a>
 			<a class="button side" href="#section-changelog">Changelog</a>
 			<a class="button side" href="#section-source">Source code</a>
 
 			<p class="below-button">
-				<a href="files/whacked4-1.1.1.7z">Download standalone 7zip archive</a>
+				<a href="files/whacked4-1.1.2.7z">Download standalone 7zip archive</a>
 			</p>
 		</div>
 	</div>
@@ -53,6 +53,13 @@
 	<div id="container">
 		<div id="content">
 			<h1 id="section-changelog">Changelog</h1>
+			<h2>Version 1.1.2</h2>
+			<ul>
+				<li>Fixed: Doom Retro's PlaySound action was missing a parameter name, causing a crash when it was selected. Thanks to AnotherLife.</li>
+				<li>Fixed: rewrote sprite name, frame and rotation handling to better emulate Doom's behaviour. As a result, zero-rotation sprites can now replace sprites with multiple rotations. Thanks to VGA, AnotherLife.</li>
+				<li>Fixed: when selecting a new sprite for a state, all selected state's frames were set to 0 when no specific frame was selected. Thanks to VGA.</li>
+			</ul>
+
 			<h2>Version 1.1.1</h2>
 			<ul>
 				<li>Added: A Doom Retro engine configuration (thanks to VGA).</li>

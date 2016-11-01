@@ -18,6 +18,7 @@ Features
   modified, the rest of the selected lines will be unmodified. So if the user selects 9 frames (f.e. a death
   animation), he can then select haphazardly some blank frames from 1300 to 1350, not caring too much, then he pastes
   over and the frames from 1300 to 1308 get modified/overwritten, not the rest."
+  Doesn't it work like this already?? Also copy\pasting states is slow, at least in Doom Retro config.
 - Being able to select some states, right click and select "link frames" or something. And that would make each state's
   "next" point to the next higher one that is selected, until the last one. For example, I select states 4, 5, 9, 10
   (order of selection doesn't matter). With that button Whacked would make each lower one point to the higher one,
