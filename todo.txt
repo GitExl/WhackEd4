@@ -7,11 +7,17 @@ Low priority bugs
 - State Editor: flash when selecting states. Related to parameters UI.
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
 - Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
+- Proper HiDPI support. WxWidgets sucks for this.
 
 Features
 1.2.0
-- Allow multiple flag fields for things (and implement Doom Retro's "Retro Bits" field).
+- State unused1 and unused2 are used by weapon frames to denote weapon sprite offsets, but now they are always hidden if
+  the action on that state does not use them. Always show these in case of certain configurations? https://www.doomworld.com/forum/topic/62909-whacked-4/?do=findComment&comment=1755062
+- If possible, can you add a feature to make all Mapthings, States etc. Blank? Make all mapthings flag checked off, uses
+  no sprites, etc. Basically similar to that 'Extra things' from Doom retro. For the states also similar to that from
+  Doom retro's extra stuff, changes all sprite to TNT1A0 makes the duration 0, etc.
 - Add DooMRetro "Gib health" thing property. See https://github.com/bradharding/doomretro/commit/64cba7dbb9e952a6d56ddccf25c650c64ffdc389
+- Allow multiple flag fields for things (and implement Doom Retro's "Retro Bits" field).
 - Being able to copy/paste the properties of a state. "About the copy paste, I think all lines should be copied and when
   pasted they should be pasted all at once again. If the lines selected when copying are more than the ones when
   pasting, then the extra copied ones would be ignored. If they were less, then only that nummber of lines will be
