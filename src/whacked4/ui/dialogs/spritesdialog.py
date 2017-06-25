@@ -22,6 +22,9 @@ class SpritesDialog(windows.SpritesDialogBase):
         self.patch = None
         self.pwads = None
 
+        self.SpritePreview.set_baseline_factor(0.75)
+        self.SpritePreview.set_scale(2)
+
         self.filter_list = None
 
     def activate(self, event):
@@ -120,7 +123,6 @@ class SpritesDialog(windows.SpritesDialogBase):
         self.Filter.SetFocus()
 
         self.SpritePreview.set_source(self.pwads)
-        self.SpritePreview.set_baseline_factor(0.7)
         self.update_preview()
 
     def update_frame(self, event):

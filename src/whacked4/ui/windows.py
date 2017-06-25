@@ -213,6 +213,7 @@ DIALOG_ERROR = 1864
 ERROR_REPORT = 1865
 ERROR_COPY = 1866
 ERROR_CLOSE = 1867
+PREVIEW_CLOSE = 1868
 
 ###########################################################################
 ## Class MainFrameBase
@@ -1780,7 +1781,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 872,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 872,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.WANTS_CHARS )
 		
 		self.SetSizeHintsSz( wx.Size( 872,700 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
@@ -2142,6 +2143,11 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.StateContextLinkLoop = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Link (loop)"+ u"\t" + u"Shift+L", wx.EmptyString, wx.ITEM_NORMAL )
 		self.StateContext.AppendItem( self.StateContextLinkLoop )
 		
+		self.StateContext.AppendSeparator()
+		
+		self.StateContextPreview = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Preview"+ u"\t" + u"~", wx.EmptyString, wx.ITEM_NORMAL )
+		self.StateContext.AppendItem( self.StateContextPreview )
+		
 		self.Bind( wx.EVT_RIGHT_DOWN, self.StatesFrameBaseOnContextMenu ) 
 		
 		
@@ -2218,6 +2224,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.Bind( wx.EVT_MENU, self.state_context_paste, id = self.StateContextPaste.GetId() )
 		self.Bind( wx.EVT_MENU, self.state_context_link, id = self.StateContextLink.GetId() )
 		self.Bind( wx.EVT_MENU, self.state_context_link_loop, id = self.StateContextLinkLoop.GetId() )
+		self.Bind( wx.EVT_MENU, self.state_context_preview, id = self.StateContextPreview.GetId() )
 	
 	def __del__( self ):
 		pass
@@ -2342,6 +2349,9 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		pass
 	
 	def state_context_link_loop( self, event ):
+		pass
+	
+	def state_context_preview( self, event ):
 		pass
 	
 	def StatesFrameBaseOnContextMenu( self, event ):
@@ -3387,7 +3397,7 @@ class ParFrameBase ( wx.MDIChildFrame ):
 class SpritesDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"Sprites", pos = wx.DefaultPosition, size = wx.Size( 500,490 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.WANTS_CHARS )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"Sprites", pos = wx.DefaultPosition, size = wx.Size( 640,490 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.WANTS_CHARS )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -4079,6 +4089,70 @@ class ErrorDialogBase ( wx.Dialog ):
 		pass
 	
 	def close( self, event ):
+		pass
+	
+
+###########################################################################
+## Class StatePreviewDialogBase
+###########################################################################
+
+class StatePreviewDialogBase ( wx.Dialog ):
+	
+	def __init__( self, parent ):
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Preview", pos = wx.DefaultPosition, size = wx.Size( 640,440 ), style = wx.CAPTION|wx.RAISED_BORDER|wx.WANTS_CHARS )
+		
+		self.SetSizeHintsSz( wx.Size( 640,440 ), wx.DefaultSize )
+		
+		bSizer140 = wx.BoxSizer( wx.VERTICAL )
+		
+		self.Sprite = spritepreview.SpritePreview(self, size=(-1, 160))
+		self.Sprite.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_3DDKSHADOW ) )
+		
+		bSizer140.Add( self.Sprite, 1, wx.ALL|wx.EXPAND, 0 )
+		
+		bSizer141 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.StateInfo = wx.StaticText( self, wx.ID_ANY, u"TROOA0", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.StateInfo.Wrap( -1 )
+		self.StateInfo.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 90, 92, False, "Bitstream Vera Sans Mono" ) )
+		
+		bSizer141.Add( self.StateInfo, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.Time = wx.StaticText( self, wx.ID_ANY, u"0", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Time.Wrap( -1 )
+		bSizer141.Add( self.Time, 3, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.Close = wx.Button( self, PREVIEW_CLOSE, u"Close", wx.DefaultPosition, wx.Size( 120,28 ), 0 )
+		bSizer141.Add( self.Close, 0, wx.ALIGN_RIGHT|wx.ALL, 6 )
+		
+		
+		bSizer140.Add( bSizer141, 0, wx.EXPAND, 0 )
+		
+		
+		self.SetSizer( bSizer140 )
+		self.Layout()
+		self.Timer = wx.Timer()
+		self.Timer.SetOwner( self, wx.ID_ANY )
+		
+		self.Centre( wx.BOTH )
+		
+		# Connect Events
+		self.Bind( wx.EVT_ACTIVATE, self.activate )
+		self.Close.Bind( wx.EVT_BUTTON, self.close )
+		self.Bind( wx.EVT_TIMER, self.timer, id=wx.ID_ANY )
+	
+	def __del__( self ):
+		pass
+	
+	
+	# Virtual event handlers, overide them in your derived class
+	def activate( self, event ):
+		pass
+	
+	def close( self, event ):
+		pass
+	
+	def timer( self, event ):
 		pass
 	
 

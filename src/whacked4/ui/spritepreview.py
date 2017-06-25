@@ -17,7 +17,7 @@ class SpritePreview(wx.Panel):
     DRAG_SENSITIVITY = 20
 
     def __init__(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.NO_BORDER):
-        wx.Panel.__init__(self, parent, id=id, pos=pos, size=size, style=wx.STATIC_BORDER)
+        wx.Panel.__init__(self, parent, id=id, pos=pos, size=size, style=style)
 
         # WAD list to use for sprite rendering.
         self.wads = None
@@ -28,12 +28,15 @@ class SpritePreview(wx.Panel):
         # The baseline at which to render sprites. Consider this to be the invisible floor on which sprites are placed.
         self.baseline_factor = 0.8
 
+        # Scale to draw sprites at.
+        self.scale = 1.0
+
         # The icon to display instead of missing sprites.
         self.missing = wx.Bitmap('res/icon-missing.png', wx.BITMAP_TYPE_PNG)
         self.invalid = wx.Bitmap('res/icon-invalid.png', wx.BITMAP_TYPE_PNG)
 
         # Create "floor" fill color.
-        floor_colour = utils.mix_colours(self.GetBackgroundColour(), wx.Colour(0, 0, 0), 0.6)
+        floor_colour = utils.mix_colours(self.GetBackgroundColour(), wx.Colour(0, 0, 0), 0.65)
         self.floor_brush = wx.Brush(floor_colour)
         self.floor_points = None
         self.create_floor_points()
@@ -44,6 +47,7 @@ class SpritePreview(wx.Panel):
         self.angle = 1
 
         # Paint setup.
+        self.src_dc = wx.MemoryDC()
         self.Bind(wx.EVT_PAINT, self.paint)
 
         # Dragging setup.
@@ -166,19 +170,22 @@ class SpritePreview(wx.Panel):
 
             # Adjust sprite coordinates on whether it is to be used as a thing, or a screen graphic (like weapons).
             if self.sprite.left > 0 and self.sprite.top > 0:
-                x -= self.sprite.left
-                y -= self.sprite.top
+                x -= self.sprite.left * self.scale
+                y -= self.sprite.top * self.scale
             else:
-                x -= bitmap.GetWidth() / 2
-                y -= bitmap.GetHeight()
-
-            dc.DrawBitmap(bitmap, x, y, True)
+                x -= (bitmap.GetWidth() * self.scale) / 2
+                y -= (bitmap.GetHeight() * self.scale)
 
         # Draw informational bitmap.
         else:
-            x = size[0] / 2 - bitmap.GetWidth() / 2
-            y = size[1] / 2 - bitmap.GetHeight() / 2
-            dc.DrawBitmap(bitmap, x, y, True)
+            x = size[0] / 2 - (bitmap.GetWidth() * self.scale) / 2
+            y = size[1] / 2 - (bitmap.GetHeight() * self.scale) / 2
+
+        self.src_dc.SelectObject(bitmap)
+        if self.scale != 1:
+            dc.StretchBlit(x, y, bitmap.Width * self.scale, bitmap.Height * self.scale, self.src_dc, 0, 0, bitmap.Width, bitmap.Height, wx.COPY, True)
+        else:
+            dc.Blit(x, y, bitmap.Width, bitmap.Height, self.src_dc, 0, 0, wx.COPY, True)
 
     def clear(self):
         """
@@ -200,6 +207,11 @@ class SpritePreview(wx.Panel):
 
         self.baseline_factor = factor
         self.create_floor_points()
+
+    def set_scale(self, scale):
+        self.scale = scale
+        self.create_floor_points()
+        self.Refresh()
 
     def create_floor_points(self):
         size = self.GetClientSizeTuple()

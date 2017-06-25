@@ -5,8 +5,8 @@ from collections import OrderedDict
 from whacked4 import config, utils
 from whacked4.dehacked import statefilter
 from whacked4.ui import editormixin, windows
-from whacked4.ui.dialogs import spritesdialog
-import copy
+from whacked4.ui.dialogs import spritesdialog, statepreviewdialog
+
 import wx
 
 
@@ -95,11 +95,14 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.pwads = None
         self.clipboard = None
         self.sprites_dialog = None
+        self.preview_dialog = None
         self.selected = None
         self.filter = None
 
         # Mix sprite color coding colours with the default system colours.
         self.mix_colours()
+
+        self.Bind(wx.EVT_CHAR_HOOK, self.state_key)
 
     def build(self, patch):
         """
@@ -111,10 +114,11 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.clipboard = None
 
         self.sprites_dialog = spritesdialog.SpritesDialog(self.GetParent())
+        self.preview_dialog = statepreviewdialog.StatePreviewDialog(self.GetParent(), self.pwads)
 
         # Setup sprite preview control.
         self.SpritePreview.set_source(self.pwads)
-        self.SpritePreview.set_baseline_factor(0.9)
+        self.SpritePreview.set_baseline_factor(0.8)
 
         # List of selected list indices.
         self.selected = []
@@ -825,7 +829,6 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         if loop:
             state_last, state_last_index = self.get_filtered_list_state(self.selected[-1])
             state_first, state_first_index = self.get_filtered_list_state(self.selected[0])
-
             state_last['nextState'] = state_first_index
 
         self.statelist_update_selected_rows()
@@ -922,11 +925,29 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         width = self.StateList.GetClientSizeTuple()[0] - columns_width - 4
         self.StateList.SetColumnWidth(8, width)
 
+    def preview(self):
+        state_index = self.selection_get_state_index()
+        self.preview_dialog.prepare(self.patch, state_index)
+        self.preview_dialog.ShowModal()
+
+    def state_key(self, event):
+        """
+        Intercept keypresses to this entire frame.
+        """
+
+        if event.GetKeyCode() == 96:
+            self.preview()
+        else:
+            event.Skip()
+
     def state_context_link(self, event):
         self.link_selected_states(False)
 
     def state_context_link_loop(self, event):
         self.link_selected_states(True)
+
+    def state_context_preview(self, event):
+        self.preview()
 
     def state_select(self, event):
         self.selected.append(event.GetIndex())
