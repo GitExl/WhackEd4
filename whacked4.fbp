@@ -13446,7 +13446,7 @@
                 </object>
             </object>
         </object>
-        <object class="Frame" expanded="0">
+        <object class="Frame" expanded="1">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg">wxSYS_COLOUR_BTNFACE</property>
@@ -17693,7 +17693,7 @@
                                         <event name="OnChar"></event>
                                         <event name="OnEnterWindow"></event>
                                         <event name="OnEraseBackground"></event>
-                                        <event name="OnKeyDown"></event>
+                                        <event name="OnKeyDown">statelist_key_down</event>
                                         <event name="OnKeyUp"></event>
                                         <event name="OnKillFocus"></event>
                                         <event name="OnLeaveWindow"></event>
@@ -17717,7 +17717,7 @@
                                         <event name="OnListItemDeselected">state_deselect</event>
                                         <event name="OnListItemFocused"></event>
                                         <event name="OnListItemMiddleClick"></event>
-                                        <event name="OnListItemRightClick"></event>
+                                        <event name="OnListItemRightClick">state_context</event>
                                         <event name="OnListItemSelected">state_select</event>
                                         <event name="OnListKeyDown"></event>
                                         <event name="OnMiddleDClick"></event>
@@ -17738,6 +17738,75 @@
                             </object>
                         </object>
                     </object>
+                </object>
+            </object>
+            <object class="wxMenu" expanded="1">
+                <property name="label">State</property>
+                <property name="name">StateContext</property>
+                <property name="permission">protected</property>
+                <object class="wxMenuItem" expanded="1">
+                    <property name="bitmap"></property>
+                    <property name="checked">0</property>
+                    <property name="enabled">1</property>
+                    <property name="help"></property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">Copy</property>
+                    <property name="name">StateContextCopy</property>
+                    <property name="permission">none</property>
+                    <property name="shortcut">Ctrl+C</property>
+                    <property name="unchecked_bitmap"></property>
+                    <event name="OnMenuSelection">state_context_copy</event>
+                    <event name="OnUpdateUI"></event>
+                </object>
+                <object class="wxMenuItem" expanded="1">
+                    <property name="bitmap"></property>
+                    <property name="checked">0</property>
+                    <property name="enabled">1</property>
+                    <property name="help"></property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">Paste</property>
+                    <property name="name">StateContextPaste</property>
+                    <property name="permission">none</property>
+                    <property name="shortcut">Ctrl+V</property>
+                    <property name="unchecked_bitmap"></property>
+                    <event name="OnMenuSelection">state_context_paste</event>
+                    <event name="OnUpdateUI"></event>
+                </object>
+                <object class="separator" expanded="1">
+                    <property name="name">StateContextSeparator</property>
+                    <property name="permission">none</property>
+                </object>
+                <object class="wxMenuItem" expanded="1">
+                    <property name="bitmap"></property>
+                    <property name="checked">0</property>
+                    <property name="enabled">1</property>
+                    <property name="help"></property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">Link</property>
+                    <property name="name">StateContextLink</property>
+                    <property name="permission">none</property>
+                    <property name="shortcut">L</property>
+                    <property name="unchecked_bitmap"></property>
+                    <event name="OnMenuSelection">state_context_link</event>
+                    <event name="OnUpdateUI"></event>
+                </object>
+                <object class="wxMenuItem" expanded="1">
+                    <property name="bitmap"></property>
+                    <property name="checked">0</property>
+                    <property name="enabled">1</property>
+                    <property name="help"></property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">Link (loop)</property>
+                    <property name="name">StateContextLinkLoop</property>
+                    <property name="permission">none</property>
+                    <property name="shortcut">Shift+L</property>
+                    <property name="unchecked_bitmap"></property>
+                    <event name="OnMenuSelection">state_context_link_loop</event>
+                    <event name="OnUpdateUI"></event>
                 </object>
             </object>
         </object>
@@ -29062,7 +29131,7 @@
                 </object>
             </object>
         </object>
-        <object class="Dialog" expanded="1">
+        <object class="Dialog" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>

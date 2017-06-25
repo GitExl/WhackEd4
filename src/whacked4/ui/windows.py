@@ -2127,6 +2127,23 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		self.SetSizer( bSizer41 )
 		self.Layout()
+		self.StateContext = wx.Menu()
+		self.StateContextCopy = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Copy"+ u"\t" + u"Ctrl+C", wx.EmptyString, wx.ITEM_NORMAL )
+		self.StateContext.AppendItem( self.StateContextCopy )
+		
+		self.StateContextPaste = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Paste"+ u"\t" + u"Ctrl+V", wx.EmptyString, wx.ITEM_NORMAL )
+		self.StateContext.AppendItem( self.StateContextPaste )
+		
+		self.StateContext.AppendSeparator()
+		
+		self.StateContextLink = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Link"+ u"\t" + u"L", wx.EmptyString, wx.ITEM_NORMAL )
+		self.StateContext.AppendItem( self.StateContextLink )
+		
+		self.StateContextLinkLoop = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Link (loop)"+ u"\t" + u"Shift+L", wx.EmptyString, wx.ITEM_NORMAL )
+		self.StateContext.AppendItem( self.StateContextLinkLoop )
+		
+		self.Bind( wx.EVT_RIGHT_DOWN, self.StatesFrameBaseOnContextMenu ) 
+		
 		
 		# Connect Events
 		self.m_staticText39.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
@@ -2190,11 +2207,17 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.Filter.Bind( wx.EVT_CHOICE, self.filter_select )
 		self.Filter.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Bind( wx.EVT_TOOL, self.filter_select, id = self.FilterToolRefresh.GetId() )
+		self.StateList.Bind( wx.EVT_KEY_DOWN, self.statelist_key_down )
 		self.StateList.Bind( wx.EVT_LEFT_DOWN, self.state_link )
 		self.StateList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.select_sprite )
 		self.StateList.Bind( wx.EVT_LIST_ITEM_DESELECTED, self.state_deselect )
+		self.StateList.Bind( wx.EVT_LIST_ITEM_RIGHT_CLICK, self.state_context )
 		self.StateList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.state_select )
 		self.StateList.Bind( wx.EVT_SIZE, self.statelist_resize )
+		self.Bind( wx.EVT_MENU, self.state_context_copy, id = self.StateContextCopy.GetId() )
+		self.Bind( wx.EVT_MENU, self.state_context_paste, id = self.StateContextPaste.GetId() )
+		self.Bind( wx.EVT_MENU, self.state_context_link, id = self.StateContextLink.GetId() )
+		self.Bind( wx.EVT_MENU, self.state_context_link_loop, id = self.StateContextLinkLoop.GetId() )
 	
 	def __del__( self ):
 		pass
@@ -2290,11 +2313,17 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 	
 	
 	
+	def statelist_key_down( self, event ):
+		pass
+	
 	def state_link( self, event ):
 		pass
 	
 	
 	def state_deselect( self, event ):
+		pass
+	
+	def state_context( self, event ):
 		pass
 	
 	def state_select( self, event ):
@@ -2303,6 +2332,21 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 	def statelist_resize( self, event ):
 		pass
 	
+	def state_context_copy( self, event ):
+		pass
+	
+	def state_context_paste( self, event ):
+		pass
+	
+	def state_context_link( self, event ):
+		pass
+	
+	def state_context_link_loop( self, event ):
+		pass
+	
+	def StatesFrameBaseOnContextMenu( self, event ):
+		self.PopupMenu( self.StateContext, event.GetPosition() )
+		
 
 ###########################################################################
 ## Class SoundsFrameBase

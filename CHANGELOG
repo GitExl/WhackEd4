@@ -1,3 +1,8 @@
+Version 1.2.0
+-------------
+Added: linking states together can now be done by selecting them, right-clicking and selecting a link option (or use the respective shortcut key). Linking is done in the order of selection.
+Fixed: state copy and paste was much slower than it needed to be.
+
 Version 1.1.2
 -------------
 Fixed: Doom Retro's PlaySound action was missing a parameter name, causing a crash when it was selected. Thanks to VGA.

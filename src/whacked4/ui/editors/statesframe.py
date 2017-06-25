@@ -180,7 +180,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.clipboard = []
 
         for list_index in self.selected:
-            dup = copy.deepcopy(self.filter.states[list_index])
+            dup = self.filter.states[list_index].clone()
             self.clipboard.append(dup)
 
     def edit_paste(self):
@@ -203,7 +203,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         for state in self.clipboard:
             # Ignore states that are not currently visible because of filters.
             if list_index in self.selected:
-                dup = copy.deepcopy(state)
+                dup = state.clone()
                 state_index = self.filter.state_indices[list_index]
                 self.patch.states[state_index] = dup
                 self.filter.states[list_index] = dup
@@ -543,6 +543,18 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.SpritePreview.clear()
 
+    def statelist_key_down(self, event):
+        """
+        Handle key presses for the states list.
+        """
+
+        if event.GetKeyCode() == 76 and event.ShiftDown():
+            self.link_selected_states(True)
+        elif event.GetKeyCode() == 76:
+            self.link_selected_states(False)
+        else:
+            event.Skip()
+
     def select_sprite(self, event):
         """
         Shows the sprite select dialog to replace the currently selected state's sprites.
@@ -768,6 +780,65 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.StateList.Thaw()
 
+    def state_context(self, event):
+        """
+        Displays the context menu for states.
+        """
+
+        enable_loops = (self.StateList.GetSelectedItemCount() > 1)
+        self.StateContextLink.Enable(enable_loops)
+        self.StateContextLinkLoop.Enable(enable_loops)
+
+        self.StateList.PopupMenu(self.StateContext, event.GetPosition())
+
+    def state_context_copy(self, event):
+        """
+        Context menu copy redirect.
+        """
+        self.edit_copy()
+
+    def state_context_paste(self, event):
+        """
+        Context menu paste redirect.
+        """
+        self.edit_paste()
+
+    def link_selected_states(self, loop):
+        """
+        Links the currently selecetd states together.
+        """
+
+        self.undo_add()
+
+        prev_state = None
+
+        for list_index in self.selected:
+            state, state_index = self.get_filtered_list_state(list_index)
+
+            # Link previous state to this one.
+            if prev_state is not None:
+                prev_state['nextState'] = state_index
+
+            prev_state = state
+
+        # Link last state to first state to loop.
+        if loop:
+            state_last, state_last_index = self.get_filtered_list_state(self.selected[-1])
+            state_first, state_first_index = self.get_filtered_list_state(self.selected[0])
+
+            state_last['nextState'] = state_first_index
+
+        self.statelist_update_selected_rows()
+        self.update_properties()
+        self.is_modified(True)
+
+    def get_filtered_list_state(self, list_index):
+        """
+        Returns a state and state index for a state in the filtered list.
+        """
+
+        return self.filter.states[list_index], self.filter.state_indices[list_index]
+
     def selection_clear(self):
         """
         Clears the list of selected states.
@@ -850,6 +921,12 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         width = self.StateList.GetClientSizeTuple()[0] - columns_width - 4
         self.StateList.SetColumnWidth(8, width)
+
+    def state_context_link(self, event):
+        self.link_selected_states(False)
+
+    def state_context_link_loop(self, event):
+        self.link_selected_states(True)
 
     def state_select(self, event):
         self.selected.append(event.GetIndex())
