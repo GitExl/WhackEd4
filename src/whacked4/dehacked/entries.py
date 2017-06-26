@@ -106,7 +106,8 @@ class ThingEntry(Entry):
         ('decal',        Field('Decal',               FieldType.STRING)),
         ('scale',        Field('Scale',               FieldType.FLOAT)),
         ('damageFactor', Field('DamageFactor',        FieldType.FLOAT)),
-        ('gravity',      Field('Gravity',             FieldType.FLOAT))
+        ('gravity',      Field('Gravity',             FieldType.FLOAT)),
+        ('gibHealth',    Field('Gib health',          FieldType.INT))
     ])
 
 

@@ -17,6 +17,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     PROPS_VALUES = {
         windows.THING_VAL_ID: 'id',
         windows.THING_VAL_HEALTH: 'health',
+        windows.THING_VAL_GIBHEALTH: 'gibHealth',
         windows.THING_VAL_SPEED: 'speed',
         windows.THING_VAL_RADIUS: 'radius',
         windows.THING_VAL_HEIGHT: 'height',
@@ -39,6 +40,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     PROPS_VALUE_TYPES = {
         windows.THING_VAL_ID: 'int',
         windows.THING_VAL_HEALTH: 'int',
+        windows.THING_VAL_GIBHEALTH: 'int',
         windows.THING_VAL_SPEED: 'int',
         windows.THING_VAL_RADIUS: 'fixed',
         windows.THING_VAL_HEIGHT: 'fixed',
@@ -175,6 +177,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.PanelDamageFactor.Show(('thing.damageFactor' in features))
         self.PanelGravity.Show(('thing.gravity' in features))
         self.PanelGame.Show(('thing.game' in features))
+        self.PanelGibHealth.Show(('thing.gibHealth' in features))
         self.PanelSpawnID.Show(('thing.spawnId' in features))
         self.PanelRespawnTime.Show(('thing.respawnTime' in features))
         self.PanelRenderStyle.Show(('thing.renderStyle' in features))
@@ -330,6 +333,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         # Set basic property text control values.
         self.ThingId.ChangeValue(str(thing['id']))
         self.ThingHealth.ChangeValue(str(thing['health']))
+        self.ThingGibHealth.ChangeValue(str(thing['gibHealth']))
         self.ThingRadius.ChangeValue(str(thing['radius'] / self.FIXED_UNIT))
         self.ThingHeight.ChangeValue(str(thing['height'] / self.FIXED_UNIT))
         self.ThingDamage.ChangeValue(str(thing['damage']))

@@ -19175,7 +19175,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 75,
@@ -19212,7 +19213,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 75,
@@ -19249,7 +19251,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 80,
@@ -19286,7 +19289,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -19323,7 +19327,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 105,
@@ -19360,7 +19365,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -19397,7 +19403,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -19434,7 +19441,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 75,
@@ -19471,7 +19479,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -19508,7 +19517,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 75,
@@ -19545,7 +19555,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 76,
@@ -19582,7 +19593,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 77,
@@ -19619,7 +19631,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 77,
@@ -19656,7 +19669,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 77,
@@ -19693,7 +19707,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 77,
@@ -19730,7 +19745,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -19767,7 +19783,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 77,
@@ -19804,7 +19821,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 77,
@@ -19841,7 +19859,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 77,
@@ -19878,7 +19897,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 78,
@@ -19915,7 +19935,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 77,
@@ -19952,7 +19973,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 77,
@@ -19989,7 +20011,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 75,
@@ -20026,7 +20049,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20063,7 +20087,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20100,7 +20125,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20137,7 +20163,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20174,7 +20201,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20211,7 +20239,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20248,7 +20277,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20285,7 +20315,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20322,7 +20353,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20359,7 +20391,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20396,7 +20429,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20433,7 +20467,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20470,7 +20505,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20507,7 +20543,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20544,7 +20581,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20581,7 +20619,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20618,7 +20657,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20655,7 +20695,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20692,7 +20733,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20729,7 +20771,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20766,7 +20809,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20803,7 +20847,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20840,7 +20885,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20877,7 +20923,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20914,7 +20961,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20951,7 +20999,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -20988,7 +21037,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21025,7 +21075,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21062,7 +21113,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21099,7 +21151,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21136,7 +21189,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21173,7 +21227,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21210,7 +21265,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21247,7 +21303,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21284,7 +21341,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21321,7 +21379,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21358,7 +21417,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21395,7 +21455,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21432,7 +21493,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21469,7 +21531,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21506,7 +21569,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21543,7 +21607,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21580,7 +21645,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21617,7 +21683,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21654,7 +21721,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21691,7 +21759,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21728,7 +21797,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21765,7 +21835,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21802,7 +21873,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21839,7 +21911,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21876,7 +21949,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21913,7 +21987,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21950,7 +22025,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -21987,7 +22063,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22024,7 +22101,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22061,7 +22139,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22098,7 +22177,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22135,7 +22215,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22172,7 +22253,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22209,7 +22291,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22246,7 +22329,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22283,7 +22367,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22320,7 +22405,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22357,7 +22443,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22394,7 +22481,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22431,7 +22519,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22468,7 +22557,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22505,7 +22595,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22542,7 +22633,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22579,7 +22671,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22616,7 +22709,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22653,7 +22747,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22690,7 +22785,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22727,7 +22823,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22764,7 +22861,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22801,7 +22899,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22838,7 +22937,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22875,7 +22975,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22912,7 +23013,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22949,7 +23051,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -22986,7 +23089,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23023,7 +23127,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23060,7 +23165,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23097,7 +23203,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23134,7 +23241,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23171,7 +23279,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23208,7 +23317,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23245,7 +23355,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23282,7 +23393,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23319,7 +23431,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23356,7 +23469,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23393,7 +23507,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23430,7 +23545,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23467,7 +23583,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23504,7 +23621,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23541,7 +23659,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23578,7 +23697,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23615,7 +23735,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23652,7 +23773,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23689,7 +23811,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23726,7 +23849,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23763,7 +23887,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23800,7 +23925,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23837,7 +23963,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23874,7 +24001,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23911,7 +24039,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23948,7 +24077,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -23985,7 +24115,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -24022,7 +24153,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -24059,7 +24191,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -24096,7 +24229,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -24133,7 +24267,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -24170,7 +24305,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         },
         {
             "soundActive": 0,
@@ -24207,7 +24343,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         }
     ],
     "weapons": [

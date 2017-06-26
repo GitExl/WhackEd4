@@ -97,7 +97,11 @@ class Engine(object):
         """
 
         with open(filename, 'r') as f:
-            data = json.load(f, object_pairs_hook=OrderedDict)
+            try:
+                data = json.load(f, object_pairs_hook=OrderedDict)
+            except ValueError as e:
+                print filename
+                raise e
 
         try:
             self.versions = data['versions']

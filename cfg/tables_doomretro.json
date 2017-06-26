@@ -2,7 +2,9 @@
     "versions": [19,21],
     "extended": true,
     "name": "Doom Retro (MBF with extra states)",
-    "features": [],
+    "features": [
+        "thing.gibHealth"
+    ],
 
     "hacks": {
         "plasmaFlashStateJitter": true
@@ -75135,7 +75137,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -100
         },
         {
             "flags": 4194310,
@@ -75172,7 +75175,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -20
         },
         {
             "flags": 4194310,
@@ -75209,7 +75213,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -30
         },
         {
             "flags": 4194310,
@@ -75246,7 +75251,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -700
         },
         {
             "flags": 2147484176,
@@ -75283,7 +75289,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 4194310,
@@ -75320,7 +75327,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -300
         },
         {
             "flags": 67088,
@@ -75357,7 +75365,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2147484176,
@@ -75394,7 +75403,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 4194310,
@@ -75431,7 +75441,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -600
         },
         {
             "flags": 2147550736,
@@ -75468,7 +75479,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 4194310,
@@ -75505,7 +75517,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -70
         },
         {
             "flags": 4194310,
@@ -75542,7 +75555,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -60
         },
         {
             "flags": 4194310,
@@ -75579,7 +75593,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -150
         },
         {
             "flags": 4456454,
@@ -75616,7 +75631,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -150
         },
         {
             "flags": 4211206,
@@ -75653,7 +75669,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -400
         },
         {
             "flags": 4194310,
@@ -75690,7 +75707,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2147550736,
@@ -75727,7 +75745,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 4194310,
@@ -75764,7 +75783,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -500
         },
         {
             "flags": 16902,
@@ -75801,7 +75821,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -100
         },
         {
             "flags": 4194310,
@@ -75838,7 +75859,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -3000
         },
         {
             "flags": 4194310,
@@ -75875,7 +75897,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -500
         },
         {
             "flags": 4194310,
@@ -75912,7 +75935,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -4000
         },
         {
             "flags": 4211206,
@@ -75949,7 +75973,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -400
         },
         {
             "flags": 4194310,
@@ -75986,7 +76011,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -50
         },
         {
             "flags": 4195078,
@@ -76023,7 +76049,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -100
         },
         {
             "flags": 6,
@@ -76060,7 +76087,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -250
         },
         {
             "flags": 24,
@@ -76097,7 +76125,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 24,
@@ -76134,7 +76163,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 71184,
@@ -76171,7 +76201,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2147484176,
@@ -76208,7 +76239,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 524294,
@@ -76245,7 +76277,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -20
         },
         {
             "flags": 2147550736,
@@ -76282,7 +76315,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2147550736,
@@ -76319,7 +76353,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 67088,
@@ -76356,7 +76391,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2147550736,
@@ -76393,7 +76429,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2147550736,
@@ -76430,7 +76467,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2147550736,
@@ -76467,7 +76505,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2147484176,
@@ -76504,7 +76543,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 16,
@@ -76541,7 +76581,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2147484176,
@@ -76578,7 +76619,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2147484176,
@@ -76615,7 +76657,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 24,
@@ -76652,7 +76695,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 528,
@@ -76689,7 +76733,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -76726,7 +76771,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -76763,7 +76809,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 8388609,
@@ -76800,7 +76847,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 8388609,
@@ -76837,7 +76885,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 33554433,
@@ -76874,7 +76923,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 33554433,
@@ -76911,7 +76961,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 33554433,
@@ -76948,7 +76999,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 33554433,
@@ -76985,7 +77037,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 33554433,
@@ -77022,7 +77075,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 33554433,
@@ -77059,7 +77113,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77096,7 +77151,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77133,7 +77189,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2155872257,
@@ -77170,7 +77227,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2155872257,
@@ -77207,7 +77265,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 8388609,
@@ -77244,7 +77303,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2155872257,
@@ -77281,7 +77341,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77318,7 +77379,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 8388609,
@@ -77355,7 +77417,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 8388609,
@@ -77392,7 +77455,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2155872257,
@@ -77429,7 +77493,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77466,7 +77531,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77503,7 +77569,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77540,7 +77607,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77577,7 +77645,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77614,7 +77683,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77651,7 +77721,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77688,7 +77759,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77725,7 +77797,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77762,7 +77835,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77799,7 +77873,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77836,7 +77911,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77873,7 +77949,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77910,7 +77987,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77947,7 +78025,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -77984,7 +78063,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 1,
@@ -78021,7 +78101,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78058,7 +78139,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78095,7 +78177,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78132,7 +78215,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78169,7 +78253,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78206,7 +78291,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78243,7 +78329,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78280,7 +78367,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78317,7 +78405,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78354,7 +78443,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78391,7 +78481,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78428,7 +78519,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78465,7 +78557,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78502,7 +78595,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78539,7 +78633,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78576,7 +78671,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78613,7 +78709,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78650,7 +78747,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78687,7 +78785,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78724,7 +78823,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78761,7 +78861,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -78798,7 +78899,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -78835,7 +78937,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -78872,7 +78975,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -78909,7 +79013,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -78946,7 +79051,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -78983,7 +79089,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -79020,7 +79127,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 768,
@@ -79057,7 +79165,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 768,
@@ -79094,7 +79203,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 768,
@@ -79131,7 +79241,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 768,
@@ -79168,7 +79279,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 768,
@@ -79205,7 +79317,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -79242,7 +79355,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -79279,7 +79393,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -79316,7 +79431,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -79353,7 +79469,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -79390,7 +79507,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -79427,7 +79545,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -79464,7 +79583,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -79501,7 +79621,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -79538,7 +79659,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -79575,7 +79697,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 0,
@@ -79612,7 +79735,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -79649,7 +79773,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -79686,7 +79811,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -79723,7 +79849,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -79760,7 +79887,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -79797,7 +79925,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 2,
@@ -79834,7 +79963,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -79871,7 +80001,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -79908,7 +80039,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -79945,7 +80077,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -79982,7 +80115,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -80019,7 +80153,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 770,
@@ -80056,7 +80191,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 16,
@@ -80093,7 +80229,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 16,
@@ -80130,7 +80267,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 16,
@@ -80167,7 +80305,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 16,
@@ -80204,7 +80343,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 16,
@@ -80241,7 +80381,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 4194310,
@@ -80278,7 +80419,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -500
         },
         {
             "flags": 536938000,
@@ -80315,7 +80457,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 536938000,
@@ -80352,7 +80495,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 8388609,
@@ -80389,7 +80533,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
         {
             "flags": 8388609,
@@ -80426,9 +80571,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": -1000
         },
-		        {
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80463,8 +80609,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80499,8 +80647,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80535,8 +80685,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80571,8 +80723,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80607,8 +80761,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80643,8 +80799,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80679,8 +80837,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80715,8 +80875,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80751,8 +80913,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80787,8 +80951,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80823,8 +80989,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80859,8 +81027,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80895,8 +81065,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80931,8 +81103,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -80967,8 +81141,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81003,8 +81179,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81039,8 +81217,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81075,8 +81255,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81111,8 +81293,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81147,8 +81331,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81183,8 +81369,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81219,8 +81407,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81255,8 +81445,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81291,8 +81483,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81327,8 +81521,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81363,8 +81559,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81399,8 +81597,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81435,8 +81635,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81471,8 +81673,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81507,8 +81711,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81543,8 +81749,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81579,8 +81787,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81615,8 +81825,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81651,8 +81863,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81687,8 +81901,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81723,8 +81939,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81759,8 +81977,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81795,8 +82015,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81831,8 +82053,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81867,8 +82091,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81903,8 +82129,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81939,8 +82167,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -81975,8 +82205,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82011,8 +82243,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82047,8 +82281,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82083,8 +82319,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82119,8 +82357,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82155,8 +82395,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82191,8 +82433,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82227,8 +82471,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82263,8 +82509,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82299,8 +82547,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82335,8 +82585,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82371,8 +82623,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82407,8 +82661,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82443,8 +82699,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82479,8 +82737,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82515,8 +82775,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82551,8 +82813,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82587,8 +82851,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82623,8 +82889,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82659,8 +82927,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82695,8 +82965,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82731,8 +83003,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82767,8 +83041,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82803,8 +83079,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82839,8 +83117,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82875,8 +83155,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82911,8 +83193,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82947,8 +83231,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -82983,8 +83269,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83019,8 +83307,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83055,8 +83345,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83091,8 +83383,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83127,8 +83421,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83163,8 +83459,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83199,8 +83497,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83235,8 +83535,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83271,8 +83573,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83307,8 +83611,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83343,8 +83649,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83379,8 +83687,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83415,8 +83725,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83451,8 +83763,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83487,8 +83801,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83523,8 +83839,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83559,8 +83877,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83595,8 +83915,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83631,8 +83953,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83667,8 +83991,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83703,8 +84029,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83739,8 +84067,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83775,8 +84105,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83811,8 +84143,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83847,8 +84181,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83883,8 +84219,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83919,8 +84257,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83955,8 +84295,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -83991,8 +84333,10 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
-        },        {
+            "gravity": 1.0,
+            "gibHealth": 0
+        },
+        {
             "flags": 0,
             "health": 0,
             "height": 0,
@@ -84027,7 +84371,8 @@
             "decal": "",
             "scale": 1.0,
             "damageFactor": 1.0,
-            "gravity": 1.0
+            "gravity": 1.0,
+            "gibHealth": 0
         }
     ],
     "weaponNames": [
