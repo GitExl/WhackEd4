@@ -84,6 +84,9 @@ class Engine(object):
         # A dict of supported features.
         self.features = None
 
+        # An empty state used for clearing out other states.
+        self.empty_state = None
+
     def read_table(self, filename):
         """
         Reads engine data from a JSON table configuration file.
@@ -131,6 +134,8 @@ class Engine(object):
             self.sprite_names = data['spriteNames']
             self.used_states = data['usedStates']
             self.hacks = data['hacks']
+
+            self.empty_state = entries.StateEntry(self).from_json(data['emptyState'])
 
             if 'renderStyles' in data:
                 self.render_styles = data['renderStyles']
@@ -242,7 +247,8 @@ class Engine(object):
             'actions': self.actions,
             'actionIndexToState': self.action_index_to_state,
             'usedStates': self.used_states,
-            'hacks': self.hacks
+            'hacks': self.hacks,
+            'emptyState': self.empty_state.to_json()
         }
 
         with open(filename, 'w') as f:

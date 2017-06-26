@@ -2,8 +2,10 @@ Version 1.2.0
 -------------
 Added: state animation preview by pressing tilde on a state or using the new state context menu. Pressing tilde again inside the animation preview will restart it.
 Added: linking states together can now be done by selecting them, right-clicking and selecting a link option (or use the respective shortcut key). Linking is done in the order of selection.
+Added: an option to clear out all selected states from the state context menu.
 Fixed: state copy and paste was much slower than it needed to be.
 Changed: sprite selection dialog now shows sprites at 2x scale.
+Changed: always display a state's "unused" parameters since these actually affect a weapon sprite's offset even in vanilla Doom.
 
 Version 1.1.2
 -------------

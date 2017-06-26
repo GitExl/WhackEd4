@@ -118,7 +118,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         # Setup sprite preview control.
         self.SpritePreview.set_source(self.pwads)
-        self.SpritePreview.set_baseline_factor(0.8)
+        self.SpritePreview.set_baseline_factor(0.9)
 
         # List of selected list indices.
         self.selected = []
@@ -487,22 +487,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         if action is not None:
             self.Action.SetToolTipString(action['description'])
 
-        unused_count, arg_count = get_action_param_counts(action)
-
-        # Unused parameters.
-        for index in range(0, len(StatesFrame.UNUSED_IDS)):
-            label = self.FindWindowById(StatesFrame.UNUSED_IDS[index][0])
-            text = self.FindWindowById(StatesFrame.UNUSED_IDS[index][1])
-
-            if index < unused_count:
-                label.SetLabel(action['unused'][index]['name'])
-                label.Show()
-
-                text.Show()
-                text.SetToolTipString(action['unused'][index]['description'])
-            else:
-                label.Hide()
-                text.Hide()
+        arg_count = get_action_param_counts(action)
 
         # Arg0-9 parameters.
         for index in range(0, len(StatesFrame.ARG_IDS)):
@@ -731,8 +716,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         Updates the list row with information of the state that it displays.
         """
 
-        state_index = self.filter.state_indices[list_index]
-        state = self.filter.states[list_index]
+        state, state_index = self.get_filtered_list_state(list_index)
 
         if (state['spriteFrame'] & self.FRAMEFLAG_LIT) != 0:
             lit = 'X'
@@ -740,13 +724,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             lit = ''
 
         action = self.patch.engine.get_action_from_key(state['action'])
-        unused_count, arg_count = get_action_param_counts(action)
+        arg_count = get_action_param_counts(action)
 
-        if unused_count or arg_count:
-            parameters = get_action_param_properties(unused_count, arg_count)
-            parameters = ', '.join([str(state[arg]) for arg in parameters])
-        else:
-            parameters = ''
+        parameters = get_action_param_properties(2, arg_count)
+        parameters = ', '.join([str(state[arg]) for arg in parameters])
 
         # Fill out column strings.
         self.StateList.SetStringItem(list_index, 1, self.patch.get_state_name(state_index))
@@ -940,6 +921,20 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         else:
             event.Skip()
 
+    def state_context_clear(self, event):
+        """
+        Clears all selected states.
+        """
+
+        self.undo_add()
+
+        for list_index in self.selected:
+            _, state_index = self.get_filtered_list_state(list_index)
+            self.patch.states[state_index] = self.patch.engine.empty_state.clone()
+            self.filter.states[list_index] = self.patch.states[state_index]
+
+        self.statelist_update_selected_rows()
+
     def state_context_link(self, event):
         self.link_selected_states(False)
 
@@ -969,21 +964,20 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
 def get_action_param_counts(action):
     if action is None:
-        return 0, 0
+        return 0
 
-    unused_count = 0
     arg_count = 0
-    if 'unused' in action:
-        unused_count = len(action['unused'])
     if 'arguments' in action:
         arg_count = len(action['arguments'])
 
-    return unused_count, arg_count
+    return arg_count
 
 
-def get_action_param_properties(unused_count, arg_count):
+def get_action_param_properties(unused_count=0, arg_count=0):
     params = []
-    params.extend(['unused{}'.format(x) for x in range(1, unused_count + 1)])
-    params.extend(['arg{}'.format(x) for x in range(1, arg_count + 1)])
+    if unused_count:
+        params.extend(['unused{}'.format(x) for x in range(1, unused_count + 1)])
+    if arg_count:
+        params.extend(['arg{}'.format(x) for x in range(1, arg_count + 1)])
 
     return params

@@ -28,7 +28,7 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         self.ticks = 0
 
         self.Sprite.set_source(pwads)
-        self.Sprite.set_baseline_factor(0.75)
+        self.Sprite.set_baseline_factor(0.85)
         self.Sprite.set_scale(2)
 
         self.SetEscapeId(windows.PREVIEW_CLOSE)

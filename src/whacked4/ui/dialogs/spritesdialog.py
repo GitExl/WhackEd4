@@ -22,7 +22,7 @@ class SpritesDialog(windows.SpritesDialogBase):
         self.patch = None
         self.pwads = None
 
-        self.SpritePreview.set_baseline_factor(0.75)
+        self.SpritePreview.set_baseline_factor(0.85)
         self.SpritePreview.set_scale(2)
 
         self.filter_list = None
