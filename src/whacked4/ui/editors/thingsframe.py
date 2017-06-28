@@ -298,7 +298,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         self.clipboard = {
-            'thing': copy.deepcopy(self.patch.things[self.selected_index]),
+            'thing': self.patch.things[self.selected_index].clone(),
             'name': copy.copy(self.patch.things.names[self.selected_index])
         }
 
@@ -312,7 +312,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.undo_add()
 
-        dup = copy.deepcopy(self.clipboard['thing'])
+        dup = self.clipboard['thing'].clone()
         dup_name = copy.copy(self.clipboard['name'])
 
         # Copy references to newly duplicated thing.
@@ -683,3 +683,35 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             'name': copy.copy(self.patch.things.names[self.selected_index]),
             'index': self.selected_index
         }
+
+    def thing_context(self, event):
+        """
+        Displays the context menu for things.
+        """
+
+        self.ThingList.PopupMenu(self.ThingContext, event.GetPosition())
+
+    def thing_context_copy(self, event):
+        """
+        Context menu copy redirect.
+        """
+        self.edit_copy()
+
+    def thing_context_paste(self, event):
+        """
+        Context menu paste redirect.
+        """
+        self.edit_paste()
+
+    def thing_context_clear(self, event):
+        """
+        Clears a thing's properties.
+        """
+
+        self.undo_add()
+
+        self.patch.things[self.selected_index] = self.patch.engine.empty_thing.clone()
+        self.patch.things.names[self.selected_index] = 'Thing {}'.format(self.selected_index + 1)
+
+        self.update_properties()
+        self.is_modified(True)

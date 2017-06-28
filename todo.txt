@@ -11,8 +11,6 @@ Low priority bugs
 
 Features
 1.2.0
-- If possible, can you add a feature to make all Mapthings blank? Make all mapthings flag checked off, uses
-  no sprites, etc. Basically similar to that 'Extra things' from Doom retro.
 - UI manual \ Dehacked tutorial.
 - Mark and display items as modified compared to engine config.
 

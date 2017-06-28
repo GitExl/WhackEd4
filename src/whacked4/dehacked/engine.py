@@ -84,8 +84,9 @@ class Engine(object):
         # A dict of supported features.
         self.features = None
 
-        # An empty state used for clearing out other states.
+        # Empty entries used for clearing out other entries.
         self.empty_state = None
+        self.empty_thing = None
 
     def read_table(self, filename):
         """
@@ -140,6 +141,7 @@ class Engine(object):
             self.hacks = data['hacks']
 
             self.empty_state = entries.StateEntry(self).from_json(data['emptyState'])
+            self.empty_thing = entries.ThingEntry(self).from_json(data['emptyThing'])
 
             if 'renderStyles' in data:
                 self.render_styles = data['renderStyles']
@@ -252,7 +254,9 @@ class Engine(object):
             'actionIndexToState': self.action_index_to_state,
             'usedStates': self.used_states,
             'hacks': self.hacks,
-            'emptyState': self.empty_state.to_json()
+
+            'emptyState': self.empty_state.to_json(),
+            'emptyThing': self.empty_thing.to_json()
         }
 
         with open(filename, 'w') as f:

@@ -827,16 +827,16 @@
             <event name="OnSetFocus"></event>
             <event name="OnSize"></event>
             <event name="OnUpdateUI"></event>
-            <object class="wxBoxSizer" expanded="1">
+            <object class="wxBoxSizer" expanded="0">
                 <property name="minimum_size"></property>
                 <property name="name">SizerMain</property>
                 <property name="orient">wxHORIZONTAL</property>
                 <property name="permission">none</property>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">9</property>
                     <property name="flag">wxBOTTOM|wxEXPAND|wxLEFT|wxTOP</property>
                     <property name="proportion">1</property>
-                    <object class="wxPanel" expanded="1">
+                    <object class="wxPanel" expanded="0">
                         <property name="BottomDockable">1</property>
                         <property name="LeftDockable">1</property>
                         <property name="RightDockable">1</property>
@@ -910,7 +910,7 @@
                         <event name="OnSetFocus"></event>
                         <event name="OnSize"></event>
                         <event name="OnUpdateUI"></event>
-                        <object class="wxBoxSizer" expanded="1">
+                        <object class="wxBoxSizer" expanded="0">
                             <property name="minimum_size"></property>
                             <property name="name">SizerProperties</property>
                             <property name="orient">wxVERTICAL</property>
@@ -2035,11 +2035,11 @@
                                     </object>
                                 </object>
                             </object>
-                            <object class="sizeritem" expanded="1">
+                            <object class="sizeritem" expanded="0">
                                 <property name="border">0</property>
                                 <property name="flag"></property>
                                 <property name="proportion">0</property>
-                                <object class="wxPanel" expanded="1">
+                                <object class="wxPanel" expanded="0">
                                     <property name="BottomDockable">1</property>
                                     <property name="LeftDockable">1</property>
                                     <property name="RightDockable">1</property>
@@ -2113,16 +2113,16 @@
                                     <event name="OnSetFocus"></event>
                                     <event name="OnSize"></event>
                                     <event name="OnUpdateUI"></event>
-                                    <object class="wxBoxSizer" expanded="1">
+                                    <object class="wxBoxSizer" expanded="0">
                                         <property name="minimum_size"></property>
                                         <property name="name">SizerHealth1</property>
                                         <property name="orient">wxHORIZONTAL</property>
                                         <property name="permission">none</property>
-                                        <object class="sizeritem" expanded="1">
+                                        <object class="sizeritem" expanded="0">
                                             <property name="border">3</property>
                                             <property name="flag">wxALIGN_CENTER_VERTICAL|wxALL</property>
                                             <property name="proportion">0</property>
-                                            <object class="wxStaticText" expanded="1">
+                                            <object class="wxStaticText" expanded="0">
                                                 <property name="BottomDockable">1</property>
                                                 <property name="LeftDockable">1</property>
                                                 <property name="RightDockable">1</property>
@@ -2201,11 +2201,11 @@
                                                 <event name="OnUpdateUI"></event>
                                             </object>
                                         </object>
-                                        <object class="sizeritem" expanded="1">
+                                        <object class="sizeritem" expanded="0">
                                             <property name="border">3</property>
                                             <property name="flag">wxALIGN_CENTER_VERTICAL|wxALL</property>
                                             <property name="proportion">0</property>
-                                            <object class="wxTextCtrl" expanded="1">
+                                            <object class="wxTextCtrl" expanded="0">
                                                 <property name="BottomDockable">1</property>
                                                 <property name="LeftDockable">1</property>
                                                 <property name="RightDockable">1</property>
@@ -2295,11 +2295,11 @@
                                     </object>
                                 </object>
                             </object>
-                            <object class="sizeritem" expanded="1">
+                            <object class="sizeritem" expanded="0">
                                 <property name="border">0</property>
                                 <property name="flag"></property>
                                 <property name="proportion">0</property>
-                                <object class="wxPanel" expanded="1">
+                                <object class="wxPanel" expanded="0">
                                     <property name="BottomDockable">1</property>
                                     <property name="LeftDockable">1</property>
                                     <property name="RightDockable">1</property>
@@ -2373,7 +2373,7 @@
                                     <event name="OnSetFocus"></event>
                                     <event name="OnSize"></event>
                                     <event name="OnUpdateUI"></event>
-                                    <object class="wxBoxSizer" expanded="1">
+                                    <object class="wxBoxSizer" expanded="0">
                                         <property name="minimum_size"></property>
                                         <property name="name">SizerSpeed</property>
                                         <property name="orient">wxHORIZONTAL</property>
@@ -13686,7 +13686,7 @@
                         <event name="OnListItemDeselected"></event>
                         <event name="OnListItemFocused"></event>
                         <event name="OnListItemMiddleClick"></event>
-                        <event name="OnListItemRightClick"></event>
+                        <event name="OnListItemRightClick">thing_context</event>
                         <event name="OnListItemSelected">thing_select</event>
                         <event name="OnListKeyDown"></event>
                         <event name="OnMiddleDClick"></event>
@@ -13703,6 +13703,56 @@
                         <event name="OnSize">thinglist_resize</event>
                         <event name="OnUpdateUI"></event>
                     </object>
+                </object>
+            </object>
+            <object class="wxMenu" expanded="1">
+                <property name="label">Thing</property>
+                <property name="name">ThingContext</property>
+                <property name="permission">protected</property>
+                <object class="wxMenuItem" expanded="1">
+                    <property name="bitmap"></property>
+                    <property name="checked">0</property>
+                    <property name="enabled">1</property>
+                    <property name="help"></property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">Copy</property>
+                    <property name="name">ThingContextCopy</property>
+                    <property name="permission">none</property>
+                    <property name="shortcut">Ctrl+C</property>
+                    <property name="unchecked_bitmap"></property>
+                    <event name="OnMenuSelection">thing_context_copy</event>
+                    <event name="OnUpdateUI"></event>
+                </object>
+                <object class="wxMenuItem" expanded="1">
+                    <property name="bitmap"></property>
+                    <property name="checked">0</property>
+                    <property name="enabled">1</property>
+                    <property name="help"></property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">Paste</property>
+                    <property name="name">ThingContextPaste</property>
+                    <property name="permission">none</property>
+                    <property name="shortcut">Ctrl+V</property>
+                    <property name="unchecked_bitmap"></property>
+                    <event name="OnMenuSelection">thing_context_paste</event>
+                    <event name="OnUpdateUI"></event>
+                </object>
+                <object class="wxMenuItem" expanded="1">
+                    <property name="bitmap"></property>
+                    <property name="checked">0</property>
+                    <property name="enabled">1</property>
+                    <property name="help"></property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">Clear</property>
+                    <property name="name">ThingContextClear</property>
+                    <property name="permission">none</property>
+                    <property name="shortcut"></property>
+                    <property name="unchecked_bitmap"></property>
+                    <event name="OnMenuSelection">thing_context_clear</event>
+                    <event name="OnUpdateUI"></event>
                 </object>
             </object>
         </object>
@@ -18000,7 +18050,7 @@
                     </object>
                 </object>
             </object>
-            <object class="wxMenu" expanded="1">
+            <object class="wxMenu" expanded="0">
                 <property name="label">State</property>
                 <property name="name">StateContext</property>
                 <property name="permission">protected</property>
@@ -18034,7 +18084,7 @@
                     <event name="OnMenuSelection">state_context_paste</event>
                     <event name="OnUpdateUI"></event>
                 </object>
-                <object class="wxMenuItem" expanded="1">
+                <object class="wxMenuItem" expanded="0">
                     <property name="bitmap"></property>
                     <property name="checked">0</property>
                     <property name="enabled">1</property>
@@ -18094,7 +18144,7 @@
                     <property name="help"></property>
                     <property name="id">wxID_ANY</property>
                     <property name="kind">wxITEM_NORMAL</property>
-                    <property name="label">Preview</property>
+                    <property name="label">State</property>
                     <property name="name">StateContextPreview</property>
                     <property name="permission">none</property>
                     <property name="shortcut">~</property>

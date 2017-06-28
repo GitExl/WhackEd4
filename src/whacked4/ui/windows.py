@@ -1353,6 +1353,18 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.SetSizer( SizerMain )
 		self.Layout()
+		self.ThingContext = wx.Menu()
+		self.ThingContextCopy = wx.MenuItem( self.ThingContext, wx.ID_ANY, u"Copy"+ u"\t" + u"Ctrl+C", wx.EmptyString, wx.ITEM_NORMAL )
+		self.ThingContext.AppendItem( self.ThingContextCopy )
+		
+		self.ThingContextPaste = wx.MenuItem( self.ThingContext, wx.ID_ANY, u"Paste"+ u"\t" + u"Ctrl+V", wx.EmptyString, wx.ITEM_NORMAL )
+		self.ThingContext.AppendItem( self.ThingContextPaste )
+		
+		self.ThingContextClear = wx.MenuItem( self.ThingContext, wx.ID_ANY, u"Clear", wx.EmptyString, wx.ITEM_NORMAL )
+		self.ThingContext.AppendItem( self.ThingContextClear )
+		
+		self.Bind( wx.EVT_RIGHT_DOWN, self.ThingsFrameBaseOnContextMenu ) 
+		
 		
 		# Connect Events
 		self.LabelProperties.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
@@ -1552,8 +1564,12 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingFlags.Bind( wx.EVT_CHECKLISTBOX, self.set_flags )
 		self.ThingFlags.Bind( wx.EVT_MOTION, self.set_flag_tooltip )
 		self.ThingList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.thing_rename )
+		self.ThingList.Bind( wx.EVT_LIST_ITEM_RIGHT_CLICK, self.thing_context )
 		self.ThingList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.thing_select )
 		self.ThingList.Bind( wx.EVT_SIZE, self.thinglist_resize )
+		self.Bind( wx.EVT_MENU, self.thing_context_copy, id = self.ThingContextCopy.GetId() )
+		self.Bind( wx.EVT_MENU, self.thing_context_paste, id = self.ThingContextPaste.GetId() )
+		self.Bind( wx.EVT_MENU, self.thing_context_clear, id = self.ThingContextClear.GetId() )
 	
 	def __del__( self ):
 		pass
@@ -1791,12 +1807,27 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		pass
 	
 	
+	def thing_context( self, event ):
+		pass
+	
 	def thing_select( self, event ):
 		pass
 	
 	def thinglist_resize( self, event ):
 		pass
 	
+	def thing_context_copy( self, event ):
+		pass
+	
+	def thing_context_paste( self, event ):
+		pass
+	
+	def thing_context_clear( self, event ):
+		pass
+	
+	def ThingsFrameBaseOnContextMenu( self, event ):
+		self.PopupMenu( self.ThingContext, event.GetPosition() )
+		
 
 ###########################################################################
 ## Class StatesFrameBase
@@ -2172,7 +2203,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		self.StateContext.AppendSeparator()
 		
-		self.StateContextPreview = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Preview"+ u"\t" + u"~", wx.EmptyString, wx.ITEM_NORMAL )
+		self.StateContextPreview = wx.MenuItem( self.StateContext, wx.ID_ANY, u"State"+ u"\t" + u"~", wx.EmptyString, wx.ITEM_NORMAL )
 		self.StateContext.AppendItem( self.StateContextPreview )
 		
 		self.Bind( wx.EVT_RIGHT_DOWN, self.StatesFrameBaseOnContextMenu ) 
