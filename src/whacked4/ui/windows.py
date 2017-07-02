@@ -2227,7 +2227,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		self.StateContext.AppendSeparator()
 		
-		self.StateContextPreview = wx.MenuItem( self.StateContext, wx.ID_ANY, u"State"+ u"\t" + u"~", wx.EmptyString, wx.ITEM_NORMAL )
+		self.StateContextPreview = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Preview"+ u"\t" + u"~", wx.EmptyString, wx.ITEM_NORMAL )
 		self.StateContext.AppendItem( self.StateContextPreview )
 		
 		self.Bind( wx.EVT_RIGHT_DOWN, self.StatesFrameBaseOnContextMenu ) 
