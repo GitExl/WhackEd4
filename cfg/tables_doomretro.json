@@ -1,7 +1,7 @@
 {
-	"versions": [19,21],
+	"versions": [19, 21],
 	"extended": true,
-	"name": "Doom Retro (MBF with extra states)",
+	"name": "Doom Retro",
 	"features": [
 		"thing.gibHealth"
 	],

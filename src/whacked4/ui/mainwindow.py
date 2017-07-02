@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #coding=utf8
 
-from collections import OrderedDict
 from whacked4 import config, utils
 from whacked4.dehacked import engine, patch
 from whacked4.doom import wadlist, wad
@@ -9,10 +8,13 @@ from whacked4.ui import windows, workspace
 from whacked4.ui.dialogs import startdialog, aboutdialog, patchinfodialog
 from whacked4.ui.editors import thingsframe, statesframe, soundsframe, stringsframe, weaponsframe, ammoframe, \
     cheatsframe, miscframe, parframe
+
+from collections import OrderedDict
+
 import glob
 import os.path
 import shutil
-import sys
+import webbrowser
 import wx
 
 
@@ -801,3 +803,7 @@ class MainWindow(windows.MainFrameBase):
 
     def help_about(self, event):
         self.about_dialog.ShowModal()
+
+    def help_help(self, event):
+        file = 'file://' + os.path.join(os.getcwd(), 'docs/index.html')
+        webbrowser.open(file)

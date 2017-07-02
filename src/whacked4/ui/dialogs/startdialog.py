@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 #coding=utf8
 
+import webbrowser
+import os
+
 from whacked4 import config
 from whacked4.ui import windows
 
@@ -44,3 +47,7 @@ class StartDialog(windows.StartDialogBase):
 
     def cancel(self, event):
         self.EndModal(0)
+
+    def help(self, event):
+        file = 'file://' + os.path.join(os.getcwd(), 'docs/index.html')
+        webbrowser.open(file)

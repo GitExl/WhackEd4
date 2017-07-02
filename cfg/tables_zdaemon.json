@@ -1,5 +1,5 @@
 {
-	"versions": [19,21],
+	"versions": [19, 21],
 	"extended": true,
 	"features": [
 		"thing.stateCrash",

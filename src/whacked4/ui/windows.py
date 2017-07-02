@@ -344,7 +344,10 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.MainMenu.Append( self.MenuView, u"View" ) 
 		
 		self.MenuHelp = wx.Menu()
-		self.MenuHelpAbout = wx.MenuItem( self.MenuHelp, wx.ID_ANY, u"About..."+ u"\t" + u"F1", wx.EmptyString, wx.ITEM_NORMAL )
+		self.MenuHelpHelp = wx.MenuItem( self.MenuHelp, wx.ID_ANY, u"Help"+ u"\t" + u"F1", wx.EmptyString, wx.ITEM_NORMAL )
+		self.MenuHelp.AppendItem( self.MenuHelpHelp )
+		
+		self.MenuHelpAbout = wx.MenuItem( self.MenuHelp, wx.ID_ANY, u"About...", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuHelp.AppendItem( self.MenuHelpAbout )
 		
 		self.MainMenu.Append( self.MenuHelp, u"Help" ) 
@@ -386,6 +389,7 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.Bind( wx.EVT_MENU, self.editor_window_menutoggle, id = self.MenuViewMiscellaneous.GetId() )
 		self.Bind( wx.EVT_MENU, self.editor_window_menutoggle, id = self.MenuViewPar.GetId() )
 		self.Bind( wx.EVT_MENU, self.view_patch_settings, id = self.MenuViewPatchSettings.GetId() )
+		self.Bind( wx.EVT_MENU, self.help_help, id = self.MenuHelpHelp.GetId() )
 		self.Bind( wx.EVT_MENU, self.help_about, id = self.MenuHelpAbout.GetId() )
 	
 	def __del__( self ):
@@ -450,6 +454,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 	
 	
 	def view_patch_settings( self, event ):
+		pass
+	
+	def help_help( self, event ):
 		pass
 	
 	def help_about( self, event ):
@@ -3960,6 +3967,11 @@ class StartDialogBase ( wx.Dialog ):
 		
 		bSizer55 = wx.BoxSizer( wx.HORIZONTAL )
 		
+		self.Help = wx.Button( self.m_panel53, wx.ID_ANY, u"Help", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Help.SetMinSize( wx.Size( 120,28 ) )
+		
+		bSizer55.Add( self.Help, 0, wx.BOTTOM|wx.LEFT|wx.RIGHT, 12 )
+		
 		
 		bSizer55.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
@@ -3988,6 +4000,7 @@ class StartDialogBase ( wx.Dialog ):
 		self.NewFile.Bind( wx.EVT_BUTTON, self.new_file )
 		self.OpenFile.Bind( wx.EVT_BUTTON, self.open_file )
 		self.FileList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.open_file_list )
+		self.Help.Bind( wx.EVT_BUTTON, self.help )
 		self.Cancel.Bind( wx.EVT_BUTTON, self.cancel )
 	
 	def __del__( self ):
@@ -4002,6 +4015,9 @@ class StartDialogBase ( wx.Dialog ):
 		pass
 	
 	def open_file_list( self, event ):
+		pass
+	
+	def help( self, event ):
 		pass
 	
 	def cancel( self, event ):
