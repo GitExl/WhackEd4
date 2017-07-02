@@ -67,6 +67,7 @@ class PlaybackThread(threading.Thread):
     def run(self):
         pyaud = pyaudio.PyAudio()
 
+        stream = pyaud.open(format=pyaudio.paUInt8, channels=1, rate=self.sample_rate, output=True, frames_per_buffer=1, start=True)
         stream.write(self.samples)
         stream.stop_stream()
         stream.close()

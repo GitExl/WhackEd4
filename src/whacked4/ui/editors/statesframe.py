@@ -114,7 +114,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.clipboard = None
 
         self.sprites_dialog = spritesdialog.SpritesDialog(self.GetParent())
-        self.preview_dialog = statepreviewdialog.StatePreviewDialog(self.GetParent(), self.pwads)
+        self.preview_dialog = statepreviewdialog.StatePreviewDialog(self.GetParent())
 
         # Setup sprite preview control.
         self.SpritePreview.set_source(self.pwads)
@@ -907,8 +907,15 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.SetColumnWidth(8, width)
 
     def preview(self):
+
+        # If we are currently filtering for a thing, use that as the preview's reference thing.
+        if self.filter.filter_type == statefilter.FILTER_TYPE_THING:
+            thing_index = self.filter.filter_index
+        else:
+            thing_index = None
+
         state_index = self.selection_get_state_index()
-        self.preview_dialog.prepare(self.patch, state_index)
+        self.preview_dialog.prepare(self.pwads, self.patch, state_index, thing_index)
         self.preview_dialog.ShowModal()
 
     def state_key(self, event):

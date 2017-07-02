@@ -12,19 +12,21 @@ Low priority bugs
 Features
 1.2.0
 - UI manual \ Dehacked tutorial.
-- Mark and display items as modified compared to engine config.
+- Merge patches by loading a patch "over" the current one.
+  - Or like https://www.doomworld.com/vb/post/1556253
 
 1.3.0 and later
+- Action sound playback data for the Hexen + Heretic + ZDoom action functions.
 - Allow multiple flag fields for things (and implement Doom Retro's "Retro Bits" field).
 - Allow sorting things list by name.
 - '...' button for actions to browse through list of actions plus a description.
+  - Fix action descriptions first, not all correspond with what the actual Doom code does. Check with Doom code in p_pspr and p_enemy.
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
   - Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Simplify engine config structure for faster parsing.
-- Merge patches by loading a patch "over" the current one.
-  - Or like https://www.doomworld.com/vb/post/1556253
 - DEHSUPP support. See GitHub issue #1.
 - ZDaemon: Add and parse relevant actors from http://www.zdaemon.org/?CMD=info&NAME=deh. Is this related to DEHSUPP?
 - Read\write DEHACKED lumps directly from a WAD file.
 - Allow includes for cfg files to modularize them.
 - Improve tab traversal everywhere.
+- Mark and display items as modified compared to engine config.

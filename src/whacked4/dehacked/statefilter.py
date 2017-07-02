@@ -29,6 +29,10 @@ class StateFilter(object):
         self.state_indices = []
         self.states = []
 
+        # Currently active filters.
+        self.filter_type = None
+        self.filter_index = -1
+
     def build_filters(self):
         """
         Builds a list of available filters.
@@ -73,11 +77,11 @@ class StateFilter(object):
         self.states = []
 
         filter_data = self.filters[index]
-        filter_type = filter_data['type']
-        filter_index = filter_data['index']
+        self.filter_type = filter_data['type']
+        self.filter_index = filter_data['index']
 
         # Create an unfiltered list of all states if there is no filter.
-        if filter_type == FILTER_TYPE_NONE:
+        if self.filter_type == FILTER_TYPE_NONE:
             state_index = 0
             for state in self.patch.states:
                 self.state_indices.append(state_index)
@@ -86,12 +90,12 @@ class StateFilter(object):
 
         # Create a filtered list.
         else:
-            if filter_type == FILTER_TYPE_UNUSED:
+            if self.filter_type == FILTER_TYPE_UNUSED:
                 states_list = self.get_unused_states()
-            elif filter_type == FILTER_TYPE_THING:
-                states_list = self.get_thing_states(filter_index)
-            elif filter_type == FILTER_TYPE_WEAPON:
-                states_list = self.get_weapon_states(filter_index)
+            elif self.filter_type == FILTER_TYPE_THING:
+                states_list = self.get_thing_states(self.filter_index)
+            elif self.filter_type == FILTER_TYPE_WEAPON:
+                states_list = self.get_weapon_states(self.filter_index)
 
             # Keep marking all currently listed states' next state as used until none can be found anymore.
             while True:
@@ -114,7 +118,7 @@ class StateFilter(object):
                     break
 
             # If a unused filter type is active, invert the list to reveal unused states.
-            if filter_type == FILTER_TYPE_UNUSED:
+            if self.filter_type == FILTER_TYPE_UNUSED:
                 for index in range(len(states_list)):
                     states_list[index] = not states_list[index]
 

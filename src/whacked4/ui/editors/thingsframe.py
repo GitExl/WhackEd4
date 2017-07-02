@@ -4,6 +4,8 @@
 from whacked4 import utils
 from whacked4.dehacked import statefilter
 from whacked4.ui import editormixin, windows
+from whacked4.ui.dialogs import statepreviewdialog
+
 import copy
 import wx
 
@@ -143,6 +145,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.patch = None
         self.pwads = None
         self.clipboard = None
+        self.preview_dialog = None
 
         self.selected_index = 0
 
@@ -156,6 +159,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.patch = patch
         self.pwads = self.GetParent().pwads
         self.clipboard = None
+        self.preview_dialog = statepreviewdialog.StatePreviewDialog(self.GetParent())
 
         self.selected_index = 0
 
@@ -715,3 +719,14 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.update_properties()
         self.is_modified(True)
+
+    def preview_state(self, event):
+        """
+        Preview animation from a state.
+        """
+
+        key = self.PROPS_STATENAMES[event.GetId()]
+        state_index = self.patch.things[self.selected_index]['state' + key]
+
+        self.preview_dialog.prepare(self.pwads, self.patch, state_index, self.selected_index)
+        self.preview_dialog.ShowModal()

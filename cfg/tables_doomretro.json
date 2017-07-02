@@ -18,7 +18,7 @@
 		},
 		"KeenDie": {
 			"name": "KeenDie",
-			"description": "Same as the 'Fall' and 'BossDeath' actions together.",
+			"description": "Same as the 'Fall' action and triggering tag 666 if all thing with the same type are dead.",
 			"type": 0
 		},
 		"Look": {
@@ -39,17 +39,20 @@
 		"PosAttack": {
 			"name": "PosAttack",
 			"description": "Trooper pistol shot.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:1"
 		},
 		"SPosAttack": {
 			"name": "SPosAttack",
 			"description": "Shotgun Sargeant and Spiderdemon attack.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:2"
 		},
 		"CPosAttack": {
 			"name": "CPosAttack",
 			"description": "Chaingun Sargeant\\SS Nazi Chaingun attack.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:2"
 		},
 		"CPosRefire": {
 			"name": "CPosRefire",
@@ -69,7 +72,8 @@
 		"TroopAttack": {
 			"name": "TroopAttack",
 			"description": "Imp fireball shot or scratch if at close range.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:55"
 		},
 		"SargAttack": {
 			"name": "SargAttack",
@@ -89,7 +93,8 @@
 		"BruisAttack": {
 			"name": "BruisAttack",
 			"description": "Baron of Hell or Hell Knight fireball shot or scratch if at close range.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:55"
 		},
 		"SkelMissile": {
 			"name": "SkelMissile",
@@ -104,12 +109,14 @@
 		"SkelWhoosh": {
 			"name": "SkelWhoosh",
 			"description": "Play sound 'skeswg'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:56"
 		},
 		"SkelFist": {
 			"name": "SkelFist",
 			"description": "Revenant punch.\n\nThis plays the sound 'skepch' if it hits it's target.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:53"
 		},
 		"VileChase": {
 			"name": "VileChase",
@@ -119,17 +126,20 @@
 		"VileStart": {
 			"name": "VileStart",
 			"description": "Play sound 'vilatk'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:54"
 		},
 		"StartFire": {
 			"name": "StartFire",
 			"description": "Play sound 'flamest'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:92"
 		},
 		"FireCrackle": {
 			"name": "FireCrackle",
 			"description": "Play sound 'flame'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:91"
 		},
 		"Fire": {
 			"name": "Fire",
@@ -144,12 +154,14 @@
 		"VileAttack": {
 			"name": "VileAttack",
 			"description": "Arch-Vile targeted attack.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:82"
 		},
 		"FatRaise": {
 			"name": "FatRaise",
 			"description": "Play sound 'manatk'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:99"
 		},
 		"FatAttack1": {
 			"name": "FatAttack1",
@@ -169,7 +181,8 @@
 		"SkullAttack": {
 			"name": "SkullAttack",
 			"description": "Lost soul attack.\n\nAn attack sound is REQUIRED.",
-			"type": 0
+			"type": 0,
+			"sound": "thing:soundAttack"
 		},
 		"PainAttack": {
 			"name": "PainAttack",
@@ -184,17 +197,20 @@
 		"Scream": {
 			"name": "Scream",
 			"description": "Play the object's death sound.",
-			"type": 0
+			"type": 0,
+			"sound": "thing:soundDeath"
 		},
 		"XScream": {
 			"name": "XScream",
 			"description": "Play sound 'slop'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:31"
 		},
 		"Pain": {
 			"name": "Pain",
 			"description": "Play the object's pain sound.",
-			"type": 0
+			"type": 0,
+			"sound": "thing:soundPain"
 		},
 		"Fall": {
 			"name": "Fall",
@@ -214,47 +230,56 @@
 		"Hoof": {
 			"name": "Hoof",
 			"description": "Play sound 'hoof'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:84"
 		},
 		"Metal": {
 			"name": "Metal",
 			"description": "Play sound 'metal'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:85"
 		},
 		"BabyMetal": {
 			"name": "BabyMetal",
 			"description": "Play sound 'bspwlk'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:79"
 		},
 		"OpenShotgun2": {
 			"name": "OpenShotgun2",
 			"description": "Play sound 'dbopn'.",
-			"type": 1
+			"type": 1,
+			"sound": "sound:5"
 		},
 		"LoadShotgun2": {
 			"name": "LoadShotgun2",
 			"description": "Play sound 'dbload'.",
-			"type": 1
+			"type": 1,
+			"sound": "sound:7"
 		},
 		"CloseShotgun2": {
 			"name": "CloseShotgun2",
 			"description": "Play sound 'dbcls'.",
-			"type": 1
+			"type": 1,
+			"sound": "sound:6"
 		},
 		"BrainAwake": {
 			"name": "BrainAwake",
 			"description": "Play sound 'bossit'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:96"
 		},
 		"BrainPain": {
 			"name": "BrainPain",
 			"description": "Play sound 'bospn'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:97"
 		},
 		"BrainScream": {
 			"name": "BrainScream",
 			"description": "Play sound 'bosdth' and make special explosions (states 799-801) about 320 units south of the object.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:98"
 		},
 		"BrainExplode": {
 			"name": "BrainExplode",
@@ -269,22 +294,26 @@
 		"BrainSpit": {
 			"name": "BrainSpit",
 			"description": "Fire a spawn cube.\n\nA landing spot thing is REQUIRED.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:94"
 		},
 		"SpawnSound": {
 			"name": "SpawnSound",
 			"description": "Play sound 'boscub'.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:95"
 		},
 		"SpawnFly": {
 			"name": "SpawnFly",
 			"description": "Check for spawn point.\n\nSpawns a monster if it hits a spawn-point.",
-			"type": 0
+			"type": 0,
+			"sound": "sound:35"
 		},
 		"PlayerScream": {
 			"name": "PlayerScream",
 			"description": "Play sound 'pldeth'",
-			"type": 0
+			"type": 0,
+			"sound": "sound:57"
 		},
 		"WeaponReady": {
 			"name": "WeaponReady",
@@ -319,12 +348,14 @@
 		"Punch": {
 			"name": "Punch",
 			"description": "Player Punch attack.",
-			"type": 1
+			"type": 1,
+			"sound": "sound:83"
 		},
 		"Saw": {
 			"name": "Saw",
 			"description": "Player Chainsaw attack.\n\nEager Beaver to the rescue!",
-			"type": 1
+			"type": 1,
+			"sound": "sound:13"
 		},
 		"FireMissile": {
 			"name": "FireMissile",
@@ -344,22 +375,26 @@
 		"FirePistol": {
 			"name": "FirePistol",
 			"description": "Player Pistol shot.",
-			"type": 1
+			"type": 1,
+			"sound": "sound:1"
 		},
 		"FireShotgun": {
 			"name": "FireShotgun",
 			"description": "Player Shotgun attack.",
-			"type": 1
+			"type": 1,
+			"sound": "sound:2"
 		},
 		"FireShotgun2": {
 			"name": "FireShotgun2",
 			"description": "Player Super Shotgun attack",
-			"type": 1
+			"type": 1,
+			"sound": "sound:4"
 		},
 		"FireCGun": {
 			"name": "FireCGun",
 			"description": "Player Chaingun shot.\n\nAlso checks ammo, does not go to -1 ammo, but changes the weapon instead.",
-			"type": 1
+			"type": 1,
+			"sound": "sound:1"
 		},
 		"Light0": {
 			"name": "Light0",
@@ -384,7 +419,8 @@
 		"BFGSound": {
 			"name": "BFGSound",
 			"description": "Play sound 'bfg'.",
-			"type": 1
+			"type": 1,
+			"sound": "sound:9"
 		},
 		"Detonate": {
 			"name": "Detonate",
@@ -470,7 +506,8 @@
 					"type": "sound"
 				}
 			],
-			"type": 0
+			"type": 0,
+			"sound": "state:unused2"
 		},
 		"PlaySound": {
 			"name": "PlaySound",
@@ -488,7 +525,8 @@
 					"range": [0, 1]
 				}
 			],
-			"type": 0
+			"type": 0,
+			"sound": "state:unused1"
 		},
 		"RandomJump": {
 			"name": "RandomJump",
@@ -540,7 +578,8 @@
 		"BetaSkullAttack": {
 			"name": "BetaSkullAttack",
 			"description": "Performs the beta Lost Soul attack.",
-			"type": 0
+			"type": 0,
+			"sound": "thing:soundAttack"
 		},
 		"Stop": {
 			"name": "Stop",

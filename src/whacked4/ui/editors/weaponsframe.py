@@ -4,6 +4,8 @@
 from whacked4 import utils
 from whacked4.dehacked import statefilter
 from whacked4.ui import editormixin, windows
+from whacked4.ui.dialogs import statepreviewdialog
+
 import copy
 import wx
 
@@ -54,7 +56,9 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.SetIcon(wx.Icon('res/editor-weapons.ico'))
 
         self.patch = None
+        self.pwads = None
         self.selected_index = 0
+        self.preview_dialog = None
 
     def build(self, patch):
         """
@@ -62,8 +66,9 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         """
 
         self.patch = patch
-
+        self.pwads = self.GetParent().pwads
         self.selected_index = 0
+        self.preview_dialog = statepreviewdialog.StatePreviewDialog(self.GetParent())
 
         self.set_feature_visibility()
         self.ammolist_build()
@@ -81,7 +86,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.PanelAmmoPerUse.Show(('weapon.ammoUse' in features))
 
         self.Layout()
-
 
     def activate(self, event):
         """
@@ -333,3 +337,14 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         self.selected_index = event.GetIndex()
         self.update_properties()
+
+    def preview_state(self, event):
+        """
+        Preview animation from a state.
+        """
+
+        key = self.PROPS_STATENAMES[event.GetId()]
+        state_index = self.patch.weapons[self.selected_index]['state' + key]
+
+        self.preview_dialog.prepare(self.pwads, self.patch, state_index)
+        self.preview_dialog.ShowModal()

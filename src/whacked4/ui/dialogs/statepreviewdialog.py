@@ -3,6 +3,8 @@
 
 from whacked4.ui import windows
 
+import whacked4.utils as utils
+
 import wx
 import time
 
@@ -14,20 +16,24 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
 
     TICK_INTERVAL = 1000 / 35
 
-    def __init__(self, parent, pwads):
+    def __init__(self, parent):
         windows.StatePreviewDialogBase.__init__(self, parent)
 
         self.patch = None
+        self.pwads = None
+
+        # Thing for sound references.
+        self.ref_thing_index = None
+        self.ref_thing = None
 
         self.first_state_index = -1
         self.state_index = -1
 
         # Precise timer data.
-        self.timer_prev = time.time()
+        self.timer_prev = 0
         self.elapsed = 0
         self.ticks = 0
 
-        self.Sprite.set_source(pwads)
         self.Sprite.set_baseline_factor(0.85)
         self.Sprite.set_scale(2)
 
@@ -42,19 +48,47 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
 
         # Tilde restarts the animation from the state this dialog was called with.
         if event.GetKeyCode() == 96:
-            self.set_state(self.first_state_index)
+            self.begin_playback(self.first_state_index)
             self.anim_start()
         else:
             event.Skip()
 
-    def prepare(self, patch, state_index):
+    def begin_playback(self, state_index):
+        """
+        Starts playbackl from a state. Takes care of moving voer 0 duration starting states.
+        """
+
+        self.set_state(state_index)
+        while self.ticks == 0:
+            state = self.patch.states[self.state_index]
+            self.set_state(state['nextState'])
+
+    def prepare(self, pwads, patch, state_index, thing_index=None):
         """
         Used to prepare a new animation to preview.
         """
 
+        self.pwads = pwads
         self.patch = patch
         self.first_state_index = state_index
-        self.set_state(state_index)
+
+        self.ref_thing_index = thing_index
+        if thing_index is not None:
+            self.ref_thing = patch.things[thing_index]
+        else:
+            self.ref_thing = None
+
+        self.Sprite.set_source(pwads)
+        self.set_title()
+        self.begin_playback(state_index)
+
+    def set_title(self):
+        if self.ref_thing_index is not None:
+            title = 'Preview - {}'.format(self.patch.things.names[self.ref_thing_index])
+        else:
+            title = 'Preview'
+
+        self.SetLabel(title)
 
     def activate(self, event):
         """
@@ -69,9 +103,7 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         """
 
         self.timer_prev = time.time()
-        self.ticks = 0
         self.Timer.Start(1)
-        self.update_tick_info()
 
     def anim_stop(self):
         """
@@ -86,22 +118,41 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         """
 
         if state_index <= 1 or state_index >= len(self.patch.states):
+            self.ticks = -1
             self.anim_stop()
+            return
 
-        else:
-            state = self.patch.states[state_index]
-            sprite_index = state['sprite']
-            sprite_name = self.patch.sprite_names[sprite_index]
-            sprite_frame = state['spriteFrame'] & 0x3FFF
+        state = self.patch.states[state_index]
+        sprite_index = state['sprite']
+        sprite_name = self.patch.sprite_names[sprite_index]
+        sprite_frame = state['spriteFrame'] & 0x3FFF
 
-            self.Sprite.show_sprite(sprite_name, sprite_frame)
-            self.StateInfo.SetLabel('{}{}'.format(sprite_name, chr(65 + sprite_frame)))
+        self.Sprite.show_sprite(sprite_name, sprite_frame)
+        self.StateInfo.SetLabel('{}{}'.format(sprite_name, chr(65 + sprite_frame)))
 
-            # States with negative duration play forever, so stop.
-            if state['duration'] < 0:
-                self.anim_stop()
+        # Play any state-related sound.
+        if state['action'] is not None:
+            action_name = state['action']
+            action = self.patch.engine.actions[action_name]
+            sound_index = None
+
+            if 'sound' in action:
+                parts = action['sound'].split(':')
+                if len(parts) != 2:
+                    raise Exception('Invalid sound for action {}'.format(action_name))
+
+                if parts[0] == 'sound':
+                    sound_index = int(parts[1])
+                elif parts[0] == 'thing' and self.ref_thing_index is not None:
+                    sound_index = self.ref_thing[parts[1]]
+                elif parts[0] == 'state':
+                    sound_index = state[parts[1]]
+
+            if sound_index is not None:
+                utils.sound_play(self.patch.sound_names[sound_index - 1], self.pwads)
 
         self.state_index = state_index
+        self.ticks = state['duration']
 
     def timer(self, event):
         """
@@ -128,22 +179,10 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         Advances the animation a single tick.
         """
 
-        state = self.patch.states[self.state_index]
-
-        self.ticks += 1
-        if self.ticks >= state['duration']:
-            next_state_index = state['nextState']
-            self.set_state(next_state_index)
-            self.ticks = 0
-
-        self.update_tick_info()
-
-    def update_tick_info(self):
-        """
-        Update tick info label.
-        """
-
-        self.Time.SetLabel('tick {}'.format(self.ticks))
+        self.ticks -= 1
+        while self.ticks == 0:
+            state = self.patch.states[self.state_index]
+            self.set_state(state['nextState'])
 
     def close(self, event):
         """

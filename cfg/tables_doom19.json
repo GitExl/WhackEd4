@@ -39,7 +39,7 @@
 			"type": 0
 		},
 		"161376": {
-			"description": "Same as the 'Fall' and 'BossDeath' actions together.",
+			"description": "Same as the 'Fall' action and triggering tag 666 if all thing with the same type are dead.",
 			"name": "KeenDie",
 			"type": 0
 		},
@@ -61,17 +61,20 @@
 		"162256": {
 			"description": "Trooper pistol shot.",
 			"name": "PosAttack",
-			"type": 0
+			"type": 0,
+			"sound": "sound:1"
 		},
 		"162384": {
 			"description": "Shotgun Sargeant and Spiderdemon attack.",
 			"name": "SPosAttack",
-			"type": 0
+			"type": 0,
+			"sound": "sound:2"
 		},
 		"162528": {
 			"description": "Chaingun Sargeant\\SS Nazi Chaingun attack.",
 			"name": "CPosAttack",
-			"type": 0
+			"type": 0,
+			"sound": "sound:2"
 		},
 		"162656": {
 			"description": "Check line of sight to stop firing.\n\nIf the target is no longer visible, halt firing and continue chasing it.",
@@ -91,7 +94,8 @@
 		"162832": {
 			"description": "Imp fireball shot or scratch if at close range.",
 			"name": "TroopAttack",
-			"type": 0
+			"type": 0,
+			"sound": "sound:55"
 		},
 		"162944": {
 			"description": "Demon bite attack.",
@@ -111,7 +115,8 @@
 		"163168": {
 			"description": "Baron of Hell or Hell Knight fireball shot or scratch if at close range.",
 			"name": "BruisAttack",
-			"type": 0
+			"type": 0,
+			"sound": "sound:55"
 		},
 		"163264": {
 			"description": "Launch a Revenant missile. Chance of launching a homing missile.",
@@ -126,12 +131,14 @@
 		"163744": {
 			"description": "Play sound 'skeswg'.",
 			"name": "SkelWhoosh",
-			"type": 0
+			"type": 0,
+			"sound": "sound:56"
 		},
 		"163776": {
 			"description": "Revenant punch.\n\nThis plays the sound 'skepch' if it hits it's target.",
 			"name": "SkelFist",
-			"type": 0
+			"type": 0,
+			"sound": "sound:53"
 		},
 		"164096": {
 			"description": "Arch-Vile walking code pointer.\n\nChecks to see if there is a dead monster in front of the Arch-Vile and ressurects it if so.",
@@ -141,17 +148,20 @@
 		"164432": {
 			"description": "Play sound 'vilatk'.",
 			"name": "VileStart",
-			"type": 0
+			"type": 0,
+			"sound": "sound:54"
 		},
 		"164448": {
-			"description": "Play sound 'flamest'.",
+			"description": "Play sound 'flamst'.",
 			"name": "StartFire",
-			"type": 0
+			"type": 0,
+			"sound": "sound:92"
 		},
 		"164480": {
 			"description": "Play sound 'flame'.",
 			"name": "FireCrackle",
-			"type": 0
+			"type": 0,
+			"sound": "sound:91"
 		},
 		"164512": {
 			"description": "Keep the Arch-Vile's flame at the same position as it's target.",
@@ -166,12 +176,14 @@
 		"164720": {
 			"description": "Arch-Vile targeted attack.",
 			"name": "VileAttack",
-			"type": 0
+			"type": 0,
+			"sound": "sound:82"
 		},
 		"164928": {
 			"description": "Play sound 'manatk'.",
 			"name": "FatRaise",
-			"type": 0
+			"type": 0,
+			"sound": "sound:99"
 		},
 		"164960": {
 			"description": "Mancubus shot, 2 fireballs: one straight, one left.",
@@ -191,7 +203,8 @@
 		"165408": {
 			"description": "Lost soul attack.\n\nAn attack sound is REQUIRED.",
 			"name": "SkullAttack",
-			"type": 0
+			"type": 0,
+			"sound": "thing:soundAttack"
 		},
 		"165824": {
 			"description": "Spawn a lost soul.",
@@ -206,17 +219,20 @@
 		"165920": {
 			"description": "Play the object's death sound.",
 			"name": "Scream",
-			"type": 0
+			"type": 0,
+			"sound": "thing:soundDeath"
 		},
 		"166032": {
 			"description": "Play sound 'slop'.",
 			"name": "XScream",
-			"type": 0
+			"type": 0,
+			"sound": "sound:31"
 		},
 		"166048": {
 			"description": "Play the object's pain sound.",
 			"name": "Pain",
-			"type": 0
+			"type": 0,
+			"sound": "thing:soundPain"
 		},
 		"166080": {
 			"description": "Dead body mode.\n\nThis action enabled the object's flags Obstacle, Corpse and Dropoff.",
@@ -236,47 +252,56 @@
 		"166432": {
 			"description": "Play sound 'hoof'.",
 			"name": "Hoof",
-			"type": 0
+			"type": 0,
+			"sound": "sound:84"
 		},
 		"166464": {
 			"description": "Play sound 'metal'.",
 			"name": "Metal",
-			"type": 0
+			"type": 0,
+			"sound": "sound:85"
 		},
 		"166496": {
 			"description": "Play sound 'bspwlk'.",
 			"name": "BabyMetal",
-			"type": 0
+			"type": 0,
+			"sound": "sound:79"
 		},
 		"166528": {
 			"description": "Play sound 'dbopn'.",
 			"name": "OpenShotgun2",
-			"type": 1
+			"type": 1,
+			"sound": "sound:5"
 		},
 		"166544": {
 			"description": "Play sound 'dbload'.",
 			"name": "LoadShotgun2",
-			"type": 1
+			"type": 1,
+			"sound": "sound:7"
 		},
 		"166560": {
 			"description": "Play sound 'dbcls'.",
 			"name": "CloseShotgun2",
-			"type": 1
+			"type": 1,
+			"sound": "sound:6"
 		},
 		"166592": {
 			"description": "Play sound 'bossit'.",
 			"name": "BrainAwake",
-			"type": 0
+			"type": 0,
+			"sound": "sound:96"
 		},
 		"166688": {
 			"description": "Play sound 'bospn'.",
 			"name": "BrainPain",
-			"type": 0
+			"type": 0,
+			"sound": "sound:97"
 		},
 		"166704": {
 			"description": "Play sound 'bosdth' and make special explosions (states 799-801) about 320 units south of the object.",
 			"name": "BrainScream",
-			"type": 0
+			"type": 0,
+			"sound": "sound:98"
 		},
 		"166864": {
 			"description": "Creates an explosion (states 127-129).",
@@ -291,22 +316,26 @@
 		"167008": {
 			"description": "Fire a spawn cube.\n\nA landing spot thing is REQUIRED.",
 			"name": "BrainSpit",
-			"type": 0
+			"type": 0,
+			"sound": "sound:94"
 		},
 		"167168": {
 			"description": "Play sound 'boscub'.",
 			"name": "SpawnSound",
-			"type": 0
+			"type": 0,
+			"sound": "sound:95"
 		},
 		"167200": {
 			"description": "Check for spawn point.\n\nSpawns a monster if it hits a spawn-point.",
 			"name": "SpawnFly",
-			"type": 0
+			"type": 0,
+			"sound": "sound:35"
 		},
 		"167488": {
 			"description": "Play sound 'pldeth'",
 			"name": "PlayerScream",
-			"type": 0
+			"type": 0,
+			"sound": "sound:57"
 		},
 		"185072": {
 			"description": "Weapon bobbing.",
@@ -341,12 +370,14 @@
 		"185680": {
 			"description": "Player Punch attack.",
 			"name": "Punch",
-			"type": 1
+			"type": 1,
+			"sound": "sound:83"
 		},
 		"185856": {
 			"description": "Player Chainsaw attack.\n\nEager Beaver to the rescue!",
 			"name": "Saw",
-			"type": 1
+			"type": 1,
+			"sound": "sound:13"
 		},
 		"186112": {
 			"description": "Player Rocket Launcher attack.",
@@ -366,22 +397,26 @@
 		"186512": {
 			"description": "Player Pistol shot.",
 			"name": "FirePistol",
-			"type": 1
+			"type": 1,
+			"sound": "sound:1"
 		},
 		"186640": {
 			"description": "Player Shotgun attack.",
 			"name": "FireShotgun",
-			"type": 1
+			"type": 1,
+			"sound": "sound:2"
 		},
 		"186800": {
 			"description": "Player Super Shotgun attack",
 			"name": "FireShotgun2",
-			"type": 1
+			"type": 1,
+			"sound": "sound:4"
 		},
 		"186992": {
 			"description": "Player Chaingun shot.\n\nAlso checks ammo, does not go to -1 ammo, but changes the weapon instead.",
 			"name": "FireCGun",
-			"type": 1
+			"type": 1,
+			"sound": "sound:1"
 		},
 		"187200": {
 			"description": "Restore the lighting level after a gun flash.",
@@ -406,7 +441,8 @@
 		"187424": {
 			"description": "Play sound 'bfg'.",
 			"name": "BFGSound",
-			"type": 1
+			"type": 1,
+			"sound": "sound:9"
 		}
 	},
 	"hacks": {
