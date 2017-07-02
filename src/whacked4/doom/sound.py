@@ -9,6 +9,8 @@ import pyaudio
 import struct
 import threading
 
+import time
+
 
 class Sound(object):
     """
@@ -63,11 +65,10 @@ class PlaybackThread(threading.Thread):
         self.samples = samples
 
     def run(self):
-        aud = pyaudio.PyAudio()
+        pyaud = pyaudio.PyAudio()
 
-        stream = aud.open(format=pyaudio.paUInt8, channels=1, rate=self.sample_rate, output=True)
         stream.write(self.samples)
         stream.stop_stream()
         stream.close()
 
-        aud.terminate()
+        pyaud.terminate()
