@@ -17,13 +17,13 @@ class SpritePreview(wx.Panel):
     DRAG_SENSITIVITY = 20
 
     def __init__(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.NO_BORDER):
-        wx.Panel.__init__(self, parent, id=id, pos=pos, size=size, style=style)
+        wx.Panel.__init__(self, parent, id=id, pos=pos, size=size, style=style | wx.NO_FULL_REPAINT_ON_RESIZE)
 
         # WAD list to use for sprite rendering.
         self.wads = None
 
         # The current sprite being displayed.
-        self.sprite = None
+        self.sprite = self.CLEAR
 
         # The baseline at which to render sprites. Consider this to be the invisible floor on which sprites are placed.
         self.baseline_factor = 0.8
@@ -48,6 +48,8 @@ class SpritePreview(wx.Panel):
 
         # Paint setup.
         self.src_dc = wx.MemoryDC()
+        self.buffer = None
+        self.Bind(wx.EVT_SIZE, self.resize)
         self.Bind(wx.EVT_PAINT, self.paint)
 
         # Dragging setup.
@@ -60,6 +62,7 @@ class SpritePreview(wx.Panel):
         self.Bind(wx.EVT_LEAVE_WINDOW, self.drag_end)
         self.Bind(wx.EVT_MOTION, self.drag_move)
 
+        self.resize(None)
         self.update_cursor()
 
     def drag_start(self, event):
@@ -131,14 +134,19 @@ class SpritePreview(wx.Panel):
                 self.sprite = self.wads.get_sprite_image(sprite_lump, is_mirrored)
 
         self.update_cursor()
-        self.Refresh()
+        self.update_paint()
 
     def paint(self, event):
         """
         Called when this control is painted.
         """
 
-        dc = wx.BufferedPaintDC(self)
+        wx.BufferedPaintDC(self, self.buffer)
+
+    def update_paint(self):
+        dc = wx.MemoryDC()
+        dc.SelectObject(self.buffer)
+        dc.SetBackground(wx.Brush(self.GetBackgroundColour()))
         dc.Clear()
 
         # Draw a floor polygon.
@@ -187,13 +195,23 @@ class SpritePreview(wx.Panel):
         else:
             dc.Blit(x, y, bitmap.Width, bitmap.Height, self.src_dc, 0, 0, wx.COPY, True)
 
+        # Delete context and copy drawing to screen.
+        del dc
+        self.Refresh(False)
+        self.Update()
+
+    def resize(self, event):
+        size = self.GetClientSize()
+        self.buffer = wx.EmptyBitmap(size[0], size[1])
+        self.update_paint()
+
     def clear(self):
         """
         Clears this sprite preview.
         """
 
         self.sprite = self.CLEAR
-        self.Refresh()
+        self.update_paint()
 
     def set_baseline_factor(self, factor):
         """
@@ -211,7 +229,7 @@ class SpritePreview(wx.Panel):
     def set_scale(self, scale):
         self.scale = scale
         self.create_floor_points()
-        self.Refresh()
+        self.update_paint()
 
     def create_floor_points(self):
         size = self.GetClientSizeTuple()
