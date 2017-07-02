@@ -153,13 +153,33 @@ class MainWindow(windows.MainFrameBase):
         if not self.save_if_needed():
             return
 
-        filename = utils.file_dialog(self, message='Choose a Dehacked file to open.',
+        filename = utils.file_dialog(self, message='Choose a Dehacked file to open',
                                      wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|'
                                               'Extended Dehacked files (*.bex)|*.bex|All files|*.*',
                                      style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
 
         if filename is not None:
             self.open_file(filename, force_show_settings)
+
+    def open_file_merge_dialog(self):
+        """
+        Displays an open file dialog to open a patch file.
+        """
+
+        result = wx.MessageBox(message='Merging a patch cannot be undone, so make sure you have saved this file before'
+                                       'attempting a merge. Canceling a merge will not restore this patch to it\'s'
+                                       'original state.\n\nDo you want to continue?', caption='Merge patch',
+                               style=wx.YES_NO | wx.ICON_EXCLAMATION, parent=self)
+        if result == wx.NO:
+            return
+
+        filename = utils.file_dialog(self, message='Choose a Dehacked file to merge',
+                                     wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|'
+                                              'Extended Dehacked files (*.bex)|*.bex|All files|*.*',
+                                     style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+
+        if filename is not None:
+            self.merge_file(filename)
 
     def open_file(self, filename, force_show_settings=False):
         """
@@ -243,6 +263,55 @@ class MainWindow(windows.MainFrameBase):
         config.settings.recent_files_add(filename)
         self.update_recent_files_menu()
 
+    def merge_file(self, filename):
+        """
+        Opens and reads a new Dehacked patch then merges it into the current patch.
+
+        @param filename: the filename of the file to open.
+        """
+
+        # Analyze the patch file to determine what engines support it.
+        new_patch = patch.Patch()
+        try:
+            new_patch.analyze_patch(filename, self.engines)
+        except patch.DehackedPatchError as e:
+            wx.MessageBox(message=e.__str__(), caption='Patch error', style=wx.OK | wx.ICON_ERROR, parent=self)
+            return
+
+        # Check for compatibility.
+        if new_patch.version != self.patch.version or new_patch.extended != self.patch.extended:
+            wx.MessageBox(message='The patch is not compatible with the currently loaded patch. Check the patch version and any extended features.', caption='Patch not compatible', style=wx.OK | wx.ICON_ERROR, parent=self)
+            return
+
+        # Attempt to parse the patch file.
+        try:
+            messages = self.patch.read_dehacked(filename)
+        except patch.DehackedVersionError as e:
+            wx.MessageBox(message=e.__str__(), caption='Patch version error', style=wx.OK | wx.ICON_ERROR, parent=self)
+            return
+        except patch.DehackedPatchError as e:
+            wx.MessageBox(message=e.__str__(), caption='Patch error', style=wx.OK | wx.ICON_ERROR, parent=self)
+            return
+
+        # Display any messages from the patch load process.
+        for message in messages.itervalues():
+            message += '\n\nPress Yes to continue loading, No to stop displaying messages or Cancel to abort ' \
+                       'loading this patch.'
+            result = wx.MessageBox(message=message, caption='Patch message',
+                                   style=wx.YES_NO | wx.CANCEL | wx.ICON_EXCLAMATION, parent=self)
+            if result == wx.NO:
+                break
+            elif result == wx.CANCEL:
+                return
+
+        # Store new patch info.
+        self.patch_modified = True
+
+        # Refresh user interface contents.
+        self.load_wads()
+        self.update_ui()
+        self.file_set_state()
+
     def load_wads(self):
         """
         Loads the WAD files that are selected in the current workspace.
@@ -307,7 +376,7 @@ class MainWindow(windows.MainFrameBase):
             else:
                 use_filename = 'unnamed.deh'
 
-        filename = utils.file_dialog(self, message='Save Dehacked file.', default_file=use_filename,
+        filename = utils.file_dialog(self, message='Save Dehacked file', default_file=use_filename,
                                      wildcard='All supported files|*.deh;*.bex|Dehacked files (*.deh)|*.deh|'
                                               'Extended Dehacked files (*.bex)|*.bex|All files|*.*',
                                      style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
@@ -692,6 +761,9 @@ class MainWindow(windows.MainFrameBase):
 
     def file_open_as(self, event):
         self.open_file_dialog(force_show_settings=True)
+
+    def file_merge_with(self, event):
+        self.open_file_merge_dialog()
 
     def wads_reload(self, event):
         self.workspace.store_windows(self, self.workspace_windows)

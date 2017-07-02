@@ -261,6 +261,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.MenuFileOpenAs = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Open as...", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuFile.AppendItem( self.MenuFileOpenAs )
 		
+		self.MenuFileMergeWith = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Merge with..."+ u"\t" + u"Ctrl+M", wx.EmptyString, wx.ITEM_NORMAL )
+		self.MenuFile.AppendItem( self.MenuFileMergeWith )
+		
 		self.MenuFileSave = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Save"+ u"\t" + u"Ctrl+S", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuFile.AppendItem( self.MenuFileSave )
 		
@@ -365,6 +368,7 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.Bind( wx.EVT_MENU, self.file_new, id = self.MenuFileNew.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_open, id = self.MenuFileOpen.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_open_as, id = self.MenuFileOpenAs.GetId() )
+		self.Bind( wx.EVT_MENU, self.file_merge_with, id = self.MenuFileMergeWith.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_save, id = self.MenuFileSave.GetId() )
 		self.Bind( wx.EVT_MENU, self.file_save_as, id = self.MenuFileSaveAs.GetId() )
 		self.Bind( wx.EVT_MENU, self.wads_reload, id = self.MenuFileReloadWADs.GetId() )
@@ -410,6 +414,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		pass
 	
 	def file_open_as( self, event ):
+		pass
+	
+	def file_merge_with( self, event ):
 		pass
 	
 	def file_save( self, event ):

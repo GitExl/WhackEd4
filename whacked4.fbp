@@ -458,6 +458,21 @@
                         <property name="help"></property>
                         <property name="id">wxID_ANY</property>
                         <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Merge with...</property>
+                        <property name="name">MenuFileMergeWith</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut">Ctrl+M</property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">file_merge_with</event>
+                        <event name="OnUpdateUI"></event>
+                    </object>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">wxID_ANY</property>
+                        <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Save</property>
                         <property name="name">MenuFileSave</property>
                         <property name="permission">none</property>

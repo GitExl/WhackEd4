@@ -5,6 +5,7 @@ Added: linking states together can now be done by selecting them, right-clicking
 Added: an option to clear out all selected states from the state context menu.
 Added: an option to clear out a thing's properties from a thing's context menu.
 Added: DOOM Retro "Gib health" thing property.
+Added: barebones patch merging feature by loading a patch 'over' the current one.
 Fixed: state and thing copy and paste operations were much slower than they should to be.
 Changed: sprite selection dialog now shows sprites at 2x scale.
 Changed: always display a state's "unused" parameters since these actually affect a weapon sprite's offset even in vanilla Doom.

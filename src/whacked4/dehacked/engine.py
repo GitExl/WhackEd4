@@ -97,11 +97,12 @@ class Engine(object):
         @raise KeyError: if the table file is missing data.
         """
 
+        data = None
         with open(filename, 'r') as f:
             try:
                 data = json.load(f, object_pairs_hook=OrderedDict)
             except ValueError as e:
-                print filename
+                print 'Error in table file {}'.format(filename)
                 raise e
 
         try:

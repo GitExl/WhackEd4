@@ -12,10 +12,9 @@ Low priority bugs
 Features
 1.2.0
 - UI manual \ Dehacked tutorial.
-- Merge patches by loading a patch "over" the current one.
-  - Or like https://www.doomworld.com/vb/post/1556253
 
 1.3.0 and later
+- Extend patch merging by https://www.doomworld.com/vb/post/1556253
 - Action sound playback data for the Hexen + Heretic + ZDoom action functions.
 - Allow multiple flag fields for things (and implement Doom Retro's "Retro Bits" field).
 - Allow sorting things list by name.
