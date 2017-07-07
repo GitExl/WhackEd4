@@ -6,7 +6,7 @@ from whacked4.ui import windows
 import wx
 
 
-class EditorMixin(wx.Frame):
+class EditorMixin(wx.MDIChildFrame):
     """
     Adds common editor window functionality to any wx.Frame object.
     """
