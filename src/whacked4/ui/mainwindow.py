@@ -16,6 +16,7 @@ import os.path
 import shutil
 import webbrowser
 import wx
+import sys
 
 
 class MainWindow(windows.MainFrameBase):
@@ -555,6 +556,8 @@ class MainWindow(windows.MainFrameBase):
         self.Destroy()
 
         wx.GetApp().ExitMainLoop()
+
+        sys.exit(-1)
 
     def editor_window_toolid_for_instance(self, window):
         """
