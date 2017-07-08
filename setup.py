@@ -9,7 +9,7 @@ paths.append('whacked4')
 build_exe_options = {
 	'packages': [],
 	'path': paths,
-	'include_files': ['res', 'cfg', 'LICENSE', 'README.md'],
+	'include_files': ['res', 'cfg', 'docs', 'LICENSE', 'README.md'],
 	'optimize': 2,
 	'include_msvcr': True
 }
