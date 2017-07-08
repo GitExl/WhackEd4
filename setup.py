@@ -4,16 +4,15 @@ from cx_Freeze import setup, Executable
 
 paths = []
 paths.extend(sys.path)
-paths.append('whacked4')
+paths.append('src')
 
 build_exe_options = {
-	'packages': [],
 	'path': paths,
+	'packages': ['whacked4'],
 	'include_files': ['res', 'cfg', 'docs', 'LICENSE', 'README.md'],
 	'optimize': 2,
 	'include_msvcr': True
 }
-build_exe_options['path'].append('src')
 
 base = None
 if sys.platform == 'win32':
