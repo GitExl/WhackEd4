@@ -11,8 +11,6 @@ build_exe_options = {
 	'path': paths,
 	'include_files': ['res', 'cfg', 'LICENSE', 'README.md'],
 	'optimize': 2,
-	'compressed': True,
-	'icon': 'res/icon-hatchet.ico',
 	'include_msvcr': True
 }
 build_exe_options['path'].append('src')
@@ -24,7 +22,8 @@ if sys.platform == 'win32':
 exe = Executable(
 	'src/main.py',
 	base=base,
-	targetName=os.environ['app_name_lower'] + '.exe'
+	targetName=os.environ['app_name_lower'] + '.exe',
+	icon='res/icon-hatchet.ico'
 )
 
 setup(
