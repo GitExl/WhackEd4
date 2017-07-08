@@ -159,7 +159,8 @@ class EditorMixin(wx.MDIChildFrame):
         Called when this window is activated.
         """
 
-        self.GetParent().editor_window_activate()
+        if bool(self):
+            self.GetParent().editor_window_activate()
 
     def close(self, event):
         """

@@ -63,7 +63,6 @@ class Table(object):
 
         return dup
 
-
     def __repr__(self):
         return '{}: {}'.format(self.entry_class, self.entries)
 

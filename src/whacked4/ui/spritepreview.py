@@ -166,7 +166,7 @@ class SpritePreview(wx.Panel):
         elif self.sprite.image is None:
             bitmap = self.missing
 
-        size = self.GetClientSizeTuple()
+        size = self.GetClientSize()
 
         # Draw sprite.
         if bitmap is None:
@@ -232,7 +232,7 @@ class SpritePreview(wx.Panel):
         self.update_paint()
 
     def create_floor_points(self):
-        size = self.GetClientSizeTuple()
+        size = self.GetClientSize()
         baseline = size[1] * self.baseline_factor
 
         self.floor_points = [
