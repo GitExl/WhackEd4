@@ -4241,6 +4241,10 @@ class StatePreviewDialogBase ( wx.Dialog ):
 		
 		bSizer141.Add( self.StateInfo, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
+		self.StateAction = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.StateAction.Wrap( -1 )
+		bSizer141.Add( self.StateAction, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
 		self.StateSound = wx.StaticText( self, wx.ID_ANY, u"?", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.StateSound.Wrap( -1 )
 		bSizer141.Add( self.StateSound, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )

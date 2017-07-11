@@ -39,6 +39,7 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         self.Sprite.set_scale(2)
 
         self.StateInfo.SetFont(config.FONT_MONOSPACED_BOLD)
+        self.StateAction.SetFont(config.FONT_MONOSPACED_BOLD)
         self.StateSound.SetFont(config.FONT_MONOSPACED_BOLD)
 
         self.SetEscapeId(windows.PREVIEW_CLOSE)
@@ -134,8 +135,13 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         self.Sprite.show_sprite(sprite_name, sprite_frame)
         self.StateInfo.SetLabel('{}{}'.format(sprite_name, chr(65 + sprite_frame)))
 
+        action_label = ''
+
         # Play any state-related sound.
         if state['action'] is not None:
+            sound_label = ''
+            action_label = state['action']
+
             action_name = state['action']
             action = self.patch.engine.actions[action_name]
             sound_index = None
@@ -147,13 +153,23 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
 
                 if parts[0] == 'sound':
                     sound_index = int(parts[1])
-                elif parts[0] == 'thing' and self.ref_thing_index is not None:
-                    sound_index = self.ref_thing[parts[1]]
+
+                elif parts[0] == 'thing':
+                    if self.ref_thing_index is not None:
+                        sound_index = self.ref_thing[parts[1]]
+                    else:
+                        sound_label = '{}:{}'.format(parts[0], parts[1])
+
                 elif parts[0] == 'state':
                     sound_index = state[parts[1]]
 
             if sound_index is not None:
                 utils.sound_play(self.patch.sound_names[sound_index - 1], self.pwads)
+                sound_label = self.patch.sound_names[sound_index - 1]
+
+            self.StateSound.SetLabel(sound_label.upper())
+
+        self.StateAction.SetLabel(action_label)
 
         self.state_index = state_index
         self.ticks = state['duration']
