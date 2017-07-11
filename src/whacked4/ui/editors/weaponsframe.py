@@ -6,6 +6,8 @@ from whacked4.dehacked import statefilter
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import statepreviewdialog
 
+import whacked4.config as config
+
 import copy
 import wx
 
@@ -59,6 +61,10 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.pwads = None
         self.selected_index = 0
         self.preview_dialog = None
+
+        for prop in self.PROPS_STATENAMES.iterkeys():
+            item = self.FindWindowById(prop)
+            item.SetFont(config.FONT_MONOSPACED_BOLD)
 
     def build(self, patch):
         """

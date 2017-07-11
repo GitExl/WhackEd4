@@ -19,6 +19,7 @@ APP_BETA = False
 # Monospaced font for displays that use them.
 FONT_MONOSPACED_NAME = 'Ubuntu Mono'
 FONT_MONOSPACED = None
+FONT_MONOSPACED_BOLD = None
 
 # Application configuration path.
 if sys.platform == 'win32':

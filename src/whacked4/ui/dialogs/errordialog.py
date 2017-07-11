@@ -6,6 +6,8 @@ Error dialog interface.
 """
 
 from whacked4.ui import windows
+import whacked4.config as config
+
 import wx
 
 
@@ -15,6 +17,8 @@ class ErrorDialog(windows.ErrorDialogBase):
         windows.ErrorDialogBase.__init__(self, parent)
 
         self.SetEscapeId(windows.ERROR_CLOSE)
+
+        self.Report.SetFont(config.FONT_MONOSPACED)
 
         if wx.IsBusy():
             wx.EndBusyCursor()

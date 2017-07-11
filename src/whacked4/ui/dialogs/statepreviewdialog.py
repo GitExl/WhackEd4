@@ -4,6 +4,7 @@
 from whacked4.ui import windows
 
 import whacked4.utils as utils
+import whacked4.config as config
 
 import wx
 import time
@@ -36,6 +37,9 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
 
         self.Sprite.set_baseline_factor(0.85)
         self.Sprite.set_scale(2)
+
+        self.StateInfo.SetFont(config.FONT_MONOSPACED_BOLD)
+        self.StateSound.SetFont(config.FONT_MONOSPACED_BOLD)
 
         self.SetEscapeId(windows.PREVIEW_CLOSE)
 

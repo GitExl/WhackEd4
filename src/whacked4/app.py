@@ -94,7 +94,11 @@ def set_monospace_font():
     Sets the monospaced font to use in dialogs.
     """
 
-    font_size = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT).GetPointSize() + 1
+    font_size = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT).GetPointSize() + 2
+
     config.FONT_MONOSPACED = wx.Font(font_size, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL,
                                      faceName=config.FONT_MONOSPACED_NAME
+    )
+    config.FONT_MONOSPACED_BOLD = wx.Font(font_size, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD,
+                                          faceName=config.FONT_MONOSPACED_NAME
     )

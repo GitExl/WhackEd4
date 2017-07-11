@@ -25,6 +25,8 @@ class SpritesDialog(windows.SpritesDialogBase):
         self.SpritePreview.set_baseline_factor(0.85)
         self.SpritePreview.set_scale(2)
 
+        self.SpriteNames.SetFont(config.FONT_MONOSPACED)
+
         self.filter_list = None
 
     def activate(self, event):

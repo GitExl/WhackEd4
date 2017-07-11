@@ -855,7 +855,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateSpawnName = wx.StaticText( self.PanelStateSpawn, THING_STATENAME_SPAWN, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateSpawnName.Wrap( -1 )
-		self.ThingStateSpawnName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStateSpawnName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateSpawnName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStateSpawn.Add( self.ThingStateSpawnName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -884,7 +884,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateWalkName = wx.StaticText( self.PanelStateWalk, THING_STATENAME_WALK, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateWalkName.Wrap( -1 )
-		self.ThingStateWalkName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStateWalkName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateWalkName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStateWalk.Add( self.ThingStateWalkName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -913,7 +913,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStatePainName = wx.StaticText( self.PanelStatePain, THING_STATENAME_PAIN, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStatePainName.Wrap( -1 )
-		self.ThingStatePainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStatePainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStatePainName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStatePain.Add( self.ThingStatePainName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -942,7 +942,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateMeleeName = wx.StaticText( self.PanelStateMelee, THING_STATENAME_MELEE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateMeleeName.Wrap( -1 )
-		self.ThingStateMeleeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStateMeleeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateMeleeName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStateMelee.Add( self.ThingStateMeleeName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -971,7 +971,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateAttackName = wx.StaticText( self.PanelStateAttack, THING_STATENAME_ATTACK, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateAttackName.Wrap( -1 )
-		self.ThingStateAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStateAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateAttackName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStateAttack.Add( self.ThingStateAttackName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1000,7 +1000,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateDeathName = wx.StaticText( self.PanelStateDeath, THING_STATENAME_DEATH, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateDeathName.Wrap( -1 )
-		self.ThingStateDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStateDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateDeathName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStateDeath.Add( self.ThingStateDeathName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1029,7 +1029,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateExplodeName = wx.StaticText( self.PanelStateExplode, THING_STATENAME_EXPLODE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateExplodeName.Wrap( -1 )
-		self.ThingStateExplodeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStateExplodeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateExplodeName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStateExplode.Add( self.ThingStateExplodeName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1058,7 +1058,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateRaiseName = wx.StaticText( self.PanelStateRaise, THING_STATENAME_RAISE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateRaiseName.Wrap( -1 )
-		self.ThingStateRaiseName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStateRaiseName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateRaiseName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStateRaise.Add( self.ThingStateRaiseName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1087,7 +1087,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateCrashName = wx.StaticText( self.PanelStateCrash, THING_STATENAME_CRASH, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateCrashName.Wrap( -1 )
-		self.ThingStateCrashName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStateCrashName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateCrashName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStateCrash.Add( self.ThingStateCrashName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1116,7 +1116,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateFreezeName = wx.StaticText( self.PanelStateFreeze, THING_STATENAME_FREEZE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateFreezeName.Wrap( -1 )
-		self.ThingStateFreezeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStateFreezeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateFreezeName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStateFreeze.Add( self.ThingStateFreezeName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1145,7 +1145,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingStateBurnName = wx.StaticText( self.PanelStateBurn, THING_STATENAME_BURN, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateBurnName.Wrap( -1 )
-		self.ThingStateBurnName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingStateBurnName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateBurnName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerStateBurn.Add( self.ThingStateBurnName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1183,7 +1183,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSoundAlertName = wx.StaticText( self.PanelSoundAlert, THING_SOUNDNAME_ALERT, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundAlertName.Wrap( -1 )
-		self.ThingSoundAlertName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingSoundAlertName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingSoundAlertName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerSoundAlert.Add( self.ThingSoundAlertName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1212,7 +1212,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSoundAttackName = wx.StaticText( self.PanelSoundAttack, THING_SOUNDNAME_ATTACK, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundAttackName.Wrap( -1 )
-		self.ThingSoundAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingSoundAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingSoundAttackName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerSoundAttack.Add( self.ThingSoundAttackName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1241,7 +1241,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSoundPainName = wx.StaticText( self.PanelSoundPain, THING_SOUNDNAME_PAIN, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundPainName.Wrap( -1 )
-		self.ThingSoundPainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingSoundPainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingSoundPainName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerSoundPain.Add( self.ThingSoundPainName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1270,7 +1270,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSoundDeathName = wx.StaticText( self.PanelSoundDeath, THING_SOUNDNAME_DEATH, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundDeathName.Wrap( -1 )
-		self.ThingSoundDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingSoundDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingSoundDeathName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerSoundDeath.Add( self.ThingSoundDeathName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1299,7 +1299,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		
 		self.ThingSoundActiveName = wx.StaticText( self.PanelSoundActive, THING_SOUNDNAME_ACTIVE, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundActiveName.Wrap( -1 )
-		self.ThingSoundActiveName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.ThingSoundActiveName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingSoundActiveName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		SizerSoundActive.Add( self.ThingSoundActiveName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1918,7 +1918,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		self.SpriteName = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"TROO", wx.DefaultPosition, wx.Size( 63,-1 ), wx.ST_NO_AUTORESIZE )
 		self.SpriteName.Wrap( -1 )
-		self.SpriteName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.SpriteName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.SpriteName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		bSizer52.Add( self.SpriteName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1964,7 +1964,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		self.NextStateName = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"PLAYD", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
 		self.NextStateName.Wrap( -1 )
-		self.NextStateName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.NextStateName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.NextStateName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		bSizer5211.Add( self.NextStateName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -2756,7 +2756,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		self.WeaponStateSelectName = wx.StaticText( self.PanelStateLower, WEAPON_STATENAME_SELECT, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateSelectName.Wrap( -1 )
-		self.WeaponStateSelectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.WeaponStateSelectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.WeaponStateSelectName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		bSizer124.Add( self.WeaponStateSelectName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -2790,7 +2790,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		self.WeaponStateDeselectName = wx.StaticText( self.PanelStateRaise, WEAPON_STATENAME_DESELECT, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateDeselectName.Wrap( -1 )
-		self.WeaponStateDeselectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.WeaponStateDeselectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.WeaponStateDeselectName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		bSizer1241.Add( self.WeaponStateDeselectName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -2824,7 +2824,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		self.WeaponStateBobName = wx.StaticText( self.PanelStateBob, WEAPON_STATENAME_BOB, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateBobName.Wrap( -1 )
-		self.WeaponStateBobName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.WeaponStateBobName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.WeaponStateBobName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		bSizer1242.Add( self.WeaponStateBobName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -2858,7 +2858,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		self.WeaponStateFireName = wx.StaticText( self.PanelStateFire, WEAPON_STATENAME_FIRE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateFireName.Wrap( -1 )
-		self.WeaponStateFireName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.WeaponStateFireName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.WeaponStateFireName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		bSizer1243.Add( self.WeaponStateFireName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -2892,7 +2892,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		
 		self.WeaponStateMuzzleName = wx.StaticText( self.PanelStateMuzzle, WEAPON_STATENAME_MUZZLE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateMuzzleName.Wrap( -1 )
-		self.WeaponStateMuzzleName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.WeaponStateMuzzleName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.WeaponStateMuzzleName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		
 		bSizer1244.Add( self.WeaponStateMuzzleName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -3519,6 +3519,8 @@ class SpritesDialogBase ( wx.Dialog ):
 		bSizer42 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.SpriteNames = wx.ListCtrl( self.m_panel49, wx.ID_ANY, wx.DefaultPosition, wx.Size( 74,-1 ), wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL )
+		self.SpriteNames.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+		
 		bSizer42.Add( self.SpriteNames, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
 		bSizer40 = wx.BoxSizer( wx.VERTICAL )
@@ -3666,7 +3668,7 @@ class StringDialogBase ( wx.Dialog ):
 		bSizer42.Add( self.m_staticText81, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
 		self.Original = wx.TextCtrl( self.m_panel51, STRING_OLD, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_DONTWRAP|wx.TE_MULTILINE|wx.TE_READONLY )
-		self.Original.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Bitstream Vera Sans Mono" ) )
+		self.Original.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		self.Original.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer42.Add( self.Original, 1, wx.ALL|wx.EXPAND, 6 )
@@ -3681,7 +3683,7 @@ class StringDialogBase ( wx.Dialog ):
 		bSizer421.Add( self.m_staticText811, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
 		self.New = wx.TextCtrl( self.m_panel51, STRING_NEW, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_DONTWRAP|wx.TE_MULTILINE|wx.TE_PROCESS_ENTER|wx.TE_PROCESS_TAB )
-		self.New.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Bitstream Vera Sans Mono" ) )
+		self.New.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		
 		bSizer421.Add( self.New, 1, wx.ALL|wx.EXPAND, 6 )
 		
@@ -4162,7 +4164,7 @@ class ErrorDialogBase ( wx.Dialog ):
 		bSizer189.Add( self.m_staticText92, 0, wx.BOTTOM|wx.LEFT|wx.RIGHT, 12 )
 		
 		self.Report = wx.TextCtrl( self.m_panel54, ERROR_REPORT, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE|wx.TE_READONLY )
-		self.Report.SetFont( wx.Font( 7, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Bitstream Vera Sans Mono" ) )
+		self.Report.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		self.Report.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer189.Add( self.Report, 1, wx.ALL|wx.EXPAND, 12 )
@@ -4235,9 +4237,13 @@ class StatePreviewDialogBase ( wx.Dialog ):
 		
 		self.StateInfo = wx.StaticText( self, wx.ID_ANY, u"TROOA0", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.StateInfo.Wrap( -1 )
-		self.StateInfo.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Bitstream Vera Sans Mono" ) )
+		self.StateInfo.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		
-		bSizer141.Add( self.StateInfo, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		bSizer141.Add( self.StateInfo, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
+		self.StateSound = wx.StaticText( self, wx.ID_ANY, u"?", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.StateSound.Wrap( -1 )
+		bSizer141.Add( self.StateSound, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
 		self.Close = wx.Button( self, PREVIEW_CLOSE, u"Close", wx.DefaultPosition, wx.Size( 120,28 ), 0 )
 		bSizer141.Add( self.Close, 0, wx.ALIGN_RIGHT|wx.ALL, 6 )

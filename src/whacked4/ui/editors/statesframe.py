@@ -102,6 +102,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         # Mix sprite color coding colours with the default system colours.
         self.mix_colours()
 
+        self.SpriteName.SetFont(config.FONT_MONOSPACED_BOLD)
+        self.NextStateName.SetFont(config.FONT_MONOSPACED_BOLD)
+
         self.Bind(wx.EVT_CHAR_HOOK, self.state_key)
 
     def build(self, patch):

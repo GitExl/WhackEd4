@@ -2,6 +2,9 @@
 #coding=utf8
 
 from whacked4.ui import windows
+
+import whacked4.config as config
+
 import wx
 
 
@@ -14,6 +17,9 @@ class StringDialog(windows.StringDialogBase):
         windows.StringDialogBase.__init__(self, parent)
 
         self.SetEscapeId(windows.STRING_CANCEL)
+
+        self.Original.SetFont(config.FONT_MONOSPACED)
+        self.New.SetFont(config.FONT_MONOSPACED)
 
         self.engine_string = None
         self.old_string = None
