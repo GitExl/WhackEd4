@@ -328,8 +328,7 @@
 		"167520": {
 			"description": "Check for spawn point.\n\nSpawns a monster if it hits a spawn-point.",
 			"name": "SpawnFly",
-			"type": 0,
-			"sound": "sound:35"
+			"type": 0
 		},
 		"167808": {
 			"description": "Play sound 'pldeth'",
