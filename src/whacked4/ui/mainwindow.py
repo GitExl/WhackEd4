@@ -169,8 +169,8 @@ class MainWindow(windows.MainFrameBase):
         Displays an open file dialog to open a patch file.
         """
 
-        result = wx.MessageBox(message='Merging a patch cannot be undone, so make sure you have saved this file before'
-                                       'attempting a merge. Canceling a merge will not restore this patch to it\'s'
+        result = wx.MessageBox(message='Merging a patch cannot be undone, so make sure you have saved this file before '
+                                       'attempting a merge. Canceling a merge will not restore this patch to it\'s '
                                        'original state.\n\nDo you want to continue?', caption='Merge patch',
                                style=wx.YES_NO | wx.ICON_EXCLAMATION, parent=self)
         if result == wx.NO:
