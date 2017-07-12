@@ -4235,6 +4235,10 @@ class StatePreviewDialogBase ( wx.Dialog ):
 		
 		bSizer141 = wx.BoxSizer( wx.HORIZONTAL )
 		
+		self.StateIndex = wx.StaticText( self, wx.ID_ANY, u"0000", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.StateIndex.Wrap( -1 )
+		bSizer141.Add( self.StateIndex, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
 		self.StateInfo = wx.StaticText( self, wx.ID_ANY, u"TROOA0", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.StateInfo.Wrap( -1 )
 		self.StateInfo.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )

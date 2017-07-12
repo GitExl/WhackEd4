@@ -133,6 +133,8 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         sprite_frame = state['spriteFrame'] & 0x3FFF
 
         self.Sprite.show_sprite(sprite_name, sprite_frame)
+
+        self.StateIndex.SetLabel(str(state_index))
         self.StateInfo.SetLabel('{}{}'.format(sprite_name, chr(65 + sprite_frame)))
 
         action_label = ''
