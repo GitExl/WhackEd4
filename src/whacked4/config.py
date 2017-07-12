@@ -17,7 +17,7 @@ APP_VERSION = '1.1.2'
 APP_BETA = False
 
 # Monospaced font for displays that use them.
-FONT_MONOSPACED_NAME = 'Ubuntu Mono'
+FONT_MONOSPACED_NAME = 'DejaVu Sans Mono'
 FONT_MONOSPACED = None
 FONT_MONOSPACED_BOLD = None
 

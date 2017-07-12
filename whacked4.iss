@@ -5,10 +5,8 @@ Name: associate; Description: Associate with Dehacked patch files
 
 [Files]
 Source: .\build\exe.win32-2.7\*.*; DestDir: {app}; Flags: recursesubdirs createallsubdirs
-Source: .\fonts\ubuntu-mono\UbuntuMono-B.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Ubuntu Mono Bold
-Source: .\fonts\ubuntu-mono\UbuntuMono-BI.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Ubuntu Mono Bold Italic
-Source: .\fonts\ubuntu-mono\UbuntuMono-R.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Ubuntu Mono
-Source: .\fonts\ubuntu-mono\UbuntuMono-RI.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: Ubuntu Mono Italic
+Source: .\fonts\dejavu-sans-mono\DejaVuSansMono.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono
+Source: .\fonts\dejavu-sans-mono\DejaVuSansMono-Bold.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono Bold
 
 
 [Icons]
