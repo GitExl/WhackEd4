@@ -14,6 +14,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/firasans-bold-webfont.woff2') format('woff2'),
+       url('../fonts/firasans-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -43,8 +51,15 @@ h1 {
 }
 
 p {
-  margin-bottom: 1.66em;
 }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  p.intro {
+    font-weight: 700;
+  }
 
 a {
   color: #f23830;
@@ -75,9 +90,16 @@ nav {
     list-style: none;
   }
 
+  nav li.header {
+    margin-left: 0;
+  }
+
   nav li.header > ul {
-    margin-left: 15px;
     margin-bottom: 20px;
+  }
+
+  nav li.header > ul li {
+    margin-left: 15px;
   }
 
   nav li.header > a {
@@ -86,4 +108,24 @@ nav {
 
 article p {
   max-width: 720px;
+}
+
+blockquote {
+  padding: 25px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+ul {
+  margin-left: 0;
+}
+
+li {
+  margin-left: 2em;
+}
+
+/* Bottom content margin */
+blockquote, p, ul {
+  margin-bottom: 1.75em;
 }

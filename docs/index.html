@@ -25,23 +25,22 @@
             <a href="#">Introduction</a>
             <ul>
               <li><a href="#">Dehacked</a></li>
-              <li><a href="#">Extensions</a></li>
+              <li><a href="#">Additional features</a></li>
             </ul>
           </li>
 
           <li class="header">
             <a href="#">Interface</a>
             <ul>
-              <li><a href="#">Patch files</a></li>
+              <li><a href="#">Patch settings</a></li>
               <li><a href="#">Things</a></li>
               <li><a href="#">States</a></li>
-              <li><a href="#">Weapons &amp; ammo</a></li>
-              <li><a href="#">Strings</a></li>
-              <li><a href="#">Sprites</a></li>
               <li><a href="#">Sounds</a></li>
+              <li><a href="#">Strings</a></li>
+              <li><a href="#">Weapons &amp; ammo</a></li>
               <li><a href="#">Cheats</a></li>
-              <li><a href="#">Par times</a></li>
               <li><a href="#">Miscellaneous</a></li>
+              <li><a href="#">Par times</a></li>
             </ul>
           </li>
         </ul>
@@ -49,15 +48,41 @@
 
       <article class="col-xs-12 col-sm-8 col-md-5 col-md-offset-1">
         <h1>Introduction</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae deleniti ducimus placeat
-        consectetur animi, distinctio ullam explicabo ratione alias quasi dolore. Illum alias, repellendus
-        dolorum provident corrupti, culpa harum expedita. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae deleniti ducimus placeat
-        consectetur animi, distinctio ullam explicabo ratione alias quasi dolore. Illum alias, repellendus
-        dolorum provident corrupti, culpa harum expedita. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae deleniti ducimus placeat
-        consectetur animi, distinctio ullam explicabo ratione alias quasi dolore. Illum alias, repellendus
-        dolorum provident corrupti, culpa harum expedita. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae deleniti ducimus placeat
-        consectetur animi, distinctio ullam explicabo ratione alias quasi dolore. Illum alias, repellendus
-        dolorum provident corrupti, culpa harum expedita.</p>
+
+        <p class="intro">WhackEd is a Windows version of the classic DOS-based DeHackEd Doom editing utility. Aside from offering pretty much all functionality of the original, WhackEd adds support for Boom extended features and several other source-port specific features. It also offers a number of features to make creating DeHackEd patches much easier.</p>
+
+        <h2>DeHackEd</h2>
+        <p>From the <a href="https://doomwiki.org/wiki/DeHackEd" target="_blank" rel="noopener noreferrer">DeHackEd entry on the Doom Wiki</a>:</p>
+
+        <blockquote>
+          <p>DeHackEd is an editor originally created for vanilla Doom that allows the operation of the executable to be changed. It was developed by Greg Lewis. Hit points, sounds, frame sequences, text strings and several other miscellaneous values can be changed. Modifications can be distributed in the form of DeHackEd "patches" which can be applied to the executable.</p>
+
+          <p>Boom included the ability to load DeHackEd patches and affect changes to the game upon startup without any modification to the executable file. Other source-ports added similar functionality, and command-line loadable DeHackEd support is now common with most modern source-ports. Boom also provided the BEX (Boom EXtended) extensions for DeHackEd support. BEX allows greater flexibility in string editing, application of codepointers to any frame, and extra codepointers.</p>
+        </blockquote>
+
+        <p>For a full tutorial on how to create DeHackEd patches see <a href="http://www.aspectsweb.co.uk/dehacked/index.html" target="_blank" rel="noopener noreferrer">Enjay's DeHackEd tutorials</a>. Take note though that some terminology is different in WhackEd to make certain things less confusing and to line up better with the Doom source code.</p>
+
+        <ul>
+          <li>Frames are called states to prevent confusion with sprite frames and to match the Doom source code;</li>
+          <li>codepointers are called actions since the actual codepointer values are no longer visible to users of WhackEd.</li>
+        </ul>
+
+        <h2>Additional features</h2>
+        <p>A list of features WhackEd adds over the original DeHackEd:</p>
+
+        <ul>
+          <li>Display sprite previews of the items you are working on from a list of loaded PWADs;</li>
+          <li>displaying a preview of state animation complete with sound playback;</li>
+          <li>state filtering for things, weapons, or unused states;</li>
+          <li>undo functionality for each separate editor;</li>
+          <li>copy and paste functionality for things and states;</li>
+          <li>sprite selection filtering;</li>
+          <li>Doom 1.9, Ultimate Doom 1.9, Boom, Marine's Best Friend (MBF), ZDaemon and Doom Retro engine support;</li>
+          <li>state highlighting based on sprite index;</li>
+          <li>IWAD, PWAD and window positions are stored separately from the Dehacked file;</li>
+          <li>support for advanced engines like MBF and ZDaemon.</li>
+        </ul>
+
       </article>
 
     </div>
