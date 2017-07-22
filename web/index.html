@@ -20,17 +20,17 @@
 					Dehacked's feature list with the following:
 				</p>
 				<ul>
-					<li>Display sprite previews of the items you are working on;</li>
-					<li>state filtering for things, weapons, or unused states;</li>
-					<li>undo for each separate editor;</li>
-					<li>copy and pasting of things and states;</li>
-					<li>sprite selection filtering;</li>
-					<li>Doom 1.9, Ultimate Doom 1.9, Boom, Marine's Best Friend (MBF), ZDaemon and Doom Retro table files;</li>
-					<li>state highlighting based on sprite index;</li>
-					<li>editor window positions and sizes are stored inbetween sessions;</li>
-					<li>multiple PWADs can be loaded;</li>
-					<li>IWAD, PWAD and window positions are stored separately from the Dehacked file;</li>
-					<li>support for advanced engines like MBF and ZDaemon.</li>
+					<li>A configurable workspace with separate editor windows.</li>
+					<li>Sprite previews from a loaded IWAD and PWADs.</li>
+					<li>Full support for Boom's extensions such as codepointer and thing flag mnemonics.</li>
+					<li>State animation preview with sound playback (where possible).</li>
+					<li>Editing multiple states at the same time.</li>
+					<li>Filtering the displayed list of states by thing states, weapon states or unused states.</li>
+					<li>Does not require a Doom executable, but reads engine data from table files.</li>
+					<li>State highlighting based on sprite index.</li>
+					<li>Separate undo actions for every editor window.</li>
+					<li>Copy and pasting things and states.</li>
+					<li>Support for DeHackEd features of Doom 1.9, The Ultimate Doom 1.9, Boom, Marine's Best Friend, Doom Retro and ZDaemon.</li>
 				</ul>
 			</div>
 
@@ -40,12 +40,12 @@
 				<a class="lightbox" href="images/screen03.png"><img src="images/screen03_thumb.png"></a>
 			</div>
 
-			<a class="button normal" href="files/whacked4-setup-1.1.2.exe">Download 1.1.2</a>
+			<a class="button normal" href="files/whacked4-setup-1.2.0.exe">Download 1.2.0</a>
 			<a class="button side" href="#section-changelog">Changelog</a>
 			<a class="button side" href="#section-source">Source code</a>
 
 			<p class="below-button">
-				<a href="files/whacked4-1.1.2.7z">Download standalone 7zip archive</a>
+				<a href="files/whacked4-1.2.0.7z">Download standalone 7zip archive</a>
 			</p>
 		</div>
 	</div>
@@ -53,6 +53,21 @@
 	<div id="container">
 		<div id="content">
 			<h1 id="section-changelog">Changelog</h1>
+			<h2>Version 1.2.0</h2>
+			<ul>
+				<li>Added: state animation preview (with sounds) by pressing ~ on a state or using the new state context menu. Pressing ~ again inside the animation preview will restart it. Right-clicking a thing or weapon state from their respective dialogs will preview it directly.</li>
+				<li>Added: linking states together can now be done by selecting them, right-clicking and selecting a link option (or use the respective shortcut key). Linking is done in the order of selection.</li>
+				<li>Added: an option to clear out all selected states from the state context menu.</li>
+				<li>Added: an option to clear out a thing's properties from a thing's context menu.</li>
+				<li>Added: DOOM Retro "Gib health" thing property.</li>
+				<li>Added: barebones patch merging feature by loading a patch 'over' the current one.</li>
+				<li>Fixed: state and thing copy and paste operations were much slower than they should to be.</li>
+				<li>Changed: sprite selection dialog now shows sprites at 2x scale.</li>
+				<li>Changed: always display a state's "unused" parameters since these actually affect a weapon sprite's offset even in vanilla Doom.</li>
+				<li>Changed: updated to PyAudio 0.2.11.</li>
+				<li>Changed: monospace font is now the more modern DejaVu Sans Mono.</li>
+			</ul>
+
 			<h2>Version 1.1.2</h2>
 			<ul>
 				<li>Fixed: Doom Retro's PlaySound action was missing a parameter name, causing a crash when it was selected. Thanks to AnotherLife.</li>
