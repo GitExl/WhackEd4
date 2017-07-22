@@ -346,6 +346,7 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.MenuHelp = wx.Menu()
 		self.MenuHelpHelp = wx.MenuItem( self.MenuHelp, wx.ID_ANY, u"Help"+ u"\t" + u"F1", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuHelp.AppendItem( self.MenuHelpHelp )
+		self.MenuHelpHelp.Enable( False )
 		
 		self.MenuHelpAbout = wx.MenuItem( self.MenuHelp, wx.ID_ANY, u"About...", wx.EmptyString, wx.ITEM_NORMAL )
 		self.MenuHelp.AppendItem( self.MenuHelpAbout )
