@@ -10,7 +10,7 @@ Fixed: state and thing copy and paste operations were much slower than they shou
 Changed: sprite selection dialog now shows sprites at 2x scale.
 Changed: always display a state's "unused" parameters since these actually affect a weapon sprite's offset even in vanilla Doom.
 Changed: updated to PyAudio 0.2.11.
-Changed: monospace font is now the more modern Ubuntu Mono.
+Changed: monospace font is now the more modern DejaVu Sans Mono.
 
 Version 1.1.2
 -------------

@@ -7,10 +7,10 @@ Low priority bugs
 - State Editor: flash when selecting states. Related to parameters UI.
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
 - Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
-- Proper HiDPI support. WxWidgets sucks for this.
+- Proper HiDPI support. WxWidgets needs more work for this.
 
 Features
-1.2.0
+1.2.1
 - UI manual \ Dehacked tutorial.
 
 1.3.0 and later
