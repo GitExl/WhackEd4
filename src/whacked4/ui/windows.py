@@ -3971,6 +3971,7 @@ class StartDialogBase ( wx.Dialog ):
 		bSizer55 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.Help = wx.Button( self.m_panel53, wx.ID_ANY, u"Help", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Help.Enable( False )
 		self.Help.SetMinSize( wx.Size( 120,28 ) )
 		
 		bSizer55.Add( self.Help, 0, wx.BOTTOM|wx.LEFT|wx.RIGHT, 12 )
