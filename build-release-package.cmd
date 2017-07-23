@@ -17,6 +17,7 @@ set zip=7za
 
 rmdir .\build /S /Q
 %python_interpreter% setup.py build
+rmdir .\build\exe.win32-2.7\wx\tools /S /Q
 
 del %app_name_lower%-setup-*.exe
 %setup_compiler% %app_name_lower%.iss
