@@ -40,12 +40,12 @@
 				<a class="lightbox" href="images/screen03.png"><img src="images/screen03_thumb.png"></a>
 			</div>
 
-			<a class="button normal" href="files/whacked4-setup-1.2.0.exe">Download 1.2.0</a>
+			<a class="button normal" href="files/whacked4-setup-1.2.1.exe">Download 1.2.1</a>
 			<a class="button side" href="#section-changelog">Changelog</a>
 			<a class="button side" href="#section-source">Source code</a>
 
 			<p class="below-button">
-				<a href="files/whacked4-1.2.0.7z">Download standalone 7zip archive</a>
+				<a href="files/whacked4-1.2.1.7z">Download standalone 7zip archive</a>
 			</p>
 		</div>
 	</div>
@@ -53,7 +53,17 @@
 	<div id="container">
 		<div id="content">
 			<h1 id="section-changelog">Changelog</h1>
-			<h2>Version 1.2.0</h2>
+			<h2>Version 1.2.1</h2>
+      <ul>
+        <li>Added: support the RandomJump action in state previews.</li>
+        <li>Added: Extended DehackEd configuration with the extra things and empty states from Doom Retro. Crispy Doom also supports these.</li>
+        <li>Added: state actions that spawn things (like missiles from monster attacks) will now play that thing's sound during a preview.</li>
+        <li>Fixed: unused state parameter descriptions would not be updated when an action using them was selected.</li>
+        <li>Fixed: added missing things to the Doom Retro configuration. Thanks to VGA.</li>
+        <li>Changed: WAD reloading is now faster and doesn't reset the UI state.</li>
+      </ul>
+
+      <h2>Version 1.2.0</h2>
 			<ul>
 				<li>Added: state animation preview (with sounds) by pressing ~ on a state or using the new state context menu. Pressing ~ again inside the animation preview will restart it. Right-clicking a thing or weapon state from their respective dialogs will preview it directly.</li>
 				<li>Added: linking states together can now be done by selecting them, right-clicking and selecting a link option (or use the respective shortcut key). Linking is done in the order of selection.</li>
