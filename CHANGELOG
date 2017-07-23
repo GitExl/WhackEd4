@@ -1,3 +1,9 @@
+Version 1.2.1
+-------------
+Added: support the RandomJump action in state previews.
+Fixed: unused state parameter descriptions would not be updated when an action using them was selected.
+Fixed: added missing things to the Doom Retro configuration. Thanks to VGA.
+
 Version 1.2.0
 -------------
 Added: state animation preview (with sounds) by pressing ~ on a state or using the new state context menu. Pressing ~ again inside the animation preview will restart it. Right-clicking a thing or weapon state from their respective dialogs will preview it directly.
