@@ -127,6 +127,12 @@ class SpritesDialog(windows.SpritesDialogBase):
         self.SpritePreview.set_source(self.pwads)
         self.update_preview()
 
+    def update(self, pwads):
+        self.pwads = pwads
+
+        self.SpritePreview.set_source(self.pwads)
+        self.update_preview()
+
     def update_frame(self, event):
         """
         Called when the frame index text control is updated.

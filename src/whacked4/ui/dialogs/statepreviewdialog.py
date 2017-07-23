@@ -47,6 +47,12 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
 
         self.Bind(wx.EVT_CHAR_HOOK, self.key_hook)
 
+    def update(self, pwads):
+        self.pwads = pwads
+
+        self.Sprite.set_source(self.pwads)
+        self.Sprite.Refresh()
+
     def key_hook(self, event):
         """
         Intercepts all key presses.

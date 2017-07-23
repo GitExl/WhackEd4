@@ -35,6 +35,13 @@ class EditorMixin(wx.MDIChildFrame):
 
         raise NotImplementedError()
 
+    def update(self):
+        """
+        Called when this editor window needs to update it's UI contents.
+        """
+
+        raise NotImplementedError()
+
     def list_autosize(self, list_control):
         """
         Sizes all the columns in a ListCtrl to match the widest value in it's contents or itself.

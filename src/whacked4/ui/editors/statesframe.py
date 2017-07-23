@@ -129,10 +129,22 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         # Initialize filter.
         self.filter = statefilter.StateFilter(patch)
         self.build_filterlist()
+        self.build_actionlist()
+
         self.filter_update(0)
 
-        self.statelist_build()
-        self.build_actionlist()
+    def update(self):
+        """
+        @see: EditorMixin.update
+        """
+
+        self.pwads = self.GetParent().pwads
+
+        self.sprites_dialog.update(self.pwads)
+        self.preview_dialog.update(self.pwads)
+
+        self.SpritePreview.set_source(self.pwads)
+        self.update_sprite_preview()
 
     def mix_colours(self):
         """

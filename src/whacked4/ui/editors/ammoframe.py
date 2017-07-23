@@ -38,6 +38,13 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
 
         self.ammolist_build()
 
+    def update(self):
+        """
+        @see: EditorMixin.update
+        """
+
+        pass
+
     def ammolist_build(self):
         """
         Builds the ammo list from scratch.

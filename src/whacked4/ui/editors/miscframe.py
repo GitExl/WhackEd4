@@ -30,6 +30,13 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         self.patch = patch
         self.misclist_build()
 
+    def update(self):
+        """
+        @see: EditorMixin.update
+        """
+
+        pass
+
     def misc_select(self, event):
         """
         Selects a new ammo entry.

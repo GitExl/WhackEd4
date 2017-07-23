@@ -85,6 +85,13 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
         self.soundlist_build()
 
+    def update(self):
+        """
+        @see: EditorMixin.update
+        """
+
+        self.pwads = self.GetParent().pwads
+
     def soundlist_build(self):
         """
         Builds the contents of the sounds list from scratch.

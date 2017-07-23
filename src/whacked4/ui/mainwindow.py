@@ -773,7 +773,9 @@ class MainWindow(windows.MainFrameBase):
     def wads_reload(self, event):
         self.workspace.store_windows(self, self.workspace_windows)
         self.load_wads()
-        self.update_ui()
+
+        for window in self.editor_windows.itervalues():
+            window.update()
 
     def file_open_recent(self, event):
         item = self.FindItemInMenuBar(event.GetId())

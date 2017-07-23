@@ -34,6 +34,13 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
 
         self.stringlist_build()
 
+    def update(self):
+        """
+        @see: EditorMixin.update
+        """
+
+        self.stringlist_build()
+
     def stringlist_build(self):
         """
         Rebuilds the entire list of strings.

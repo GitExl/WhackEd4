@@ -35,6 +35,13 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
 
         self.cheatlist_build()
 
+    def update(self):
+        """
+        @see: EditorMixin.update
+        """
+
+        pass
+
     def cheatlist_build(self):
         """
         Builds the cheat list from scratch.

@@ -80,6 +80,13 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.ammolist_build()
         self.weaponlist_build()
 
+    def update(self):
+        """
+        @see: EditorMixin.update
+        """
+
+        self.pwads = self.GetParent().pwads
+
     def set_feature_visibility(self):
         """
         Sets the visibility of controls based on enabled engine features.

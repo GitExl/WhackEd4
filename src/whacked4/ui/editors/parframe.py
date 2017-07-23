@@ -42,6 +42,13 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
 
         self.parlist_build()
 
+    def update(self):
+        """
+        @see: EditorMixin.update
+        """
+
+        pass
+
     def parlist_build(self):
         """
         Builds a new par times list.

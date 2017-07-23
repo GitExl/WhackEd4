@@ -181,6 +181,13 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.game_build()
         self.renderstyle_build()
 
+    def update(self):
+        """
+        @see: EditorMixin.update
+        """
+
+        self.pwads = self.GetParent().pwads
+
     def set_feature_visibility(self):
         """
         Sets the visibility of controls based on enabled engine features.
