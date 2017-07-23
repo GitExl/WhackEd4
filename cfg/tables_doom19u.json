@@ -89,13 +89,15 @@
 		"162848": {
 			"description": "Arachnotron plasma shot.",
 			"name": "BspiAttack",
-			"type": 0
+			"type": 0,
+			"spawns": 36
 		},
 		"162896": {
 			"description": "Imp fireball shot or scratch if at close range.",
 			"name": "TroopAttack",
 			"type": 0,
-			"sound": "sound:55"
+			"sound": "sound:55",
+			"spawns": 31
 		},
 		"163008": {
 			"description": "Demon bite attack.",
@@ -105,23 +107,27 @@
 		"163088": {
 			"description": "Cacodemon fireball shot or bite at close range.",
 			"name": "HeadAttack",
-			"type": 0
+			"type": 0,
+			"spawns": 32
 		},
 		"163184": {
 			"description": "Cyberdemon attack (launch a single rocket).",
 			"name": "CyberAttack",
-			"type": 0
+			"type": 0,
+			"spawns": 33
 		},
 		"163232": {
 			"description": "Baron of Hell or Hell Knight fireball shot or scratch if at close range.",
 			"name": "BruisAttack",
 			"type": 0,
-			"sound": "sound:55"
+			"sound": "sound:55",
+			"spawns": 16
 		},
 		"163328": {
 			"description": "Launch a Revenant missile. Chance of launching a homing missile.",
 			"name": "SkelMissile",
-			"type": 0
+			"type": 0,
+			"spawns": 6
 		},
 		"163424": {
 			"description": "A Revenant's fireball homing action. Changes the angle to point towards the target and emits a puff of smoke.",
@@ -188,17 +194,20 @@
 		"165024": {
 			"description": "Mancubus shot, 2 fireballs: one straight, one left.",
 			"name": "FatAttack1",
-			"type": 0
+			"type": 0,
+			"spawns": 9
 		},
 		"165152": {
 			"description": "Mancubus shot, 2 fireballs: one straight, one right.",
 			"name": "FatAttack2",
-			"type": 0
+			"type": 0,
+			"spawns": 9
 		},
 		"165280": {
 			"description": "Mancubus shot, 2 fireballs: one left, one right.",
 			"name": "FatAttack3",
-			"type": 0
+			"type": 0,
+			"spawns": 9
 		},
 		"165472": {
 			"description": "Lost soul attack.\n\nAn attack sound is REQUIRED.",

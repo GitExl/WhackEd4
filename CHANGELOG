@@ -2,6 +2,7 @@ Version 1.2.1
 -------------
 Added: support the RandomJump action in state previews.
 Added: Extended DehackEd configuration with the extra things and empty states from Doom Retro. Crispy Doom also supports these.
+Added: state actions that spawn things (like missiles from monster attacks) will now play that thing's sound during a preview.
 Fixed: unused state parameter descriptions would not be updated when an action using them was selected.
 Fixed: added missing things to the Doom Retro configuration. Thanks to VGA.
 Changed: WAD reloading is now faster and doesn't reset the UI state.

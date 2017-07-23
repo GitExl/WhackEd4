@@ -42,6 +42,7 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         self.StateInfo.SetFont(config.FONT_MONOSPACED_BOLD)
         self.StateAction.SetFont(config.FONT_MONOSPACED_BOLD)
         self.StateSound.SetFont(config.FONT_MONOSPACED_BOLD)
+        self.SpawnSound.SetFont(config.FONT_MONOSPACED_BOLD)
 
         self.SetEscapeId(windows.PREVIEW_CLOSE)
 
@@ -154,12 +155,16 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
                 self.set_state(state['unused1'])
                 return
 
-            sound_label = ''
             action_label = state['action']
 
             action_name = state['action']
             action = self.patch.engine.actions[action_name]
+
+            sound_label = ''
             sound_index = None
+
+            spawn_sound_label = ''
+            spawn_sound_index = None
 
             if 'sound' in action:
                 parts = action['sound'].split(':')
@@ -178,10 +183,20 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
                 elif parts[0] == 'state':
                     sound_index = state[parts[1]]
 
+            # Action spawns a thing.
+            if 'spawns' in action:
+                thing = self.patch.things[action['spawns']]
+                spawn_sound_index = thing['soundAlert']
+
+            # Playback sounds for this action. Any specific sound overrides a spawned thing sound.
             if sound_index is not None:
                 utils.sound_play(self.patch.sound_names[sound_index - 1], self.pwads)
                 sound_label = self.patch.sound_names[sound_index - 1]
+            elif spawn_sound_index is not None:
+                utils.sound_play(self.patch.sound_names[spawn_sound_index - 1], self.pwads)
+                spawn_sound_label = self.patch.sound_names[spawn_sound_index - 1]
 
+            self.SpawnSound.SetLabel(spawn_sound_label.upper())
             self.StateSound.SetLabel(sound_label.upper())
 
         self.StateAction.SetLabel(action_label)

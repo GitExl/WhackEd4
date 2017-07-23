@@ -67,13 +67,15 @@
 		"BspiAttack": {
 			"name": "BspiAttack",
 			"description": "Arachnotron plasma shot.",
-			"type": 0
+			"type": 0,
+			"spawns": 36
 		},
 		"TroopAttack": {
 			"name": "TroopAttack",
 			"description": "Imp fireball shot or scratch if at close range.",
 			"type": 0,
-			"sound": "sound:55"
+			"sound": "sound:55",
+			"spawns": 31
 		},
 		"SargAttack": {
 			"name": "SargAttack",
@@ -83,23 +85,27 @@
 		"HeadAttack": {
 			"name": "HeadAttack",
 			"description": "Cacodemon fireball shot or bite at close range.",
-			"type": 0
+			"type": 0,
+			"spawns": 32
 		},
 		"CyberAttack": {
 			"name": "CyberAttack",
 			"description": "Cyberdemon attack (launch a single rocket).",
-			"type": 0
+			"type": 0,
+			"spawns": 33
 		},
 		"BruisAttack": {
 			"name": "BruisAttack",
 			"description": "Baron of Hell or Hell Knight fireball shot or scratch if at close range.",
 			"type": 0,
-			"sound": "sound:55"
+			"sound": "sound:55",
+			"spawns": 16
 		},
 		"SkelMissile": {
 			"name": "SkelMissile",
 			"description": "Launch a Revenant missile. Chance of launching a homing missile.",
-			"type": 0
+			"type": 0,
+			"spawns": 6
 		},
 		"Tracer": {
 			"name": "Tracer",
@@ -166,17 +172,20 @@
 		"FatAttack1": {
 			"name": "FatAttack1",
 			"description": "Mancubus shot, 2 fireballs: one straight, one left.",
-			"type": 0
+			"type": 0,
+			"spawns": 9
 		},
 		"FatAttack2": {
 			"name": "FatAttack2",
 			"description": "Mancubus shot, 2 fireballs: one straight, one right.",
-			"type": 0
+			"type": 0,
+			"spawns": 9
 		},
 		"FatAttack3": {
 			"name": "FatAttack3",
 			"description": "Mancubus shot, 2 fireballs: one left, one right.",
-			"type": 0
+			"type": 0,
+			"spawns": 9
 		},
 		"SkullAttack": {
 			"name": "SkullAttack",

@@ -4255,6 +4255,13 @@ class StatePreviewDialogBase ( wx.Dialog ):
 		self.StateSound.Wrap( -1 )
 		bSizer141.Add( self.StateSound, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
+		self.SpawnSound = wx.StaticText( self, wx.ID_ANY, u"?", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.SpawnSound.Wrap( -1 )
+		self.SpawnSound.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
+		self.SpawnSound.Enable( False )
+		
+		bSizer141.Add( self.SpawnSound, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		
 		self.Close = wx.Button( self, PREVIEW_CLOSE, u"Close", wx.DefaultPosition, wx.Size( 120,28 ), 0 )
 		bSizer141.Add( self.Close, 0, wx.ALIGN_RIGHT|wx.ALL, 6 )
 		
