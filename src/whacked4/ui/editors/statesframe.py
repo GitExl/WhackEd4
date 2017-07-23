@@ -492,6 +492,18 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         arg_count = get_action_param_counts(action)
 
+        # Unused parameters.
+        for index in range(0, len(StatesFrame.UNUSED_IDS)):
+            label = self.FindWindowById(StatesFrame.UNUSED_IDS[index][0])
+            text = self.FindWindowById(StatesFrame.UNUSED_IDS[index][1])
+
+            if (action is not None) and ('unused' in action) and (index < len(action['unused'])):
+                label.SetLabel(action['unused'][index]['name'])
+                text.SetToolTipString(action['unused'][index]['description'])
+            else:
+                label.SetLabel('Unused {}'.format(index + 1))
+                text.SetToolTipString('')
+
         # Arg0-9 parameters.
         for index in range(0, len(StatesFrame.ARG_IDS)):
             label = self.FindWindowById(StatesFrame.ARG_IDS[index][0])
