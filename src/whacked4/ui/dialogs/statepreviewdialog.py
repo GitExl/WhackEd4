@@ -8,6 +8,7 @@ import whacked4.config as config
 
 import wx
 import time
+import random
 
 
 class StatePreviewDialog(windows.StatePreviewDialogBase):
@@ -141,6 +142,12 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
 
         # Play any state-related sound.
         if state['action'] is not None:
+
+            # Support for RandomJump action that takes parameters to jump to a random next state.
+            if state['action'] == 'RandomJump' and random.randint(0, 255) < state['unused2']:
+                self.set_state(state['unused1'])
+                return
+
             sound_label = ''
             action_label = state['action']
 
