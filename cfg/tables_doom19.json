@@ -39,7 +39,7 @@
 			"type": 0
 		},
 		"161376": {
-			"description": "Same as the 'Fall' action and triggering tag 666 if all thing with the same type are dead.",
+			"description": "Same as the 'Fall' action and triggering tag 666 if all things with the same type are dead.",
 			"name": "KeenDie",
 			"type": 0
 		},
