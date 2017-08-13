@@ -27,7 +27,8 @@
 		"Chase": {
 			"name": "Chase",
 			"description": "Standard walking code pointer.\n\nThis chases the target object, regardless of a direct line of sight.",
-			"type": 0
+			"type": 0,
+			"setsMomentum": true
 		},
 		"FaceTarget": {
 			"name": "FaceTarget",
@@ -108,7 +109,8 @@
 		"Tracer": {
 			"name": "Tracer",
 			"description": "A Revenant's fireball homing action. Changes the angle to point towards the target and emits a puff of smoke.",
-			"type": 0
+			"type": 0,
+			"setsMomentum": true
 		},
 		"SkelWhoosh": {
 			"name": "SkelWhoosh",
@@ -125,7 +127,8 @@
 		"VileChase": {
 			"name": "VileChase",
 			"description": "Arch-Vile walking code pointer.\n\nChecks to see if there is a dead monster in front of the Arch-Vile and ressurects it if so.",
-			"type": 0
+			"type": 0,
+			"setsMomentum": true
 		},
 		"VileStart": {
 			"name": "VileStart",
@@ -189,7 +192,8 @@
 			"name": "SkullAttack",
 			"description": "Lost soul attack.\n\nAn attack sound is REQUIRED.",
 			"type": 0,
-			"sound": "thing:soundAttack"
+			"sound": "thing:soundAttack",
+			"setsMomentum": true
 		},
 		"PainAttack": {
 			"name": "PainAttack",
