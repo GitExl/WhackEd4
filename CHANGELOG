@@ -1,3 +1,7 @@
+Version 1.2.2
+-------------
+Fixed: a serious issue with saving thing, weapon and ammo names that could cause no names to be saved and the wrong names loaded when opening a second patch. Thanks to Da Werecat.
+
 Version 1.2.1
 -------------
 Added: support the RandomJump action in state previews.

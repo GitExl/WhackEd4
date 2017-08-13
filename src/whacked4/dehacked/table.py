@@ -14,6 +14,7 @@ class Table(object):
         self.entry_class = entry_class
         self.offset = 0
         self.engine = engine
+        self.names = None
 
     def read_from_executable(self, count, f):
         """
@@ -47,7 +48,7 @@ class Table(object):
                 f.write(patch_str)
 
             # Write just a header if only the entry's name has changed.
-            elif hasattr(self, 'names') and self.names[index] != source_table.names[index]:
+            elif self.names is not None and self.names[index] != source_table.names[index]:
                 f.write(entry.get_patch_header(index, self, offset=self.offset))
 
     def clone(self):
@@ -60,6 +61,9 @@ class Table(object):
         for entry in self.entries:
             dup_entries.append(entry.clone())
         dup.entries = dup_entries
+
+        if self.names is not None:
+            dup.names = copy.copy(self.names)
 
         return dup
 

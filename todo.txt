@@ -12,6 +12,7 @@ Low priority bugs
 Features
 1.2.2
 - UI manual \ Dehacked tutorial.
+- Look into new Eternity Engine and PrBoom+ Dehacked features.
 
 1.3.0 and later
 - Extend patch merging by https://www.doomworld.com/vb/post/1556253
