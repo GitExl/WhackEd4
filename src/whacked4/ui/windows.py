@@ -4035,7 +4035,7 @@ class StartDialogBase ( wx.Dialog ):
 class AboutDialogBase ( wx.Dialog ):
 	
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,420 ), style = wx.CAPTION|wx.CLOSE_BOX )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,440 ), style = wx.CAPTION|wx.CLOSE_BOX )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -4086,7 +4086,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText139.Wrap( -1 )
 		bSizer56.Add( self.m_staticText139, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aeyesx, Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, MaiklRussia, Marc. A. Pullen, Palladium, plums, Rellik, REZ, scifista42, Skullers, SlayeR, The Doommer, tempun, un4seen, VGA, WildWeasel, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
+		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aeyesx, Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Da Werecat, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, MaiklRussia, Marc. A. Pullen, Palladium, plums, Rellik, REZ, scifista42, Skullers, SlayeR, The Doommer, tempun, un4seen, VGA, WildWeasel, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
 		self.m_staticText138.Wrap( 450 )
 		bSizer56.Add( self.m_staticText138, 1, wx.ALL, 6 )
 		
