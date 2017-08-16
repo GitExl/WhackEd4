@@ -73,9 +73,6 @@ class StateFilter(object):
         Updates the list of filtered states from a filter index.
         """
 
-        self.state_indices = []
-        self.states = []
-
         filter_data = self.filters[index]
         self.filter_type = filter_data['type']
         self.filter_index = filter_data['index']
@@ -88,59 +85,61 @@ class StateFilter(object):
                 self.states.append(state)
                 state_index += 1
 
-        # Create a filtered list.
+            return
+
+        # Create an initial list of states belonging to the filtered entity.
+        if self.filter_type == FILTER_TYPE_UNUSED:
+            states_list = self.get_used_states()
+        elif self.filter_type == FILTER_TYPE_THING:
+            states_list = self.get_thing_states(self.filter_index)
+        elif self.filter_type == FILTER_TYPE_WEAPON:
+            states_list = self.get_weapon_states(self.filter_index)
         else:
-            if self.filter_type == FILTER_TYPE_UNUSED:
-                states_list = self.get_unused_states()
-            elif self.filter_type == FILTER_TYPE_THING:
-                states_list = self.get_thing_states(self.filter_index)
-            elif self.filter_type == FILTER_TYPE_WEAPON:
-                states_list = self.get_weapon_states(self.filter_index)
+            states_list = []
 
-            # Keep marking all currently listed states' next state as used until none can be found anymore.
-            while True:
-                added = False
+        # Look for next state and possible next states until all known states have been visited.
+        visited = set(states_list)
+        for state_index in states_list:
 
-                for index in range(len(states_list)):
-                    if states_list[index]:
-                        next_state = self.patch.states[index]['nextState']
-                        if next_state >= 0 and not states_list[next_state]:
-                            states_list[next_state] = True
-                            added = True
+            next_state_index = self.patch.states[state_index]['nextState']
+            if next_state_index >= 0 and next_state_index not in visited:
+                states_list.append(next_state_index)
+                visited.add(next_state_index)
 
-                        # Action-specific state jumps.
-                        # Randomly jump to state in param1
-                        state = self.patch.states[index]
-                        if state['action'] == 'RandomJump':
-                            states_list[state['unused1']] = True
+            # Action-specific state jumps.
+            # Randomly jump to state in param1
+            state = self.patch.states[state_index]
+            if state['action'] == 'RandomJump':
+                jump_index = state['unused1']
+                if jump_index >= 0 and jump_index not in visited:
+                    states_list.append(jump_index)
+                    visited.add(jump_index)
 
-                if not added:
-                    break
+        # If a unused filter type is active, invert the list to reveal unused states.
+        if self.filter_type == FILTER_TYPE_UNUSED:
+            states_list = []
+            for index in range(len(self.patch.states)):
+                if index not in visited:
+                    states_list.append(index)
+        else:
+            states_list = sorted(states_list)
 
-            # If a unused filter type is active, invert the list to reveal unused states.
-            if self.filter_type == FILTER_TYPE_UNUSED:
-                for index in range(len(states_list)):
-                    states_list[index] = not states_list[index]
-
-            # Create the final filtered lists.
-            for index in range(len(states_list)):
-                if states_list[index]:
-                    self.state_indices.append(index)
-                    self.states.append(self.patch.states[index])
+        self.states = []
+        self.state_indices = states_list
+        for index in states_list:
+                self.states.append(self.patch.states[index])
 
     def get_weapon_states(self, weapon_index):
         """
         Returns a new states list with the states for a particular weapon index.
         """
 
-        states_list = [False] * len(self.patch.states)
-
         weapon = self.patch.weapons[weapon_index]
-        _add_weapon_states(states_list, weapon)
+        states_list = _get_weapon_states(weapon)
 
         # Add plasma rifle muzzle flash jitter states.
         if self.patch.engine.hacks['plasmaFlashStateJitter']:
-            self.add_hack_states(states_list, weapon)
+            states_list.extend(self.get_hack_states(weapon))
 
         return states_list
 
@@ -149,42 +148,42 @@ class StateFilter(object):
         Returns a new states list with the states for a particular thing index.
         """
 
-        states_list = [False] * len(self.patch.states)
-
         thing = self.patch.things[thing_index]
-        _add_thing_states(states_list, thing)
+        states_list = _get_thing_states(thing)
 
         return states_list
 
-    def get_unused_states(self):
+    def get_used_states(self):
         """
         Returns a new states list with all used states marked.
         """
 
-        states_list = [False] * len(self.patch.states)
+        states_list = []
 
         # Add thing states.
         for thing in self.patch.things:
-            _add_thing_states(states_list, thing)
+            states_list.extend(_get_thing_states(thing))
 
         # Add weapon states.
         for weapon in self.patch.weapons:
-            _add_weapon_states(states_list, weapon)
+            states_list.extend(_get_weapon_states(weapon))
 
             # Add plasma rifle muzzle flash jitter states.
             if self.patch.engine.hacks['plasmaFlashStateJitter']:
-                self.add_hack_states(states_list, weapon)
+                states_list.extend(self.get_hack_states(weapon))
 
         # Add used states from the engine table.
         for state_index in self.patch.engine.used_states:
-            states_list[state_index] = True
+            states_list.append(state_index)
 
         return states_list
 
-    def add_hack_states(self, states_list, weapon):
+    def get_hack_states(self, weapon):
         """
         Adds states that belong to a hack setting.
         """
+
+        states = []
 
         action_plasma = self.patch.engine.get_action_key_from_name('FirePlasma')
         action_cgun = self.patch.engine.get_action_key_from_name('FireCGun')
@@ -197,7 +196,9 @@ class StateFilter(object):
         action = self.patch.states[fire_state]['action']
         if action == plasma_action or action == cg_action:
             muzzle_state = weapon['stateMuzzle']
-            states_list[muzzle_state + 1] = True
+            states.append(muzzle_state + 1)
+
+        return states
 
     def find_index(self, filter_type, item_index):
         """
@@ -214,31 +215,49 @@ class StateFilter(object):
         return -1
 
 
-def _add_thing_states(states_list, thing):
+def _get_thing_states(thing):
     """
     Adds states that belong to a thing.
     """
 
-    states_list[thing['stateAttack']] = True
-    states_list[thing['stateDeath']] = True
-    states_list[thing['stateExplode']] = True
-    states_list[thing['stateMelee']] = True
-    states_list[thing['stateWalk']] = True
-    states_list[thing['statePain']] = True
-    states_list[thing['stateRaise']] = True
-    states_list[thing['stateSpawn']] = True
-    states_list[thing['stateCrash']] = True
-    states_list[thing['stateFreeze']] = True
-    states_list[thing['stateBurn']] = True
+    names = [
+        'stateAttack',
+        'stateDeath',
+        'stateExplode',
+        'stateMelee',
+        'stateWalk',
+        'statePain',
+        'stateRaise',
+        'stateSpawn',
+        'stateCrash',
+        'stateFreeze',
+        'stateBurn'
+    ]
+
+    states = []
+    for name in names:
+        if thing[name] > 0:
+            states.append(thing[name])
+
+    return states
 
 
-def _add_weapon_states(states_list, weapon):
+def _get_weapon_states(weapon):
     """
     Adds states that belong to a weapon.
     """
 
-    states_list[weapon['stateBob']] = True
-    states_list[weapon['stateDeselect']] = True
-    states_list[weapon['stateFire']] = True
-    states_list[weapon['stateMuzzle']] = True
-    states_list[weapon['stateSelect']] = True
+    names = [
+        'stateBob',
+        'stateDeselect',
+        'stateFire',
+        'stateMuzzle',
+        'stateSelect'
+    ]
+
+    states = []
+    for name in names:
+        if weapon[name] > 0:
+            states.append(weapon[name])
+
+    return states
