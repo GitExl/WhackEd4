@@ -28,12 +28,15 @@ def filter_states(patch, filter_type, entity_index):
             states.append(state)
             state_index += 1
 
+        return state_indices, states
 
     # Create an initial list of states belonging to the filtered entity.
     if filter_type == FILTER_TYPE_UNUSED:
         states_list = _get_used_states(patch)
     elif filter_type == FILTER_TYPE_THING:
+        states_list = _get_thing_states(patch.things[entity_index])
     elif filter_type == FILTER_TYPE_WEAPON:
+        states_list = _get_weapon_states(patch.weapons[entity_index])
     else:
         states_list = []
 
