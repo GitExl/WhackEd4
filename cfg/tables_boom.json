@@ -109,8 +109,7 @@
 		"Tracer": {
 			"name": "Tracer",
 			"description": "A Revenant's fireball homing action. Changes the angle to point towards the target and emits a puff of smoke.",
-			"type": 0,
-			"setsMomentum": true
+			"type": 0
 		},
 		"SkelWhoosh": {
 			"name": "SkelWhoosh",
@@ -192,8 +191,7 @@
 			"name": "SkullAttack",
 			"description": "Lost soul attack.\n\nAn attack sound is REQUIRED.",
 			"type": 0,
-			"sound": "thing:soundAttack",
-			"setsMomentum": true
+			"sound": "thing:soundAttack"
 		},
 		"PainAttack": {
 			"name": "PainAttack",

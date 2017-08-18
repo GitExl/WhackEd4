@@ -215,3 +215,10 @@ class EditorMixin(wx.MDIChildFrame):
         """
 
         pass
+
+    def before_save(self):
+        """
+        Called by the main window before saving the current patch.
+        """
+
+        pass

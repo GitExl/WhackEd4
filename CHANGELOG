@@ -1,6 +1,7 @@
 Version 1.2.2
 -------------
 Fixed: a serious issue with saving thing, weapon and ammo names that could cause no names to be saved and the wrong names loaded when opening a second patch. Thanks to Da Werecat.
+Changed: detecting if a thing is a projectile is now done by looking for actions in it's used list of states that set the momentum as a non-fixed point value. Currently Chase and VileChase being used will cause a thing to not be considered a projectile and it's speed property to be automatically cast to a non-fixed point value internally and in written patches.
 
 Version 1.2.1
 -------------

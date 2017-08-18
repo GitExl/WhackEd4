@@ -150,6 +150,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.preview_dialog = None
 
         self.selected_index = 0
+        self.thing_is_projectile = False
 
         self.thingflag_mnemonics = None
 
@@ -351,6 +352,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         thing = self.patch.things[self.selected_index]
         renderstyle = self.patch.engine.render_styles[thing['renderStyle']]
 
+        self.update_is_projectile()
+
         # Set basic property text control values.
         self.ThingId.ChangeValue(str(thing['id']))
         self.ThingHealth.ChangeValue(str(thing['health']))
@@ -371,8 +374,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingDamageFactor.ChangeValue(str(thing['damageFactor']))
         self.ThingGravity.ChangeValue(str(thing['gravity']))
 
-        # Speed is in fixed point if this thing is a missile, normal otherwise
-        if 'MISSILE' in thing['flags']:
+        # Speed is in fixed point if this thing is a projectile, normal otherwise
+        if self.thing_is_projectile:
             speed = thing['speed'] / self.FIXED_UNIT
         else:
             speed = thing['speed']
@@ -436,11 +439,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         thing = self.patch.things[self.selected_index]
 
         # Apply fixed point divisor if the value needs it.
-        # This is also necessary for the speed property if the thing has it's MISSILE flag set.
+        # This is also necessary for the speed property if the thing is a projectile.
         key = self.PROPS_VALUES[window_id]
         if value_type == 'fixed':
             value *= self.FIXED_UNIT
-        elif key == 'speed' and 'MISSILE' in thing['flags']:
+        elif key == 'speed' and self.thing_is_projectile:
             value *= self.FIXED_UNIT
 
         thing[key] = value
@@ -476,6 +479,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         thing['state' + key] = value
         self.__dict__['ThingState' + key + 'Name'].SetLabel(self.patch.get_state_name(value))
         self.is_modified(True)
+        self.update_is_projectile()
+        self.update_properties()
 
     def set_game(self, event):
         """
@@ -536,21 +541,12 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.undo_add()
 
         flags_set = set()
-        projectile_before = 'MISSILE' in self.patch.things[self.selected_index]['flags']
 
         # Iterate over the flags defined in the flags list, adding mnemonics that are set.
         for index in range(self.ThingFlags.GetCount()):
             if not self.ThingFlags.IsChecked(index):
                 continue
             flags_set.add(self.thingflag_mnemonics[index])
-
-        # Recast the fixed point speed property if the thing is now a projectile (or not anymore).
-        projectile_after = 'MISSILE' in flags_set
-        if projectile_before != projectile_after:
-            if projectile_after:
-                self.patch.things[self.selected_index]['speed'] *= self.FIXED_UNIT
-            else:
-                self.patch.things[self.selected_index]['speed'] /= self.FIXED_UNIT
 
         self.patch.things[self.selected_index]['flags'] = flags_set
         self.is_modified(True)
@@ -583,6 +579,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         text_ctrl = self.FindWindowById(self.PROPS_STATESET[event.GetId()])
         text_ctrl.SetValue(str(states_frame.selection_get_state_index()))
         self.is_modified(True)
+        self.update_is_projectile()
+        self.update_properties()
 
     def set_sound_external(self, event):
         """
@@ -605,6 +603,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         self.selected_index = event.GetIndex()
+        self.thing_is_projectile = None
         self.update_properties()
 
     def thing_rename(self, event):
@@ -747,3 +746,32 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.preview_dialog.prepare(self.pwads, self.patch, state_index, self.selected_index)
         self.preview_dialog.ShowModal()
+
+    def update_is_projectile(self):
+        """
+        Updates the thing_is_projectile variable. If any of the current thing's states sets a momentum then it is no
+        a projectile.
+        """
+
+        is_before = self.thing_is_projectile
+        self.thing_is_projectile = True
+
+        _, states = statefilter.filter_states(self.patch, statefilter.FILTER_TYPE_THING, self.selected_index)
+        for state in states:
+            if not state['action']:
+                continue
+
+            action = self.patch.engine.actions[state['action']]
+            if 'setsMomentum' in action and action['setsMomentum']:
+                self.thing_is_projectile = False
+
+        # Cast speed property to the new type if needed.
+        if is_before is not None and is_before != self.thing_is_projectile:
+            thing = self.patch.things[self.selected_index]
+            if self.thing_is_projectile:
+                thing['speed'] *= ThingsFrame.FIXED_UNIT
+            else:
+                thing['speed'] /= ThingsFrame.FIXED_UNIT
+
+    def before_save(self):
+        self.update_is_projectile()

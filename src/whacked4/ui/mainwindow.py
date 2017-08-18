@@ -394,6 +394,9 @@ class MainWindow(windows.MainFrameBase):
 
         wx.BeginBusyCursor()
 
+        for window in self.editor_windows.itervalues():
+            window.before_save()
+
         # Create a backup of the existing file.
         if os.path.exists(filename):
             shutil.copyfile(filename, filename + '.bak')
