@@ -83,7 +83,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         Resize the ammo name column as wide as possible.
         """
 
-        column_width = self.AmmoList.GetClientSizeTuple()[0] - 4
+        column_width = self.AmmoList.GetClientSize()[0] - 4
         self.AmmoList.SetColumnWidth(0, column_width / 3)
         self.AmmoList.SetColumnWidth(1, column_width / 3)
         self.AmmoList.SetColumnWidth(2, column_width / 3)

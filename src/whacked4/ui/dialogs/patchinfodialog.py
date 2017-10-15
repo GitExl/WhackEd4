@@ -46,7 +46,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         self.EngineList.Clear()
 
         self.PWADList.ClearAll()
-        client_width = self.PWADList.GetClientSizeTuple()[0]
+        client_width = self.PWADList.GetClientSize()[0]
         self.PWADList.InsertColumn(0, 'Filename', width=client_width)
 
     def set_state(self, patch, engines, workspace, modify_engine=True):

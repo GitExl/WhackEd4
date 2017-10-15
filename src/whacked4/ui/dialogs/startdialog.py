@@ -19,7 +19,7 @@ class StartDialog(windows.StartDialogBase):
 
         self.SetEscapeId(windows.START_CANCEL)
 
-        client_width = self.FileList.GetClientSizeTuple()[0] - 4
+        client_width = self.FileList.GetClientSize()[0] - 4
         self.FileList.InsertColumn(0, 'Filename', width=client_width)
 
         # Populate the list of recently accessed Dehacked patches.

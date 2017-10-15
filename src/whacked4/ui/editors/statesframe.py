@@ -969,7 +969,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         columns_width += self.StateList.GetColumnWidth(4) + self.StateList.GetColumnWidth(5)
         columns_width += self.StateList.GetColumnWidth(6) + self.StateList.GetColumnWidth(7)
 
-        width = self.StateList.GetClientSizeTuple()[0] - columns_width - 4
+        width = self.StateList.GetClientSize()[0] - columns_width - 4
         self.StateList.SetColumnWidth(8, width)
 
     def preview(self):

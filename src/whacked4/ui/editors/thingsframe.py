@@ -279,7 +279,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         if col_count > 3:
             columns_width += self.ThingList.GetColumnWidth(2) + self.ThingList.GetColumnWidth(3)
 
-        width = self.ThingList.GetClientSizeTuple()[0] - columns_width - 4
+        width = self.ThingList.GetClientSize()[0] - columns_width - 4
         if col_count > 1:
             self.ThingList.SetColumnWidth(1, width)
 

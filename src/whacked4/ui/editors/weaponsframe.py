@@ -147,7 +147,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         Resizes the weapon list to fill as much space as is available.
         """
         if self.WeaponList.GetColumnCount() > 1:
-            column_width = self.WeaponList.GetClientSizeTuple()[0] - 4
+            column_width = self.WeaponList.GetClientSize()[0] - 4
             self.WeaponList.SetColumnWidth(0, column_width / 2)
             self.WeaponList.SetColumnWidth(1, column_width / 2)
 

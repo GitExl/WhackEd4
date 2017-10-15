@@ -78,7 +78,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         Expands the last cheat column to fill the available space.
         """
 
-        width = self.CheatList.GetClientSizeTuple()[0] - self.CheatList.GetColumnWidth(0) - 4
+        width = self.CheatList.GetClientSize()[0] - self.CheatList.GetColumnWidth(0) - 4
         self.CheatList.SetColumnWidth(1, width)
 
     def cheat_edit(self, event):

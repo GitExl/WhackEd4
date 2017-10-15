@@ -91,7 +91,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         Called when the string list is resized. Adjusts the list column widths to match.
         """
 
-        width = self.StringList.GetClientSizeTuple()[0]
+        width = self.StringList.GetClientSize()[0]
         column_width = width - self.StringList.GetColumnWidth(0) - 4
         self.StringList.SetColumnWidth(1, column_width)
 

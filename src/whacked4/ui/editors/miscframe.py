@@ -121,7 +121,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         Resize the misc name column as wide as possible.
         """
 
-        column_width = self.MiscList.GetClientSizeTuple()[0] - 4
+        column_width = self.MiscList.GetClientSize()[0] - 4
         self.MiscList.SetColumnWidth(0, 200)
         self.MiscList.SetColumnWidth(1, column_width - 200)
 

@@ -93,7 +93,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         Resize the parlist columns to divide them over the width of the client area.
         """
 
-        column_width = (self.ParList.GetClientSizeTuple()[0] - 4) / 3
+        column_width = (self.ParList.GetClientSize()[0] - 4) / 3
         self.ParList.SetColumnWidth(0, column_width)
         self.ParList.SetColumnWidth(1, column_width)
         self.ParList.SetColumnWidth(2, column_width)

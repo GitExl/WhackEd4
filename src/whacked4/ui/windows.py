@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*- 
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version Dec 21 2016)
+## Python code generated with wxFormBuilder (version Oct 12 2017)
 ## http://www.wxformbuilder.org/
 ##
-## PLEASE DO "NOT" EDIT THIS FILE!
+## PLEASE DO *NOT* EDIT THIS FILE!
 ###########################################################################
 
 import wx
@@ -225,7 +225,7 @@ class MainFrameBase ( wx.MDIParentFrame ):
 	def __init__( self, parent ):
 		wx.MDIParentFrame.__init__ ( self, parent, id = WINDOW_MAIN, title = u"WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 1024,560 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.MINIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.HSCROLL|wx.VSCROLL )
 		
-		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		
 		self.MainToolbar = self.CreateToolBar( wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL, wx.ID_ANY )
 		self.MainToolbar.SetToolBitmapSize( wx.Size( 40,40 ) )
@@ -253,27 +253,27 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.MainMenu = wx.MenuBar( 0 )
 		self.MenuFile = wx.Menu()
 		self.MenuFileNew = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"New..."+ u"\t" + u"Ctrl+N", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuFile.AppendItem( self.MenuFileNew )
+		self.MenuFile.Append( self.MenuFileNew )
 		
 		self.MenuFileOpen = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Open..."+ u"\t" + u"Ctrl+O", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuFile.AppendItem( self.MenuFileOpen )
+		self.MenuFile.Append( self.MenuFileOpen )
 		
 		self.MenuFileOpenAs = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Open as...", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuFile.AppendItem( self.MenuFileOpenAs )
+		self.MenuFile.Append( self.MenuFileOpenAs )
 		
 		self.MenuFileMergeWith = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Merge with..."+ u"\t" + u"Ctrl+M", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuFile.AppendItem( self.MenuFileMergeWith )
+		self.MenuFile.Append( self.MenuFileMergeWith )
 		
 		self.MenuFileSave = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Save"+ u"\t" + u"Ctrl+S", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuFile.AppendItem( self.MenuFileSave )
+		self.MenuFile.Append( self.MenuFileSave )
 		
 		self.MenuFileSaveAs = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Save as..."+ u"\t" + u"Ctrl+Shift+S", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuFile.AppendItem( self.MenuFileSaveAs )
+		self.MenuFile.Append( self.MenuFileSaveAs )
 		
 		self.MenuFile.AppendSeparator()
 		
 		self.MenuFileReloadWADs = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Reload WADs"+ u"\t" + u"CTRL+R", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuFile.AppendItem( self.MenuFileReloadWADs )
+		self.MenuFile.Append( self.MenuFileReloadWADs )
 		
 		self.MenuFile.AppendSeparator()
 		
@@ -283,73 +283,73 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.MenuFile.AppendSeparator()
 		
 		self.MenuFileExit = wx.MenuItem( self.MenuFile, wx.ID_ANY, u"Exit"+ u"\t" + u"Ctrl+Q", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuFile.AppendItem( self.MenuFileExit )
+		self.MenuFile.Append( self.MenuFileExit )
 		
 		self.MainMenu.Append( self.MenuFile, u"File" ) 
 		
 		self.MenuEdit = wx.Menu()
 		self.MenuEditUndo = wx.MenuItem( self.MenuEdit, wx.ID_ANY, u"Undo"+ u"\t" + u"Ctrl+Z", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuEdit.AppendItem( self.MenuEditUndo )
+		self.MenuEdit.Append( self.MenuEditUndo )
 		
 		self.MenuEdit.AppendSeparator()
 		
 		self.MenuEditCopy = wx.MenuItem( self.MenuEdit, wx.ID_ANY, u"Copy"+ u"\t" + u"Ctrl+C", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuEdit.AppendItem( self.MenuEditCopy )
+		self.MenuEdit.Append( self.MenuEditCopy )
 		
 		self.MenuEditPaste = wx.MenuItem( self.MenuEdit, wx.ID_ANY, u"Paste"+ u"\t" + u"Ctrl+V", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuEdit.AppendItem( self.MenuEditPaste )
+		self.MenuEdit.Append( self.MenuEditPaste )
 		
 		self.MainMenu.Append( self.MenuEdit, u"Edit" ) 
 		
 		self.MenuView = wx.Menu()
 		self.MenuViewThings = wx.MenuItem( self.MenuView, MAIN_MENU_THINGS, u"Things"+ u"\t" + u"F2", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewThings )
+		self.MenuView.Append( self.MenuViewThings )
 		
 		self.MenuViewStates = wx.MenuItem( self.MenuView, MAIN_MENU_STATES, u"States"+ u"\t" + u"F3", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewStates )
+		self.MenuView.Append( self.MenuViewStates )
 		
 		self.MenuViewSounds = wx.MenuItem( self.MenuView, MAIN_MENU_SOUNDS, u"Sounds"+ u"\t" + u"F4", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewSounds )
+		self.MenuView.Append( self.MenuViewSounds )
 		self.MenuViewSounds.Enable( False )
 		
 		self.MenuViewStrings = wx.MenuItem( self.MenuView, MAIN_MENU_STRINGS, u"Strings"+ u"\t" + u"F6", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewStrings )
+		self.MenuView.Append( self.MenuViewStrings )
 		self.MenuViewStrings.Enable( False )
 		
 		self.MenuViewWeapons = wx.MenuItem( self.MenuView, MAIN_MENU_WEAPONS, u"Weapons"+ u"\t" + u"F7", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewWeapons )
+		self.MenuView.Append( self.MenuViewWeapons )
 		self.MenuViewWeapons.Enable( False )
 		
 		self.MenuViewAmmo = wx.MenuItem( self.MenuView, MAIN_MENU_AMMO, u"Ammo"+ u"\t" + u"F8", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewAmmo )
+		self.MenuView.Append( self.MenuViewAmmo )
 		self.MenuViewAmmo.Enable( False )
 		
 		self.MenuViewCheats = wx.MenuItem( self.MenuView, MAIN_MENU_CHEATS, u"Cheats"+ u"\t" + u"F9", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewCheats )
+		self.MenuView.Append( self.MenuViewCheats )
 		self.MenuViewCheats.Enable( False )
 		
 		self.MenuViewMiscellaneous = wx.MenuItem( self.MenuView, MAIN_MENU_MISC, u"Miscellaneous"+ u"\t" + u"F11", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewMiscellaneous )
+		self.MenuView.Append( self.MenuViewMiscellaneous )
 		self.MenuViewMiscellaneous.Enable( False )
 		
 		self.MenuViewPar = wx.MenuItem( self.MenuView, MAIN_MENU_PAR, u"Par times"+ u"\t" + u"F12", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewPar )
+		self.MenuView.Append( self.MenuViewPar )
 		self.MenuViewPar.Enable( False )
 		
 		self.MenuView.AppendSeparator()
 		
 		self.MenuViewPatchSettings = wx.MenuItem( self.MenuView, wx.ID_ANY, u"Patch settings...", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuView.AppendItem( self.MenuViewPatchSettings )
+		self.MenuView.Append( self.MenuViewPatchSettings )
 		
 		self.MainMenu.Append( self.MenuView, u"View" ) 
 		
 		self.MenuHelp = wx.Menu()
 		self.MenuHelpHelp = wx.MenuItem( self.MenuHelp, wx.ID_ANY, u"Help"+ u"\t" + u"F1", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuHelp.AppendItem( self.MenuHelpHelp )
+		self.MenuHelp.Append( self.MenuHelpHelp )
 		self.MenuHelpHelp.Enable( False )
 		
 		self.MenuHelpAbout = wx.MenuItem( self.MenuHelp, wx.ID_ANY, u"About...", wx.EmptyString, wx.ITEM_NORMAL )
-		self.MenuHelp.AppendItem( self.MenuHelpAbout )
+		self.MenuHelp.Append( self.MenuHelpAbout )
 		
 		self.MainMenu.Append( self.MenuHelp, u"Help" ) 
 		
@@ -473,7 +473,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 	def __init__( self, parent ):
 		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 980,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
 		
-		self.SetSizeHintsSz( wx.Size( 980,650 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 980,650 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		SizerMain = wx.BoxSizer( wx.HORIZONTAL )
@@ -815,7 +815,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerPropertiesBottom = wx.BoxSizer( wx.VERTICAL )
 		
 		
-		SizerPropertiesBottom.AddSpacer( ( 0, 0), 1, wx.EXPAND, 0 )
+		SizerPropertiesBottom.Add( ( 0, 0), 1, wx.EXPAND, 0 )
 		
 		self.ButtonRename = wx.Button( self.PanelProperties, THING_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ButtonRename.SetMinSize( wx.Size( -1,28 ) )
@@ -832,7 +832,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerMain.Add( self.PanelProperties, 1, wx.BOTTOM|wx.EXPAND|wx.LEFT|wx.TOP, 9 )
 		
 		
-		SizerMain.AddSpacer( ( 16, 0), 0, 0, 0 )
+		SizerMain.Add( ( 16, 0), 0, 0, 0 )
 		
 		self.PanelStatesSounds = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStatesSounds = wx.BoxSizer( wx.VERTICAL )
@@ -1163,7 +1163,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStatesSounds.Add( self.PanelStateBurn, 0, 0, 0 )
 		
 		
-		SizerStatesSounds.AddSpacer( ( 0, 18), 0, wx.EXPAND, 3 )
+		SizerStatesSounds.Add( ( 0, 18), 0, wx.EXPAND, 3 )
 		
 		self.SoundsLabel = wx.StaticText( self.PanelStatesSounds, wx.ID_ANY, u"Sounds", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.SoundsLabel.Wrap( -1 )
@@ -1319,7 +1319,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerBottom = wx.BoxSizer( wx.VERTICAL )
 		
 		
-		SizerBottom.AddSpacer( ( 0, 0), 1, wx.EXPAND, 0 )
+		SizerBottom.Add( ( 0, 0), 1, wx.EXPAND, 0 )
 		
 		self.ButtonRestore = wx.Button( self.PanelStatesSounds, THING_RESTORE, u"Restore", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ButtonRestore.SetMinSize( wx.Size( -1,28 ) )
@@ -1336,7 +1336,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerMain.Add( self.PanelStatesSounds, 1, wx.BOTTOM|wx.EXPAND|wx.TOP, 9 )
 		
 		
-		SizerMain.AddSpacer( ( 16, 0), 0, 0, 0 )
+		SizerMain.Add( ( 16, 0), 0, 0, 0 )
 		
 		self.PanelFlags = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerFlags = wx.BoxSizer( wx.VERTICAL )
@@ -1360,7 +1360,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerMain.Add( self.PanelFlags, 1, wx.BOTTOM|wx.EXPAND|wx.TOP, 9 )
 		
 		
-		SizerMain.AddSpacer( ( 16, 0), 0, 0, 0 )
+		SizerMain.Add( ( 16, 0), 0, 0, 0 )
 		
 		self.ThingList = wx.ListCtrl( self, THING_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.NO_BORDER )
 		SizerMain.Add( self.ThingList, 1, wx.EXPAND, 0 )
@@ -1370,13 +1370,13 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		self.ThingContext = wx.Menu()
 		self.ThingContextCopy = wx.MenuItem( self.ThingContext, wx.ID_ANY, u"Copy"+ u"\t" + u"Ctrl+C", wx.EmptyString, wx.ITEM_NORMAL )
-		self.ThingContext.AppendItem( self.ThingContextCopy )
+		self.ThingContext.Append( self.ThingContextCopy )
 		
 		self.ThingContextPaste = wx.MenuItem( self.ThingContext, wx.ID_ANY, u"Paste"+ u"\t" + u"Ctrl+V", wx.EmptyString, wx.ITEM_NORMAL )
-		self.ThingContext.AppendItem( self.ThingContextPaste )
+		self.ThingContext.Append( self.ThingContextPaste )
 		
 		self.ThingContextClear = wx.MenuItem( self.ThingContext, wx.ID_ANY, u"Clear", wx.EmptyString, wx.ITEM_NORMAL )
-		self.ThingContext.AppendItem( self.ThingContextClear )
+		self.ThingContext.Append( self.ThingContextClear )
 		
 		self.Bind( wx.EVT_RIGHT_DOWN, self.ThingsFrameBaseOnContextMenu ) 
 		
@@ -1877,7 +1877,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 	def __init__( self, parent ):
 		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 872,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.WANTS_CHARS )
 		
-		self.SetSizeHintsSz( wx.Size( 872,700 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 872,700 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -1905,7 +1905,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		PropertySizer = wx.BoxSizer( wx.VERTICAL )
 		
 		
-		PropertySizer.AddSpacer( ( 0, 6), 0, wx.EXPAND, 5 )
+		PropertySizer.Add( ( 0, 6), 0, wx.EXPAND, 5 )
 		
 		bSizer52 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -1951,7 +1951,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		PropertySizer.Add( bSizer521, 0, wx.EXPAND, 5 )
 		
 		
-		PropertySizer.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
+		PropertySizer.Add( ( 0, 9), 0, wx.EXPAND, 5 )
 		
 		bSizer5211 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -1974,7 +1974,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		PropertySizer.Add( bSizer5211, 0, wx.EXPAND, 5 )
 		
 		
-		PropertySizer.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
+		PropertySizer.Add( ( 0, 9), 0, wx.EXPAND, 5 )
 		
 		bSizer5212 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -1990,7 +1990,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		PropertySizer.Add( bSizer5212, 0, wx.EXPAND, 5 )
 		
 		
-		PropertySizer.AddSpacer( ( 0, 9), 0, wx.EXPAND, 6 )
+		PropertySizer.Add( ( 0, 9), 0, wx.EXPAND, 6 )
 		
 		bSizer521211 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -2152,7 +2152,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		PropertySizer.Add( bSizer5212129, 0, wx.EXPAND, 5 )
 		
 		
-		PropertySizer.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
+		PropertySizer.Add( ( 0, 9), 0, wx.EXPAND, 5 )
 		
 		self.Restore = wx.Button( self.PropertyPanel, wx.ID_ANY, u"Restore", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.Restore.SetMinSize( wx.Size( -1,28 ) )
@@ -2208,7 +2208,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer421.Add( bSizer441, 0, wx.ALL|wx.EXPAND, 6 )
 		
-		self.StateList = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_SORT_HEADER|wx.LC_REPORT|wx.NO_BORDER )
+		self.StateList = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_SORT_HEADER|wx.LC_REPORT|wx.CLIP_CHILDREN|wx.NO_BORDER )
 		self.StateList.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		
 		bSizer421.Add( self.StateList, 1, wx.EXPAND, 5 )
@@ -2224,26 +2224,26 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.Layout()
 		self.StateContext = wx.Menu()
 		self.StateContextCopy = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Copy"+ u"\t" + u"Ctrl+C", wx.EmptyString, wx.ITEM_NORMAL )
-		self.StateContext.AppendItem( self.StateContextCopy )
+		self.StateContext.Append( self.StateContextCopy )
 		
 		self.StateContextPaste = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Paste"+ u"\t" + u"Ctrl+V", wx.EmptyString, wx.ITEM_NORMAL )
-		self.StateContext.AppendItem( self.StateContextPaste )
+		self.StateContext.Append( self.StateContextPaste )
 		
 		self.StateContextClear = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Clear", wx.EmptyString, wx.ITEM_NORMAL )
-		self.StateContext.AppendItem( self.StateContextClear )
+		self.StateContext.Append( self.StateContextClear )
 		
 		self.StateContext.AppendSeparator()
 		
 		self.StateContextLink = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Link"+ u"\t" + u"L", wx.EmptyString, wx.ITEM_NORMAL )
-		self.StateContext.AppendItem( self.StateContextLink )
+		self.StateContext.Append( self.StateContextLink )
 		
 		self.StateContextLinkLoop = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Link (loop)"+ u"\t" + u"Shift+L", wx.EmptyString, wx.ITEM_NORMAL )
-		self.StateContext.AppendItem( self.StateContextLinkLoop )
+		self.StateContext.Append( self.StateContextLinkLoop )
 		
 		self.StateContext.AppendSeparator()
 		
 		self.StateContextPreview = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Preview"+ u"\t" + u"~", wx.EmptyString, wx.ITEM_NORMAL )
-		self.StateContext.AppendItem( self.StateContextPreview )
+		self.StateContext.Append( self.StateContextPreview )
 		
 		self.Bind( wx.EVT_RIGHT_DOWN, self.StatesFrameBaseOnContextMenu ) 
 		
@@ -2468,7 +2468,7 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 	def __init__( self, parent ):
 		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_SOUNDS, title = u"Sounds", pos = wx.DefaultPosition, size = wx.Size( 430,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 430,480 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 430,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -2505,7 +2505,7 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		bSizer42.Add( bSizer521, 0, wx.EXPAND, 5 )
 		
 		
-		bSizer42.AddSpacer( ( 0, 12), 0, wx.EXPAND, 0 )
+		bSizer42.Add( ( 0, 12), 0, wx.EXPAND, 0 )
 		
 		self.Restore = wx.Button( self.m_panel43, SOUNDS_RESTORE, u"Restore", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.Restore.SetMinSize( wx.Size( -1,28 ) )
@@ -2586,7 +2586,7 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 	def __init__( self, parent ):
 		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STRINGS, title = u"Strings", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 640,480 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 640,480 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -2599,7 +2599,7 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		
-		bSizer158.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		bSizer158.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		self.Restore = wx.Button( self, STRINGS_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Restore.SetMinSize( wx.Size( 120,28 ) )
@@ -2646,7 +2646,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 	def __init__( self, parent ):
 		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 560,425 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
 		
-		self.SetSizeHintsSz( wx.Size( 560,425 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 560,425 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -2740,7 +2740,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer139.Add( self.PanelDecal, 0, wx.EXPAND, 0 )
 		
 		
-		bSizer139.AddSpacer( ( 0, 16), 0, wx.EXPAND, 0 )
+		bSizer139.Add( ( 0, 16), 0, wx.EXPAND, 0 )
 		
 		self.PanelStateLower = wx.Panel( self.m_panel44, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateLower = wx.BoxSizer( wx.HORIZONTAL )
@@ -2916,7 +2916,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer93.Add( bSizer139, 0, wx.ALL, 0 )
 		
 		
-		bSizer93.AddSpacer( ( 0, 16), 0, wx.EXPAND, 0 )
+		bSizer93.Add( ( 0, 16), 0, wx.EXPAND, 0 )
 		
 		bSizer92 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -3113,7 +3113,7 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 	def __init__( self, parent ):
 		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_AMMO, title = u"Ammo", pos = wx.DefaultPosition, size = wx.Size( 520,250 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 520,250 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 520,250 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -3143,7 +3143,7 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		bSizer139.Add( gSizer1, 0, wx.ALL, 6 )
 		
 		
-		bSizer139.AddSpacer( ( 0, 0), 1, wx.EXPAND, 0 )
+		bSizer139.Add( ( 0, 0), 1, wx.EXPAND, 0 )
 		
 		self.Rename = wx.Button( self.m_panel45, AMMO_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Rename.SetMinSize( wx.Size( -1,28 ) )
@@ -3221,7 +3221,7 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 	def __init__( self, parent ):
 		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_CHEATS, title = u"Cheats", pos = wx.DefaultPosition, size = wx.Size( 340,401 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 340,401 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 340,401 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -3232,7 +3232,7 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 		bSizer158 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		
-		bSizer158.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		bSizer158.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		self.Restore = wx.Button( self, CHEATS_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Restore.SetMinSize( wx.Size( 120,28 ) )
@@ -3279,7 +3279,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 	def __init__( self, parent ):
 		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_MISC, title = u"Miscellaneous", pos = wx.DefaultPosition, size = wx.Size( 420,450 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 420,350 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 420,350 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer152 = wx.BoxSizer( wx.HORIZONTAL )
@@ -3375,7 +3375,7 @@ class ParFrameBase ( wx.MDIChildFrame ):
 	def __init__( self, parent ):
 		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_PAR, title = u"Par times", pos = wx.DefaultPosition, size = wx.Size( 400,380 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 400,380 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 400,380 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -3512,7 +3512,7 @@ class SpritesDialogBase ( wx.Dialog ):
 	def __init__( self, parent ):
 		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"Sprites", pos = wx.DefaultPosition, size = wx.Size( 640,490 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.WANTS_CHARS )
 		
-		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		
 		bSizer39 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -3570,7 +3570,7 @@ class SpritesDialogBase ( wx.Dialog ):
 		bSizer43 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		
-		bSizer43.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		bSizer43.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		self.ButtonOk = wx.Button( self, SPRITES_OK, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ButtonOk.SetDefault() 
@@ -3653,7 +3653,7 @@ class StringDialogBase ( wx.Dialog ):
 	def __init__( self, parent ):
 		wx.Dialog.__init__ ( self, parent, id = DIALOG_SPRITES, title = u"String", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.Size( 640,480 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 640,480 ), wx.DefaultSize )
 		
 		bSizer39 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -3701,7 +3701,7 @@ class StringDialogBase ( wx.Dialog ):
 		bSizer43.Add( self.CharsLeft, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
 		
-		bSizer43.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		bSizer43.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		self.ButtonOk = wx.Button( self.m_panel51, STRING_OK, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ButtonOk.SetDefault() 
@@ -3774,7 +3774,7 @@ class PatchInfoDialogBase ( wx.Dialog ):
 	def __init__( self, parent ):
 		wx.Dialog.__init__ ( self, parent, id = DIALOG_PATCHINFO, title = u"Patch", pos = wx.DefaultPosition, size = wx.Size( 600,325 ), style = wx.CAPTION|wx.CLOSE_BOX )
 		
-		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		
 		bSizer44 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -3795,7 +3795,7 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		bSizer45.Add( self.EngineList, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 		
 		
-		bSizer45.AddSpacer( ( 26, 0), 0, wx.BOTTOM|wx.EXPAND|wx.RIGHT|wx.TOP, 6 )
+		bSizer45.Add( ( 26, 0), 0, wx.BOTTOM|wx.EXPAND|wx.RIGHT|wx.TOP, 6 )
 		
 		
 		bSizer187.Add( bSizer45, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 6 )
@@ -3853,7 +3853,7 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		bSizer4521 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		
-		bSizer4521.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		bSizer4521.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		self.ButtonOk = wx.Button( self.m_panel52, wx.ID_ANY, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ButtonOk.SetDefault() 
@@ -3926,7 +3926,7 @@ class StartDialogBase ( wx.Dialog ):
 	def __init__( self, parent ):
 		wx.Dialog.__init__ ( self, parent, id = DIALOG_START, title = u"WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 600,340 ), style = wx.CAPTION|wx.CLOSE_BOX )
 		
-		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		
 		bSizer50 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -3963,7 +3963,7 @@ class StartDialogBase ( wx.Dialog ):
 		bSizer56.Add( bSizer54, 1, wx.EXPAND|wx.LEFT|wx.RIGHT, 6 )
 		
 		
-		bSizer56.AddSpacer( ( 0, 0), 0, wx.ALL|wx.EXPAND, 3 )
+		bSizer56.Add( ( 0, 0), 0, wx.ALL|wx.EXPAND, 3 )
 		
 		
 		bSizer188.Add( bSizer56, 1, wx.ALL|wx.EXPAND, 3 )
@@ -3977,7 +3977,7 @@ class StartDialogBase ( wx.Dialog ):
 		bSizer55.Add( self.Help, 0, wx.BOTTOM|wx.LEFT|wx.RIGHT, 12 )
 		
 		
-		bSizer55.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		bSizer55.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		self.Cancel = wx.Button( self.m_panel53, START_CANCEL, u"Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Cancel.SetDefault() 
@@ -4037,7 +4037,7 @@ class AboutDialogBase ( wx.Dialog ):
 	def __init__( self, parent ):
 		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,440 ), style = wx.CAPTION|wx.CLOSE_BOX )
 		
-		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		
 		bSizer55 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -4059,13 +4059,14 @@ class AboutDialogBase ( wx.Dialog ):
 		bSizer56.Add( self.Version, 0, wx.ALL, 6 )
 		
 		
-		bSizer56.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
+		bSizer56.Add( ( 0, 9), 0, wx.EXPAND, 5 )
 		
-		self.URL = wx.HyperlinkCtrl( self, wx.ID_ANY, u"http://www.teamhellspawn.com/exl/whacked4", u"http://www.teamhellspawn.com/exl/whacked4", wx.DefaultPosition, wx.DefaultSize, wx.HL_DEFAULT_STYLE )
-		bSizer56.Add( self.URL, 0, wx.ALL, 6 )
+		self.m_staticText115 = wx.StaticText( self, wx.ID_ANY, u"http://www.teamhellspawn.com/exl/whacked4", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText115.Wrap( -1 )
+		bSizer56.Add( self.m_staticText115, 0, wx.ALL, 5 )
 		
 		
-		bSizer56.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
+		bSizer56.Add( ( 0, 9), 0, wx.EXPAND, 5 )
 		
 		bSizer84 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -4073,14 +4074,15 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText1391.Wrap( -1 )
 		bSizer84.Add( self.m_staticText1391, 0, wx.BOTTOM|wx.LEFT|wx.TOP, 6 )
 		
-		self.URL1 = wx.HyperlinkCtrl( self, wx.ID_ANY, u"Buuf Icon set", u"http://www.iconarchive.com/show/buuf-icons-by-mattahan.html", wx.DefaultPosition, wx.DefaultSize, wx.HL_DEFAULT_STYLE )
-		bSizer84.Add( self.URL1, 0, wx.BOTTOM|wx.RIGHT|wx.TOP, 6 )
+		self.m_staticText116 = wx.StaticText( self, wx.ID_ANY, u"Buuf Icon set http://www.iconarchive.com/show/buuf-icons-by-mattahan.html", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText116.Wrap( -1 )
+		bSizer84.Add( self.m_staticText116, 0, wx.ALL, 5 )
 		
 		
 		bSizer56.Add( bSizer84, 0, wx.EXPAND, 5 )
 		
 		
-		bSizer56.AddSpacer( ( 0, 9), 0, wx.EXPAND, 5 )
+		bSizer56.Add( ( 0, 9), 0, wx.EXPAND, 5 )
 		
 		self.m_staticText139 = wx.StaticText( self, wx.ID_ANY, u"Thanks to...", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText139.Wrap( -1 )
@@ -4091,7 +4093,7 @@ class AboutDialogBase ( wx.Dialog ):
 		bSizer56.Add( self.m_staticText138, 1, wx.ALL, 6 )
 		
 		
-		bSizer56.AddSpacer( ( 0, 12), 0, wx.EXPAND, 5 )
+		bSizer56.Add( ( 0, 12), 0, wx.EXPAND, 5 )
 		
 		bSizer58 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -4101,7 +4103,7 @@ class AboutDialogBase ( wx.Dialog ):
 		bSizer58.Add( self.License, 0, wx.ALL, 0 )
 		
 		
-		bSizer58.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		bSizer58.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		self.ButtonOk = wx.Button( self, ABOUT_OK, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.ButtonOk.SetDefault() 
@@ -4146,7 +4148,7 @@ class ErrorDialogBase ( wx.Dialog ):
 	def __init__( self, parent ):
 		wx.Dialog.__init__ ( self, parent, id = DIALOG_ERROR, title = u"WhackEd4 fatal error", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.SYSTEM_MENU )
 		
-		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		
 		bSizer118 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -4179,7 +4181,7 @@ class ErrorDialogBase ( wx.Dialog ):
 		bSizer119.Add( self.m_button43, 0, wx.ALL, 6 )
 		
 		
-		bSizer119.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		bSizer119.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		self.m_button44 = wx.Button( self.m_panel54, ERROR_CLOSE, u"Close", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button44.SetMinSize( wx.Size( 144,28 ) )
@@ -4226,7 +4228,7 @@ class StatePreviewDialogBase ( wx.Dialog ):
 	def __init__( self, parent ):
 		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Preview", pos = wx.DefaultPosition, size = wx.Size( 640,440 ), style = wx.CAPTION|wx.RAISED_BORDER|wx.WANTS_CHARS )
 		
-		self.SetSizeHintsSz( wx.Size( 640,440 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 640,440 ), wx.DefaultSize )
 		
 		bSizer140 = wx.BoxSizer( wx.VERTICAL )
 		
