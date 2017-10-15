@@ -164,7 +164,7 @@ class Entry(object):
         Returns a string representing this entry's header in a Dehacked file.
         """
 
-        if hasattr(table, 'names'):
+        if table.names is not None:
             return '\n{} {} ({})\n'.format(self.NAME, index + offset, table.names[index])
         else:
             return '\n{} {}\n'.format(self.NAME, index + offset)

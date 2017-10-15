@@ -14,7 +14,7 @@ from whacked4 import settingshandler
 APP_NAME = 'WhackEd4'
 APP_SIMPLE_NAME = 'whacked4'
 APP_VERSION = '1.2.2'
-APP_BETA = False
+APP_BETA = True
 
 # Monospaced font for displays that use them.
 FONT_MONOSPACED_NAME = 'DejaVu Sans Mono'

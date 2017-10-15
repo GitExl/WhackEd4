@@ -11,9 +11,7 @@ Low priority bugs
 
 Features
 1.2.2
-- Detect if a thing's speed is fixed point or not by looking at a thing's states. Als see cfg\mbf.json for the
-  "setsMomentum" action properties that will need to be added to other configs as well.
-  https://www.doomworld.com/forum/topic/62909-whacked-4/?do=findComment&comment=1782876
+- Bug related to speed conversion: https://www.doomworld.com/forum/topic/62909-whacked-4/?page=5#comment-1789026
 - UI manual \ Dehacked tutorial.
 - Look into new Eternity Engine and PrBoom+ Dehacked features.
 
