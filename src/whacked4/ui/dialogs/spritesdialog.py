@@ -194,7 +194,7 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         # Prepare sprite names list.
         self.SpriteNames.ClearAll()
-        client_width = self.SpriteNames.GetClientSizeTuple()[0] - 20
+        client_width = self.SpriteNames.GetClientSize()[0] - 20
         self.SpriteNames.InsertColumn(0, 'Name', width=client_width)
 
         # Add the filtered sprite names to the names list.
