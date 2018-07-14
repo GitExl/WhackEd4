@@ -79,7 +79,7 @@ def write_dict(f, items, source_items, data, header):
 
     # Build a list of modified items.
     out = {}
-    for key, item in items.iteritems():
+    for key, item in items.items():
         if item != source_items[key]:
             out[data[key]['patchKey']] = item
 
@@ -251,14 +251,14 @@ class Patch(object):
 
         # Create a list of modified strings.
         out = {}
-        for key, value in self.strings.iteritems():
+        for key, value in self.strings.items():
             if value != self.engine.strings[key]:
                 out[key] = value
 
         # Write modified string to the patch file.
         if len(out) > 0:
             f.write('\n[STRINGS]\n')
-            for name, string in out.iteritems():
+            for name, string in out.items():
                 f.write('{} = {}\n'.format(name, string_escape(string)))
 
     def write_patch_pars(self, f):
@@ -326,7 +326,7 @@ class Patch(object):
 
             if len(out) > 0:
                 f.write('\n[CODEPTR]\n')
-                for index, action in out.iteritems():
+                for index, action in out.items():
                     f.write('FRAME {} = {}\n'.format(index, action))
 
     def analyze_patch(self, filename, engines):
@@ -360,7 +360,7 @@ class Patch(object):
                 # Searches the engines list for an engine that supports loading this patch.
                 if line.startswith('Doom version = '):
                     version = int(line[15:])
-                    for find_engine in engines.itervalues():
+                    for find_engine in engines.values():
                         if version in find_engine.versions and self.extended == find_engine.extended:
                             self.version = version
                             break
@@ -525,7 +525,7 @@ class Patch(object):
                     # This ensures that extended patches can still load normal strings.
                     else:
                         key = None
-                        for string_key, text in self.strings.iteritems():
+                        for string_key, text in self.strings.items():
                             if text == original:
                                 key = string_key
                                 break

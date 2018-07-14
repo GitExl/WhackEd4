@@ -118,7 +118,7 @@ class Entry(object):
         @raise LookupError: if the patch key cannot be found in this entry.
         """
 
-        for key, field in self.FIELDS.iteritems():
+        for key, field in self.FIELDS.items():
             if field.patch_key != patch_key:
                 continue
 
@@ -147,7 +147,7 @@ class Entry(object):
         """
 
         self.values = {}
-        for key, field in self.FIELDS.iteritems():
+        for key, field in self.FIELDS.items():
             self.values[key] = self.validate_field_value(key, json[key])
 
         return self
@@ -177,7 +177,7 @@ class Entry(object):
         """
 
         output = {}
-        for key, field in self.FIELDS.iteritems():
+        for key, field in self.FIELDS.items():
 
             # Skip actions, these are stored in a separate "fake" table.
             if field.type == FieldType.ACTION:
@@ -193,7 +193,7 @@ class Entry(object):
 
         # Create a list of patch key\value pairs to output.
         output_list = []
-        for key, value in output.iteritems():
+        for key, value in output.items():
             field = self.FIELDS[key]
 
             if field.type == FieldType.FLAGS:
@@ -202,7 +202,7 @@ class Entry(object):
             output_list.append('{} = {}'.format(field.patch_key, value))
 
         # Add extra values.
-        for key, value in self.extra_values.iteritems():
+        for key, value in self.extra_values.items():
             output_list.append('{} = {}'.format(key, value))
 
         return '\n'.join(output_list) + '\n'

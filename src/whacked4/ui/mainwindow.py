@@ -238,7 +238,7 @@ class MainWindow(windows.MainFrameBase):
             return
 
         # Display any messages from the patch load process.
-        for message in messages.itervalues():
+        for message in messages.values():
             message += '\n\nPress Yes to continue loading, No to stop displaying messages or Cancel to abort ' \
                        'loading this patch.'
             result = wx.MessageBox(message=message, caption='Patch message',
@@ -297,7 +297,7 @@ class MainWindow(windows.MainFrameBase):
             return
 
         # Display any messages from the patch load process.
-        for message in messages.itervalues():
+        for message in messages.values():
             message += '\n\nPress Yes to continue loading, No to stop displaying messages or Cancel to abort ' \
                        'loading this patch.'
             result = wx.MessageBox(message=message, caption='Patch message',
@@ -394,7 +394,7 @@ class MainWindow(windows.MainFrameBase):
 
         wx.BeginBusyCursor()
 
-        for window in self.editor_windows.itervalues():
+        for window in self.editor_windows.values():
             window.before_save()
 
         # Create a backup of the existing file.
@@ -443,7 +443,7 @@ class MainWindow(windows.MainFrameBase):
         wx.BeginBusyCursor()
 
         # Update editor window contents.
-        for window in self.editor_windows.itervalues():
+        for window in self.editor_windows.values():
             window.build(self.patch)
 
         # Store new workspace window data, or apply existing data.
@@ -569,7 +569,7 @@ class MainWindow(windows.MainFrameBase):
         @return: a toolbar id if the window instance was found, wx.NOT_FOUND if none was found.
         """
 
-        for tool_id, editor_window in self.editor_windows.iteritems():
+        for tool_id, editor_window in self.editor_windows.items():
             if window == editor_window:
                 return tool_id
 
@@ -660,7 +660,7 @@ class MainWindow(windows.MainFrameBase):
         Sets the visibility of all editor windows at once.
         """
 
-        for window in self.editor_windows.itervalues():
+        for window in self.editor_windows.values():
             window.Show(show)
 
     def editor_window_closed(self, window):
@@ -680,7 +680,7 @@ class MainWindow(windows.MainFrameBase):
         """
 
         # Set toolbar states.
-        for tool_id in self.editor_windows.iterkeys():
+        for tool_id in self.editor_windows.keys():
             self.ToolBar.EnableTool(tool_id, enabled)
 
         # Set menu states.
@@ -707,7 +707,7 @@ class MainWindow(windows.MainFrameBase):
         Updates the toolbar button's state to reflect whether they are shown or not.
         """
 
-        for tool_id, window in self.editor_windows.iteritems():
+        for tool_id, window in self.editor_windows.items():
             self.MainToolbar.ToggleTool(tool_id, window.IsShown())
 
     def workspace_save(self):
@@ -777,7 +777,7 @@ class MainWindow(windows.MainFrameBase):
         self.workspace.store_windows(self, self.workspace_windows)
         self.load_wads()
 
-        for window in self.editor_windows.itervalues():
+        for window in self.editor_windows.values():
             window.update()
 
     def file_open_recent(self, event):

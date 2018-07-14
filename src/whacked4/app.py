@@ -34,7 +34,7 @@ class WhackEd4App(wx.App):
         # Enable debugging mode.
         if args.debug:
             config.DEBUG = True
-            print 'Debug mode enabled. Only writing exceptions to stdout.'
+            print('Debug mode enabled. Only writing exceptions to stdout.')
         else:
             self.redirect_logs()
             sys.excepthook = self.exception_handler
@@ -66,7 +66,7 @@ class WhackEd4App(wx.App):
         Redirects stdout and stderr to a single text file.
         """
 
-        self.log = file(config.LOG_PATH, 'w+')
+        self.log = open(config.LOG_PATH, 'w+')
 
         sys.stdout = self.log
         sys.stderr = self.log

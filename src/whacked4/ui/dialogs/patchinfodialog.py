@@ -83,7 +83,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
                 self.PWADList.InsertStringItem(index, pwad)
 
         # Display a list of engines that are supported by the patch.
-        for name, engine in self.engines.iteritems():
+        for name, engine in self.engines.items():
             if engine.is_compatible(self.patch) or self.patch.version == 0:
                 self.EngineList.Append(engine.name, clientData=name)
 

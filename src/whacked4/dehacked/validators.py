@@ -58,7 +58,7 @@ def _get_thing_flag_mnemonics(bits, table):
         if (bits & mask) == 0:
             continue
 
-        for mnemonic, flag in table.flags.iteritems():
+        for mnemonic, flag in table.flags.items():
             if 'index' in flag and flag['index'] == bit:
                 out.add(mnemonic)
                 break

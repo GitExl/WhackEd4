@@ -193,14 +193,14 @@ class WADList(object):
             sprite_lumps.update(wad.get_sprite_lumps())
 
         # Create a list of sprite names.
-        for name in sprite_lumps.iterkeys():
+        for name in sprite_lumps.keys():
             sprite_name = name[0:4]
             self.sprites[sprite_name] = SpriteEntry(sprite_name)
 
         # Add sprite lumps for each sprite.
-        for sprite_key, sprite_entry in self.sprites.iteritems():
+        for sprite_key, sprite_entry in self.sprites.items():
 
-            for lump_name, lump in sprite_lumps.iteritems():
+            for lump_name, lump in sprite_lumps.items():
                 if lump_name[0:4] != sprite_key:
                     continue
 

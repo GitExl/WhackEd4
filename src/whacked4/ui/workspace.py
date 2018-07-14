@@ -70,7 +70,7 @@ class Workspace(object):
         @param workspace_windows: a dict containing window names and window objects to restore.
         """
 
-        for window_name, window in workspace_windows.iteritems():
+        for window_name, window in workspace_windows.items():
             if window_name not in self.windows:
                 continue
 
@@ -112,7 +112,7 @@ class Workspace(object):
         """
 
         self.windows = {}
-        for window_name, window in workspace_windows.iteritems():
+        for window_name, window in workspace_windows.items():
             # Store dimensions.
             window_data = {
                 'x': window.workspace_data['x'],

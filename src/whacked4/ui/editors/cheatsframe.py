@@ -54,7 +54,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
             self.CheatList.InsertColumn(0, 'Name', width=185)
             self.CheatList.InsertColumn(1, 'Code', width=138)
 
-        for index, key in enumerate(self.patch.engine.cheat_data.iterkeys()):
+        for index, key in enumerate(self.patch.engine.cheat_data.keys()):
             self.CheatList.InsertStringItem(index, self.patch.engine.cheat_data[key]['name'])
 
             self.cheatlist_update_row(index)

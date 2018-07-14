@@ -54,7 +54,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
                 self.StringList.InsertColumn(1, 'String', width=800)
 
             string_index = 0
-            for name in self.patch.strings.iterkeys():
+            for name in self.patch.strings.keys():
                 self.StringList.InsertStringItem(string_index, name)
                 self.StringList.SetItemFont(string_index, config.FONT_MONOSPACED)
 

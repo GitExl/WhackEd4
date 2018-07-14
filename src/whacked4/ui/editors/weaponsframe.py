@@ -62,7 +62,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.selected_index = 0
         self.preview_dialog = None
 
-        for prop in self.PROPS_STATENAMES.iterkeys():
+        for prop in self.PROPS_STATENAMES.keys():
             item = self.FindWindowById(prop)
             item.SetFont(config.FONT_MONOSPACED_BOLD)
 

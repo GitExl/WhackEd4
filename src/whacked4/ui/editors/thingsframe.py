@@ -154,11 +154,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.thingflag_mnemonics = None
 
-        for prop in self.PROPS_STATENAMES.iterkeys():
+        for prop in self.PROPS_STATENAMES.keys():
             item = self.FindWindowById(prop)
             item.SetFont(config.FONT_MONOSPACED_BOLD)
 
-        for prop in self.PROPS_SOUNDNAMES.iterkeys():
+        for prop in self.PROPS_SOUNDNAMES.keys():
             item = self.FindWindowById(prop)
             item.SetFont(config.FONT_MONOSPACED_BOLD)
 
@@ -291,7 +291,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         flaglist = []
         self.thingflag_mnemonics = []
 
-        for mnemonic, flag in self.patch.engine.things.flags.iteritems():
+        for mnemonic, flag in self.patch.engine.things.flags.items():
             if 'alias' in flag:
                 continue
             flaglist.append(' ' + flag['name'])

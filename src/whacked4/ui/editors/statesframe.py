@@ -162,7 +162,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         @see: EditorMixin.undo_restore_item
         """
 
-        for state_index, state in item.iteritems():
+        for state_index, state in item.items():
             self.patch.states[state_index] = state
 
             # Restore all state indices in the undo item.
@@ -346,7 +346,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         action_items = []
 
-        for action in self.patch.engine.actions.itervalues():
+        for action in self.patch.engine.actions.values():
             action_items.append(action['name'])
 
         self.Action.SetItems(action_items)

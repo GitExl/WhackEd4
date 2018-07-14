@@ -102,7 +102,7 @@ class Engine(object):
             try:
                 data = json.load(f, object_pairs_hook=OrderedDict)
             except ValueError as e:
-                print 'Error in table file {}'.format(filename)
+                print('Error in table file {}'.format(filename))
                 raise e
 
         try:
@@ -308,7 +308,7 @@ class Engine(object):
         byte_struct = struct.Struct('<B')
 
         self.misc = {}
-        for name, item in self.misc_data.iteritems():
+        for name, item in self.misc_data.items():
             f.seek(item['offsets'][0])
 
             # An item's data type defines its byte length.
@@ -357,7 +357,7 @@ class Engine(object):
         """
 
         self.cheats = {}
-        for name, data in self.cheat_data.iteritems():
+        for name, data in self.cheat_data.items():
             f.seek(exe_config['cheatOffset'] + data['offset'])
             text = f.read(data['length'])
 
@@ -408,7 +408,7 @@ class Engine(object):
         @param action_name: the name of the action to find the key of.
         """
 
-        for key, item in self.actions.iteritems():
+        for key, item in self.actions.items():
             if item['name'] == action_name:
                 return key
 
@@ -498,7 +498,7 @@ def get_key_from_patchkey(data, patch_key):
     @raise LookupError: if the patch key cannot be found.
     """
 
-    for key, item in data.iteritems():
+    for key, item in data.items():
         if item['patchKey'] == patch_key:
             return key
 

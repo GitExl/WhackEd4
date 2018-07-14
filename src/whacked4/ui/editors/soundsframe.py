@@ -61,7 +61,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
         sys_col = self.SoundList.GetBackgroundColour()
 
-        for index in range(128 / 32):
+        for index in range(4):
             factor = 0.06 * index
             sys_factor = 1 - factor
 

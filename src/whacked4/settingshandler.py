@@ -82,11 +82,11 @@ class SettingsHandler(object):
             settings = json.load(f)
 
             # Store only known settings.
-            for setting_name in settings.iterkeys():
+            for setting_name in settings.keys():
                 if setting_name in self.defaults:
                     self.settings[setting_name] = settings[setting_name]
                 else:
-                    print 'Ignoring unknown setting {}'.format(setting_name)
+                    print('Ignoring unknown setting {}'.format(setting_name))
 
     def save(self):
         """
