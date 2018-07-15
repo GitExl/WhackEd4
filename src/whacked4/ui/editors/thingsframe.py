@@ -233,7 +233,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         self.ThingRenderStyle.Clear()
-        self.ThingRenderStyle.AppendItems(self.patch.engine.render_styles.values())
+        self.ThingRenderStyle.AppendItems(list(self.patch.engine.render_styles.values()))
 
     def thinglist_build(self):
         """
@@ -249,7 +249,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             self.ThingList.InsertColumn(3, 'Game', width=50)
 
         for index in range(len(self.patch.things.names)):
-            self.ThingList.InsertStringItem(index, '')
+            self.ThingList.InsertItem(index, '')
             self.thinglist_update_row(index)
 
         self.list_autosize(self.ThingList)
@@ -264,9 +264,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         thing_name = self.patch.things.names[row_index]
 
         self.ThingList.SetItemText(row_index, str(row_index + 1))
-        self.ThingList.SetStringItem(row_index, 1, thing_name)
-        self.ThingList.SetStringItem(row_index, 2, str(thing['id']))
-        self.ThingList.SetStringItem(row_index, 3, thing['game'])
+        self.ThingList.SetItem(row_index, 1, thing_name)
+        self.ThingList.SetItem(row_index, 2, str(thing['id']))
+        self.ThingList.SetItem(row_index, 3, thing['game'])
 
     def thinglist_resize(self, event):
         """
@@ -307,7 +307,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         # Call the editor mixin function that we are overriding.
         editormixin.EditorMixin.activate(self, event)
 
-        if self.IsBeingDeleted():
+        if not self:
             return
 
         # Update the properties being displayed by this window, in case state or sound names have changed.
@@ -563,7 +563,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         else:
             tip = ''
 
-        self.ThingFlags.SetToolTipString(tip)
+        self.ThingFlags.SetToolTip(tip)
 
     def set_state_external(self, event):
         """

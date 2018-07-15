@@ -26,7 +26,7 @@ class StartDialog(windows.StartDialogBase):
         config.settings.recent_files_clean()
         recent_files = config.settings['recent_files']
         for index, filename in enumerate(recent_files):
-            self.FileList.InsertStringItem(index, filename)
+            self.FileList.InsertItem(index, filename)
 
     def open_file_list(self, event):
         """

@@ -50,7 +50,8 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         Updates the displayed properties of the currently selected entry.
         """
 
-        key = self.patch.engine.misc_data.keys()[self.selected_index]
+        misc_data_keys = list(self.patch.engine.misc_data.keys())
+        key = misc_data_keys[self.selected_index]
         data = self.patch.engine.misc_data[key]
         value = self.patch.misc[key]
 
@@ -84,11 +85,11 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
             self.MiscList.InsertColumn(0, 'Name', width=76)
             self.MiscList.InsertColumn(1, 'Value', width=67)
 
-        misc_values = self.patch.engine.misc_data.values()
+        misc_values = list(self.patch.engine.misc_data.values())
         for misc_index in range(len(misc_values)):
             misc_value = misc_values[misc_index]
 
-            self.MiscList.InsertStringItem(misc_index, misc_value['name'])
+            self.MiscList.InsertItem(misc_index, misc_value['name'])
 
             self.misclist_update_row(misc_index)
 
@@ -100,11 +101,12 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         Updates a row in the misc list.
         """
 
-        data_key = self.patch.engine.misc_data.keys()[row_index]
+        data_keys = list(self.patch.engine.misc_data.keys())
+        data_key = data_keys[row_index]
         data = self.patch.engine.misc_data[data_key]
         value = self.patch.misc[data_key]
 
-        self.MiscList.SetStringItem(row_index, 0, data['name'])
+        self.MiscList.SetItem(row_index, 0, data['name'])
 
         if data['type'] == 'boolean':
             if value == data['on']:
@@ -114,7 +116,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         else:
             str_value = str(value)
 
-        self.MiscList.SetStringItem(row_index, 1, str_value)
+        self.MiscList.SetItem(row_index, 1, str_value)
 
     def misclist_resize(self, event):
         """

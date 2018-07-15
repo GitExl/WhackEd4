@@ -96,11 +96,11 @@ class SpritePreview(wx.Panel):
 
     def update_cursor(self):
         if self.lock_angle:
-            self.SetCursor(wx.StockCursor(wx.CURSOR_ARROW))
+            self.SetCursor(wx.Cursor(wx.CURSOR_ARROW))
         elif self.drag_point_start is None:
-            self.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
+            self.SetCursor(wx.Cursor(wx.CURSOR_HAND))
         else:
-            self.SetCursor(wx.StockCursor(wx.CURSOR_SIZEWE))
+            self.SetCursor(wx.Cursor(wx.CURSOR_SIZEWE))
 
     def set_source(self, wads):
         """
@@ -202,7 +202,7 @@ class SpritePreview(wx.Panel):
 
     def resize(self, event):
         size = self.GetClientSize()
-        self.buffer = wx.EmptyBitmap(size[0], size[1])
+        self.buffer = wx.Bitmap(size[0], size[1])
         self.update_paint()
 
     def clear(self):

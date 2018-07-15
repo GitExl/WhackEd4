@@ -63,7 +63,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
             self.ParList.InsertColumn(2, 'Minutes', width=69)
 
         for index in range(len(self.patch.pars)):
-            self.ParList.InsertStringItem(index, '')
+            self.ParList.InsertItem(index, '')
 
             self.parlist_update_row(index)
 
@@ -84,9 +84,9 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
 
         par = self.patch.pars[row_index]
 
-        self.ParList.SetStringItem(row_index, 0, utils.get_map_name(par['episode'], par['map']))
-        self.ParList.SetStringItem(row_index, 1, str(par['seconds']))
-        self.ParList.SetStringItem(row_index, 2, utils.seconds_to_minutes(par['seconds']))
+        self.ParList.SetItem(row_index, 0, utils.get_map_name(par['episode'], par['map']))
+        self.ParList.SetItem(row_index, 1, str(par['seconds']))
+        self.ParList.SetItem(row_index, 2, utils.seconds_to_minutes(par['seconds']))
 
     def parlist_resize(self, event):
         """

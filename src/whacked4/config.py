@@ -83,7 +83,7 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
 
         main_window = self.get_setting('main_window_state')
 
-        window.SetDimensions(
+        window.SetSize(
             main_window['x'],
             main_window['y'],
             main_window['width'],

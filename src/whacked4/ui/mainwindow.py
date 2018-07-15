@@ -738,6 +738,9 @@ class MainWindow(windows.MainFrameBase):
         Update the current workspace with this window's size, position and state.
         """
 
+        if not self:
+            return
+
         # Only update size and position if the window is not maximized.
         if self.IsMaximized() or not self.IsShown():
             main_window_state = config.settings['main_window_state']
@@ -745,8 +748,8 @@ class MainWindow(windows.MainFrameBase):
             pos = (main_window_state['x'], main_window_state['y'])
             size = (main_window_state['width'], main_window_state['height'])
         else:
-            pos = self.GetPositionTuple()
-            size = self.GetSizeTuple()
+            pos = self.GetPosition()
+            size = self.GetSize()
 
         config.settings.main_window_state_store(pos[0], pos[1], size[0], size[1], self.IsMaximized())
 

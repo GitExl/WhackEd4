@@ -377,7 +377,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         # Add all items in the filtered list.
         list_index = 0
         for state_index in self.filter_state_indices:
-            self.StateList.InsertStringItem(list_index, str(state_index))
+            self.StateList.InsertItem(list_index, str(state_index))
             self.StateList.SetItemFont(list_index, config.FONT_MONOSPACED)
 
             self.statelist_update_row(list_index)
@@ -537,7 +537,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             action = None
 
         if action is not None:
-            self.Action.SetToolTipString(action['description'])
+            self.Action.SetToolTip(action['description'])
 
         arg_count = get_action_param_counts(action)
 
@@ -548,10 +548,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
             if (action is not None) and ('unused' in action) and (index < len(action['unused'])):
                 label.SetLabel(action['unused'][index]['name'])
-                text.SetToolTipString(action['unused'][index]['description'])
+                text.SetToolTip(action['unused'][index]['description'])
             else:
                 label.SetLabel('Unused {}'.format(index + 1))
-                text.SetToolTipString('')
+                text.SetToolTip('')
 
         # Arg0-9 parameters.
         for index in range(0, len(StatesFrame.ARG_IDS)):
@@ -563,7 +563,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 label.Show()
 
                 text.Show()
-                text.SetToolTipString(action['arguments'][index]['description'])
+                text.SetToolTip(action['arguments'][index]['description'])
             else:
                 label.Hide()
                 text.Hide()
@@ -794,14 +794,14 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         parameters = ', '.join([str(state[arg]) for arg in parameters])
 
         # Fill out column strings.
-        self.StateList.SetStringItem(list_index, 1, self.patch.get_state_name(state_index))
-        self.StateList.SetStringItem(list_index, 2, str(state['sprite']))
-        self.StateList.SetStringItem(list_index, 3, str(state['spriteFrame'] & ~self.FRAMEFLAG_LIT))
-        self.StateList.SetStringItem(list_index, 4, lit)
-        self.StateList.SetStringItem(list_index, 5, str(state['nextState']))
-        self.StateList.SetStringItem(list_index, 6, str(state['duration']))
-        self.StateList.SetStringItem(list_index, 7, action['name'])
-        self.StateList.SetStringItem(list_index, 8, parameters)
+        self.StateList.SetItem(list_index, 1, self.patch.get_state_name(state_index))
+        self.StateList.SetItem(list_index, 2, str(state['sprite']))
+        self.StateList.SetItem(list_index, 3, str(state['spriteFrame'] & ~self.FRAMEFLAG_LIT))
+        self.StateList.SetItem(list_index, 4, lit)
+        self.StateList.SetItem(list_index, 5, str(state['nextState']))
+        self.StateList.SetItem(list_index, 6, str(state['duration']))
+        self.StateList.SetItem(list_index, 7, action['name'])
+        self.StateList.SetItem(list_index, 8, parameters)
 
     def update_colours(self):
         """

@@ -108,7 +108,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         # Call the editor mixin function that we are overriding.
         editormixin.EditorMixin.activate(self, event)
 
-        if self.IsBeingDeleted():
+        if not self:
             return
 
         self.ammolist_build()
@@ -126,7 +126,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             self.WeaponList.InsertColumn(1, 'Ammo', width=120)
 
         for index in range(len(self.patch.weapons)):
-            self.WeaponList.InsertStringItem(index, '')
+            self.WeaponList.InsertItem(index, '')
             self.weaponlist_update_row(index)
 
         self.WeaponList.Select(0, True)
@@ -140,7 +140,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         weapon_name = self.patch.weapons.names[row_index]
 
         self.WeaponList.SetItemText(row_index, weapon_name)
-        self.WeaponList.SetStringItem(row_index, 1, self.patch.get_ammo_name(weapon['ammoType']))
+        self.WeaponList.SetItem(row_index, 1, self.patch.get_ammo_name(weapon['ammoType']))
 
     def weaponlist_resize(self, event):
         """

@@ -55,7 +55,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
 
             string_index = 0
             for name in self.patch.strings.keys():
-                self.StringList.InsertStringItem(string_index, name)
+                self.StringList.InsertItem(string_index, name)
                 self.StringList.SetItemFont(string_index, config.FONT_MONOSPACED)
 
                 self.stringlist_update_row(string_index)
@@ -68,7 +68,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
                 self.StringList.InsertColumn(1, 'String', width=800)
 
             for string_index in range(len(self.patch.strings)):
-                self.StringList.InsertStringItem(string_index, str(string_index))
+                self.StringList.InsertItem(string_index, str(string_index))
                 self.StringList.SetItemFont(string_index, config.FONT_MONOSPACED)
 
                 self.stringlist_update_row(string_index)
@@ -84,7 +84,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         string_key = self.get_string_key(row_index)
         string = self.patch.strings[string_key]
 
-        self.StringList.SetStringItem(row_index, 1, patch.string_escape(string))
+        self.StringList.SetItem(row_index, 1, patch.string_escape(string))
 
     def stringlist_resize(self, event):
         """
@@ -159,7 +159,8 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         """
 
         if self.patch.extended:
-            return self.patch.strings.keys()[string_index]
+            string_keys = list(self.patch.strings.keys())
+            return string_keys[string_index]
         else:
             return string_index
 

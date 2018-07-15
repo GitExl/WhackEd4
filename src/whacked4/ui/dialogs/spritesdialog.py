@@ -199,7 +199,7 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         # Add the filtered sprite names to the names list.
         for index in self.filter_list:
-            self.SpriteNames.InsertStringItem(index, self.patch.sprite_names[index])
+            self.SpriteNames.InsertItem(index, self.patch.sprite_names[index])
 
         # Select the first item by default.
         if len(self.filter_list) > 0:

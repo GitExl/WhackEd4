@@ -46,13 +46,13 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         # Call the editor mixin function that we are overriding.
         editormixin.EditorMixin.activate(self, event)
 
-        if self.IsBeingDeleted():
+        if not self:
             return
 
         # Update sound names only.
-        self.SoundList.SetStringItem(0, 1, '-')
+        self.SoundList.SetItem(0, 1, '-')
         for index, name in enumerate(self.patch.sound_names):
-            self.SoundList.SetStringItem(index + 1, 1, name.upper())
+            self.SoundList.SetItem(index + 1, 1, name.upper())
 
     def build_colours(self):
         """
@@ -107,13 +107,13 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             self.SoundList.InsertColumn(3, 'Singular', width=58)
 
         # Add dummy sound.
-        self.SoundList.InsertStringItem(0, '0')
+        self.SoundList.InsertItem(0, '0')
         self.SoundList.SetItemFont(0, config.FONT_MONOSPACED)
         self.soundlist_update_row(0, 0)
 
         # Add real sounds.
         for sound_index in range(len(self.patch.sounds)):
-            self.SoundList.InsertStringItem(sound_index + 1, str(sound_index + 1))
+            self.SoundList.InsertItem(sound_index + 1, str(sound_index + 1))
             self.SoundList.SetItemFont(sound_index + 1, config.FONT_MONOSPACED)
 
             self.soundlist_update_row(sound_index + 1, sound_index)
@@ -127,9 +127,9 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         """
 
         if row_index == 0:
-            self.SoundList.SetStringItem(row_index, 1, '-')
-            self.SoundList.SetStringItem(row_index, 2, '')
-            self.SoundList.SetStringItem(row_index, 3, '')
+            self.SoundList.SetItem(row_index, 1, '-')
+            self.SoundList.SetItem(row_index, 2, '')
+            self.SoundList.SetItem(row_index, 3, '')
 
             # Colour-code rows by priority.
             self.SoundList.SetItemBackgroundColour(row_index, self.priority_colours[0])
@@ -143,12 +143,13 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             else:
                 singular = ''
 
-            self.SoundList.SetStringItem(row_index, 1, sound_name.upper())
-            self.SoundList.SetStringItem(row_index, 2, str(sound['priority']))
-            self.SoundList.SetStringItem(row_index, 3, singular)
+            self.SoundList.SetItem(row_index, 1, sound_name.upper())
+            self.SoundList.SetItem(row_index, 2, str(sound['priority']))
+            self.SoundList.SetItem(row_index, 3, singular)
 
             # Colour-code rows by priority.
-            self.SoundList.SetItemBackgroundColour(row_index, self.priority_colours[sound['priority'] / 32])
+            color_index = int(sound['priority'] / 32)
+            self.SoundList.SetItemBackgroundColour(row_index, self.priority_colours[color_index])
 
     def sound_select_index(self, row_index, sound_index):
         """

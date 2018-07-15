@@ -59,7 +59,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
             self.AmmoList.InsertColumn(2, 'Pickup', width=49)
 
         for ammo_index in range(len(self.patch.ammo)):
-            self.AmmoList.InsertStringItem(ammo_index, '')
+            self.AmmoList.InsertItem(ammo_index, '')
 
             self.ammolist_update_row(ammo_index)
 
@@ -74,9 +74,9 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         ammo = self.patch.ammo[row_index]
         ammo_name = self.patch.ammo.names[row_index]
 
-        self.AmmoList.SetStringItem(row_index, 0, ammo_name)
-        self.AmmoList.SetStringItem(row_index, 1, str(ammo['maximum']))
-        self.AmmoList.SetStringItem(row_index, 2, str(ammo['clip']))
+        self.AmmoList.SetItem(row_index, 0, ammo_name)
+        self.AmmoList.SetItem(row_index, 1, str(ammo['maximum']))
+        self.AmmoList.SetItem(row_index, 2, str(ammo['clip']))
 
     def ammolist_resize(self, event):
         """
@@ -141,7 +141,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
 
         self.Maximum.ChangeValue(str(ammo['maximum']))
         self.Pickup.ChangeValue(str(ammo['clip']))
-        self.AmmoList.SetStringItem(self.selected_index, 0, self.patch.get_ammo_name(self.selected_index))
+        self.AmmoList.SetItem(self.selected_index, 0, self.patch.get_ammo_name(self.selected_index))
 
         # Disable rename\restore for hardcoded entries.
         if self.selected_index >= len(self.patch.ammo):

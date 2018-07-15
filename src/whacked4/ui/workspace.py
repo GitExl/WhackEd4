@@ -81,7 +81,7 @@ class Workspace(object):
             y = int(_get_dict_value(window_data, 'y', 0))
             width = int(_get_dict_value(window_data, 'width', 640))
             height = int(_get_dict_value(window_data, 'height', 480))
-            window.SetDimensions(x, y, width, height)
+            window.SetSize(x, y, width, height)
 
             # Set window visibility.
             visible = int(int(_get_dict_value(window_data, 'visible', 0)))

@@ -80,7 +80,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         if workspace.pwads is not None:
             for index, pwad in enumerate(workspace.pwads):
                 self.pwads.append(pwad)
-                self.PWADList.InsertStringItem(index, pwad)
+                self.PWADList.InsertItem(index, pwad)
 
         # Display a list of engines that are supported by the patch.
         for name, engine in self.engines.items():
@@ -180,7 +180,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
 
                     # Append it to the relevant lists.
                     self.pwads.append(filename)
-                    self.PWADList.InsertStringItem(len(self.pwads), filename)
+                    self.PWADList.InsertItem(len(self.pwads), filename)
 
     def pwad_remove(self, event):
         """

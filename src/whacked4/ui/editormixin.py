@@ -110,8 +110,8 @@ class EditorMixin(wx.MDIChildFrame):
             event.Skip()
             return
 
-        position = self.GetPositionTuple()
-        size = self.GetSizeTuple()
+        position = self.GetPosition()
+        size = self.GetSize()
 
         self.workspace_data['x'] = position[0]
         self.workspace_data['y'] = position[1]
@@ -128,7 +128,7 @@ class EditorMixin(wx.MDIChildFrame):
         window = self.GetParent().FindWindowById(event.GetId())
         if window is None:
             return
-        window.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
+        window.SetCursor(wx.Cursor(wx.CURSOR_HAND))
         window.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
         window.Refresh()
 
@@ -140,7 +140,7 @@ class EditorMixin(wx.MDIChildFrame):
         window = self.GetParent().FindWindowById(event.GetId())
         if window is None:
             return
-        window.SetCursor(wx.StockCursor(wx.CURSOR_ARROW))
+        window.SetCursor(wx.Cursor(wx.CURSOR_ARROW))
         window.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_WINDOWTEXT))
         window.Refresh()
 
