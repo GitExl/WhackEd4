@@ -1951,12 +1951,12 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		
 		bSizer139.Add( bSizer130, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 		
-		self.m_panel42 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PropertyPanelContainer = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer132 = wx.BoxSizer( wx.VERTICAL )
 		
 		bSizer131 = wx.BoxSizer( wx.VERTICAL )
 		
-		self.PropertyPanel = wx.Panel( self.m_panel42, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PropertyPanel = wx.Panel( self.PropertyPanelContainer, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		PropertySizer = wx.BoxSizer( wx.VERTICAL )
 		
 		
@@ -2239,13 +2239,13 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		bSizer131.Add( self.PropertyPanel, 0, wx.ALL|wx.EXPAND, 0 )
 		
 		
-		bSizer132.Add( bSizer131, 0, wx.ALL, 6 )
+		bSizer132.Add( bSizer131, 1, wx.ALL, 6 )
 		
 		
-		self.m_panel42.SetSizer( bSizer132 )
-		self.m_panel42.Layout()
-		bSizer132.Fit( self.m_panel42 )
-		bSizer139.Add( self.m_panel42, 0, 0, 0 )
+		self.PropertyPanelContainer.SetSizer( bSizer132 )
+		self.PropertyPanelContainer.Layout()
+		bSizer132.Fit( self.PropertyPanelContainer )
+		bSizer139.Add( self.PropertyPanelContainer, 1, 0, 0 )
 		
 		
 		bSizer40.Add( bSizer139, 0, wx.EXPAND, 5 )

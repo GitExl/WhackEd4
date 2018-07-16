@@ -483,7 +483,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 self.AlwaysLit.SetValue(True)
             else:
                 self.AlwaysLit.SetValue(False)
-
+            #
             # Do not allow state 0 to be edited.
             if state_index == 0:
                 self.tools_set_state(False)
@@ -568,7 +568,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 label.Hide()
                 text.Hide()
 
-        self.Layout()
+        self.PropertyPanelContainer.Layout()
 
     def update_sprite_preview(self):
         """

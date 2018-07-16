@@ -189,6 +189,9 @@ class SpritePreview(wx.Panel):
             x = size[0] / 2 - (bitmap.GetWidth() * self.scale) / 2
             y = size[1] / 2 - (bitmap.GetHeight() * self.scale) / 2
 
+        x = int(x)
+        y = int(y)
+
         self.src_dc.SelectObject(bitmap)
         if self.scale != 1:
             dc.StretchBlit(x, y, bitmap.Width * self.scale, bitmap.Height * self.scale, self.src_dc, 0, 0, bitmap.Width, bitmap.Height, wx.COPY, True)
