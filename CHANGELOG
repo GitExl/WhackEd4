@@ -1,6 +1,8 @@
 Version 1.2.3
 -------------
 Changed: updated wxPython to 4.0.
+Changed: updated to Python 3.
+Changed: enabled high DPI support.
 
 Version 1.2.2
 -------------
