@@ -365,7 +365,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         # Add list column headers if needed.
         if self.StateList.GetColumnCount() == 0:
             self.StateList.InsertColumn(0, '', width=37)
-            self.StateList.InsertColumn(1, 'Name', width=47)
+            self.StateList.InsertColumn(1, 'Name', width=54)
             self.StateList.InsertColumn(2, 'Spr', width=33)
             self.StateList.InsertColumn(3, 'Frm', width=34)
             self.StateList.InsertColumn(4, 'Lit', width=25)
@@ -720,10 +720,14 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         Sets the action property of all currently selected states.
         """
 
-        self.undo_add()
-
         action_name = self.Action.GetStringSelection()
         action_key = self.patch.engine.get_action_key_from_name(action_name)
+
+        if not self.patch.engine.extended and action_key == '0':
+            self.update_properties()
+            return
+
+        self.undo_add()
 
         for list_index in self.selected:
             state = self.filter_states[list_index]
@@ -783,7 +787,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         state, state_index = self.get_filtered_list_state(list_index)
 
         if (state['spriteFrame'] & self.FRAMEFLAG_LIT) != 0:
-            lit = 'X'
+            lit = '◾'
         else:
             lit = ''
 

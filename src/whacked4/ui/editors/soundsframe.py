@@ -139,7 +139,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             sound_name = self.patch.sound_names[sound_index]
 
             if sound['isSingular'] == 1:
-                singular = 'X'
+                singular = '◾'
             else:
                 singular = ''
 
