@@ -113,15 +113,19 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
 
     def recent_files_clean(self):
         """
-        Filters missing files from the recent files list.
+        Filters missing files from the recent files list and removes duplicates.
         """
 
         recent_files = self.get_setting('recent_files')
 
+        new_recent_lower = set()
         new_recent = []
         for filename in recent_files:
-            if os.path.exists(filename) and not filename.lower() in map(unicode.lower, new_recent):
+            filename_lower = filename.lower()
+
+            if os.path.exists(filename) and filename_lower not in new_recent_lower:
                 new_recent.append(filename)
+                new_recent_lower.add(filename_lower)
 
         self.put_setting('recent_files', new_recent)
 
