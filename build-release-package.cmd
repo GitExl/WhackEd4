@@ -8,16 +8,24 @@ set app_version=1.2.2
 set app_version_value=1.2.2
 set app_version_title=1.2.2
 
-set build_path=".\build\exe.win32-2.7"
+set build_path=".\build\exe.win32-3.7"
 
-set python_interpreter="c:\python27\python.exe"
+set python_interpreter=py -3
 set setup_compiler="C:\Program Files (x86)\Inno Setup 5\ISCC.exe"
 set zip=7za
 
 
 rmdir .\build /S /Q
 %python_interpreter% setup.py build
-rmdir .\build\exe.win32-2.7\wx\tools /S /Q
+del %build_path%\lib\libcrypto-1_1.dll /S /Q
+del %build_path%\lib\libssl-1_1.dll /S /Q
+del %build_path%\lib\unicodedata.pyd /S /Q
+rmdir %build_path%\lib\pydoc_data /S /Q
+rmdir %build_path%\lib\unittest /S /Q
+rmdir %build_path%\lib\xml /S /Q
+rmdir %build_path%\lib\wx\py /S /Q
+rmdir %build_path%\lib\wx\tools /S /Q
+rmdir %build_path%\lib\wx\locale /S /Q
 
 del %app_name_lower%-setup-*.exe
 %setup_compiler% %app_name_lower%.iss

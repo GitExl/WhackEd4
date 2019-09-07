@@ -1,6 +1,12 @@
 Known bugs
+- Right-clicking state in state editor causes crash.
 - Rotating sprite previews does not work correctly after Python 3 upgrade.
+- State preview anim sometimes freezes when closing window (try chaingunner attack)
+- State preview anim sound\timing feels off (try supershotgun attack)
+- State preview anim needs more room between action and sound label.
+- State editor column widths are off.
 - settings.json ended up being empty: https://www.doomworld.com/vb/doom-editing/89861-whacked4-problem/
+  and https://github.com/GitExl/WhackEd4/issues/10
 - Thing editor property fields do not scale well when resized.
 - Fix column widths with different font sizes. Auto-sizing based on font and text contents?
 - Adjust window dialogs for to better fit 1024x768 maximum screen size and with new high DPI handling.
@@ -11,6 +17,8 @@ Low priority bugs
 
 Features
 1.2.3
+- Larger state sprite preview? Double size = double properties panel width.
+- Investigate pyInstaller for executable generation. Single file, less dependencies?
 - "Looks like when you restore a thing, its speed isn't being restored. Or maybe it just resets to 0. Same when copying."
 - Bug related to speed conversion: https://www.doomworld.com/forum/topic/62909-whacked-4/?page=5#comment-1789026
 
@@ -36,3 +44,4 @@ Features
 - Allow includes for cfg files to modularize them.
 - Improve tab traversal everywhere.
 - Mark and display items as modified compared to engine config.
+- Muzzle flash support for weapon state previews.

@@ -1,6 +1,6 @@
 Version 1.2.3
 -------------
-Fixed: no longer allow a state's action to be removed in non-extended patches.
+Fixed: no longer allow a state's action to be removed in non-extended patches. Thanks to Mechadon.
 Changed: updated wxPython to 4.0.
 Changed: updated to Python 3.
 Changed: enabled high DPI support.
