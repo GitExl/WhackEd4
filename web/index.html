@@ -40,12 +40,12 @@
 				<a class="lightbox" href="images/screen03.png"><img src="images/screen03_thumb.png"></a>
 			</div>
 
-			<a class="button normal" href="files/whacked4-setup-1.2.1.exe">Download 1.2.1</a>
+			<a class="button normal" href="files/whacked4-setup-1.2.3.exe">Download 1.2.3</a>
 			<a class="button side" href="#section-changelog">Changelog</a>
 			<a class="button side" href="#section-source">Source code</a>
 
 			<p class="below-button">
-				<a href="files/whacked4-1.2.1.7z">Download standalone 7zip archive</a>
+				<a href="files/whacked4-1.2.3.7z">Download standalone 7zip archive</a>
 			</p>
 		</div>
 	</div>
@@ -53,6 +53,24 @@
 	<div id="container">
 		<div id="content">
 			<h1 id="section-changelog">Changelog</h1>
+      <h2>Version 1.2.3</h2>
+      <ul>
+        <li>Fixed: no longer allow a state's action to be removed in non-extended patches. Thanks to Mechadon.</li>
+        <li>Fixed: Boom configurations now properly refer to the red skullcard pickup string key as REDSKULL instead of REDSKUL. Thanks to EarthQuake.</li>
+        <li>Fixed: a crash on startup if the program settings became empty or corrupted somehow. Default settings will now be loaded if this is the case.</li>
+        <li>Changed: doubled size of sprite previews in the state editor.</li>
+        <li>Changed: updated wxPython to 4.0.6.</li>
+        <li>Changed: updated to Python 3.7.</li>
+        <li>Changed: enabled high DPI support.</li>
+        <li>Changed: reduced size of installed files.</li>
+      </ul>
+
+      <h2>Version 1.2.2</h2>
+      <ul>
+        <li>Fixed: a serious issue with saving thing, weapon and ammo names that could cause no names to be saved and the wrong names loaded when opening a second patch. Thanks to Da Werecat.</li>
+        <li>Changed: detecting if a thing is a projectile is now done by looking for actions in it's used list of states that set the momentum as a non-fixed point value. Currently Chase and VileChase being used will cause a thing to not be considered a projectile and it's speed property to be automatically cast to a non-fixed point value internally and in written patches.</li>
+      </ul>
+
 			<h2>Version 1.2.1</h2>
       <ul>
         <li>Added: support the RandomJump action in state previews.</li>
@@ -225,22 +243,22 @@
 
 
 			<h1 id="section-source">Source code</h1>
-			<p>The source code for WhackEd4 is available under a <a href="http://opensource.org/licenses/BSD-2-Clause">BSD 2-clause license</a>, and can be viewed or forked on <a href="http://github.com/">GitHub</a>. Any contributions are more than welcome, provided they retain the coding style used in other WhackEd4 code, and are actual useful features for WhackEd4 to have.</p>
+			<p>The source code for WhackEd4 is available under a <a href="https://opensource.org/licenses/BSD-2-Clause">BSD 2-clause license</a>, and can be viewed or forked on <a href="https://github.com/">GitHub</a>. Any contributions are more than welcome, provided they retain the coding style used in other WhackEd4 code, and are actual useful features for WhackEd4 to have.</p>
 
 			<p class="logo-align">
 				<a href="https://github.com/GitExl/WhackEd4" target="_blank">View WhackEd4's source code on GitHub</a>
 			</p>
 
 			<h1 id="section-feedback">Feedback</h1>
-			<p>Found a bug or have an idea for WhackEd4? Place an issue on <a href="https://github.com/GitExl/WhackEd4/issues">WhackEd4's GitHub issues page</a>! I can also be reached through the <a href="http://www.doomworld.com/vb/members/exl/">Doomworld forums</a>.</p>
+			<p>Found a bug or have an idea for WhackEd4? Place an issue on <a href="https://github.com/GitExl/WhackEd4/issues">WhackEd4's GitHub issues page</a>! I can also be reached through the <a href="https://www.doomworld.com/profile/953-exl/">Doomworld forums</a>.</p>
 		</div>
 	</div>
 
-	<p id="footer">Hosted by <a href="http://www.teamhellspawn.com/" target="_blank"><img src="images/teamhellspawn.png"></a><p>
+	<p id="footer">Hosted by <a href="https://www.teamhellspawn.com/" target="_blank"><img src="images/teamhellspawn.png"></a><p>
 
 	<div id="darken"></div>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
 			/* global jQuery */
 			(function() {
@@ -252,7 +270,7 @@
 					}, duration);
 				}
 
-				jQuery(document).ready(function() {
+				jQuery(function() {
 					var darken = jQuery('#darken');
 
 					jQuery('.lightbox').each(function(index, element) {
