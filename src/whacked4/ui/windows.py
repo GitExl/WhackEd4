@@ -4334,9 +4334,9 @@ class ErrorDialogBase ( wx.Dialog ):
 class StatePreviewDialogBase ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Preview", pos = wx.DefaultPosition, size = wx.Size( 640,440 ), style = wx.CAPTION|wx.WANTS_CHARS|wx.BORDER_RAISED )
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Preview", pos = wx.DefaultPosition, size = wx.Size( 680,440 ), style = wx.CAPTION|wx.WANTS_CHARS|wx.BORDER_RAISED )
 
-		self.SetSizeHints( wx.Size( 640,440 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 680,440 ), wx.DefaultSize )
 
 		bSizer140 = wx.BoxSizer( wx.VERTICAL )
 
@@ -4362,12 +4362,12 @@ class StatePreviewDialogBase ( wx.Dialog ):
 		self.StateAction = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.StateAction.Wrap( -1 )
 
-		bSizer141.Add( self.StateAction, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		bSizer141.Add( self.StateAction, 3, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
 		self.StateSound = wx.StaticText( self, wx.ID_ANY, u"?", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.StateSound.Wrap( -1 )
 
-		bSizer141.Add( self.StateSound, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
+		bSizer141.Add( self.StateSound, 3, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
 		self.SpawnSound = wx.StaticText( self, wx.ID_ANY, u"?", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.SpawnSound.Wrap( -1 )
