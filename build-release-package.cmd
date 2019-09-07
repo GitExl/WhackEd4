@@ -4,9 +4,9 @@ set app_description=A Windows Dehacked editor.
 set app_name=WhackEd4
 set app_name_lower=whacked4
 
-set app_version=1.2.2
-set app_version_value=1.2.2
-set app_version_title=1.2.2
+set app_version=1.2.3
+set app_version_value=1.2.3
+set app_version_title=1.2.3
 
 set build_path=".\build\exe.win32-3.7"
 
@@ -27,10 +27,10 @@ rmdir %build_path%\lib\wx\py /S /Q
 rmdir %build_path%\lib\wx\tools /S /Q
 rmdir %build_path%\lib\wx\locale /S /Q
 
-del %app_name_lower%-setup-*.exe
+del %app_name_lower%-setup-*.exe /S /Q
 %setup_compiler% %app_name_lower%.iss
 
-del %app_name_lower%-*.7z
+del %app_name_lower%-*.7z /S /Q
 %zip% a %app_name_lower%-%app_version%.7z %build_path%\* -r -mx=9 -ms=on
 
 pause
