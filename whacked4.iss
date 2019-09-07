@@ -4,7 +4,7 @@ Name: associate; Description: Associate with Dehacked patch files
 
 
 [Files]
-Source: .\build\exe.win32-2.7\*.*; DestDir: {app}; Flags: recursesubdirs createallsubdirs
+Source: .\build\exe.win32-3.7\*.*; DestDir: {app}; Flags: recursesubdirs createallsubdirs
 Source: .\fonts\dejavu-sans-mono\DejaVuSansMono.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono
 Source: .\fonts\dejavu-sans-mono\DejaVuSansMono-Bold.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono Bold
 
@@ -28,7 +28,7 @@ UninstallDisplayIcon={app}\whacked4.exe
 UninstallDisplayName=WhackEd4
 AppendDefaultGroupName=true
 DefaultGroupName=WhackEd4
-Compression=lzma/ultra64
+Compression=lzma2/ultra64
 OutputDir=.
 SourceDir=.
 OutputBaseFilename=whacked4-setup-1.2.2
