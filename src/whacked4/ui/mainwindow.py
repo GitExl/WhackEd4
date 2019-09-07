@@ -784,7 +784,7 @@ class MainWindow(windows.MainFrameBase):
             window.update()
 
     def file_open_recent(self, event):
-        item = self.FindItemInMenuBar(event.GetId())
+        item = self.MainMenu.FindItemById(event.GetId())
         filename = item.GetItemLabel()
         self.open_file(filename)
 
