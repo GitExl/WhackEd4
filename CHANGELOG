@@ -5,6 +5,7 @@ Fixed: Boom configurations now properly refer to the red skullcard pickup string
 Changed: updated wxPython to 4.0.6.
 Changed: updated to Python 3.7.
 Changed: enabled high DPI support.
+Changed: reduced size of installed files.
 
 Version 1.2.2
 -------------
