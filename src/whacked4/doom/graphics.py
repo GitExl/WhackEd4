@@ -110,7 +110,7 @@ class Image(object):
         self.left = left
 
         # Create usable bitmap.
-        self.image = wx.BitmapFromBufferRGBA(width, height, image_data)
+        self.image = wx.Bitmap.FromBufferRGBA(width, height, image_data)
 
     def set_empty(self):
         self.width = 0
