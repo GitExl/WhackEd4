@@ -2,6 +2,7 @@ Version 1.2.3
 -------------
 Fixed: no longer allow a state's action to be removed in non-extended patches. Thanks to Mechadon.
 Fixed: Boom configurations now properly refer to the red skullcard pickup string key as REDSKULL instead of REDSKUL. Thanks to EarthQuake.
+Fixed: a crash on startup if the program settings became empty or corrupted somehow. Default settings will now be loaded if this is the case.
 Changed: updated wxPython to 4.0.6.
 Changed: updated to Python 3.7.
 Changed: enabled high DPI support.

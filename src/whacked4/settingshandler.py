@@ -81,7 +81,8 @@ class SettingsHandler(object):
         with open(self.path, 'r') as f:
             try:
                 settings = json.load(f)
-            except json.JSONDecodeError:
+            except ValueError or json.JSONDecodeError:
+                print('Could not decode settings, using defaults.')
                 settings = {}
 
             # Store only known settings.
