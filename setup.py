@@ -16,7 +16,7 @@ build_exe_options = {
 
 base = None
 if sys.platform == 'win32':
-    base = 'Win32GUI'
+	base = 'Win32GUI'
 
 exe = Executable(
 	'src/main.py',
@@ -26,9 +26,10 @@ exe = Executable(
 )
 
 setup(
-	name = os.environ['app_title'],
-	version = os.environ['app_version_value'],
-	description = os.environ['app_description'],
-	options = {'build_exe': build_exe_options},
-	executables = [exe]
+	name=os.environ['app_title'],
+	version=os.environ['app_version_value'],
+	description=os.environ['app_description'],
+	options={'build_exe': build_exe_options},
+	executables=[exe],
+	requires=['pyaudio', 'wx']
 )
