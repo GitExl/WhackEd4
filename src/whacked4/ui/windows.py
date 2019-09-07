@@ -471,7 +471,7 @@ class MainFrameBase ( wx.MDIParentFrame ):
 class ThingsFrameBase ( wx.MDIChildFrame ):
 
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 980,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 980,650 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.Size( 980,650 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
@@ -838,7 +838,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerPropertiesBottom.Add( ( 0, 0), 1, wx.EXPAND, 0 )
 
 		self.ButtonRename = wx.Button( self.PanelProperties, THING_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ButtonRename.SetMinSize( wx.Size( -1,28 ) )
+		self.ButtonRename.SetMinSize( wx.Size( -1,36 ) )
 
 		SizerPropertiesBottom.Add( self.ButtonRename, 0, wx.ALL|wx.EXPAND, 0 )
 

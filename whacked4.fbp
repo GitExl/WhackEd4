@@ -630,7 +630,7 @@
             <property name="minimum_size">980,650</property>
             <property name="name">ThingsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">980,700</property>
+            <property name="size">980,650</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Things</property>
@@ -4457,7 +4457,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">-1,28</property>
+                                            <property name="minimum_size">-1,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">ButtonRename</property>
                                             <property name="pane_border">1</property>
