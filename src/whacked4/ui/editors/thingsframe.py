@@ -709,7 +709,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         Displays the context menu for things.
         """
 
-        self.ThingList.PopupMenu(self.ThingContext, event.GetPosition())
+        self.ThingList.PopupMenu(self.ThingContext, event.GetPoint())
 
     def thing_context_copy(self, event):
         """

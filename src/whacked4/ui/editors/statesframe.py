@@ -842,7 +842,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateContextLink.Enable(enable_loops)
         self.StateContextLinkLoop.Enable(enable_loops)
 
-        self.StateList.PopupMenu(self.StateContext, event.GetPosition())
+        self.StateList.PopupMenu(self.StateContext, event.GetPoint())
 
     def state_context_copy(self, event):
         """
