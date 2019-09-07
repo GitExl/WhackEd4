@@ -1376,7 +1376,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerBottom.Add( ( 0, 0), 1, wx.EXPAND, 0 )
 
 		self.ButtonRestore = wx.Button( self.PanelStatesSounds, THING_RESTORE, u"Restore", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.ButtonRestore.SetMinSize( wx.Size( -1,28 ) )
+		self.ButtonRestore.SetMinSize( wx.Size( -1,36 ) )
 
 		SizerBottom.Add( self.ButtonRestore, 0, wx.EXPAND|wx.TOP, 3 )
 
@@ -1926,9 +1926,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 class StatesFrameBase ( wx.MDIChildFrame ):
 
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 872,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.WANTS_CHARS )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 1024,732 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.WANTS_CHARS )
 
-		self.SetSizeHints( wx.Size( 872,700 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 1024,732 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 
 		bSizer41 = wx.BoxSizer( wx.VERTICAL )
@@ -1941,6 +1941,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 
 		self.SpritePreview = spritepreview.SpritePreview(self, size=(-1, 160))
 		self.SpritePreview.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_3DDKSHADOW ) )
+		self.SpritePreview.SetMinSize( wx.Size( 400,300 ) )
 
 		bSizer130.Add( self.SpritePreview, 0, wx.EXPAND, 5 )
 
@@ -1965,11 +1966,11 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 
 		bSizer52.Add( self.m_staticText39, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.SpriteIndex = wx.TextCtrl( self.PropertyPanel, STATES_SPRITE, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
+		self.SpriteIndex = wx.TextCtrl( self.PropertyPanel, STATES_SPRITE, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.SpriteIndex.SetMaxLength( 3 )
 		bSizer52.Add( self.SpriteIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.SpriteName = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"TROO", wx.DefaultPosition, wx.Size( 63,-1 ), wx.ST_NO_AUTORESIZE )
+		self.SpriteName = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"TROO", wx.DefaultPosition, wx.Size( 80,-1 ), wx.ST_NO_AUTORESIZE )
 		self.SpriteName.Wrap( -1 )
 
 		self.SpriteName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
@@ -1992,7 +1993,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 
 		bSizer521.Add( self.m_staticText391, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.FrameIndex = wx.TextCtrl( self.PropertyPanel, STATES_FRAME, wx.EmptyString, wx.DefaultPosition, wx.Size( 40,-1 ), 0 )
+		self.FrameIndex = wx.TextCtrl( self.PropertyPanel, STATES_FRAME, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		bSizer521.Add( self.FrameIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.BOTTOM|wx.LEFT|wx.TOP, 3 )
 
 		self.FrameIndexSpinner = wx.SpinButton( self.PropertyPanel, STATES_FRAMESPIN, wx.DefaultPosition, wx.Size( 17,25 ), 0 )
@@ -2014,11 +2015,11 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 
 		bSizer5211.Add( self.m_staticText3911, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.NextStateIndex = wx.TextCtrl( self.PropertyPanel, STATES_NEXT, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		self.NextStateIndex = wx.TextCtrl( self.PropertyPanel, STATES_NEXT, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.NextStateIndex.SetMaxLength( 4 )
 		bSizer5211.Add( self.NextStateIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.NextStateName = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"PLAYD", wx.DefaultPosition, wx.Size( 50,-1 ), wx.ST_NO_AUTORESIZE )
+		self.NextStateName = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"PLAYD", wx.DefaultPosition, wx.Size( 80,-1 ), wx.ST_NO_AUTORESIZE )
 		self.NextStateName.Wrap( -1 )
 
 		self.NextStateName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
@@ -2039,7 +2040,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 
 		bSizer5212.Add( self.m_staticText3912, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Duration = wx.TextCtrl( self.PropertyPanel, STATES_DURATION, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
+		self.Duration = wx.TextCtrl( self.PropertyPanel, STATES_DURATION, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Duration.SetMaxLength( 4 )
 		bSizer5212.Add( self.Duration, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
@@ -2059,7 +2060,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		ActionChoices = []
 		self.Action = wx.Choice( self.PropertyPanel, STATES_ACTION, wx.DefaultPosition, wx.Size( -1,-1 ), ActionChoices, wx.CB_SORT )
 		self.Action.SetSelection( 0 )
-		self.Action.SetMinSize( wx.Size( 160,-1 ) )
+		self.Action.SetMinSize( wx.Size( 180,-1 ) )
 
 		bSizer521211.Add( self.Action, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
@@ -2224,7 +2225,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		PropertySizer.Add( ( 0, 9), 0, wx.EXPAND, 5 )
 
 		self.Restore = wx.Button( self.PropertyPanel, wx.ID_ANY, u"Restore", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.Restore.SetMinSize( wx.Size( -1,28 ) )
+		self.Restore.SetMinSize( wx.Size( -1,36 ) )
 
 		PropertySizer.Add( self.Restore, 0, wx.EXPAND|wx.TOP, 3 )
 
@@ -2232,10 +2233,10 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.PropertyPanel.SetSizer( PropertySizer )
 		self.PropertyPanel.Layout()
 		PropertySizer.Fit( self.PropertyPanel )
-		bSizer131.Add( self.PropertyPanel, 0, wx.ALL|wx.EXPAND, 0 )
+		bSizer131.Add( self.PropertyPanel, 1, wx.ALL|wx.EXPAND, 0 )
 
 
-		bSizer132.Add( bSizer131, 1, wx.ALL, 6 )
+		bSizer132.Add( bSizer131, 1, wx.ALL|wx.EXPAND, 6 )
 
 
 		self.PropertyPanelContainer.SetSizer( bSizer132 )
@@ -2576,7 +2577,7 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		bSizer42.Add( ( 0, 12), 0, wx.EXPAND, 0 )
 
 		self.Restore = wx.Button( self.m_panel43, SOUNDS_RESTORE, u"Restore", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.Restore.SetMinSize( wx.Size( -1,28 ) )
+		self.Restore.SetMinSize( wx.Size( -1,36 ) )
 
 		bSizer42.Add( self.Restore, 0, wx.EXPAND|wx.TOP, 3 )
 
@@ -2670,7 +2671,7 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 		bSizer158.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 
 		self.Restore = wx.Button( self, STRINGS_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Restore.SetMinSize( wx.Size( 120,28 ) )
+		self.Restore.SetMinSize( wx.Size( 120,36 ) )
 
 		bSizer158.Add( self.Restore, 0, wx.ALL, 6 )
 
@@ -2712,7 +2713,7 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 class WeaponsFrameBase ( wx.MDIChildFrame ):
 
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 560,425 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 560,580 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.Size( 560,425 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
@@ -3003,12 +3004,12 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer92 = wx.BoxSizer( wx.VERTICAL )
 
 		self.Rename = wx.Button( self.m_panel44, WEAPON_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Rename.SetMinSize( wx.Size( -1,28 ) )
+		self.Rename.SetMinSize( wx.Size( -1,36 ) )
 
 		bSizer92.Add( self.Rename, 0, wx.ALL|wx.EXPAND, 3 )
 
 		self.Restore = wx.Button( self.m_panel44, WEAPON_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Restore.SetMinSize( wx.Size( -1,28 ) )
+		self.Restore.SetMinSize( wx.Size( -1,36 ) )
 
 		bSizer92.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 3 )
 
@@ -3230,12 +3231,12 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		bSizer139.Add( ( 0, 0), 1, wx.EXPAND, 0 )
 
 		self.Rename = wx.Button( self.m_panel45, AMMO_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Rename.SetMinSize( wx.Size( -1,28 ) )
+		self.Rename.SetMinSize( wx.Size( -1,36 ) )
 
 		bSizer139.Add( self.Rename, 0, wx.ALL|wx.EXPAND, 3 )
 
 		self.Restore = wx.Button( self.m_panel45, AMMO_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Restore.SetMinSize( wx.Size( -1,28 ) )
+		self.Restore.SetMinSize( wx.Size( -1,36 ) )
 
 		bSizer139.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 3 )
 
@@ -3319,7 +3320,7 @@ class CheatsFrameBase ( wx.MDIChildFrame ):
 		bSizer158.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 
 		self.Restore = wx.Button( self, CHEATS_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Restore.SetMinSize( wx.Size( 120,28 ) )
+		self.Restore.SetMinSize( wx.Size( 120,36 ) )
 
 		bSizer158.Add( self.Restore, 0, wx.ALL, 6 )
 
@@ -3382,7 +3383,7 @@ class MiscFrameBase ( wx.MDIChildFrame ):
 		bSizer154.Add( self.ValueEnabled, 0, wx.ALL|wx.EXPAND, 9 )
 
 		self.Restore = wx.Button( self.m_panel2, MISC_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Restore.SetMinSize( wx.Size( -1,28 ) )
+		self.Restore.SetMinSize( wx.Size( -1,36 ) )
 
 		bSizer154.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 3 )
 
@@ -3663,12 +3664,12 @@ class SpritesDialogBase ( wx.Dialog ):
 		self.ButtonOk = wx.Button( self, SPRITES_OK, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		self.ButtonOk.SetDefault()
-		self.ButtonOk.SetMinSize( wx.Size( 120,28 ) )
+		self.ButtonOk.SetMinSize( wx.Size( 120,36 ) )
 
 		bSizer43.Add( self.ButtonOk, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
 		self.ButtonCancel = wx.Button( self, SPRITES_CANCEL, u"Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ButtonCancel.SetMinSize( wx.Size( 120,28 ) )
+		self.ButtonCancel.SetMinSize( wx.Size( 120,36 ) )
 
 		bSizer43.Add( self.ButtonCancel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
@@ -3798,12 +3799,12 @@ class StringDialogBase ( wx.Dialog ):
 		self.ButtonOk = wx.Button( self.m_panel51, STRING_OK, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		self.ButtonOk.SetDefault()
-		self.ButtonOk.SetMinSize( wx.Size( 120,28 ) )
+		self.ButtonOk.SetMinSize( wx.Size( 120,36 ) )
 
 		bSizer43.Add( self.ButtonOk, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
 		self.ButtonCancel = wx.Button( self.m_panel51, STRING_CANCEL, u"Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ButtonCancel.SetMinSize( wx.Size( 120,28 ) )
+		self.ButtonCancel.SetMinSize( wx.Size( 120,36 ) )
 
 		bSizer43.Add( self.ButtonCancel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
@@ -3908,10 +3909,10 @@ class PatchInfoDialogBase ( wx.Dialog ):
 
 		bSizer451.Add( self.IWAD, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
-		self.IWADBrowse = wx.Button( self.m_panel52, wx.ID_ANY, u"...", wx.DefaultPosition, wx.Size( 32,25 ), 0 )
+		self.IWADBrowse = wx.Button( self.m_panel52, wx.ID_ANY, u"...", wx.DefaultPosition, wx.Size( 36,28 ), 0 )
 		bSizer451.Add( self.IWADBrowse, 0, wx.ALIGN_CENTER_VERTICAL|wx.BOTTOM|wx.RIGHT|wx.TOP, 6 )
 
-		self.IWADDelete = wx.Button( self.m_panel52, wx.ID_ANY, u"X", wx.DefaultPosition, wx.Size( 32,25 ), 0 )
+		self.IWADDelete = wx.Button( self.m_panel52, wx.ID_ANY, u"X", wx.DefaultPosition, wx.Size( 36,28 ), 0 )
 		bSizer451.Add( self.IWADDelete, 0, wx.ALIGN_CENTER_VERTICAL|wx.BOTTOM|wx.RIGHT|wx.TOP, 6 )
 
 
@@ -3954,12 +3955,12 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		self.ButtonOk = wx.Button( self.m_panel52, wx.ID_ANY, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		self.ButtonOk.SetDefault()
-		self.ButtonOk.SetMinSize( wx.Size( 120,28 ) )
+		self.ButtonOk.SetMinSize( wx.Size( 120,36 ) )
 
 		bSizer4521.Add( self.ButtonOk, 0, wx.ALL, 5 )
 
 		self.ButtonCancel = wx.Button( self.m_panel52, PATCHINFO_CANCEL, u"Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ButtonCancel.SetMinSize( wx.Size( 120,28 ) )
+		self.ButtonCancel.SetMinSize( wx.Size( 120,36 ) )
 
 		bSizer4521.Add( self.ButtonCancel, 0, wx.ALL, 5 )
 
@@ -4035,12 +4036,12 @@ class StartDialogBase ( wx.Dialog ):
 		bSizer52 = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.NewFile = wx.Button( self.m_panel53, START_NEW, u"New file", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.NewFile.SetMinSize( wx.Size( 160,28 ) )
+		self.NewFile.SetMinSize( wx.Size( 160,36 ) )
 
 		bSizer52.Add( self.NewFile, 1, wx.ALL, 6 )
 
 		self.OpenFile = wx.Button( self.m_panel53, START_OPEN, u"Open file", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.OpenFile.SetMinSize( wx.Size( 160,28 ) )
+		self.OpenFile.SetMinSize( wx.Size( 160,36 ) )
 
 		bSizer52.Add( self.OpenFile, 1, wx.ALL, 6 )
 
@@ -4070,7 +4071,7 @@ class StartDialogBase ( wx.Dialog ):
 
 		self.Help = wx.Button( self.m_panel53, wx.ID_ANY, u"Help", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Help.Enable( False )
-		self.Help.SetMinSize( wx.Size( 120,28 ) )
+		self.Help.SetMinSize( wx.Size( 120,36 ) )
 
 		bSizer55.Add( self.Help, 0, wx.BOTTOM|wx.LEFT|wx.RIGHT, 12 )
 
@@ -4080,7 +4081,7 @@ class StartDialogBase ( wx.Dialog ):
 		self.Cancel = wx.Button( self.m_panel53, START_CANCEL, u"Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		self.Cancel.SetDefault()
-		self.Cancel.SetMinSize( wx.Size( 120,28 ) )
+		self.Cancel.SetMinSize( wx.Size( 120,36 ) )
 
 		bSizer55.Add( self.Cancel, 0, wx.BOTTOM|wx.LEFT|wx.RIGHT, 12 )
 
@@ -4134,7 +4135,7 @@ class StartDialogBase ( wx.Dialog ):
 class AboutDialogBase ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,440 ), style = wx.CAPTION|wx.CLOSE_BOX )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_ABOUT, title = u"About WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.CLOSE_BOX )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -4203,7 +4204,7 @@ class AboutDialogBase ( wx.Dialog ):
 		bSizer58 = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.License = wx.Button( self, wx.ID_ANY, u"License", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.License.SetMinSize( wx.Size( 150,28 ) )
+		self.License.SetMinSize( wx.Size( 150,36 ) )
 
 		bSizer58.Add( self.License, 0, wx.ALL, 0 )
 
@@ -4213,7 +4214,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.ButtonOk = wx.Button( self, ABOUT_OK, u"Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		self.ButtonOk.SetDefault()
-		self.ButtonOk.SetMinSize( wx.Size( 150,28 ) )
+		self.ButtonOk.SetMinSize( wx.Size( 150,36 ) )
 
 		bSizer58.Add( self.ButtonOk, 0, 0, 0 )
 
@@ -4284,7 +4285,7 @@ class ErrorDialogBase ( wx.Dialog ):
 		bSizer119 = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.m_button43 = wx.Button( self.m_panel54, ERROR_COPY, u"Copy to clipboard", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_button43.SetMinSize( wx.Size( 144,28 ) )
+		self.m_button43.SetMinSize( wx.Size( 144,36 ) )
 
 		bSizer119.Add( self.m_button43, 0, wx.ALL, 6 )
 
@@ -4292,7 +4293,7 @@ class ErrorDialogBase ( wx.Dialog ):
 		bSizer119.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 
 		self.m_button44 = wx.Button( self.m_panel54, ERROR_CLOSE, u"Close", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_button44.SetMinSize( wx.Size( 144,28 ) )
+		self.m_button44.SetMinSize( wx.Size( 144,26 ) )
 
 		bSizer119.Add( self.m_button44, 0, wx.ALL, 6 )
 
@@ -4334,9 +4335,9 @@ class ErrorDialogBase ( wx.Dialog ):
 class StatePreviewDialogBase ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Preview", pos = wx.DefaultPosition, size = wx.Size( 680,440 ), style = wx.CAPTION|wx.WANTS_CHARS|wx.BORDER_RAISED )
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Preview", pos = wx.DefaultPosition, size = wx.Size( 680,448 ), style = wx.CAPTION|wx.WANTS_CHARS|wx.BORDER_RAISED )
 
-		self.SetSizeHints( wx.Size( 680,440 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 680,448 ), wx.DefaultSize )
 
 		bSizer140 = wx.BoxSizer( wx.VERTICAL )
 
@@ -4377,7 +4378,7 @@ class StatePreviewDialogBase ( wx.Dialog ):
 
 		bSizer141.Add( self.SpawnSound, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
-		self.Close = wx.Button( self, PREVIEW_CLOSE, u"Close", wx.DefaultPosition, wx.Size( 120,28 ), 0 )
+		self.Close = wx.Button( self, PREVIEW_CLOSE, u"Close", wx.DefaultPosition, wx.Size( 120,36 ), 0 )
 		bSizer141.Add( self.Close, 0, wx.ALIGN_RIGHT|wx.ALL, 6 )
 
 

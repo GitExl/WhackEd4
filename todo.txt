@@ -1,19 +1,14 @@
 Known bugs
-- Thing editor property fields do not scale well when resized.
-- Adjust window dialogs for to better fit 1024x768 maximum screen size and with new high DPI handling.
+- "Looks like when you restore a thing, its speed isn't being restored. Or maybe it just resets to 0. Same when copying."
+- Bug related to speed conversion: https://www.doomworld.com/forum/topic/62909-whacked-4/?page=5#comment-1789026
 
 Low priority bugs
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
 - Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
 
 Features
-1.2.3
-- Larger state sprite preview? Double size = double properties panel width.
-- Investigate pyInstaller for executable generation. Single file, less dependencies?
-- "Looks like when you restore a thing, its speed isn't being restored. Or maybe it just resets to 0. Same when copying."
-- Bug related to speed conversion: https://www.doomworld.com/forum/topic/62909-whacked-4/?page=5#comment-1789026
-
 1.3.0 and later
+- Investigate pyInstaller for executable generation. Single file, less dependencies?
 - UI manual \ Dehacked tutorial.
 - Look into new Eternity Engine and PrBoom+ Dehacked features.
 - "Would've been better if WhackEd allowed to name the states like in the source code. Then you could reference them

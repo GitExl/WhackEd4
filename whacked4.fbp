@@ -10038,7 +10038,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">-1,28</property>
+                                            <property name="minimum_size">-1,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">ButtonRestore</property>
                                             <property name="pane_border">1</property>
@@ -10411,10 +10411,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_STATES</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">872,700</property>
+            <property name="minimum_size">1024,732</property>
             <property name="name">StatesFrameBase</property>
             <property name="pos"></property>
-            <property name="size">872,700</property>
+            <property name="size">1024,732</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">States</property>
@@ -10496,7 +10496,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size"></property>
+                                                <property name="minimum_size">400,300</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">SpritePreview</property>
                                                 <property name="pane_border">1</property>
@@ -10508,7 +10508,7 @@
                                                 <property name="resize">Resizable</property>
                                                 <property name="settings"></property>
                                                 <property name="show">1</property>
-                                                <property name="size">-1,160</property>
+                                                <property name="size">-1,300</property>
                                                 <property name="subclass"></property>
                                                 <property name="toolbar_pane">0</property>
                                                 <property name="tooltip"></property>
@@ -10581,7 +10581,7 @@
                                             <property name="permission">none</property>
                                             <object class="sizeritem" expanded="0">
                                                 <property name="border">6</property>
-                                                <property name="flag">wxALL</property>
+                                                <property name="flag">wxALL|wxEXPAND</property>
                                                 <property name="proportion">1</property>
                                                 <object class="wxBoxSizer" expanded="0">
                                                     <property name="minimum_size"></property>
@@ -10591,7 +10591,7 @@
                                                     <object class="sizeritem" expanded="0">
                                                         <property name="border">0</property>
                                                         <property name="flag">wxALL|wxEXPAND</property>
-                                                        <property name="proportion">0</property>
+                                                        <property name="proportion">1</property>
                                                         <object class="wxPanel" expanded="0">
                                                             <property name="BottomDockable">1</property>
                                                             <property name="LeftDockable">1</property>
@@ -10778,7 +10778,7 @@
                                                                                 <property name="pos"></property>
                                                                                 <property name="resize">Resizable</property>
                                                                                 <property name="show">1</property>
-                                                                                <property name="size">55,-1</property>
+                                                                                <property name="size">80,-1</property>
                                                                                 <property name="style"></property>
                                                                                 <property name="subclass"></property>
                                                                                 <property name="toolbar_pane">0</property>
@@ -10845,7 +10845,7 @@
                                                                                 <property name="pos"></property>
                                                                                 <property name="resize">Resizable</property>
                                                                                 <property name="show">1</property>
-                                                                                <property name="size">63,-1</property>
+                                                                                <property name="size">80,-1</property>
                                                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                                                 <property name="subclass"></property>
                                                                                 <property name="toolbar_pane">0</property>
@@ -11052,7 +11052,7 @@
                                                                                 <property name="pos"></property>
                                                                                 <property name="resize">Resizable</property>
                                                                                 <property name="show">1</property>
-                                                                                <property name="size">40,-1</property>
+                                                                                <property name="size">80,-1</property>
                                                                                 <property name="style"></property>
                                                                                 <property name="subclass"></property>
                                                                                 <property name="toolbar_pane">0</property>
@@ -11326,7 +11326,7 @@
                                                                                 <property name="pos"></property>
                                                                                 <property name="resize">Resizable</property>
                                                                                 <property name="show">1</property>
-                                                                                <property name="size">45,-1</property>
+                                                                                <property name="size">80,-1</property>
                                                                                 <property name="style"></property>
                                                                                 <property name="subclass"></property>
                                                                                 <property name="toolbar_pane">0</property>
@@ -11393,7 +11393,7 @@
                                                                                 <property name="pos"></property>
                                                                                 <property name="resize">Resizable</property>
                                                                                 <property name="show">1</property>
-                                                                                <property name="size">50,-1</property>
+                                                                                <property name="size">80,-1</property>
                                                                                 <property name="style">wxST_NO_AUTORESIZE</property>
                                                                                 <property name="subclass"></property>
                                                                                 <property name="toolbar_pane">0</property>
@@ -11540,7 +11540,7 @@
                                                                                 <property name="pos"></property>
                                                                                 <property name="resize">Resizable</property>
                                                                                 <property name="show">1</property>
-                                                                                <property name="size">45,-1</property>
+                                                                                <property name="size">80,-1</property>
                                                                                 <property name="style"></property>
                                                                                 <property name="subclass"></property>
                                                                                 <property name="toolbar_pane">0</property>
@@ -11678,7 +11678,7 @@
                                                                                 <property name="maximum_size"></property>
                                                                                 <property name="min_size"></property>
                                                                                 <property name="minimize_button">0</property>
-                                                                                <property name="minimum_size">160,-1</property>
+                                                                                <property name="minimum_size">180,-1</property>
                                                                                 <property name="moveable">1</property>
                                                                                 <property name="name">Action</property>
                                                                                 <property name="pane_border">1</property>
@@ -13291,7 +13291,7 @@
                                                                         <property name="maximum_size"></property>
                                                                         <property name="min_size"></property>
                                                                         <property name="minimize_button">0</property>
-                                                                        <property name="minimum_size">-1,28</property>
+                                                                        <property name="minimum_size">-1,36</property>
                                                                         <property name="moveable">1</property>
                                                                         <property name="name">Restore</property>
                                                                         <property name="pane_border">1</property>
@@ -14207,7 +14207,7 @@
                                     <property name="maximum_size"></property>
                                     <property name="min_size"></property>
                                     <property name="minimize_button">0</property>
-                                    <property name="minimum_size">-1,28</property>
+                                    <property name="minimum_size">-1,36</property>
                                     <property name="moveable">1</property>
                                     <property name="name">Restore</property>
                                     <property name="pane_border">1</property>
@@ -14466,7 +14466,7 @@
                                 <property name="maximum_size"></property>
                                 <property name="min_size"></property>
                                 <property name="minimize_button">0</property>
-                                <property name="minimum_size">120,28</property>
+                                <property name="minimum_size">120,36</property>
                                 <property name="moveable">1</property>
                                 <property name="name">Restore</property>
                                 <property name="pane_border">1</property>
@@ -14516,7 +14516,7 @@
             <property name="minimum_size">560,425</property>
             <property name="name">WeaponsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">560,425</property>
+            <property name="size">560,580</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Weapons</property>
@@ -17176,7 +17176,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">-1,28</property>
+                                            <property name="minimum_size">-1,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">Rename</property>
                                             <property name="pane_border">1</property>
@@ -17249,7 +17249,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">-1,28</property>
+                                            <property name="minimum_size">-1,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">Restore</property>
                                             <property name="pane_border">1</property>
@@ -17766,7 +17766,7 @@
                                     <property name="maximum_size"></property>
                                     <property name="min_size"></property>
                                     <property name="minimize_button">0</property>
-                                    <property name="minimum_size">-1,28</property>
+                                    <property name="minimum_size">-1,36</property>
                                     <property name="moveable">1</property>
                                     <property name="name">Rename</property>
                                     <property name="pane_border">1</property>
@@ -17839,7 +17839,7 @@
                                     <property name="maximum_size"></property>
                                     <property name="min_size"></property>
                                     <property name="minimize_button">0</property>
-                                    <property name="minimum_size">-1,28</property>
+                                    <property name="minimum_size">-1,36</property>
                                     <property name="moveable">1</property>
                                     <property name="name">Restore</property>
                                     <property name="pane_border">1</property>
@@ -18098,7 +18098,7 @@
                                 <property name="maximum_size"></property>
                                 <property name="min_size"></property>
                                 <property name="minimize_button">0</property>
-                                <property name="minimum_size">120,28</property>
+                                <property name="minimum_size">120,36</property>
                                 <property name="moveable">1</property>
                                 <property name="name">Restore</property>
                                 <property name="pane_border">1</property>
@@ -18458,7 +18458,7 @@
                                                 <property name="maximum_size"></property>
                                                 <property name="min_size"></property>
                                                 <property name="minimize_button">0</property>
-                                                <property name="minimum_size">-1,28</property>
+                                                <property name="minimum_size">-1,36</property>
                                                 <property name="moveable">1</property>
                                                 <property name="name">Restore</property>
                                                 <property name="pane_border">1</property>
@@ -19921,7 +19921,7 @@
                                 <property name="maximum_size"></property>
                                 <property name="min_size"></property>
                                 <property name="minimize_button">0</property>
-                                <property name="minimum_size">120,28</property>
+                                <property name="minimum_size">120,36</property>
                                 <property name="moveable">1</property>
                                 <property name="name">ButtonOk</property>
                                 <property name="pane_border">1</property>
@@ -19994,7 +19994,7 @@
                                 <property name="maximum_size"></property>
                                 <property name="min_size"></property>
                                 <property name="minimize_button">0</property>
-                                <property name="minimum_size">120,28</property>
+                                <property name="minimum_size">120,36</property>
                                 <property name="moveable">1</property>
                                 <property name="name">ButtonCancel</property>
                                 <property name="pane_border">1</property>
@@ -20531,7 +20531,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">120,28</property>
+                                            <property name="minimum_size">120,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">ButtonOk</property>
                                             <property name="pane_border">1</property>
@@ -20604,7 +20604,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">120,28</property>
+                                            <property name="minimum_size">120,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">ButtonCancel</property>
                                             <property name="pane_border">1</property>
@@ -21069,7 +21069,7 @@
                                             <property name="pressed"></property>
                                             <property name="resize">Resizable</property>
                                             <property name="show">1</property>
-                                            <property name="size">32,25</property>
+                                            <property name="size">36,28</property>
                                             <property name="style"></property>
                                             <property name="subclass"></property>
                                             <property name="toolbar_pane">0</property>
@@ -21142,7 +21142,7 @@
                                             <property name="pressed"></property>
                                             <property name="resize">Resizable</property>
                                             <property name="show">1</property>
-                                            <property name="size">32,25</property>
+                                            <property name="size">36,28</property>
                                             <property name="style"></property>
                                             <property name="subclass"></property>
                                             <property name="toolbar_pane">0</property>
@@ -21454,7 +21454,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">120,28</property>
+                                            <property name="minimum_size">120,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">ButtonOk</property>
                                             <property name="pane_border">1</property>
@@ -21527,7 +21527,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">120,28</property>
+                                            <property name="minimum_size">120,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">ButtonCancel</property>
                                             <property name="pane_border">1</property>
@@ -21716,7 +21716,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">160,28</property>
+                                                    <property name="minimum_size">160,36</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">NewFile</property>
                                                     <property name="pane_border">1</property>
@@ -21789,7 +21789,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">160,28</property>
+                                                    <property name="minimum_size">160,36</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">OpenFile</property>
                                                     <property name="pane_border">1</property>
@@ -22020,7 +22020,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">120,28</property>
+                                            <property name="minimum_size">120,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">Help</property>
                                             <property name="pane_border">1</property>
@@ -22103,7 +22103,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">120,28</property>
+                                            <property name="minimum_size">120,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">Cancel</property>
                                             <property name="pane_border">1</property>
@@ -22156,7 +22156,7 @@
             <property name="minimum_size"></property>
             <property name="name">AboutDialogBase</property>
             <property name="pos"></property>
-            <property name="size">640,440</property>
+            <property name="size">640,480</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX</property>
             <property name="subclass"></property>
             <property name="title">About WhackEd4</property>
@@ -22776,7 +22776,7 @@
                                         <property name="maximum_size"></property>
                                         <property name="min_size"></property>
                                         <property name="minimize_button">0</property>
-                                        <property name="minimum_size">150,28</property>
+                                        <property name="minimum_size">150,36</property>
                                         <property name="moveable">1</property>
                                         <property name="name">License</property>
                                         <property name="pane_border">1</property>
@@ -22859,7 +22859,7 @@
                                         <property name="maximum_size"></property>
                                         <property name="min_size"></property>
                                         <property name="minimize_button">0</property>
-                                        <property name="minimum_size">150,28</property>
+                                        <property name="minimum_size">150,36</property>
                                         <property name="moveable">1</property>
                                         <property name="name">ButtonOk</property>
                                         <property name="pane_border">1</property>
@@ -23224,7 +23224,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">144,28</property>
+                                            <property name="minimum_size">144,36</property>
                                             <property name="moveable">1</property>
                                             <property name="name">m_button43</property>
                                             <property name="pane_border">1</property>
@@ -23307,7 +23307,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">144,28</property>
+                                            <property name="minimum_size">144,26</property>
                                             <property name="moveable">1</property>
                                             <property name="name">m_button44</property>
                                             <property name="pane_border">1</property>
@@ -23357,10 +23357,10 @@
             <property name="hidden">0</property>
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">680,440</property>
+            <property name="minimum_size">680,448</property>
             <property name="name">StatePreviewDialogBase</property>
             <property name="pos"></property>
-            <property name="size">680,440</property>
+            <property name="size">680,448</property>
             <property name="style">wxCAPTION</property>
             <property name="subclass"></property>
             <property name="title">Preview</property>
@@ -23808,7 +23808,7 @@
                                 <property name="pressed"></property>
                                 <property name="resize">Resizable</property>
                                 <property name="show">1</property>
-                                <property name="size">120,28</property>
+                                <property name="size">120,36</property>
                                 <property name="style"></property>
                                 <property name="subclass"></property>
                                 <property name="toolbar_pane">0</property>
