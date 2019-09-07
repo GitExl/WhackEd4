@@ -88,7 +88,7 @@ class SpritePreview(wx.Panel):
         drag_distance = drag_point_end.x - self.drag_point_start.x
 
         drag_angle = (self.drag_angle_start - 1) - (drag_distance / SpritePreview.DRAG_SENSITIVITY)
-        drag_angle = (drag_angle % 8) + 1
+        drag_angle = int((drag_angle % 8) + 1)
 
         if self.angle != drag_angle:
             self.angle = drag_angle
