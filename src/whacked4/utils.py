@@ -134,10 +134,14 @@ def sound_play(name, wadlist):
     if wadlist is None:
         return
 
+    app = wx.GetApp()
+    if app is None:
+        return
+
     name = 'DS' + name.upper()
     sound_data = wadlist.get_sound(name)
     if sound_data is not None:
-        sound_data.play()
+        sound_data.play(app.pyaudio_instance)
 
 
 def mix_colours(colour1, colour2, mix):

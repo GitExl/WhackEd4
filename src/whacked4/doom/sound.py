@@ -5,11 +5,9 @@
 Classes for Doom audio reading and playback using the PyAudio PortAudio bindings.
 """
 
-import pyaudio
 import struct
-import threading
 
-import time
+import whacked4.playbackthread
 
 
 class Sound(object):
@@ -43,33 +41,11 @@ class Sound(object):
         # Slice sample data from the rest of the lump.
         self.samples = data[self.SOUND_HEADER.size:]
 
-    def play(self):
+    def play(self, pyaudio_instance):
         """
         Plays this sound.
         """
 
         # Start a new playback thread so that this function call does not block.
-        player = PlaybackThread(self.sample_rate, self.samples)
+        player = whacked4.playbackthread.PlaybackThread(pyaudio_instance, self.sample_rate, self.samples)
         player.start()
-
-
-class PlaybackThread(threading.Thread):
-    """
-    A thread that uses PyAudio to play back raw sample data.
-    """
-
-    def __init__(self, sample_rate, samples):
-        threading.Thread.__init__(self)
-
-        self.sample_rate = sample_rate
-        self.samples = samples
-
-    def run(self):
-        pyaud = pyaudio.PyAudio()
-
-        stream = pyaud.open(format=pyaudio.paUInt8, channels=1, rate=self.sample_rate, output=True, frames_per_buffer=1, start=True)
-        stream.write(self.samples)
-        stream.stop_stream()
-        stream.close()
-
-        pyaud.terminate()

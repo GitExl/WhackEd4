@@ -7,6 +7,8 @@ import traceback
 import wx
 import os
 
+import pyaudio
+
 from whacked4 import config
 from whacked4.ui import mainwindow
 from whacked4.ui.dialogs import errordialog
@@ -18,6 +20,14 @@ class WhackEd4App(wx.App):
 
     See http://wiki.wxpython.org/CustomExceptionHandling
     """
+
+    def __init__(self):
+        super().__init__()
+
+        self.pyaudio_instance = pyaudio.PyAudio()
+
+    def OnExit(self):
+        self.pyaudio_instance.terminate()
 
     def OnInit(self):
         """
