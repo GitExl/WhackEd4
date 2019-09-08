@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#coding=utf8
-
 """
 Contains all entry definition objects used by an engine's tables.
 """
@@ -14,10 +11,10 @@ from whacked4.dehacked.entry import Entry, Field, FieldType
 
 class AmmoEntry(Entry):
     NAME = 'Ammo'
-    FIELDS = OrderedDict([
-        ('maximum', Field('Max ammo', FieldType.INT)),
-        ('clip',    Field('Per ammo', FieldType.INT))
-    ])
+    FIELDS = {
+        'maximum': Field('Max ammo', FieldType.INT),
+        'clip':    Field('Per ammo', FieldType.INT)
+    }
 
 
 class ParEntry(Entry):

@@ -1,11 +1,22 @@
 Known bugs
+- The state animation preview window does not display named actions but code pointers.
+- State animation preview should not display states with 0 duration? But still run it's actions. See DV4 fist attack.
+- State animation preview should use parameters 1 and 2 to offset sprite. (If weapon?)
 
 Low priority bugs
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
 - Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
 
 Features
-1.3.0 and later
+1.3.0
+- Modularize tables other than Extended Dehacked.
+- VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
+  - Check to see if any things use states that use the wrong type of action (weapon or monster).
+- Mark modified strings with color in string editor.
+- Mark and display items as modified compared to engine config.
+- Muzzle flash support for weapon state previews. Possible?
+
+Later
 - Investigate pyInstaller for executable generation. Single file, less dependencies?
 - UI manual \ Dehacked tutorial.
 - Look into new Eternity Engine and PrBoom+ Dehacked features.
@@ -19,13 +30,8 @@ Features
 - Allow sorting things list by name.
 - '...' button for actions to browse through list of actions plus a description.
   - Fix action descriptions first, not all correspond with what the actual Doom code does. Check with Doom code in p_pspr and p_enemy.
-- VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
-  - Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Simplify engine config structure for faster parsing.
 - DEHSUPP support. See GitHub issue #1.
 - ZDaemon: Add and parse relevant actors from http://www.zdaemon.org/?CMD=info&NAME=deh. Is this related to DEHSUPP?
 - Read\write DEHACKED lumps directly from a WAD file.
-- Allow includes for cfg files to modularize them.
 - Improve tab traversal everywhere.
-- Mark and display items as modified compared to engine config.
-- Muzzle flash support for weapon state previews.

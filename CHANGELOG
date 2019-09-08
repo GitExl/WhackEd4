@@ -1,3 +1,7 @@
+Version 1.3.0
+-------------
+- Changed: engine table files can now include base table files. This leads to smaller filesizes and makes for easier updating. As a result of this, strings in the Doom 1.9 and Ultimate Doom 1.9 tables are now keyed by their index.
+
 Version 1.2.3
 -------------
 Fixed: no longer allow a state's action to be removed in non-extended patches. Thanks to Mechadon.

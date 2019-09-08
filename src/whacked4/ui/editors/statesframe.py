@@ -365,12 +365,12 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         # Add list column headers if needed.
         if self.StateList.GetColumnCount() == 0:
-            self.StateList.InsertColumn(0, '', width=37)
+            self.StateList.InsertColumn(0, '', width=45)
             self.StateList.InsertColumn(1, 'Name', width=57)
             self.StateList.InsertColumn(2, 'Spr', width=39)
             self.StateList.InsertColumn(3, 'Frm', width=39)
             self.StateList.InsertColumn(4, 'Lit', width=27)
-            self.StateList.InsertColumn(5, 'Next', width=41)
+            self.StateList.InsertColumn(5, 'Next', width=48)
             self.StateList.InsertColumn(6, 'Dur', width=40)
             self.StateList.InsertColumn(7, 'Action', width=160)
             self.StateList.InsertColumn(8, 'Parameters', width=107)

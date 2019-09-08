@@ -230,16 +230,15 @@ class Patch(object):
         """
 
         # Create a list of modified strings.
-        out = []
-        for index in range(len(self.strings)):
-            if self.strings[index] != self.engine.strings[index]:
-                out.append(index)
+        modified = []
+        for key, value in self.strings.items():
+            if self.strings[key] != self.engine.strings[key]:
+                modified.append(key)
 
-        # Write modified strings to the patch file.
-        if len(out) > 0:
-            for index in out:
-                f.write('\nText {} {}\n'.format(len(self.engine.strings[index]), len(self.strings[index])))
-                f.write('{}{}'.format(self.engine.strings[index], self.strings[index]))
+        # Write only modified strings to the patch file.
+        for key in modified:
+            f.write('\nText {} {}\n'.format(len(self.engine.strings[key]), len(self.strings[key])))
+            f.write('{}{}'.format(self.engine.strings[key], self.strings[key]))
 
     def write_patch_ext_strings(self, f):
         """
@@ -497,17 +496,17 @@ class Patch(object):
 
                     # Match strings to one in the original engine string table.
                     if not self.extended:
-                        index = -1
-                        for i in range(len(self.strings)):
-                            if self.strings[i] == original:
-                                index = i
+                        found_key = None
+                        for key in self.strings:
+                            if self.strings[key] == original:
+                                found_key = key
                                 break
 
-                        if index == -1:
-                            messages['NOSTRING_' + str(len(messages))] = 'The engine string "{}" could not be found.' \
+                        if found_key is None:
+                            messages['NOSTRING_' + str(len(messages))] = 'The engine string "{}" could not be found. ' \
                                                                          'It will not be loaded.'.format(original)
-
-                        self.strings[index] = new
+                        else:
+                            self.strings[key] = new
 
                         # Also replace sprite names, so that patches can alter them without offset modifications.
                         for i in range(len(self.sprite_names)):

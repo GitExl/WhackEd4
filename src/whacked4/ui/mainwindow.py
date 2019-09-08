@@ -120,7 +120,7 @@ class MainWindow(windows.MainFrameBase):
         for file_name in glob.glob('cfg/tables_*.json'):
             new_engine = engine.Engine()
             try:
-                new_engine.read_table(file_name)
+                new_engine.merge_data(file_name)
             except engine.DehackedEngineError as e:
                 wx.MessageBox(message='Invalid engine configuration file "{}". Exception: {}'.format(file_name, e),
                               caption='Engine configuration error', style=wx.OK | wx.ICON_EXCLAMATION, parent=self)

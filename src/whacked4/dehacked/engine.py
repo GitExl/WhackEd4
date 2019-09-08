@@ -1,11 +1,9 @@
-#!/usr/bin/env python
-#coding=utf8
-
-from collections import OrderedDict
-from json.encoder import JSONEncoder
-from whacked4.dehacked import table, entries, entry
 import json
 import struct
+
+from json.encoder import JSONEncoder
+
+from whacked4.dehacked import table, entries, entry
 
 
 class DehackedEngineError(Exception):
@@ -23,76 +21,77 @@ class Engine(object):
     def __init__(self):
 
         # A list of versions supported by this engine.
-        self.versions = None
+        self.versions = []
 
         # If True, this engine support Boom extended patch features.
         self.extended = False
 
         # The nice name of this engine for usage in a UI.
-        self.name = None
+        self.name = 'UNNAMED'
 
         # Things table.
         self.things = table.Table(entries.ThingEntry, self)
         self.things.offset = 1
-        self.things.names = None
-        self.things.flags = None
+        self.things.names = []
+        self.things.flags = {}
 
         # Weapons table.
         self.weapons = table.Table(entries.WeaponEntry, self)
-        self.weapons.names = None
+        self.weapons.names = []
 
         # Ammo table.
         self.ammo = table.Table(entries.AmmoEntry, self)
-        self.ammo.names = None
+        self.ammo.names = []
 
         # Sound table.
         self.sounds = table.Table(entries.SoundEntry, self)
-        self.sound_names = None
+        self.sound_names = []
 
         # Cheats table.
-        self.cheats = None
-        self.cheat_data = None
+        self.cheats = {}
+        self.cheat_data = {}
 
         # Cheats table.
-        self.misc = None
-        self.misc_data = None
+        self.misc = {}
+        self.misc_data = {}
 
         # States table.
         self.states = table.Table(entries.StateEntry, self)
 
         # Strings dictionary.
-        self.strings = None
+        self.strings = {}
 
         # Sprite names.
-        self.sprite_names = None
+        self.sprite_names = []
 
-        # A dictionary mapping action indices to state indices.
-        self.action_index_to_state = None
+        # A list mapping action indices to state indices.
+        self.action_index_to_state = []
 
         # A dict of actions available to this engine.
-        self.actions = None
+        self.actions = {}
 
-        # A list of state indices whose use is hardcoded in the game executable.
-        self.used_states = None
+        # A set of state indices whose use is hardcoded in the game executable.
+        self.used_states = set()
 
         # A list of hacks to enable for this engine.
-        self.hacks = None
+        self.hacks = {}
 
         # A list of supported render styles.
-        self.render_styles = None
+        self.render_styles = {}
 
-        # A dict of supported features.
-        self.features = None
+        # A set of supported features.
+        self.features = set()
 
         # Empty entries used for clearing out other entries.
-        self.empty_state = None
-        self.empty_thing = None
+        self.empty_state = entries.StateEntry(self)
+        self.empty_thing = entries.ThingEntry(self)
 
-    def read_table(self, filename):
+    def merge_data(self, filename, is_base_table=False):
         """
-        Reads engine data from a JSON table configuration file.
+        Reads and merges engine data from a JSON table configuration file into the current engine.
 
         @param filename: the name of the file to read table data from.
+        @param is_base_table: if True, only base table data will be merged.
 
         @raise KeyError: if the table file is missing data.
         """
@@ -100,64 +99,71 @@ class Engine(object):
         data = None
         with open(filename, 'r') as f:
             try:
-                data = json.load(f, object_pairs_hook=OrderedDict)
+                data = json.load(f)
             except ValueError as e:
                 print('Error in table file {}'.format(filename))
                 raise e
 
         try:
-            self.versions = data['versions']
-            self.extended = data['extended']
-            self.name = data['name']
-            self.features = set(data['features'])
 
-            self.things.names = data['thingNames']
-            self.things.flags = data['thingFlags']
+            if not is_base_table:
+                self.versions = data['versions']
+                self.extended = data['extended']
+                self.name = data['name']
+
+                self.empty_state = entries.StateEntry(self).from_json(data['emptyState'])
+                self.empty_thing = entries.ThingEntry(self).from_json(data['emptyThing'])
+
+            # If any base tables are referenced, load them first.
+            if 'baseTables' in data:
+                base_tables = data['baseTables']
+                for base_table in base_tables:
+                    base_filename = 'cfg/basetables_{}.json'.format(base_table)
+                    self.merge_data(base_filename, True)
+
+            self.features.update(set(data['features']))
+
+            self.things.names += data['thingNames']
+            self.things.flags.update(data['thingFlags'])
             self.things.read_from_json(data['things'])
             if len(self.things.names) != len(self.things):
                 raise DehackedEngineError('Thing and thing names sizes do not match.')
 
-            self.weapons.names = data['weaponNames']
+            self.weapons.names += data['weaponNames']
             self.weapons.read_from_json(data['weapons'])
             if len(self.weapons.names) != len(self.weapons):
                 raise DehackedEngineError('Weapon and weapon name sizes do not match.')
 
-            self.ammo.names = data['ammoNames']
+            self.ammo.names += data['ammoNames']
             self.ammo.read_from_json(data['ammo'])
 
-            self.actions = data['actions']
+            self.actions.update(data['actions'])
             self.states.read_from_json(data['states'])
             self.sounds.read_from_json(data['sounds'])
 
-            self.strings = data['strings']
+            self.strings.update(data['strings'])
 
-            self.misc = data['misc']
-            self.misc_data = data['miscData']
+            self.misc.update(data['misc'])
+            self.misc_data.update(data['miscData'])
 
-            self.cheats = data['cheats']
-            self.cheat_data = data['cheatData']
+            self.cheats.update(data['cheats'])
+            self.cheat_data.update(data['cheatData'])
 
-            self.sprite_names = data['spriteNames']
-            self.used_states = data['usedStates']
-            self.hacks = data['hacks']
+            self.sprite_names += data['spriteNames']
+            self.used_states.update(set(data['usedStates']))
+            self.hacks.update(data['hacks'])
 
-            self.empty_state = entries.StateEntry(self).from_json(data['emptyState'])
-            self.empty_thing = entries.ThingEntry(self).from_json(data['emptyThing'])
+            self.render_styles.update(data['renderStyles'])
 
-            if 'renderStyles' in data:
-                self.render_styles = data['renderStyles']
-            else:
-                self.render_styles = {}
-
-            self.sound_names = data['soundNames']
+            self.sound_names += data['soundNames']
             if len(self.sound_names) != len(self.sounds):
                 raise DehackedEngineError('Sound and sound names sizes do not match.')
 
             if not self.extended:
-                self.action_index_to_state = data['actionIndexToState']
+                self.action_index_to_state += data['actionIndexToState']
 
         except KeyError as e:
-            raise DehackedEngineError('Invalid engine table data. Exception: {}'.format(e))
+            raise DehackedEngineError('Invalid engine table data. KeyError {}'.format(e))
 
     def read_executable(self, engine_filename, exe_filename):
         """
@@ -171,7 +177,7 @@ class Engine(object):
         """
 
         with open(engine_filename, 'r') as f:
-            exe_config = json.load(f, object_pairs_hook=OrderedDict)
+            exe_config = json.load(f)
 
         try:
             self.versions = exe_config['versions']

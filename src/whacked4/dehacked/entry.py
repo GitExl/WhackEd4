@@ -148,6 +148,8 @@ class Entry(object):
 
         self.values = {}
         for key, field in self.FIELDS.items():
+            if key not in json:
+                continue
             self.values[key] = self.validate_field_value(key, json[key])
 
         return self

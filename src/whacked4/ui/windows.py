@@ -4293,7 +4293,7 @@ class ErrorDialogBase ( wx.Dialog ):
 		bSizer119.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 
 		self.m_button44 = wx.Button( self.m_panel54, ERROR_CLOSE, u"Close", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_button44.SetMinSize( wx.Size( 144,26 ) )
+		self.m_button44.SetMinSize( wx.Size( 144,36 ) )
 
 		bSizer119.Add( self.m_button44, 0, wx.ALL, 6 )
 
