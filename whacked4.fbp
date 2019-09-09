@@ -627,10 +627,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_THINGS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">980,650</property>
+            <property name="minimum_size">980,768</property>
             <property name="name">ThingsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">980,650</property>
+            <property name="size">980,768</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Things</property>
@@ -10206,7 +10206,7 @@
                             <object class="sizeritem" expanded="0">
                                 <property name="border">3</property>
                                 <property name="flag">wxEXPAND</property>
-                                <property name="proportion">1</property>
+                                <property name="proportion">2</property>
                                 <object class="wxCheckListBox" expanded="0">
                                     <property name="BottomDockable">1</property>
                                     <property name="LeftDockable">1</property>
@@ -10284,7 +10284,7 @@
                 <object class="sizeritem" expanded="0">
                     <property name="border">0</property>
                     <property name="flag">wxEXPAND</property>
-                    <property name="proportion">1</property>
+                    <property name="proportion">2</property>
                     <object class="wxListCtrl" expanded="0">
                         <property name="BottomDockable">1</property>
                         <property name="LeftDockable">1</property>
@@ -14513,10 +14513,10 @@
             <property name="hidden">0</property>
             <property name="id">FRAME_WEAPONS</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">560,425</property>
+            <property name="minimum_size">560,460</property>
             <property name="name">WeaponsFrameBase</property>
             <property name="pos"></property>
-            <property name="size">560,580</property>
+            <property name="size">560,460</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</property>
             <property name="subclass">wx.MDIChildFrame; </property>
             <property name="title">Weapons</property>

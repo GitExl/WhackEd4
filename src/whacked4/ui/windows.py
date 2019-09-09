@@ -471,9 +471,9 @@ class MainFrameBase ( wx.MDIParentFrame ):
 class ThingsFrameBase ( wx.MDIChildFrame ):
 
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 980,650 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 980,768 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
 
-		self.SetSizeHints( wx.Size( 980,650 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 980,768 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 
 		SizerMain = wx.BoxSizer( wx.HORIZONTAL )
@@ -1406,7 +1406,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingFlags = wx.CheckListBox( self.PanelFlags, THING_FLAGS, wx.DefaultPosition, wx.Size( -1,-1 ), ThingFlagsChoices, 0|wx.BORDER_SIMPLE )
 		self.ThingFlags.SetMinSize( wx.Size( 210,-1 ) )
 
-		SizerFlags.Add( self.ThingFlags, 1, wx.EXPAND, 3 )
+		SizerFlags.Add( self.ThingFlags, 2, wx.EXPAND, 3 )
 
 
 		self.PanelFlags.SetSizer( SizerFlags )
@@ -1418,7 +1418,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerMain.Add( ( 16, 0), 0, 0, 0 )
 
 		self.ThingList = wx.ListCtrl( self, THING_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.BORDER_NONE )
-		SizerMain.Add( self.ThingList, 1, wx.EXPAND, 0 )
+		SizerMain.Add( self.ThingList, 2, wx.EXPAND, 0 )
 
 
 		self.SetSizer( SizerMain )
@@ -2713,9 +2713,9 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 class WeaponsFrameBase ( wx.MDIChildFrame ):
 
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 560,580 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 560,460 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
 
-		self.SetSizeHints( wx.Size( 560,425 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 560,460 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )

@@ -165,6 +165,23 @@ class Engine(object):
         except KeyError as e:
             raise DehackedEngineError('Invalid engine table data. KeyError {}'.format(e))
 
+        # Clear values with false, as these indicate the entry is unwanted.
+        self.actions = self.clear_false(self.actions)
+        self.things.flags = self.clear_false(self.things.flags)
+
+    @staticmethod
+    def clear_false(data):
+        unset = set()
+
+        for key, value in data.items():
+            if not value:
+                unset.add(key)
+
+        for key in unset:
+            del data[key]
+
+        return data
+
     def read_executable(self, engine_filename, exe_filename):
         """
         Reads engine data from a game executable, using a JSON file as base.
