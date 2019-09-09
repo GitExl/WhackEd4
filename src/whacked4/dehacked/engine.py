@@ -82,9 +82,12 @@ class Engine(object):
         # A set of supported features.
         self.features = set()
 
-        # Empty entries used for clearing out other entries.
-        self.empty_state = entries.StateEntry(self)
-        self.empty_thing = entries.ThingEntry(self)
+        # Defaults for new entries and unnamed fields.
+        self.default_state = entries.StateEntry(self)
+        self.default_thing = entries.ThingEntry(self)
+        self.default_weapon = entries.WeaponEntry(self)
+        self.default_ammo = entries.AmmoEntry(self)
+        self.default_sound = entries.SoundEntry(self)
 
     def merge_data(self, filename, is_base_table=False):
         """
@@ -111,8 +114,11 @@ class Engine(object):
                 self.extended = data['extended']
                 self.name = data['name']
 
-                self.empty_state = entries.StateEntry(self).from_json(data['emptyState'])
-                self.empty_thing = entries.ThingEntry(self).from_json(data['emptyThing'])
+                self.default_state = entries.StateEntry(self).from_json(data['defaultState'])
+                self.default_thing = entries.ThingEntry(self).from_json(data['defaultThing'])
+                self.default_weapon = entries.WeaponEntry(self).from_json(data['defaultWeapon'])
+                self.default_ammo = entries.AmmoEntry(self).from_json(data['defaultAmmo'])
+                self.default_sound = entries.SoundEntry(self).from_json(data['defaultSound'])
 
             # If any base tables are referenced, load them first.
             if 'baseTables' in data:
@@ -171,6 +177,10 @@ class Engine(object):
 
     @staticmethod
     def clear_false(data):
+        """
+        Removes items from data that have "False" as their value.
+        """
+
         unset = set()
 
         for key, value in data.items():
@@ -181,6 +191,17 @@ class Engine(object):
             del data[key]
 
         return data
+
+    def apply_defaults(self):
+        """
+        Apply table defaults. Best run after all table data has been fully loaded.
+        """
+
+        self.states.apply_defaults(self.default_state)
+        self.things.apply_defaults(self.default_thing)
+        self.weapons.apply_defaults(self.default_weapon)
+        self.ammo.apply_defaults(self.default_ammo)
+        self.sounds.apply_defaults(self.default_sound)
 
     def read_executable(self, engine_filename, exe_filename):
         """
@@ -279,8 +300,11 @@ class Engine(object):
             'usedStates': self.used_states,
             'hacks': self.hacks,
 
-            'emptyState': self.empty_state.to_json(),
-            'emptyThing': self.empty_thing.to_json()
+            'defaultState': self.default_state,
+            'defaultThing': self.default_thing,
+            'defaultWeapon': self.default_weapon,
+            'defaultAmmo': self.default_ammo,
+            'defaultSound': self.default_sound,
         }
 
         with open(filename, 'w') as f:

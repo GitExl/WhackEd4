@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#coding=utf8
-
 import copy
 
 from collections import namedtuple
@@ -36,7 +33,7 @@ class Entry(object):
     # The name of this patch entry.
     NAME = None
 
-    # The struct module structure definition to use when reading this entry directly from an executable.
+    # The struct definition to use when reading this entry directly from an executable.
     STRUCTURE = None
 
     # A dict of fields in this entry.
@@ -57,7 +54,7 @@ class Entry(object):
         @raise KeyError: If the key cannot be found.
         """
 
-        if key not in self.FIELDS:
+        if key not in self.values:
             raise KeyError('Cannot find patch key "{}".'.format(key))
 
         return self.values[key]
@@ -69,10 +66,13 @@ class Entry(object):
         @raise KeyError: if the key cannot be found.
         """
 
-        if key not in self.FIELDS:
+        if key not in self.values:
             raise KeyError('Cannot find patch key "{}".'.format(key))
 
         self.values[key] = value
+
+    def __contains__(self, item):
+        return item in self.values
 
     def validate_field_value(self, key, value):
         """
@@ -87,26 +87,26 @@ class Entry(object):
         field = self.FIELDS[key]
 
         if field.type == FieldType.FLAGS:
-            value = validators.thing_flags_read(value, self.table)
+            return validators.thing_flags_read(value, self.table)
 
         elif field.type == FieldType.INT or field.type == FieldType.AMMO or field.type == FieldType.SOUND or \
                 field.type == FieldType.SPRITE or field.type == FieldType.STATE:
             try:
-                value = int(value)
+                return int(value)
             except ValueError:
                 raise ValueError('Value "{}" for field "{}" is not an integer.'.format(value, key))
 
         elif field.type == FieldType.FLOAT:
             try:
-                value = float(value)
+                return float(value)
             except ValueError:
                 raise ValueError('Value "{}" for field "{}" is not a float.'.format(value, key))
 
         elif field.type == FieldType.STRING or field.type == FieldType.ACTION or field.type == FieldType.ENUM_GAME or \
                 field.type == FieldType.ENUM_RENDER_STYLE:
-            value = str(value)
+            return str(value)
 
-        return value
+        raise ValueError('Unknown field value type "{}".'.format(field.type))
 
     def set_patch_key(self, patch_key, value):
         """
@@ -147,7 +147,7 @@ class Entry(object):
         """
 
         self.values = {}
-        for key, field in self.FIELDS.items():
+        for key in self.FIELDS.keys():
             if key not in json:
                 continue
             self.values[key] = self.validate_field_value(key, json[key])
@@ -209,6 +209,11 @@ class Entry(object):
 
         return '\n'.join(output_list) + '\n'
 
+    def set_defaults(self, default_entry):
+        for key, value in default_entry.values.items():
+            if key not in self.values:
+                self.values[key] = self.validate_field_value(key, default_entry.values[key])
+
     def clone(self):
         """
         Returns a clone of this entry.
@@ -216,6 +221,7 @@ class Entry(object):
 
         dup = copy.copy(self)
         dup.values = copy.copy(self.values)
+        dup.extra_values = copy.copy(self.extra_values)
 
         return dup
 

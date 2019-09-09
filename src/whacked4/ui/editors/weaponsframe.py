@@ -169,15 +169,19 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         weapon = self.patch.weapons[self.selected_index]
 
         self.AmmoType.Select(weapon['ammoType'])
-        self.AmmoUse.ChangeValue(str(weapon['ammoUse']))
-        self.MinAmmo.ChangeValue(str(weapon['minAmmo']))
-        self.Decal.ChangeValue(weapon['decal'])
 
         self.WeaponStateSelect.ChangeValue(str(weapon['stateSelect']))
         self.WeaponStateDeselect.ChangeValue(str(weapon['stateDeselect']))
         self.WeaponStateBob.ChangeValue(str(weapon['stateBob']))
         self.WeaponStateFire.ChangeValue(str(weapon['stateFire']))
         self.WeaponStateMuzzle.ChangeValue(str(weapon['stateMuzzle']))
+
+        if 'weapon.ammoUse' in self.patch.engine.features:
+            self.AmmoUse.ChangeValue(str(weapon['ammoUse']))
+        if 'weapon.minAmmo' in self.patch.engine.features:
+            self.MinAmmo.ChangeValue(str(weapon['minAmmo']))
+        if 'weapon.decal' in self.patch.engine.features:
+            self.Decal.ChangeValue(weapon['decal'])
 
         # Set state values.
         for name in self.PROPS_STATES.values():
@@ -268,7 +272,10 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         Sets state control values based on the partial name of a weapon state property.
         """
 
-        state_index = self.patch.weapons[self.selected_index]['state' + state_name]
+        state_key = 'state' + state_name
+        if state_key not in self.patch.weapons:
+            return
+        state_index = self.patch.weapons[state_key]
         self.__dict__['WeaponState' + state_name].ChangeValue(str(state_index))
         self.__dict__['WeaponState' + state_name + 'Name'].SetLabel(self.patch.get_state_name(state_index))
 

@@ -14,6 +14,7 @@
 		"thing.decal",
 		"thing.damageFactor",
 		"thing.gravity",
+		"state.args",
 		"weapon.minAmmo",
 		"weapon.decal",
 		"weapon.ammoUse",
@@ -2546,12 +2547,6 @@
 		}
 	},
 
-	"ammo": [],
-	"ammoNames": [],
-
-	"cheats": {},
-	"cheatData": {},
-
 	"misc": {
 		"armorClassSilver": 3,
 		"armorClassEnchanted": 4,
@@ -2623,12 +2618,6 @@
 			"off": 0
 		}
 	},
-
-	"sounds": [],
-	"soundNames": [],
-	"spriteNames": [],
-	"states": [],
-	"strings": {},
 
 	"thingFlags": {
 		"CLIENTSIDE": {
@@ -3031,15 +3020,8 @@
 		}
 	},
 
-	"thingNames": [],
-	"things": [],
-
-	"weaponNames": [],
-	"weapons": [],
-
-	"usedStates": [],
-
 	"renderStyles": {
+		"STYLE_Normal": "Normal",
 		"STYLE_None": "None",
 		"STYLE_Fuzzy": "Fuzzy",
 		"STYLE_SoulTrans": "Lost soul trans.",
@@ -3051,6 +3033,51 @@
 		"STYLE_TranslucentStencil": "Trans. stencil"
 	},
 
-	"emptyState": {},
-	"emptyThing": {}
+	"defaultState": {
+		"arg1": 0,
+		"arg2": 0,
+		"arg3": 0,
+		"arg4": 0,
+		"arg5": 0,
+		"arg6": 0,
+		"arg7": 0,
+		"arg8": 0,
+		"arg9": 0
+	},
+	"defaultThing": {
+		"stateCrash": 0,
+		"stateBurn": 0,
+		"stateFreeze": 0,
+		"spawnId": 0,
+		"game": "Doom",
+		"respawnTime": 0,
+		"renderStyle": "STYLE_Normal",
+		"alpha": 1.0,
+		"scale": 1.0,
+		"decal": "",
+		"damageFactor": 1.0,
+		"gravity": 1.0
+	},
+	"defaultWeapon": {
+		"minAmmo": 0,
+		"decal": "",
+		"ammoUse": 0
+	},
+	"defaultAmmo": {},
+	"defaultSound": {},
+
+	"ammo": [],
+	"ammoNames": [],
+	"cheats": {},
+	"cheatData": {},
+	"sounds": [],
+	"soundNames": [],
+	"spriteNames": [],
+	"states": [],
+	"strings": {},
+	"thingNames": [],
+	"things": [],
+	"weaponNames": [],
+	"weapons": [],
+	"usedStates": []
 }

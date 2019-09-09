@@ -3768,10 +3768,10 @@ class StringDialogBase ( wx.Dialog ):
 		self.Original.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		self.Original.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 
-		bSizer42.Add( self.Original, 1, wx.ALL|wx.EXPAND, 6 )
+		bSizer42.Add( self.Original, 2, wx.ALL|wx.EXPAND, 6 )
 
 
-		bSizer113.Add( bSizer42, 1, wx.EXPAND, 5 )
+		bSizer113.Add( bSizer42, 2, wx.EXPAND, 5 )
 
 		bSizer421 = wx.BoxSizer( wx.VERTICAL )
 
@@ -3783,10 +3783,10 @@ class StringDialogBase ( wx.Dialog ):
 		self.New = wx.TextCtrl( self.m_panel51, STRING_NEW, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_DONTWRAP|wx.TE_MULTILINE|wx.TE_PROCESS_ENTER|wx.TE_PROCESS_TAB )
 		self.New.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 
-		bSizer421.Add( self.New, 1, wx.ALL|wx.EXPAND, 6 )
+		bSizer421.Add( self.New, 2, wx.ALL|wx.EXPAND, 6 )
 
 
-		bSizer113.Add( bSizer421, 1, wx.EXPAND, 5 )
+		bSizer113.Add( bSizer421, 2, wx.EXPAND, 5 )
 
 
 		bSizer186.Add( bSizer113, 1, wx.ALL|wx.EXPAND, 6 )

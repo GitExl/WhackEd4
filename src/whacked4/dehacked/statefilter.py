@@ -145,7 +145,7 @@ def _get_thing_states(thing):
 
     states = []
     for name in names:
-        if thing[name] > 0:
+        if name in thing and thing[name] > 0:
             states.append(thing[name])
 
     return states
@@ -166,7 +166,7 @@ def _get_weapon_states(weapon):
 
     states = []
     for name in names:
-        if weapon[name] > 0:
+        if name in weapon and weapon[name] > 0:
             states.append(weapon[name])
 
     return states

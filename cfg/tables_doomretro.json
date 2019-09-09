@@ -1,7 +1,7 @@
 {
 	"versions": [19, 21],
-	"extended": true,
 	"name": "Doom Retro",
+	"extended": true,
 
 	"baseTables": [
 		"boom",
@@ -12,6 +12,10 @@
 	"features": [
 		"thing.gibHealth"
 	],
+
+	"defaultThing": {
+		"gibHealth": 0
+	},
 
 	"hacks": {},
 	"actions": {},
@@ -33,6 +37,8 @@
 	"weapons": [],
 	"usedStates": [],
 	"renderStyles": {},
-	"emptyState": {},
-	"emptyThing": {}
+	"defaultState": {},
+	"defaultWeapon": {},
+	"defaultAmmo": {},
+	"defaultSound": {}
 }

@@ -121,6 +121,7 @@ class MainWindow(windows.MainFrameBase):
             new_engine = engine.Engine()
             try:
                 new_engine.merge_data(file_name)
+                new_engine.apply_defaults()
             except engine.DehackedEngineError as e:
                 wx.MessageBox(message='Invalid engine configuration file "{}". Exception: {}'.format(file_name, e),
                               caption='Engine configuration error', style=wx.OK | wx.ICON_EXCLAMATION, parent=self)

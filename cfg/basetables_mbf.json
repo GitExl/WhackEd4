@@ -169,13 +169,6 @@
 		}
 	},
 
-	"ammo": [],
-	"ammoNames": [],
-	"cheatData": {},
-	"cheats": {},
-	"misc": {},
-	"miscData": {},
-
 	"sounds": [
 		{
 			"internalDataPointer": 0,
@@ -259,16 +252,7 @@
 			"unused2": 0,
 			"nextState": 965,
 			"sprite": 22,
-			"spriteFrame": 32769,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32769
 		},
 		{
 			"action": "Scream",
@@ -277,16 +261,7 @@
 			"unused2": 0,
 			"nextState": 970,
 			"sprite": 22,
-			"spriteFrame": 32769,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32769
 		},
 		{
 			"action": "Detonate",
@@ -295,16 +270,7 @@
 			"unused2": 0,
 			"nextState": 971,
 			"sprite": 22,
-			"spriteFrame": 32770,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32770
 		},
 		{
 			"action": "NULL",
@@ -313,16 +279,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 22,
-			"spriteFrame": 32771,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32771
 		},
 		{
 			"action": "Look",
@@ -331,16 +288,7 @@
 			"unused2": 0,
 			"nextState": 973,
 			"sprite": 139,
-			"spriteFrame": 0,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 0
 		},
 		{
 			"action": "Look",
@@ -349,16 +297,7 @@
 			"unused2": 0,
 			"nextState": 972,
 			"sprite": 139,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "Chase",
@@ -367,16 +306,7 @@
 			"unused2": 0,
 			"nextState": 975,
 			"sprite": 139,
-			"spriteFrame": 0,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 0
 		},
 		{
 			"action": "Chase",
@@ -385,16 +315,7 @@
 			"unused2": 0,
 			"nextState": 976,
 			"sprite": 139,
-			"spriteFrame": 0,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 0
 		},
 		{
 			"action": "Chase",
@@ -403,16 +324,7 @@
 			"unused2": 0,
 			"nextState": 977,
 			"sprite": 139,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "Chase",
@@ -421,16 +333,7 @@
 			"unused2": 0,
 			"nextState": 978,
 			"sprite": 139,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "Chase",
@@ -439,16 +342,7 @@
 			"unused2": 0,
 			"nextState": 979,
 			"sprite": 139,
-			"spriteFrame": 2,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 2
 		},
 		{
 			"action": "Chase",
@@ -457,16 +351,7 @@
 			"unused2": 0,
 			"nextState": 980,
 			"sprite": 139,
-			"spriteFrame": 2,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 2
 		},
 		{
 			"action": "Chase",
@@ -475,16 +360,7 @@
 			"unused2": 0,
 			"nextState": 981,
 			"sprite": 139,
-			"spriteFrame": 3,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 3
 		},
 		{
 			"action": "Chase",
@@ -493,16 +369,7 @@
 			"unused2": 0,
 			"nextState": 974,
 			"sprite": 139,
-			"spriteFrame": 3,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 3
 		},
 		{
 			"action": "FaceTarget",
@@ -511,16 +378,7 @@
 			"unused2": 0,
 			"nextState": 983,
 			"sprite": 139,
-			"spriteFrame": 4,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 4
 		},
 		{
 			"action": "FaceTarget",
@@ -529,16 +387,7 @@
 			"unused2": 0,
 			"nextState": 984,
 			"sprite": 139,
-			"spriteFrame": 5,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 5
 		},
 		{
 			"action": "SargAttack",
@@ -547,16 +396,7 @@
 			"unused2": 0,
 			"nextState": 974,
 			"sprite": 139,
-			"spriteFrame": 6,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 6
 		},
 		{
 			"action": "NULL",
@@ -565,16 +405,7 @@
 			"unused2": 0,
 			"nextState": 986,
 			"sprite": 139,
-			"spriteFrame": 7,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 7
 		},
 		{
 			"action": "Pain",
@@ -583,16 +414,7 @@
 			"unused2": 0,
 			"nextState": 974,
 			"sprite": 139,
-			"spriteFrame": 7,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 7
 		},
 		{
 			"action": "NULL",
@@ -601,16 +423,7 @@
 			"unused2": 0,
 			"nextState": 988,
 			"sprite": 139,
-			"spriteFrame": 8,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 8
 		},
 		{
 			"action": "Scream",
@@ -619,16 +432,7 @@
 			"unused2": 0,
 			"nextState": 989,
 			"sprite": 139,
-			"spriteFrame": 9,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 9
 		},
 		{
 			"action": "NULL",
@@ -637,16 +441,7 @@
 			"unused2": 0,
 			"nextState": 990,
 			"sprite": 139,
-			"spriteFrame": 10,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 10
 		},
 		{
 			"action": "Fall",
@@ -655,16 +450,7 @@
 			"unused2": 0,
 			"nextState": 991,
 			"sprite": 139,
-			"spriteFrame": 11,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 11
 		},
 		{
 			"action": "NULL",
@@ -673,16 +459,7 @@
 			"unused2": 0,
 			"nextState": 992,
 			"sprite": 139,
-			"spriteFrame": 12,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 12
 		},
 		{
 			"action": "NULL",
@@ -691,16 +468,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 139,
-			"spriteFrame": 13,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 13
 		},
 		{
 			"action": "NULL",
@@ -709,16 +477,7 @@
 			"unused2": 0,
 			"nextState": 994,
 			"sprite": 139,
-			"spriteFrame": 13,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 13
 		},
 		{
 			"action": "NULL",
@@ -727,16 +486,7 @@
 			"unused2": 0,
 			"nextState": 995,
 			"sprite": 139,
-			"spriteFrame": 12,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 12
 		},
 		{
 			"action": "NULL",
@@ -745,16 +495,7 @@
 			"unused2": 0,
 			"nextState": 996,
 			"sprite": 139,
-			"spriteFrame": 11,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 11
 		},
 		{
 			"action": "NULL",
@@ -763,16 +504,7 @@
 			"unused2": 0,
 			"nextState": 997,
 			"sprite": 139,
-			"spriteFrame": 10,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 10
 		},
 		{
 			"action": "NULL",
@@ -781,16 +513,7 @@
 			"unused2": 0,
 			"nextState": 998,
 			"sprite": 139,
-			"spriteFrame": 9,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 9
 		},
 		{
 			"action": "NULL",
@@ -799,16 +522,7 @@
 			"unused2": 0,
 			"nextState": 974,
 			"sprite": 139,
-			"spriteFrame": 8,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 8
 		},
 		{
 			"action": "BFGSound",
@@ -817,16 +531,7 @@
 			"unused2": 0,
 			"nextState": 1000,
 			"sprite": 14,
-			"spriteFrame": 0,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 0
 		},
 		{
 			"action": "FireOldBFG",
@@ -835,16 +540,7 @@
 			"unused2": 0,
 			"nextState": 1001,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -853,16 +549,7 @@
 			"unused2": 0,
 			"nextState": 1002,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -871,16 +558,7 @@
 			"unused2": 0,
 			"nextState": 1003,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -889,16 +567,7 @@
 			"unused2": 0,
 			"nextState": 1004,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -907,16 +576,7 @@
 			"unused2": 0,
 			"nextState": 1005,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -925,16 +585,7 @@
 			"unused2": 0,
 			"nextState": 1006,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -943,16 +594,7 @@
 			"unused2": 0,
 			"nextState": 1007,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -961,16 +603,7 @@
 			"unused2": 0,
 			"nextState": 1008,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -979,16 +612,7 @@
 			"unused2": 0,
 			"nextState": 1009,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -997,16 +621,7 @@
 			"unused2": 0,
 			"nextState": 1010,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1015,16 +630,7 @@
 			"unused2": 0,
 			"nextState": 1011,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1033,16 +639,7 @@
 			"unused2": 0,
 			"nextState": 1012,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1051,16 +648,7 @@
 			"unused2": 0,
 			"nextState": 1013,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1069,16 +657,7 @@
 			"unused2": 0,
 			"nextState": 1014,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1087,16 +666,7 @@
 			"unused2": 0,
 			"nextState": 1015,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1105,16 +675,7 @@
 			"unused2": 0,
 			"nextState": 1016,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1123,16 +684,7 @@
 			"unused2": 0,
 			"nextState": 1017,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1141,16 +693,7 @@
 			"unused2": 0,
 			"nextState": 1018,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1159,16 +702,7 @@
 			"unused2": 0,
 			"nextState": 1019,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1177,16 +711,7 @@
 			"unused2": 0,
 			"nextState": 1020,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1195,16 +720,7 @@
 			"unused2": 0,
 			"nextState": 1021,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1213,16 +729,7 @@
 			"unused2": 0,
 			"nextState": 1022,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1231,16 +738,7 @@
 			"unused2": 0,
 			"nextState": 1023,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1249,16 +747,7 @@
 			"unused2": 0,
 			"nextState": 1024,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1267,16 +756,7 @@
 			"unused2": 0,
 			"nextState": 1025,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1285,16 +765,7 @@
 			"unused2": 0,
 			"nextState": 1026,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1303,16 +774,7 @@
 			"unused2": 0,
 			"nextState": 1027,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1321,16 +783,7 @@
 			"unused2": 0,
 			"nextState": 1028,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1339,16 +792,7 @@
 			"unused2": 0,
 			"nextState": 1029,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1357,16 +801,7 @@
 			"unused2": 0,
 			"nextState": 1030,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1375,16 +810,7 @@
 			"unused2": 0,
 			"nextState": 1031,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1393,16 +819,7 @@
 			"unused2": 0,
 			"nextState": 1032,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1411,16 +828,7 @@
 			"unused2": 0,
 			"nextState": 1033,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1429,16 +837,7 @@
 			"unused2": 0,
 			"nextState": 1034,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1447,16 +846,7 @@
 			"unused2": 0,
 			"nextState": 1035,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1465,16 +855,7 @@
 			"unused2": 0,
 			"nextState": 1036,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1483,16 +864,7 @@
 			"unused2": 0,
 			"nextState": 1037,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1501,16 +873,7 @@
 			"unused2": 0,
 			"nextState": 1038,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1519,16 +882,7 @@
 			"unused2": 0,
 			"nextState": 1039,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "FireOldBFG",
@@ -1537,16 +891,7 @@
 			"unused2": 0,
 			"nextState": 1040,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "Light0",
@@ -1555,16 +900,7 @@
 			"unused2": 0,
 			"nextState": 1041,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "ReFire",
@@ -1573,16 +909,7 @@
 			"unused2": 0,
 			"nextState": 81,
 			"sprite": 14,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "NULL",
@@ -1591,16 +918,7 @@
 			"unused2": 0,
 			"nextState": 1043,
 			"sprite": 140,
-			"spriteFrame": 32768,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32768
 		},
 		{
 			"action": "NULL",
@@ -1609,16 +927,7 @@
 			"unused2": 0,
 			"nextState": 1042,
 			"sprite": 140,
-			"spriteFrame": 32769,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32769
 		},
 		{
 			"action": "NULL",
@@ -1627,16 +936,7 @@
 			"unused2": 0,
 			"nextState": 1045,
 			"sprite": 140,
-			"spriteFrame": 32770,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32770
 		},
 		{
 			"action": "NULL",
@@ -1645,16 +945,7 @@
 			"unused2": 0,
 			"nextState": 1046,
 			"sprite": 140,
-			"spriteFrame": 32771,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32771
 		},
 		{
 			"action": "NULL",
@@ -1663,16 +954,7 @@
 			"unused2": 0,
 			"nextState": 1047,
 			"sprite": 140,
-			"spriteFrame": 32772,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32772
 		},
 		{
 			"action": "NULL",
@@ -1681,16 +963,7 @@
 			"unused2": 0,
 			"nextState": 1048,
 			"sprite": 140,
-			"spriteFrame": 32773,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32773
 		},
 		{
 			"action": "NULL",
@@ -1699,16 +972,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 140,
-			"spriteFrame": 32774,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32774
 		},
 		{
 			"action": "NULL",
@@ -1717,16 +981,7 @@
 			"unused2": 0,
 			"nextState": 1050,
 			"sprite": 141,
-			"spriteFrame": 32768,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32768
 		},
 		{
 			"action": "NULL",
@@ -1735,16 +990,7 @@
 			"unused2": 0,
 			"nextState": 1049,
 			"sprite": 141,
-			"spriteFrame": 32769,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32769
 		},
 		{
 			"action": "NULL",
@@ -1753,16 +999,7 @@
 			"unused2": 0,
 			"nextState": 1052,
 			"sprite": 141,
-			"spriteFrame": 32770,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32770
 		},
 		{
 			"action": "NULL",
@@ -1771,16 +1008,7 @@
 			"unused2": 0,
 			"nextState": 1053,
 			"sprite": 141,
-			"spriteFrame": 32771,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32771
 		},
 		{
 			"action": "NULL",
@@ -1789,16 +1017,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 141,
-			"spriteFrame": 32772,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32772
 		},
 		{
 			"action": "NULL",
@@ -1807,16 +1026,7 @@
 			"unused2": 0,
 			"nextState": 1054,
 			"sprite": 142,
-			"spriteFrame": 0,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 0
 		},
 		{
 			"action": "NULL",
@@ -1825,16 +1035,7 @@
 			"unused2": 0,
 			"nextState": 1055,
 			"sprite": 143,
-			"spriteFrame": 0,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 0
 		},
 		{
 			"action": "Look",
@@ -1843,16 +1044,7 @@
 			"unused2": 0,
 			"nextState": 1056,
 			"sprite": 44,
-			"spriteFrame": 0,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 0
 		},
 		{
 			"action": "Chase",
@@ -1861,16 +1053,7 @@
 			"unused2": 0,
 			"nextState": 1058,
 			"sprite": 44,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "Chase",
@@ -1879,16 +1062,7 @@
 			"unused2": 0,
 			"nextState": 1059,
 			"sprite": 44,
-			"spriteFrame": 2,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 2
 		},
 		{
 			"action": "Chase",
@@ -1897,16 +1071,7 @@
 			"unused2": 0,
 			"nextState": 1060,
 			"sprite": 44,
-			"spriteFrame": 3,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 3
 		},
 		{
 			"action": "Chase",
@@ -1915,16 +1080,7 @@
 			"unused2": 0,
 			"nextState": 1057,
 			"sprite": 44,
-			"spriteFrame": 0,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 0
 		},
 		{
 			"action": "FaceTarget",
@@ -1933,16 +1089,7 @@
 			"unused2": 0,
 			"nextState": 1062,
 			"sprite": 44,
-			"spriteFrame": 4,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 4
 		},
 		{
 			"action": "BetaSkullAttack",
@@ -1951,16 +1098,7 @@
 			"unused2": 0,
 			"nextState": 1063,
 			"sprite": 44,
-			"spriteFrame": 5,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 5
 		},
 		{
 			"action": "NULL",
@@ -1969,16 +1107,7 @@
 			"unused2": 0,
 			"nextState": 1057,
 			"sprite": 44,
-			"spriteFrame": 5,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 5
 		},
 		{
 			"action": "NULL",
@@ -1987,16 +1116,7 @@
 			"unused2": 0,
 			"nextState": 1065,
 			"sprite": 44,
-			"spriteFrame": 6,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 6
 		},
 		{
 			"action": "Pain",
@@ -2005,16 +1125,7 @@
 			"unused2": 0,
 			"nextState": 1057,
 			"sprite": 44,
-			"spriteFrame": 7,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 7
 		},
 		{
 			"action": "NULL",
@@ -2023,16 +1134,7 @@
 			"unused2": 0,
 			"nextState": 1057,
 			"sprite": 44,
-			"spriteFrame": 8,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 8
 		},
 		{
 			"action": "NULL",
@@ -2041,16 +1143,7 @@
 			"unused2": 0,
 			"nextState": 1068,
 			"sprite": 44,
-			"spriteFrame": 9,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 9
 		},
 		{
 			"action": "NULL",
@@ -2059,16 +1152,7 @@
 			"unused2": 0,
 			"nextState": 1069,
 			"sprite": 44,
-			"spriteFrame": 10,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 10
 		},
 		{
 			"action": "NULL",
@@ -2077,16 +1161,7 @@
 			"unused2": 0,
 			"nextState": 1070,
 			"sprite": 44,
-			"spriteFrame": 11,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 11
 		},
 		{
 			"action": "NULL",
@@ -2095,16 +1170,7 @@
 			"unused2": 0,
 			"nextState": 1071,
 			"sprite": 44,
-			"spriteFrame": 12,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 12
 		},
 		{
 			"action": "Scream",
@@ -2113,16 +1179,7 @@
 			"unused2": 0,
 			"nextState": 1072,
 			"sprite": 44,
-			"spriteFrame": 13,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 13
 		},
 		{
 			"action": "NULL",
@@ -2131,16 +1188,7 @@
 			"unused2": 0,
 			"nextState": 1073,
 			"sprite": 44,
-			"spriteFrame": 14,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 14
 		},
 		{
 			"action": "Fall",
@@ -2149,16 +1197,7 @@
 			"unused2": 0,
 			"nextState": 1074,
 			"sprite": 44,
-			"spriteFrame": 15,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 15
 		},
 		{
 			"action": "Stop",
@@ -2167,16 +1206,7 @@
 			"unused2": 0,
 			"nextState": 1074,
 			"sprite": 44,
-			"spriteFrame": 16,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 16
 		},
 		{
 			"action": "Mushroom",
@@ -2185,16 +1215,7 @@
 			"unused2": 0,
 			"nextState": 128,
 			"sprite": 22,
-			"spriteFrame": 32769,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32769
 		},
 		{
 			"action": "NULL",
@@ -2203,16 +1224,7 @@
 			"unused2": 0,
 			"nextState": 806,
 			"sprite": 58,
-			"spriteFrame": 0,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 0
 		},
 		{
 			"action": "NULL",
@@ -2221,16 +1233,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 144,
-			"spriteFrame": 0,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 0
 		},
 		{
 			"action": "NULL",
@@ -2239,16 +1242,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 144,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "NULL",
@@ -2257,16 +1251,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 144,
-			"spriteFrame": 2,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 2
 		},
 		{
 			"action": "NULL",
@@ -2275,16 +1260,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 144,
-			"spriteFrame": 3,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 3
 		},
 		{
 			"action": "NULL",
@@ -2293,16 +1269,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 144,
-			"spriteFrame": 4,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 4
 		},
 		{
 			"action": "NULL",
@@ -2311,16 +1278,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 144,
-			"spriteFrame": 5,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 5
 		},
 		{
 			"action": "NULL",
@@ -2329,16 +1287,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 144,
-			"spriteFrame": 6,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 6
 		},
 		{
 			"action": "NULL",
@@ -2347,16 +1296,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 144,
-			"spriteFrame": 7,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 7
 		},
 		{
 			"action": "NULL",
@@ -2365,16 +1305,7 @@
 			"unused2": 0,
 			"nextState": 1086,
 			"sprite": 17,
-			"spriteFrame": 32768,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 32768
 		},
 		{
 			"action": "NULL",
@@ -2383,16 +1314,7 @@
 			"unused2": 0,
 			"nextState": 1087,
 			"sprite": 17,
-			"spriteFrame": 1,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 1
 		},
 		{
 			"action": "NULL",
@@ -2401,16 +1323,7 @@
 			"unused2": 0,
 			"nextState": 1088,
 			"sprite": 17,
-			"spriteFrame": 2,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 2
 		},
 		{
 			"action": "NULL",
@@ -2419,16 +1332,7 @@
 			"unused2": 0,
 			"nextState": 0,
 			"sprite": 17,
-			"spriteFrame": 3,
-			"arg1": 0,
-			"arg2": 0,
-			"arg3": 0,
-			"arg4": 0,
-			"arg5": 0,
-			"arg6": 0,
-			"arg7": 0,
-			"arg8": 0,
-			"arg9": 0
+			"spriteFrame": 3
 		}
 	],
 
@@ -2493,20 +1397,7 @@
 			"statePain": 985,
 			"stateRaise": 993,
 			"stateSpawn": 972,
-			"stateCrash": 0,
-			"stateBurn": 0,
-			"stateFreeze": 0,
-			"radius": 784272,
-			"spawnId": 0,
-			"game": "Doom",
-			"respawnTime": 0,
-			"renderStyle": "STYLE_Normal",
-			"alpha": 1.0,
-			"decal": "",
-			"scale": 1.0,
-			"damageFactor": 1.0,
-			"gravity": 1.0,
-			"gibHealth": -500
+			"radius": 784272
 		},
 		{
 			"flags": 536938000,
@@ -2531,20 +1422,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 1042,
-			"stateCrash": 0,
-			"stateBurn": 0,
-			"stateFreeze": 0,
-			"radius": 851968,
-			"spawnId": 0,
-			"game": "Doom",
-			"respawnTime": 0,
-			"renderStyle": "STYLE_Normal",
-			"alpha": 1.0,
-			"decal": "",
-			"scale": 1.0,
-			"damageFactor": 1.0,
-			"gravity": 1.0,
-			"gibHealth": -1000
+			"radius": 851968
 		},
 		{
 			"flags": 536938000,
@@ -2569,20 +1447,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 1049,
-			"stateCrash": 0,
-			"stateBurn": 0,
-			"stateFreeze": 0,
-			"radius": 393216,
-			"spawnId": 0,
-			"game": "Doom",
-			"respawnTime": 0,
-			"renderStyle": "STYLE_Normal",
-			"alpha": 1.0,
-			"decal": "",
-			"scale": 1.0,
-			"damageFactor": 1.0,
-			"gravity": 1.0,
-			"gibHealth": -1000
+			"radius": 393216
 		},
 		{
 			"flags": 8388609,
@@ -2607,20 +1472,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 1054,
-			"stateCrash": 0,
-			"stateBurn": 0,
-			"stateFreeze": 0,
-			"radius": 655360,
-			"spawnId": 0,
-			"game": "Doom",
-			"respawnTime": 0,
-			"renderStyle": "STYLE_Normal",
-			"alpha": 1.0,
-			"decal": "",
-			"scale": 1.0,
-			"damageFactor": 1.0,
-			"gravity": 1.0,
-			"gibHealth": -1000
+			"radius": 655360
 		},
 		{
 			"flags": 8388609,
@@ -2645,25 +1497,9 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 1055,
-			"stateCrash": 0,
-			"stateBurn": 0,
-			"stateFreeze": 0,
-			"radius": 1310720,
-			"spawnId": 0,
-			"game": "Doom",
-			"respawnTime": 0,
-			"renderStyle": "STYLE_Normal",
-			"alpha": 1.0,
-			"decal": "",
-			"scale": 1.0,
-			"damageFactor": 1.0,
-			"gravity": 1.0,
-			"gibHealth": -1000
+			"radius": 1310720
 		}
 	],
-
-	"weaponNames": [],
-	"weapons": [],
 
 	"usedStates": [
 		1077,
@@ -2680,7 +1516,18 @@
 		1088
 	],
 
+	"ammo": [],
+	"ammoNames": [],
+	"cheatData": {},
+	"cheats": {},
+	"misc": {},
+	"miscData": {},
+	"weaponNames": [],
+	"weapons": [],
 	"renderStyles": {},
-	"emptyState": {},
-	"emptyThing": {}
+	"stateDefault": {},
+	"thingDefault": {},
+	"weaponDefault": {},
+	"ammoDefault": {},
+	"soundDefault": {}
 }

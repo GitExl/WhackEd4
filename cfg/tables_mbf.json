@@ -29,6 +29,9 @@
 	"weapons": [],
 	"usedStates": [],
 	"renderStyles": {},
-	"emptyState": {},
-	"emptyThing": {}
+	"defaultState": {},
+	"defaultThing": {},
+	"defaultWeapon": {},
+	"defaultAmmo": {},
+	"defaultSound": {}
 }

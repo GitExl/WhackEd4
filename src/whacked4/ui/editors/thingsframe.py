@@ -243,10 +243,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingList.ClearAll()
 
         if self.ThingList.GetColumnCount() == 0:
-            self.ThingList.InsertColumn(0, 'Idx', width=36)
+            self.ThingList.InsertColumn(0, '', width=36)
             self.ThingList.InsertColumn(1, 'Name', width=225)
             self.ThingList.InsertColumn(2, 'ID', width=46)
-            self.ThingList.InsertColumn(3, 'Game', width=50)
+            if 'thing.game' in self.patch.engine.features:
+                self.ThingList.InsertColumn(3, 'Game', width=50)
 
         for index in range(len(self.patch.things.names)):
             self.ThingList.InsertItem(index, '')
@@ -266,7 +267,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingList.SetItemText(row_index, str(row_index + 1))
         self.ThingList.SetItem(row_index, 1, thing_name)
         self.ThingList.SetItem(row_index, 2, str(thing['id']))
-        self.ThingList.SetItem(row_index, 3, thing['game'])
+        if 'thing.game' in self.patch.engine.features:
+            self.ThingList.SetItem(row_index, 3, thing['game'])
 
     def thinglist_resize(self, event):
         """
@@ -350,29 +352,40 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         thing = self.patch.things[self.selected_index]
-        renderstyle = self.patch.engine.render_styles[thing['renderStyle']]
 
         self.update_is_projectile()
 
         # Set basic property text control values.
         self.ThingId.ChangeValue(str(thing['id']))
         self.ThingHealth.ChangeValue(str(thing['health']))
-        self.ThingGibHealth.ChangeValue(str(thing['gibHealth']))
         self.ThingRadius.ChangeValue(str(thing['radius'] / self.FIXED_UNIT))
         self.ThingHeight.ChangeValue(str(thing['height'] / self.FIXED_UNIT))
         self.ThingDamage.ChangeValue(str(thing['damage']))
         self.ThingReactionTime.ChangeValue(str(thing['reactionTime']))
         self.ThingPainChance.ChangeValue(str(thing['painChance']))
         self.ThingMass.ChangeValue(str(thing['mass']))
-        self.ThingGame.SetSelection(self.ThingGame.FindString(thing['game']))
-        self.ThingSpawnId.ChangeValue(str(thing['spawnId']))
-        self.ThingRespawnTime.ChangeValue(str(thing['respawnTime']))
-        self.ThingRenderStyle.SetSelection(self.ThingRenderStyle.FindString(renderstyle))
-        self.ThingAlpha.ChangeValue(str(thing['alpha']))
-        self.ThingScale.ChangeValue(str(thing['scale']))
-        self.ThingDecal.ChangeValue(thing['decal'])
-        self.ThingDamageFactor.ChangeValue(str(thing['damageFactor']))
-        self.ThingGravity.ChangeValue(str(thing['gravity']))
+
+        if 'thing.gibHealth' in self.patch.engine.features:
+            self.ThingGibHealth.ChangeValue(str(thing['gibHealth']))
+        if 'thing.game' in self.patch.engine.features:
+            self.ThingGame.SetSelection(self.ThingGame.FindString(thing['game']))
+        if 'thing.spawnId' in self.patch.engine.features:
+            self.ThingSpawnId.ChangeValue(str(thing['spawnId']))
+        if 'thing.respawnTime' in self.patch.engine.features:
+            self.ThingRespawnTime.ChangeValue(str(thing['respawnTime']))
+        if 'thing.renderStyle' in self.patch.engine.features:
+            render_style = self.patch.engine.render_styles[thing['renderStyle']]
+            self.ThingRenderStyle.SetSelection(self.ThingRenderStyle.FindString(render_style))
+        if 'thing.alpha' in self.patch.engine.features:
+            self.ThingAlpha.ChangeValue(str(thing['alpha']))
+        if 'thing.scale' in self.patch.engine.features:
+            self.ThingScale.ChangeValue(str(thing['scale']))
+        if 'thing.decal' in self.patch.engine.features:
+            self.ThingDecal.ChangeValue(thing['decal'])
+        if 'thing.damageFactor' in self.patch.engine.features:
+            self.ThingDamageFactor.ChangeValue(str(thing['damageFactor']))
+        if 'thing.gravity' in self.patch.engine.features:
+            self.ThingGravity.ChangeValue(str(thing['gravity']))
 
         # Speed is in fixed point if this thing is a projectile, normal otherwise
         if self.thing_is_projectile:
@@ -403,7 +416,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         thing = self.patch.things[self.selected_index]
-        state_index = thing['state' + state_name]
+        state_key = 'state' + state_name
+        if state_key not in thing:
+            return
+        state_index = thing[state_key]
         self.__dict__['ThingState' + state_name].ChangeValue(str(state_index))
         self.__dict__['ThingState' + state_name + 'Name'].SetLabel(self.patch.get_state_name(state_index))
 
@@ -412,8 +428,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         Sets sound control values based on the partial name of a sound thing property.
         """
 
-        thing = self.patch.things[self.selected_index]
-        sound_index = thing['sound' + sound_name]
+        sound = self.patch.things[self.selected_index]
+        sound_key = 'sound' + sound_name
+        sound_index = sound[sound_key]
+        if sound_key not in sound:
+            return
         self.__dict__['ThingSound' + sound_name].ChangeValue(str(sound_index))
         self.__dict__['ThingSound' + sound_name + 'Name'].SetLabel(self.patch.get_sound_name(sound_index))
 

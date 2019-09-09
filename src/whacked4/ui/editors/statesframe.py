@@ -468,15 +468,17 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.Duration.ChangeValue(str(state['duration']))
             self.Unused1.ChangeValue(str(state['unused1']))
             self.Unused2.ChangeValue(str(state['unused2']))
-            self.Arg1.ChangeValue(str(state['arg1']))
-            self.Arg2.ChangeValue(str(state['arg2']))
-            self.Arg3.ChangeValue(str(state['arg3']))
-            self.Arg4.ChangeValue(str(state['arg4']))
-            self.Arg5.ChangeValue(str(state['arg5']))
-            self.Arg6.ChangeValue(str(state['arg6']))
-            self.Arg7.ChangeValue(str(state['arg7']))
-            self.Arg8.ChangeValue(str(state['arg8']))
-            self.Arg9.ChangeValue(str(state['arg9']))
+
+            if 'state.args' in self.patch.engine.features:
+                self.Arg1.ChangeValue(str(state['arg1']))
+                self.Arg2.ChangeValue(str(state['arg2']))
+                self.Arg3.ChangeValue(str(state['arg3']))
+                self.Arg4.ChangeValue(str(state['arg4']))
+                self.Arg5.ChangeValue(str(state['arg5']))
+                self.Arg6.ChangeValue(str(state['arg6']))
+                self.Arg7.ChangeValue(str(state['arg7']))
+                self.Arg8.ChangeValue(str(state['arg8']))
+                self.Arg9.ChangeValue(str(state['arg9']))
 
             self.set_selected_action(state['action'])
 

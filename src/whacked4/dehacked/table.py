@@ -51,6 +51,10 @@ class Table(object):
             elif self.names is not None and self.names[index] != source_table.names[index]:
                 f.write(entry.get_patch_header(index, self, offset=self.offset))
 
+    def apply_defaults(self, defaults):
+        for entry in self.entries:
+            entry.set_defaults(defaults)
+
     def clone(self):
         """
         Returns a clone of this table.
