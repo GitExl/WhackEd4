@@ -885,7 +885,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStateSpawn.Add( self.ThingStateSpawnName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStateSpawnSet = wx.Button( self.PanelStateSpawn, THING_STATESET_SPAWN, u"<", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.ThingStateSpawnSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStateSpawnSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStateSpawn.Add( self.ThingStateSpawnSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -916,7 +916,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStateWalk.Add( self.ThingStateWalkName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStateWalkSet = wx.Button( self.PanelStateWalk, THING_STATESET_WALK, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingStateWalkSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStateWalkSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStateWalk.Add( self.ThingStateWalkSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -947,7 +947,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStatePain.Add( self.ThingStatePainName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStatePainSet = wx.Button( self.PanelStatePain, THING_STATESET_PAIN, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingStatePainSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStatePainSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStatePain.Add( self.ThingStatePainSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -978,7 +978,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStateMelee.Add( self.ThingStateMeleeName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStateMeleeSet = wx.Button( self.PanelStateMelee, THING_STATESET_MELEE, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingStateMeleeSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStateMeleeSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStateMelee.Add( self.ThingStateMeleeSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1009,7 +1009,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStateAttack.Add( self.ThingStateAttackName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStateAttackSet = wx.Button( self.PanelStateAttack, THING_STATESET_ATTACK, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingStateAttackSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStateAttackSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStateAttack.Add( self.ThingStateAttackSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1040,7 +1040,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStateDeath.Add( self.ThingStateDeathName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStateDeathSet = wx.Button( self.PanelStateDeath, THING_STATESET_DEATH, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingStateDeathSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStateDeathSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStateDeath.Add( self.ThingStateDeathSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1071,7 +1071,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStateExplode.Add( self.ThingStateExplodeName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStateExplodeSet = wx.Button( self.PanelStateExplode, THING_STATESET_EXPLODE, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingStateExplodeSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStateExplodeSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStateExplode.Add( self.ThingStateExplodeSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1102,7 +1102,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStateRaise.Add( self.ThingStateRaiseName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStateRaiseSet = wx.Button( self.PanelStateRaise, THING_STATESET_RAISE, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingStateRaiseSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStateRaiseSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStateRaise.Add( self.ThingStateRaiseSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1133,7 +1133,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStateCrash.Add( self.ThingStateCrashName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStateCrashSet = wx.Button( self.PanelStateCrash, THING_STATESET_CRASH, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingStateCrashSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStateCrashSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStateCrash.Add( self.ThingStateCrashSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1164,7 +1164,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStateFreeze.Add( self.ThingStateFreezeName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStateFreezeSet = wx.Button( self.PanelStateFreeze, THING_STATESET_FREEZE, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingStateFreezeSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStateFreezeSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStateFreeze.Add( self.ThingStateFreezeSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1195,7 +1195,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerStateBurn.Add( self.ThingStateBurnName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingStateBurnSet = wx.Button( self.PanelStateBurn, THING_STATESET_BURN, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingStateBurnSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingStateBurnSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerStateBurn.Add( self.ThingStateBurnSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1236,7 +1236,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerSoundAlert.Add( self.ThingSoundAlertName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingSoundAlertSet = wx.Button( self.PanelSoundAlert, THING_SOUNDSET_ALERT, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingSoundAlertSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingSoundAlertSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerSoundAlert.Add( self.ThingSoundAlertSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1267,7 +1267,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerSoundAttack.Add( self.ThingSoundAttackName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingSoundAttackSet = wx.Button( self.PanelSoundAttack, THING_SOUNDSET_ATTACK, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingSoundAttackSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingSoundAttackSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerSoundAttack.Add( self.ThingSoundAttackSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1298,7 +1298,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerSoundPain.Add( self.ThingSoundPainName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingSoundPainSet = wx.Button( self.PanelSoundPain, THING_SOUNDSET_PAIN, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingSoundPainSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingSoundPainSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerSoundPain.Add( self.ThingSoundPainSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1329,7 +1329,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerSoundDeath.Add( self.ThingSoundDeathName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingSoundDeathSet = wx.Button( self.PanelSoundDeath, THING_SOUNDSET_DEATH, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingSoundDeathSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingSoundDeathSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerSoundDeath.Add( self.ThingSoundDeathSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1360,7 +1360,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerSoundActive.Add( self.ThingSoundActiveName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.ThingSoundActiveSet = wx.Button( self.PanelSoundActive, THING_SOUNDSET_ACTIVE, u"<", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ThingSoundActiveSet.SetMinSize( wx.Size( 25,25 ) )
+		self.ThingSoundActiveSet.SetMinSize( wx.Size( 30,30 ) )
 
 		SizerSoundActive.Add( self.ThingSoundActiveSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 2 )
 
@@ -1979,7 +1979,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		bSizer52.Add( self.SpriteName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.SpriteSelect = wx.Button( self.PropertyPanel, wx.ID_ANY, u"...", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.SpriteSelect.SetMinSize( wx.Size( 30,22 ) )
+		self.SpriteSelect.SetMinSize( wx.Size( 40,28 ) )
 
 		bSizer52.Add( self.SpriteSelect, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
@@ -2713,9 +2713,9 @@ class StringsFrameBase ( wx.MDIChildFrame ):
 class WeaponsFrameBase ( wx.MDIChildFrame ):
 
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 560,460 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_WEAPONS, title = u"Weapons", pos = wx.DefaultPosition, size = wx.Size( 560,472 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
 
-		self.SetSizeHints( wx.Size( 560,460 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 560,472 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 
 		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
@@ -2838,7 +2838,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer124.Add( self.WeaponStateSelectName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.WeaponStateSelectSet = wx.Button( self.PanelStateLower, WEAPON_STATESET_SELECT, u"<", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.WeaponStateSelectSet.SetMinSize( wx.Size( 25,25 ) )
+		self.WeaponStateSelectSet.SetMinSize( wx.Size( 30,30 ) )
 
 		bSizer124.Add( self.WeaponStateSelectSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
@@ -2874,7 +2874,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer1241.Add( self.WeaponStateDeselectName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.WeaponStateDeselectSet = wx.Button( self.PanelStateRaise, WEAPON_STATESET_DESELECT, u"<", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.WeaponStateDeselectSet.SetMinSize( wx.Size( 25,25 ) )
+		self.WeaponStateDeselectSet.SetMinSize( wx.Size( 30,30 ) )
 
 		bSizer1241.Add( self.WeaponStateDeselectSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
@@ -2910,7 +2910,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer1242.Add( self.WeaponStateBobName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.WeaponStateBobSet = wx.Button( self.PanelStateBob, WEAPON_STATESET_BOB, u"<", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.WeaponStateBobSet.SetMinSize( wx.Size( 25,25 ) )
+		self.WeaponStateBobSet.SetMinSize( wx.Size( 30,30 ) )
 
 		bSizer1242.Add( self.WeaponStateBobSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
@@ -2946,7 +2946,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer1243.Add( self.WeaponStateFireName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.WeaponStateFireSet = wx.Button( self.PanelStateFire, WEAPON_STATESET_FIRE, u"<", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.WeaponStateFireSet.SetMinSize( wx.Size( 25,25 ) )
+		self.WeaponStateFireSet.SetMinSize( wx.Size( 30,30 ) )
 
 		bSizer1243.Add( self.WeaponStateFireSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
@@ -2982,7 +2982,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer1244.Add( self.WeaponStateMuzzleName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.WeaponStateMuzzleSet = wx.Button( self.PanelStateMuzzle, WEAPON_STATESET_MUZZLE, u"<", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.WeaponStateMuzzleSet.SetMinSize( wx.Size( 25,25 ) )
+		self.WeaponStateMuzzleSet.SetMinSize( wx.Size( 30,30 ) )
 
 		bSizer1244.Add( self.WeaponStateMuzzleSet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
@@ -2996,10 +2996,10 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer139.Add( self.PanelStateMuzzle, 0, wx.EXPAND, 0 )
 
 
-		bSizer93.Add( bSizer139, 0, wx.ALL, 0 )
+		bSizer93.Add( bSizer139, 0, wx.ALL, 6 )
 
 
-		bSizer93.Add( ( 0, 16), 0, wx.EXPAND, 0 )
+		bSizer93.Add( ( 0, 16), 1, wx.EXPAND, 0 )
 
 		bSizer92 = wx.BoxSizer( wx.VERTICAL )
 
@@ -3014,13 +3014,13 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		bSizer92.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 3 )
 
 
-		bSizer93.Add( bSizer92, 0, wx.ALL|wx.EXPAND, 0 )
+		bSizer93.Add( bSizer92, 0, wx.ALL|wx.EXPAND, 3 )
 
 
 		self.m_panel44.SetSizer( bSizer93 )
 		self.m_panel44.Layout()
 		bSizer93.Fit( self.m_panel44 )
-		bSizer41.Add( self.m_panel44, 0, wx.ALL, 6 )
+		bSizer41.Add( self.m_panel44, 0, wx.EXPAND, 0 )
 
 		self.WeaponList = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.BORDER_NONE )
 		bSizer41.Add( self.WeaponList, 1, wx.ALL|wx.EXPAND, 0 )
@@ -3228,23 +3228,28 @@ class AmmoFrameBase ( wx.MDIChildFrame ):
 		bSizer139.Add( gSizer1, 0, wx.ALL, 6 )
 
 
-		bSizer139.Add( ( 0, 0), 1, wx.EXPAND, 0 )
+		bSizer139.Add( ( 0, 16), 1, wx.EXPAND, 0 )
+
+		bSizer143 = wx.BoxSizer( wx.VERTICAL )
 
 		self.Rename = wx.Button( self.m_panel45, AMMO_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Rename.SetMinSize( wx.Size( -1,36 ) )
 
-		bSizer139.Add( self.Rename, 0, wx.ALL|wx.EXPAND, 3 )
+		bSizer143.Add( self.Rename, 0, wx.ALL|wx.EXPAND, 3 )
 
 		self.Restore = wx.Button( self.m_panel45, AMMO_RESTORE, u"Restore", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Restore.SetMinSize( wx.Size( -1,36 ) )
 
-		bSizer139.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 3 )
+		bSizer143.Add( self.Restore, 0, wx.ALL|wx.EXPAND, 3 )
+
+
+		bSizer139.Add( bSizer143, 0, wx.ALL|wx.EXPAND, 3 )
 
 
 		self.m_panel45.SetSizer( bSizer139 )
 		self.m_panel45.Layout()
 		bSizer139.Fit( self.m_panel45 )
-		bSizer41.Add( self.m_panel45, 0, 0, 0 )
+		bSizer41.Add( self.m_panel45, 0, wx.EXPAND, 0 )
 
 		self.AmmoList = wx.ListCtrl( self, AMMO_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.BORDER_NONE )
 		bSizer41.Add( self.AmmoList, 1, wx.ALL|wx.EXPAND, 0 )

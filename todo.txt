@@ -9,7 +9,6 @@ Low priority bugs
 
 Features
 1.3.0
-- Modularize tables other than Extended Dehacked.
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
   - Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Mark modified strings with color in string editor.
