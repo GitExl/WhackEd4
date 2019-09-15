@@ -41,21 +41,13 @@ class Entry(object):
 
     def __init__(self, table):
         self.table = table
-        self.extra_values = {}
-
         self.values = {}
-        for key in self.FIELDS.keys():
-            self.values[key] = None
+        self.extra_values = {}
 
     def __getitem__(self, key):
         """
         Returns an item from the fields list.
-
-        @raise KeyError: If the key cannot be found.
         """
-
-        if key not in self.values:
-            raise KeyError('Cannot find patch key "{}".'.format(key))
 
         return self.values[key]
 
@@ -146,7 +138,6 @@ class Entry(object):
         Reads this entry's values from a JSON object.
         """
 
-        self.values = {}
         for key in self.FIELDS.keys():
             if key not in json:
                 continue
@@ -183,6 +174,9 @@ class Entry(object):
 
             # Skip actions, these are stored in a separate "fake" table.
             if field.type == FieldType.ACTION:
+                continue
+
+            if key not in self.values:
                 continue
 
             # Store modified keys in an output dict.

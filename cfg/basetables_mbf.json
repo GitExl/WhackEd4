@@ -6,7 +6,7 @@
 		"Detonate": {
 			"name": "Detonate",
 			"description": "Explode with variable damage (thing damage field).",
-			"type": 0
+			"type": "thing"
 		},
 		"Mushroom": {
 			"name": "Mushroom",
@@ -25,7 +25,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"Spawn": {
 			"name": "Spawn",
@@ -43,7 +43,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"Turn": {
 			"name": "Turn",
@@ -56,7 +56,7 @@
 					"range": [-359, 359]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"Face": {
 			"name": "Face",
@@ -69,7 +69,7 @@
 					"range": [0, 359]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"Scratch": {
 			"name": "Scratch",
@@ -87,7 +87,7 @@
 					"type": "sound"
 				}
 			],
-			"type": 0,
+			"type": "thing",
 			"sound": "state:unused2"
 		},
 		"PlaySound": {
@@ -106,7 +106,7 @@
 					"range": [0, 1]
 				}
 			],
-			"type": 0,
+			"type": "thing",
 			"sound": "state:unused1"
 		},
 		"RandomJump": {
@@ -125,7 +125,7 @@
 					"range": [0, 255]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"LineEffect": {
 			"name": "LineEffect",
@@ -144,28 +144,28 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"Die": {
 			"name": "Die",
 			"description": "Kills this thing.",
-			"type": 0
+			"type": "thing"
 		},
 		"FireOldBFG": {
 			"name": "FireOldBFG",
 			"description": "Fires the beta-style BFG.",
-			"type": 1
+			"type": "weapon"
 		},
 		"BetaSkullAttack": {
 			"name": "BetaSkullAttack",
 			"description": "Performs the beta Lost Soul attack.",
-			"type": 0,
+			"type": "thing",
 			"sound": "thing:soundAttack"
 		},
 		"Stop": {
 			"name": "Stop",
 			"description": "Stops the actor's movement by setting its momentum to 0.",
-			"type": 0
+			"type": "thing"
 		}
 	},
 
@@ -1525,9 +1525,9 @@
 	"weaponNames": [],
 	"weapons": [],
 	"renderStyles": {},
-	"stateDefault": {},
-	"thingDefault": {},
-	"weaponDefault": {},
-	"ammoDefault": {},
-	"soundDefault": {}
+	"defaultState": {},
+	"defaultThing": {},
+	"defaultWeapon": {},
+	"defaultAmmo": {},
+	"defaultSound": {}
 }

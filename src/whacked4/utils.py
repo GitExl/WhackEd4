@@ -144,22 +144,20 @@ def sound_play(name, wadlist):
         sound_data.play(app.pyaudio_instance)
 
 
-def mix_colours(colour1, colour2, mix):
+def mix_colors(color1, color2, mix):
     """
-    Mixes two colours together.
+    Mixes two colors together.
 
-    @param colour1: the first colour to mix.
-    @param colour2: the second colour to mix.
-    @param mix: the mix factor. 0.0 is only colour1, 1.0 is only colour2, 0.5 is an even mix.
+    @param color1: the first color to mix.
+    @param color2: the second color to mix.
+    @param mix: the mix factor. 0.0 is only color1, 1.0 is only color2, 0.5 is an even mix.
     """
 
-    colour = wx.Colour(
-        int(colour1.Red() * (1.0 - mix) + colour2.Red() * mix),
-        int(colour1.Green() * (1.0 - mix) + colour2.Green() * mix),
-        int(colour1.Blue() * (1.0 - mix) + colour2.Blue() * mix)
+    return wx.Colour(
+        int(color1.Red() * (1.0 - mix) + color2.Red() * mix),
+        int(color1.Green() * (1.0 - mix) + color2.Green() * mix),
+        int(color1.Blue() * (1.0 - mix) + color2.Blue() * mix)
     )
-
-    return colour
 
 
 def get_map_name(episode_index, map_index):

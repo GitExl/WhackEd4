@@ -38,6 +38,7 @@
 	"usedStates": [],
 	"renderStyles": {},
 	"defaultState": {},
+	"defaultThing": {},
 	"defaultWeapon": {},
 	"defaultAmmo": {},
 	"defaultSound": {}

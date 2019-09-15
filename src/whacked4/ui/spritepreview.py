@@ -36,7 +36,7 @@ class SpritePreview(wx.Panel):
         self.invalid = wx.Bitmap('res/icon-invalid.png', wx.BITMAP_TYPE_PNG)
 
         # Create "floor" fill color.
-        floor_colour = utils.mix_colours(self.GetBackgroundColour(), wx.Colour(0, 0, 0), 0.65)
+        floor_colour = utils.mix_colors(self.GetBackgroundColour(), wx.Colour(0, 0, 0), 0.65)
         self.floor_brush = wx.Brush(floor_colour)
         self.floor_points = None
         self.create_floor_points()

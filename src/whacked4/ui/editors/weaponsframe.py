@@ -273,9 +273,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         """
 
         state_key = 'state' + state_name
-        if state_key not in self.patch.weapons:
-            return
-        state_index = self.patch.weapons[state_key]
+        state_index = self.patch.weapons[self.selected_index][state_key]
         self.__dict__['WeaponState' + state_name].ChangeValue(str(state_index))
         self.__dict__['WeaponState' + state_name + 'Name'].SetLabel(self.patch.get_state_name(state_index))
 

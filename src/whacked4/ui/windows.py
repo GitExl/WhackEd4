@@ -7,6 +7,7 @@
 ## PLEASE DO *NOT* EDIT THIS FILE!
 ###########################################################################
 
+from whacked4.ui.state_list import StateList
 import wx
 import wx.xrc
 from whacked4.ui import spritepreview
@@ -1926,346 +1927,324 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 class StatesFrameBase ( wx.MDIChildFrame ):
 
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 1024,732 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.WANTS_CHARS )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_STATES, title = u"States", pos = wx.DefaultPosition, size = wx.Size( 1024,768 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.WANTS_CHARS )
 
-		self.SetSizeHints( wx.Size( 1024,732 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 1024,768 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 
-		bSizer41 = wx.BoxSizer( wx.VERTICAL )
+		SizerMain = wx.BoxSizer( wx.HORIZONTAL )
 
-		bSizer40 = wx.BoxSizer( wx.HORIZONTAL )
+		SizerSidebar = wx.BoxSizer( wx.VERTICAL )
 
-		bSizer139 = wx.BoxSizer( wx.VERTICAL )
-
-		bSizer130 = wx.BoxSizer( wx.VERTICAL )
-
-		self.SpritePreview = spritepreview.SpritePreview(self, size=(-1, 160))
+		self.SpritePreview = spritepreview.SpritePreview(self)
 		self.SpritePreview.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_3DDKSHADOW ) )
-		self.SpritePreview.SetMinSize( wx.Size( 400,300 ) )
+		self.SpritePreview.SetMinSize( wx.Size( 400,360 ) )
 
-		bSizer130.Add( self.SpritePreview, 0, wx.EXPAND, 5 )
+		SizerSidebar.Add( self.SpritePreview, 0, wx.EXPAND, 5 )
 
+		SizerProps = wx.BoxSizer( wx.VERTICAL )
 
-		bSizer139.Add( bSizer130, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 6 )
+		SizerPropSprite = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.PropertyPanelContainer = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		bSizer132 = wx.BoxSizer( wx.VERTICAL )
-
-		bSizer131 = wx.BoxSizer( wx.VERTICAL )
-
-		self.PropertyPanel = wx.Panel( self.PropertyPanelContainer, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		PropertySizer = wx.BoxSizer( wx.VERTICAL )
-
-
-		PropertySizer.Add( ( 0, 6), 0, wx.EXPAND, 5 )
-
-		bSizer52 = wx.BoxSizer( wx.HORIZONTAL )
-
-		self.m_staticText39 = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"Sprite", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText39 = wx.StaticText( self, wx.ID_ANY, u"Sprite", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText39.Wrap( -1 )
 
-		bSizer52.Add( self.m_staticText39, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropSprite.Add( self.m_staticText39, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.SpriteIndex = wx.TextCtrl( self.PropertyPanel, STATES_SPRITE, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.SpriteIndex = wx.TextCtrl( self, STATES_SPRITE, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.SpriteIndex.SetMaxLength( 3 )
-		bSizer52.Add( self.SpriteIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropSprite.Add( self.SpriteIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.SpriteName = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"TROO", wx.DefaultPosition, wx.Size( 80,-1 ), wx.ST_NO_AUTORESIZE )
+		self.SpriteName = wx.StaticText( self, wx.ID_ANY, u"TROO", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.SpriteName.Wrap( -1 )
 
 		self.SpriteName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.SpriteName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
-		bSizer52.Add( self.SpriteName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropSprite.Add( self.SpriteName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.SpriteSelect = wx.Button( self.PropertyPanel, wx.ID_ANY, u"...", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.SpriteSelect = wx.Button( self, wx.ID_ANY, u"...", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.SpriteSelect.SetMinSize( wx.Size( 40,28 ) )
 
-		bSizer52.Add( self.SpriteSelect, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropSprite.Add( self.SpriteSelect, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer52, 0, wx.EXPAND, 5 )
+		SizerProps.Add( SizerPropSprite, 0, wx.EXPAND, 5 )
 
-		bSizer521 = wx.BoxSizer( wx.HORIZONTAL )
+		SizerPropFrame = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText391 = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"Frame", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText391 = wx.StaticText( self, wx.ID_ANY, u"Frame", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText391.Wrap( -1 )
 
-		bSizer521.Add( self.m_staticText391, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropFrame.Add( self.m_staticText391, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.FrameIndex = wx.TextCtrl( self.PropertyPanel, STATES_FRAME, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
-		bSizer521.Add( self.FrameIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.BOTTOM|wx.LEFT|wx.TOP, 3 )
+		self.FrameIndex = wx.TextCtrl( self, STATES_FRAME, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		SizerPropFrame.Add( self.FrameIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.BOTTOM|wx.LEFT|wx.TOP, 3 )
 
-		self.FrameIndexSpinner = wx.SpinButton( self.PropertyPanel, STATES_FRAMESPIN, wx.DefaultPosition, wx.Size( 17,25 ), 0 )
-		bSizer521.Add( self.FrameIndexSpinner, 0, wx.ALIGN_CENTER_VERTICAL|wx.RIGHT, 3 )
+		self.FrameIndexSpinner = wx.SpinButton( self, STATES_FRAMESPIN, wx.DefaultPosition, wx.Size( 17,25 ), 0 )
+		SizerPropFrame.Add( self.FrameIndexSpinner, 0, wx.ALIGN_CENTER_VERTICAL|wx.RIGHT, 3 )
 
-		self.AlwaysLit = wx.CheckBox( self.PropertyPanel, STATES_LIT, u" Always lit", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer521.Add( self.AlwaysLit, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
-
-
-		PropertySizer.Add( bSizer521, 0, wx.EXPAND, 5 )
+		self.AlwaysLit = wx.CheckBox( self, STATES_LIT, u" Always lit", wx.DefaultPosition, wx.DefaultSize, 0 )
+		SizerPropFrame.Add( self.AlwaysLit, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
 
-		PropertySizer.Add( ( 0, 9), 0, wx.EXPAND, 5 )
+		SizerProps.Add( SizerPropFrame, 0, wx.EXPAND, 5 )
 
-		bSizer5211 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText3911 = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"Next state", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		SizerProps.Add( ( 0, 9), 0, wx.EXPAND, 5 )
+
+		SizerPropNext = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.m_staticText3911 = wx.StaticText( self, wx.ID_ANY, u"Next state", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText3911.Wrap( -1 )
 
-		bSizer5211.Add( self.m_staticText3911, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropNext.Add( self.m_staticText3911, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.NextStateIndex = wx.TextCtrl( self.PropertyPanel, STATES_NEXT, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.NextStateIndex = wx.TextCtrl( self, STATES_NEXT, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.NextStateIndex.SetMaxLength( 4 )
-		bSizer5211.Add( self.NextStateIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropNext.Add( self.NextStateIndex, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.NextStateName = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"PLAYD", wx.DefaultPosition, wx.Size( 80,-1 ), wx.ST_NO_AUTORESIZE )
+		self.NextStateName = wx.StaticText( self, wx.ID_ANY, u"PLAYD", wx.DefaultPosition, wx.Size( 70,-1 ), wx.ST_NO_AUTORESIZE )
 		self.NextStateName.Wrap( -1 )
 
 		self.NextStateName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.NextStateName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
-		bSizer5211.Add( self.NextStateName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropNext.Add( self.NextStateName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5211, 0, wx.EXPAND, 5 )
+		SizerProps.Add( SizerPropNext, 0, wx.EXPAND, 5 )
 
 
-		PropertySizer.Add( ( 0, 9), 0, wx.EXPAND, 5 )
+		SizerProps.Add( ( 0, 9), 0, wx.EXPAND, 5 )
 
-		bSizer5212 = wx.BoxSizer( wx.HORIZONTAL )
+		SizerPropDuration = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText3912 = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"Duration", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText3912 = wx.StaticText( self, wx.ID_ANY, u"Duration", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText3912.Wrap( -1 )
 
-		bSizer5212.Add( self.m_staticText3912, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropDuration.Add( self.m_staticText3912, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Duration = wx.TextCtrl( self.PropertyPanel, STATES_DURATION, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Duration = wx.TextCtrl( self, STATES_DURATION, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Duration.SetMaxLength( 4 )
-		bSizer5212.Add( self.Duration, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropDuration.Add( self.Duration, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+
+		self.ticks = wx.StaticText( self, wx.ID_ANY, u"ticks", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.ticks.Wrap( -1 )
+
+		SizerPropDuration.Add( self.ticks, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5212, 0, wx.EXPAND, 5 )
+		SizerProps.Add( SizerPropDuration, 0, wx.EXPAND, 5 )
 
 
-		PropertySizer.Add( ( 0, 9), 0, wx.EXPAND, 6 )
+		SizerProps.Add( ( 0, 9), 0, wx.EXPAND, 6 )
 
-		bSizer521211 = wx.BoxSizer( wx.HORIZONTAL )
+		SizerPropAction = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText54 = wx.StaticText( self.PropertyPanel, wx.ID_ANY, u"Action", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText54 = wx.StaticText( self, wx.ID_ANY, u"Action", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54.Wrap( -1 )
 
-		bSizer521211.Add( self.m_staticText54, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropAction.Add( self.m_staticText54, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		ActionChoices = []
-		self.Action = wx.Choice( self.PropertyPanel, STATES_ACTION, wx.DefaultPosition, wx.Size( -1,-1 ), ActionChoices, wx.CB_SORT )
+		self.Action = wx.Choice( self, STATES_ACTION, wx.DefaultPosition, wx.Size( -1,-1 ), ActionChoices, wx.CB_SORT )
 		self.Action.SetSelection( 0 )
 		self.Action.SetMinSize( wx.Size( 180,-1 ) )
 
-		bSizer521211.Add( self.Action, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropAction.Add( self.Action, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer521211, 0, wx.EXPAND, 5 )
+		SizerProps.Add( SizerPropAction, 0, wx.EXPAND, 5 )
 
-		bSizer52121 = wx.BoxSizer( wx.HORIZONTAL )
+		SizerPropUnused1 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText541 = wx.StaticText( self.PropertyPanel, STATES_LABEL_UNUSED1, u"Param 1", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText541 = wx.StaticText( self, STATES_LABEL_UNUSED1, u"Param 1", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText541.Wrap( -1 )
 
-		bSizer52121.Add( self.m_staticText541, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropUnused1.Add( self.m_staticText541, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Unused1 = wx.TextCtrl( self.PropertyPanel, STATES_UNUSED1, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Unused1 = wx.TextCtrl( self, STATES_UNUSED1, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Unused1.SetMaxLength( 9 )
-		bSizer52121.Add( self.Unused1, 0, wx.ALL, 3 )
+		SizerPropUnused1.Add( self.Unused1, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer52121, 0, wx.EXPAND, 5 )
+		SizerProps.Add( SizerPropUnused1, 0, wx.EXPAND, 5 )
 
-		bSizer521212 = wx.BoxSizer( wx.HORIZONTAL )
+		SizerPropUnused2 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText5411 = wx.StaticText( self.PropertyPanel, STATES_LABEL_UNUSED2, u"Param 2", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText5411 = wx.StaticText( self, STATES_LABEL_UNUSED2, u"Param 2", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText5411.Wrap( -1 )
 
-		bSizer521212.Add( self.m_staticText5411, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPropUnused2.Add( self.m_staticText5411, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Unused2 = wx.TextCtrl( self.PropertyPanel, STATES_UNUSED2, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Unused2 = wx.TextCtrl( self, STATES_UNUSED2, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Unused2.SetMaxLength( 9 )
-		bSizer521212.Add( self.Unused2, 0, wx.ALL, 3 )
+		SizerPropUnused2.Add( self.Unused2, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer521212, 0, wx.EXPAND, 5 )
+		SizerProps.Add( SizerPropUnused2, 0, wx.EXPAND, 5 )
 
 		bSizer5212121 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText54111 = wx.StaticText( self.PropertyPanel, STATES_LABEL_ARG1, u"Arg 1", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText54111 = wx.StaticText( self, STATES_LABEL_ARG1, u"Arg 1", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54111.Wrap( -1 )
 
 		bSizer5212121.Add( self.m_staticText54111, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Arg1 = wx.TextCtrl( self.PropertyPanel, STATES_ARG1, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Arg1 = wx.TextCtrl( self, STATES_ARG1, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg1.SetMaxLength( 9 )
 		bSizer5212121.Add( self.Arg1, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5212121, 0, wx.EXPAND, 5 )
+		SizerProps.Add( bSizer5212121, 0, wx.EXPAND, 5 )
 
 		bSizer5212122 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText54112 = wx.StaticText( self.PropertyPanel, STATES_LABEL_ARG2, u"Arg 2", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText54112 = wx.StaticText( self, STATES_LABEL_ARG2, u"Arg 2", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54112.Wrap( -1 )
 
 		bSizer5212122.Add( self.m_staticText54112, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Arg2 = wx.TextCtrl( self.PropertyPanel, STATES_ARG2, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Arg2 = wx.TextCtrl( self, STATES_ARG2, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg2.SetMaxLength( 9 )
 		bSizer5212122.Add( self.Arg2, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5212122, 0, wx.EXPAND, 5 )
+		SizerProps.Add( bSizer5212122, 0, wx.EXPAND, 5 )
 
 		bSizer5212123 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText54113 = wx.StaticText( self.PropertyPanel, STATES_LABEL_ARG3, u"Arg 3", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText54113 = wx.StaticText( self, STATES_LABEL_ARG3, u"Arg 3", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54113.Wrap( -1 )
 
 		bSizer5212123.Add( self.m_staticText54113, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Arg3 = wx.TextCtrl( self.PropertyPanel, STATES_ARG3, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Arg3 = wx.TextCtrl( self, STATES_ARG3, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg3.SetMaxLength( 9 )
 		bSizer5212123.Add( self.Arg3, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5212123, 0, wx.EXPAND, 5 )
+		SizerProps.Add( bSizer5212123, 0, wx.EXPAND, 5 )
 
 		bSizer5212124 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText54114 = wx.StaticText( self.PropertyPanel, STATES_LABEL_ARG4, u"Arg 4", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText54114 = wx.StaticText( self, STATES_LABEL_ARG4, u"Arg 4", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54114.Wrap( -1 )
 
 		bSizer5212124.Add( self.m_staticText54114, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Arg4 = wx.TextCtrl( self.PropertyPanel, STATES_ARG4, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Arg4 = wx.TextCtrl( self, STATES_ARG4, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg4.SetMaxLength( 9 )
 		bSizer5212124.Add( self.Arg4, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5212124, 0, wx.EXPAND, 5 )
+		SizerProps.Add( bSizer5212124, 0, wx.EXPAND, 5 )
 
 		bSizer5212125 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText54115 = wx.StaticText( self.PropertyPanel, STATES_LABEL_ARG5, u"Arg 5", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText54115 = wx.StaticText( self, STATES_LABEL_ARG5, u"Arg 5", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54115.Wrap( -1 )
 
 		bSizer5212125.Add( self.m_staticText54115, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Arg5 = wx.TextCtrl( self.PropertyPanel, STATES_ARG5, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Arg5 = wx.TextCtrl( self, STATES_ARG5, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg5.SetMaxLength( 9 )
 		bSizer5212125.Add( self.Arg5, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5212125, 0, wx.EXPAND, 5 )
+		SizerProps.Add( bSizer5212125, 0, wx.EXPAND, 5 )
 
 		bSizer5212126 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText54116 = wx.StaticText( self.PropertyPanel, STATES_LABEL_ARG6, u"Arg 6", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText54116 = wx.StaticText( self, STATES_LABEL_ARG6, u"Arg 6", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54116.Wrap( -1 )
 
 		bSizer5212126.Add( self.m_staticText54116, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Arg6 = wx.TextCtrl( self.PropertyPanel, STATES_ARG6, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Arg6 = wx.TextCtrl( self, STATES_ARG6, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg6.SetMaxLength( 9 )
 		bSizer5212126.Add( self.Arg6, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5212126, 0, wx.EXPAND, 5 )
+		SizerProps.Add( bSizer5212126, 0, wx.EXPAND, 5 )
 
 		bSizer5212127 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText54117 = wx.StaticText( self.PropertyPanel, STATES_LABEL_ARG7, u"Arg 7", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText54117 = wx.StaticText( self, STATES_LABEL_ARG7, u"Arg 7", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54117.Wrap( -1 )
 
 		bSizer5212127.Add( self.m_staticText54117, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Arg7 = wx.TextCtrl( self.PropertyPanel, STATES_ARG7, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Arg7 = wx.TextCtrl( self, STATES_ARG7, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg7.SetMaxLength( 9 )
 		bSizer5212127.Add( self.Arg7, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5212127, 0, wx.EXPAND, 5 )
+		SizerProps.Add( bSizer5212127, 0, wx.EXPAND, 5 )
 
 		bSizer5212128 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText54118 = wx.StaticText( self.PropertyPanel, STATES_LABEL_ARG8, u"Arg 8", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText54118 = wx.StaticText( self, STATES_LABEL_ARG8, u"Arg 8", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54118.Wrap( -1 )
 
 		bSizer5212128.Add( self.m_staticText54118, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Arg8 = wx.TextCtrl( self.PropertyPanel, STATES_ARG8, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Arg8 = wx.TextCtrl( self, STATES_ARG8, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg8.SetMaxLength( 9 )
 		bSizer5212128.Add( self.Arg8, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5212128, 0, wx.EXPAND, 5 )
+		SizerProps.Add( bSizer5212128, 0, wx.EXPAND, 5 )
 
 		bSizer5212129 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_staticText54119 = wx.StaticText( self.PropertyPanel, STATES_LABEL_ARG9, u"Arg 9", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+		self.m_staticText54119 = wx.StaticText( self, STATES_LABEL_ARG9, u"Arg 9", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
 		self.m_staticText54119.Wrap( -1 )
 
 		bSizer5212129.Add( self.m_staticText54119, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
-		self.Arg9 = wx.TextCtrl( self.PropertyPanel, STATES_ARG9, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
+		self.Arg9 = wx.TextCtrl( self, STATES_ARG9, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,-1 ), 0 )
 		self.Arg9.SetMaxLength( 9 )
 		bSizer5212129.Add( self.Arg9, 0, wx.ALL, 3 )
 
 
-		PropertySizer.Add( bSizer5212129, 0, wx.EXPAND, 5 )
+		SizerProps.Add( bSizer5212129, 0, wx.EXPAND, 5 )
 
 
-		PropertySizer.Add( ( 0, 9), 0, wx.EXPAND, 5 )
+		SizerProps.Add( ( 0, 9), 0, wx.EXPAND, 5 )
 
-		self.Restore = wx.Button( self.PropertyPanel, wx.ID_ANY, u"Restore", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.Restore = wx.Button( self, wx.ID_ANY, u"Restore", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.Restore.SetMinSize( wx.Size( -1,36 ) )
 
-		PropertySizer.Add( self.Restore, 0, wx.EXPAND|wx.TOP, 3 )
+		SizerProps.Add( self.Restore, 0, wx.EXPAND|wx.TOP, 3 )
 
 
-		self.PropertyPanel.SetSizer( PropertySizer )
-		self.PropertyPanel.Layout()
-		PropertySizer.Fit( self.PropertyPanel )
-		bSizer131.Add( self.PropertyPanel, 1, wx.ALL|wx.EXPAND, 0 )
+		SizerSidebar.Add( SizerProps, 1, wx.ALL|wx.EXPAND, 6 )
 
 
-		bSizer132.Add( bSizer131, 1, wx.ALL|wx.EXPAND, 6 )
+		SizerMain.Add( SizerSidebar, 0, wx.EXPAND, 5 )
 
+		SizerStates = wx.BoxSizer( wx.VERTICAL )
 
-		self.PropertyPanelContainer.SetSizer( bSizer132 )
-		self.PropertyPanelContainer.Layout()
-		bSizer132.Fit( self.PropertyPanelContainer )
-		bSizer139.Add( self.PropertyPanelContainer, 1, 0, 0 )
+		self.m_panel61 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer140 = wx.BoxSizer( wx.HORIZONTAL )
 
-
-		bSizer40.Add( bSizer139, 0, wx.EXPAND, 5 )
-
-		bSizer421 = wx.BoxSizer( wx.VERTICAL )
-
-		bSizer441 = wx.BoxSizer( wx.HORIZONTAL )
-
-		self.m_staticText45 = wx.StaticText( self, wx.ID_ANY, u"Filter", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText45 = wx.StaticText( self.m_panel61, wx.ID_ANY, u"Filter", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText45.Wrap( -1 )
 
 		self.m_staticText45.SetMinSize( wx.Size( 50,-1 ) )
 
-		bSizer441.Add( self.m_staticText45, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
+		bSizer140.Add( self.m_staticText45, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 		FilterChoices = []
-		self.Filter = wx.Choice( self, STATES_FILTER, wx.DefaultPosition, wx.DefaultSize, FilterChoices, 0 )
+		self.Filter = wx.Choice( self.m_panel61, STATES_FILTER, wx.DefaultPosition, wx.DefaultSize, FilterChoices, 0 )
 		self.Filter.SetSelection( 0 )
 		self.Filter.SetMinSize( wx.Size( 300,-1 ) )
 
-		bSizer441.Add( self.Filter, 0, wx.RIGHT, 6 )
+		bSizer140.Add( self.Filter, 0, wx.RIGHT, 6 )
 
-		self.FilterTools = wx.ToolBar( self, STATES_FILTERTOOLS, wx.DefaultPosition, wx.DefaultSize, wx.TB_FLAT|wx.TB_HORIZONTAL|wx.TB_NODIVIDER )
+		self.FilterTools = wx.ToolBar( self.m_panel61, STATES_FILTERTOOLS, wx.DefaultPosition, wx.DefaultSize, wx.TB_FLAT|wx.TB_HORIZONTAL|wx.TB_NODIVIDER )
 		self.FilterTools.SetToolBitmapSize( wx.Size( 18,18 ) )
 		self.FilterTools.SetToolSeparation( 0 )
 		self.FilterTools.SetMargins( wx.Size( 0,0 ) )
@@ -2274,24 +2253,24 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 
 		self.FilterTools.Realize()
 
-		bSizer441.Add( self.FilterTools, 0, wx.EXPAND, 0 )
+		bSizer140.Add( self.FilterTools, 0, wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 0 )
 
 
-		bSizer421.Add( bSizer441, 0, wx.ALL|wx.EXPAND, 6 )
+		self.m_panel61.SetSizer( bSizer140 )
+		self.m_panel61.Layout()
+		bSizer140.Fit( self.m_panel61 )
+		SizerStates.Add( self.m_panel61, 0, wx.ALL, 6 )
 
-		self.StateList = wx.ListCtrl( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_NO_SORT_HEADER|wx.LC_REPORT|wx.BORDER_NONE )
+		self.StateList = StateList( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_VIRTUAL|wx.BORDER_NONE )
 		self.StateList.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 
-		bSizer421.Add( self.StateList, 1, wx.EXPAND, 5 )
+		SizerStates.Add( self.StateList, 1, wx.EXPAND, 5 )
 
 
-		bSizer40.Add( bSizer421, 1, wx.EXPAND, 5 )
+		SizerMain.Add( SizerStates, 1, wx.EXPAND, 5 )
 
 
-		bSizer41.Add( bSizer40, 1, wx.EXPAND, 6 )
-
-
-		self.SetSizer( bSizer41 )
+		self.SetSizer( SizerMain )
 		self.Layout()
 		self.StateContext = wx.Menu()
 		self.StateContextCopy = wx.MenuItem( self.StateContext, wx.ID_ANY, u"Copy"+ u"\t" + u"Ctrl+C", wx.EmptyString, wx.ITEM_NORMAL )
@@ -2340,6 +2319,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.m_staticText3912.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Duration.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.Duration.Bind( wx.EVT_TEXT, self.set_value )
+		self.ticks.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.m_staticText54.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.Action.Bind( wx.EVT_CHOICE, self.set_action )
 		self.m_staticText541.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
@@ -2383,10 +2363,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.StateList.Bind( wx.EVT_KEY_DOWN, self.statelist_key_down )
 		self.StateList.Bind( wx.EVT_LEFT_DOWN, self.state_link )
 		self.StateList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.select_sprite )
-		self.StateList.Bind( wx.EVT_LIST_ITEM_DESELECTED, self.state_deselect )
 		self.StateList.Bind( wx.EVT_LIST_ITEM_RIGHT_CLICK, self.state_context )
-		self.StateList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.state_select )
-		self.StateList.Bind( wx.EVT_SIZE, self.statelist_resize )
 		self.Bind( wx.EVT_MENU, self.state_context_copy, id = self.StateContextCopy.GetId() )
 		self.Bind( wx.EVT_MENU, self.state_context_paste, id = self.StateContextPaste.GetId() )
 		self.Bind( wx.EVT_MENU, self.state_context_clear, id = self.StateContextClear.GetId() )
@@ -2438,6 +2415,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 
 	def goto_next_state( self, event ):
 		pass
+
 
 
 
@@ -2495,16 +2473,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		pass
 
 
-	def state_deselect( self, event ):
-		pass
-
 	def state_context( self, event ):
-		pass
-
-	def state_select( self, event ):
-		pass
-
-	def statelist_resize( self, event ):
 		pass
 
 	def state_context_copy( self, event ):
@@ -4340,9 +4309,9 @@ class ErrorDialogBase ( wx.Dialog ):
 class StatePreviewDialogBase ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Preview", pos = wx.DefaultPosition, size = wx.Size( 680,448 ), style = wx.CAPTION|wx.WANTS_CHARS|wx.BORDER_RAISED )
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Preview", pos = wx.DefaultPosition, size = wx.Size( 680,560 ), style = wx.CAPTION|wx.WANTS_CHARS|wx.BORDER_RAISED )
 
-		self.SetSizeHints( wx.Size( 680,448 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 680,560 ), wx.DefaultSize )
 
 		bSizer140 = wx.BoxSizer( wx.VERTICAL )
 

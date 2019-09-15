@@ -112,8 +112,8 @@ def _get_hack_states(patch, weapon):
     action_cgun = patch.engine.get_action_key_from_name('FireCGun')
 
     # If a weapon uses the plasma or chaingun firing action, mark it's 2nd muzzle state as used.
-    plasma_action = patch.engine.get_action_from_key(action_plasma)['name']
-    cg_action = patch.engine.get_action_from_key(action_cgun)['name']
+    plasma_action = patch.engine.actions[action_plasma]['name']
+    cg_action = patch.engine.actions[action_cgun]['name']
 
     fire_state = weapon['stateFire']
     action = patch.states[fire_state]['action']

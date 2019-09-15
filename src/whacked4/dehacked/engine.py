@@ -1,9 +1,9 @@
 import json
-import struct
 
 from json.encoder import JSONEncoder
 
 from whacked4.dehacked import table, entries, entry
+from whacked4.dehacked.action import Action
 
 
 class DehackedEngineError(Exception):
@@ -107,73 +107,71 @@ class Engine(object):
                 print('Error in table file {}'.format(filename))
                 raise e
 
-        try:
+        # try:
 
-            if not is_base_table:
-                self.versions = data['versions']
-                self.extended = data['extended']
-                self.name = data['name']
+        if not is_base_table:
+            self.versions = data['versions']
+            self.extended = data['extended']
+            self.name = data['name']
 
-                self.default_state = entries.StateEntry(self).from_json(data['defaultState'])
-                self.default_thing = entries.ThingEntry(self).from_json(data['defaultThing'])
-                self.default_weapon = entries.WeaponEntry(self).from_json(data['defaultWeapon'])
-                self.default_ammo = entries.AmmoEntry(self).from_json(data['defaultAmmo'])
-                self.default_sound = entries.SoundEntry(self).from_json(data['defaultSound'])
+        self.default_state.from_json(data['defaultState'])
+        self.default_thing.from_json(data['defaultThing'])
+        self.default_weapon.from_json(data['defaultWeapon'])
+        self.default_ammo.from_json(data['defaultAmmo'])
+        self.default_sound.from_json(data['defaultSound'])
 
-            # If any base tables are referenced, load them first.
-            if 'baseTables' in data:
-                base_tables = data['baseTables']
-                for base_table in base_tables:
-                    base_filename = 'cfg/basetables_{}.json'.format(base_table)
-                    self.merge_data(base_filename, True)
+        # If any base tables are referenced, load them first.
+        if 'baseTables' in data:
+            base_tables = data['baseTables']
+            for base_table in base_tables:
+                base_filename = 'cfg/basetables_{}.json'.format(base_table)
+                self.merge_data(base_filename, True)
 
-            self.features.update(set(data['features']))
+        self.features.update(set(data['features']))
 
-            self.things.names += data['thingNames']
-            self.things.flags.update(data['thingFlags'])
-            self.things.read_from_json(data['things'])
-            if len(self.things.names) != len(self.things):
-                raise DehackedEngineError('Thing and thing names sizes do not match.')
+        self.things.names += data['thingNames']
+        self.things.flags.update(data['thingFlags'])
+        self.things.read_from_json(data['things'])
+        if len(self.things.names) != len(self.things):
+            raise DehackedEngineError('Thing and thing names sizes do not match.')
 
-            self.weapons.names += data['weaponNames']
-            self.weapons.read_from_json(data['weapons'])
-            if len(self.weapons.names) != len(self.weapons):
-                raise DehackedEngineError('Weapon and weapon name sizes do not match.')
+        self.weapons.names += data['weaponNames']
+        self.weapons.read_from_json(data['weapons'])
+        if len(self.weapons.names) != len(self.weapons):
+            raise DehackedEngineError('Weapon and weapon name sizes do not match.')
 
-            self.ammo.names += data['ammoNames']
-            self.ammo.read_from_json(data['ammo'])
+        self.ammo.names += data['ammoNames']
+        self.ammo.read_from_json(data['ammo'])
 
-            self.actions.update(data['actions'])
-            self.states.read_from_json(data['states'])
-            self.sounds.read_from_json(data['sounds'])
+        for key, value in data['actions'].items():
+            self.actions[key] = Action.from_json(value)
 
-            self.strings.update(data['strings'])
+        self.states.read_from_json(data['states'])
+        self.sounds.read_from_json(data['sounds'])
 
-            self.misc.update(data['misc'])
-            self.misc_data.update(data['miscData'])
+        self.strings.update(data['strings'])
 
-            self.cheats.update(data['cheats'])
-            self.cheat_data.update(data['cheatData'])
+        self.misc.update(data['misc'])
+        self.misc_data.update(data['miscData'])
 
-            self.sprite_names += data['spriteNames']
-            self.used_states.update(set(data['usedStates']))
-            self.hacks.update(data['hacks'])
+        self.cheats.update(data['cheats'])
+        self.cheat_data.update(data['cheatData'])
 
-            self.render_styles.update(data['renderStyles'])
+        self.sprite_names += data['spriteNames']
+        self.used_states.update(set(data['usedStates']))
+        self.hacks.update(data['hacks'])
 
-            self.sound_names += data['soundNames']
-            if len(self.sound_names) != len(self.sounds):
-                raise DehackedEngineError('Sound and sound names sizes do not match.')
+        self.render_styles.update(data['renderStyles'])
 
-            if not self.extended:
-                self.action_index_to_state += data['actionIndexToState']
+        self.sound_names += data['soundNames']
+        if len(self.sound_names) != len(self.sounds):
+            raise DehackedEngineError('Sound and sound names sizes do not match.')
 
-        except KeyError as e:
-            raise DehackedEngineError('Invalid engine table data. KeyError {}'.format(e))
+        if not self.extended:
+            self.action_index_to_state += data['actionIndexToState']
 
-        # Clear values with false, as these indicate the entry is unwanted.
-        self.actions = self.clear_false(self.actions)
-        self.things.flags = self.clear_false(self.things.flags)
+        # except KeyError as e:
+        #     raise DehackedEngineError('Invalid engine table data. KeyError {}'.format(e))
 
     @staticmethod
     def clear_false(data):
@@ -203,251 +201,6 @@ class Engine(object):
         self.ammo.apply_defaults(self.default_ammo)
         self.sounds.apply_defaults(self.default_sound)
 
-    def read_executable(self, engine_filename, exe_filename):
-        """
-        Reads engine data from a game executable, using a JSON file as base.
-
-        @param engine_filename: The filename of the configuration file containing direction on how to read the data
-        from the executable.
-        @param exe_filename: The filename of the game executable to read engine data from.
-
-        @raise KeyError: if the executable data file does not contain all necessary data.
-        """
-
-        with open(engine_filename, 'r') as f:
-            exe_config = json.load(f)
-
-        try:
-            self.versions = exe_config['versions']
-            self.extended = exe_config['extended']
-            self.name = exe_config['name']
-
-            self.actions = exe_config['actions']
-            self.action_index_to_state = exe_config['actionIndexToState']
-
-            self.misc_data = exe_config['miscData']
-            self.cheat_data = exe_config['cheatData']
-
-            self.hacks = exe_config['hacks']
-            self.used_states = exe_config['usedStates']
-
-            with open(exe_filename, 'rb') as f:
-                f.seek(exe_config['thingOffset'])
-                self.things.read_from_executable(exe_config['thingCount'], f)
-                self.things.names = exe_config['thingNames']
-                self.things.flags = exe_config['thingFlags']
-
-                f.seek(exe_config['stateOffset'])
-                self.states.read_from_executable(exe_config['stateCount'], f)
-
-                f.seek(exe_config['weaponOffset'])
-                self.weapons.read_from_executable(exe_config['weaponCount'], f)
-                self.weapons.names = exe_config['weaponNames']
-
-                f.seek(exe_config['soundOffset'])
-                self.sounds.read_from_executable(exe_config['soundCount'], f)
-
-                # Read tables that require more work.
-                self.read_executable_sprite_names(f, exe_config)
-                self.read_executable_sound_names(f, exe_config)
-                self.read_executable_cheats(f, exe_config)
-                self.read_executable_misc(f)
-                self.read_executable_strings(f, exe_config)
-
-                self.read_executable_ammo(f, exe_config)
-                self.ammo.names = exe_config['ammoNames']
-
-        except KeyError:
-            raise DehackedEngineError('Invalid executable data.')
-
-    def write_table(self, filename):
-        """
-        Writes this engine's table data to a JSON file.
-
-        @param filename: the name of the file to write table data to.
-        """
-
-        obj = {
-            'versions': self.versions,
-            'extended': self.extended,
-            'name': self.name,
-
-            'things': self.things,
-            'thingNames': self.things.names,
-            'thingFlags': self.things.flags,
-
-            'weapons': self.weapons,
-            'weaponNames': self.weapons.names,
-
-            'states': self.states,
-            'sounds': self.sounds,
-
-            'ammo': self.ammo,
-            'ammoNames': self.ammo.names,
-
-            'strings': self.strings,
-
-            'cheats': self.cheats,
-            'cheatData': self.cheat_data,
-
-            'misc': self.misc,
-            'miscData': self.misc_data,
-
-            'spriteNames': self.sprite_names,
-            'soundNames': self.sound_names,
-            'actions': self.actions,
-            'actionIndexToState': self.action_index_to_state,
-            'usedStates': self.used_states,
-            'hacks': self.hacks,
-
-            'defaultState': self.default_state,
-            'defaultThing': self.default_thing,
-            'defaultWeapon': self.default_weapon,
-            'defaultAmmo': self.default_ammo,
-            'defaultSound': self.default_sound,
-        }
-
-        with open(filename, 'w') as f:
-            f.write(json.dumps(obj, indent=4, sort_keys=False, cls=EngineJSONEncoder))
-
-    def read_executable_sound_names(self, f, exe_config):
-        """
-        Reads sound names from an executable.
-
-        @param f: the file handle to read from.
-        @param exe_config: the executable configuration to use.
-        """
-
-        self.sound_names = []
-        for sound in self.sounds:
-            f.seek(sound['namePointer'] + exe_config['dataSegment'])
-            text = _read_string(f)
-            self.sound_names.append(text)
-
-    def read_executable_strings(self, f, exe_config):
-        """
-        Reads strings from an executable.
-
-        @param f: the file handle to read from.
-        @param exe_config: the executable configuration to use.
-        """
-
-        f.seek(exe_config['stringOffset'])
-
-        self.strings = []
-        for _ in range(exe_config['stringCount']):
-            text = _read_string(f)
-
-            # Seek ahead to the next offset dividable by 4.
-            if f.tell() % 4 != 0:
-                f.read(4 - (f.tell() % 4))
-
-            self.strings.append(text)
-
-    def read_executable_misc(self, f):
-        """
-        Reads miscellaneous data from an executable.
-
-        @param f: the file handle to read from.
-        """
-
-        int_struct = struct.Struct('<i')
-        byte_struct = struct.Struct('<B')
-
-        self.misc = {}
-        for name, item in self.misc_data.items():
-            f.seek(item['offsets'][0])
-
-            # An item's data type defines its byte length.
-            data_type = item['type']
-            if data_type == 'int':
-                self.misc[name] = int_struct.unpack(f.read(4))[0]
-            elif data_type == 'byte' or data_type == 'boolean':
-                self.misc[name] = byte_struct.unpack(f.read(1))[0]
-            else:
-                raise DehackedEngineError('Unknown miscellaneous data type {}'.format(data_type))
-
-    def read_executable_ammo(self, f, exe_config):
-        """
-        Reads ammo data from an executable.
-
-        @param f: the file handle to read from.
-        @param exe_config: the executable configuration to use.
-        """
-
-        single_struct = struct.Struct('<i')
-        count = exe_config['ammoCount']
-
-        # Read the maximum ammo amounts first.
-        f.seek(exe_config['ammoOffset'])
-        for index in range(count):
-            ammo_entry = entries.AmmoEntry(self)
-
-            data = single_struct.unpack(f.read(single_struct.size))
-            ammo_entry['maximum'] = data[0]
-
-            self.ammo.entries.append(ammo_entry)
-
-        # Read the clip sizes second.
-        for index in range(count):
-            data = single_struct.unpack(f.read(single_struct.size))
-
-            ammo_entry = self.ammo.entries[index]
-            ammo_entry['clip'] = data[0]
-
-    def read_executable_cheats(self, f, exe_config):
-        """
-        Reads and decrypts cheat code strings from an executable.
-
-        @param f: the file handle to read from.
-        @param exe_config: the executable configuration to use.
-        """
-
-        self.cheats = {}
-        for name, data in self.cheat_data.items():
-            f.seek(exe_config['cheatOffset'] + data['offset'])
-            text = f.read(data['length'])
-
-            self.cheats[name] = _decrypt_cheat_string(text)
-
-    def read_executable_sprite_names(self, f, exe_config):
-        """
-        Reads sprite names from an executable.
-
-        @param f: the file handle to read from.
-        @param exe_config: the executable configuration to use.
-        """
-
-        pointers = []
-        self.sprite_names = []
-        spritename_struct = struct.Struct('<I')
-
-        # Read pointers to the sprite names.
-        f.seek(exe_config['spriteOffset'])
-        for _ in range(exe_config['spriteCount']):
-            offset = spritename_struct.unpack(f.read(4))[0]
-            pointers.append(offset)
-
-        # Read actual strings.
-        for index in range(exe_config['spriteCount']):
-            f.seek(pointers[index] + exe_config['dataSegment'])
-            self.sprite_names.append(f.read(4))
-
-    def get_action_from_key(self, key):
-        """
-        Returns an action value from an action key.
-
-        @param key: the key, as stored in the actions list for this engine, to get the action of.
-
-        @raise LookupError: if there is no such action key.
-        """
-
-        key = str(key)
-        if key in self.actions:
-            return self.actions[key]
-
-        raise LookupError('Cannot find an action with key {}'.format(key))
-
     def get_action_key_from_name(self, action_name):
         """
         Returns an action key from an action name. Useful for getting action names for non-extended engines.
@@ -455,8 +208,8 @@ class Engine(object):
         @param action_name: the name of the action to find the key of.
         """
 
-        for key, item in self.actions.items():
-            if item['name'] == action_name:
+        for key, action in self.actions.items():
+            if action.name == action_name:
                 return key
 
         return None
@@ -494,44 +247,6 @@ class EngineJSONEncoder(JSONEncoder):
             return list(iterable)
 
         return JSONEncoder.default(self, o)
-
-
-def _read_string(f):
-    """
-    Reads a null-terminated string from a file.
-    """
-
-    chars = []
-    while True:
-        char = f.read(1)
-        if char == b'\0':
-            break
-        chars.append(char)
-
-    return ''.join(chars)
-
-
-def _decrypt_cheat_string(text):
-    """
-    Decrypts an executable cheat string into a readable one.
-    """
-
-    text = bytearray(text)
-    output = bytearray(text)
-
-    i = 0
-    while i < len(text) and text[i] != 0:
-        output[i] = text[i] & 36
-        output[i] |= (text[i] & 128) >> 7
-        output[i] |= (text[i] & 64) >> 5
-        output[i] |= (text[i] & 16) >> 1
-        output[i] |= (text[i] & 8) << 1
-        output[i] |= (text[i] & 2) << 5
-        output[i] |= (text[i] & 1) << 7
-
-        i += 1
-
-    return bytes(output).encode('ascii')
 
 
 def get_key_from_patchkey(data, patch_key):

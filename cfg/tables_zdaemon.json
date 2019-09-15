@@ -32,7 +32,7 @@
 		"Detonate": {
 			"name": "Detonate",
 			"description": "Explode with variable damage (thing damage field).",
-			"type": 0
+			"type": "thing"
 		},
 		"Mushroom": {
 			"name": "Mushroom",
@@ -51,7 +51,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"Spawn": {
 			"name": "Spawn",
@@ -69,7 +69,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"PlaySound": {
 			"name": "PlaySound",
@@ -87,7 +87,7 @@
 					"range": [0, 1]
 				}
 			],
-			"type": 0,
+			"type": "thing",
 			"sound": "state:unused1"
 		},
 		"RandomJump": {
@@ -106,12 +106,12 @@
 					"range": [0, 255]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"Die": {
 			"name": "Die",
 			"description": "Kills this thing.",
-			"type": 0
+			"type": "thing"
 		},
 		"PlayWeaponSound": {
 			"name": "PlayWeaponSound",
@@ -129,13 +129,13 @@
 					"range": [0, 1]
 				}
 			],
-			"type": 1,
+			"type": "weapon",
 			"sound": "state:arg1"
 		},
 		"FastChase": {
 			"name": "FastChase",
 			"description": "Fast version of the standard walking code pointer.",
-			"type": 0
+			"type": "thing"
 		},
 		"FireCustomRailgun": {
 			"name": "FireCustomRailgun",
@@ -154,7 +154,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 1
+			"type": "weapon"
 		},
 		"CPA_Execute": {
 			"name": "CPA_Execute",
@@ -191,7 +191,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"CPW_Execute": {
 			"name": "CPW_Execute",
@@ -228,7 +228,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 1
+			"type": "weapon"
 		},
 		"CPA_ExecuteAlways": {
 			"name": "CPA_ExecuteAlways",
@@ -265,7 +265,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"CPW_ExecuteAlways": {
 			"name": "CPW_ExecuteAlways",
@@ -302,7 +302,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 1
+			"type": "weapon"
 		},
 		"CPA_LockedExecute": {
 			"name": "CPA_LockedExecute",
@@ -339,7 +339,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"CPW_LockedExecute": {
 			"name": "CPW_LockedExecute",
@@ -376,7 +376,7 @@
 					"range": [-32767, 32767]
 				}
 			],
-			"type": 1
+			"type": "weapon"
 		},
 		"CPA_LockedExecuteDoor": {
 			"name": "CPA_LockedExecuteDoor",
@@ -413,7 +413,7 @@
 					"range": [0, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"CPW_LockedExecuteDoor": {
 			"name": "CPW_LockedExecuteDoor",
@@ -450,7 +450,7 @@
 					"range": [0, 32767]
 				}
 			],
-			"type": 1
+			"type": "weapon"
 		},
 		"CPA_Suspend": {
 			"name": "CPA_Suspend",
@@ -469,7 +469,7 @@
 					"range": [0, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"CPW_Suspend": {
 			"name": "CPW_Suspend",
@@ -488,7 +488,7 @@
 					"range": [0, 32767]
 				}
 			],
-			"type": 1
+			"type": "weapon"
 		},
 		"CPA_Terminate": {
 			"name": "CPA_Terminate",
@@ -507,7 +507,7 @@
 					"range": [0, 32767]
 				}
 			],
-			"type": 0
+			"type": "thing"
 		},
 		"CPW_Terminate": {
 			"name": "CPW_Terminate",
@@ -526,367 +526,367 @@
 					"range": [0, 32767]
 				}
 			],
-			"type": 1
+			"type": "weapon"
 		},
 		"SetReflective": {
 			"name": "SetReflective",
 			"description": "Makes the thing reflective. Any projectiles that strike it will bounce off of it, though it will still take damage.",
-			"type": 0
+			"type": "thing"
 		},
 		"UnSetReflective": {
 			"name": "UnSetReflective",
 			"description": "The thing will no longer be reflective.",
-			"type": 0
+			"type": "thing"
 		},
 		"SetInvulnerable": {
 			"name": "SetInvulnerable",
 			"description": "Makes the thing impervious to damage.",
-			"type": 0
+			"type": "thing"
 		},
 		"UnSetInvulnerable": {
 			"name": "UnSetInvulnerable",
 			"description": "Makes the thing able to take damage again.",
-			"type": 0
+			"type": "thing"
 		},
 		"SetShootable": {
 			"name": "SetShootable",
 			"description": "The thing can be hit by projectiles and hitscan weapons.",
-			"type": 0
+			"type": "thing"
 		},
 		"UnSetShootable": {
 			"name": "UnSetShootable",
 			"description": "The thing cannot be hit by projectiles and hitscan weapons.",
-			"type": 0
+			"type": "thing"
 		},
 		"FireRailgun": {
 			"name": "FireRailgun",
 			"description": "Fires a railgun from the center of the player's screen. Only for player weapons.",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireRailgunRight": {
 			"name": "FireRailgunRight",
 			"description": "Fires a railgun from the right side of the player's screen. Only for player weapons.",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireRailgunLeft": {
 			"name": "FireRailgunLeft",
 			"description": "Fires a railgun from the left side of the player's screen. Only for player weapons.",
-			"type": 1
+			"type": "weapon"
 		},
 		"MonsterRail": {
 			"name": "MonsterRail",
 			"description": "Makes a monster fire a railgun. The amount of damage dealt by the railgun is determined by the monster's Missile Damage field.",
-			"type": 0
+			"type": "thing"
 		},
 		"RailWait": {
 			"name": "RailWait",
 			"description": "Deprecated, exactly the same as NULL.",
-			"type": 1
+			"type": "weapon"
 		},
 		"SetReflectiveInvulnerable": {
 			"name": "SetReflectiveInvulnerable",
 			"description": "Makes the thing reflect projectiles, and makes it impervious to other types of damage.",
-			"type": 0
+			"type": "thing"
 		},
 		"UnSetReflectiveInvulnerable": {
 			"name": "UnSetReflectiveInvulnerable",
 			"description": "Makes the thing no longer reflect projectiles, and makes it susceptible to other types of damage again.",
-			"type": 0
+			"type": "thing"
 		},
 		"Gravity": {
 			"name": "Gravity",
 			"description": "Allows the thing to fall under the effects of gravity.",
-			"type": 0
+			"type": "thing"
 		},
 		"NoGravity": {
 			"name": "NoGravity",
 			"description": "Causes the thing to float in the air instead of fall.",
-			"type": 0
+			"type": "thing"
 		},
 		"AccTeleGlitter": {
 			"name": "AccTeleGlitter",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"AddPlayerRain": {
 			"name": "AddPlayerRain",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"AxeSound": {
 			"name": "AxeSound",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BarrelDestroy": {
 			"name": "BarrelDestroy",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BarrelRespawn": {
 			"name": "BarrelRespawn",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BatMove": {
 			"name": "BatMove",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BatSpawn": {
 			"name": "BatSpawn",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BatSpawnInit": {
 			"name": "BatSpawnInit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BeAdditive": {
 			"name": "BeAdditive",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BeastAttack": {
 			"name": "BeastAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BeastPuff": {
 			"name": "BeastPuff",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BellReset1": {
 			"name": "BellReset1",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BellReset2": {
 			"name": "BellReset2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BishopAttack": {
 			"name": "BishopAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BishopAttack2": {
 			"name": "BishopAttack2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BishopChase": {
 			"name": "BishopChase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BishopDecide": {
 			"name": "BishopDecide",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BishopDoBlur": {
 			"name": "BishopDoBlur",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BishopMissileSeek": {
 			"name": "BishopMissileSeek",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BishopMissileWeave": {
 			"name": "BishopMissileWeave",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BishopPainBlur": {
 			"name": "BishopPainBlur",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BishopPuff": {
 			"name": "BishopPuff",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BishopSpawnBlur": {
 			"name": "BishopSpawnBlur",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BlueSpark": {
 			"name": "BlueSpark",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BoltSpark": {
 			"name": "BoltSpark",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BounceCheck": {
 			"name": "BounceCheck",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BridgeInit": {
 			"name": "BridgeInit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BridgeOrbit": {
 			"name": "BridgeOrbit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BridgeRemove": {
 			"name": "BridgeRemove",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CentaurAttack": {
 			"name": "CentaurAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CentaurAttack2": {
 			"name": "CentaurAttack2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CentaurDefend": {
 			"name": "CentaurDefend",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CentaurDropStuff": {
 			"name": "CentaurDropStuff",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CFlameMissile": {
 			"name": "CFlameMissile",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CFlamePuff": {
 			"name": "CFlamePuff",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CFlameRotate": {
 			"name": "CFlameRotate",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CheckBurnGone": {
 			"name": "CheckBurnGone",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CheckFloor": {
 			"name": "CheckFloor",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CheckSkullDone": {
 			"name": "CheckSkullDone",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CheckSkullFloor": {
 			"name": "CheckSkullFloor",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CheckTeleRing": {
 			"name": "CheckTeleRing",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CheckThrowBomb": {
 			"name": "CheckThrowBomb",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ChicAttack": {
 			"name": "ChicAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ChicChase": {
 			"name": "ChicChase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ChicLook": {
 			"name": "ChicLook",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ChicPain": {
 			"name": "ChicPain",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CHolyAttack2": {
 			"name": "CHolyAttack2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CHolyCheckScream": {
 			"name": "CHolyCheckScream",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CHolySeek": {
 			"name": "CHolySeek",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CHolySpawnPuff": {
 			"name": "CHolySpawnPuff",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CHolyTail": {
 			"name": "CHolyTail",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ClassBossHealth": {
 			"name": "ClassBossHealth",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ClericAttack": {
 			"name": "ClericAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ClericBurnScream": {
 			"name": "ClericBurnScream",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ClinkAttack": {
 			"name": "ClinkAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CorpseBloodDrip": {
 			"name": "CorpseBloodDrip",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CorpseExplode": {
 			"name": "CorpseExplode",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"CPA_BulletAttack": {
 			"name": "CPA_BulletAttack",
@@ -904,7 +904,7 @@
 					"type": "sound"
 				}
 			],
-			"type": 0,
+			"type": "thing",
 			"sound": "state:arg2"
 		},
 		"CPA_CustomBulletAttack": {
@@ -958,7 +958,7 @@
 					"type": "sound"
 				}
 			],
-			"type": 0,
+			"type": "thing",
 			"sound": "state:arg8"
 		},
 		"CPA_CustomMissile": {
@@ -1006,1223 +1006,1223 @@
 					"range": [0, 32767]
 				}
 			],
-			"type": 0,
+			"type": "thing",
 			"sound": "state:arg6"
 		},
 		"CStaffMissileSlither": {
 			"name": "CStaffMissileSlither",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DeathBallImpact": {
 			"name": "DeathBallImpact",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DelayGib": {
 			"name": "DelayGib",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Demon2Death": {
 			"name": "Demon2Death",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DemonAttack1": {
 			"name": "DemonAttack1",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DemonAttack2_1": {
 			"name": "DemonAttack2_1",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DemonAttack2_2": {
 			"name": "DemonAttack2_2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DemonDeath": {
 			"name": "DemonDeath",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DeQueueCorpse": {
 			"name": "DeQueueCorpse",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DragonAttack": {
 			"name": "DragonAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DragonCheckCrash": {
 			"name": "DragonCheckCrash",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DragonFlap": {
 			"name": "DragonFlap",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DragonFlight": {
 			"name": "DragonFlight",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DragonFX2": {
 			"name": "DragonFX2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DragonInitFlight": {
 			"name": "DragonInitFlight",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DragonPain": {
 			"name": "DragonPain",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DripBlood": {
 			"name": "DripBlood",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DropBloodscourgePieces": {
 			"name": "DropBloodscourgePieces",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DropMace": {
 			"name": "DropMace",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DropQuietusPieces": {
 			"name": "DropQuietusPieces",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"DropWraithvergePieces": {
 			"name": "DropWraithvergePieces",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"EttinAttack": {
 			"name": "EttinAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Feathers": {
 			"name": "Feathers",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FighterAttack": {
 			"name": "FighterAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FighterBurnScream": {
 			"name": "FighterBurnScream",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FiredAttack": {
 			"name": "FiredAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FiredChase": {
 			"name": "FiredChase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FiredRocks": {
 			"name": "FiredRocks",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FiredSplotch": {
 			"name": "FiredSplotch",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FireScream": {
 			"name": "FireScream",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FlameCheck": {
 			"name": "FlameCheck",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FlameEnd": {
 			"name": "FlameEnd",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FlameSnd": {
 			"name": "FlameSnd",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FloatGib": {
 			"name": "FloatGib",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FloatPuff": {
 			"name": "FloatPuff",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FogMove": {
 			"name": "FogMove",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FogSpawn": {
 			"name": "FogSpawn",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FreeTargMobj": {
 			"name": "FreeTargMobj",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FreezeDeath": {
 			"name": "FreezeDeath",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FreezeDeathChunks": {
 			"name": "FreezeDeathChunks",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"FSwordFlames": {
 			"name": "FSwordFlames",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"GenWizard": {
 			"name": "GenWizard",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"GhostOff": {
 			"name": "GhostOff",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"HammerSound": {
 			"name": "HammerSound",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"HideInCeiling": {
 			"name": "HideInCeiling",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"HideThing": {
 			"name": "HideThing",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"IceCheckHeadDone": {
 			"name": "IceCheckHeadDone",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"IceGuyAttack": {
 			"name": "IceGuyAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"IceGuyChase": {
 			"name": "IceGuyChase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"IceGuyDie": {
 			"name": "IceGuyDie",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"IceGuyLook": {
 			"name": "IceGuyLook",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"IceGuyMissileExplode": {
 			"name": "IceGuyMissileExplode",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"IceGuyMissilePuff": {
 			"name": "IceGuyMissilePuff",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"IceSetTics": {
 			"name": "IceSetTics",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ImpDeath": {
 			"name": "ImpDeath",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ImpExplode": {
 			"name": "ImpExplode",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ImpMeAttack": {
 			"name": "ImpMeAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ImpMsAttack": {
 			"name": "ImpMsAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ImpMsAttack2": {
 			"name": "ImpMsAttack2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ImpXDeath1": {
 			"name": "ImpXDeath1",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ImpXDeath2": {
 			"name": "ImpXDeath2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"InitKeyGizmo": {
 			"name": "InitKeyGizmo",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KBolt": {
 			"name": "KBolt",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KBoltRaise": {
 			"name": "KBoltRaise",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KnightAttack": {
 			"name": "KnightAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KoraxBonePop": {
 			"name": "KoraxBonePop",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KoraxChase": {
 			"name": "KoraxChase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KoraxCommand": {
 			"name": "KoraxCommand",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KoraxDecide": {
 			"name": "KoraxDecide",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KoraxMissile": {
 			"name": "KoraxMissile",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KoraxStep": {
 			"name": "KoraxStep",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KoraxStep2": {
 			"name": "KoraxStep2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"KSpiritRoam": {
 			"name": "KSpiritRoam",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LastZap": {
 			"name": "LastZap",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LeafCheck": {
 			"name": "LeafCheck",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LeafSpawn": {
 			"name": "LeafSpawn",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LeafThrust": {
 			"name": "LeafThrust",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LichAttack": {
 			"name": "LichAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LichFireGrow": {
 			"name": "LichFireGrow",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LichIceImpact": {
 			"name": "LichIceImpact",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LightningClip": {
 			"name": "LightningClip",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LightningRemove": {
 			"name": "LightningRemove",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LightningZap": {
 			"name": "LightningZap",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"LowGravity": {
 			"name": "LowGravity",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_BerserkPunch": {
 			"name": "M_BerserkPunch",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_BFGsound": {
 			"name": "M_BFGsound",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_CheckAttack": {
 			"name": "M_CheckAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_FireBFG": {
 			"name": "M_FireBFG",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_FireCGun": {
 			"name": "M_FireCGun",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_FireCGunAccurate": {
 			"name": "M_FireCGunAccurate",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_FireMissile": {
 			"name": "M_FireMissile",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_FirePistol": {
 			"name": "M_FirePistol",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_FirePistolInaccurate": {
 			"name": "M_FirePistolInaccurate",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_FirePlasma": {
 			"name": "M_FirePlasma",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_FireRailgun": {
 			"name": "M_FireRailgun",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_FireShotgun": {
 			"name": "M_FireShotgun",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_FireShotgun2": {
 			"name": "M_FireShotgun2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_Punch": {
 			"name": "M_Punch",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_Refire": {
 			"name": "M_Refire",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_Saw": {
 			"name": "M_Saw",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"M_SawRefire": {
 			"name": "M_SawRefire",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MaceBallImpact": {
 			"name": "MaceBallImpact",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MaceBallImpact2": {
 			"name": "MaceBallImpact2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MacePL1Check": {
 			"name": "MacePL1Check",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MageAttack": {
 			"name": "MageAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MageBurnScream": {
 			"name": "MageBurnScream",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MakePod": {
 			"name": "MakePod",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MarineChase": {
 			"name": "MarineChase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MarineLook": {
 			"name": "MarineLook",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MarineNoise": {
 			"name": "MarineNoise",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurAtk1": {
 			"name": "MinotaurAtk1",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurAtk2": {
 			"name": "MinotaurAtk2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurAtk3": {
 			"name": "MinotaurAtk3",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurCharge": {
 			"name": "MinotaurCharge",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurChase": {
 			"name": "MinotaurChase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurDecide": {
 			"name": "MinotaurDecide",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurFade0": {
 			"name": "MinotaurFade0",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurFade1": {
 			"name": "MinotaurFade1",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurFade2": {
 			"name": "MinotaurFade2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurLook": {
 			"name": "MinotaurLook",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MinotaurRoam": {
 			"name": "MinotaurRoam",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MntrFloorFire": {
 			"name": "MntrFloorFire",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MStaffTrack": {
 			"name": "MStaffTrack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MummyAttack": {
 			"name": "MummyAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MummyAttack2": {
 			"name": "MummyAttack2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MummyFX1Seek": {
 			"name": "MummyFX1Seek",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MummyFXSound": {
 			"name": "MummyFXSound",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"MummySoul": {
 			"name": "MummySoul",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"NoBlocking": {
 			"name": "NoBlocking",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PhoenixPuff": {
 			"name": "PhoenixPuff",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PigAttack": {
 			"name": "PigAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PigChase": {
 			"name": "PigChase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PigLook": {
 			"name": "PigLook",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PigPain": {
 			"name": "PigPain",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PodPain": {
 			"name": "PodPain",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PoisonBagCheck": {
 			"name": "PoisonBagCheck",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PoisonBagDamage": {
 			"name": "PoisonBagDamage",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PoisonBagInit": {
 			"name": "PoisonBagInit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PoisonShroom": {
 			"name": "PoisonShroom",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PotteryCheck": {
 			"name": "PotteryCheck",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PotteryChooseBit": {
 			"name": "PotteryChooseBit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"PotteryExplode": {
 			"name": "PotteryExplode",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"QueueCorpse": {
 			"name": "QueueCorpse",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"RainImpact": {
 			"name": "RainImpact",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"RemovePod": {
 			"name": "RemovePod",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentBirthScream": {
 			"name": "SerpentBirthScream",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentChase": {
 			"name": "SerpentChase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentCheckForAttack": {
 			"name": "SerpentCheckForAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentChooseAttack": {
 			"name": "SerpentChooseAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentDiveSound": {
 			"name": "SerpentDiveSound",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentFXSound": {
 			"name": "SerpentFXSound",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentHeadCheck": {
 			"name": "SerpentHeadCheck",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentHeadPop": {
 			"name": "SerpentHeadPop",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentHide": {
 			"name": "SerpentHide",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentHumpDecide": {
 			"name": "SerpentHumpDecide",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentLowerHump": {
 			"name": "SerpentLowerHump",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentMeleeAttack": {
 			"name": "SerpentMeleeAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentMissileAttack": {
 			"name": "SerpentMissileAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentRaiseHump": {
 			"name": "SerpentRaiseHump",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentSpawnGibs": {
 			"name": "SerpentSpawnGibs",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentUnHide": {
 			"name": "SerpentUnHide",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SerpentWalk": {
 			"name": "SerpentWalk",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SetAltShadow": {
 			"name": "SetAltShadow",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SetFloorClip": {
 			"name": "SetFloorClip",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ShedShard": {
 			"name": "ShedShard",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SinkGib": {
 			"name": "SinkGib",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SkullPop": {
 			"name": "SkullPop",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SkullRodPL2Seek": {
 			"name": "SkullRodPL2Seek",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SkullRodStorm": {
 			"name": "SkullRodStorm",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SmBounce": {
 			"name": "SmBounce",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SmokePuffExit": {
 			"name": "SmokePuffExit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SnakeAttack": {
 			"name": "SnakeAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SnakeAttack2": {
 			"name": "SnakeAttack2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SoAExplode": {
 			"name": "SoAExplode",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Sor1Chase": {
 			"name": "Sor1Chase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Sor1Pain": {
 			"name": "Sor1Pain",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Sor2DthInit": {
 			"name": "Sor2DthInit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Sor2DthLoop": {
 			"name": "Sor2DthLoop",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorcBallOrbit": {
 			"name": "SorcBallOrbit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorcBallPop": {
 			"name": "SorcBallPop",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorcBossAttack": {
 			"name": "SorcBossAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorcererBishopEntry": {
 			"name": "SorcererBishopEntry",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorcererRise": {
 			"name": "SorcererRise",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorcFX1Seek": {
 			"name": "SorcFX1Seek",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorcFX2Orbit": {
 			"name": "SorcFX2Orbit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorcFX2Split": {
 			"name": "SorcFX2Split",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorcFX4Check": {
 			"name": "SorcFX4Check",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorcSpinBalls": {
 			"name": "SorcSpinBalls",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorDBon": {
 			"name": "SorDBon",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorDExp": {
 			"name": "SorDExp",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorDSph": {
 			"name": "SorDSph",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorRise": {
 			"name": "SorRise",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorSightSnd": {
 			"name": "SorSightSnd",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SorZap": {
 			"name": "SorZap",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SpawnBishop": {
 			"name": "SpawnBishop",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SpawnFizzle": {
 			"name": "SpawnFizzle",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SpawnMace": {
 			"name": "SpawnMace",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SpawnRippers": {
 			"name": "SpawnRippers",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SpawnTeleGlitter": {
 			"name": "SpawnTeleGlitter",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SpawnTeleGlitter2": {
 			"name": "SpawnTeleGlitter2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SpeedBalls": {
 			"name": "SpeedBalls",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"SPosAttackUseAtkSound": {
 			"name": "SPosAttackUseAtkSound",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Srcr1Attack": {
 			"name": "Srcr1Attack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Srcr2Attack": {
 			"name": "Srcr2Attack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Srcr2Decide": {
 			"name": "Srcr2Decide",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"StopSerpentFXSound": {
 			"name": "StopSerpentFXSound",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Summon": {
 			"name": "Summon",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"TeloSpawnA": {
 			"name": "TeloSpawnA",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"TeloSpawnB": {
 			"name": "TeloSpawnB",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"TeloSpawnC": {
 			"name": "TeloSpawnC",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"TeloSpawnD": {
 			"name": "TeloSpawnD",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"TreeDeath": {
 			"name": "TreeDeath",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"UnHideThing": {
 			"name": "UnHideThing",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"UnSetFloorClip": {
 			"name": "UnSetFloorClip",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"VileAttack": {
 			"name": "VileAttack",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"VolcanoBlast": {
 			"name": "VolcanoBlast",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"VolcanoSet": {
 			"name": "VolcanoSet",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"VolcBallImpact": {
 			"name": "VolcBallImpact",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"Wander": {
 			"name": "Wander",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WaterfallSound": {
 			"name": "WaterfallSound",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WhirlwindSeek": {
 			"name": "WhirlwindSeek",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WindSound": {
 			"name": "WindSound",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WizAtk1": {
 			"name": "WizAtk1",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WizAtk2": {
 			"name": "WizAtk2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WizAtk3": {
 			"name": "WizAtk3",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WraithChase": {
 			"name": "WraithChase",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WraithFX2": {
 			"name": "WraithFX2",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WraithFX3": {
 			"name": "WraithFX3",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WraithInit": {
 			"name": "WraithInit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WraithLook": {
 			"name": "WraithLook",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WraithMelee": {
 			"name": "WraithMelee",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WraithMissile": {
 			"name": "WraithMissile",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WraithRaise": {
 			"name": "WraithRaise",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"WraithRaiseInit": {
 			"name": "WraithRaiseInit",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"ZapMimic": {
 			"name": "ZapMimic",
 			"description": "",
-			"type": 0
+			"type": "thing"
 		},
 		"BeakAttackPL1": {
 			"name": "BeakAttackPL1",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"BeakAttackPL2": {
 			"name": "BeakAttackPL2",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"BeakRaise": {
 			"name": "BeakRaise",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"BeakReady": {
 			"name": "BeakReady",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"CFlameAttack": {
 			"name": "CFlameAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"CHolyAttack": {
 			"name": "CHolyAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"CHolyPalette": {
 			"name": "CHolyPalette",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"CMaceAttack": {
 			"name": "CMaceAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"CPW_BulletAttack": {
 			"name": "CPW_BulletAttack",
@@ -2240,7 +2240,7 @@
 					"type": "sound"
 				}
 			],
-			"type": 1,
+			"type": "weapon",
 			"sound": "state:arg2"
 		},
 		"CPW_CustomBulletAttack": {
@@ -2294,7 +2294,7 @@
 					"type": "sound"
 				}
 			],
-			"type": 1,
+			"type": "weapon",
 			"sound": "state:arg8"
 		},
 		"CPW_CustomMissile": {
@@ -2347,203 +2347,203 @@
 					"type": "ammo"
 				}
 			],
-			"type": 1,
+			"type": "weapon",
 			"sound": "state:arg6"
 		},
 		"CStaffAttack": {
 			"name": "CStaffAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"CStaffCheck": {
 			"name": "CStaffCheck",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"CStaffCheckBlink": {
 			"name": "CStaffCheckBlink",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"CStaffInitBlink": {
 			"name": "CStaffInitBlink",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FAxeAttack": {
 			"name": "FAxeAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FAxeCheckAtk": {
 			"name": "FAxeCheckAtk",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FAxeCheckReady": {
 			"name": "FAxeCheckReady",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FAxeCheckReadyG": {
 			"name": "FAxeCheckReadyG",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FAxeCheckUp": {
 			"name": "FAxeCheckUp",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FAxeCheckUpG": {
 			"name": "FAxeCheckUpG",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FHammerAttack": {
 			"name": "FHammerAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FHammerThrow": {
 			"name": "FHammerThrow",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireBlasterPL1": {
 			"name": "FireBlasterPL1",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireBlasterPL2": {
 			"name": "FireBlasterPL2",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireConePL1": {
 			"name": "FireConePL1",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireCrossbowPL1": {
 			"name": "FireCrossbowPL1",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireCrossbowPL2": {
 			"name": "FireCrossbowPL2",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireGoldWandPL1": {
 			"name": "FireGoldWandPL1",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireGoldWandPL2": {
 			"name": "FireGoldWandPL2",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireMacePL1": {
 			"name": "FireMacePL1",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireMacePL1B": {
 			"name": "FireMacePL1B",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireMacePL2": {
 			"name": "FireMacePL2",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FirePhoenixPL1": {
 			"name": "FirePhoenixPL1",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FirePhoenixPL2": {
 			"name": "FirePhoenixPL2",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireSkullRodPL1": {
 			"name": "FireSkullRodPL1",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FireSkullRodPL2": {
 			"name": "FireSkullRodPL2",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FPunchAttack": {
 			"name": "FPunchAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"FSwordAttack": {
 			"name": "FSwordAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"GauntletAttack": {
 			"name": "GauntletAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"InitPhoenixPL2": {
 			"name": "InitPhoenixPL2",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"LightningReady": {
 			"name": "LightningReady",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"MLightningAttack": {
 			"name": "MLightningAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"MStaffAttack": {
 			"name": "MStaffAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"MStaffPalette": {
 			"name": "MStaffPalette",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"MWandAttack": {
 			"name": "MWandAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"ShutdownPhoenixPL2": {
 			"name": "ShutdownPhoenixPL2",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"SnoutAttack": {
 			"name": "SnoutAttack",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"StaffAttackPL1": {
 			"name": "StaffAttackPL1",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		},
 		"StaffAttackPL2": {
 			"name": "StaffAttackPL2",
 			"description": "",
-			"type": 1
+			"type": "weapon"
 		}
 	},
 

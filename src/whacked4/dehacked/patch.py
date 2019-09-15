@@ -658,18 +658,11 @@ class Patch(object):
 
         state = self.states[state_index]
 
-        # Get sprite frame character.
+        sprite_name = self.sprite_names[state['sprite']]
         sprite_frame = state['spriteFrame'] & ~self.FRAME_FLAG_LIT
-        sprite_frame = chr(sprite_frame + 65)
+        sprite_frame_name = chr(sprite_frame + 65)
 
-        # Get sprite name.
-        sprite_index = state['sprite']
-        if sprite_index >= len(self.sprite_names):
-            sprite_name = '????'
-        else:
-            sprite_name = self.sprite_names[sprite_index]
-
-        return '{}{}'.format(sprite_name, sprite_frame)
+        return sprite_name + sprite_frame_name
 
     def get_sound_name(self, sound_index):
         """

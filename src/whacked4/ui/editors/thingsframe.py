@@ -751,7 +751,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.undo_add()
 
-        self.patch.things[self.selected_index] = self.patch.engine.empty_thing.clone()
+        self.patch.things[self.selected_index] = self.patch.engine.default_thing.clone()
         self.patch.things.names[self.selected_index] = 'Thing {}'.format(self.selected_index + 1)
 
         self.update_properties()
@@ -783,7 +783,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
                 continue
 
             action = self.patch.engine.actions[state['action']]
-            if 'setsMomentum' in action and action['setsMomentum']:
+            if action.sets_momentum:
                 self.thing_is_projectile = False
 
         # Cast speed property to the new type if needed.

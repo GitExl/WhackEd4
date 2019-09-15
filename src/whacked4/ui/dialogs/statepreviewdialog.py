@@ -36,7 +36,7 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         self.elapsed = 0
         self.ticks = 0
 
-        self.Sprite.set_baseline_factor(0.85)
+        self.Sprite.set_baseline_factor(0.75)
         self.Sprite.set_scale(2)
 
         self.StateInfo.SetFont(config.FONT_MONOSPACED_BOLD)
@@ -68,7 +68,7 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
 
     def begin_playback(self, state_index):
         """
-        Starts playbackl from a state. Takes care of moving voer 0 duration starting states.
+        Starts playback from a state. Takes care of moving over 0 duration starting states.
         """
 
         self.set_state(state_index)
@@ -155,10 +155,10 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
                 self.set_state(state['unused1'])
                 return
 
-            action_label = state['action']
+            action_key = state['action']
+            action = self.patch.engine.actions[action_key]
 
-            action_name = state['action']
-            action = self.patch.engine.actions[action_name]
+            action_label = action.name
 
             sound_label = ''
             sound_index = None
@@ -166,10 +166,10 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
             spawn_sound_label = ''
             spawn_sound_index = None
 
-            if 'sound' in action:
-                parts = action['sound'].split(':')
+            if action.sound is not None:
+                parts = action.sound.split(':')
                 if len(parts) != 2:
-                    raise Exception('Invalid sound for action {}'.format(action_name))
+                    raise Exception('Invalid sound for action "{}".'.format(action_key))
 
                 if parts[0] == 'sound':
                     sound_index = int(parts[1])
@@ -184,8 +184,8 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
                     sound_index = state[parts[1]]
 
             # Action spawns a thing.
-            if 'spawns' in action:
-                thing = self.patch.things[action['spawns']]
+            if action.spawns is not None:
+                thing = self.patch.things[action.spawns]
                 spawn_sound_index = thing['soundAlert']
 
             # Playback sounds for this action. Any specific sound overrides a spawned thing sound.
