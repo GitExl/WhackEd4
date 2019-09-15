@@ -26,8 +26,6 @@
 		"boom"
 	],
 
-	"hacks": {},
-
 	"actions": {
 		"Detonate": {
 			"name": "Detonate",

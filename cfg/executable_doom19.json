@@ -31,10 +31,6 @@
 
 	"dataSegment": 557076,
 
-	"hacks": {
-		"plasmaFlashStateJitter": true
-	},
-
 	"miscData": {
 		"startHealth": {
 			"offsets": [403896],
@@ -743,7 +739,7 @@
 		},
 		"185488": {
 			"description": "Weapon deselect.",
-			"name": "Raise"			
+			"name": "Raise"
 		},
 		"185552": {
 			"description": "Weapon select.",
@@ -771,7 +767,8 @@
 		},
 		"186208": {
 			"description": "Player Plasma Rifle attack.",
-			"name": "FirePlasma"
+			"name": "FirePlasma",
+      "usesExtraFlashState": true
 		},
 		"186512": {
 			"description": "Player Pistol shot.",
@@ -787,7 +784,8 @@
 		},
 		"186992": {
 			"description": "Player Chaingun shot.\n\nAlso checks ammo, does not go to -1 ammo, but changes the weapon instead.",
-			"name": "FireCGun"
+			"name": "FireCGun",
+      "usesExtraFlashState": true
 		},
 		"187200": {
 			"description": "Restore the lighting level after a gun flash.",

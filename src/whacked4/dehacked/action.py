@@ -35,6 +35,7 @@ class Action:
         self.sound: Optional[str] = None
         self.spawns: Optional[int] = None
         self.sets_momentum: bool = False
+        self.uses_extra_flash_state: bool = False
 
         self.unused: List[ActionArgument] = []
         self.arguments: List[ActionArgument] = []
@@ -79,6 +80,9 @@ class Action:
 
         if 'setsMomentum' in json:
             action.sets_momentum = bool(json['setsMomentum'])
+
+        if 'usesExtraFlashState' in json:
+            action.uses_extra_flash_state = bool(json['usesExtraFlashState'])
 
         if 'unused' in json:
             for unused in json['unused']:

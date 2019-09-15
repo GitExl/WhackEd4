@@ -1,135 +1,36 @@
-#!/usr/bin/env python
-#coding=utf8
+from typing import List, Set
 
-"""
-This module contains functionality to filter a list of states by certain criteria.
-"""
-
-# Filter types.
-FILTER_TYPE_NONE = 0x0
-FILTER_TYPE_UNUSED = 0x1
-FILTER_TYPE_THING = 0x2
-FILTER_TYPE_WEAPON = 0x4
+from whacked4.dehacked.entry import Entry
+from whacked4.dehacked.patch import Patch
+from whacked4.dehacked.table import Table
 
 
-def filter_states(patch, filter_type, entity_index):
-    """
-    Updates the list of filtered states from a filter index.
-    """
+class StateFilterBase:
 
-    # Create an unfiltered list of all states if there is no filter.
-    if filter_type == FILTER_TYPE_NONE:
-        state_index = 0
-        state_indices = []
-        states = []
+    def __init__(self, patch: Patch):
+        self.patch: Patch = patch
 
-        for state in patch.states:
-            state_indices.append(state_index)
-            states.append(state)
-            state_index += 1
+    def apply(self, state_indices: Set[int]) -> Set[int]:
+        pass
 
-        return state_indices, states
+    def expand_used_states(self, used_states):
+        for state_index in used_states:
+            state = self.patch.states[state_index]
 
-    # Create an initial list of states belonging to the filtered entity.
-    if filter_type == FILTER_TYPE_UNUSED:
-        states_list = _get_used_states(patch)
-    elif filter_type == FILTER_TYPE_THING:
-        states_list = _get_thing_states(patch.things[entity_index])
-    elif filter_type == FILTER_TYPE_WEAPON:
-        states_list = _get_weapon_states(patch.weapons[entity_index])
-    else:
-        states_list = []
+            next_state_index = state['nextState']
+            if next_state_index >= 0:
+                used_states.add(next_state_index)
 
-    # Look for next state and possible next states until all known states have been visited.
-    visited = set(states_list)
-    for state_index in states_list:
-
-        next_state_index = patch.states[state_index]['nextState']
-        if next_state_index >= 0 and next_state_index not in visited:
-            states_list.append(next_state_index)
-            visited.add(next_state_index)
-
-        # Action-specific state jumps.
-        # Randomly jump to state in param1
-        state = patch.states[state_index]
-        if state['action'] == 'RandomJump':
-            jump_index = state['unused1']
-            if jump_index >= 0 and jump_index not in visited:
-                states_list.append(jump_index)
-                visited.add(jump_index)
-
-    # If a unused filter type is active, invert the list to reveal unused states.
-    if filter_type == FILTER_TYPE_UNUSED:
-        states_list = []
-        for index in range(len(patch.states)):
-            if index not in visited:
-                states_list.append(index)
-    else:
-        states_list = sorted(states_list)
-
-    states = []
-    state_indices = states_list
-    for index in states_list:
-        states.append(patch.states[index])
-
-    return state_indices, states
+            # Randomly jumps to state from param1.
+            if state['action'] == 'RandomJump':
+                jump_index = state['unused1']
+                if jump_index >= 0:
+                    used_states.add(jump_index)
 
 
-def _get_used_states(patch):
-    """
-    Returns a new states list with all used states marked.
-    """
+class ThingStateFilter(StateFilterBase):
 
-    states_list = []
-
-    # Add thing states.
-    for thing in patch.things:
-        states_list.extend(_get_thing_states(thing))
-
-    # Add weapon states.
-    for weapon in patch.weapons:
-        states_list.extend(_get_weapon_states(weapon))
-
-        # Add plasma rifle muzzle flash jitter states.
-        if patch.engine.hacks['plasmaFlashStateJitter']:
-            states_list.extend(_get_hack_states(patch, weapon))
-
-    # Add used states from the engine table.
-    for state_index in patch.engine.used_states:
-        states_list.append(state_index)
-
-    return states_list
-
-
-def _get_hack_states(patch, weapon):
-    """
-    Adds states that belong to a hack setting.
-    """
-
-    states = []
-
-    action_plasma = patch.engine.get_action_key_from_name('FirePlasma')
-    action_cgun = patch.engine.get_action_key_from_name('FireCGun')
-
-    # If a weapon uses the plasma or chaingun firing action, mark it's 2nd muzzle state as used.
-    plasma_action = patch.engine.actions[action_plasma]['name']
-    cg_action = patch.engine.actions[action_cgun]['name']
-
-    fire_state = weapon['stateFire']
-    action = patch.states[fire_state]['action']
-    if action == plasma_action or action == cg_action:
-        muzzle_state = weapon['stateMuzzle']
-        states.append(muzzle_state + 1)
-
-    return states
-
-
-def _get_thing_states(thing):
-    """
-    Adds states that belong to a thing.
-    """
-
-    names = [
+    STATE_FIELDS = [
         'stateAttack',
         'stateDeath',
         'stateExplode',
@@ -143,20 +44,30 @@ def _get_thing_states(thing):
         'stateBurn'
     ]
 
-    states = []
-    for name in names:
-        if name in thing and thing[name] > 0:
-            states.append(thing[name])
+    def __init__(self, patch: Patch, thing: Entry):
+        super().__init__(patch)
 
-    return states
+        self.thing: Entry = thing
+
+    def apply(self, state_indices: Set[int]) -> Set[int]:
+        used_states = ThingStateFilter.get_states(self.thing)
+        self.expand_used_states(used_states)
+
+        return state_indices.intersection(used_states)
+
+    @staticmethod
+    def get_states(thing: Entry) -> Set[int]:
+        used_states = set()
+        for name in ThingStateFilter.STATE_FIELDS:
+            if name in thing and thing[name] > 0:
+                used_states.add(thing[name])
+
+        return used_states
 
 
-def _get_weapon_states(weapon):
-    """
-    Adds states that belong to a weapon.
-    """
+class WeaponStateFilter(StateFilterBase):
 
-    names = [
+    STATE_FIELDS = [
         'stateBob',
         'stateDeselect',
         'stateFire',
@@ -164,9 +75,115 @@ def _get_weapon_states(weapon):
         'stateSelect'
     ]
 
-    states = []
-    for name in names:
-        if name in weapon and weapon[name] > 0:
-            states.append(weapon[name])
+    def __init__(self, patch: Patch, weapon: Entry):
+        super().__init__(patch)
 
-    return states
+        self.weapon: Entry = weapon
+
+    def apply(self, state_indices: Set[int]) -> Set[int]:
+        used_states = WeaponStateFilter.get_states(self.weapon)
+        self.expand_used_states(used_states)
+        self.process_states(self.patch, self.weapon, used_states)
+
+        return state_indices.intersection(used_states)
+
+    @staticmethod
+    def get_states(weapon: Entry) -> Set[int]:
+        used_states = set()
+        for name in WeaponStateFilter.STATE_FIELDS:
+            if name in weapon and weapon[name] > 0:
+                used_states.add(weapon[name])
+
+        return used_states
+
+    @staticmethod
+    def process_states(patch: Patch, weapon: Entry, state_indices: Set[int]):
+
+        for state_index in state_indices:
+            action_key = patch.states[state_index]['action']
+            action = patch.engine.actions[action_key]
+
+            if action.usesExtraFlashState:
+                muzzle_state = weapon['stateMuzzle']
+                state_indices.add(muzzle_state + 1)
+
+
+class UnusedStateFilter(StateFilterBase):
+
+    def apply(self, state_indices: Set[int]) -> Set[int]:
+        used_states = set()
+
+        # Add all states used by things.
+        thing_states = set()
+        for thing in self.patch.things:
+            thing_states.update(ThingStateFilter.get_states(thing))
+        self.expand_used_states(thing_states)
+        used_states.update(thing_states)
+
+        # Add all states used by weapons. Weapon states are further processed per weapon to take care of the
+        # usesExtraFlashState property of some actions.
+        for weapon in self.patch.weapons:
+            weapon_states = WeaponStateFilter.get_states(weapon)
+            self.expand_used_states(weapon_states)
+            WeaponStateFilter.process_states(self.patch, weapon, weapon_states)
+            used_states.update(weapon_states)
+
+        # Add states that are hardcoded by the engine.
+        engine_used_states = set(self.patch.engine.used_states)
+        self.expand_used_states(engine_used_states)
+        used_states.update(engine_used_states)
+
+        return state_indices.difference(used_states)
+
+
+class StateSortBase:
+
+    def __init__(self, patch: Patch):
+        self.patch: Patch = patch
+
+    def apply(self, state_indices: List[int]) -> List[int]:
+        pass
+
+
+class StateIndexSorter(StateSortBase):
+
+    def apply(self, state_indices: List[int]) -> List[int]:
+        return sorted(state_indices)
+
+
+class StateFilterResult:
+
+    def __init__(self, state_table: Table, state_indices: List[int]):
+        self.state_table: Table = state_table
+        self.state_indices: List[int] = state_indices
+
+    def get_state_for_item_index(self, index: int) -> Entry:
+        return self.state_table[self.state_indices[index]]
+
+
+class StateFilterQuery:
+
+    def __init__(self, patch):
+        self.patch: Patch = patch
+
+        self.state_filters: List[StateFilterBase] = []
+        self.state_sorters: List[StateSortBase] = []
+
+    def filter(self, state_filter: StateFilterBase):
+        self.state_filters.append(state_filter)
+        return self
+
+    def sort(self, state_sorter: StateSortBase):
+        self.state_sorters.append(state_sorter)
+        return self
+
+    def execute(self) -> StateFilterResult:
+        state_indices = set(range(len(self.patch.states)))
+
+        for state_filter in self.state_filters:
+            state_indices = state_filter.apply(state_indices)
+
+        for state_sorter in self.state_sorters:
+            state_indices = state_sorter.apply(state_indices)
+
+        return StateFilterResult(self.patch.states, list(state_indices))

@@ -1,8 +1,5 @@
 {
 	"features": [],
-	"hacks": {
-		"plasmaFlashStateJitter": true
-	},
 	"actions": {
 		"NULL": {
 			"name": "",
@@ -373,7 +370,8 @@
 		"FirePlasma": {
 			"name": "FirePlasma",
 			"description": "Player Plasma Rifle attack.",
-			"type": "weapon"
+			"type": "weapon",
+      "usesExtraFlashState": true
 		},
 		"FirePistol": {
 			"name": "FirePistol",
@@ -397,7 +395,8 @@
 			"name": "FireCGun",
 			"description": "Player Chaingun shot.\n\nAlso checks ammo, does not go to -1 ammo, but changes the weapon instead.",
 			"type": "weapon",
-			"sound": "sound:1"
+			"sound": "sound:1",
+      "usesExtraFlashState": true
 		},
 		"Light0": {
 			"name": "Light0",

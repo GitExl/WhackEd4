@@ -4,6 +4,7 @@ Version 1.3.0
 - Changed: engine table files list only fields used by that engine to reduce their size and improve maintainability. Default entries for things, states, weapons, ammo and sounds are provided for tables that extend existing ones.
 - Changed: rewrote parts of the state editor so that the state list is more performant.
 - Fixed: the state animation preview now displays action names instead of code pointers for non-extended patches.
+- Fixed: a weapon's FireCGun and FirePlasma actions would previously only count the extra muzzle flash state as used if the action was used on the first fire state.
 
 Version 1.2.3
 -------------

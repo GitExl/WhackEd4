@@ -1,22 +1,21 @@
-#!/usr/bin/env python
-#coding=utf8
-
 """
 This module contains classes to create, read and write Dehacked patches.
 """
 
 import copy
+from typing import Optional, List
 
 from whacked4 import config
 from whacked4.dehacked import entries
 from whacked4.dehacked import engine
+from whacked4.dehacked.engine import Engine
+from whacked4.dehacked.table import Table
 from whacked4.utils import Enum
-
 
 
 class DehackedPatchError(Exception):
     """
-    Base class for errors in Dehacked file reading\writing.
+    Base class for errors in Dehacked file reading/writing.
     """
 
     def __init__(self, msg):
@@ -70,11 +69,12 @@ def write_dict(f, items, source_items, data, header):
     Writes a dictionary of key\\value pairs to a Dehacked patch file, if they have been modified compared to a
     source dict.
 
-    @param f: the file object to write to.
-    @param items: the modified item dict.
-    @param source_items: the original item dict.
-    @param data: a dictionary containing information about each key\\value pair that is written to the Dehacked
-    file. Each value is another dict containing at least a 'patchKey' item that describes what key to write to the file.
+    :param f: the file object to write to.
+    :param items: the modified item dict.
+    :param source_items: the original item dict.
+    :param data: a dictionary containing information about each key\\value pair that is written to the Dehacked file.
+    Each value is another dict containing at least a 'patchKey' item that describes what key to write to the file.
+    :param header: string to write as header.
     """
 
     # Build a list of modified items.
@@ -99,26 +99,26 @@ class Patch(object):
     FRAME_FLAG_LIT = 0x8000
 
     def __init__(self):
-        self.filename = None
+        self.filename: Optional[str] = None
+        self.engine: Optional[Engine] = None
+        self.version: int = 0
+        self.extended: bool = False
 
-        self.engine = None
-        self.version = 0
-        self.extended = False
+        self.things: Optional[Table] = None
+        self.states: Optional[Table] = None
+        self.sounds: Optional[Table] = None
+        self.weapons: Optional[Table] = None
+        self.ammo: Optional[Table] = None
 
-        # Table data.
-        self.things = None
-        self.states = None
-        self.sounds = None
-        self.weapons = None
-        self.ammo = None
-        self.strings = None
-        self.cheats = None
-        self.misc = None
-        self.pars = None
-        self.sprite_names = None
-        self.sound_names = None
+        self.strings: Optional[dict] = None
+        self.cheats: Optional[dict] = None
+        self.misc: Optional[dict] = None
+        self.pars: Optional[dict] = None
 
-    def initialize_from_engine(self, parent_engine):
+        self.sprite_names: Optional[List[str]] = None
+        self.sound_names: Optional[List[str]] = None
+
+    def initialize_from_engine(self, parent_engine: Engine):
         """
         Initializes this patch with the data from an engine.
         """
@@ -131,6 +131,7 @@ class Patch(object):
         self.sounds = parent_engine.sounds.clone()
         self.weapons = parent_engine.weapons.clone()
         self.ammo = parent_engine.ammo.clone()
+
         self.strings = copy.deepcopy(parent_engine.strings)
         self.cheats = copy.deepcopy(parent_engine.cheats)
         self.misc = copy.deepcopy(parent_engine.misc)

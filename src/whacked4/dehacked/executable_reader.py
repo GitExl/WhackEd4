@@ -32,7 +32,6 @@ class ExecutableReader:
             self.engine.misc_data = exe_config['miscData']
             self.engine.cheat_data = exe_config['cheatData']
 
-            self.engine.hacks = exe_config['hacks']
             self.engine.used_states = exe_config['usedStates']
 
             with open(exe_filename, 'rb') as f:

@@ -1,9 +1,12 @@
 import json
 
 from json.encoder import JSONEncoder
+from typing import List, Dict, Set
 
 from whacked4.dehacked import table, entries, entry
 from whacked4.dehacked.action import Action
+from whacked4.dehacked.entry import Entry
+from whacked4.dehacked.table import Table
 
 
 class DehackedEngineError(Exception):
@@ -21,73 +24,70 @@ class Engine(object):
     def __init__(self):
 
         # A list of versions supported by this engine.
-        self.versions = []
+        self.versions: List[int] = []
 
         # If True, this engine support Boom extended patch features.
-        self.extended = False
+        self.extended: bool = False
 
         # The nice name of this engine for usage in a UI.
-        self.name = 'UNNAMED'
+        self.name: str = 'UNNAMED'
 
         # Things table.
-        self.things = table.Table(entries.ThingEntry, self)
+        self.things: Table = table.Table(entries.ThingEntry, self)
         self.things.offset = 1
         self.things.names = []
         self.things.flags = {}
 
+        # States table.
+        self.states: Table = table.Table(entries.StateEntry, self)
+
         # Weapons table.
-        self.weapons = table.Table(entries.WeaponEntry, self)
+        self.weapons: Table = table.Table(entries.WeaponEntry, self)
         self.weapons.names = []
 
         # Ammo table.
-        self.ammo = table.Table(entries.AmmoEntry, self)
+        self.ammo: Table = table.Table(entries.AmmoEntry, self)
         self.ammo.names = []
 
         # Sound table.
-        self.sounds = table.Table(entries.SoundEntry, self)
+        self.sounds: Table = table.Table(entries.SoundEntry, self)
         self.sound_names = []
 
         # Cheats table.
-        self.cheats = {}
-        self.cheat_data = {}
+        self.cheats: dict = {}
+        self.cheat_data: dict = {}
 
         # Cheats table.
-        self.misc = {}
-        self.misc_data = {}
-
-        # States table.
-        self.states = table.Table(entries.StateEntry, self)
+        self.misc: dict = {}
+        self.misc_data: dict = {}
 
         # Strings dictionary.
-        self.strings = {}
+        self.strings: Dict[str] = {}
 
         # Sprite names.
-        self.sprite_names = []
+        self.sprite_names: List[str] = []
 
         # A list mapping action indices to state indices.
-        self.action_index_to_state = []
+        self.action_index_to_state: List[int] = []
 
         # A dict of actions available to this engine.
-        self.actions = {}
+        self.actions: Dict[Action] = {}
 
         # A set of state indices whose use is hardcoded in the game executable.
-        self.used_states = set()
-
-        # A list of hacks to enable for this engine.
-        self.hacks = {}
+        self.used_states: Set[int] = set()
 
         # A list of supported render styles.
-        self.render_styles = {}
+        self.render_styles: Dict[str] = {}
 
         # A set of supported features.
-        self.features = set()
+        self.features: Set[str] = set()
 
         # Defaults for new entries and unnamed fields.
-        self.default_state = entries.StateEntry(self)
-        self.default_thing = entries.ThingEntry(self)
-        self.default_weapon = entries.WeaponEntry(self)
-        self.default_ammo = entries.AmmoEntry(self)
-        self.default_sound = entries.SoundEntry(self)
+        self.default_state: Entry = entries.StateEntry(self)
+        self.default_thing: Entry = entries.ThingEntry(self)
+        self.default_weapon: Entry = entries.WeaponEntry(self)
+        self.default_ammo: Entry = entries.AmmoEntry(self)
+        self.default_sound: Entry = entries.SoundEntry(self)
 
     def merge_data(self, filename, is_base_table=False):
         """
@@ -159,7 +159,6 @@ class Engine(object):
 
         self.sprite_names += data['spriteNames']
         self.used_states.update(set(data['usedStates']))
-        self.hacks.update(data['hacks'])
 
         self.render_styles.update(data['renderStyles'])
 
@@ -207,6 +206,9 @@ class Engine(object):
 
         @param action_name: the name of the action to find the key of.
         """
+
+        if self.extended:
+            return action_name
 
         for key, action in self.actions.items():
             if action.name == action_name:
