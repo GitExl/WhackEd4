@@ -16,7 +16,7 @@ class ActionType(WhackedEnum):
 
 class Action:
     """
-    Stores information about an action as supported by an engine.
+    Stores information about a state action as supported by an engine.
     """
 
     def __init__(self, name: str, description: str, action_type: ActionType):

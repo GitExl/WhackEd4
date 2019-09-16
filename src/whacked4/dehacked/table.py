@@ -53,7 +53,7 @@ class Table(object):
 
     def apply_defaults(self, defaults):
         for entry in self.entries:
-            entry.set_defaults(defaults)
+            entry.apply_defaults(defaults)
 
     def clone(self):
         """

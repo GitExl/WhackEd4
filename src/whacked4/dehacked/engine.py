@@ -107,87 +107,69 @@ class Engine(object):
                 print('Error in table file {}'.format(filename))
                 raise e
 
-        # try:
+        try:
+            if not is_base_table:
+                self.versions = data['versions']
+                self.extended = data['extended']
+                self.name = data['name']
 
-        if not is_base_table:
-            self.versions = data['versions']
-            self.extended = data['extended']
-            self.name = data['name']
+            self.default_state.from_json(data['defaultState'])
+            self.default_thing.from_json(data['defaultThing'])
+            self.default_weapon.from_json(data['defaultWeapon'])
+            self.default_ammo.from_json(data['defaultAmmo'])
+            self.default_sound.from_json(data['defaultSound'])
 
-        self.default_state.from_json(data['defaultState'])
-        self.default_thing.from_json(data['defaultThing'])
-        self.default_weapon.from_json(data['defaultWeapon'])
-        self.default_ammo.from_json(data['defaultAmmo'])
-        self.default_sound.from_json(data['defaultSound'])
+            # If any base tables are referenced, load them first.
+            if 'baseTables' in data:
+                base_tables = data['baseTables']
+                for base_table in base_tables:
+                    base_filename = 'cfg/basetables_{}.json'.format(base_table)
+                    self.merge_data(base_filename, True)
 
-        # If any base tables are referenced, load them first.
-        if 'baseTables' in data:
-            base_tables = data['baseTables']
-            for base_table in base_tables:
-                base_filename = 'cfg/basetables_{}.json'.format(base_table)
-                self.merge_data(base_filename, True)
+            self.features.update(set(data['features']))
 
-        self.features.update(set(data['features']))
+            self.things.names += data['thingNames']
+            self.things.flags.update(data['thingFlags'])
+            self.things.read_from_json(data['things'])
+            if len(self.things.names) != len(self.things):
+                raise DehackedEngineError('Thing and thing names sizes do not match.')
 
-        self.things.names += data['thingNames']
-        self.things.flags.update(data['thingFlags'])
-        self.things.read_from_json(data['things'])
-        if len(self.things.names) != len(self.things):
-            raise DehackedEngineError('Thing and thing names sizes do not match.')
+            self.weapons.names += data['weaponNames']
+            self.weapons.read_from_json(data['weapons'])
+            if len(self.weapons.names) != len(self.weapons):
+                raise DehackedEngineError('Weapon and weapon name sizes do not match.')
 
-        self.weapons.names += data['weaponNames']
-        self.weapons.read_from_json(data['weapons'])
-        if len(self.weapons.names) != len(self.weapons):
-            raise DehackedEngineError('Weapon and weapon name sizes do not match.')
+            self.ammo.names += data['ammoNames']
+            self.ammo.read_from_json(data['ammo'])
 
-        self.ammo.names += data['ammoNames']
-        self.ammo.read_from_json(data['ammo'])
+            for key, value in data['actions'].items():
+                self.actions[key] = Action.from_json(value)
 
-        for key, value in data['actions'].items():
-            self.actions[key] = Action.from_json(value)
+            self.states.read_from_json(data['states'])
+            self.sounds.read_from_json(data['sounds'])
 
-        self.states.read_from_json(data['states'])
-        self.sounds.read_from_json(data['sounds'])
+            self.strings.update(data['strings'])
 
-        self.strings.update(data['strings'])
+            self.misc.update(data['misc'])
+            self.misc_data.update(data['miscData'])
 
-        self.misc.update(data['misc'])
-        self.misc_data.update(data['miscData'])
+            self.cheats.update(data['cheats'])
+            self.cheat_data.update(data['cheatData'])
 
-        self.cheats.update(data['cheats'])
-        self.cheat_data.update(data['cheatData'])
+            self.sprite_names += data['spriteNames']
+            self.used_states.update(set(data['usedStates']))
 
-        self.sprite_names += data['spriteNames']
-        self.used_states.update(set(data['usedStates']))
+            self.render_styles.update(data['renderStyles'])
 
-        self.render_styles.update(data['renderStyles'])
+            self.sound_names += data['soundNames']
+            if len(self.sound_names) != len(self.sounds):
+                raise DehackedEngineError('Sound and sound names sizes do not match.')
 
-        self.sound_names += data['soundNames']
-        if len(self.sound_names) != len(self.sounds):
-            raise DehackedEngineError('Sound and sound names sizes do not match.')
+            if not self.extended:
+                self.action_index_to_state += data['actionIndexToState']
 
-        if not self.extended:
-            self.action_index_to_state += data['actionIndexToState']
-
-        # except KeyError as e:
-        #     raise DehackedEngineError('Invalid engine table data. KeyError {}'.format(e))
-
-    @staticmethod
-    def clear_false(data):
-        """
-        Removes items from data that have "False" as their value.
-        """
-
-        unset = set()
-
-        for key, value in data.items():
-            if not value:
-                unset.add(key)
-
-        for key in unset:
-            del data[key]
-
-        return data
+        except KeyError as e:
+            raise DehackedEngineError('Invalid engine table data. KeyError {}'.format(e))
 
     def apply_defaults(self):
         """
@@ -223,13 +205,12 @@ class Engine(object):
         @param patch: the patch to examine.
         """
 
-        version_match = (patch.version in self.versions)
+        if patch.version not in self.versions:
+            return False
         if patch.extended and not self.extended:
-            extension_match = False
-        else:
-            extension_match = True
+            return False
 
-        return version_match and extension_match
+        return True
 
 
 class EngineJSONEncoder(JSONEncoder):

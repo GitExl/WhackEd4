@@ -14,6 +14,8 @@ class StateFilterBase:
         pass
 
     def expand_used_states(self, used_states):
+
+        # TODO: might not work as the set is modified while being looped through.
         for state_index in used_states:
             state = self.patch.states[state_index]
 

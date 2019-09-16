@@ -203,10 +203,10 @@ class Entry(object):
 
         return '\n'.join(output_list) + '\n'
 
-    def set_defaults(self, default_entry):
+    def apply_defaults(self, default_entry):
         for key, value in default_entry.values.items():
             if key not in self.values:
-                self.values[key] = self.validate_field_value(key, default_entry.values[key])
+                self.values[key] = self.validate_field_value(key, value)
 
     def clone(self):
         """
