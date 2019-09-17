@@ -1,3 +1,7 @@
+Version 1.2.4
+-------------
+Fixed: invalid sprite names no longer cause a crash when loading\creating a patch, but are ignored instead.
+
 Version 1.2.3
 -------------
 Fixed: no longer allow a state's action to be removed in non-extended patches. Thanks to Mechadon.
