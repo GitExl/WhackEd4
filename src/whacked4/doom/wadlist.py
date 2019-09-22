@@ -201,6 +201,9 @@ class WADList(object):
         for sprite_key, sprite_entry in self.sprites.items():
 
             for lump_name, lump in sprite_lumps.items():
+                if len(lump_name) < 6:
+                    continue
+
                 if lump_name[0:4] != sprite_key:
                     continue
 
