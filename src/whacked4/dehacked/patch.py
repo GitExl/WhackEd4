@@ -10,7 +10,7 @@ from whacked4.dehacked import entries
 from whacked4.dehacked import engine
 from whacked4.dehacked.engine import Engine
 from whacked4.dehacked.table import Table
-from whacked4.utils import Enum
+from whacked4.enum import WhackedEnum
 
 
 class DehackedPatchError(Exception):
@@ -43,7 +43,7 @@ class DehackedLookupError(DehackedPatchError):
     """
 
 
-class ParseMode(Enum):
+class ParseMode(WhackedEnum):
     """
     Modes for the dehacked patch parser.
     """

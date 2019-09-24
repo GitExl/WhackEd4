@@ -1,8 +1,4 @@
-#!/usr/bin/env python
-#coding=utf8
-
 from whacked4 import utils
-from whacked4.dehacked import statefilter
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import statepreviewdialog
 
@@ -10,6 +6,8 @@ import whacked4.config as config
 
 import copy
 import wx
+
+from whacked4.ui.editors import statesframe
 
 
 class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
@@ -346,7 +344,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         key = self.PROPS_STATENAMES[event.GetId()]
         state_index = self.patch.weapons[self.selected_index]['state' + key]
 
-        self.goto_state(state_index, statefilter.FILTER_TYPE_WEAPON, self.selected_index)
+        self.goto_state(state_index, statesframe.FILTER_TYPE_WEAPON, self.selected_index)
 
     def weapon_select(self, event):
         """

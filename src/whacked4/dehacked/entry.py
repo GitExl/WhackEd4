@@ -3,10 +3,10 @@ import copy
 from collections import namedtuple
 
 from whacked4.dehacked import validators
-from whacked4.utils import Enum
+from whacked4.enum import WhackedEnum
 
 
-class FieldType(Enum):
+class FieldType(WhackedEnum):
     """
     Known field data types.
     """

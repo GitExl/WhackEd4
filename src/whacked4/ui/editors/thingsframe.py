@@ -1,8 +1,7 @@
-#!/usr/bin/env python
-#coding=utf8
-
 from whacked4 import utils
-from whacked4.dehacked import statefilter
+from whacked4.dehacked.statequery.query import StateFilterQuery
+from whacked4.dehacked.statequery.stateindexsort import StateIndexSort
+from whacked4.dehacked.statequery.thingfilter import ThingStateFilter
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import statepreviewdialog
 
@@ -10,6 +9,8 @@ import whacked4.config as config
 
 import copy
 import wx
+
+from whacked4.ui.editors import statesframe
 
 
 class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
@@ -675,7 +676,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         key = self.PROPS_STATENAMES[event.GetId()]
         state_index = self.patch.things[self.selected_index]['state' + key]
 
-        self.goto_state(state_index, statefilter.FILTER_TYPE_THING, self.selected_index)
+        self.goto_state(state_index, statesframe.FILTER_TYPE_THING, self.selected_index)
 
     def goto_sound_event(self, event):
         """
@@ -777,8 +778,15 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         is_before = self.thing_is_projectile
         self.thing_is_projectile = True
 
-        _, states = statefilter.filter_states(self.patch, statefilter.FILTER_TYPE_THING, self.selected_index)
-        for state in states:
+        state_query = StateFilterQuery(self.patch)
+        state_query.sort(StateIndexSort(self.patch))
+
+        thing = self.patch.things[self.selected_index]
+        state_query.filter(ThingStateFilter(self.patch, thing))
+
+        query_results = state_query.execute()
+
+        for _, _, state in query_results:
             if not state['action']:
                 continue
 

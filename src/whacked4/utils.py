@@ -1,19 +1,7 @@
-#!/usr/bin/env python
-#coding=utf8
-
 """
 General utility functions.
 """
 import wx
-
-
-class Enum(object):
-    """
-    Generic enumeration object.
-    """
-
-    def __init__(self):
-        pass
 
 
 def validate_numeric(window):
