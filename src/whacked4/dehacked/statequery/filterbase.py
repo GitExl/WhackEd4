@@ -14,13 +14,13 @@ class StateFilterBase:
     def expand_used_states(self, used_states):
         previous_len = -1
 
-        new_states = used_states.copy()
+        new_states = used_states
         while len(used_states) != previous_len:
             new_states = self.__get_states_used_by(new_states)
             previous_len = len(used_states)
             used_states.update(new_states)
 
-    def __get_states_used_by(self, states):
+    def __get_states_used_by(self, states) -> Set[int]:
         used_states = set()
         for state_index in states:
             state = self.patch.states[state_index]

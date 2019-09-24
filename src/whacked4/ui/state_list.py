@@ -8,6 +8,7 @@ from wx.lib.newevent import NewEvent
 from whacked4 import config, utils
 from whacked4.dehacked.action import Action
 from whacked4.dehacked.patch import Patch
+from whacked4.dehacked.statequery.result import StateQueryResult
 
 FRAMEFLAG_LIT = 0x8000
 
@@ -62,6 +63,8 @@ class StateList(wx.ListCtrl):
         self.item_colors: List[Colour] = []
         self.mix_state_colours()
 
+        self.state_query_result: Optional[StateQueryResult] = None
+
     def mix_state_colours(self):
         background_color = self.GetBackgroundColour()
         for color in ITEM_COLORS:
@@ -80,12 +83,13 @@ class StateList(wx.ListCtrl):
             self.SetColumnWidth(StateColumn.PARAMETERS, width)
 
     def OnGetItemText(self, item: int, column: int):
-        state = self.patch.states[item]
+        state = self.state_query_result.get_state_for_item_index(item)
+        state_index = self.state_query_result.get_state_index_for_item_index(item)
 
         if column == StateColumn.INDEX:
-            return str(item)
+            return str(state_index)
         elif column == StateColumn.NAME:
-            return self.patch.get_state_name(item)
+            return self.patch.get_state_name(state_index)
         elif column == StateColumn.SPRITE:
             return str(state['sprite'])
         elif column == StateColumn.FRAME:
@@ -121,23 +125,23 @@ class StateList(wx.ListCtrl):
         return self.item_attributes[item]
 
     def update_item_attributes(self):
-        if len(self.item_attributes) != len(self.patch.states):
+        if len(self.item_attributes) != self.GetItemCount():
             self.create_item_attributes()
 
         color_index: int = 0
         previous_sprite: int = 0
-        for index, state in enumerate(self.patch.states):
+        for item_index, _, state in self.state_query_result:
             if state['sprite'] != previous_sprite:
                 color_index += 1
                 if color_index >= len(self.item_colors):
                     color_index = 0
 
-            self.item_attributes[index].SetBackgroundColour(self.item_colors[color_index])
+            self.item_attributes[item_index].SetBackgroundColour(self.item_colors[color_index])
 
             previous_sprite = state['sprite']
 
     def create_item_attributes(self):
-        self.item_attributes = [ListItemAttr() for _ in enumerate(self.patch.states)]
+        self.item_attributes = [ListItemAttr() for _ in range(self.GetItemCount())]
 
         for index, _ in enumerate(self.item_attributes):
             attributes = ListItemAttr()
@@ -146,10 +150,18 @@ class StateList(wx.ListCtrl):
 
     def set_patch(self, patch: Patch):
         self.patch = patch
-        self.update_item_attributes()
 
-        self.SetItemCount(len(patch.states))
+        if self.state_query_result is not None:
+            self.SetItemCount(len(self.state_query_result))
+            self.update_item_attributes()
+
         self.Select(0, 1)
+
+    def set_state_query_result(self, state_query_result: StateQueryResult):
+        self.state_query_result = state_query_result
+
+        self.SetItemCount(len(self.state_query_result))
+        self.create_item_attributes()
 
     def update_selection(self, event: ListEvent):
         self.selected.clear()

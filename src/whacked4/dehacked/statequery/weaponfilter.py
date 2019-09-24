@@ -38,11 +38,14 @@ class WeaponStateFilter(StateFilterBase):
 
     @staticmethod
     def process_states(patch: Patch, weapon: Entry, state_indices: Set[int]):
+        extra_state_indices = set()
 
         for state_index in state_indices:
             action_key = patch.states[state_index]['action']
             action = patch.engine.actions[action_key]
 
-            if action.usesExtraFlashState:
+            if action.uses_extra_flash_state:
                 muzzle_state = weapon['stateMuzzle']
-                state_indices.add(muzzle_state + 1)
+                extra_state_indices.add(muzzle_state + 1)
+
+        state_indices.update(extra_state_indices)
