@@ -627,7 +627,10 @@ class Patch(object):
                     elif mode == ParseMode.AMMO:
                         self.ammo[entry_index].set_patch_key(key, value)
                     elif mode == ParseMode.POINTER:
-                        self.states[entry_index]['action'] = self.engine.states[int(value)]['action']
+                        if not self.extended and entry_index not in self.engine.action_index_to_state:
+                            messages['INVALID_CODEPOINTER_INDEX'] = 'A codepointer was assigned to a state that had none before. It will not be loaded.'
+                        else:
+                            self.states[entry_index]['action'] = self.engine.states[int(value)]['action']
                     elif mode == ParseMode.CHEATS:
                         table_key = engine.get_key_from_patchkey(self.engine.cheat_data, key)
                         if table_key is None:

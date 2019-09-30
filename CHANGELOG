@@ -5,6 +5,7 @@ Changed: engine table files list only fields used by that engine to reduce their
 Changed: rewrote parts of the state editor so that the state list is more performant.
 Fixed: the state animation preview now displays action names instead of code pointers for non-extended patches.
 Fixed: a weapon's FireCGun and FirePlasma actions would previously only count the extra muzzle flash state as used if the action was used on the first fire state.
+Fixed: loading non-extended patches that try to set a codepointer on a state that originally had none will now display a warning. Thanks to Zodomaniac.
 
 Version 1.2.4
 -------------
