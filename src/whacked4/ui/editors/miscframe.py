@@ -144,7 +144,8 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         else:
             value = window.GetValue()
 
-        key = self.patch.engine.misc_data.keys()[self.selected_index]
+        key_list = list(self.patch.engine.misc_data.keys())
+        key = key_list[self.selected_index]
 
         # Clamp values to their data type range.
         if self.data_type == 'int':
@@ -173,7 +174,8 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
 
         self.undo_add()
 
-        key = self.patch.engine.misc_data.keys()[self.selected_index]
+        key_list = list(self.patch.engine.misc_data.keys())
+        key = key_list[self.selected_index]
         data = self.patch.engine.misc_data[key]
 
         if self.ValueEnabled.GetValue():
@@ -189,7 +191,8 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         Performs the default action for a misc. item.
         """
 
-        key = self.patch.engine.misc_data.keys()[self.selected_index]
+        key_list = list(self.patch.engine.misc_data.keys())
+        key = key_list[self.selected_index]
         data = self.patch.engine.misc_data[key]
 
         # Booleans are toggled.
@@ -219,7 +222,8 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
 
         self.undo_add()
 
-        key = self.patch.engine.misc_data.keys()[self.selected_index]
+        key_list = list(self.patch.engine.misc_data.keys())
+        key = key_list[self.selected_index]
         self.patch.misc[key] = copy.copy(self.patch.engine.misc[key])
 
         self.misclist_update_row(self.selected_index)
@@ -242,7 +246,8 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         @see: EditorMixin.undo_store_item
         """
 
-        key = self.patch.engine.misc_data.keys()[self.selected_index]
+        key_list = list(self.patch.engine.misc_data.keys())
+        key = key_list[self.selected_index]
 
         return {
             'item': self.patch.misc[key],
