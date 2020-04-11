@@ -1,4 +1,5 @@
 Known bugs
+- "I get this error when trying to open a .deh file directly instead of launching WhackEd4 on its own:" https://www.doomworld.com/forum/post/2112985
 
 Low priority bugs
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
@@ -6,6 +7,7 @@ Low priority bugs
 
 Features
 1.3.0 and later
+- Manually clear list of recent files.
 - Investigate pyInstaller for executable generation. Single file, less dependencies?
 - UI manual \ Dehacked tutorial.
 - Look into new Eternity Engine and PrBoom+ Dehacked features.
