@@ -387,6 +387,9 @@ class MainWindow(windows.MainFrameBase):
 
         if filename is not None:
             self.save_file(filename)
+            return True
+
+        return False
 
     def save_file(self, filename):
         """
@@ -537,7 +540,11 @@ class MainWindow(windows.MainFrameBase):
                                    style=wx.YES_NO | wx.CANCEL | wx.ICON_QUESTION, parent=self)
 
             if result == wx.YES:
+              if self.patch.filename is None:
+                return self.save_file_dialog()
+              else:
                 self.save_file(self.patch.filename)
+
             elif result == wx.CANCEL:
                 return False
 

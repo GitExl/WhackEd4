@@ -20,5 +20,5 @@ It also expands on the features of the original Dehacked:
 
 Dependencies
 ------------
-WhackEd4 is built with Python 2.7, wxPython and PyAudio. The user interface is designed using wxFormBuilder.
+WhackEd4 is built with Python 3, wxPython and PyAudio. The user interface is designed using wxFormBuilder.
 To build the setup executable you will need cx_Freeze and Inno Setup.
