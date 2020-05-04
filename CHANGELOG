@@ -7,6 +7,7 @@ Fixed: the state animation preview now displays action names instead of code poi
 Fixed: a weapon's FireCGun and FirePlasma actions would previously only count the extra muzzle flash state as used if the action was used on the first fire state.
 Fixed: loading non-extended patches that try to set a codepointer on a state that originally had none will now display a warning. Thanks to Zodomaniac.
 Fixed: saving a yet unsaved patch while exiting caused a crash. Thanks to TheStupidestBeing.
+Fixed: BEX strings that do not appear in the engine selected for a patch will now not be visible in the strings editor, but will remain in saved patch.
 
 Version 1.2.4
 -------------

@@ -1,5 +1,6 @@
-Unfinished
 - New state list needs state filtering to be hooked up, or rewritten.
+- Add warnings when loading patches that reference things\states\etc. that do not exist, from https://www.doomworld.com/forum/post/2123386
+- Add a warning related to https://www.doomworld.com/forum/topic/113682-minor-dehacked-string-bug-with-doom2exe/
 
 Known bugs
 - State animation preview should not display states with 0 duration? But still run it's actions. See DV4 fist attack.
@@ -11,8 +12,7 @@ Low priority bugs
 - Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
 
 Features
-1.3.0
-- Add a warning related to https://www.doomworld.com/forum/topic/113682-minor-dehacked-string-bug-with-doom2exe/
+1.4.0
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
   - Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Mark and display items (things, states, strings, ammo, weapons, sounds) as modified compared to engine config.

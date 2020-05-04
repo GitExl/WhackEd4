@@ -56,6 +56,9 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
                 self.StringList.InsertColumn(1, 'String', width=800)
 
         for row_index, string_key in enumerate(self.patch.strings.keys()):
+            if string_key not in self.patch.engine.strings:
+                continue
+
             self.StringList.InsertItem(row_index, string_key)
             self.StringList.SetItemFont(row_index, config.FONT_MONOSPACED)
 
@@ -89,6 +92,8 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         """
 
         string_key = self.get_string_key_from_index(self.selected_index)
+        if string_key == -1:
+            return
 
         engine_string = self.patch.engine.strings[string_key]
         old_string = self.patch.strings[string_key]
@@ -115,6 +120,9 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         """
 
         keys = list(self.patch.engine.strings)
+        if row_index < 0 or row_index >= len(keys):
+            return -1
+
         return keys[row_index]
 
     def string_restore(self, event):
@@ -122,9 +130,11 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         Restores the currently selected string to it's engine state.
         """
 
-        self.undo_add()
-
         string_key = self.get_string_key_from_index(self.selected_index)
+        if string_key not in self.patch.engine.strings:
+            return
+
+        self.undo_add()
 
         dup = copy.copy(self.patch.engine.strings[string_key])
         self.patch.strings[string_key] = dup
@@ -153,6 +163,9 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         """
 
         string_key = self.get_string_key_from_index(item['index'])
+        if string_key == -1:
+            return
+
         self.patch.strings[string_key] = item['item']
         self.stringlist_update_row(item['index'], string_key)
 
@@ -164,6 +177,8 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         """
 
         string_key = self.get_string_key_from_index(self.selected_index)
+        if string_key == -1:
+            return
 
         return {
             'item': copy.deepcopy(self.patch.strings[string_key]),

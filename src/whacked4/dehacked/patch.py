@@ -249,10 +249,10 @@ class Patch(object):
         [string key] = [escaped string]
         """
 
-        # Create a list of modified strings.
+        # Create a list of modified strings, keeping strings not present in the engine.
         out = {}
         for key, value in self.strings.items():
-            if value != self.engine.strings[key]:
+            if key not in self.engine.strings or value != self.engine.strings[key]:
                 out[key] = value
 
         # Write modified string to the patch file.
