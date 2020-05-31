@@ -8,6 +8,7 @@ Fixed: a weapon's FireCGun and FirePlasma actions would previously only count th
 Fixed: loading non-extended patches that try to set a codepointer on a state that originally had none will now display a warning. Thanks to Zodomaniac.
 Fixed: saving a yet unsaved patch while exiting caused a crash. Thanks to TheStupidestBeing.
 Fixed: BEX strings that do not appear in the engine selected for a patch will now not be visible in the strings editor, but will remain in saved patch.
+Fixed: fixed a wrong next state value in the MBF tables for S_GRENADE (968). Thanks to hawkwind3.
 
 Version 1.2.4
 -------------
