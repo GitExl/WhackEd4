@@ -251,7 +251,7 @@
 			"unused2": 0,
 			"nextState": 968,
 			"sprite": 22,
-			"spriteFrame": 32769
+			"spriteFrame": 32768
 		},
 		{
 			"action": "Scream",
