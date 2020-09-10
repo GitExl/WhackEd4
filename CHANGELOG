@@ -2,6 +2,7 @@ Version 1.2.4
 -------------
 Fixed: invalid sprite names no longer cause a crash when loading\creating a patch, but are ignored instead.
 Fixed: changing miscellaneous values would result in a crash. Thanks to Xyzzy01.
+Fixed: errors about setlocale for some users.
 
 Version 1.2.3
 -------------

@@ -11,7 +11,7 @@ set app_version_title=1.2.4
 set build_path=".\build\exe.win32-3.8"
 
 set python_interpreter=py -3
-set setup_compiler="C:\Program Files (x86)\Inno Setup 5\ISCC.exe"
+set setup_compiler="C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
 set zip=7za
 
 
