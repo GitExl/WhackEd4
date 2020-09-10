@@ -7,6 +7,7 @@ Low priority bugs
 
 Features
 1.3.0 and later
+- DEHEXTRA configuration with missing bits and pieces from https://doomwiki.org/wiki/DEHEXTRA. Doom Retro would extend this. Also see https://www.doomworld.com/forum/post/2177644
 - Manually clear list of recent files.
 - Investigate pyInstaller for executable generation. Single file, less dependencies?
 - UI manual \ Dehacked tutorial.
