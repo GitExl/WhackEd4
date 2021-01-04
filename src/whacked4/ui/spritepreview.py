@@ -205,6 +205,9 @@ class SpritePreview(wx.Panel):
 
     def resize(self, event):
         size = self.GetClientSize()
+        if size[0] <= 0 or size[1] <= 0:
+            return
+
         self.buffer = wx.Bitmap(size[0], size[1])
         self.update_paint()
 

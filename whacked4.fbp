@@ -10423,12 +10423,12 @@
             <property name="window_name"></property>
             <property name="window_style">wxWANTS_CHARS</property>
             <property name="xrc_skip_sizer">1</property>
-            <object class="wxBoxSizer" expanded="1">
+            <object class="wxBoxSizer" expanded="0">
                 <property name="minimum_size"></property>
                 <property name="name">SizerMain</property>
                 <property name="orient">wxHORIZONTAL</property>
                 <property name="permission">none</property>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">5</property>
                     <property name="flag">wxEXPAND</property>
                     <property name="proportion">0</property>
@@ -13235,16 +13235,16 @@
                         </object>
                     </object>
                 </object>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">5</property>
                     <property name="flag">wxEXPAND</property>
                     <property name="proportion">1</property>
-                    <object class="wxBoxSizer" expanded="1">
+                    <object class="wxBoxSizer" expanded="0">
                         <property name="minimum_size"></property>
                         <property name="name">SizerStates</property>
                         <property name="orient">wxVERTICAL</property>
                         <property name="permission">none</property>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">6</property>
                             <property name="flag">wxALL</property>
                             <property name="proportion">0</property>
@@ -13434,7 +13434,7 @@
                                     </object>
                                     <object class="sizeritem" expanded="0">
                                         <property name="border">0</property>
-                                        <property name="flag">wxALIGN_CENTER_VERTICAL|wxEXPAND</property>
+                                        <property name="flag">wxALIGN_CENTER_VERTICAL</property>
                                         <property name="proportion">0</property>
                                         <object class="wxToolBar" expanded="0">
                                             <property name="BottomDockable">1</property>
@@ -22875,7 +22875,7 @@
             <property name="minimum_size"></property>
             <property name="name">ErrorDialogBase</property>
             <property name="pos"></property>
-            <property name="size">640,480</property>
+            <property name="size">640,560</property>
             <property name="style">wxCAPTION|wxCLOSE_BOX|wxSYSTEM_MENU</property>
             <property name="subclass"></property>
             <property name="title">WhackEd4 fatal error</property>
@@ -23716,7 +23716,7 @@
                         </object>
                         <object class="sizeritem" expanded="0">
                             <property name="border">6</property>
-                            <property name="flag">wxALIGN_RIGHT|wxALL</property>
+                            <property name="flag">wxALL</property>
                             <property name="proportion">0</property>
                             <object class="wxButton" expanded="0">
                                 <property name="BottomDockable">1</property>

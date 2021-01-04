@@ -2253,7 +2253,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 
 		self.FilterTools.Realize()
 
-		bSizer140.Add( self.FilterTools, 0, wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 0 )
+		bSizer140.Add( self.FilterTools, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.m_panel61.SetSizer( bSizer140 )
@@ -4227,7 +4227,7 @@ class AboutDialogBase ( wx.Dialog ):
 class ErrorDialogBase ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = DIALOG_ERROR, title = u"WhackEd4 fatal error", pos = wx.DefaultPosition, size = wx.Size( 640,480 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.SYSTEM_MENU )
+		wx.Dialog.__init__ ( self, parent, id = DIALOG_ERROR, title = u"WhackEd4 fatal error", pos = wx.DefaultPosition, size = wx.Size( 640,560 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.SYSTEM_MENU )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -4353,7 +4353,7 @@ class StatePreviewDialogBase ( wx.Dialog ):
 		bSizer141.Add( self.SpawnSound, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
 		self.Close = wx.Button( self, PREVIEW_CLOSE, u"Close", wx.DefaultPosition, wx.Size( 120,36 ), 0 )
-		bSizer141.Add( self.Close, 0, wx.ALIGN_RIGHT|wx.ALL, 6 )
+		bSizer141.Add( self.Close, 0, wx.ALL, 6 )
 
 
 		bSizer140.Add( bSizer141, 0, wx.EXPAND, 0 )
