@@ -2,7 +2,7 @@ from enum import IntEnum
 from typing import Optional, List
 
 import wx
-from wx import ListItemAttr, Colour, ListEvent, PostEvent
+from wx import ItemAttr, Colour, ListEvent, PostEvent
 from wx.lib.newevent import NewEvent
 
 from whacked4 import config, utils
@@ -39,9 +39,8 @@ class StateList(wx.ListCtrl):
         super().__init__(parent, id, pos, size, style | wx.LC_NO_SORT_HEADER | wx.LC_REPORT | wx.LC_VIRTUAL)
 
         self.patch: Optional[Patch] = None
-        self.item_attributes: List[ListItemAttr] = []
+        self.item_attributes: List[ItemAttr] = []
 
-        self.Freeze()
         self.InsertColumn(StateColumn.INDEX, '', width=45)
         self.InsertColumn(StateColumn.NAME, 'Name', width=57)
         self.InsertColumn(StateColumn.SPRITE, 'Spr', width=39)
@@ -51,7 +50,6 @@ class StateList(wx.ListCtrl):
         self.InsertColumn(StateColumn.DURATION, 'Dur', width=40)
         self.InsertColumn(StateColumn.ACTION, 'Action', width=160)
         self.InsertColumn(StateColumn.PARAMETERS, 'Parameters', width=107)
-        self.Thaw()
 
         self.Bind(wx.EVT_SIZE, self.resize)
 
@@ -125,9 +123,10 @@ class StateList(wx.ListCtrl):
         return self.item_attributes[item]
 
     def update_item_attributes(self):
-        if len(self.item_attributes) != self.GetItemCount():
+        if len(self.item_attributes) != len(self.state_query_result):
             self.create_item_attributes()
 
+        # Apply alternating colors based on each state's sprite.
         color_index: int = 0
         previous_sprite: int = 0
         for item_index, _, state in self.state_query_result:
@@ -141,27 +140,26 @@ class StateList(wx.ListCtrl):
             previous_sprite = state['sprite']
 
     def create_item_attributes(self):
-        self.item_attributes = [ListItemAttr() for _ in range(self.GetItemCount())]
-
-        for index, _ in enumerate(self.item_attributes):
-            attributes = ListItemAttr()
-            attributes.SetFont(config.FONT_MONOSPACED)
-            self.item_attributes[index] = attributes
+        self.item_attributes = [ItemAttr() for _ in range(len(self.state_query_result))]
+        for attribute in self.item_attributes:
+            attribute.SetFont(config.FONT_MONOSPACED)
+        self.SetItemCount(len(self.item_attributes))
 
     def set_patch(self, patch: Patch):
         self.patch = patch
 
         if self.state_query_result is not None:
-            self.SetItemCount(len(self.state_query_result))
             self.update_item_attributes()
 
         self.Select(0, 1)
 
     def set_state_query_result(self, state_query_result: StateQueryResult):
         self.state_query_result = state_query_result
+        self.update_item_attributes()
 
-        self.SetItemCount(len(self.state_query_result))
-        self.create_item_attributes()
+    def refresh_selected_rows(self):
+        for list_index in self.selected:
+            self.RefreshItem(list_index)
 
     def update_selection(self, event: ListEvent):
         self.selected.clear()
@@ -183,3 +181,19 @@ class StateList(wx.ListCtrl):
         if len(self.selected):
             return self.selected[0]
         return -1
+
+    def get_last_selected(self) -> int:
+        if len(self.selected):
+            return self.selected[-1]
+        return -1
+
+    def set_selected(self, selected: List[int]):
+        self.clear_selection()
+        for index in selected:
+            self.Select(index, 1)
+
+    def clear_selection(self):
+        item = self.GetFirstSelected()
+        while item != -1:
+            self.Select(item, 0)
+            item = self.GetNextSelected(item)

@@ -1,4 +1,3 @@
-from abc import ABC
 from typing import List, Dict, Iterable, Sized
 
 from whacked4.dehacked.entry import Entry
@@ -13,7 +12,7 @@ class StateQueryResult(Iterable, Sized):
 
         self.item_index_by_state_index: Dict[int, int] = {}
         for item_index, state_index in enumerate(state_indices):
-            self.item_index_by_state_index[item_index] = state_index
+            self.item_index_by_state_index[state_index] = item_index
 
         self.iter_index: int = 0
 
@@ -26,7 +25,7 @@ class StateQueryResult(Iterable, Sized):
     def get_item_index_for_state_index(self, state_index: int) -> int:
         return self.item_index_by_state_index[state_index]
 
-    def contains_state(self, state_index: int) -> bool:
+    def contains_state_index(self, state_index: int) -> bool:
         return state_index in self.state_index_by_item_index
 
     def __iter__(self):

@@ -653,7 +653,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             self.is_modified(True)
 
             parent = self.GetParent()
-            parent.editor_windows[windows.MAIN_TOOL_STATES].update_filterlist()
+            parent.editor_windows[windows.MAIN_TOOL_STATES].update_filter_list()
 
     def thing_restore(self, event):
         """
