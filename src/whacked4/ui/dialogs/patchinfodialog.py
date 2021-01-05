@@ -140,7 +140,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         Displays the IWAD file browser.
         """
 
-        filename = utils.file_dialog(self, message='Choose an IWAD.', wildcard='WAD files (*.wad)|*.wad|All files|*.*',
+        filename = utils.file_dialog(self, message='Choose an IWAD', wildcard='WAD files (*.wad)|*.wad|All files|*.*',
                                      style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST, default_file=self.IWAD.GetValue())
 
         if filename is not None:
@@ -162,7 +162,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         Displays the PWAD file browser.
         """
 
-        filename = utils.file_dialog(self, message='Choose a PWAD.', wildcard='WAD files (*.wad)|*.wad|All files|*.*',
+        filename = utils.file_dialog(self, message='Choose a PWAD', wildcard='WAD files (*.wad)|*.wad|All files|*.*',
                                      style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST, default_file=self.IWAD.GetValue())
 
         if filename is not None:

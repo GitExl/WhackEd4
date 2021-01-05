@@ -185,9 +185,9 @@ class Patch(object):
             f.write('Patch File for DeHackEd v3.0\n')
 
             if config.APP_BETA:
-                f.write('# Created with {} {}\n'.format(config.APP_NAME, config.APP_VERSION))
-            else:
                 f.write('# Created with {} {} BETA\n'.format(config.APP_NAME, config.APP_VERSION))
+            else:
+                f.write('# Created with {} {}\n'.format(config.APP_NAME, config.APP_VERSION))
 
             f.write('# Note: Use the pound sign (\'#\') to start comment lines.\n\n')
 

@@ -81,6 +81,9 @@ class StateList(wx.ListCtrl):
             self.SetColumnWidth(StateColumn.PARAMETERS, width)
 
     def OnGetItemText(self, item: int, column: int):
+        if item <= 0 or item >= len(self.state_query_result):
+            return ''
+
         state = self.state_query_result.get_state_for_item_index(item)
         state_index = self.state_query_result.get_state_index_for_item_index(item)
 
