@@ -117,7 +117,7 @@ class MainWindow(windows.MainFrameBase):
         Loads all engine configuration files. These are kept in memory for patch compatibility auto-detection.
         """
 
-        for file_name in glob.glob('cfg/tables_*.json'):
+        for file_name in sorted(glob.glob('cfg/tables_*.json')):
             new_engine = engine.Engine()
             try:
                 new_engine.merge_data(file_name)
