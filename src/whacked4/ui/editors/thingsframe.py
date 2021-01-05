@@ -599,7 +599,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
 
         text_ctrl = self.FindWindowById(self.PROPS_STATESET[event.GetId()])
-        text_ctrl.SetValue(str(states_frame.selection_get_state_index()))
+        text_ctrl.SetValue(str(states_frame.get_selected_state_index()))
         self.is_modified(True)
         self.update_is_projectile()
         self.update_properties()

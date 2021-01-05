@@ -845,6 +845,13 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.EnsureVisible(list_index)
         self.StateList.SetFocus()
 
+    def get_selected_state_index(self):
+        item_index = self.StateList.get_first_selected()
+        if item_index == -1:
+            return -1
+
+        return self.StateList.state_query_result.get_state_index_for_item_index(item_index)
+
     def preview(self):
         filter_data = self.filters[self.Filter.GetSelection()]
 
