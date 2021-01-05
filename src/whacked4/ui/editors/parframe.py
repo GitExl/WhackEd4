@@ -20,8 +20,8 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         windows.PAR_SECONDS: 'seconds'
     }
 
-    def __init__(self, params):
-        windows.ParFrameBase.__init__(self, params)
+    def __init__(self, parent):
+        windows.ParFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-par.ico'))
@@ -92,6 +92,9 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         """
         Resize the parlist columns to divide them over the width of the client area.
         """
+
+        if not self.ParList.GetColumnCount():
+            return
 
         column_width = (self.ParList.GetClientSize()[0] - 4) / 3
         self.ParList.SetColumnWidth(0, column_width)

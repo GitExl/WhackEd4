@@ -139,8 +139,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     # Fixed point unit divisor for certain thing properties.
     FIXED_UNIT = 0x10000
 
-    def __init__(self, params):
-        windows.ThingsFrameBase.__init__(self, params)
+    def __init__(self, parent):
+        windows.ThingsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-things.ico'))
@@ -169,7 +169,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         self.patch = patch
-        self.pwads = self.GetParent().pwads
+        self.pwads = self.GetMDIParent().pwads
         self.clipboard = None
         self.preview_dialog = statepreviewdialog.StatePreviewDialog(self.GetParent())
 
@@ -188,7 +188,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         @see: EditorMixin.update
         """
 
-        self.pwads = self.GetParent().pwads
+        self.pwads = self.GetMDIParent().pwads
 
     def set_feature_visibility(self):
         """
@@ -595,7 +595,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.undo_add()
 
         # Get a reference to the states editor window.
-        parent = self.GetParent()
+        parent = self.GetMDIParent()
         states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
 
         text_ctrl = self.FindWindowById(self.PROPS_STATESET[event.GetId()])
@@ -612,7 +612,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.undo_add()
 
         # Get a reference to the states editor window.
-        parent = self.GetParent()
+        parent = self.GetMDIParent()
         sounds_frame = parent.editor_windows[windows.MAIN_TOOL_SOUNDS]
 
         text_ctrl = self.FindWindowById(self.PROPS_SOUNDSET[event.GetId()])
@@ -652,7 +652,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             self.update_properties()
             self.is_modified(True)
 
-            parent = self.GetParent()
+            parent = self.GetMDIParent()
             parent.editor_windows[windows.MAIN_TOOL_STATES].update_filter_list()
 
     def thing_restore(self, event):

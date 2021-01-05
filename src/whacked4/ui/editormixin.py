@@ -104,7 +104,7 @@ class EditorMixin(wx.MDIChildFrame):
         Updates this editor window's position data.
         """
 
-        self.GetParent().workspace_modified = True
+        self.GetMDIParent().workspace_modified = True
 
         if self.IsMaximized():
             event.Skip()
@@ -125,7 +125,7 @@ class EditorMixin(wx.MDIChildFrame):
         Called when the mouse enters a state label.
         """
 
-        window = self.GetParent().FindWindowById(event.GetId())
+        window = self.GetMDIParent().FindWindowById(event.GetId())
         if window is None:
             return
         window.SetCursor(wx.Cursor(wx.CURSOR_HAND))
@@ -137,7 +137,7 @@ class EditorMixin(wx.MDIChildFrame):
         Called when the mouse leaves a state label.
         """
 
-        window = self.GetParent().FindWindowById(event.GetId())
+        window = self.GetMDIParent().FindWindowById(event.GetId())
         if window is None:
             return
         window.SetCursor(wx.Cursor(wx.CURSOR_ARROW))
@@ -151,7 +151,7 @@ class EditorMixin(wx.MDIChildFrame):
         @param modified: True if the patch was modified.
         """
 
-        self.GetParent().set_modified(modified)
+        self.GetMDIParent().set_modified(modified)
 
     def focus_text(self, event):
         """
@@ -166,8 +166,10 @@ class EditorMixin(wx.MDIChildFrame):
         Called when this window is activated.
         """
 
-        if bool(self):
-            self.GetParent().editor_window_activate()
+        if not bool(self):
+            return
+
+        self.GetMDIParent().editor_window_activate()
 
     def close(self, event):
         """
@@ -175,7 +177,7 @@ class EditorMixin(wx.MDIChildFrame):
         """
 
         self.Maximize(False)
-        self.GetParent().editor_window_closed(self)
+        self.GetMDIParent().editor_window_closed(self)
 
     def goto_state(self, state_index, filter_type, filter_index):
         """
@@ -186,7 +188,7 @@ class EditorMixin(wx.MDIChildFrame):
         @param filter_index: the index of the item to select in the state filter.
         """
 
-        parent = self.GetParent()
+        parent = self.GetMDIParent()
         parent.editor_window_show(windows.MAIN_TOOL_STATES)
 
         # Set selected state and display the state editor window.
@@ -201,7 +203,7 @@ class EditorMixin(wx.MDIChildFrame):
         @param sound_index: the index of the sound to go to.
         """
 
-        parent = self.GetParent()
+        parent = self.GetMDIParent()
         parent.editor_window_show(windows.MAIN_TOOL_SOUNDS)
 
         # Set selected state and display the state editor window.

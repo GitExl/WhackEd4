@@ -12,8 +12,8 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
     Cheats editor window.
     """
 
-    def __init__(self, params):
-        windows.CheatsFrameBase.__init__(self, params)
+    def __init__(self, parent):
+        windows.CheatsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-cheats.ico'))
@@ -77,6 +77,9 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
 
         Expands the last cheat column to fill the available space.
         """
+
+        if not self.CheatList.GetColumnCount():
+            return
 
         width = self.CheatList.GetClientSize()[0] - self.CheatList.GetColumnWidth(0) - 4
         self.CheatList.SetColumnWidth(1, width)

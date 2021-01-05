@@ -12,8 +12,8 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
     Misc editor window.
     """
 
-    def __init__(self, params):
-        windows.MiscFrameBase.__init__(self, params)
+    def __init__(self, parent):
+        windows.MiscFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-misc.ico'))
@@ -122,6 +122,9 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         """
         Resize the misc name column as wide as possible.
         """
+
+        if not self.MiscList.GetColumnCount():
+            return
 
         column_width = self.MiscList.GetClientSize()[0] - 4
         self.MiscList.SetColumnWidth(0, 200)

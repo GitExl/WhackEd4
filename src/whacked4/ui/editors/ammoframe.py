@@ -18,8 +18,8 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         windows.AMMO_VAL_PICKUP: 'clip'
     }
 
-    def __init__(self, params):
-        windows.AmmoFrameBase.__init__(self, params)
+    def __init__(self, parent):
+        windows.AmmoFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-ammo.ico'))
@@ -82,6 +82,9 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         """
         Resize the ammo name column as wide as possible.
         """
+
+        if not self.AmmoList.GetColumnCount():
+            return
 
         column_width = self.AmmoList.GetClientSize()[0] - 4
         self.AmmoList.SetColumnWidth(0, column_width / 3)

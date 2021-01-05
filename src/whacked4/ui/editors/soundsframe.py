@@ -15,8 +15,8 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
     # The colour used for color-coding priorities.
     PRIORITY_COLOUR = wx.Colour(red=255, green=48, blue=0)
 
-    def __init__(self, params):
-        windows.SoundsFrameBase.__init__(self, params)
+    def __init__(self, parent):
+        windows.SoundsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         # A list of all tool windows for simple mass operations.
@@ -78,7 +78,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         """
 
         self.patch = patch
-        self.pwads = self.GetParent().pwads
+        self.pwads = self.GetMDIParent().pwads
 
         self.selected_index = -1
         self.selected_row = -1
@@ -90,7 +90,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         @see: EditorMixin.update
         """
 
-        self.pwads = self.GetParent().pwads
+        self.pwads = self.GetMDIParent().pwads
 
     def soundlist_build(self):
         """

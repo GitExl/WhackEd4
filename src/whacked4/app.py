@@ -88,13 +88,13 @@ class WhackEd4App(wx.App):
 
         traceback.print_exception(exception_type, value, trace_back, file=sys.stderr)
 
-        dialog = errordialog.ErrorDialog(None)
-        dialog.set_log(self.log)
-
         try:
+            dialog = errordialog.ErrorDialog(None)
+            dialog.set_log(self.log)
             dialog.ShowModal()
-        finally:
             dialog.Destroy()
+        except Exception:
+            pass
 
         sys.exit(-1)
 

@@ -13,8 +13,8 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
     Strings editor window.
     """
 
-    def __init__(self, params):
-        windows.StringsFrameBase.__init__(self, params)
+    def __init__(self, parent):
+        windows.StringsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-strings.ico'))
@@ -79,6 +79,9 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         """
         Called when the string list is resized. Adjusts the list column widths to match.
         """
+
+        if not self.StringList.GetColumnCount():
+            return
 
         width = self.StringList.GetClientSize()[0]
         column_width = width - self.StringList.GetColumnWidth(0) - 4

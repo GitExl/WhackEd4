@@ -67,8 +67,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     # Doom lit flag. Frame indices with this flag set are always lit by Doom's rendering engine.
     FRAMEFLAG_LIT = 0x8000
 
-    def __init__(self, params):
-        windows.StatesFrameBase.__init__(self, params)
+    def __init__(self, parent):
+        windows.StatesFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-states.ico'))
@@ -122,7 +122,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.patch = patch
         self.StateList.set_patch(patch)
-        self.pwads = self.GetParent().pwads
+        self.pwads = self.GetMDIParent().pwads
         self.clipboard = None
 
         self.sprites_dialog = spritesdialog.SpritesDialog(self.GetParent())
@@ -145,7 +145,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         @see: EditorMixin.update
         """
 
-        self.pwads = self.GetParent().pwads
+        self.pwads = self.GetMDIParent().pwads
 
         self.sprites_dialog.update(self.pwads)
         self.preview_dialog.update(self.pwads)

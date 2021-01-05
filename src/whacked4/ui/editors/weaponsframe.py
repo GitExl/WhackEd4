@@ -49,8 +49,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         windows.WEAPON_STATESET_MUZZLE: windows.WEAPON_STATE_MUZZLE
     }
 
-    def __init__(self, params):
-        windows.WeaponsFrameBase.__init__(self, params)
+    def __init__(self, parent):
+        windows.WeaponsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-weapons.ico'))
@@ -70,7 +70,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         """
 
         self.patch = patch
-        self.pwads = self.GetParent().pwads
+        self.pwads = self.GetMDIParent().pwads
         self.selected_index = 0
         self.preview_dialog = statepreviewdialog.StatePreviewDialog(self.GetParent())
 
@@ -83,7 +83,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         @see: EditorMixin.update
         """
 
-        self.pwads = self.GetParent().pwads
+        self.pwads = self.GetMDIParent().pwads
 
     def set_feature_visibility(self):
         """
@@ -144,10 +144,12 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         """
         Resizes the weapon list to fill as much space as is available.
         """
-        if self.WeaponList.GetColumnCount() > 1:
-            column_width = self.WeaponList.GetClientSize()[0] - 4
-            self.WeaponList.SetColumnWidth(0, column_width / 2)
-            self.WeaponList.SetColumnWidth(1, column_width / 2)
+        if not self.WeaponList.GetColumnCount():
+            return
+
+        column_width = self.WeaponList.GetClientSize()[0] - 4
+        self.WeaponList.SetColumnWidth(0, column_width / 2)
+        self.WeaponList.SetColumnWidth(1, column_width / 2)
 
     def ammolist_build(self):
         """
@@ -258,7 +260,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.undo_add()
 
         # Get a reference to the states editor window.
-        parent = self.GetParent()
+        parent = self.GetMDIParent()
         states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
 
         text_ctrl = self.FindWindowById(self.PROPS_STATESET[event.GetId()])
