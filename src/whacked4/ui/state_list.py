@@ -151,11 +151,21 @@ class StateList(wx.ListCtrl):
         if self.state_query_result is not None:
             self.update_item_attributes()
 
-        self.Select(0, 1)
+        self.select_first_valid_state()
 
     def set_state_query_result(self, state_query_result: StateQueryResult):
         self.state_query_result = state_query_result
         self.update_item_attributes()
+
+    def select_first_valid_state(self):
+        if self.state_query_result is None or not len(self.state_query_result):
+            return
+
+        state = self.state_query_result.get_state_for_item_index(0)
+        if state['sprite'] != 0:
+            self.set_selected([0])
+        else:
+            self.set_selected([1])
 
     def refresh_selected_rows(self):
         for list_index in self.selected:

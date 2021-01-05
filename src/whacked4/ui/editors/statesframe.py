@@ -371,11 +371,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         # Select first non-0 sprite state.
         if len(state_query_result):
-            state = state_query_result.get_state_for_item_index(0)
-            if state['sprite'] != 0:
-                self.StateList.set_selected([0])
-            else:
-                self.StateList.set_selected([1])
+            self.StateList.select_first_valid_state()
         else:
             self.update_properties()
 

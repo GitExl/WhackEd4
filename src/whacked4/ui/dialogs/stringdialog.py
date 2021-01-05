@@ -49,7 +49,6 @@ class StringDialog(windows.StringDialogBase):
 
         if extended:
             self.max_length = 0
-            self.New.SetMaxLength(0)
             self.CharsLeft.Hide()
         else:
             # Non-extended string lengths are limited by the padding room in the executable.
@@ -86,44 +85,35 @@ class StringDialog(windows.StringDialogBase):
         chars_left = self.max_length - len(text)
 
         # Plural formatting.
-        if chars_left == 1:
+        if abs(chars_left) == 1:
             plural = ''
         else:
             plural = 's'
-        if chars_left == 0:
-            chars_left = 'No'
 
-        self.CharsLeft.SetLabel('{} character{} left'.format(chars_left, plural))
+        if chars_left < 0:
+            label = '{} character{} too many'.format(abs(chars_left), plural)
+        else:
+            if chars_left == 0:
+                chars_left = 'No more'
+            label = '{} character{} left'.format(chars_left, plural)
 
-    def text_keydown(self, event):
-        """
-        Process key down events.
-
-        Handles the fact that a text control's MaxLength setting does not count newlines.
-        """
-
-        if not self.extended:
-            text = self.New.GetValue()
-
-            # Add the number of newlines to the text control's true MaxLength.
-            newline_count = text.count('\n')
-            max_len = self.max_length + newline_count
-
-            # Allow the last key to be entered to be a newline.
-            # Without this, the last character that fills up the textbox cannot be a newline, since the new length is
-            # calculated after the key was pressed.
-            key_code = event.GetKeyCode()
-            if self.max_length - 1 == len(text) and (key_code == wx.WXK_RETURN or key_code == wx.WXK_NUMPAD_ENTER):
-                max_len += 1
-
-            self.New.SetMaxLength(max_len)
-
-        event.Skip()
+        self.CharsLeft.SetLabel(label)
+        self.ButtonOk.Enable(self.is_new_length_valid())
 
     def activate(self, event):
         self.New.SetFocus()
 
+    def is_new_length_valid(self):
+        if self.extended:
+            return True
+
+        text = self.New.GetValue()
+        return len(text) <= self.max_length
+
     def ok(self, event):
+        if not self.is_new_length_valid():
+            return
+
         self.new_string = self.New.GetValue()
         self.EndModal(0)
 

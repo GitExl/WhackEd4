@@ -3801,7 +3801,6 @@ class StringDialogBase ( wx.Dialog ):
 		self.Bind( wx.EVT_INIT_DIALOG, self.activate )
 		self.m_staticText81.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.m_staticText811.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
-		self.New.Bind( wx.EVT_KEY_DOWN, self.text_keydown )
 		self.New.Bind( wx.EVT_TEXT, self.text_enter )
 		self.CharsLeft.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ButtonOk.Bind( wx.EVT_BUTTON, self.ok )
@@ -3818,9 +3817,6 @@ class StringDialogBase ( wx.Dialog ):
 	def dummy( self, event ):
 		pass
 
-
-	def text_keydown( self, event ):
-		pass
 
 	def text_enter( self, event ):
 		pass
