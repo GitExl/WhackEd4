@@ -1,14 +1,2417 @@
 {
-	"features": [],
-	"actions": {},
-	"ammo": [],
-	"ammoNames": [],
-	"cheatData": {},
-	"cheats": {},
-	"misc": {},
-	"miscData": {},
-	"sounds": [],
-	"soundNames": [],
+	"features": [
+		"thing.gibHealth",
+		"thing.droppedItem",
+		"thing.pickupRadius",
+		"thing.projectilePassHeight",
+		"thing.fullbright"
+	],
+
+	"sounds": [
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		},
+		{
+			"internalDataPointer": 0,
+			"internalLumpindex": 0,
+			"internalRefCount": 0,
+			"isSingular": 0,
+			"linkPitch": -1,
+			"linkPointer": 0,
+			"linkVolume": -1,
+			"namePointer": 0,
+			"priority": 127
+		}
+	],
+
+	"soundNames": [
+		"DSFRE000",
+		"DSFRE001",
+		"DSFRE002",
+		"DSFRE003",
+		"DSFRE004",
+		"DSFRE005",
+		"DSFRE006",
+		"DSFRE007",
+		"DSFRE008",
+		"DSFRE009",
+		"DSFRE010",
+		"DSFRE011",
+		"DSFRE012",
+		"DSFRE013",
+		"DSFRE014",
+		"DSFRE015",
+		"DSFRE016",
+		"DSFRE017",
+		"DSFRE018",
+		"DSFRE019",
+		"DSFRE020",
+		"DSFRE021",
+		"DSFRE022",
+		"DSFRE023",
+		"DSFRE024",
+		"DSFRE025",
+		"DSFRE026",
+		"DSFRE027",
+		"DSFRE028",
+		"DSFRE029",
+		"DSFRE030",
+		"DSFRE031",
+		"DSFRE032",
+		"DSFRE033",
+		"DSFRE034",
+		"DSFRE035",
+		"DSFRE036",
+		"DSFRE037",
+		"DSFRE038",
+		"DSFRE039",
+		"DSFRE040",
+		"DSFRE041",
+		"DSFRE042",
+		"DSFRE043",
+		"DSFRE044",
+		"DSFRE045",
+		"DSFRE046",
+		"DSFRE047",
+		"DSFRE048",
+		"DSFRE049",
+		"DSFRE050",
+		"DSFRE051",
+		"DSFRE052",
+		"DSFRE053",
+		"DSFRE054",
+		"DSFRE055",
+		"DSFRE056",
+		"DSFRE057",
+		"DSFRE058",
+		"DSFRE059",
+		"DSFRE060",
+		"DSFRE061",
+		"DSFRE062",
+		"DSFRE063",
+		"DSFRE064",
+		"DSFRE065",
+		"DSFRE066",
+		"DSFRE067",
+		"DSFRE068",
+		"DSFRE069",
+		"DSFRE070",
+		"DSFRE071",
+		"DSFRE072",
+		"DSFRE073",
+		"DSFRE074",
+		"DSFRE075",
+		"DSFRE076",
+		"DSFRE077",
+		"DSFRE078",
+		"DSFRE079",
+		"DSFRE080",
+		"DSFRE081",
+		"DSFRE082",
+		"DSFRE083",
+		"DSFRE084",
+		"DSFRE085",
+		"DSFRE086",
+		"DSFRE087",
+		"DSFRE088",
+		"DSFRE089",
+		"DSFRE090",
+		"DSFRE091",
+		"DSFRE092",
+		"DSFRE093",
+		"DSFRE094",
+		"DSFRE095",
+		"DSFRE096",
+		"DSFRE097",
+		"DSFRE098",
+		"DSFRE099",
+		"DSFRE100",
+		"DSFRE101",
+		"DSFRE102",
+		"DSFRE103",
+		"DSFRE104",
+		"DSFRE105",
+		"DSFRE106",
+		"DSFRE107",
+		"DSFRE108",
+		"DSFRE109",
+		"DSFRE110",
+		"DSFRE111",
+		"DSFRE112",
+		"DSFRE113",
+		"DSFRE114",
+		"DSFRE115",
+		"DSFRE116",
+		"DSFRE117",
+		"DSFRE118",
+		"DSFRE119",
+		"DSFRE120",
+		"DSFRE121",
+		"DSFRE122",
+		"DSFRE123",
+		"DSFRE124",
+		"DSFRE125",
+		"DSFRE126",
+		"DSFRE127",
+		"DSFRE128",
+		"DSFRE129",
+		"DSFRE130",
+		"DSFRE131",
+		"DSFRE132",
+		"DSFRE133",
+		"DSFRE134",
+		"DSFRE135",
+		"DSFRE136",
+		"DSFRE137",
+		"DSFRE138",
+		"DSFRE139",
+		"DSFRE140",
+		"DSFRE141",
+		"DSFRE142",
+		"DSFRE143",
+		"DSFRE144",
+		"DSFRE145",
+		"DSFRE146",
+		"DSFRE147",
+		"DSFRE148",
+		"DSFRE149",
+		"DSFRE150",
+		"DSFRE151",
+		"DSFRE152",
+		"DSFRE153",
+		"DSFRE154",
+		"DSFRE155",
+		"DSFRE156",
+		"DSFRE157",
+		"DSFRE158",
+		"DSFRE159",
+		"DSFRE160",
+		"DSFRE161",
+		"DSFRE162",
+		"DSFRE163",
+		"DSFRE164",
+		"DSFRE165",
+		"DSFRE166",
+		"DSFRE167",
+		"DSFRE168",
+		"DSFRE169",
+		"DSFRE170",
+		"DSFRE171",
+		"DSFRE172",
+		"DSFRE173",
+		"DSFRE174",
+		"DSFRE175",
+		"DSFRE176",
+		"DSFRE177",
+		"DSFRE178",
+		"DSFRE179",
+		"DSFRE180",
+		"DSFRE181",
+		"DSFRE182",
+		"DSFRE183",
+		"DSFRE184",
+		"DSFRE185",
+		"DSFRE186",
+		"DSFRE187",
+		"DSFRE188",
+		"DSFRE189",
+		"DSFRE190",
+		"DSFRE191",
+		"DSFRE192",
+		"DSFRE193",
+		"DSFRE194",
+		"DSFRE195",
+		"DSFRE196",
+		"DSFRE197",
+		"DSFRE198",
+		"DSFRE199"
+	],
 
 	"spriteNames": [
 		"SP00",
@@ -26451,7 +28854,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26476,7 +28883,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26501,7 +28912,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26526,7 +28941,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26551,7 +28970,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26576,7 +28999,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26601,7 +29028,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26626,7 +29057,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26651,7 +29086,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26676,7 +29115,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26701,7 +29144,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26726,7 +29173,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26751,7 +29202,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26776,7 +29231,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26801,7 +29260,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26826,7 +29289,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26851,7 +29318,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26876,7 +29347,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26901,7 +29376,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26926,7 +29405,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26951,7 +29434,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -26976,7 +29463,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27001,7 +29492,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27026,7 +29521,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27051,7 +29550,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27076,7 +29579,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27101,7 +29608,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27126,7 +29637,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27151,7 +29666,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27176,7 +29695,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27201,7 +29724,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27226,7 +29753,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27251,7 +29782,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27276,7 +29811,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27301,7 +29840,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27326,7 +29869,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27351,7 +29898,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27376,7 +29927,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27401,7 +29956,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27426,7 +29985,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27451,7 +30014,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27476,7 +30043,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27501,7 +30072,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27526,7 +30101,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27551,7 +30130,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27576,7 +30159,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27601,7 +30188,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27626,7 +30217,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27651,7 +30246,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27676,7 +30275,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27701,7 +30304,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27726,7 +30333,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27751,7 +30362,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27776,7 +30391,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27801,7 +30420,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27826,7 +30449,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27851,7 +30478,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27876,7 +30507,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27901,7 +30536,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27926,7 +30565,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27951,7 +30594,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -27976,7 +30623,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28001,7 +30652,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28026,7 +30681,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28051,7 +30710,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28076,7 +30739,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28101,7 +30768,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28126,7 +30797,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28151,7 +30826,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28176,7 +30855,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28201,7 +30884,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28226,7 +30913,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28251,7 +30942,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28276,7 +30971,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28301,7 +31000,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28326,7 +31029,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28351,7 +31058,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28376,7 +31087,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28401,7 +31116,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28426,7 +31145,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28451,7 +31174,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28476,7 +31203,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28501,7 +31232,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28526,7 +31261,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28551,7 +31290,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28576,7 +31319,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28601,7 +31348,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28626,7 +31377,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28651,7 +31406,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28676,7 +31435,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28701,7 +31464,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28726,7 +31493,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28751,7 +31522,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28776,7 +31551,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28801,7 +31580,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28826,7 +31609,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28851,7 +31638,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28876,7 +31667,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28901,7 +31696,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28926,7 +31725,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28951,7 +31754,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -28976,7 +31783,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -29001,7 +31812,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -29026,7 +31841,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -29051,7 +31870,11 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		},
 		{
 			"flags": 0,
@@ -29076,16 +31899,30 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0
+			"radius": 0,
+			"droppedItem": -1,
+			"pickupRadius": 0,
+			"projectilePassHeight": 0,
+			"fullbright": false
 		}
 	],
 
+	"defaultThing": {
+		"gibHealth": 0
+	},
+
+	"actions": {},
+	"ammo": [],
+	"ammoNames": [],
+	"cheatData": {},
+	"cheats": {},
+	"misc": {},
+	"miscData": {},
 	"weaponNames": [],
 	"weapons": [],
 	"usedStates": [],
 	"renderStyles": {},
 	"defaultState": {},
-	"defaultThing": {},
 	"defaultWeapon": {},
 	"defaultAmmo": {},
 	"defaultSound": {}

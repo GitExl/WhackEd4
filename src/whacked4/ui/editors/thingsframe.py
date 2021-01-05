@@ -39,6 +39,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_VAL_DECAL: 'decal',
         windows.THING_VAL_DAMAGEFACTOR: 'damageFactor',
         windows.THING_VAL_GRAVITY: 'gravity',
+        windows.THING_VAL_DROPPED_ITEM: 'droppedItem',
+        windows.THING_VAL_PICKUP_RADIUS: 'pickupRadius',
+        windows.THING_VAL_PROJECTILE_PASS_HEIGHT: 'projectilePassHeight',
+        windows.THING_VAL_FULLBRIGHT: 'fullbright',
     }
 
     # Value types for text control validation.
@@ -62,6 +66,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_VAL_DECAL: 'str',
         windows.THING_VAL_DAMAGEFACTOR: 'float',
         windows.THING_VAL_GRAVITY: 'float',
+        windows.THING_VAL_DROPPED_ITEM: 'int',
+        windows.THING_VAL_PICKUP_RADIUS: 'fixed',
+        windows.THING_VAL_PROJECTILE_PASS_HEIGHT: 'fixed',
+        windows.THING_VAL_FULLBRIGHT: 'bool',
     }
 
     # State text control to partial internal key mappings.
@@ -201,6 +209,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.PanelGravity.Show(('thing.gravity' in features))
         self.PanelGame.Show(('thing.game' in features))
         self.PanelGibHealth.Show(('thing.gibHealth' in features))
+        self.PanelDroppedItem.Show(('thing.droppedItem' in features))
+        self.PanelPickupRadius.Show(('thing.pickupRadius' in features))
+        self.PanelProjectilePassHeight.Show(('thing.projectilePassHeight' in features))
+        self.PanelFullbright.Show(('thing.fullbright' in features))
         self.PanelSpawnID.Show(('thing.spawnId' in features))
         self.PanelRespawnTime.Show(('thing.respawnTime' in features))
         self.PanelRenderStyle.Show(('thing.renderStyle' in features))
@@ -389,6 +401,14 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             self.ThingDamageFactor.ChangeValue(str(thing['damageFactor']))
         if 'thing.gravity' in self.patch.engine.features:
             self.ThingGravity.ChangeValue(str(thing['gravity']))
+        if 'thing.droppedItem' in self.patch.engine.features:
+            self.ThingDroppedItem.ChangeValue(str(thing['droppedItem']))
+        if 'thing.pickupRadius' in self.patch.engine.features:
+            self.ThingPickupRadius.ChangeValue(str(thing['pickupRadius'] / self.FIXED_UNIT))
+        if 'thing.projectilePassHeight' in self.patch.engine.features:
+            self.ThingProjectilePassHeight.ChangeValue(str(thing['projectilePassHeight'] / self.FIXED_UNIT))
+        if 'thing.fullbright' in self.patch.engine.features:
+            self.ThingFullbright.SetValue(thing['fullbright'])
 
         # Speed is in fixed point if this thing is a projectile, normal otherwise
         if self.thing_is_projectile:
@@ -455,6 +475,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             value = utils.validate_numeric(window)
         elif value_type == 'float' or value_type == 'fixed':
             value = utils.validate_numeric_float(window)
+        elif value_type == 'bool':
+            value = bool(window.GetValue())
         else:
             value = window.GetValue()
 
@@ -464,9 +486,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         # This is also necessary for the speed property if the thing is a projectile.
         key = self.PROPS_VALUES[window_id]
         if value_type == 'fixed':
-            value *= self.FIXED_UNIT
+            value = int(value * self.FIXED_UNIT)
         elif key == 'speed' and self.thing_is_projectile:
-            value *= self.FIXED_UNIT
+            value = int(value * self.FIXED_UNIT)
 
         thing[key] = value
 

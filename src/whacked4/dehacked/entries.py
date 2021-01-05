@@ -11,7 +11,7 @@ class AmmoEntry(Entry):
     NAME = 'Ammo'
     FIELDS = {
         'maximum': Field('Max ammo', FieldType.INT),
-        'clip':    Field('Per ammo', FieldType.INT)
+        'clip':    Field('Per ammo', FieldType.INT),
     }
 
 
@@ -20,7 +20,7 @@ class ParEntry(Entry):
     FIELDS = {
         'episode': Field('Episode', FieldType.INT),
         'map':     Field('Map',     FieldType.INT),
-        'seconds': Field('Seconds', FieldType.INT)
+        'seconds': Field('Seconds', FieldType.INT),
     }
 
 
@@ -36,7 +36,7 @@ class SoundEntry(Entry):
         'linkVolume':          Field('Neg. One 2', FieldType.INT),
         'internalDataPointer': Field('Zero 2',     FieldType.INT),
         'internalRefCount':    Field('Zero 3',     FieldType.INT),
-        'internalLumpindex':   Field('Zero 4',     FieldType.INT)
+        'internalLumpindex':   Field('Zero 4',     FieldType.INT),
     }
 
 
@@ -59,7 +59,7 @@ class StateEntry(Entry):
         'arg6':        Field('Args6',            FieldType.INT),
         'arg7':        Field('Args7',            FieldType.INT),
         'arg8':        Field('Args8',            FieldType.INT),
-        'arg9':        Field('Args9',            FieldType.INT)
+        'arg9':        Field('Args9',            FieldType.INT),
     }
 
 
@@ -102,7 +102,11 @@ class ThingEntry(Entry):
         'scale':        Field('Scale',               FieldType.FLOAT),
         'damageFactor': Field('DamageFactor',        FieldType.FLOAT),
         'gravity':      Field('Gravity',             FieldType.FLOAT),
-        'gibHealth':    Field('Gib health',          FieldType.INT)
+        'gibHealth':    Field('Gib health',          FieldType.INT),
+        'droppedItem':  Field('Dropped item',        FieldType.INT),
+        'pickupRadius': Field('Pickup width',        FieldType.INT),
+        'projectilePassHeight': Field('Projectile pass height', FieldType.INT),
+        'fullbright':   Field('Fullbright',          FieldType.INT),
     }
 
 
@@ -118,7 +122,7 @@ class WeaponEntry(Entry):
         'stateMuzzle':   Field('Firing frame',   FieldType.STATE),
         'minAmmo':       Field('Min ammo',       FieldType.INT),
         'ammoUse':       Field('Ammo use',       FieldType.INT),
-        'decal':         Field('Decal',          FieldType.STRING)
+        'decal':         Field('Decal',          FieldType.STRING),
     }
 
 
@@ -126,5 +130,5 @@ class SpriteEntry(Entry):
     NAME = 'Sprite'
     STRUCTURE = None
     FIELDS = {
-        'offset': Field('Offset', FieldType.INT)
+        'offset': Field('Offset', FieldType.INT),
     }

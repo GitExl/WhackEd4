@@ -1,7 +1,8 @@
-- New state list needs serious debugging.
-- Add warnings when loading patches that reference things\states\etc. that do not exist, from https://www.doomworld.com/forum/post/2123386
-- Add a warning whe loading vanilla patches when string lengths are not within the required length range. But might only be for some strings, so investigate. See https://www.doomworld.com/forum/topic/113682-minor-dehacked-string-bug-with-doom2exe/
+- New state list needs more debugging.
 - DEHEXTRA configuration with missing bits and pieces from https://doomwiki.org/wiki/DEHEXTRA. Doom Retro would extend this. Also see https://www.doomworld.com/forum/post/2177644
+    - Finish boolean fullbright saving
+    - New sounds start at index 500, between those and new ones there must be reserved sounds that are not editable.
+- Add warnings when loading patches that reference things\states\etc. that do not exist, from https://www.doomworld.com/forum/post/2123386
 - Calculated % number next to a thing's pain chance.
 - Fix editor list column widths.
 
