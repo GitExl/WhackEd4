@@ -1,5 +1,3 @@
-- New state list needs more debugging.
-    - http://trac.wxwidgets.org/ticket/16894 :(
 - DEHEXTRA configuration with missing bits and pieces from https://doomwiki.org/wiki/DEHEXTRA
     - Finish boolean fullbright saving as "True" or "False"
     - New sounds start at index 500, between those and new ones there must be reserved sounds that are not editable.

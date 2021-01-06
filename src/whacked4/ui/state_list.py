@@ -2,7 +2,7 @@ from enum import IntEnum
 from typing import Optional, List, Tuple
 
 import wx
-from wx import ItemAttr, Colour, ListEvent, PostEvent
+from wx import ItemAttr, Colour, ListEvent, PostEvent, SizeEvent
 from wx.lib.newevent import NewEvent
 
 from whacked4 import config, utils
@@ -38,20 +38,9 @@ class StateColumn(IntEnum):
 class StateList(wx.ListCtrl):
 
     def __init__(self, parent=None, id=wx.ID_ANY, pos=wx.DefaultPosition, size=wx.DefaultSize, style=0):
-        super().__init__(parent, id, pos, size, style | wx.LC_NO_SORT_HEADER | wx.LC_REPORT | wx.LC_VIRTUAL)
+        super().__init__(parent, id, pos, size, style | wx.LC_NO_SORT_HEADER | wx.LC_REPORT)
 
         self.patch: Optional[Patch] = None
-        self.item_attributes: List[ItemAttr] = []
-
-        self.InsertColumn(StateColumn.INDEX, '', width=47)
-        self.InsertColumn(StateColumn.NAME, 'Name', width=59)
-        self.InsertColumn(StateColumn.SPRITE, 'Spr', width=42)
-        self.InsertColumn(StateColumn.FRAME, 'Frm', width=42)
-        self.InsertColumn(StateColumn.LIT, 'Lit', width=27)
-        self.InsertColumn(StateColumn.NEXT, 'Next', width=50)
-        self.InsertColumn(StateColumn.DURATION, 'Dur', width=47)
-        self.InsertColumn(StateColumn.ACTION, 'Action', width=160)
-        self.InsertColumn(StateColumn.PARAMETERS, 'Parameters', width=107)
 
         self.Bind(wx.EVT_SIZE, self.resize)
 
@@ -70,7 +59,7 @@ class StateList(wx.ListCtrl):
         for color in ITEM_COLORS:
             self.item_colors.append(utils.mix_colors(color, background_color, 0.95))
 
-    def resize(self, event: ListEvent):
+    def resize(self, event: SizeEvent):
         columns_width = 0
         for column_index in range(0, self.GetColumnCount()):
             if column_index == StateColumn.PARAMETERS:
@@ -82,84 +71,81 @@ class StateList(wx.ListCtrl):
         if width != current_width:
             self.SetColumnWidth(StateColumn.PARAMETERS, width)
 
-    def OnGetItemText(self, item: int, column: int):
-        state = self.state_query_result.get_state_for_item_index(item)
-        state_index = self.state_query_result.get_state_index_for_item_index(item)
-
-        if column == StateColumn.INDEX:
-            return str(state_index)
-        elif column == StateColumn.NAME:
-            return self.patch.get_state_name(state_index)
-        elif column == StateColumn.SPRITE:
-            return str(state['sprite'])
-        elif column == StateColumn.FRAME:
-            return str(state['spriteFrame'] & ~FRAMEFLAG_LIT)
-        elif column == StateColumn.NEXT:
-            return str(state['nextState'])
-        elif column == StateColumn.DURATION:
-            return str(state['duration'])
-
-        elif column == StateColumn.LIT:
-            if state['spriteFrame'] & FRAMEFLAG_LIT:
-                return '◾'
-            else:
-                return ''
-
-        elif column == StateColumn.ACTION:
-            action: Action = self.patch.engine.actions[state['action']]
-            if action is not None:
-                return action.name
-            return ''
-
-        elif column == StateColumn.PARAMETERS:
-            action: Action = self.patch.engine.actions[state['action']]
-            if action is not None:
-                parameters = action.get_state_parameter_properties(state)
-            else:
-                parameters = [state['unused1'], state['unused2']]
-            return ', '.join(parameters)
-
-        raise Exception('Invalid virtual list control column.')
-
-    def OnGetItemAttr(self, item):
-        return self.item_attributes[item]
-
     def update_item_attributes(self):
-        if len(self.item_attributes) != len(self.state_query_result):
-            self.create_item_attributes()
+        self.Freeze()
 
-        # Apply alternating colors based on each state's sprite.
-        color_index: int = 0
-        previous_sprite: int = 0
-        for item_index, _, state in self.state_query_result:
+        colour_index = 0
+        previous_sprite = 0
+        list_index = 0
+        for item_index, state_index, state in self.state_query_result:
             if state['sprite'] != previous_sprite:
-                color_index += 1
-                if color_index >= len(self.item_colors):
-                    color_index = 0
+                colour_index += 1
+                if colour_index == len(self.item_colors):
+                    colour_index = 0
 
-            self.item_attributes[item_index].SetBackgroundColour(self.item_colors[color_index])
+            self.SetItemBackgroundColour(list_index, self.item_colors[colour_index])
 
+            list_index += 1
             previous_sprite = state['sprite']
 
-    def create_item_attributes(self):
-        self.item_attributes = [ItemAttr() for _ in range(len(self.state_query_result))]
-        for attribute in self.item_attributes:
-            attribute.SetFont(config.FONT_MONOSPACED)
-        self.SetItemCount(len(self.item_attributes))
+        self.Thaw()
 
-    def set_patch(self, patch: Patch):
+    def build(self):
         self.Freeze()
-        self.patch = patch
-        if self.state_query_result is not None:
-            self.update_item_attributes()
+        self.ClearAll()
+
+        if self.GetColumnCount() == 0:
+            self.InsertColumn(StateColumn.INDEX, '', width=47)
+            self.InsertColumn(StateColumn.NAME, 'Name', width=59)
+            self.InsertColumn(StateColumn.SPRITE, 'Spr', width=42)
+            self.InsertColumn(StateColumn.FRAME, 'Frm', width=42)
+            self.InsertColumn(StateColumn.LIT, 'Lit', width=27)
+            self.InsertColumn(StateColumn.NEXT, 'Next', width=50)
+            self.InsertColumn(StateColumn.DURATION, 'Dur', width=47)
+            self.InsertColumn(StateColumn.ACTION, 'Action', width=160)
+            self.InsertColumn(StateColumn.PARAMETERS, 'Parameters', width=107)
+
+        for item_index, state_index, state in self.state_query_result:
+            self.InsertItem(item_index, '')
+            self.update_row(item_index, state_index, state)
+            self.SetItemFont(item_index, config.FONT_MONOSPACED)
+
+        self.update_item_attributes()
+
         self.select_first_valid_state()
         self.Thaw()
 
+    def update_row(self, item_index, state_index, state):
+        action: Action = self.patch.engine.actions[state['action']]
+        if action is None:
+            action_name = ''
+        else:
+            action_name = action.name
+
+        if action is not None:
+            parameters = action.get_state_parameter_properties(state)
+        else:
+            parameters = (state['unused1'], state['unused2'])
+        parameters_text = ', '.join(parameters)
+
+        self.SetItemText(item_index, str(state_index))
+        self.SetItem(item_index, StateColumn.NAME, self.patch.get_state_name(state_index))
+        self.SetItem(item_index, StateColumn.SPRITE, str(state['sprite']))
+        self.SetItem(item_index, StateColumn.FRAME, str(state['spriteFrame'] & ~FRAMEFLAG_LIT))
+        self.SetItem(item_index, StateColumn.LIT, '◾' if state['spriteFrame'] & FRAMEFLAG_LIT else '')
+        self.SetItem(item_index, StateColumn.NEXT, str(state['nextState']))
+        self.SetItem(item_index, StateColumn.DURATION, str(state['duration']))
+        self.SetItem(item_index, StateColumn.ACTION, action_name)
+        self.SetItem(item_index, StateColumn.PARAMETERS, parameters_text)
+
+    def set_patch(self, patch: Patch):
+        self.patch = patch
+        if self.state_query_result is not None:
+            self.build()
+
     def set_state_query_result(self, state_query_result: StateQueryResult):
-        self.Freeze()
         self.state_query_result = state_query_result
-        self.update_item_attributes()
-        self.Thaw()
+        self.build()
 
     def select_first_valid_state(self):
         if self.state_query_result is None or not len(self.state_query_result):
@@ -172,8 +158,10 @@ class StateList(wx.ListCtrl):
             self.set_selected([1])
 
     def refresh_selected_rows(self):
-        for list_index in self.selected:
-            self.RefreshItem(list_index)
+        for item_index in self.selected:
+            state_index = self.state_query_result.get_state_index_for_item_index(item_index)
+            state = self.state_query_result.get_state_for_item_index(item_index)
+            self.update_row(item_index, state_index, state)
 
     def update_selection(self, event: ListEvent):
         self.selected.clear()

@@ -164,7 +164,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             # Restore all state indices in the undo item.
             if self.StateList.state_query_result.contains_state_index(state_index):
                 list_index = self.StateList.state_query_result.get_item_index_for_state_index(state_index)
-                self.StateList.RefreshItem(list_index)
+                self.StateList.update_row(list_index, state_index, state)
+
+        self.StateList.update_item_attributes()
 
         self.update_properties()
         self.update_sprite_preview()
@@ -220,7 +222,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 dup = state.clone()
                 state_index = self.StateList.state_query_result.get_state_index_for_item_index(list_index)
                 self.patch.states[state_index] = dup
-                self.StateList.RefreshItem(list_index)
+                self.StateList.update_row(list_index, state_index, state)
 
             list_index += 1
             if list_index >= len(self.patch.states):
@@ -247,7 +249,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         for item_index, state_index, state in self.StateList.iterate_selected():
             self.patch.states[state_index] = self.patch.engine.states[state_index].clone()
-            self.StateList.RefreshItem(item_index)
+            self.StateList.update_row(item_index, state_index, state)
 
         self.update_properties()
         self.StateList.update_item_attributes()
@@ -362,7 +364,6 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         state_query_result = state_query.execute()
         self.StateList.clear_selection()
         self.StateList.set_state_query_result(state_query_result)
-        self.StateList.Refresh()
 
         # Select first non-0 sprite state.
         if len(state_query_result):
@@ -825,7 +826,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         # Disable all filtering otherwise.
         else:
-            if not self.StateList.state_query_result.contains_state(state_index):
+            if not self.StateList.state_query_result.contains_state_index(state_index):
                 self.filter_update(0)
                 self.Filter.Select(0)
 

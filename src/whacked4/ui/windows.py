@@ -2358,7 +2358,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		bSizer140.Fit( self.m_panel61 )
 		SizerStates.Add( self.m_panel61, 0, wx.ALL, 6 )
 
-		self.StateList = StateList( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_VIRTUAL|wx.BORDER_NONE )
+		self.StateList = StateList( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.BORDER_NONE )
 		self.StateList.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 
 		SizerStates.Add( self.StateList, 1, wx.EXPAND, 5 )
