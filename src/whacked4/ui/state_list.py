@@ -1,5 +1,5 @@
 from enum import IntEnum
-from typing import Optional, List
+from typing import Optional, List, Tuple
 
 import wx
 from wx import ItemAttr, Colour, ListEvent, PostEvent
@@ -7,8 +7,10 @@ from wx.lib.newevent import NewEvent
 
 from whacked4 import config, utils
 from whacked4.dehacked.action import Action
+from whacked4.dehacked.entry import Entry
 from whacked4.dehacked.patch import Patch
 from whacked4.dehacked.statequery.result import StateQueryResult
+
 
 FRAMEFLAG_LIT = 0x8000
 
@@ -41,13 +43,13 @@ class StateList(wx.ListCtrl):
         self.patch: Optional[Patch] = None
         self.item_attributes: List[ItemAttr] = []
 
-        self.InsertColumn(StateColumn.INDEX, '', width=45)
-        self.InsertColumn(StateColumn.NAME, 'Name', width=57)
-        self.InsertColumn(StateColumn.SPRITE, 'Spr', width=39)
-        self.InsertColumn(StateColumn.FRAME, 'Frm', width=39)
+        self.InsertColumn(StateColumn.INDEX, '', width=47)
+        self.InsertColumn(StateColumn.NAME, 'Name', width=59)
+        self.InsertColumn(StateColumn.SPRITE, 'Spr', width=42)
+        self.InsertColumn(StateColumn.FRAME, 'Frm', width=42)
         self.InsertColumn(StateColumn.LIT, 'Lit', width=27)
-        self.InsertColumn(StateColumn.NEXT, 'Next', width=48)
-        self.InsertColumn(StateColumn.DURATION, 'Dur', width=40)
+        self.InsertColumn(StateColumn.NEXT, 'Next', width=50)
+        self.InsertColumn(StateColumn.DURATION, 'Dur', width=47)
         self.InsertColumn(StateColumn.ACTION, 'Action', width=160)
         self.InsertColumn(StateColumn.PARAMETERS, 'Parameters', width=107)
 
@@ -81,9 +83,6 @@ class StateList(wx.ListCtrl):
             self.SetColumnWidth(StateColumn.PARAMETERS, width)
 
     def OnGetItemText(self, item: int, column: int):
-        if item <= 0 or item >= len(self.state_query_result):
-            return ''
-
         state = self.state_query_result.get_state_for_item_index(item)
         state_index = self.state_query_result.get_state_index_for_item_index(item)
 
@@ -149,16 +148,18 @@ class StateList(wx.ListCtrl):
         self.SetItemCount(len(self.item_attributes))
 
     def set_patch(self, patch: Patch):
+        self.Freeze()
         self.patch = patch
-
         if self.state_query_result is not None:
             self.update_item_attributes()
-
         self.select_first_valid_state()
+        self.Thaw()
 
     def set_state_query_result(self, state_query_result: StateQueryResult):
+        self.Freeze()
         self.state_query_result = state_query_result
         self.update_item_attributes()
+        self.Thaw()
 
     def select_first_valid_state(self):
         if self.state_query_result is None or not len(self.state_query_result):
@@ -186,6 +187,13 @@ class StateList(wx.ListCtrl):
 
     def get_selected(self) -> List[int]:
         return self.selected
+
+    def iterate_selected(self) -> Tuple[int, int, Entry]:
+        for item_index in self.selected:
+            state_index = self.state_query_result.get_state_index_for_item_index(item_index)
+            state = self.state_query_result.get_state_for_item_index(item_index)
+
+            yield item_index, state_index, state
 
     def get_selected_count(self) -> int:
         return len(self.selected)

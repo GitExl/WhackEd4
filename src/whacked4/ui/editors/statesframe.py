@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from typing import Optional, List
+from typing import Dict, Optional, List
 
 from whacked4 import config, utils
 from whacked4.dehacked.patch import Patch
@@ -105,7 +105,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.sprites_dialog: Optional[SpritesDialog] = None
         self.preview_dialog: Optional[StatePreviewDialog] = None
 
-        self.filters: List[int] = []
+        self.filters: List[Dict] = []
 
         self.SpriteName.SetFont(config.FONT_MONOSPACED_BOLD)
         self.NextStateName.SetFont(config.FONT_MONOSPACED_BOLD)
@@ -178,10 +178,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         # Store all currently selected states.
         items = OrderedDict()
-        for list_index in self.StateList.get_selected():
-            state = self.StateList.state_query_result.get_state_for_item_index(list_index)
-            state_index = self.StateList.state_query_result.get_state_index_for_item_index(list_index)
-
+        for item_index, state_index, state in self.StateList.iterate_selected():
             items[state_index] = state.clone()
 
         return items
@@ -195,8 +192,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.clipboard = []
 
-        for list_index in self.StateList.get_selected():
-            state = self.StateList.state_query_result.get_state_for_item_index(list_index)
+        for item_index, state_index, state in self.StateList.iterate_selected():
             dup = state.clone()
             self.clipboard.append(dup)
 
@@ -249,10 +245,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.undo_add()
 
-        for list_index in self.StateList.get_selected():
-            state_index = self.StateList.state_query_result.get_state_index_for_item_index(list_index)
+        for item_index, state_index, state in self.StateList.iterate_selected():
             self.patch.states[state_index] = self.patch.engine.states[state_index].clone()
-            self.StateList.RefreshItem(list_index)
+            self.StateList.RefreshItem(item_index)
 
         self.update_properties()
         self.StateList.update_item_attributes()
@@ -385,12 +380,11 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.undo_add()
 
-        for list_index in self.StateList.get_selected():
-            state_index = self.StateList.state_query_result.get_state_index_for_item_index(list_index)
+        for item_index, state_index, state in self.StateList.iterate_selected():
             if state_index == 0:
                 continue
 
-            state = self.StateList.state_query_result.get_state_for_item_index(list_index)
+            state = self.StateList.state_query_result.get_state_for_item_index(item_index)
             state[key] = value
 
         self.is_modified(True)
@@ -485,6 +479,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.Arg9.ChangeValue('')
 
             self.set_param_visibility('')
+
+        if not self.StateList.get_selected_count():
+            self.tools_set_state(False)
 
         self.update_sprite_preview()
 
@@ -663,8 +660,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         checked = self.AlwaysLit.GetValue()
 
-        for list_index in self.StateList.get_selected():
-            state = self.StateList.state_query_result.get_state_for_item_index(list_index)
+        for item_index, state_index, state in self.StateList.iterate_selected():
 
             # Remove lit flag, then set it only if it needs to be.
             frame_index = state['spriteFrame'] & ~self.FRAMEFLAG_LIT
@@ -690,9 +686,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.undo_add()
 
-        for list_index in self.StateList.get_selected():
-            state = self.StateList.state_query_result.get_state_for_item_index(list_index)
-            state_index = self.StateList.state_query_result.get_state_index_for_item_index(list_index)
+        for item_index, state_index, state in self.StateList.iterate_selected():
 
             # Only allow modifying a state's action if the engine is extended, or if the state already has an action.
             if self.patch.engine.extended or self.patch.engine.states[state_index]['action'] != '0':
@@ -722,8 +716,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             window.ChangeValue(str(value))
 
         # Manually update all selected states so that the lit frame index flag can be retained.
-        for list_index in self.StateList.get_selected():
-            state = self.StateList.state_query_result.get_state_for_item_index(list_index)
+        for item_index, state_index, state in self.StateList.iterate_selected():
             state['spriteFrame'] = value | (state['spriteFrame'] & self.FRAMEFLAG_LIT)
 
         self.StateList.refresh_selected_rows()
@@ -772,9 +765,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         prev_state = None
 
-        for list_index in self.StateList.get_selected():
-            state = self.StateList.state_query_result.get_state_for_item_index(list_index)
-            state_index = self.StateList.state_query_result.get_state_index_for_item_index(list_index)
+        for item_index, state_index, state in self.StateList.iterate_selected():
 
             # Link previous state to this one.
             if prev_state is not None:
@@ -882,8 +873,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.undo_add()
 
-        for list_index in self.StateList.get_selected():
-            state_index = self.StateList.state_query_result.get_state_index_for_item_index(list_index)
+        for item_index, state_index, state in self.StateList.iterate_selected():
             self.patch.states[state_index] = self.patch.engine.default_state.clone()
 
         self.StateList.refresh_selected_rows()

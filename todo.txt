@@ -1,16 +1,14 @@
 - New state list needs more debugging.
-- DEHEXTRA configuration with missing bits and pieces from https://doomwiki.org/wiki/DEHEXTRA. Doom Retro would extend this. Also see https://www.doomworld.com/forum/post/2177644
-    - Finish boolean fullbright saving
+    - http://trac.wxwidgets.org/ticket/16894 :(
+- DEHEXTRA configuration with missing bits and pieces from https://doomwiki.org/wiki/DEHEXTRA
+    - Finish boolean fullbright saving as "True" or "False"
     - New sounds start at index 500, between those and new ones there must be reserved sounds that are not editable.
 - Add warnings when loading patches that reference things\states\etc. that do not exist, from https://www.doomworld.com/forum/post/2123386
 - Calculated % number next to a thing's pain chance.
-- Fix editor list column widths.
-
-Known bugs
+- Thing editor labels do not fit.
 - State animation preview should not display states with 0 duration? But still run it's actions. See DV4 fist attack.
 - State animation preview should use parameters 1 and 2 to offset sprite. (If weapon?)
 - When opening a new patch file after modifying the current one, no warning is given and the new patch is loaded immediately.
-- "I get this error when trying to open a .deh file directly instead of launching WhackEd4 on its own:" https://www.doomworld.com/forum/post/2112985
 
 Low priority bugs
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.
@@ -21,8 +19,8 @@ Later
   - Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Mark and display items (things, states, strings, ammo, weapons, sounds) as modified compared to engine config.
 - Muzzle flash support for weapon state previews. Possible if we know what thing or weapon uses a state.
-- Add other Doom Retro fields from https://github.com/bradharding/doomretro/wiki/INFORMATION-FOR-MAPPERS#DEHACKED-LUMPS (though not yet Retro bits)
-    - See what other fields Doom Retro supports but hasn't documented yet. Look at it's Dehacked parser.
+- Add Doom Retro specific fields that do not exist in DEHEXTRA. See https://github.com/bradharding/doomretro/wiki/INFORMATION-FOR-MAPPERS#DEHACKED-LUMPS
+- Allow multiple flag fields for things (and implement Doom Retro's "Retro Bits" field).
 - Final Doom (TNT and Plutonia) support, see https://www.doomworld.com/forum/topic/117871-dehacked-30a-special-edition-with-support-for-both-final-doom-versions/?tab=comments#comment-2212475
 - Manually clear list of recent files.
 - Investigate pyInstaller for executable generation. Single file, less dependencies?
@@ -34,16 +32,14 @@ Later
    for granted.", Da Werecat
 - Extend patch merging by https://www.doomworld.com/vb/post/1556253
 - Action sound playback data for the Hexen + Heretic + ZDoom action functions.
-- Allow multiple flag fields for things (and implement Doom Retro's "Retro Bits" field).
-- Allow sorting things list by name.
 - '...' button for actions to browse through list of actions plus a description.
   - Fix action descriptions first, not all correspond with what the actual Doom code does. Check with Doom code in p_pspr and p_enemy.
-- VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
-  - Check to see if any things use states that use the wrong type of action (weapon or monster).
-- Simplify engine config structure for faster parsing. For example states and things could be listed as array with a key entry.
+- Simplify engine config structure for faster parsing.
+    - States and things could be listed as array with a key entry?
 - DEHSUPP support. See GitHub issue #1.
 - ZDaemon: Add and parse relevant actors from http://www.zdaemon.org/?CMD=info&NAME=deh. Is this related to DEHSUPP?
 - Read\write DEHACKED lumps directly from a WAD file.
 - Improve tab traversal everywhere.
-- Mark and display items as modified compared to engine config.
 - Proper high DPI support. Needs wxFormBuilder to output device independent pixels. See https://github.com/wxFormBuilder/wxFormBuilder/issues/356
+- Redesign base interface so that it works in non-MDI window systems (GTK, MacOS).
+- Finish Linux support.

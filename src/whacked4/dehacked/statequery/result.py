@@ -9,6 +9,7 @@ class StateQueryResult(Iterable, Sized):
     def __init__(self, state_table: Table, state_indices: List[int]):
         self.state_table: Table = state_table
         self.state_index_by_item_index: List[int] = state_indices.copy()
+        self.state_index_set = set(state_indices)
 
         self.item_index_by_state_index: Dict[int, int] = {}
         for item_index, state_index in enumerate(state_indices):
@@ -26,7 +27,7 @@ class StateQueryResult(Iterable, Sized):
         return self.item_index_by_state_index[state_index]
 
     def contains_state_index(self, state_index: int) -> bool:
-        return state_index in self.state_index_by_item_index
+        return state_index in self.state_index_set
 
     def __iter__(self):
         self.iter_index = 0
@@ -37,7 +38,6 @@ class StateQueryResult(Iterable, Sized):
             raise StopIteration
 
         state_index = self.state_index_by_item_index[self.iter_index]
-
         value = (
             self.iter_index,
             state_index,
