@@ -3,9 +3,7 @@
 	"extended": true,
 	"name": "Boom",
 
-	"baseTables": [
-		"boom"
-	],
+	"parent": "basetable_boom",
 
 	"features": [],
 	"actions": {},

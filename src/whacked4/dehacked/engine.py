@@ -44,12 +44,12 @@ class Engine(object):
         self.sounds: Table = table.Table(entries.SoundEntry, self)
 
         # Cheats table.
-        self.cheats: dict = {}
-        self.cheat_data: dict = {}
+        self.cheats: Dict[str, str] = {}
+        self.cheat_data: Dict[str, Dict[str, str]] = {}
 
         # Cheats table.
-        self.misc: dict = {}
-        self.misc_data: dict = {}
+        self.misc: Dict[str, int] = {}
+        self.misc_data: Dict[str, Dict[str, str]] = {}
 
         # Strings dictionary.
         self.strings: Dict[str] = {}
@@ -103,18 +103,17 @@ class Engine(object):
                 self.extended = data['extended']
                 self.name = data['name']
 
+            # Load parents before any other data.
+            if 'parent' in data:
+                parent = data['parent']
+                parent_filename = 'cfg/{}.json'.format(parent)
+                self.merge_data(parent_filename, True)
+
             self.default_state.from_json(data['defaultState'])
             self.default_thing.from_json(data['defaultThing'])
             self.default_weapon.from_json(data['defaultWeapon'])
             self.default_ammo.from_json(data['defaultAmmo'])
             self.default_sound.from_json(data['defaultSound'])
-
-            # If any base tables are referenced, load them first.
-            if 'baseTables' in data:
-                base_tables = data['baseTables']
-                for base_table in base_tables:
-                    base_filename = 'cfg/basetables_{}.json'.format(base_table)
-                    self.merge_data(base_filename, True)
 
             self.features.update(set(data['features']))
 

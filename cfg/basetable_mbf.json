@@ -1,4 +1,6 @@
 {
+	"parent": "basetable_boom",
+
 	"features": [],
 
 	"actions": {

@@ -3,11 +3,7 @@
 	"name": "Extended DeHackEd",
 	"extended": true,
 
-	"baseTables": [
-		"boom",
-		"mbf",
-		"extended"
-	],
+	"parent": "basetable_extended",
 
 	"features": [],
 	"actions": {},

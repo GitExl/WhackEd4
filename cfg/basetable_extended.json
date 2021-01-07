@@ -1,4 +1,6 @@
 {
+	"parent": "basetable_mbf",
+
 	"features": [
 		"thing.gibHealth",
 		"thing.droppedItem",

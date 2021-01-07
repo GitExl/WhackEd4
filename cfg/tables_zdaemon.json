@@ -22,9 +22,7 @@
 	],
 	"name": "ZDaemon",
 
-	"baseTables": [
-		"boom"
-	],
+	"parent": "basetable_boom",
 
 	"actions": {
 		"Detonate": {

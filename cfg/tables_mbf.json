@@ -3,10 +3,7 @@
 	"extended": true,
 	"name": "Marine's Best Friend (MBF)",
 
-	"baseTables": [
-		"boom",
-		"mbf"
-	],
+	"parent": "basetable_mbf",
 
 	"features": [],
 	"actions": {},
