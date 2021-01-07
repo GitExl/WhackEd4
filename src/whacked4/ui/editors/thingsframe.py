@@ -478,7 +478,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         elif value_type == 'float' or value_type == 'fixed':
             value = utils.validate_numeric_float(window)
         elif value_type == 'bool':
-            value = bool(window.GetValue())
+            value = int(window.GetValue())
         else:
             value = window.GetValue()
 

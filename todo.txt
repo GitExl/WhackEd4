@@ -1,7 +1,4 @@
-- DEHEXTRA configuration with missing bits and pieces from https://doomwiki.org/wiki/DEHEXTRA
-    - Finish boolean fullbright saving as "True" or "False"
 - Add warnings when loading patches that reference things\states\etc. that do not exist, from https://www.doomworld.com/forum/post/2123386
-- Calculated % number next to a thing's pain chance.
 - State animation preview should not display states with 0 duration? But still run it's actions. See DV4 fist attack.
 - State animation preview should use parameters 1 and 2 to offset sprite. (If weapon?)
 - When opening a new patch file after modifying the current one, no warning is given and the new patch is loaded immediately.
@@ -11,6 +8,7 @@ Low priority bugs
 - Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
 
 Later
+- Calculated % number next to a thing's pain chance.
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
   - Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Mark and display items (things, states, strings, ammo, weapons, sounds) as modified compared to engine config.

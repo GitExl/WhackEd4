@@ -909,7 +909,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelProperties.SetSizer( SizerProperties )
 		self.PanelProperties.Layout()
 		SizerProperties.Fit( self.PanelProperties )
-		self.Tabs.AddPage( self.PanelProperties, u"Properties", False )
+		self.Tabs.AddPage( self.PanelProperties, u"Properties", True )
 		self.PanelStates = wx.Panel( self.Tabs, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStates = wx.BoxSizer( wx.VERTICAL )
 
@@ -1421,7 +1421,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelSounds.SetSizer( SizerSounds )
 		self.PanelSounds.Layout()
 		SizerSounds.Fit( self.PanelSounds )
-		self.Tabs.AddPage( self.PanelSounds, u"Sounds", True )
+		self.Tabs.AddPage( self.PanelSounds, u"Sounds", False )
 		self.PanelFlags = wx.Panel( self.Tabs, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerFlags = wx.BoxSizer( wx.VERTICAL )
 
