@@ -190,11 +190,11 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
 
             # Playback sounds for this action. Any specific sound overrides a spawned thing sound.
             if sound_index is not None:
-                utils.sound_play(self.patch.sound_names[sound_index - 1], self.pwads)
-                sound_label = self.patch.sound_names[sound_index - 1]
+                utils.sound_play(self.patch.sounds[sound_index - 1].name, self.pwads)
+                sound_label = self.patch.sounds[sound_index - 1].name
             elif spawn_sound_index is not None:
-                utils.sound_play(self.patch.sound_names[spawn_sound_index - 1], self.pwads)
-                spawn_sound_label = self.patch.sound_names[spawn_sound_index - 1]
+                utils.sound_play(self.patch.sounds[spawn_sound_index - 1].name, self.pwads)
+                spawn_sound_label = self.patch.sounds[spawn_sound_index - 1].name
 
             self.SpawnSound.SetLabel(spawn_sound_label.upper())
             self.StateSound.SetLabel(sound_label.upper())

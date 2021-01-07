@@ -116,16 +116,15 @@ class StateList(wx.ListCtrl):
         self.Thaw()
 
     def update_row(self, item_index, state_index, state):
-        action: Action = self.patch.engine.actions[state['action']]
-        if action is None:
-            action_name = ''
-        else:
-            action_name = action.name
+        action = self.patch.engine.actions.get(state['action'], None)
 
         if action is not None:
+            action_name = action.name
             parameters = action.get_state_parameter_properties(state)
         else:
-            parameters = (state['unused1'], state['unused2'])
+            action_name = ''
+            parameters = (str(state['unused1']), str(state['unused2']))
+
         parameters_text = ', '.join(parameters)
 
         self.SetItemText(item_index, str(state_index))

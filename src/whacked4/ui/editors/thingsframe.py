@@ -262,7 +262,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             if 'thing.game' in self.patch.engine.features:
                 self.ThingList.InsertColumn(3, 'Game', width=50)
 
-        for index in range(len(self.patch.things.names)):
+        for index, thing in enumerate(self.patch.things):
             self.ThingList.InsertItem(index, '')
             self.thinglist_update_row(index)
 
@@ -275,10 +275,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         thing = self.patch.things[row_index]
-        thing_name = self.patch.things.names[row_index]
 
         self.ThingList.SetItemText(row_index, str(row_index + 1))
-        self.ThingList.SetItem(row_index, 1, thing_name)
+        self.ThingList.SetItem(row_index, 1, thing.name)
         self.ThingList.SetItem(row_index, 2, str(thing['id']))
         if 'thing.game' in self.patch.engine.features:
             self.ThingList.SetItem(row_index, 3, thing['game'])
@@ -338,7 +337,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.clipboard = {
             'thing': self.patch.things[self.selected_index].clone(),
-            'name': copy.copy(self.patch.things.names[self.selected_index])
         }
 
     def edit_paste(self):
@@ -356,7 +354,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         # Copy references to newly duplicated thing.
         self.patch.things[self.selected_index] = dup
-        self.patch.things.names[self.selected_index] = dup_name
 
         self.update_properties()
         self.is_modified(True)
@@ -662,14 +659,14 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         Renames the currently selected thing.
         """
 
-        thing_name = self.patch.things.names[self.selected_index]
+        thing_name = self.patch.things[self.selected_index].name
         new_name = wx.GetTextFromUser('Enter a new name for ' + thing_name, caption='Change name',
                                       default_value=thing_name, parent=self)
 
         if new_name != '':
             self.undo_add()
 
-            self.patch.things.names[self.selected_index] = new_name
+            self.patch.things[self.selected_index].name = new_name
 
             self.update_properties()
             self.is_modified(True)
@@ -685,7 +682,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.undo_add()
 
         self.patch.things[self.selected_index] = self.patch.engine.things[self.selected_index].clone()
-        self.patch.things.names[self.selected_index] = copy.copy(self.patch.engine.things.names[self.selected_index])
 
         self.update_properties()
         self.is_modified(True)
@@ -720,7 +716,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         if sound_index == 0:
             return
 
-        utils.sound_play(self.patch.sound_names[sound_index - 1], self.pwads)
+        utils.sound_play(self.patch.sounds[sound_index - 1].name, self.pwads)
 
     def undo_restore_item(self, item):
         """
@@ -730,7 +726,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         index = item['index']
 
         self.patch.things[index] = item['item']
-        self.patch.things.names[index] = item['name']
 
         self.thinglist_update_row(index)
         self.update_properties()
@@ -744,7 +739,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         return {
             'item': self.patch.things[self.selected_index].clone(),
-            'name': copy.copy(self.patch.things.names[self.selected_index]),
             'index': self.selected_index
         }
 
@@ -775,7 +769,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.undo_add()
 
         self.patch.things[self.selected_index] = self.patch.engine.default_thing.clone()
-        self.patch.things.names[self.selected_index] = 'Thing {}'.format(self.selected_index + 1)
 
         self.update_properties()
         self.is_modified(True)

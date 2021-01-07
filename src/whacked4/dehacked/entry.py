@@ -40,9 +40,11 @@ class Entry(object):
     FIELDS = None
 
     def __init__(self, table):
+        self.name = None
         self.table = table
         self.values = {}
         self.extra_values = {}
+        self.unused = False
 
     def __getitem__(self, key):
         """
@@ -138,6 +140,9 @@ class Entry(object):
         Reads this entry's values from a JSON object.
         """
 
+        if '_name' in json:
+            self.name = json['_name']
+
         for key in self.FIELDS.keys():
             if key not in json:
                 continue
@@ -152,13 +157,13 @@ class Entry(object):
 
         return self.values
 
-    def get_patch_header(self, index, table, offset=0):
+    def get_patch_header(self, index, offset=0):
         """
         Returns a string representing this entry's header in a Dehacked file.
         """
 
-        if table.names is not None:
-            return '\n{} {} ({})\n'.format(self.NAME, index + offset, table.names[index])
+        if self.name is not None:
+            return '\n{} {} ({})\n'.format(self.NAME, index + offset, self.name)
         else:
             return '\n{} {}\n'.format(self.NAME, index + offset)
 
@@ -204,6 +209,9 @@ class Entry(object):
         return '\n'.join(output_list) + '\n'
 
     def apply_defaults(self, default_entry):
+        if self.name is None:
+            self.name = default_entry.name
+
         for key, value in default_entry.values.items():
             if key not in self.values:
                 self.values[key] = self.validate_field_value(key, value)
@@ -216,6 +224,7 @@ class Entry(object):
         dup = copy.copy(self)
         dup.values = copy.copy(self.values)
         dup.extra_values = copy.copy(self.extra_values)
+        dup.name = self.name
 
         return dup
 

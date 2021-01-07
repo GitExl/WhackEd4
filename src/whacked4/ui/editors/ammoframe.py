@@ -72,9 +72,8 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         """
 
         ammo = self.patch.ammo[row_index]
-        ammo_name = self.patch.ammo.names[row_index]
 
-        self.AmmoList.SetItem(row_index, 0, ammo_name)
+        self.AmmoList.SetItem(row_index, 0, ammo.name)
         self.AmmoList.SetItem(row_index, 1, str(ammo['maximum']))
         self.AmmoList.SetItem(row_index, 2, str(ammo['clip']))
 
@@ -111,14 +110,14 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         Renames the currently selected ammo entry.
         """
 
-        ammo_name = self.patch.ammo.names[self.selected_index]
+        ammo_name = self.patch.ammo[self.selected_index].name
         new_name = wx.GetTextFromUser('Enter a new name for ' + ammo_name, caption='Change name',
                                       default_value=ammo_name, parent=self)
 
         if new_name != '':
             self.undo_add()
 
-            self.patch.ammo.names[self.selected_index] = new_name
+            self.patch.ammo[self.selected_index].name = new_name
             self.update_properties()
             self.is_modified(True)
 
@@ -130,7 +129,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.undo_add()
 
         self.patch.ammo[self.selected_index] = self.patch.engine.ammo[self.selected_index].clone()
-        self.patch.ammo.names[self.selected_index] = copy.copy(self.patch.engine.ammo.names[self.selected_index])
 
         self.update_properties()
         self.ammolist_update_row(self.selected_index)
@@ -178,7 +176,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
 
         index = item['index']
         self.patch.ammo[index] = item['item']
-        self.patch.ammo.names[index] = item['name']
 
         self.ammolist_update_row(index)
         self.update_properties()
@@ -192,6 +189,5 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
 
         return {
             'item': self.patch.ammo[self.selected_index].clone(),
-            'name': copy.copy(self.patch.ammo.names[self.selected_index]),
             'index': self.selected_index
         }

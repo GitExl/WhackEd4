@@ -1471,15 +1471,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelFlags = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerFlags = wx.BoxSizer( wx.VERTICAL )
 
-		self.FlagsLabel = wx.StaticText( self.PanelFlags, wx.ID_ANY, u"Flags", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.FlagsLabel.Wrap( -1 )
-
-		self.FlagsLabel.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
-
-		SizerFlags.Add( self.FlagsLabel, 0, wx.ALL, 3 )
-
 		ThingFlagsChoices = []
-		self.ThingFlags = wx.CheckListBox( self.PanelFlags, THING_FLAGS, wx.DefaultPosition, wx.Size( -1,-1 ), ThingFlagsChoices, 0|wx.BORDER_SIMPLE )
+		self.ThingFlags = wx.CheckListBox( self.PanelFlags, THING_FLAGS, wx.DefaultPosition, wx.Size( -1,-1 ), ThingFlagsChoices, 0|wx.BORDER_NONE )
+		self.ThingFlags.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		self.ThingFlags.SetMinSize( wx.Size( 210,-1 ) )
 
 		SizerFlags.Add( self.ThingFlags, 2, wx.EXPAND, 3 )
@@ -1727,7 +1721,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundActiveName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundActiveSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
 		self.ButtonRestore.Bind( wx.EVT_BUTTON, self.thing_restore )
-		self.FlagsLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingFlags.Bind( wx.EVT_CHECKLISTBOX, self.set_flags )
 		self.ThingFlags.Bind( wx.EVT_MOTION, self.set_flag_tooltip )
 		self.ThingList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.thing_rename )
@@ -1989,7 +1982,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 
 	def thing_restore( self, event ):
 		pass
-
 
 	def set_flags( self, event ):
 		pass

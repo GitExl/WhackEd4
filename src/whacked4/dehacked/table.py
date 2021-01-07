@@ -29,27 +29,48 @@ class Table(object):
         Reads this table's entries from a JSON object.
         """
 
+        unused_entry = self.entry_class(self)
+        unused_entry.unused = True
+
+        index = len(self.entries)
         for json_entry in json:
-            self.entries.append(self.entry_class(self).from_json(json_entry))
+
+            # Start from a specific index.
+            if '_index' in json_entry:
+                next_index = json_entry['_index']
+            else:
+                next_index = index
+
+            # Add unused entries if needed.
+            if next_index > len(self.entries):
+                for _ in range(next_index - len(self.entries) - 1):
+                    self.entries.append(unused_entry.clone())
+
+            # Overwrite existing entry or add a new one.
+            if next_index < len(self.entries):
+                self.entries[next_index].from_json(json_entry)
+            else:
+                self.entries.append(self.entry_class(self).from_json(json_entry))
+
+            index = next_index + 1
 
     def write_patch_data(self, source_table, f):
         """
         Writes this table's entry to a Dehacked patch file.
         """
 
-        for index in range(len(self.entries)):
-            entry = self.entries[index]
+        for index, entry in enumerate(self.entries):
             source_entry = source_table.entries[index]
 
             # Write the current entry index if it returns any data to be written.
             patch_str = entry.get_patch_string(source_entry)
             if patch_str is not None:
-                f.write(entry.get_patch_header(index, self, offset=self.offset))
+                f.write(entry.get_patch_header(index, offset=self.offset))
                 f.write(patch_str)
 
             # Write just a header if only the entry's name has changed.
-            elif self.names is not None and self.names[index] != source_table.names[index]:
-                f.write(entry.get_patch_header(index, self, offset=self.offset))
+            elif entry.name != source_table.entries[index].name:
+                f.write(entry.get_patch_header(index, offset=self.offset))
 
     def apply_defaults(self, defaults):
         for entry in self.entries:

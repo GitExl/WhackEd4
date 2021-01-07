@@ -51,8 +51,8 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
         # Update sound names only.
         self.SoundList.SetItem(0, 1, '-')
-        for index, name in enumerate(self.patch.sound_names):
-            self.SoundList.SetItem(index + 1, 1, name.upper())
+        for index, sound in enumerate(self.patch.sounds):
+            self.SoundList.SetItem(index + 1, 1, sound.name.upper())
 
     def build_colours(self):
         """
@@ -136,14 +136,13 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
         else:
             sound = self.patch.sounds[sound_index]
-            sound_name = self.patch.sound_names[sound_index]
 
             if sound['isSingular'] == 1:
                 singular = '◾'
             else:
                 singular = ''
 
-            self.SoundList.SetItem(row_index, 1, sound_name.upper())
+            self.SoundList.SetItem(row_index, 1, sound.name.upper())
             self.SoundList.SetItem(row_index, 2, str(sound['priority']))
             self.SoundList.SetItem(row_index, 3, singular)
 
@@ -180,7 +179,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         if self.selected_row == 0:
             return
 
-        utils.sound_play(self.patch.sound_names[self.selected_index], self.pwads)
+        utils.sound_play(self.patch.sounds[self.selected_index].name, self.pwads)
 
     def update_properties(self):
         """

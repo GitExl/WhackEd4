@@ -3,7 +3,7 @@ This module contains classes to create, read and write Dehacked patches.
 """
 
 import copy
-from typing import Optional, List
+from typing import Dict, Optional, List
 
 from whacked4 import config
 from whacked4.dehacked import entries
@@ -110,13 +110,12 @@ class Patch(object):
         self.weapons: Optional[Table] = None
         self.ammo: Optional[Table] = None
 
-        self.strings: Optional[dict] = None
-        self.cheats: Optional[dict] = None
+        self.strings: Optional[Dict[str, str]] = None
+        self.cheats: Optional[Dict[str, str]] = None
         self.misc: Optional[dict] = None
-        self.pars: Optional[dict] = None
+        self.pars: Optional[List] = None
 
         self.sprite_names: Optional[List[str]] = None
-        self.sound_names: Optional[List[str]] = None
 
     def initialize_from_engine(self, parent_engine: Engine):
         """
@@ -136,7 +135,6 @@ class Patch(object):
         self.cheats = copy.deepcopy(parent_engine.cheats)
         self.misc = copy.deepcopy(parent_engine.misc)
         self.sprite_names = copy.deepcopy(parent_engine.sprite_names)
-        self.sound_names = copy.deepcopy(parent_engine.sound_names)
 
         if parent_engine.extended:
             self.pars = []
@@ -154,10 +152,17 @@ class Patch(object):
         if self.extended:
             return
 
-        for name_index, name in enumerate(engine_names):
-            if name in self.engine.strings:
-                string_index = self.engine.strings.index(name)
-                patch_names[name_index] = self.strings[string_index]
+        if isinstance(engine_names, Table):
+            for index, entry in enumerate(engine_names):
+                if entry.name in self.engine.strings:
+                    string_index = self.engine.strings.index(entry.name)
+                    patch_names[index].name = self.strings[string_index]
+
+        else:
+            for name_index, name in enumerate(engine_names):
+                if name in self.engine.strings:
+                    string_index = self.engine.strings.index(name)
+                    patch_names[name_index] = self.strings[string_index]
 
     def get_ammo_name(self, ammo_index):
         """
@@ -171,7 +176,7 @@ class Patch(object):
         elif ammo_index == len(self.ammo) + 1:
             return 'Infinite'
         elif ammo_index < len(self.ammo):
-            return self.ammo.names[ammo_index]
+            return self.ammo[ammo_index].name
 
         return None
 
@@ -437,7 +442,7 @@ class Patch(object):
                     mode = ParseMode.THING
                     entry_index = int(line_words[1]) - 1
                     entry_name = ' '.join(line_words[2:])[1:-1]
-                    self.things.names[entry_index] = entry_name
+                    self.things[entry_index].name = entry_name
                     continue
                 elif line.startswith('Frame ') and len(line_words) >= 2:
                     mode = ParseMode.STATE
@@ -451,13 +456,13 @@ class Patch(object):
                     mode = ParseMode.WEAPON
                     entry_index = int(line_words[1])
                     entry_name = ' '.join(line_words[2:])[1:-1]
-                    self.weapons.names[entry_index] = entry_name
+                    self.weapons[entry_index].name = entry_name
                     continue
                 elif line.startswith('Ammo ') and len(line_words) >= 3 and line_words[2][0] == '(':
                     mode = ParseMode.AMMO
                     entry_index = int(line_words[1])
                     entry_name = ' '.join(line_words[2:])[1:-1]
-                    self.ammo.names[entry_index] = entry_name
+                    self.ammo[entry_index].name = entry_name
                     continue
                 elif line.startswith('Sprite ') and len(line_words) == 2:
                     mode = ParseMode.SPRITE
@@ -510,15 +515,15 @@ class Patch(object):
                             self.strings[key] = new
 
                         # Also replace sprite names, so that patches can alter them without offset modifications.
-                        for i in range(len(self.sprite_names)):
-                            if self.sprite_names[i] == original:
+                        for i, name in enumerate(self.sprite_names):
+                            if name == original:
                                 self.sprite_names[i] = new
                                 break
 
                         # Also replace sound names, so that patches can alter them without offset modifications.
-                        for i in range(len(self.sound_names)):
-                            if self.sound_names[i] == original:
-                                self.sound_names[i] = new
+                        for i, sound in enumerate(self.sounds):
+                            if sound.name == original:
+                                sound.name = new
                                 break
 
                     # In extended mode, locate the key of the string and replace that.
@@ -679,10 +684,10 @@ class Patch(object):
         if sound_index == -1:
             return '-'
 
-        if sound_index > len(self.engine.sound_names):
+        if sound_index > len(self.engine.sounds):
             return '????'
         else:
-            return self.engine.sound_names[sound_index].upper()
+            return self.engine.sounds[sound_index].name.upper()
 
 
 def string_escape(string):

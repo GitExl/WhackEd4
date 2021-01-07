@@ -16264,6 +16264,7 @@
 		"spriteFrame": 0
 	},
 	"defaultThing": {
+		"_name": "Unnamed",
 		"flags": 0,
 		"health": 1000,
 		"height": 1048576,
@@ -16289,6 +16290,7 @@
 		"radius": 1048576
 	},
 	"defaultWeapon": {
+		"_name": "Unnamed",
 		"stateDeselect": 0,
 		"stateBob": 0,
 		"stateMuzzle": 0,
@@ -16297,10 +16299,12 @@
 		"stateFire": 0
 	},
 	"defaultAmmo": {
+		"_name": "Unnamed",
 		"maximum": 0,
 		"clip": 0
 	},
 	"defaultSound": {
+		"_name": "Unnamed",
 		"linkPointer": 0,
 		"internalDataPointer": 0,
 		"linkPitch": -1,

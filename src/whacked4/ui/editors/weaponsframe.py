@@ -135,9 +135,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         """
 
         weapon = self.patch.weapons[row_index]
-        weapon_name = self.patch.weapons.names[row_index]
 
-        self.WeaponList.SetItemText(row_index, weapon_name)
+        self.WeaponList.SetItemText(row_index, weapon.name)
         self.WeaponList.SetItem(row_index, 1, self.patch.get_ammo_name(weapon['ammoType']))
 
     def weaponlist_resize(self, event):
@@ -157,7 +156,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         """
 
         self.AmmoType.Clear()
-        self.AmmoType.AppendItems(self.patch.ammo.names)
+        for ammo in self.patch.ammo:
+            self.AmmoType.Append(ammo.name)
         self.AmmoType.Append('Unknown')
         self.AmmoType.Append('Infinite')
 
@@ -187,7 +187,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         for name in self.PROPS_STATES.values():
             self.set_display_state(name)
 
-        self.WeaponList.SetItemText(self.selected_index, self.patch.weapons.names[self.selected_index])
+        self.WeaponList.SetItemText(self.selected_index, self.patch.weapons[self.selected_index].name)
 
     def set_state_index(self, event):
         """
@@ -289,14 +289,14 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         Renames the currently selected thing.
         """
 
-        weapon_name = self.patch.weapons.names[self.selected_index]
+        weapon_name = self.patch.weapons[self.selected_index].name
         new_name = wx.GetTextFromUser('Enter a new name for ' + weapon_name, caption='Change name',
                                       default_value=weapon_name, parent=self)
 
         if new_name != '':
             self.undo_add()
 
-            self.patch.weapons.names[self.selected_index] = new_name
+            self.patch.weapons[self.selected_index].name = new_name
             self.update_properties()
             self.is_modified(True)
 
@@ -308,7 +308,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.undo_add()
 
         self.patch.weapons[self.selected_index] = self.patch.engine.weapons[self.selected_index].clone()
-        self.patch.weapons.names[self.selected_index] = copy.copy(self.patch.engine.weapons.names[self.selected_index])
 
         self.update_properties()
         self.is_modified(True)
@@ -320,7 +319,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         index = item['index']
         self.patch.weapons[index] = item['item']
-        self.patch.weapons.names[index] = item['name']
 
         self.weaponlist_update_row(self.selected_index)
         self.update_properties()
@@ -334,7 +332,6 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         return {
             'item': self.patch.weapons[self.selected_index].clone(),
-            'name': copy.copy(self.patch.weapons.names[self.selected_index]),
             'index': self.selected_index
         }
 

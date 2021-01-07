@@ -35,23 +35,13 @@ class Engine(object):
         # Things table.
         self.things: Table = table.Table(entries.ThingEntry, self)
         self.things.offset = 1
-        self.things.names = []
         self.things.flags = {}
 
-        # States table.
+        # Other tables.
         self.states: Table = table.Table(entries.StateEntry, self)
-
-        # Weapons table.
         self.weapons: Table = table.Table(entries.WeaponEntry, self)
-        self.weapons.names = []
-
-        # Ammo table.
         self.ammo: Table = table.Table(entries.AmmoEntry, self)
-        self.ammo.names = []
-
-        # Sound table.
         self.sounds: Table = table.Table(entries.SoundEntry, self)
-        self.sound_names = []
 
         # Cheats table.
         self.cheats: dict = {}
@@ -128,18 +118,10 @@ class Engine(object):
 
             self.features.update(set(data['features']))
 
-            self.things.names += data['thingNames']
             self.things.flags.update(data['thingFlags'])
             self.things.read_from_json(data['things'])
-            if len(self.things.names) != len(self.things):
-                raise DehackedEngineError('Thing and thing names sizes do not match.')
 
-            self.weapons.names += data['weaponNames']
             self.weapons.read_from_json(data['weapons'])
-            if len(self.weapons.names) != len(self.weapons):
-                raise DehackedEngineError('Weapon and weapon name sizes do not match.')
-
-            self.ammo.names += data['ammoNames']
             self.ammo.read_from_json(data['ammo'])
 
             for key, value in data['actions'].items():
@@ -156,14 +138,9 @@ class Engine(object):
             self.cheats.update(data['cheats'])
             self.cheat_data.update(data['cheatData'])
 
-            self.sprite_names += data['spriteNames']
             self.used_states.update(set(data['usedStates']))
-
             self.render_styles.update(data['renderStyles'])
-
-            self.sound_names += data['soundNames']
-            if len(self.sound_names) != len(self.sounds):
-                raise DehackedEngineError('Sound and sound names sizes do not match.')
+            self.sprite_names += data['spriteNames']
 
             if not self.extended:
                 self.action_index_to_state += data['actionIndexToState']

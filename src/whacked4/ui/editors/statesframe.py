@@ -298,17 +298,17 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         })
 
         # Add thing state filters.
-        for index in range(len(self.patch.things.names)):
+        for index, thing in enumerate(self.patch.things):
             self.filters.append({
-                'name': self.patch.things.names[index],
+                'name': thing.name,
                 'type': FILTER_TYPE_THING,
                 'index': index
             })
 
         # Add weapon state filters.
-        for index in range(len(self.patch.weapons.names)):
+        for index, weapon in enumerate(self.patch.weapons):
             self.filters.append({
-                'name': self.patch.weapons.names[index],
+                'name': weapon.name,
                 'type': FILTER_TYPE_WEAPON,
                 'index': index
             })

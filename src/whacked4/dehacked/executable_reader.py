@@ -71,11 +71,10 @@ class ExecutableReader:
         @param exe_config: the executable configuration to use.
         """
 
-        self.engine.sound_names = []
         for sound in self.engine.sounds:
             f.seek(sound['namePointer'] + exe_config['dataSegment'])
             text = _read_string(f)
-            self.engine.sound_names.append(text)
+            sound.name = text
 
     def read_executable_strings(self, f, exe_config):
         """

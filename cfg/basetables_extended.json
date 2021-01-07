@@ -9,6 +9,7 @@
 
 	"sounds": [
 		{
+      "_index": 500,
 			"internalDataPointer": 0,
 			"internalLumpindex": 0,
 			"internalRefCount": 0,
@@ -28854,11 +28855,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -28883,11 +28880,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -28912,11 +28905,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -28941,11 +28930,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -28970,11 +28955,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -28999,11 +28980,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29028,11 +29005,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29057,11 +29030,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29086,11 +29055,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29115,11 +29080,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29144,11 +29105,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29173,11 +29130,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29202,11 +29155,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29231,11 +29180,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29260,11 +29205,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29289,11 +29230,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29318,11 +29255,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29347,11 +29280,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29376,11 +29305,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29405,11 +29330,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29434,11 +29355,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29463,11 +29380,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29492,11 +29405,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29521,11 +29430,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29550,11 +29455,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29579,11 +29480,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29608,11 +29505,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29637,11 +29530,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29666,11 +29555,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29695,11 +29580,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29724,11 +29605,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29753,11 +29630,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29782,11 +29655,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29811,11 +29680,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29840,11 +29705,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29869,11 +29730,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29898,11 +29755,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29927,11 +29780,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29956,11 +29805,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -29985,11 +29830,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30014,11 +29855,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30043,11 +29880,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30072,11 +29905,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30101,11 +29930,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30130,11 +29955,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30159,11 +29980,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30188,11 +30005,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30217,11 +30030,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30246,11 +30055,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30275,11 +30080,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30304,11 +30105,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30333,11 +30130,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30362,11 +30155,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30391,11 +30180,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30420,11 +30205,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30449,11 +30230,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30478,11 +30255,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30507,11 +30280,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30536,11 +30305,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30565,11 +30330,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30594,11 +30355,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30623,11 +30380,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30652,11 +30405,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30681,11 +30430,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30710,11 +30455,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30739,11 +30480,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30768,11 +30505,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30797,11 +30530,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30826,11 +30555,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30855,11 +30580,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30884,11 +30605,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30913,11 +30630,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30942,11 +30655,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -30971,11 +30680,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31000,11 +30705,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31029,11 +30730,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31058,11 +30755,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31087,11 +30780,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31116,11 +30805,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31145,11 +30830,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31174,11 +30855,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31203,11 +30880,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31232,11 +30905,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31261,11 +30930,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31290,11 +30955,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31319,11 +30980,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31348,11 +31005,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31377,11 +31030,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31406,11 +31055,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31435,11 +31080,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31464,11 +31105,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31493,11 +31130,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31522,11 +31155,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31551,11 +31180,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31580,11 +31205,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31609,11 +31230,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31638,11 +31255,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31667,11 +31280,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31696,11 +31305,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31725,11 +31330,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31754,11 +31355,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31783,11 +31380,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31812,11 +31405,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31841,11 +31430,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31870,11 +31455,7 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		},
 		{
 			"flags": 0,
@@ -31899,16 +31480,16 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 0,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false
+			"radius": 0
 		}
 	],
 
 	"defaultThing": {
-		"gibHealth": 0
+		"gibHealth": 0,
+    "droppedItem": -1,
+    "pickupRadius": 0,
+    "projectilePassHeight": 0,
+    "fullbright": false
 	},
 
 	"actions": {},

@@ -156,7 +156,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
             return
 
         if len(new_string) <= 6:
-            self.patch.update_string_externals(self.patch.engine.sound_names, self.patch.sound_names)
+            self.patch.update_string_externals(self.patch.engine.sounds, self.patch.sounds)
         if len(new_string) == 4:
             self.patch.update_string_externals(self.patch.engine.sprite_names, self.patch.sprite_names)
 
