@@ -612,7 +612,7 @@
                 </object>
             </object>
         </object>
-        <object class="Frame" expanded="1">
+        <object class="Frame" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg">wxSYS_COLOUR_BTNFACE</property>
@@ -639,25 +639,25 @@
             <property name="window_name"></property>
             <property name="window_style">wxTAB_TRAVERSAL</property>
             <property name="xrc_skip_sizer">1</property>
-            <object class="wxBoxSizer" expanded="1">
+            <object class="wxBoxSizer" expanded="0">
                 <property name="minimum_size"></property>
                 <property name="name">SizerMain</property>
                 <property name="orient">wxHORIZONTAL</property>
                 <property name="permission">none</property>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">0</property>
                     <property name="flag">wxEXPAND</property>
                     <property name="proportion">0</property>
-                    <object class="wxBoxSizer" expanded="1">
+                    <object class="wxBoxSizer" expanded="0">
                         <property name="minimum_size"></property>
                         <property name="name">TabsSizer</property>
                         <property name="orient">wxVERTICAL</property>
                         <property name="permission">none</property>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">6</property>
                             <property name="flag">wxALL|wxEXPAND</property>
                             <property name="proportion">1</property>
-                            <object class="wxNotebook" expanded="1">
+                            <object class="wxNotebook" expanded="0">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
                                 <property name="RightDockable">1</property>
@@ -8858,11 +8858,11 @@
                                         </object>
                                     </object>
                                 </object>
-                                <object class="notebookpage" expanded="1">
+                                <object class="notebookpage" expanded="0">
                                     <property name="bitmap"></property>
                                     <property name="label">Sounds</property>
                                     <property name="select">0</property>
-                                    <object class="wxPanel" expanded="1">
+                                    <object class="wxPanel" expanded="0">
                                         <property name="BottomDockable">1</property>
                                         <property name="LeftDockable">1</property>
                                         <property name="RightDockable">1</property>
@@ -8913,7 +8913,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style">wxTAB_TRAVERSAL</property>
-                                        <object class="wxBoxSizer" expanded="1">
+                                        <object class="wxBoxSizer" expanded="0">
                                             <property name="minimum_size"></property>
                                             <property name="name">SizerSounds</property>
                                             <property name="orient">wxVERTICAL</property>
@@ -10701,11 +10701,11 @@
                                 </object>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">6</property>
                             <property name="flag">wxALL|wxEXPAND</property>
                             <property name="proportion">0</property>
-                            <object class="wxBoxSizer" expanded="1">
+                            <object class="wxBoxSizer" expanded="0">
                                 <property name="minimum_size"></property>
                                 <property name="name">ButtonSizer</property>
                                 <property name="orient">wxVERTICAL</property>
@@ -22848,7 +22848,7 @@
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
-                            <property name="border">6</property>
+                            <property name="border">3</property>
                             <property name="flag">wxALL</property>
                             <property name="proportion">0</property>
                             <object class="wxStaticText" expanded="0">
@@ -22919,7 +22919,7 @@
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
-                            <property name="border">5</property>
+                            <property name="border">3</property>
                             <property name="flag">wxALL</property>
                             <property name="proportion">0</property>
                             <object class="wxStaticText" expanded="0">
@@ -22999,7 +22999,7 @@
                                 <property name="orient">wxHORIZONTAL</property>
                                 <property name="permission">none</property>
                                 <object class="sizeritem" expanded="0">
-                                    <property name="border">6</property>
+                                    <property name="border">3</property>
                                     <property name="flag">wxBOTTOM|wxLEFT|wxTOP</property>
                                     <property name="proportion">0</property>
                                     <object class="wxStaticText" expanded="0">
@@ -23133,7 +23133,7 @@
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
-                            <property name="border">6</property>
+                            <property name="border">3</property>
                             <property name="flag">wxLEFT|wxRIGHT|wxTOP</property>
                             <property name="proportion">0</property>
                             <object class="wxStaticText" expanded="0">
@@ -23194,7 +23194,7 @@
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
-                            <property name="border">6</property>
+                            <property name="border">3</property>
                             <property name="flag">wxALL</property>
                             <property name="proportion">1</property>
                             <object class="wxStaticText" expanded="0">
@@ -23225,7 +23225,7 @@
                                 <property name="gripper">0</property>
                                 <property name="hidden">0</property>
                                 <property name="id">wxID_ANY</property>
-                                <property name="label">Aeyesx, Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Da Werecat, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, MaiklRussia, Marc. A. Pullen, Palladium, plums, Rellik, REZ, scifista42, Skullers, SlayeR, The Doommer, tempun, un4seen, VGA, WildWeasel, XDelusion</property>
+                                <property name="label">Aeyesx, Aliotroph?, Andy Fox, Andy Shawaluk, antares031, Big_Al, CodeImp, CSabo, Da Werecat, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, hawkwind3, iori, Kurisutaru, Leonard Pitre, Looney, MaiklRussia, Marc. A. Pullen, Palladium, plums, Rellik, REZ, scifista42, Skullers, SlayeR, The Doommer, TheStupidestBeing, tempun, un4seen, VGA, WildWeasel, XDelusion, Xyzzy01, Zodomaniac</property>
                                 <property name="markup">0</property>
                                 <property name="max_size"></property>
                                 <property name="maximize_button">0</property>

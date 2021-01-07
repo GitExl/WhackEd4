@@ -4181,7 +4181,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.Version = wx.StaticText( self, wx.ID_ANY, u"Version", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Version.Wrap( -1 )
 
-		bSizer56.Add( self.Version, 0, wx.ALL, 6 )
+		bSizer56.Add( self.Version, 0, wx.ALL, 3 )
 
 
 		bSizer56.Add( ( 0, 9), 0, wx.EXPAND, 5 )
@@ -4189,7 +4189,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText115 = wx.StaticText( self, wx.ID_ANY, u"http://www.teamhellspawn.com/exl/whacked4", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText115.Wrap( -1 )
 
-		bSizer56.Add( self.m_staticText115, 0, wx.ALL, 5 )
+		bSizer56.Add( self.m_staticText115, 0, wx.ALL, 3 )
 
 
 		bSizer56.Add( ( 0, 9), 0, wx.EXPAND, 5 )
@@ -4199,7 +4199,7 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText1391 = wx.StaticText( self, wx.ID_ANY, u"Application icon by Paul Davey, from the ", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText1391.Wrap( -1 )
 
-		bSizer84.Add( self.m_staticText1391, 0, wx.BOTTOM|wx.LEFT|wx.TOP, 6 )
+		bSizer84.Add( self.m_staticText1391, 0, wx.BOTTOM|wx.LEFT|wx.TOP, 3 )
 
 		self.m_staticText116 = wx.StaticText( self, wx.ID_ANY, u"Buuf Icon set http://www.iconarchive.com/show/buuf-icons-by-mattahan.html", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText116.Wrap( -1 )
@@ -4215,12 +4215,12 @@ class AboutDialogBase ( wx.Dialog ):
 		self.m_staticText139 = wx.StaticText( self, wx.ID_ANY, u"Thanks to...", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText139.Wrap( -1 )
 
-		bSizer56.Add( self.m_staticText139, 0, wx.LEFT|wx.RIGHT|wx.TOP, 6 )
+		bSizer56.Add( self.m_staticText139, 0, wx.LEFT|wx.RIGHT|wx.TOP, 3 )
 
-		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aeyesx, Aliotroph?, Andy Fox, Andy Shawaluk, Big_Al, CodeImp, CSabo, Da Werecat, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, iori, Kurisutaru, Leonard Pitre, Looney, MaiklRussia, Marc. A. Pullen, Palladium, plums, Rellik, REZ, scifista42, Skullers, SlayeR, The Doommer, tempun, un4seen, VGA, WildWeasel, XDelusion", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
+		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aeyesx, Aliotroph?, Andy Fox, Andy Shawaluk, antares031, Big_Al, CodeImp, CSabo, Da Werecat, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, hawkwind3, iori, Kurisutaru, Leonard Pitre, Looney, MaiklRussia, Marc. A. Pullen, Palladium, plums, Rellik, REZ, scifista42, Skullers, SlayeR, The Doommer, TheStupidestBeing, tempun, un4seen, VGA, WildWeasel, XDelusion, Xyzzy01, Zodomaniac", wx.DefaultPosition, wx.Size( -1,-1 ), wx.ST_NO_AUTORESIZE )
 		self.m_staticText138.Wrap( 450 )
 
-		bSizer56.Add( self.m_staticText138, 1, wx.ALL, 6 )
+		bSizer56.Add( self.m_staticText138, 1, wx.ALL, 3 )
 
 
 		bSizer56.Add( ( 0, 12), 0, wx.EXPAND, 5 )
