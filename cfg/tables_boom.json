@@ -1,10 +1,11 @@
 {
-	"versions": [19, 21],
+	"versions": [
+		19,
+		21
+	],
 	"extended": true,
 	"name": "Boom",
-
 	"parent": "basetable_boom",
-
 	"features": [],
 	"actions": {},
 	"ammo": [],

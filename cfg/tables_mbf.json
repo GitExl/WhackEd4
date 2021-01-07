@@ -1,10 +1,11 @@
 {
-	"versions": [19, 21],
+	"versions": [
+		19,
+		21
+	],
 	"extended": true,
 	"name": "Marine's Best Friend (MBF)",
-
 	"parent": "basetable_mbf",
-
 	"features": [],
 	"actions": {},
 	"ammo": [],

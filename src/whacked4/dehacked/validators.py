@@ -18,10 +18,13 @@ def thing_flags_read(value, table):
     @raise LookupError: if the value contains an unknown mnemonic.
     """
 
-    value = str(value)
+    if not isinstance(value, set):
+        value = str(value)
+        items = re.split(r"[,+| \t\f\r]+", value)
+    else:
+        items = value
 
     out = set()
-    items = re.split(r"[,+| \t\f\r]+", value)
     for item in items:
         item = item.strip()
 

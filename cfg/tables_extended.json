@@ -1,10 +1,11 @@
 {
-	"versions": [19, 21],
+	"versions": [
+		19,
+		21
+	],
 	"name": "Extended DeHackEd",
 	"extended": true,
-
 	"parent": "basetable_extended",
-
 	"features": [],
 	"actions": {},
 	"ammo": [],

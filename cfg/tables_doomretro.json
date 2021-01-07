@@ -1,10 +1,11 @@
 {
-	"versions": [19, 21],
+	"versions": [
+		19,
+		21
+	],
 	"name": "Doom Retro",
 	"extended": true,
-
 	"parent": "basetable_extended",
-
 	"features": [],
 	"defaultThing": {},
 	"actions": {},
@@ -16,45 +17,20 @@
 	"sounds": [
 		{
 			"_index": 113,
-			"internalDataPointer": 0,
-			"internalLumpindex": 0,
-			"internalRefCount": 0,
-			"isSingular": 0,
-			"linkPitch": -1,
-			"linkPointer": 0,
-			"linkVolume": -1,
-			"namePointer": 0,
 			"priority": 60,
 			"_name": "SECRET"
 		},
 		{
-			"internalDataPointer": 0,
-			"internalLumpindex": 0,
-			"internalRefCount": 0,
-			"isSingular": 0,
-			"linkPitch": -1,
-			"linkPointer": 0,
-			"linkVolume": -1,
-			"namePointer": 0,
 			"priority": 60,
 			"_name": "GIBDTH"
 		},
 		{
-			"internalDataPointer": 0,
-			"internalLumpindex": 0,
-			"internalRefCount": 0,
-			"isSingular": 0,
-			"linkPitch": -1,
-			"linkPointer": 0,
-			"linkVolume": -1,
-			"namePointer": 0,
 			"priority": 0,
 			"_name": "SCRSHT"
 		}
 	],
 	"spriteNames": [],
 	"states": [],
-
 	"strings": {
 		"SAVEGAMENAME": "doomsav",
 		"BANNER1": "                         DOOM 2: Hell on Earth v%i.%i                           ",
@@ -134,14 +110,12 @@
 		"OB_FRIENDLY3": "",
 		"OB_FRIENDLY4": ""
 	},
-
 	"thingFlags": {},
 	"things": [],
 	"weapons": [],
 	"usedStates": [],
 	"renderStyles": {},
 	"defaultState": {},
-	"defaultThing": {},
 	"defaultWeapon": {},
 	"defaultAmmo": {},
 	"defaultSound": {}

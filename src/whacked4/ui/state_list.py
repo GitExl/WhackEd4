@@ -139,8 +139,7 @@ class StateList(wx.ListCtrl):
 
     def set_patch(self, patch: Patch):
         self.patch = patch
-        if self.state_query_result is not None:
-            self.build()
+        self.state_query_result = None
 
     def set_state_query_result(self, state_query_result: StateQueryResult):
         self.state_query_result = state_query_result

@@ -1,12 +1,11 @@
+import sys
 import json
-
-
-FILENAME_IN = 'cfg/basetable_boom.json'
-FILENAME_OUT = 'cfg/basetable_boom_new.json'
 
 
 def trim_items(items, default_item):
     for item in items:
+
+        # Remove all values that are identical to the default values.
         remove_keys = []
         for key, value in item.items():
             if key == '_index':
@@ -38,16 +37,17 @@ def load_defaults(filename, default_thing, default_sound, default_weapon, defaul
     return default_thing, default_sound, default_weapon, default_ammo, default_state
 
 
-def process(filename_in, filename_out):
+def process(filename):
     default_thing = {}
     default_sound = {}
     default_weapon = {}
     default_ammo = {}
     default_state = {}
 
-    default_thing, default_sound, default_weapon, default_ammo, default_state = load_defaults(filename_in, default_thing, default_sound, default_weapon, default_ammo, default_state)
+    # Load defaults from any included files.
+    default_thing, default_sound, default_weapon, default_ammo, default_state = load_defaults(filename, default_thing, default_sound, default_weapon, default_ammo, default_state)
 
-    with open(filename_in, 'r') as f:
+    with open(filename, 'r') as f:
         data = json.loads(f.read())
 
     data['things'] = trim_items(data['things'], default_thing)
@@ -56,8 +56,11 @@ def process(filename_in, filename_out):
     data['ammo'] = trim_items(data['ammo'], default_ammo)
     data['states'] = trim_items(data['states'], default_state)
 
-    with open(filename_out, 'w') as f:
+    with open(filename, 'w') as f:
         f.write(json.dumps(data, indent='\t'))
 
 
-process(FILENAME_IN, FILENAME_OUT)
+if len(sys.argv) != 2:
+    print('Not enough arguments.')
+else:
+    process(sys.argv[1])

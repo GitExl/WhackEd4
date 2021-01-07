@@ -1,5 +1,8 @@
 {
-	"versions": [19, 21],
+	"versions": [
+		19,
+		21
+	],
 	"extended": true,
 	"features": [
 		"thing.stateCrash",
@@ -21,9 +24,7 @@
 		"nosupport.sounds"
 	],
 	"name": "ZDaemon",
-
 	"parent": "basetable_boom",
-
 	"actions": {
 		"Detonate": {
 			"name": "Detonate",
@@ -38,13 +39,19 @@
 					"name": "Fireball angle",
 					"description": "The angle to throw the fireballs in.",
 					"type": "fixedpoint",
-					"range": [-359, 359]
+					"range": [
+						-359,
+						359
+					]
 				},
 				{
 					"name": "Fireball speed",
 					"description": "The speed to throw the fireballs at.",
 					"type": "fixedpoint",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -62,7 +69,10 @@
 					"name": "Z",
 					"description": "The relative Z position to spawn the thing at.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -80,7 +90,10 @@
 					"name": "Full volume",
 					"description": "If set to 1, the sound effect will play at full volume regardless of the distance.",
 					"type": "integer",
-					"range": [0, 1]
+					"range": [
+						0,
+						1
+					]
 				}
 			],
 			"type": "thing",
@@ -99,7 +112,10 @@
 					"name": "Chance",
 					"description": "The chance that the jump is executed. Ranged 0 to 255.",
 					"type": "integer",
-					"range": [0, 255]
+					"range": [
+						0,
+						255
+					]
 				}
 			],
 			"type": "thing"
@@ -122,7 +138,10 @@
 					"name": "Full volume",
 					"description": "If set to 1, the sound effect will play at full volume regardless of the distance.",
 					"type": "integer",
-					"range": [0, 1]
+					"range": [
+						0,
+						1
+					]
 				}
 			],
 			"type": "weapon",
@@ -141,13 +160,19 @@
 					"name": "Damage",
 					"description": "The amount of damage the Railgun shot will do.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Offset",
 					"description": "The offset of the Railgun shot.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "weapon"
@@ -160,31 +185,46 @@
 					"name": "Script",
 					"description": "The script index to execute.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to execute the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 1",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 2",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 3",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -197,31 +237,46 @@
 					"name": "Script",
 					"description": "The script index to execute.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to execute the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 1",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 2",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 3",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "weapon"
@@ -234,31 +289,46 @@
 					"name": "Script",
 					"description": "The script index to execute.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to execute the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 1",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 2",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 3",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -271,31 +341,46 @@
 					"name": "Script",
 					"description": "The script index to execute.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to execute the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 1",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 2",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 3",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "weapon"
@@ -308,31 +393,46 @@
 					"name": "Script",
 					"description": "The script index to execute.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to execute the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 1",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 2",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Lock keys",
 					"description": "The key combination needed to execute the script.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -345,31 +445,46 @@
 					"name": "Script",
 					"description": "The script index to execute.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to execute the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 1",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 2",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Lock keys",
 					"description": "The key combination needed to execute the script.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "weapon"
@@ -382,31 +497,46 @@
 					"name": "Script",
 					"description": "The script index to execute.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to execute the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 1",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 2",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Lock keys",
 					"description": "The key combination needed to execute the script.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -419,31 +549,46 @@
 					"name": "Script",
 					"description": "The script index to execute.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to execute the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 1",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Parameter 2",
 					"description": "",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Lock keys",
 					"description": "The key combination needed to execute the script.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				}
 			],
 			"type": "weapon"
@@ -456,13 +601,19 @@
 					"name": "Script",
 					"description": "The script index to suspend.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to suspend the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -475,13 +626,19 @@
 					"name": "Script",
 					"description": "The script index to suspend.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to suspend the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				}
 			],
 			"type": "weapon"
@@ -494,13 +651,19 @@
 					"name": "Script",
 					"description": "The script index to terminate.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to terminate the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -513,13 +676,19 @@
 					"name": "Script",
 					"description": "The script index to terminate.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Map",
 					"description": "The map to terminate the script on.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				}
 			],
 			"type": "weapon"
@@ -892,7 +1061,10 @@
 					"name": "Amount",
 					"description": "The number of bullets to fire.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Sound",
@@ -911,25 +1083,37 @@
 					"name": "Spread H",
 					"description": "The horizontal spread of the bullets.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Spread V",
 					"description": "The vertical spread ot the bullets.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Amount",
 					"description": "The amount of bullets to fire.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Damage",
 					"description": "The damage per bullet.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Puff",
@@ -940,13 +1124,19 @@
 					"name": "Range",
 					"description": "The maximum range of the bullets. 0 is the same as the default of 2048 units.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Flags",
 					"description": "A flag bitmask. See the ZDaemon documentation for more info.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Sound",
@@ -970,25 +1160,37 @@
 					"name": "Z",
 					"description": "The Z height to spawn at, relative to the thing's feet.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Offset H",
 					"description": "Horizontal spawn offset",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Angle",
 					"description": "The direction relative to the thing's facing angle in which to shoot the projectile.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Pitch",
 					"description": "Used with one of the flag values.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Sound",
@@ -999,7 +1201,10 @@
 					"name": "Flags",
 					"description": "Bitmask of flags to use. See ZDaemon documentation for more info.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				}
 			],
 			"type": "thing",
@@ -2228,7 +2433,10 @@
 					"name": "Amount",
 					"description": "The number of bullets to fire.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Sound",
@@ -2247,25 +2455,37 @@
 					"name": "Spread H",
 					"description": "The horizontal spread of the bullets.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Spread V",
 					"description": "The vertical spread ot the bullets.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Amount",
 					"description": "The amount of bullets to fire.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Damage",
 					"description": "The damage per bullet.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Puff",
@@ -2276,13 +2496,19 @@
 					"name": "Range",
 					"description": "The maximum range of the bullets. 0 is the same as the default of 2048 units.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Flags",
 					"description": "A flag bitmask. See the ZDaemon documentation for more info.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Sound",
@@ -2306,25 +2532,37 @@
 					"name": "Z",
 					"description": "The Z height to spawn at, relative to the thing's feet.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Offset H",
 					"description": "Horizontal spawn offset",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Angle",
 					"description": "The direction relative to the thing's facing angle in which to shoot the projectile.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Pitch",
 					"description": "Used with one of the flag values.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Sound",
@@ -2335,7 +2573,10 @@
 					"name": "Flags",
 					"description": "Bitmask of flags to use. See ZDaemon documentation for more info.",
 					"type": "integer",
-					"range": [0, 32767]
+					"range": [
+						0,
+						32767
+					]
 				},
 				{
 					"name": "Ammo",
@@ -2542,7 +2783,6 @@
 			"type": "weapon"
 		}
 	},
-
 	"misc": {
 		"armorClassSilver": 3,
 		"armorClassEnchanted": 4,
@@ -2555,7 +2795,6 @@
 		"noAutoFreeze": 0,
 		"bfgAiming": 1
 	},
-
 	"miscData": {
 		"armorClassSilver": {
 			"name": "Silver armor class",
@@ -2614,7 +2853,6 @@
 			"off": 0
 		}
 	},
-
 	"thingFlags": {
 		"CLIENTSIDE": {
 			"name": "Client-side only",
@@ -3015,7 +3253,6 @@
 			"description": "This thing has a pulsing effect."
 		}
 	},
-
 	"renderStyles": {
 		"STYLE_Normal": "Normal",
 		"STYLE_None": "None",
@@ -3028,7 +3265,6 @@
 		"STYLE_Stencil": "Stencil",
 		"STYLE_TranslucentStencil": "Trans. stencil"
 	},
-
 	"defaultState": {
 		"arg1": 0,
 		"arg2": 0,
@@ -3061,7 +3297,6 @@
 	},
 	"defaultAmmo": {},
 	"defaultSound": {},
-
 	"ammo": [],
 	"cheats": {},
 	"cheatData": {},

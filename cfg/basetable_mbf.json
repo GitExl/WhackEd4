@@ -199,62 +199,22 @@
 	},
 	"sounds": [
 		{
-			"internalDataPointer": 0,
-			"internalLumpindex": 0,
-			"internalRefCount": 0,
-			"isSingular": 0,
-			"linkPitch": -1,
-			"linkPointer": 0,
-			"linkVolume": -1,
-			"namePointer": 0,
 			"priority": 98,
 			"_name": "dgsit"
 		},
 		{
-			"internalDataPointer": 0,
-			"internalLumpindex": 0,
-			"internalRefCount": 0,
-			"isSingular": 0,
-			"linkPitch": -1,
-			"linkPointer": 0,
-			"linkVolume": -1,
-			"namePointer": 0,
 			"priority": 70,
 			"_name": "dgatk"
 		},
 		{
-			"internalDataPointer": 0,
-			"internalLumpindex": 0,
-			"internalRefCount": 0,
-			"isSingular": 0,
-			"linkPitch": -1,
-			"linkPointer": 0,
-			"linkVolume": -1,
-			"namePointer": 0,
 			"priority": 120,
 			"_name": "dgact"
 		},
 		{
-			"internalDataPointer": 0,
-			"internalLumpindex": 0,
-			"internalRefCount": 0,
-			"isSingular": 0,
-			"linkPitch": -1,
-			"linkPointer": 0,
-			"linkVolume": -1,
-			"namePointer": 0,
 			"priority": 70,
 			"_name": "dgdth"
 		},
 		{
-			"internalDataPointer": 0,
-			"internalLumpindex": 0,
-			"internalRefCount": 0,
-			"isSingular": 0,
-			"linkPitch": -1,
-			"linkPointer": 0,
-			"linkVolume": -1,
-			"namePointer": 0,
 			"priority": 96,
 			"_name": "dgpain"
 		}
@@ -271,8 +231,6 @@
 		{
 			"action": "Die",
 			"duration": 1000,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 968,
 			"sprite": 22,
 			"spriteFrame": 32768
@@ -280,8 +238,6 @@
 		{
 			"action": "Scream",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 970,
 			"sprite": 22,
 			"spriteFrame": 32769
@@ -289,35 +245,24 @@
 		{
 			"action": "Detonate",
 			"duration": 6,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 971,
 			"sprite": 22,
 			"spriteFrame": 32770
 		},
 		{
-			"action": "NULL",
 			"duration": 10,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 22,
 			"spriteFrame": 32771
 		},
 		{
 			"action": "Look",
 			"duration": 10,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 973,
-			"sprite": 139,
-			"spriteFrame": 0
+			"sprite": 139
 		},
 		{
 			"action": "Look",
 			"duration": 10,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 972,
 			"sprite": 139,
 			"spriteFrame": 1
@@ -325,26 +270,18 @@
 		{
 			"action": "Chase",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 975,
-			"sprite": 139,
-			"spriteFrame": 0
+			"sprite": 139
 		},
 		{
 			"action": "Chase",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 976,
-			"sprite": 139,
-			"spriteFrame": 0
+			"sprite": 139
 		},
 		{
 			"action": "Chase",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 977,
 			"sprite": 139,
 			"spriteFrame": 1
@@ -352,8 +289,6 @@
 		{
 			"action": "Chase",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 978,
 			"sprite": 139,
 			"spriteFrame": 1
@@ -361,8 +296,6 @@
 		{
 			"action": "Chase",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 979,
 			"sprite": 139,
 			"spriteFrame": 2
@@ -370,8 +303,6 @@
 		{
 			"action": "Chase",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 980,
 			"sprite": 139,
 			"spriteFrame": 2
@@ -379,8 +310,6 @@
 		{
 			"action": "Chase",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 981,
 			"sprite": 139,
 			"spriteFrame": 3
@@ -388,8 +317,6 @@
 		{
 			"action": "Chase",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 974,
 			"sprite": 139,
 			"spriteFrame": 3
@@ -397,8 +324,6 @@
 		{
 			"action": "FaceTarget",
 			"duration": 8,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 983,
 			"sprite": 139,
 			"spriteFrame": 4
@@ -406,8 +331,6 @@
 		{
 			"action": "FaceTarget",
 			"duration": 8,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 984,
 			"sprite": 139,
 			"spriteFrame": 5
@@ -415,17 +338,12 @@
 		{
 			"action": "SargAttack",
 			"duration": 8,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 974,
 			"sprite": 139,
 			"spriteFrame": 6
 		},
 		{
-			"action": "NULL",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 986,
 			"sprite": 139,
 			"spriteFrame": 7
@@ -433,17 +351,12 @@
 		{
 			"action": "Pain",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 974,
 			"sprite": 139,
 			"spriteFrame": 7
 		},
 		{
-			"action": "NULL",
 			"duration": 8,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 988,
 			"sprite": 139,
 			"spriteFrame": 8
@@ -451,17 +364,12 @@
 		{
 			"action": "Scream",
 			"duration": 8,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 989,
 			"sprite": 139,
 			"spriteFrame": 9
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 990,
 			"sprite": 139,
 			"spriteFrame": 10
@@ -469,80 +377,52 @@
 		{
 			"action": "Fall",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 991,
 			"sprite": 139,
 			"spriteFrame": 11
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 992,
 			"sprite": 139,
 			"spriteFrame": 12
 		},
 		{
-			"action": "NULL",
-			"duration": -1,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 139,
 			"spriteFrame": 13
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 994,
 			"sprite": 139,
 			"spriteFrame": 13
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 995,
 			"sprite": 139,
 			"spriteFrame": 12
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 996,
 			"sprite": 139,
 			"spriteFrame": 11
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 997,
 			"sprite": 139,
 			"spriteFrame": 10
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 998,
 			"sprite": 139,
 			"spriteFrame": 9
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 974,
 			"sprite": 139,
 			"spriteFrame": 8
@@ -550,17 +430,12 @@
 		{
 			"action": "BFGSound",
 			"duration": 10,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1000,
-			"sprite": 14,
-			"spriteFrame": 0
+			"sprite": 14
 		},
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1001,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -568,8 +443,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1002,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -577,8 +450,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1003,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -586,8 +457,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1004,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -595,8 +464,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1005,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -604,8 +471,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1006,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -613,8 +478,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1007,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -622,8 +485,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1008,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -631,8 +492,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1009,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -640,8 +499,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1010,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -649,8 +506,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1011,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -658,8 +513,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1012,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -667,8 +520,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1013,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -676,8 +527,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1014,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -685,8 +534,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1015,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -694,8 +541,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1016,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -703,8 +548,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1017,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -712,8 +555,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1018,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -721,8 +562,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1019,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -730,8 +569,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1020,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -739,8 +576,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1021,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -748,8 +583,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1022,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -757,8 +590,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1023,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -766,8 +597,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1024,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -775,8 +604,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1025,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -784,8 +611,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1026,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -793,8 +618,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1027,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -802,8 +625,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1028,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -811,8 +632,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1029,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -820,8 +639,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1030,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -829,8 +646,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1031,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -838,8 +653,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1032,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -847,8 +660,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1033,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -856,8 +667,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1034,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -865,8 +674,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1035,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -874,8 +681,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1036,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -883,8 +688,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1037,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -892,8 +695,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1038,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -901,8 +702,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1039,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -910,8 +709,6 @@
 		{
 			"action": "FireOldBFG",
 			"duration": 1,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1040,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -919,8 +716,6 @@
 		{
 			"action": "Light0",
 			"duration": 0,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1041,
 			"sprite": 14,
 			"spriteFrame": 1
@@ -928,152 +723,99 @@
 		{
 			"action": "ReFire",
 			"duration": 20,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 81,
 			"sprite": 14,
 			"spriteFrame": 1
 		},
 		{
-			"action": "NULL",
 			"duration": 6,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1043,
 			"sprite": 140,
 			"spriteFrame": 32768
 		},
 		{
-			"action": "NULL",
 			"duration": 6,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1042,
 			"sprite": 140,
 			"spriteFrame": 32769
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1045,
 			"sprite": 140,
 			"spriteFrame": 32770
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1046,
 			"sprite": 140,
 			"spriteFrame": 32771
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1047,
 			"sprite": 140,
 			"spriteFrame": 32772
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1048,
 			"sprite": 140,
 			"spriteFrame": 32773
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 140,
 			"spriteFrame": 32774
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1050,
 			"sprite": 141,
 			"spriteFrame": 32768
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1049,
 			"sprite": 141,
 			"spriteFrame": 32769
 		},
 		{
-			"action": "NULL",
 			"duration": 6,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1052,
 			"sprite": 141,
 			"spriteFrame": 32770
 		},
 		{
-			"action": "NULL",
 			"duration": 6,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1053,
 			"sprite": 141,
 			"spriteFrame": 32771
 		},
 		{
-			"action": "NULL",
 			"duration": 6,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 141,
 			"spriteFrame": 32772
 		},
 		{
-			"action": "NULL",
 			"duration": 6,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1054,
-			"sprite": 142,
-			"spriteFrame": 0
+			"sprite": 142
 		},
 		{
-			"action": "NULL",
 			"duration": 6,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1055,
-			"sprite": 143,
-			"spriteFrame": 0
+			"sprite": 143
 		},
 		{
 			"action": "Look",
 			"duration": 10,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1056,
-			"sprite": 44,
-			"spriteFrame": 0
+			"sprite": 44
 		},
 		{
 			"action": "Chase",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1058,
 			"sprite": 44,
 			"spriteFrame": 1
@@ -1081,8 +823,6 @@
 		{
 			"action": "Chase",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1059,
 			"sprite": 44,
 			"spriteFrame": 2
@@ -1090,8 +830,6 @@
 		{
 			"action": "Chase",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1060,
 			"sprite": 44,
 			"spriteFrame": 3
@@ -1099,17 +837,12 @@
 		{
 			"action": "Chase",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1057,
-			"sprite": 44,
-			"spriteFrame": 0
+			"sprite": 44
 		},
 		{
 			"action": "FaceTarget",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1062,
 			"sprite": 44,
 			"spriteFrame": 4
@@ -1117,26 +850,18 @@
 		{
 			"action": "BetaSkullAttack",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1063,
 			"sprite": 44,
 			"spriteFrame": 5
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1057,
 			"sprite": 44,
 			"spriteFrame": 5
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1065,
 			"sprite": 44,
 			"spriteFrame": 6
@@ -1144,53 +869,36 @@
 		{
 			"action": "Pain",
 			"duration": 2,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1057,
 			"sprite": 44,
 			"spriteFrame": 7
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1057,
 			"sprite": 44,
 			"spriteFrame": 8
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1068,
 			"sprite": 44,
 			"spriteFrame": 9
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1069,
 			"sprite": 44,
 			"spriteFrame": 10
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1070,
 			"sprite": 44,
 			"spriteFrame": 11
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1071,
 			"sprite": 44,
 			"spriteFrame": 12
@@ -1198,17 +906,12 @@
 		{
 			"action": "Scream",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1072,
 			"sprite": 44,
 			"spriteFrame": 13
 		},
 		{
-			"action": "NULL",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1073,
 			"sprite": 44,
 			"spriteFrame": 14
@@ -1216,8 +919,6 @@
 		{
 			"action": "Fall",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1074,
 			"sprite": 44,
 			"spriteFrame": 15
@@ -1225,8 +926,6 @@
 		{
 			"action": "Stop",
 			"duration": 5,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1074,
 			"sprite": 44,
 			"spriteFrame": 16
@@ -1234,126 +933,66 @@
 		{
 			"action": "Mushroom",
 			"duration": 8,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 128,
 			"sprite": 22,
 			"spriteFrame": 32769
 		},
 		{
-			"action": "NULL",
 			"duration": 6,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 806,
-			"sprite": 58,
-			"spriteFrame": 0
+			"sprite": 58
 		},
 		{
-			"action": "NULL",
-			"duration": -1,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
-			"sprite": 144,
-			"spriteFrame": 0
+			"sprite": 144
 		},
 		{
-			"action": "NULL",
-			"duration": -1,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 144,
 			"spriteFrame": 1
 		},
 		{
-			"action": "NULL",
-			"duration": -1,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 144,
 			"spriteFrame": 2
 		},
 		{
-			"action": "NULL",
-			"duration": -1,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 144,
 			"spriteFrame": 3
 		},
 		{
-			"action": "NULL",
-			"duration": -1,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 144,
 			"spriteFrame": 4
 		},
 		{
-			"action": "NULL",
-			"duration": -1,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 144,
 			"spriteFrame": 5
 		},
 		{
-			"action": "NULL",
-			"duration": -1,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 144,
 			"spriteFrame": 6
 		},
 		{
-			"action": "NULL",
-			"duration": -1,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 144,
 			"spriteFrame": 7
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1086,
 			"sprite": 17,
 			"spriteFrame": 32768
 		},
 		{
-			"action": "NULL",
 			"duration": 4,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1087,
 			"sprite": 17,
 			"spriteFrame": 1
 		},
 		{
-			"action": "NULL",
 			"duration": 10,
-			"unused1": 0,
-			"unused2": 0,
 			"nextState": 1088,
 			"sprite": 17,
 			"spriteFrame": 2
 		},
 		{
-			"action": "NULL",
 			"duration": 14,
-			"unused1": 0,
-			"unused2": 0,
-			"nextState": 0,
 			"sprite": 17,
 			"spriteFrame": 3
 		}
@@ -1392,88 +1031,48 @@
 			"height": 1835008,
 			"id": 888,
 			"mass": 100,
-			"damage": 0,
 			"painChance": 180,
-			"reactionTime": 8,
 			"soundActive": 111,
 			"soundAlert": 109,
 			"soundAttack": 110,
 			"soundDeath": 112,
 			"soundPain": 113,
 			"speed": 10,
-			"stateAttack": 0,
 			"stateDeath": 987,
-			"stateExplode": 0,
 			"stateMelee": 982,
 			"stateWalk": 974,
 			"statePain": 985,
 			"stateRaise": 993,
 			"stateSpawn": 972,
 			"radius": 784272,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false,
 			"_name": "Dog"
 		},
 		{
 			"flags": 536938000,
 			"health": 1000,
 			"height": 524288,
-			"id": -1,
 			"mass": 100,
 			"damage": 4,
-			"painChance": 0,
-			"reactionTime": 8,
-			"soundActive": 0,
 			"soundAlert": 8,
-			"soundAttack": 0,
 			"soundDeath": 17,
-			"soundPain": 0,
 			"speed": 1638400,
-			"stateAttack": 0,
 			"stateDeath": 1044,
-			"stateExplode": 0,
-			"stateMelee": 0,
-			"stateWalk": 0,
-			"statePain": 0,
-			"stateRaise": 0,
 			"stateSpawn": 1042,
 			"radius": 851968,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false,
 			"_name": "Beta Plasma 1"
 		},
 		{
 			"flags": 536938000,
 			"health": 1000,
 			"height": 524288,
-			"id": -1,
 			"mass": 100,
 			"damage": 4,
-			"painChance": 0,
-			"reactionTime": 8,
-			"soundActive": 0,
 			"soundAlert": 8,
-			"soundAttack": 0,
 			"soundDeath": 17,
-			"soundPain": 0,
 			"speed": 1638400,
-			"stateAttack": 0,
 			"stateDeath": 1051,
-			"stateExplode": 0,
-			"stateMelee": 0,
-			"stateWalk": 0,
-			"statePain": 0,
-			"stateRaise": 0,
 			"stateSpawn": 1049,
 			"radius": 393216,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false,
 			"_name": "Beta Plasma 2"
 		},
 		{
@@ -1482,28 +1081,8 @@
 			"height": 1048576,
 			"id": 2016,
 			"mass": 100,
-			"damage": 0,
-			"painChance": 0,
-			"reactionTime": 8,
-			"soundActive": 0,
-			"soundAlert": 0,
-			"soundAttack": 0,
-			"soundDeath": 0,
-			"soundPain": 0,
-			"speed": 0,
-			"stateAttack": 0,
-			"stateDeath": 0,
-			"stateExplode": 0,
-			"stateMelee": 0,
-			"stateWalk": 0,
-			"statePain": 0,
-			"stateRaise": 0,
 			"stateSpawn": 1054,
 			"radius": 655360,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false,
 			"_name": "Beta Sceptre"
 		},
 		{
@@ -1512,28 +1091,8 @@
 			"height": 655360,
 			"id": 2017,
 			"mass": 100,
-			"damage": 0,
-			"painChance": 0,
-			"reactionTime": 8,
-			"soundActive": 0,
-			"soundAlert": 0,
-			"soundAttack": 0,
-			"soundDeath": 0,
-			"soundPain": 0,
-			"speed": 0,
-			"stateAttack": 0,
-			"stateDeath": 0,
-			"stateExplode": 0,
-			"stateMelee": 0,
-			"stateWalk": 0,
-			"statePain": 0,
-			"stateRaise": 0,
 			"stateSpawn": 1055,
 			"radius": 1310720,
-			"droppedItem": -1,
-			"pickupRadius": 0,
-			"projectilePassHeight": 0,
-			"fullbright": false,
 			"_name": "Beta Bible"
 		}
 	],
