@@ -1,5 +1,8 @@
+- Add Doom Retro specific fields that do not exist in DEHEXTRA. See https://github.com/bradharding/doomretro/wiki/INFORMATION-FOR-MAPPERS#DEHACKED-LUMPS
+    - Blood
+    - Shadow offset
+    - Name1
 - State animation preview should not display states with 0 duration? But still run it's actions. See DV4 fist attack.
-- State animation preview should use parameters 1 and 2 to offset sprite. (If weapon?)
 - When opening a new patch file after modifying the current one, no warning is given and the new patch is loaded immediately.
 
 Low priority bugs
@@ -9,15 +12,12 @@ Low priority bugs
 Later
 - Split out patch reading\writing from patch class and clean it up.
 - Calculated % number next to a thing's pain chance.
+- Muzzle flash support for weapon state previews. Needs refactoring of sprite preview code so that it can display multiple state animations overlayed on top of one another.
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
   - Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Mark and display items (things, states, strings, ammo, weapons, sounds) as modified compared to engine config.
-- Muzzle flash support for weapon state previews. Possible if we know what thing or weapon uses a state.
 - Allow multiple flag fields for things, for Doom Retro's "Retro Bits" field.
 - Add Doom Retro specific fields that do not exist in DEHEXTRA. See https://github.com/bradharding/doomretro/wiki/INFORMATION-FOR-MAPPERS#DEHACKED-LUMPS
-    - Blood
-    - Shadow offset
-    - Name1
     - Retro bits (needs multiple flag field support first)
 - Final Doom (TNT and Plutonia) support, see https://www.doomworld.com/forum/topic/117871-dehacked-30a-special-edition-with-support-for-both-final-doom-versions/?tab=comments#comment-2212475
 - Option to manually clear list of recent files.

@@ -359,7 +359,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         """
 
         key = self.PROPS_STATENAMES[event.GetId()]
-        state_index = self.patch.weapons[self.selected_index]['state' + key]
+        weapon = self.patch.weapons[self.selected_index]
+        state_index = weapon['state' + key]
 
-        self.preview_dialog.prepare(self.pwads, self.patch, state_index)
+        self.preview_dialog.prepare(self.pwads, self.patch, state_index, weapon_index=self.selected_index)
         self.preview_dialog.ShowModal()

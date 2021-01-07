@@ -28,6 +28,10 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         self.ref_thing_index = None
         self.ref_thing = None
 
+        # Weapon for sound\offset references.
+        self.ref_weapon_index = None
+        self.ref_weapon = None
+
         self.first_state_index = -1
         self.state_index = -1
 
@@ -36,7 +40,7 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         self.elapsed = 0
         self.ticks = 0
 
-        self.Sprite.set_baseline_factor(0.75)
+        self.Sprite.set_baseline_factor(0.85)
         self.Sprite.set_scale(2)
 
         self.StateInfo.SetFont(config.FONT_MONOSPACED_BOLD)
@@ -76,7 +80,7 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
             state = self.patch.states[self.state_index]
             self.set_state(state['nextState'])
 
-    def prepare(self, pwads, patch, state_index, thing_index=None):
+    def prepare(self, pwads, patch, state_index, thing_index=None, weapon_index=None):
         """
         Used to prepare a new animation to preview.
         """
@@ -91,13 +95,20 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         else:
             self.ref_thing = None
 
+        if weapon_index is not None:
+            self.ref_weapon = patch.weapons[weapon_index]
+        else:
+            self.ref_weapon = None
+
         self.Sprite.set_source(pwads)
         self.set_title()
         self.begin_playback(state_index)
 
     def set_title(self):
-        if self.ref_thing_index is not None:
-            title = 'Preview - {}'.format(self.patch.things[self.ref_thing_index].name)
+        if self.ref_thing is not None:
+            title = 'Preview thing - {}'.format(self.ref_thing.name)
+        elif self.ref_weapon is not None:
+            title = 'Preview weapon - {}'.format(self.ref_weapon.name)
         else:
             title = 'Preview'
 
@@ -140,7 +151,15 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
         sprite_name = self.patch.sprite_names[sprite_index]
         sprite_frame = state['spriteFrame'] & 0x3FFF
 
-        self.Sprite.show_sprite(sprite_name, sprite_frame)
+        offset_x = 0
+        offset_y = 0
+
+        # Weapons are rendered offset from the center.
+        if self.ref_weapon and state['unused1'] != 0:
+            offset_x = state['unused1'] / 65536
+            offset_y = state['unused2'] / 65536
+
+        self.Sprite.show_sprite(sprite_name, sprite_frame, offset_x, offset_y)
 
         self.StateIndex.SetLabel(str(state_index))
         self.StateInfo.SetLabel('{}{}'.format(sprite_name, chr(65 + sprite_frame)))

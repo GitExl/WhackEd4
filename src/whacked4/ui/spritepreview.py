@@ -24,6 +24,11 @@ class SpritePreview(wx.Panel):
 
         # The current sprite being displayed.
         self.sprite = self.CLEAR
+        self.sprite_name = None
+        self.sprite_frame = None
+        self.angle = 1
+        self.offset_x = 0
+        self.offset_y = 0
 
         # The baseline at which to render sprites. Consider this to be the invisible floor on which sprites are placed.
         self.baseline_factor = 0.8
@@ -40,11 +45,6 @@ class SpritePreview(wx.Panel):
         self.floor_brush = wx.Brush(floor_colour)
         self.floor_points = None
         self.create_floor_points()
-
-        # Sprite setup.
-        self.sprite_name = None
-        self.sprite_frame = None
-        self.angle = 1
 
         # Paint setup.
         self.src_dc = wx.MemoryDC()
@@ -109,7 +109,7 @@ class SpritePreview(wx.Panel):
 
         self.wads = wads
 
-    def show_sprite(self, sprite_name, sprite_frame):
+    def show_sprite(self, sprite_name, sprite_frame, offset_x=0, offset_y=0):
         """
         Shows a sprite.
         """
@@ -118,23 +118,32 @@ class SpritePreview(wx.Panel):
         self.sprite_name = sprite_name
         self.sprite_frame = sprite_frame
 
+        self.offset_x = offset_x
+        self.offset_y = offset_y
+
         # Refresh sprite preview with new sprite.
         if self.wads is not None:
-
-            # Try to get a rotation sprite.
-            sprite_lump, is_mirrored = self.wads.get_sprite_lump(sprite_name, sprite_frame, self.angle)
-            self.lock_angle = False
-
-            # Try to get a 0 rotation (front-facing) sprite.
-            if sprite_lump is None:
-                sprite_lump, is_mirrored = self.wads.get_sprite_lump(sprite_name, sprite_frame, 0)
-                self.lock_angle = True
-
-            if sprite_lump is not None:
-                self.sprite = self.wads.get_sprite_image(sprite_lump, is_mirrored)
+            self.sprite, self.lock_angle = self.get_sprite_lump(sprite_name, sprite_frame, self.angle)
 
         self.update_cursor()
         self.update_paint()
+
+    def get_sprite_lump(self, sprite_name, sprite_frame, angle):
+        sprite = None
+
+        # Try to get a rotation sprite.
+        sprite_lump, is_mirrored = self.wads.get_sprite_lump(sprite_name, sprite_frame, angle)
+        lock_angle = False
+
+        # Try to get a 0 rotation (front-facing) sprite.
+        if sprite_lump is None:
+            sprite_lump, is_mirrored = self.wads.get_sprite_lump(sprite_name, sprite_frame, 0)
+            lock_angle = True
+
+        if sprite_lump is not None:
+            sprite = self.wads.get_sprite_image(sprite_lump, is_mirrored)
+
+        return sprite, lock_angle
 
     def paint(self, event):
         """
@@ -154,35 +163,43 @@ class SpritePreview(wx.Panel):
         dc.SetPen(wx.TRANSPARENT_PEN)
         dc.DrawPolygon(self.floor_points, 0, 0)
 
-        if self.sprite == self.CLEAR:
+        self.blit_sprite(dc, self.sprite, self.offset_x, self.offset_y)
+
+        # Delete context and copy drawing to screen.
+        del dc
+        self.Refresh(False)
+        self.Update()
+
+    def blit_sprite(self, dc, sprite, offset_x, offset_y):
+        if sprite == self.CLEAR:
             return
 
         # Determine what icon or sprite to render.
         bitmap = None
-        if self.sprite is None:
+        if sprite is None:
             bitmap = self.missing
-        elif self.sprite.invalid:
+        elif sprite.invalid:
             bitmap = self.invalid
-        elif self.sprite.image is None:
+        elif sprite.image is None:
             bitmap = self.missing
 
         size = self.GetClientSize()
 
         # Draw sprite.
         if bitmap is None:
-            bitmap = self.sprite.image
+            bitmap = sprite.image
             baseline = size[1] * self.baseline_factor
 
             x = size[0] / 2
             y = baseline
 
             # Adjust sprite coordinates on whether it is to be used as a thing, or a screen graphic (like weapons).
-            if self.sprite.left > 0 and self.sprite.top > 0:
-                x -= self.sprite.left * self.scale
-                y -= self.sprite.top * self.scale
+            if sprite.left > 0 and sprite.top > 0:
+                x -= (sprite.left - offset_x) * self.scale
+                y -= (sprite.top - offset_y) * self.scale
             else:
-                x -= (bitmap.GetWidth() * self.scale) / 2
-                y -= (bitmap.GetHeight() * self.scale)
+                x -= (bitmap.GetWidth() / 2 - offset_x) * self.scale
+                y -= (bitmap.GetHeight() - offset_y) * self.scale
 
         # Draw informational bitmap.
         else:
@@ -197,11 +214,6 @@ class SpritePreview(wx.Panel):
             dc.StretchBlit(x, y, bitmap.Width * self.scale, bitmap.Height * self.scale, self.src_dc, 0, 0, bitmap.Width, bitmap.Height, wx.COPY, True)
         else:
             dc.Blit(x, y, bitmap.Width, bitmap.Height, self.src_dc, 0, 0, wx.COPY, True)
-
-        # Delete context and copy drawing to screen.
-        del dc
-        self.Refresh(False)
-        self.Update()
 
     def resize(self, event):
         size = self.GetClientSize()

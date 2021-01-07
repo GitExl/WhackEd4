@@ -23899,10 +23899,10 @@
             <property name="hidden">0</property>
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
-            <property name="minimum_size">680,560</property>
+            <property name="minimum_size">658,495</property>
             <property name="name">StatePreviewDialogBase</property>
             <property name="pos"></property>
-            <property name="size">680,560</property>
+            <property name="size">658,495</property>
             <property name="style">wxCAPTION</property>
             <property name="subclass"></property>
             <property name="title">Preview</property>

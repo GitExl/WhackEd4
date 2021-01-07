@@ -4359,9 +4359,9 @@ class ErrorDialogBase ( wx.Dialog ):
 class StatePreviewDialogBase ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Preview", pos = wx.DefaultPosition, size = wx.Size( 680,560 ), style = wx.CAPTION|wx.WANTS_CHARS|wx.BORDER_RAISED )
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Preview", pos = wx.DefaultPosition, size = wx.Size( 658,495 ), style = wx.CAPTION|wx.WANTS_CHARS|wx.BORDER_RAISED )
 
-		self.SetSizeHints( wx.Size( 680,560 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 658,495 ), wx.DefaultSize )
 
 		bSizer140 = wx.BoxSizer( wx.VERTICAL )
 
