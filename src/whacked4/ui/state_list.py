@@ -101,7 +101,7 @@ class StateList(wx.ListCtrl):
             self.InsertColumn(StateColumn.FRAME, 'Frm', width=42)
             self.InsertColumn(StateColumn.LIT, 'Lit', width=27)
             self.InsertColumn(StateColumn.NEXT, 'Next', width=50)
-            self.InsertColumn(StateColumn.DURATION, 'Dur', width=47)
+            self.InsertColumn(StateColumn.DURATION, 'Dur', width=50)
             self.InsertColumn(StateColumn.ACTION, 'Action', width=160)
             self.InsertColumn(StateColumn.PARAMETERS, 'Parameters', width=107)
 

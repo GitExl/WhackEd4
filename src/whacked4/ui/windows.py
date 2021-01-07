@@ -55,57 +55,57 @@ THING_VAL_SCALE = 1705
 THING_VAL_DROPPED_ITEM = 1706
 THING_VAL_PICKUP_RADIUS = 1707
 THING_VAL_DECAL = 1708
-THING_RENAME = 1709
-THING_STATE_SPAWN = 1710
-THING_STATENAME_SPAWN = 1711
-THING_STATESET_SPAWN = 1712
-THING_STATE_WALK = 1713
-THING_STATENAME_WALK = 1714
-THING_STATESET_WALK = 1715
-THING_STATE_PAIN = 1716
-THING_STATENAME_PAIN = 1717
-THING_STATESET_PAIN = 1718
-THING_STATE_MELEE = 1719
-THING_STATENAME_MELEE = 1720
-THING_STATESET_MELEE = 1721
-THING_STATE_ATTACK = 1722
-THING_STATENAME_ATTACK = 1723
-THING_STATESET_ATTACK = 1724
-THING_STATE_DEATH = 1725
-THING_STATENAME_DEATH = 1726
-THING_STATESET_DEATH = 1727
-THING_STATE_EXPLODE = 1728
-THING_STATENAME_EXPLODE = 1729
-THING_STATESET_EXPLODE = 1730
-THING_STATE_RAISE = 1731
-THING_STATENAME_RAISE = 1732
-THING_STATESET_RAISE = 1733
-THING_STATE_CRASH = 1734
-THING_STATENAME_CRASH = 1735
-THING_STATESET_CRASH = 1736
-THING_STATE_FREEZE = 1737
-THING_STATENAME_FREEZE = 1738
-THING_STATESET_FREEZE = 1739
-THING_STATE_BURN = 1740
-THING_STATENAME_BURN = 1741
-THING_STATESET_BURN = 1742
-THING_SOUND_ALERT = 1743
-THING_SOUNDNAME_ALERT = 1744
-THING_SOUNDSET_ALERT = 1745
-THING_SOUND_ATTACK = 1746
-THING_SOUNDNAME_ATTACK = 1747
-THING_SOUNDSET_ATTACK = 1748
-THING_SOUND_PAIN = 1749
-THING_SOUNDNAME_PAIN = 1750
-THING_SOUNDSET_PAIN = 1751
-THING_SOUND_DEATH = 1752
-THING_SOUNDNAME_DEATH = 1753
-THING_SOUNDSET_DEATH = 1754
-THING_SOUND_ACTIVE = 1755
-THING_SOUNDNAME_ACTIVE = 1756
-THING_SOUNDSET_ACTIVE = 1757
-THING_RESTORE = 1758
-THING_FLAGS = 1759
+THING_STATE_SPAWN = 1709
+THING_STATENAME_SPAWN = 1710
+THING_STATESET_SPAWN = 1711
+THING_STATE_WALK = 1712
+THING_STATENAME_WALK = 1713
+THING_STATESET_WALK = 1714
+THING_STATE_PAIN = 1715
+THING_STATENAME_PAIN = 1716
+THING_STATESET_PAIN = 1717
+THING_STATE_MELEE = 1718
+THING_STATENAME_MELEE = 1719
+THING_STATESET_MELEE = 1720
+THING_STATE_ATTACK = 1721
+THING_STATENAME_ATTACK = 1722
+THING_STATESET_ATTACK = 1723
+THING_STATE_DEATH = 1724
+THING_STATENAME_DEATH = 1725
+THING_STATESET_DEATH = 1726
+THING_STATE_EXPLODE = 1727
+THING_STATENAME_EXPLODE = 1728
+THING_STATESET_EXPLODE = 1729
+THING_STATE_RAISE = 1730
+THING_STATENAME_RAISE = 1731
+THING_STATESET_RAISE = 1732
+THING_STATE_CRASH = 1733
+THING_STATENAME_CRASH = 1734
+THING_STATESET_CRASH = 1735
+THING_STATE_FREEZE = 1736
+THING_STATENAME_FREEZE = 1737
+THING_STATESET_FREEZE = 1738
+THING_STATE_BURN = 1739
+THING_STATENAME_BURN = 1740
+THING_STATESET_BURN = 1741
+THING_SOUND_ALERT = 1742
+THING_SOUNDNAME_ALERT = 1743
+THING_SOUNDSET_ALERT = 1744
+THING_SOUND_ATTACK = 1745
+THING_SOUNDNAME_ATTACK = 1746
+THING_SOUNDSET_ATTACK = 1747
+THING_SOUND_PAIN = 1748
+THING_SOUNDNAME_PAIN = 1749
+THING_SOUNDSET_PAIN = 1750
+THING_SOUND_DEATH = 1751
+THING_SOUNDNAME_DEATH = 1752
+THING_SOUNDSET_DEATH = 1753
+THING_SOUND_ACTIVE = 1754
+THING_SOUNDNAME_ACTIVE = 1755
+THING_SOUNDSET_ACTIVE = 1756
+THING_FLAGS = 1757
+THING_RENAME = 1758
+THING_RESTORE = 1759
 THING_LIST = 1760
 FRAME_STATES = 1761
 STATES_SPRITE = 1762
@@ -476,471 +476,444 @@ class MainFrameBase ( wx.MDIParentFrame ):
 class ThingsFrameBase ( wx.MDIChildFrame ):
 
 	def __init__( self, parent ):
-		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 980,768 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
+		wx.MDIChildFrame.__init__ ( self, parent, id = FRAME_THINGS, title = u"Things", pos = wx.DefaultPosition, size = wx.Size( 640,640 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL )
 
-		self.SetSizeHints( wx.Size( 980,768 ), wx.DefaultSize )
+		self.SetSizeHints( wx.Size( 640,640 ), wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 
 		SizerMain = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.PanelProperties = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		TabsSizer = wx.BoxSizer( wx.VERTICAL )
+
+		self.Tabs = wx.Notebook( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.PanelProperties = wx.ScrolledWindow( self.Tabs, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.HSCROLL )
+		self.PanelProperties.SetScrollRate( 0, 6 )
 		SizerProperties = wx.BoxSizer( wx.VERTICAL )
-
-		self.LabelProperties = wx.StaticText( self.PanelProperties, wx.ID_ANY, u"Properties", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.LabelProperties.Wrap( -1 )
-
-		self.LabelProperties.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
-
-		SizerProperties.Add( self.LabelProperties, 0, wx.ALL, 3 )
 
 		self.PanelGame = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerGame = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingGameLabel = wx.StaticText( self.PanelGame, wx.ID_ANY, u"Game", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingGameLabel = wx.StaticText( self.PanelGame, wx.ID_ANY, u"Game", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingGameLabel.Wrap( -1 )
 
-		SizerGame.Add( self.ThingGameLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerGame.Add( self.ThingGameLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 		ThingGameChoices = []
-		self.ThingGame = wx.Choice( self.PanelGame, THING_VAL_GAME, wx.DefaultPosition, wx.Size( 100,-1 ), ThingGameChoices, 0 )
+		self.ThingGame = wx.Choice( self.PanelGame, THING_VAL_GAME, wx.DefaultPosition, wx.Size( -1,-1 ), ThingGameChoices, 0 )
 		self.ThingGame.SetSelection( 0 )
-		SizerGame.Add( self.ThingGame, 1, wx.ALL, 3 )
+		SizerGame.Add( self.ThingGame, 1, 0, 0 )
 
 
 		self.PanelGame.SetSizer( SizerGame )
 		self.PanelGame.Layout()
 		SizerGame.Fit( self.PanelGame )
-		SizerProperties.Add( self.PanelGame, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelGame, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelID = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerID = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingIdLabel = wx.StaticText( self.PanelID, wx.ID_ANY, u"ID", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingIdLabel = wx.StaticText( self.PanelID, wx.ID_ANY, u"ID", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingIdLabel.Wrap( -1 )
 
-		SizerID.Add( self.ThingIdLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerID.Add( self.ThingIdLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingId = wx.TextCtrl( self.PanelID, THING_VAL_ID, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingId = wx.TextCtrl( self.PanelID, THING_VAL_ID, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingId.SetMaxLength( 6 )
-		SizerID.Add( self.ThingId, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerID.Add( self.ThingId, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelID.SetSizer( SizerID )
 		self.PanelID.Layout()
 		SizerID.Fit( self.PanelID )
-		SizerProperties.Add( self.PanelID, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelID, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelSpawnID = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerSpawnID = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingSpawnIdLabel = wx.StaticText( self.PanelSpawnID, wx.ID_ANY, u"Spawn ID", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingSpawnIdLabel = wx.StaticText( self.PanelSpawnID, wx.ID_ANY, u"Spawn ID", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingSpawnIdLabel.Wrap( -1 )
 
-		SizerSpawnID.Add( self.ThingSpawnIdLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerSpawnID.Add( self.ThingSpawnIdLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingSpawnId = wx.TextCtrl( self.PanelSpawnID, THING_VAL_SPAWNID, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingSpawnId = wx.TextCtrl( self.PanelSpawnID, THING_VAL_SPAWNID, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingSpawnId.SetMaxLength( 6 )
-		SizerSpawnID.Add( self.ThingSpawnId, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerSpawnID.Add( self.ThingSpawnId, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelSpawnID.SetSizer( SizerSpawnID )
 		self.PanelSpawnID.Layout()
 		SizerSpawnID.Fit( self.PanelSpawnID )
-		SizerProperties.Add( self.PanelSpawnID, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelSpawnID, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelHealth = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerHealth = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingHealthLabel = wx.StaticText( self.PanelHealth, wx.ID_ANY, u"Health", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingHealthLabel = wx.StaticText( self.PanelHealth, wx.ID_ANY, u"Health", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingHealthLabel.Wrap( -1 )
 
-		SizerHealth.Add( self.ThingHealthLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerHealth.Add( self.ThingHealthLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingHealth = wx.TextCtrl( self.PanelHealth, THING_VAL_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingHealth = wx.TextCtrl( self.PanelHealth, THING_VAL_HEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingHealth.SetMaxLength( 6 )
-		SizerHealth.Add( self.ThingHealth, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerHealth.Add( self.ThingHealth, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelHealth.SetSizer( SizerHealth )
 		self.PanelHealth.Layout()
 		SizerHealth.Fit( self.PanelHealth )
-		SizerProperties.Add( self.PanelHealth, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelHealth, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelGibHealth = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerHealth1 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingGibHealthLabel = wx.StaticText( self.PanelGibHealth, wx.ID_ANY, u"Gib health", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingGibHealthLabel = wx.StaticText( self.PanelGibHealth, wx.ID_ANY, u"Gib health", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingGibHealthLabel.Wrap( -1 )
 
-		SizerHealth1.Add( self.ThingGibHealthLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerHealth1.Add( self.ThingGibHealthLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingGibHealth = wx.TextCtrl( self.PanelGibHealth, THING_VAL_GIBHEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingGibHealth = wx.TextCtrl( self.PanelGibHealth, THING_VAL_GIBHEALTH, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingGibHealth.SetMaxLength( 6 )
-		SizerHealth1.Add( self.ThingGibHealth, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerHealth1.Add( self.ThingGibHealth, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelGibHealth.SetSizer( SizerHealth1 )
 		self.PanelGibHealth.Layout()
 		SizerHealth1.Fit( self.PanelGibHealth )
-		SizerProperties.Add( self.PanelGibHealth, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelGibHealth, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelSpeed = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerSpeed = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingSpeeLabel = wx.StaticText( self.PanelSpeed, wx.ID_ANY, u"Speed", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingSpeeLabel = wx.StaticText( self.PanelSpeed, wx.ID_ANY, u"Speed", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingSpeeLabel.Wrap( -1 )
 
-		SizerSpeed.Add( self.ThingSpeeLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerSpeed.Add( self.ThingSpeeLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingSpeed = wx.TextCtrl( self.PanelSpeed, THING_VAL_SPEED, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingSpeed = wx.TextCtrl( self.PanelSpeed, THING_VAL_SPEED, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingSpeed.SetMaxLength( 6 )
-		SizerSpeed.Add( self.ThingSpeed, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerSpeed.Add( self.ThingSpeed, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelSpeed.SetSizer( SizerSpeed )
 		self.PanelSpeed.Layout()
 		SizerSpeed.Fit( self.PanelSpeed )
-		SizerProperties.Add( self.PanelSpeed, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelSpeed, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelRadius = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerRadius = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingRadiusLabel = wx.StaticText( self.PanelRadius, wx.ID_ANY, u"Radius", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingRadiusLabel = wx.StaticText( self.PanelRadius, wx.ID_ANY, u"Radius", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingRadiusLabel.Wrap( -1 )
 
-		SizerRadius.Add( self.ThingRadiusLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerRadius.Add( self.ThingRadiusLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingRadius = wx.TextCtrl( self.PanelRadius, THING_VAL_RADIUS, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingRadius = wx.TextCtrl( self.PanelRadius, THING_VAL_RADIUS, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingRadius.SetMaxLength( 6 )
-		SizerRadius.Add( self.ThingRadius, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerRadius.Add( self.ThingRadius, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelRadius.SetSizer( SizerRadius )
 		self.PanelRadius.Layout()
 		SizerRadius.Fit( self.PanelRadius )
-		SizerProperties.Add( self.PanelRadius, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelRadius, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelHeight = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerHeight = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingHeightLabel = wx.StaticText( self.PanelHeight, wx.ID_ANY, u"Height", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingHeightLabel = wx.StaticText( self.PanelHeight, wx.ID_ANY, u"Height", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingHeightLabel.Wrap( -1 )
 
-		SizerHeight.Add( self.ThingHeightLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerHeight.Add( self.ThingHeightLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingHeight = wx.TextCtrl( self.PanelHeight, THING_VAL_HEIGHT, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingHeight = wx.TextCtrl( self.PanelHeight, THING_VAL_HEIGHT, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingHeight.SetMaxLength( 6 )
-		SizerHeight.Add( self.ThingHeight, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerHeight.Add( self.ThingHeight, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelHeight.SetSizer( SizerHeight )
 		self.PanelHeight.Layout()
 		SizerHeight.Fit( self.PanelHeight )
-		SizerProperties.Add( self.PanelHeight, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelHeight, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelProjectilePassHeight = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerHeight1 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingProjectilePassHeightLabel = wx.StaticText( self.PanelProjectilePassHeight, wx.ID_ANY, u"Projectile pass height", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingProjectilePassHeightLabel = wx.StaticText( self.PanelProjectilePassHeight, wx.ID_ANY, u"Projectile pass height", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingProjectilePassHeightLabel.Wrap( -1 )
 
-		SizerHeight1.Add( self.ThingProjectilePassHeightLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerHeight1.Add( self.ThingProjectilePassHeightLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingProjectilePassHeight = wx.TextCtrl( self.PanelProjectilePassHeight, THING_VAL_PROJECTILE_PASS_HEIGHT, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingProjectilePassHeight = wx.TextCtrl( self.PanelProjectilePassHeight, THING_VAL_PROJECTILE_PASS_HEIGHT, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingProjectilePassHeight.SetMaxLength( 6 )
-		SizerHeight1.Add( self.ThingProjectilePassHeight, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerHeight1.Add( self.ThingProjectilePassHeight, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelProjectilePassHeight.SetSizer( SizerHeight1 )
 		self.PanelProjectilePassHeight.Layout()
 		SizerHeight1.Fit( self.PanelProjectilePassHeight )
-		SizerProperties.Add( self.PanelProjectilePassHeight, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelProjectilePassHeight, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelDamage = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerDamage = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingDamageLabel = wx.StaticText( self.PanelDamage, wx.ID_ANY, u"Damage", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingDamageLabel = wx.StaticText( self.PanelDamage, wx.ID_ANY, u"Damage", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingDamageLabel.Wrap( -1 )
 
-		SizerDamage.Add( self.ThingDamageLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerDamage.Add( self.ThingDamageLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingDamage = wx.TextCtrl( self.PanelDamage, THING_VAL_DAMAGE, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingDamage = wx.TextCtrl( self.PanelDamage, THING_VAL_DAMAGE, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingDamage.SetMaxLength( 6 )
-		SizerDamage.Add( self.ThingDamage, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerDamage.Add( self.ThingDamage, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelDamage.SetSizer( SizerDamage )
 		self.PanelDamage.Layout()
 		SizerDamage.Fit( self.PanelDamage )
-		SizerProperties.Add( self.PanelDamage, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelDamage, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelDamageFactor = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerDamageFactor = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingDamageFactorLabel = wx.StaticText( self.PanelDamageFactor, wx.ID_ANY, u"Damage factor", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingDamageFactorLabel = wx.StaticText( self.PanelDamageFactor, wx.ID_ANY, u"Damage factor", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingDamageFactorLabel.Wrap( -1 )
 
-		SizerDamageFactor.Add( self.ThingDamageFactorLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerDamageFactor.Add( self.ThingDamageFactorLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingDamageFactor = wx.TextCtrl( self.PanelDamageFactor, THING_VAL_DAMAGEFACTOR, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingDamageFactor = wx.TextCtrl( self.PanelDamageFactor, THING_VAL_DAMAGEFACTOR, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingDamageFactor.SetMaxLength( 6 )
-		SizerDamageFactor.Add( self.ThingDamageFactor, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerDamageFactor.Add( self.ThingDamageFactor, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelDamageFactor.SetSizer( SizerDamageFactor )
 		self.PanelDamageFactor.Layout()
 		SizerDamageFactor.Fit( self.PanelDamageFactor )
-		SizerProperties.Add( self.PanelDamageFactor, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelDamageFactor, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelReactionTime = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerReactionTime = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingReactionTimeLabel = wx.StaticText( self.PanelReactionTime, wx.ID_ANY, u"Reaction time", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingReactionTimeLabel = wx.StaticText( self.PanelReactionTime, wx.ID_ANY, u"Reaction time", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingReactionTimeLabel.Wrap( -1 )
 
-		SizerReactionTime.Add( self.ThingReactionTimeLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerReactionTime.Add( self.ThingReactionTimeLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingReactionTime = wx.TextCtrl( self.PanelReactionTime, THING_VAL_REACTIONTIME, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingReactionTime = wx.TextCtrl( self.PanelReactionTime, THING_VAL_REACTIONTIME, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingReactionTime.SetMaxLength( 6 )
-		SizerReactionTime.Add( self.ThingReactionTime, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerReactionTime.Add( self.ThingReactionTime, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelReactionTime.SetSizer( SizerReactionTime )
 		self.PanelReactionTime.Layout()
 		SizerReactionTime.Fit( self.PanelReactionTime )
-		SizerProperties.Add( self.PanelReactionTime, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelReactionTime, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelPainChance = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerPainChance = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingPainChanceLabel = wx.StaticText( self.PanelPainChance, wx.ID_ANY, u"Pain chance", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingPainChanceLabel = wx.StaticText( self.PanelPainChance, wx.ID_ANY, u"Pain chance", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingPainChanceLabel.Wrap( -1 )
 
-		SizerPainChance.Add( self.ThingPainChanceLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPainChance.Add( self.ThingPainChanceLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingPainChance = wx.TextCtrl( self.PanelPainChance, THING_VAL_PAINCHANCE, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingPainChance = wx.TextCtrl( self.PanelPainChance, THING_VAL_PAINCHANCE, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingPainChance.SetMaxLength( 6 )
-		SizerPainChance.Add( self.ThingPainChance, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerPainChance.Add( self.ThingPainChance, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelPainChance.SetSizer( SizerPainChance )
 		self.PanelPainChance.Layout()
 		SizerPainChance.Fit( self.PanelPainChance )
-		SizerProperties.Add( self.PanelPainChance, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelPainChance, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelMass = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerMass = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingMassLabel = wx.StaticText( self.PanelMass, wx.ID_ANY, u"Mass", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingMassLabel = wx.StaticText( self.PanelMass, wx.ID_ANY, u"Mass", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingMassLabel.Wrap( -1 )
 
-		SizerMass.Add( self.ThingMassLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerMass.Add( self.ThingMassLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingMass = wx.TextCtrl( self.PanelMass, THING_VAL_MASS, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingMass = wx.TextCtrl( self.PanelMass, THING_VAL_MASS, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingMass.SetMaxLength( 6 )
-		SizerMass.Add( self.ThingMass, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerMass.Add( self.ThingMass, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelMass.SetSizer( SizerMass )
 		self.PanelMass.Layout()
 		SizerMass.Fit( self.PanelMass )
-		SizerProperties.Add( self.PanelMass, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelMass, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelGravity = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerGravity = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingGravityLabel = wx.StaticText( self.PanelGravity, wx.ID_ANY, u"Gravity", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingGravityLabel = wx.StaticText( self.PanelGravity, wx.ID_ANY, u"Gravity", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingGravityLabel.Wrap( -1 )
 
-		SizerGravity.Add( self.ThingGravityLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerGravity.Add( self.ThingGravityLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingGravity = wx.TextCtrl( self.PanelGravity, THING_VAL_GRAVITY, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingGravity = wx.TextCtrl( self.PanelGravity, THING_VAL_GRAVITY, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingGravity.SetMaxLength( 6 )
-		SizerGravity.Add( self.ThingGravity, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerGravity.Add( self.ThingGravity, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelGravity.SetSizer( SizerGravity )
 		self.PanelGravity.Layout()
 		SizerGravity.Fit( self.PanelGravity )
-		SizerProperties.Add( self.PanelGravity, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelGravity, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelRespawnTime = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerRespawnTime = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingRespawnTimeLabel = wx.StaticText( self.PanelRespawnTime, wx.ID_ANY, u"Respawn time", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingRespawnTimeLabel = wx.StaticText( self.PanelRespawnTime, wx.ID_ANY, u"Respawn time", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingRespawnTimeLabel.Wrap( -1 )
 
-		SizerRespawnTime.Add( self.ThingRespawnTimeLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerRespawnTime.Add( self.ThingRespawnTimeLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingRespawnTime = wx.TextCtrl( self.PanelRespawnTime, THING_VAL_RESPAWNTIME, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingRespawnTime = wx.TextCtrl( self.PanelRespawnTime, THING_VAL_RESPAWNTIME, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingRespawnTime.SetMaxLength( 6 )
-		SizerRespawnTime.Add( self.ThingRespawnTime, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerRespawnTime.Add( self.ThingRespawnTime, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelRespawnTime.SetSizer( SizerRespawnTime )
 		self.PanelRespawnTime.Layout()
 		SizerRespawnTime.Fit( self.PanelRespawnTime )
-		SizerProperties.Add( self.PanelRespawnTime, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelRespawnTime, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelFullbright = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerRespawnTime1 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingFullbrightLabel = wx.StaticText( self.PanelFullbright, wx.ID_ANY, u"Full brightness", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingFullbrightLabel = wx.StaticText( self.PanelFullbright, wx.ID_ANY, u"Full brightness", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingFullbrightLabel.Wrap( -1 )
 
-		SizerRespawnTime1.Add( self.ThingFullbrightLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerRespawnTime1.Add( self.ThingFullbrightLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 		self.ThingFullbright = wx.CheckBox( self.PanelFullbright, THING_VAL_FULLBRIGHT, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		SizerRespawnTime1.Add( self.ThingFullbright, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerRespawnTime1.Add( self.ThingFullbright, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelFullbright.SetSizer( SizerRespawnTime1 )
 		self.PanelFullbright.Layout()
 		SizerRespawnTime1.Fit( self.PanelFullbright )
-		SizerProperties.Add( self.PanelFullbright, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelFullbright, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelRenderStyle = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerRenderStyle = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingRenderStyleLabel = wx.StaticText( self.PanelRenderStyle, wx.ID_ANY, u"Render style", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingRenderStyleLabel = wx.StaticText( self.PanelRenderStyle, wx.ID_ANY, u"Render style", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingRenderStyleLabel.Wrap( -1 )
 
-		SizerRenderStyle.Add( self.ThingRenderStyleLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerRenderStyle.Add( self.ThingRenderStyleLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 		ThingRenderStyleChoices = []
-		self.ThingRenderStyle = wx.Choice( self.PanelRenderStyle, THING_VAL_RENDERSTYLE, wx.DefaultPosition, wx.Size( 100,-1 ), ThingRenderStyleChoices, 0 )
+		self.ThingRenderStyle = wx.Choice( self.PanelRenderStyle, THING_VAL_RENDERSTYLE, wx.DefaultPosition, wx.Size( -1,-1 ), ThingRenderStyleChoices, 0 )
 		self.ThingRenderStyle.SetSelection( 0 )
-		SizerRenderStyle.Add( self.ThingRenderStyle, 1, wx.ALL, 3 )
+		SizerRenderStyle.Add( self.ThingRenderStyle, 1, 0, 0 )
 
 
 		self.PanelRenderStyle.SetSizer( SizerRenderStyle )
 		self.PanelRenderStyle.Layout()
 		SizerRenderStyle.Fit( self.PanelRenderStyle )
-		SizerProperties.Add( self.PanelRenderStyle, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelRenderStyle, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelAlpha = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerAlpha = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingAlphaLabel = wx.StaticText( self.PanelAlpha, wx.ID_ANY, u"Alpha", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingAlphaLabel = wx.StaticText( self.PanelAlpha, wx.ID_ANY, u"Alpha", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingAlphaLabel.Wrap( -1 )
 
-		SizerAlpha.Add( self.ThingAlphaLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerAlpha.Add( self.ThingAlphaLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingAlpha = wx.TextCtrl( self.PanelAlpha, THING_VAL_ALPHA, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingAlpha = wx.TextCtrl( self.PanelAlpha, THING_VAL_ALPHA, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingAlpha.SetMaxLength( 6 )
-		SizerAlpha.Add( self.ThingAlpha, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerAlpha.Add( self.ThingAlpha, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelAlpha.SetSizer( SizerAlpha )
 		self.PanelAlpha.Layout()
 		SizerAlpha.Fit( self.PanelAlpha )
-		SizerProperties.Add( self.PanelAlpha, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelAlpha, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelScale = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerScale = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingScaleLabel = wx.StaticText( self.PanelScale, wx.ID_ANY, u"Scale", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingScaleLabel = wx.StaticText( self.PanelScale, wx.ID_ANY, u"Scale", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingScaleLabel.Wrap( -1 )
 
-		SizerScale.Add( self.ThingScaleLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerScale.Add( self.ThingScaleLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingScale = wx.TextCtrl( self.PanelScale, THING_VAL_SCALE, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingScale = wx.TextCtrl( self.PanelScale, THING_VAL_SCALE, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingScale.SetMaxLength( 6 )
-		SizerScale.Add( self.ThingScale, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerScale.Add( self.ThingScale, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelScale.SetSizer( SizerScale )
 		self.PanelScale.Layout()
 		SizerScale.Fit( self.PanelScale )
-		SizerProperties.Add( self.PanelScale, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelScale, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelDroppedItem = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerScale1 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingDroppedItemLabel = wx.StaticText( self.PanelDroppedItem, wx.ID_ANY, u"Dropped item", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingDroppedItemLabel = wx.StaticText( self.PanelDroppedItem, wx.ID_ANY, u"Dropped item", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingDroppedItemLabel.Wrap( -1 )
 
-		SizerScale1.Add( self.ThingDroppedItemLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerScale1.Add( self.ThingDroppedItemLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingDroppedItem = wx.TextCtrl( self.PanelDroppedItem, THING_VAL_DROPPED_ITEM, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingDroppedItem = wx.TextCtrl( self.PanelDroppedItem, THING_VAL_DROPPED_ITEM, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingDroppedItem.SetMaxLength( 6 )
-		SizerScale1.Add( self.ThingDroppedItem, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerScale1.Add( self.ThingDroppedItem, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelDroppedItem.SetSizer( SizerScale1 )
 		self.PanelDroppedItem.Layout()
 		SizerScale1.Fit( self.PanelDroppedItem )
-		SizerProperties.Add( self.PanelDroppedItem, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelDroppedItem, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelPickupRadius = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerRadius1 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingPickupRadiusLabel = wx.StaticText( self.PanelPickupRadius, wx.ID_ANY, u"Pickup radius", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingPickupRadiusLabel = wx.StaticText( self.PanelPickupRadius, wx.ID_ANY, u"Pickup radius", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingPickupRadiusLabel.Wrap( -1 )
 
-		SizerRadius1.Add( self.ThingPickupRadiusLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerRadius1.Add( self.ThingPickupRadiusLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingPickupRadius = wx.TextCtrl( self.PanelPickupRadius, THING_VAL_PICKUP_RADIUS, wx.EmptyString, wx.DefaultPosition, wx.Size( 50,-1 ), 0 )
+		self.ThingPickupRadius = wx.TextCtrl( self.PanelPickupRadius, THING_VAL_PICKUP_RADIUS, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingPickupRadius.SetMaxLength( 6 )
-		SizerRadius1.Add( self.ThingPickupRadius, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerRadius1.Add( self.ThingPickupRadius, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelPickupRadius.SetSizer( SizerRadius1 )
 		self.PanelPickupRadius.Layout()
 		SizerRadius1.Fit( self.PanelPickupRadius )
-		SizerProperties.Add( self.PanelPickupRadius, 0, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelPickupRadius, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelDecal = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerDecal = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.ThingDecalLabel = wx.StaticText( self.PanelDecal, wx.ID_ANY, u"Decal", wx.DefaultPosition, wx.Size( 90,-1 ), 0 )
+		self.ThingDecalLabel = wx.StaticText( self.PanelDecal, wx.ID_ANY, u"Decal", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
 		self.ThingDecalLabel.Wrap( -1 )
 
-		SizerDecal.Add( self.ThingDecalLabel, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerDecal.Add( self.ThingDecalLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		self.ThingDecal = wx.TextCtrl( self.PanelDecal, THING_VAL_DECAL, wx.EmptyString, wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.ThingDecal = wx.TextCtrl( self.PanelDecal, THING_VAL_DECAL, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingDecal.SetMaxLength( 6 )
-		SizerDecal.Add( self.ThingDecal, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
+		SizerDecal.Add( self.ThingDecal, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelDecal.SetSizer( SizerDecal )
 		self.PanelDecal.Layout()
 		SizerDecal.Fit( self.PanelDecal )
-		SizerProperties.Add( self.PanelDecal, 0, wx.EXPAND, 0 )
-
-		SizerPropertiesBottom = wx.BoxSizer( wx.VERTICAL )
-
-
-		SizerPropertiesBottom.Add( ( 0, 0), 1, wx.EXPAND, 0 )
-
-		self.ButtonRename = wx.Button( self.PanelProperties, THING_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.ButtonRename.SetMinSize( wx.Size( -1,36 ) )
-
-		SizerPropertiesBottom.Add( self.ButtonRename, 0, wx.ALL|wx.EXPAND, 0 )
-
-
-		SizerProperties.Add( SizerPropertiesBottom, 1, wx.EXPAND, 0 )
+		SizerProperties.Add( self.PanelDecal, 0, wx.ALL|wx.EXPAND, 6 )
 
 
 		self.PanelProperties.SetSizer( SizerProperties )
 		self.PanelProperties.Layout()
 		SizerProperties.Fit( self.PanelProperties )
-		SizerMain.Add( self.PanelProperties, 1, wx.BOTTOM|wx.EXPAND|wx.LEFT|wx.TOP, 9 )
+		self.Tabs.AddPage( self.PanelProperties, u"Properties", False )
+		self.PanelStates = wx.Panel( self.Tabs, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		SizerStates = wx.BoxSizer( wx.VERTICAL )
 
-
-		SizerMain.Add( ( 16, 0), 0, 0, 0 )
-
-		self.PanelStatesSounds = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		SizerStatesSounds = wx.BoxSizer( wx.VERTICAL )
-
-		self.StatesLabel = wx.StaticText( self.PanelStatesSounds, wx.ID_ANY, u"States", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.StatesLabel.Wrap( -1 )
-
-		self.StatesLabel.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
-
-		SizerStatesSounds.Add( self.StatesLabel, 0, wx.ALL, 3 )
-
-		self.PanelStateSpawn = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStateSpawn = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateSpawn = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStateSpawnLabel = wx.StaticText( self.PanelStateSpawn, wx.ID_ANY, u"Spawn", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -969,9 +942,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStateSpawn.SetSizer( SizerStateSpawn )
 		self.PanelStateSpawn.Layout()
 		SizerStateSpawn.Fit( self.PanelStateSpawn )
-		SizerStatesSounds.Add( self.PanelStateSpawn, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStateSpawn, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelStateWalk = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStateWalk = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateWalk = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStateWalkLabel = wx.StaticText( self.PanelStateWalk, wx.ID_ANY, u"Walk", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1000,9 +973,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStateWalk.SetSizer( SizerStateWalk )
 		self.PanelStateWalk.Layout()
 		SizerStateWalk.Fit( self.PanelStateWalk )
-		SizerStatesSounds.Add( self.PanelStateWalk, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStateWalk, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelStatePain = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStatePain = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStatePain = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStatePainLabel = wx.StaticText( self.PanelStatePain, wx.ID_ANY, u"Pain", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1031,9 +1004,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStatePain.SetSizer( SizerStatePain )
 		self.PanelStatePain.Layout()
 		SizerStatePain.Fit( self.PanelStatePain )
-		SizerStatesSounds.Add( self.PanelStatePain, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStatePain, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelStateMelee = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStateMelee = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateMelee = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStateMeleeLabel = wx.StaticText( self.PanelStateMelee, wx.ID_ANY, u"Melee", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1062,9 +1035,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStateMelee.SetSizer( SizerStateMelee )
 		self.PanelStateMelee.Layout()
 		SizerStateMelee.Fit( self.PanelStateMelee )
-		SizerStatesSounds.Add( self.PanelStateMelee, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStateMelee, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelStateAttack = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStateAttack = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateAttack = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStateAttackLabel = wx.StaticText( self.PanelStateAttack, wx.ID_ANY, u"Attack", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1093,9 +1066,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStateAttack.SetSizer( SizerStateAttack )
 		self.PanelStateAttack.Layout()
 		SizerStateAttack.Fit( self.PanelStateAttack )
-		SizerStatesSounds.Add( self.PanelStateAttack, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStateAttack, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelStateDeath = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStateDeath = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateDeath = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStateDeathLabel = wx.StaticText( self.PanelStateDeath, wx.ID_ANY, u"Death", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1124,9 +1097,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStateDeath.SetSizer( SizerStateDeath )
 		self.PanelStateDeath.Layout()
 		SizerStateDeath.Fit( self.PanelStateDeath )
-		SizerStatesSounds.Add( self.PanelStateDeath, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStateDeath, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelStateExplode = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStateExplode = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateExplode = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStateExplodeLabel = wx.StaticText( self.PanelStateExplode, wx.ID_ANY, u"Explode", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1155,9 +1128,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStateExplode.SetSizer( SizerStateExplode )
 		self.PanelStateExplode.Layout()
 		SizerStateExplode.Fit( self.PanelStateExplode )
-		SizerStatesSounds.Add( self.PanelStateExplode, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStateExplode, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelStateRaise = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStateRaise = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateRaise = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStateRaiseLabel = wx.StaticText( self.PanelStateRaise, wx.ID_ANY, u"Raise", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1186,9 +1159,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStateRaise.SetSizer( SizerStateRaise )
 		self.PanelStateRaise.Layout()
 		SizerStateRaise.Fit( self.PanelStateRaise )
-		SizerStatesSounds.Add( self.PanelStateRaise, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStateRaise, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelStateCrash = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStateCrash = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateCrash = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStateCrashLabel = wx.StaticText( self.PanelStateCrash, wx.ID_ANY, u"Crash", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1217,9 +1190,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStateCrash.SetSizer( SizerStateCrash )
 		self.PanelStateCrash.Layout()
 		SizerStateCrash.Fit( self.PanelStateCrash )
-		SizerStatesSounds.Add( self.PanelStateCrash, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStateCrash, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelStateFreeze = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStateFreeze = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateFreeze = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStateFreezeLabel = wx.StaticText( self.PanelStateFreeze, wx.ID_ANY, u"Freeze", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1248,9 +1221,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStateFreeze.SetSizer( SizerStateFreeze )
 		self.PanelStateFreeze.Layout()
 		SizerStateFreeze.Fit( self.PanelStateFreeze )
-		SizerStatesSounds.Add( self.PanelStateFreeze, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStateFreeze, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelStateBurn = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelStateBurn = wx.Panel( self.PanelStates, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerStateBurn = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingStateBurnLabel = wx.StaticText( self.PanelStateBurn, wx.ID_ANY, u"Burn", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1279,19 +1252,17 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelStateBurn.SetSizer( SizerStateBurn )
 		self.PanelStateBurn.Layout()
 		SizerStateBurn.Fit( self.PanelStateBurn )
-		SizerStatesSounds.Add( self.PanelStateBurn, 0, wx.EXPAND, 0 )
+		SizerStates.Add( self.PanelStateBurn, 0, wx.ALL|wx.EXPAND, 3 )
 
 
-		SizerStatesSounds.Add( ( 0, 18), 0, wx.EXPAND, 3 )
+		self.PanelStates.SetSizer( SizerStates )
+		self.PanelStates.Layout()
+		SizerStates.Fit( self.PanelStates )
+		self.Tabs.AddPage( self.PanelStates, u"States", False )
+		self.PanelSounds = wx.Panel( self.Tabs, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		SizerSounds = wx.BoxSizer( wx.VERTICAL )
 
-		self.SoundsLabel = wx.StaticText( self.PanelStatesSounds, wx.ID_ANY, u"Sounds", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.SoundsLabel.Wrap( -1 )
-
-		self.SoundsLabel.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
-
-		SizerStatesSounds.Add( self.SoundsLabel, 0, wx.ALL, 3 )
-
-		self.PanelSoundAlert = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelSoundAlert = wx.Panel( self.PanelSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerSoundAlert = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingSoundAlertLabel = wx.StaticText( self.PanelSoundAlert, wx.ID_ANY, u"Alert", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1320,9 +1291,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelSoundAlert.SetSizer( SizerSoundAlert )
 		self.PanelSoundAlert.Layout()
 		SizerSoundAlert.Fit( self.PanelSoundAlert )
-		SizerStatesSounds.Add( self.PanelSoundAlert, 0, wx.EXPAND, 0 )
+		SizerSounds.Add( self.PanelSoundAlert, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelSoundAttack = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelSoundAttack = wx.Panel( self.PanelSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerSoundAttack = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingSoundAttackLabel = wx.StaticText( self.PanelSoundAttack, wx.ID_ANY, u"Attack", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1351,9 +1322,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelSoundAttack.SetSizer( SizerSoundAttack )
 		self.PanelSoundAttack.Layout()
 		SizerSoundAttack.Fit( self.PanelSoundAttack )
-		SizerStatesSounds.Add( self.PanelSoundAttack, 0, wx.EXPAND, 0 )
+		SizerSounds.Add( self.PanelSoundAttack, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelSoundPain = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelSoundPain = wx.Panel( self.PanelSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerSoundPain = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingSoundPainLabel = wx.StaticText( self.PanelSoundPain, wx.ID_ANY, u"Pain", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1382,9 +1353,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelSoundPain.SetSizer( SizerSoundPain )
 		self.PanelSoundPain.Layout()
 		SizerSoundPain.Fit( self.PanelSoundPain )
-		SizerStatesSounds.Add( self.PanelSoundPain, 0, wx.EXPAND, 0 )
+		SizerSounds.Add( self.PanelSoundPain, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelSoundDeath = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelSoundDeath = wx.Panel( self.PanelSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerSoundDeath = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingSoundDeathLabel = wx.StaticText( self.PanelSoundDeath, wx.ID_ANY, u"Death", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1413,9 +1384,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelSoundDeath.SetSizer( SizerSoundDeath )
 		self.PanelSoundDeath.Layout()
 		SizerSoundDeath.Fit( self.PanelSoundDeath )
-		SizerStatesSounds.Add( self.PanelSoundDeath, 0, wx.EXPAND, 0 )
+		SizerSounds.Add( self.PanelSoundDeath, 0, wx.ALL|wx.EXPAND, 3 )
 
-		self.PanelSoundActive = wx.Panel( self.PanelStatesSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelSoundActive = wx.Panel( self.PanelSounds, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerSoundActive = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.ThingSoundActiveLabel = wx.StaticText( self.PanelSoundActive, wx.ID_ANY, u"Active", wx.DefaultPosition, wx.Size( 55,-1 ), 0 )
@@ -1444,31 +1415,14 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelSoundActive.SetSizer( SizerSoundActive )
 		self.PanelSoundActive.Layout()
 		SizerSoundActive.Fit( self.PanelSoundActive )
-		SizerStatesSounds.Add( self.PanelSoundActive, 0, wx.EXPAND, 0 )
-
-		SizerBottom = wx.BoxSizer( wx.VERTICAL )
+		SizerSounds.Add( self.PanelSoundActive, 0, wx.ALL|wx.EXPAND, 3 )
 
 
-		SizerBottom.Add( ( 0, 0), 1, wx.EXPAND, 0 )
-
-		self.ButtonRestore = wx.Button( self.PanelStatesSounds, THING_RESTORE, u"Restore", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.ButtonRestore.SetMinSize( wx.Size( -1,36 ) )
-
-		SizerBottom.Add( self.ButtonRestore, 0, wx.EXPAND|wx.TOP, 3 )
-
-
-		SizerStatesSounds.Add( SizerBottom, 1, wx.EXPAND, 5 )
-
-
-		self.PanelStatesSounds.SetSizer( SizerStatesSounds )
-		self.PanelStatesSounds.Layout()
-		SizerStatesSounds.Fit( self.PanelStatesSounds )
-		SizerMain.Add( self.PanelStatesSounds, 1, wx.BOTTOM|wx.EXPAND|wx.TOP, 9 )
-
-
-		SizerMain.Add( ( 16, 0), 0, 0, 0 )
-
-		self.PanelFlags = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.PanelSounds.SetSizer( SizerSounds )
+		self.PanelSounds.Layout()
+		SizerSounds.Fit( self.PanelSounds )
+		self.Tabs.AddPage( self.PanelSounds, u"Sounds", True )
+		self.PanelFlags = wx.Panel( self.Tabs, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerFlags = wx.BoxSizer( wx.VERTICAL )
 
 		ThingFlagsChoices = []
@@ -1476,19 +1430,36 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingFlags.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 		self.ThingFlags.SetMinSize( wx.Size( 210,-1 ) )
 
-		SizerFlags.Add( self.ThingFlags, 2, wx.EXPAND, 3 )
+		SizerFlags.Add( self.ThingFlags, 1, wx.EXPAND, 3 )
 
 
 		self.PanelFlags.SetSizer( SizerFlags )
 		self.PanelFlags.Layout()
 		SizerFlags.Fit( self.PanelFlags )
-		SizerMain.Add( self.PanelFlags, 1, wx.BOTTOM|wx.EXPAND|wx.TOP, 9 )
+		self.Tabs.AddPage( self.PanelFlags, u"Flags", False )
+
+		TabsSizer.Add( self.Tabs, 1, wx.ALL|wx.EXPAND, 6 )
+
+		ButtonSizer = wx.BoxSizer( wx.VERTICAL )
+
+		self.ButtonRename = wx.Button( self, THING_RENAME, u"Rename", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.ButtonRename.SetMinSize( wx.Size( -1,36 ) )
+
+		ButtonSizer.Add( self.ButtonRename, 0, wx.ALL|wx.EXPAND, 0 )
+
+		self.ButtonRestore = wx.Button( self, THING_RESTORE, u"Restore", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.ButtonRestore.SetMinSize( wx.Size( -1,36 ) )
+
+		ButtonSizer.Add( self.ButtonRestore, 0, wx.EXPAND|wx.TOP, 6 )
 
 
-		SizerMain.Add( ( 16, 0), 0, 0, 0 )
+		TabsSizer.Add( ButtonSizer, 0, wx.ALL|wx.EXPAND, 6 )
+
+
+		SizerMain.Add( TabsSizer, 0, wx.EXPAND, 0 )
 
 		self.ThingList = wx.ListCtrl( self, THING_LIST, wx.DefaultPosition, wx.DefaultSize, wx.LC_HRULES|wx.LC_REPORT|wx.LC_SINGLE_SEL|wx.BORDER_NONE )
-		SizerMain.Add( self.ThingList, 2, wx.EXPAND, 0 )
+		SizerMain.Add( self.ThingList, 1, wx.EXPAND, 0 )
 
 
 		self.SetSizer( SizerMain )
@@ -1506,7 +1477,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 
 
 		# Connect Events
-		self.LabelProperties.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingGameLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingGame.Bind( wx.EVT_CHOICE, self.set_renderstyle )
 		self.ThingIdLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
@@ -1573,8 +1543,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingDecalLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingDecal.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingDecal.Bind( wx.EVT_TEXT, self.set_value )
-		self.ButtonRename.Bind( wx.EVT_BUTTON, self.thing_rename )
-		self.StatesLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateSpawnLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateSpawn.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateSpawn.Bind( wx.EVT_TEXT, self.set_state )
@@ -1674,7 +1642,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateBurnName.Bind( wx.EVT_LEFT_UP, self.goto_state_event )
 		self.ThingStateBurnName.Bind( wx.EVT_RIGHT_UP, self.preview_state )
 		self.ThingStateBurnSet.Bind( wx.EVT_BUTTON, self.set_state_external )
-		self.SoundsLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundAlertLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSoundAlert.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSoundAlert.Bind( wx.EVT_TEXT, self.set_sound )
@@ -1720,9 +1687,10 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundActiveName.Bind( wx.EVT_LEFT_UP, self.goto_sound_event )
 		self.ThingSoundActiveName.Bind( wx.EVT_RIGHT_UP, self.sound_play )
 		self.ThingSoundActiveSet.Bind( wx.EVT_BUTTON, self.set_sound_external )
-		self.ButtonRestore.Bind( wx.EVT_BUTTON, self.thing_restore )
 		self.ThingFlags.Bind( wx.EVT_CHECKLISTBOX, self.set_flags )
 		self.ThingFlags.Bind( wx.EVT_MOTION, self.set_flag_tooltip )
+		self.ButtonRename.Bind( wx.EVT_BUTTON, self.thing_rename )
+		self.ButtonRestore.Bind( wx.EVT_BUTTON, self.thing_restore )
 		self.ThingList.Bind( wx.EVT_LIST_ITEM_ACTIVATED, self.thing_rename )
 		self.ThingList.Bind( wx.EVT_LIST_ITEM_RIGHT_CLICK, self.thing_context )
 		self.ThingList.Bind( wx.EVT_LIST_ITEM_SELECTED, self.thing_select )
@@ -1738,7 +1706,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 	# Virtual event handlers, overide them in your derived class
 	def dummy( self, event ):
 		pass
-
 
 	def set_renderstyle( self, event ):
 		pass
@@ -1811,10 +1778,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 
 
 
-	def thing_rename( self, event ):
-		pass
-
-
 
 
 	def set_state( self, event ):
@@ -1835,7 +1798,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 
 	def set_state_external( self, event ):
 		pass
-
 
 
 
@@ -1980,13 +1942,16 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 
 
 
-	def thing_restore( self, event ):
-		pass
-
 	def set_flags( self, event ):
 		pass
 
 	def set_flag_tooltip( self, event ):
+		pass
+
+	def thing_rename( self, event ):
+		pass
+
+	def thing_restore( self, event ):
 		pass
 
 

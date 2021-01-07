@@ -1,9 +1,7 @@
 - DEHEXTRA configuration with missing bits and pieces from https://doomwiki.org/wiki/DEHEXTRA
     - Finish boolean fullbright saving as "True" or "False"
-    - New sounds start at index 500, between those and new ones there must be reserved sounds that are not editable.
 - Add warnings when loading patches that reference things\states\etc. that do not exist, from https://www.doomworld.com/forum/post/2123386
 - Calculated % number next to a thing's pain chance.
-- Thing editor labels do not fit.
 - State animation preview should not display states with 0 duration? But still run it's actions. See DV4 fist attack.
 - State animation preview should use parameters 1 and 2 to offset sprite. (If weapon?)
 - When opening a new patch file after modifying the current one, no warning is given and the new patch is loaded immediately.

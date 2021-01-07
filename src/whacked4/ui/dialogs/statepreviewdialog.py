@@ -97,7 +97,7 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
 
     def set_title(self):
         if self.ref_thing_index is not None:
-            title = 'Preview - {}'.format(self.patch.things.names[self.ref_thing_index])
+            title = 'Preview - {}'.format(self.patch.things[self.ref_thing_index].name)
         else:
             title = 'Preview'
 

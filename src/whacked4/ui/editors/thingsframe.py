@@ -1,3 +1,5 @@
+from wx import PostEvent
+
 from whacked4 import utils
 from whacked4.dehacked.statequery.query import StateFilterQuery
 from whacked4.dehacked.statequery.stateindexsort import StateIndexSort
@@ -328,7 +330,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         # Update the properties being displayed by this window, in case state or sound names have changed.
         self.update_properties()
-        self.Layout()
+
+        # Fix weird property layout issues.
+        self.PanelProperties.Layout()
+        self.PanelProperties.SendSizeEvent()
 
     def edit_copy(self):
         """
