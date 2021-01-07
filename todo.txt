@@ -8,15 +8,20 @@ Low priority bugs
 - Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
 
 Later
+- Split out patch reading\writing from patch class and clean it up.
 - Calculated % number next to a thing's pain chance.
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
   - Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Mark and display items (things, states, strings, ammo, weapons, sounds) as modified compared to engine config.
 - Muzzle flash support for weapon state previews. Possible if we know what thing or weapon uses a state.
+- Allow multiple flag fields for things, for Doom Retro's "Retro Bits" field.
 - Add Doom Retro specific fields that do not exist in DEHEXTRA. See https://github.com/bradharding/doomretro/wiki/INFORMATION-FOR-MAPPERS#DEHACKED-LUMPS
-- Allow multiple flag fields for things (and implement Doom Retro's "Retro Bits" field).
+    - Blood
+    - Shadow offset
+    - Name1
+    - Retro bits (needs multiple flag field support first)
 - Final Doom (TNT and Plutonia) support, see https://www.doomworld.com/forum/topic/117871-dehacked-30a-special-edition-with-support-for-both-final-doom-versions/?tab=comments#comment-2212475
-- Manually clear list of recent files.
+- Option to manually clear list of recent files.
 - Investigate pyInstaller for executable generation. Single file, less dependencies?
 - UI manual \ Dehacked tutorial.
 - Look into new Eternity Engine and PrBoom+ Dehacked features.
@@ -28,8 +33,6 @@ Later
 - Action sound playback data for the Hexen + Heretic + ZDoom action functions.
 - '...' button for actions to browse through list of actions plus a description.
   - Fix action descriptions first, not all correspond with what the actual Doom code does. Check with Doom code in p_pspr and p_enemy.
-- Simplify engine config structure for faster parsing.
-    - States and things could be listed as array with a key entry?
 - DEHSUPP support. See GitHub issue #1.
 - ZDaemon: Add and parse relevant actors from http://www.zdaemon.org/?CMD=info&NAME=deh. Is this related to DEHSUPP?
 - Read\write DEHACKED lumps directly from a WAD file.

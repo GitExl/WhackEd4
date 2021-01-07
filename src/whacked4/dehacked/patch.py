@@ -442,27 +442,45 @@ class Patch(object):
                     mode = ParseMode.THING
                     entry_index = int(line_words[1]) - 1
                     entry_name = ' '.join(line_words[2:])[1:-1]
-                    self.things[entry_index].name = entry_name
+                    if entry_index < 0 or entry_index >= len(self.sounds):
+                        messages['NOTHING'] = 'The patch contains thing data that does not exist in the chosen engine. It will not be loaded.'
+                        entry_index = -1
+                    else:
+                        self.things[entry_index].name = entry_name
                     continue
                 elif line.startswith('Frame ') and len(line_words) >= 2:
                     mode = ParseMode.STATE
                     entry_index = int(line_words[1])
+                    if entry_index < 0 or entry_index >= len(self.states):
+                        messages['NOSTATE'] = 'The patch contains state data that does not exist in the chosen engine. It will not be loaded.'
+                        entry_index = -1
                     continue
                 elif line.startswith('Sound ') and len(line_words) >= 2:
                     mode = ParseMode.SOUND
                     entry_index = int(line_words[1])
+                    if entry_index < 0 or entry_index >= len(self.sounds):
+                        messages['NOSOUND'] = 'The patch contains sound data that does not exist in the chosen engine. It will not be loaded.'
+                        entry_index = -1
                     continue
                 elif line.startswith('Weapon ') and len(line_words) >= 3:
                     mode = ParseMode.WEAPON
                     entry_index = int(line_words[1])
                     entry_name = ' '.join(line_words[2:])[1:-1]
-                    self.weapons[entry_index].name = entry_name
+                    if entry_index < 0 or entry_index >= len(self.wapons):
+                        messages['NOWEAPON'] = 'The patch contains weapon data that does not exist in the chosen engine. It will not be loaded.'
+                        entry_index = -1
+                    else:
+                        self.weapons[entry_index].name = entry_name
                     continue
                 elif line.startswith('Ammo ') and len(line_words) >= 3 and line_words[2][0] == '(':
                     mode = ParseMode.AMMO
                     entry_index = int(line_words[1])
                     entry_name = ' '.join(line_words[2:])[1:-1]
-                    self.ammo[entry_index].name = entry_name
+                    if entry_index < 0 or entry_index >= len(self.ammo):
+                        messages['NOAMMO'] = 'The patch contains ammo data that does not exist in the chosen engine. It will not be loaded.'
+                        entry_index = -1
+                    else:
+                        self.ammo[entry_index].name = entry_name
                     continue
                 elif line.startswith('Sprite ') and len(line_words) == 2:
                     mode = ParseMode.SPRITE
@@ -515,15 +533,15 @@ class Patch(object):
                             self.strings[key] = new
 
                         # Also replace sprite names, so that patches can alter them without offset modifications.
-                        for i, name in enumerate(self.sprite_names):
+                        for i, name in enumerate(self.engine.sprite_names):
                             if name == original:
                                 self.sprite_names[i] = new
                                 break
 
                         # Also replace sound names, so that patches can alter them without offset modifications.
-                        for i, sound in enumerate(self.sounds):
+                        for i, sound in enumerate(self.engine.sounds):
                             if sound.name == original:
-                                sound.name = new
+                                self.sounds[i].name = new
                                 break
 
                     # In extended mode, locate the key of the string and replace that.
@@ -621,16 +639,17 @@ class Patch(object):
                 value = pair[1]
 
                 try:
-                    if mode == ParseMode.THING:
+                    if mode == ParseMode.THING and entry_index != -1:
                         self.things[entry_index].set_patch_key(key, value)
-                    elif mode == ParseMode.STATE:
+                    elif mode == ParseMode.STATE and entry_index != -1:
                         self.states[entry_index].set_patch_key(key, value)
-                    elif mode == ParseMode.SOUND:
+                    elif mode == ParseMode.SOUND and entry_index != -1:
                         self.sounds[entry_index].set_patch_key(key, value)
-                    elif mode == ParseMode.WEAPON:
+                    elif mode == ParseMode.WEAPON and entry_index != -1:
                         self.weapons[entry_index].set_patch_key(key, value)
-                    elif mode == ParseMode.AMMO:
+                    elif mode == ParseMode.AMMO and entry_index != -1:
                         self.ammo[entry_index].set_patch_key(key, value)
+
                     elif mode == ParseMode.POINTER:
                         if not self.extended and entry_index not in self.engine.action_index_to_state:
                             messages['INVALID_CODEPOINTER_INDEX'] = 'A codepointer was assigned to a state that had none before. It will not be loaded.'
