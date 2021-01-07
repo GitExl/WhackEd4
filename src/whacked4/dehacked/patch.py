@@ -681,13 +681,13 @@ class Patch(object):
         sound_index -= 1
 
         # Index 0 indicates no sound.
-        if sound_index == -1:
+        if sound_index == -1 or self.sounds[sound_index].unused:
             return '-'
 
         if sound_index > len(self.engine.sounds):
             return '????'
         else:
-            return self.engine.sounds[sound_index].name.upper()
+            return self.sounds[sound_index].name.upper()
 
 
 def string_escape(string):

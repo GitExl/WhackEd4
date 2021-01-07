@@ -3,7 +3,6 @@
 
 from whacked4 import config, utils
 from whacked4.ui import editormixin, windows
-import copy
 import wx
 
 
@@ -14,6 +13,9 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
     # The colour used for color-coding priorities.
     PRIORITY_COLOUR = wx.Colour(red=255, green=48, blue=0)
+
+    UNUSED_TEXT_COLOUR = wx.Colour(red=127, green=127, blue=127)
+    UNUSED_BACKGROUND_COLOUR = wx.Colour(red=243, green=243, blue=243)
 
     def __init__(self, parent):
         windows.SoundsFrameBase.__init__(self, parent)
@@ -50,9 +52,9 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             return
 
         # Update sound names only.
-        self.SoundList.SetItem(0, 1, '-')
+        self.SoundList.SetItem(0, 1, self.patch.get_sound_name(0))
         for index, sound in enumerate(self.patch.sounds):
-            self.SoundList.SetItem(index + 1, 1, sound.name.upper())
+            self.SoundList.SetItem(index + 1, 1, self.patch.get_sound_name(index + 1))
 
     def build_colours(self):
         """
@@ -126,23 +128,23 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         Updates a sound list row with the data for that sound.
         """
 
-        if row_index == 0:
-            self.SoundList.SetItem(row_index, 1, '-')
+        sound = self.patch.sounds[sound_index]
+
+        if row_index == 0 or sound.unused:
+            self.SoundList.SetItem(row_index, 1, self.patch.get_sound_name(0))
             self.SoundList.SetItem(row_index, 2, '')
             self.SoundList.SetItem(row_index, 3, '')
 
-            # Colour-code rows by priority.
-            self.SoundList.SetItemBackgroundColour(row_index, self.priority_colours[0])
+            self.SoundList.SetItemTextColour(row_index, self.UNUSED_TEXT_COLOUR)
+            self.SoundList.SetItemBackgroundColour(row_index, self.UNUSED_BACKGROUND_COLOUR)
 
         else:
-            sound = self.patch.sounds[sound_index]
-
             if sound['isSingular'] == 1:
                 singular = '◾'
             else:
                 singular = ''
 
-            self.SoundList.SetItem(row_index, 1, sound.name.upper())
+            self.SoundList.SetItem(row_index, 1, self.patch.get_sound_name(row_index))
             self.SoundList.SetItem(row_index, 2, str(sound['priority']))
             self.SoundList.SetItem(row_index, 3, singular)
 
@@ -186,14 +188,15 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         Update the displayed property controls.
         """
 
-        if self.selected_row == 0:
+        sound = self.patch.sounds[self.selected_index]
+
+        if self.selected_row == 0 or sound.unused:
             self.Priority.ChangeValue('')
             self.Singular.SetValue(False)
 
             self.tools_set_state(False)
 
         else:
-            sound = self.patch.sounds[self.selected_index]
             singular = (sound['isSingular'] == 1)
 
             self.Priority.ChangeValue(str(sound['priority']))

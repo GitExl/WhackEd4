@@ -3063,17 +3063,13 @@
 	"defaultSound": {},
 
 	"ammo": [],
-	"ammoNames": [],
 	"cheats": {},
 	"cheatData": {},
 	"sounds": [],
-	"soundNames": [],
 	"spriteNames": [],
 	"states": [],
 	"strings": {},
-	"thingNames": [],
 	"things": [],
-	"weaponNames": [],
 	"weapons": [],
 	"usedStates": []
 }

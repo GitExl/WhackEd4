@@ -43,12 +43,13 @@ class Table(object):
 
             # Add unused entries if needed.
             if next_index > len(self.entries):
-                for _ in range(next_index - len(self.entries) - 1):
+                for _ in range(next_index - len(self.entries)):
                     self.entries.append(unused_entry.clone())
 
             # Overwrite existing entry or add a new one.
             if next_index < len(self.entries):
                 self.entries[next_index].from_json(json_entry)
+                self.entries[next_index].unused = False
             else:
                 self.entries.append(self.entry_class(self).from_json(json_entry))
 

@@ -628,14 +628,18 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         Sets a sound property based on the sound that is currently selected in the sounds editor.
         """
 
-        self.undo_add()
-
         # Get a reference to the states editor window.
         parent = self.GetMDIParent()
         sounds_frame = parent.editor_windows[windows.MAIN_TOOL_SOUNDS]
 
+        row_index = sounds_frame.selected_row
+        sound = self.patch.sounds[row_index - 1]
+        if sound.unused:
+            row_index = 0
+
+        self.undo_add()
         text_ctrl = self.FindWindowById(self.PROPS_SOUNDSET[event.GetId()])
-        text_ctrl.SetValue(str(sounds_frame.selected_row))
+        text_ctrl.SetValue(str(row_index))
         self.is_modified(True)
 
     def thing_select(self, event):

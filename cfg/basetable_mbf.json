@@ -1,8 +1,6 @@
 {
 	"parent": "basetable_boom",
-
 	"features": [],
-
 	"actions": {
 		"Detonate": {
 			"name": "Detonate",
@@ -17,13 +15,19 @@
 					"name": "Fireball angle",
 					"description": "The angle to throw the fireballs in.",
 					"type": "fixedpoint",
-					"range": [-359, 359]
+					"range": [
+						-359,
+						359
+					]
 				},
 				{
 					"name": "Fireball speed",
 					"description": "The speed to throw the fireballs at.",
 					"type": "fixedpoint",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -41,7 +45,10 @@
 					"name": "Z",
 					"description": "The relative Z position to spawn the thing at.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -54,7 +61,10 @@
 					"name": "Angle",
 					"description": "The angle to turn, in degrees.",
 					"type": "integer",
-					"range": [-359, 359]
+					"range": [
+						-359,
+						359
+					]
 				}
 			],
 			"type": "thing"
@@ -67,7 +77,10 @@
 					"name": "Angle",
 					"description": "The angle to face, in degrees.",
 					"type": "integer",
-					"range": [0, 359]
+					"range": [
+						0,
+						359
+					]
 				}
 			],
 			"type": "thing"
@@ -80,7 +93,10 @@
 					"name": "Damage",
 					"description": "The amount of damage to inflict.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Sound",
@@ -104,7 +120,10 @@
 					"name": "Full volume",
 					"description": "If set to 1, the sound effect will play at full volume regardless of the distance.",
 					"type": "integer",
-					"range": [0, 1]
+					"range": [
+						0,
+						1
+					]
 				}
 			],
 			"type": "thing",
@@ -123,7 +142,10 @@
 					"name": "Chance",
 					"description": "The chance that the jump is executed. Ranged 0 to 255.",
 					"type": "integer",
-					"range": [0, 255]
+					"range": [
+						0,
+						255
+					]
 				}
 			],
 			"type": "thing"
@@ -136,13 +158,19 @@
 					"name": "Type",
 					"description": "The linedef effect type number to trigger.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				},
 				{
 					"name": "Sector tag",
 					"description": "The sector tag to trigger the effect on.",
 					"type": "integer",
-					"range": [-32767, 32767]
+					"range": [
+						-32767,
+						32767
+					]
 				}
 			],
 			"type": "thing"
@@ -169,7 +197,6 @@
 			"type": "thing"
 		}
 	},
-
 	"sounds": [
 		{
 			"internalDataPointer": 0,
@@ -180,7 +207,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 0,
-			"priority": 98
+			"priority": 98,
+			"_name": "dgsit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -191,7 +219,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 0,
-			"priority": 70
+			"priority": 70,
+			"_name": "dgatk"
 		},
 		{
 			"internalDataPointer": 0,
@@ -202,7 +231,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 0,
-			"priority": 120
+			"priority": 120,
+			"_name": "dgact"
 		},
 		{
 			"internalDataPointer": 0,
@@ -213,7 +243,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 0,
-			"priority": 70
+			"priority": 70,
+			"_name": "dgdth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -224,27 +255,18 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 0,
-			"priority": 96
+			"priority": 96,
+			"_name": "dgpain"
 		}
 	],
-
-	"soundNames": [
-		"dgsit",
-		"dgatk",
-		"dgact",
-		"dgdth",
-		"dgpain"
-	],
-
 	"spriteNames": [
 		"DOGS",
 		"PLS1",
 		"PLS2",
 		"BON3",
 		"BON4",
-    "BLD2"
+		"BLD2"
 	],
-
 	"states": [
 		{
 			"action": "Die",
@@ -1336,9 +1358,7 @@
 			"spriteFrame": 3
 		}
 	],
-
 	"strings": {},
-
 	"thingFlags": {
 		"TOUCHY": {
 			"index": 28,
@@ -1365,15 +1385,6 @@
 			"alias": "FRIEND"
 		}
 	},
-
-	"thingNames": [
-		"Dog",
-		"Beta Plasma 1",
-		"Beta Plasma 2",
-		"Beta Sceptre",
-		"Beta Bible"
-	],
-
 	"things": [
 		{
 			"flags": 4194310,
@@ -1402,7 +1413,8 @@
 			"droppedItem": -1,
 			"pickupRadius": 0,
 			"projectilePassHeight": 0,
-			"fullbright": false
+			"fullbright": false,
+			"_name": "Dog"
 		},
 		{
 			"flags": 536938000,
@@ -1431,7 +1443,8 @@
 			"droppedItem": -1,
 			"pickupRadius": 0,
 			"projectilePassHeight": 0,
-			"fullbright": false
+			"fullbright": false,
+			"_name": "Beta Plasma 1"
 		},
 		{
 			"flags": 536938000,
@@ -1460,7 +1473,8 @@
 			"droppedItem": -1,
 			"pickupRadius": 0,
 			"projectilePassHeight": 0,
-			"fullbright": false
+			"fullbright": false,
+			"_name": "Beta Plasma 2"
 		},
 		{
 			"flags": 8388609,
@@ -1489,7 +1503,8 @@
 			"droppedItem": -1,
 			"pickupRadius": 0,
 			"projectilePassHeight": 0,
-			"fullbright": false
+			"fullbright": false,
+			"_name": "Beta Sceptre"
 		},
 		{
 			"flags": 8388609,
@@ -1518,10 +1533,10 @@
 			"droppedItem": -1,
 			"pickupRadius": 0,
 			"projectilePassHeight": 0,
-			"fullbright": false
+			"fullbright": false,
+			"_name": "Beta Bible"
 		}
 	],
-
 	"usedStates": [
 		1077,
 		1078,
@@ -1536,14 +1551,11 @@
 		1087,
 		1088
 	],
-
 	"ammo": [],
-	"ammoNames": [],
 	"cheatData": {},
 	"cheats": {},
 	"misc": {},
 	"miscData": {},
-	"weaponNames": [],
 	"weapons": [],
 	"renderStyles": {},
 	"defaultState": {},

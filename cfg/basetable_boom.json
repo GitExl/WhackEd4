@@ -371,7 +371,7 @@
 			"name": "FirePlasma",
 			"description": "Player Plasma Rifle attack.",
 			"type": "weapon",
-      "usesExtraFlashState": true
+			"usesExtraFlashState": true
 		},
 		"FirePistol": {
 			"name": "FirePistol",
@@ -396,7 +396,7 @@
 			"description": "Player Chaingun shot.\n\nAlso checks ammo, does not go to -1 ammo, but changes the weapon instead.",
 			"type": "weapon",
 			"sound": "sound:1",
-      "usesExtraFlashState": true
+			"usesExtraFlashState": true
 		},
 		"Light0": {
 			"name": "Light0",
@@ -428,26 +428,24 @@
 	"ammo": [
 		{
 			"maximum": 200,
-			"clip": 10
+			"clip": 10,
+			"_name": "Bullets"
 		},
 		{
 			"maximum": 50,
-			"clip": 4
+			"clip": 4,
+			"_name": "Shells"
 		},
 		{
 			"maximum": 300,
-			"clip": 20
+			"clip": 20,
+			"_name": "Cells"
 		},
 		{
 			"maximum": 50,
-			"clip": 1
+			"clip": 1,
+			"_name": "Rockets"
 		}
-	],
-	"ammoNames": [
-		"Bullets",
-		"Shells",
-		"Cells",
-		"Rockets"
 	],
 	"cheatData": {
 		"changeMusic": {
@@ -650,7 +648,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151340,
-			"priority": 64
+			"priority": 64,
+			"_name": "pistol"
 		},
 		{
 			"internalDataPointer": 0,
@@ -661,7 +660,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151348,
-			"priority": 64
+			"priority": 64,
+			"_name": "shotgn"
 		},
 		{
 			"internalDataPointer": 0,
@@ -672,7 +672,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151356,
-			"priority": 64
+			"priority": 64,
+			"_name": "sgcock"
 		},
 		{
 			"internalDataPointer": 0,
@@ -683,7 +684,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151364,
-			"priority": 64
+			"priority": 64,
+			"_name": "dshtgn"
 		},
 		{
 			"internalDataPointer": 0,
@@ -694,7 +696,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151372,
-			"priority": 64
+			"priority": 64,
+			"_name": "dbopn"
 		},
 		{
 			"internalDataPointer": 0,
@@ -705,7 +708,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151380,
-			"priority": 64
+			"priority": 64,
+			"_name": "dbcls"
 		},
 		{
 			"internalDataPointer": 0,
@@ -716,7 +720,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151388,
-			"priority": 64
+			"priority": 64,
+			"_name": "dbload"
 		},
 		{
 			"internalDataPointer": 0,
@@ -727,7 +732,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151396,
-			"priority": 64
+			"priority": 64,
+			"_name": "plasma"
 		},
 		{
 			"internalDataPointer": 0,
@@ -738,7 +744,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151404,
-			"priority": 64
+			"priority": 64,
+			"_name": "bfg"
 		},
 		{
 			"internalDataPointer": 0,
@@ -749,7 +756,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151408,
-			"priority": 64
+			"priority": 64,
+			"_name": "sawup"
 		},
 		{
 			"internalDataPointer": 0,
@@ -760,7 +768,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151416,
-			"priority": 118
+			"priority": 118,
+			"_name": "sawidl"
 		},
 		{
 			"internalDataPointer": 0,
@@ -771,7 +780,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151424,
-			"priority": 64
+			"priority": 64,
+			"_name": "sawful"
 		},
 		{
 			"internalDataPointer": 0,
@@ -782,7 +792,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151432,
-			"priority": 64
+			"priority": 64,
+			"_name": "sawhit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -793,7 +804,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151440,
-			"priority": 64
+			"priority": 64,
+			"_name": "rlaunc"
 		},
 		{
 			"internalDataPointer": 0,
@@ -804,7 +816,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151448,
-			"priority": 70
+			"priority": 70,
+			"_name": "rxplod"
 		},
 		{
 			"internalDataPointer": 0,
@@ -815,7 +828,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151456,
-			"priority": 70
+			"priority": 70,
+			"_name": "firsht"
 		},
 		{
 			"internalDataPointer": 0,
@@ -826,7 +840,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151464,
-			"priority": 70
+			"priority": 70,
+			"_name": "firxpl"
 		},
 		{
 			"internalDataPointer": 0,
@@ -837,7 +852,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151472,
-			"priority": 100
+			"priority": 100,
+			"_name": "pstart"
 		},
 		{
 			"internalDataPointer": 0,
@@ -848,7 +864,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151480,
-			"priority": 100
+			"priority": 100,
+			"_name": "pstop"
 		},
 		{
 			"internalDataPointer": 0,
@@ -859,7 +876,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151488,
-			"priority": 100
+			"priority": 100,
+			"_name": "doropn"
 		},
 		{
 			"internalDataPointer": 0,
@@ -870,7 +888,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151496,
-			"priority": 100
+			"priority": 100,
+			"_name": "dorcls"
 		},
 		{
 			"internalDataPointer": 0,
@@ -881,7 +900,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151504,
-			"priority": 119
+			"priority": 119,
+			"_name": "stnmov"
 		},
 		{
 			"internalDataPointer": 0,
@@ -892,7 +912,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151512,
-			"priority": 78
+			"priority": 78,
+			"_name": "swtchn"
 		},
 		{
 			"internalDataPointer": 0,
@@ -903,7 +924,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151520,
-			"priority": 78
+			"priority": 78,
+			"_name": "swtchx"
 		},
 		{
 			"internalDataPointer": 0,
@@ -914,7 +936,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151528,
-			"priority": 96
+			"priority": 96,
+			"_name": "plpain"
 		},
 		{
 			"internalDataPointer": 0,
@@ -925,7 +948,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151536,
-			"priority": 96
+			"priority": 96,
+			"_name": "dmpain"
 		},
 		{
 			"internalDataPointer": 0,
@@ -936,7 +960,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151544,
-			"priority": 96
+			"priority": 96,
+			"_name": "popain"
 		},
 		{
 			"internalDataPointer": 0,
@@ -947,7 +972,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151552,
-			"priority": 96
+			"priority": 96,
+			"_name": "vipain"
 		},
 		{
 			"internalDataPointer": 0,
@@ -958,7 +984,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151560,
-			"priority": 96
+			"priority": 96,
+			"_name": "mnpain"
 		},
 		{
 			"internalDataPointer": 0,
@@ -969,7 +996,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151568,
-			"priority": 96
+			"priority": 96,
+			"_name": "pepain"
 		},
 		{
 			"internalDataPointer": 0,
@@ -980,7 +1008,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151576,
-			"priority": 78
+			"priority": 78,
+			"_name": "slop"
 		},
 		{
 			"internalDataPointer": 0,
@@ -991,7 +1020,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151584,
-			"priority": 78
+			"priority": 78,
+			"_name": "itemup"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1002,7 +1032,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151592,
-			"priority": 78
+			"priority": 78,
+			"_name": "wpnup"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1013,7 +1044,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151600,
-			"priority": 96
+			"priority": 96,
+			"_name": "oof"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1024,7 +1056,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151604,
-			"priority": 32
+			"priority": 32,
+			"_name": "telept"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1035,7 +1068,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151612,
-			"priority": 98
+			"priority": 98,
+			"_name": "posit1"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1046,7 +1080,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151620,
-			"priority": 98
+			"priority": 98,
+			"_name": "posit2"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1057,7 +1092,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151628,
-			"priority": 98
+			"priority": 98,
+			"_name": "posit3"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1068,7 +1104,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151636,
-			"priority": 98
+			"priority": 98,
+			"_name": "bgsit1"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1079,7 +1116,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151644,
-			"priority": 98
+			"priority": 98,
+			"_name": "bgsit2"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1090,7 +1128,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151652,
-			"priority": 98
+			"priority": 98,
+			"_name": "sgtsit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1101,7 +1140,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151660,
-			"priority": 98
+			"priority": 98,
+			"_name": "cacsit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1112,7 +1152,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151668,
-			"priority": 94
+			"priority": 94,
+			"_name": "brssit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1123,7 +1164,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151676,
-			"priority": 92
+			"priority": 92,
+			"_name": "cybsit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1134,7 +1176,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151684,
-			"priority": 90
+			"priority": 90,
+			"_name": "spisit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1145,7 +1188,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151692,
-			"priority": 90
+			"priority": 90,
+			"_name": "bspsit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1156,7 +1200,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151700,
-			"priority": 90
+			"priority": 90,
+			"_name": "kntsit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1167,7 +1212,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151708,
-			"priority": 90
+			"priority": 90,
+			"_name": "vilsit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1178,7 +1224,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151716,
-			"priority": 90
+			"priority": 90,
+			"_name": "mansit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1189,7 +1236,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151724,
-			"priority": 90
+			"priority": 90,
+			"_name": "pesit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1200,7 +1248,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151732,
-			"priority": 70
+			"priority": 70,
+			"_name": "sklatk"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1211,7 +1260,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151740,
-			"priority": 70
+			"priority": 70,
+			"_name": "sgtatk"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1222,7 +1272,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151748,
-			"priority": 70
+			"priority": 70,
+			"_name": "skepch"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1233,7 +1284,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151756,
-			"priority": 70
+			"priority": 70,
+			"_name": "vilatk"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1244,7 +1296,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151764,
-			"priority": 70
+			"priority": 70,
+			"_name": "claw"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1255,7 +1308,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151772,
-			"priority": 70
+			"priority": 70,
+			"_name": "skeswg"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1266,7 +1320,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151780,
-			"priority": 32
+			"priority": 32,
+			"_name": "pldeth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1277,7 +1332,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151788,
-			"priority": 32
+			"priority": 32,
+			"_name": "pdiehi"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1288,7 +1344,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151796,
-			"priority": 70
+			"priority": 70,
+			"_name": "podth1"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1299,7 +1356,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151804,
-			"priority": 70
+			"priority": 70,
+			"_name": "podth2"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1310,7 +1368,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151812,
-			"priority": 70
+			"priority": 70,
+			"_name": "podth3"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1321,7 +1380,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151820,
-			"priority": 70
+			"priority": 70,
+			"_name": "bgdth1"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1332,7 +1392,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151828,
-			"priority": 70
+			"priority": 70,
+			"_name": "bgdth2"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1343,7 +1404,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151836,
-			"priority": 70
+			"priority": 70,
+			"_name": "sgtdth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1354,7 +1416,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151844,
-			"priority": 70
+			"priority": 70,
+			"_name": "cacdth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1365,7 +1428,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151852,
-			"priority": 70
+			"priority": 70,
+			"_name": "skldth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1376,7 +1440,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151860,
-			"priority": 32
+			"priority": 32,
+			"_name": "brsdth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1387,7 +1452,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151868,
-			"priority": 32
+			"priority": 32,
+			"_name": "cybdth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1398,7 +1464,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151876,
-			"priority": 32
+			"priority": 32,
+			"_name": "spidth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1409,7 +1476,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151884,
-			"priority": 32
+			"priority": 32,
+			"_name": "bspdth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1420,7 +1488,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151892,
-			"priority": 32
+			"priority": 32,
+			"_name": "vildth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1431,7 +1500,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151900,
-			"priority": 32
+			"priority": 32,
+			"_name": "kntdth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1442,7 +1512,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151908,
-			"priority": 32
+			"priority": 32,
+			"_name": "pedth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1453,7 +1524,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151916,
-			"priority": 32
+			"priority": 32,
+			"_name": "skedth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1464,7 +1536,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151924,
-			"priority": 120
+			"priority": 120,
+			"_name": "posact"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1475,7 +1548,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151932,
-			"priority": 120
+			"priority": 120,
+			"_name": "bgact"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1486,7 +1560,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151940,
-			"priority": 120
+			"priority": 120,
+			"_name": "dmact"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1497,7 +1572,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151948,
-			"priority": 100
+			"priority": 100,
+			"_name": "bspact"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1508,7 +1584,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151956,
-			"priority": 100
+			"priority": 100,
+			"_name": "bspwlk"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1519,7 +1596,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151964,
-			"priority": 100
+			"priority": 100,
+			"_name": "vilact"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1530,7 +1608,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151972,
-			"priority": 78
+			"priority": 78,
+			"_name": "noway"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1541,7 +1620,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151980,
-			"priority": 60
+			"priority": 60,
+			"_name": "barexp"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1552,7 +1632,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151988,
-			"priority": 64
+			"priority": 64,
+			"_name": "punch"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1563,7 +1644,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 151996,
-			"priority": 70
+			"priority": 70,
+			"_name": "hoof"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1574,7 +1656,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152004,
-			"priority": 70
+			"priority": 70,
+			"_name": "metal"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1585,7 +1668,8 @@
 			"linkPointer": 84240,
 			"linkVolume": 0,
 			"namePointer": 152012,
-			"priority": 64
+			"priority": 64,
+			"_name": "chgun"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1596,7 +1680,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152020,
-			"priority": 60
+			"priority": 60,
+			"_name": "tink"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1607,7 +1692,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152028,
-			"priority": 100
+			"priority": 100,
+			"_name": "bdopn"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1618,7 +1704,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152036,
-			"priority": 100
+			"priority": 100,
+			"_name": "bdcls"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1629,7 +1716,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152044,
-			"priority": 100
+			"priority": 100,
+			"_name": "itmbk"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1640,7 +1728,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152052,
-			"priority": 32
+			"priority": 32,
+			"_name": "flame"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1651,7 +1740,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152060,
-			"priority": 32
+			"priority": 32,
+			"_name": "flamst"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1662,7 +1752,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152068,
-			"priority": 60
+			"priority": 60,
+			"_name": "getpow"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1673,7 +1764,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152076,
-			"priority": 70
+			"priority": 70,
+			"_name": "bospit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1684,7 +1776,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152084,
-			"priority": 70
+			"priority": 70,
+			"_name": "boscub"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1695,7 +1788,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152092,
-			"priority": 70
+			"priority": 70,
+			"_name": "bossit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1706,7 +1800,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152100,
-			"priority": 70
+			"priority": 70,
+			"_name": "bospn"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1717,7 +1812,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152108,
-			"priority": 70
+			"priority": 70,
+			"_name": "bosdth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1728,7 +1824,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152116,
-			"priority": 70
+			"priority": 70,
+			"_name": "manatk"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1739,7 +1836,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152124,
-			"priority": 70
+			"priority": 70,
+			"_name": "mandth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1750,7 +1848,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152132,
-			"priority": 70
+			"priority": 70,
+			"_name": "sssit"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1761,7 +1860,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152140,
-			"priority": 70
+			"priority": 70,
+			"_name": "ssdth"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1772,7 +1872,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152148,
-			"priority": 70
+			"priority": 70,
+			"_name": "keenpn"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1783,7 +1884,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152156,
-			"priority": 70
+			"priority": 70,
+			"_name": "keendt"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1794,7 +1896,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152164,
-			"priority": 70
+			"priority": 70,
+			"_name": "skeact"
 		},
 		{
 			"internalDataPointer": 0,
@@ -1805,7 +1908,8 @@
 			"linkPointer": 0,
 			"linkVolume": -1,
 			"namePointer": 152172,
-			"priority": 70
+			"priority": 70,
+			"_name": "skesit"
 		},
 		{
 			"linkPointer": 0,
@@ -1816,7 +1920,8 @@
 			"priority": 70,
 			"internalLumpindex": 0,
 			"namePointer": 152180,
-			"internalRefCount": 0
+			"internalRefCount": 0,
+			"_name": "skeatk"
 		},
 		{
 			"linkPointer": 0,
@@ -1827,118 +1932,9 @@
 			"priority": 60,
 			"internalLumpindex": 0,
 			"namePointer": 152188,
-			"internalRefCount": 0
+			"internalRefCount": 0,
+			"_name": "radio"
 		}
-	],
-	"soundNames": [
-		"pistol",
-		"shotgn",
-		"sgcock",
-		"dshtgn",
-		"dbopn",
-		"dbcls",
-		"dbload",
-		"plasma",
-		"bfg",
-		"sawup",
-		"sawidl",
-		"sawful",
-		"sawhit",
-		"rlaunc",
-		"rxplod",
-		"firsht",
-		"firxpl",
-		"pstart",
-		"pstop",
-		"doropn",
-		"dorcls",
-		"stnmov",
-		"swtchn",
-		"swtchx",
-		"plpain",
-		"dmpain",
-		"popain",
-		"vipain",
-		"mnpain",
-		"pepain",
-		"slop",
-		"itemup",
-		"wpnup",
-		"oof",
-		"telept",
-		"posit1",
-		"posit2",
-		"posit3",
-		"bgsit1",
-		"bgsit2",
-		"sgtsit",
-		"cacsit",
-		"brssit",
-		"cybsit",
-		"spisit",
-		"bspsit",
-		"kntsit",
-		"vilsit",
-		"mansit",
-		"pesit",
-		"sklatk",
-		"sgtatk",
-		"skepch",
-		"vilatk",
-		"claw",
-		"skeswg",
-		"pldeth",
-		"pdiehi",
-		"podth1",
-		"podth2",
-		"podth3",
-		"bgdth1",
-		"bgdth2",
-		"sgtdth",
-		"cacdth",
-		"skldth",
-		"brsdth",
-		"cybdth",
-		"spidth",
-		"bspdth",
-		"vildth",
-		"kntdth",
-		"pedth",
-		"skedth",
-		"posact",
-		"bgact",
-		"dmact",
-		"bspact",
-		"bspwlk",
-		"vilact",
-		"noway",
-		"barexp",
-		"punch",
-		"hoof",
-		"metal",
-		"chgun",
-		"tink",
-		"bdopn",
-		"bdcls",
-		"itmbk",
-		"flame",
-		"flamst",
-		"getpow",
-		"bospit",
-		"boscub",
-		"bossit",
-		"bospn",
-		"bosdth",
-		"manatk",
-		"mandth",
-		"sssit",
-		"ssdth",
-		"keenpn",
-		"keendt",
-		"skeact",
-		"skesit",
-		"skeatk",
-		"radio"
 	],
 	"spriteNames": [
 		"TROO",
@@ -2082,7 +2078,7 @@
 		"TNT1"
 	],
 	"states": [
-			{
+		{
 			"action": "NULL",
 			"duration": -1,
 			"unused1": 0,
@@ -11265,147 +11261,6 @@
 			"description": "Apply translucency."
 		}
 	},
-	"thingNames": [
-		"Player",
-		"Trooper",
-		"Sargeant",
-		"Archvile",
-		"Archvile attack",
-		"Revenant",
-		"Revenant fireball",
-		"Fireball trail",
-		"Mancubus",
-		"Mancubus fireball",
-		"Chaingun Sargeant",
-		"Imp",
-		"Demon",
-		"Spectre",
-		"Cacodemon",
-		"Baron of Hell",
-		"Baron fireball",
-		"Hell Knight",
-		"Lost Soul",
-		"Spiderdemon",
-		"Arachnotron",
-		"Cyberdemon",
-		"Pain Elemental",
-		"SS Nazi",
-		"Commander Keen",
-		"Big Brain",
-		"Demon spawner",
-		"Demon spawn spot",
-		"Demon spawn cube",
-		"Demon spawn fire",
-		"Barrel",
-		"Imp fireball",
-		"Caco fireball",
-		"Rocket in flight",
-		"Plasma projectile",
-		"BFG projectile",
-		"Arachnotron projectile",
-		"Bullet puff",
-		"Blood splat",
-		"Teleport fog",
-		"Item respawn fog",
-		"Teleport exit",
-		"BFG impact",
-		"Green armor",
-		"Blue armor",
-		"Health potion",
-		"Armor helmet",
-		"Blue keycard",
-		"Red keycard",
-		"Yellow keycard",
-		"Yellow skull key",
-		"Red skull key",
-		"Blue skull key",
-		"Stimpack",
-		"Medical kit",
-		"Soul sphere",
-		"Invulnerability",
-		"Berserk sphere",
-		"Blur sphere",
-		"Radiation suit",
-		"Computer map",
-		"Light amplification visor",
-		"Mega sphere",
-		"Ammo clip",
-		"Box of ammo",
-		"Rocket",
-		"Box of rockets",
-		"Energy cell",
-		"Energy cell pack",
-		"Shells",
-		"Box of shells",
-		"Backpack",
-		"BFG 9000",
-		"Chaingun",
-		"Chainsaw",
-		"Rocket launcher",
-		"Plasma rifle",
-		"Shotgun",
-		"Super shotgun",
-		"Tall lamp",
-		"Tall lamp 2",
-		"Short lamp",
-		"Tall green pillar",
-		"Short green pillar",
-		"Tall red pillar",
-		"Short red pillar",
-		"Pillar with skull",
-		"Pillar with heart",
-		"Eye in symbol",
-		"Flaming skulls",
-		"Grey tree",
-		"Tall blue torch",
-		"Tall green torch",
-		"Tall red torch",
-		"Small blue torch",
-		"Small green torch",
-		"Small red torch",
-		"Brown stub",
-		"Technical column",
-		"Candle",
-		"Candelabra",
-		"Swaying body",
-		"Hanging arms out",
-		"One-legged body",
-		"Hanging torso",
-		"Hanging leg",
-		"Hanging arms out 2",
-		"Hanging torso 2",
-		"One-legged body 2",
-		"Hanging leg 2",
-		"Swaying body 2",
-		"Dead Cacodemon",
-		"Dead Marine",
-		"Dead Trooper",
-		"Dead Demon",
-		"Dead Lost Soul",
-		"Dead Imp",
-		"Dead Sargeant",
-		"Guts and bones",
-		"Guts and bones 2",
-		"Skewered heads",
-		"Pool of blood",
-		"Pole with skull",
-		"Pile of skulls",
-		"Impaled body",
-		"Twitching body",
-		"Large tree",
-		"Flaming barrel",
-		"Hanging body 1",
-		"Hanging body 2",
-		"Hanging body 3",
-		"Hanging body 4",
-		"Hanging body 5",
-		"Hanging body 6",
-		"Pool of blood 1",
-		"Pool of blood 2",
-		"Brain",
-		"Pusher",
-		"Puller"
-	],
 	"things": [
 		{
 			"flags": 33557510,
@@ -11430,7 +11285,8 @@
 			"statePain": 156,
 			"stateRaise": 0,
 			"stateSpawn": 149,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Player"
 		},
 		{
 			"flags": 4194310,
@@ -11455,7 +11311,8 @@
 			"statePain": 187,
 			"stateRaise": 203,
 			"stateSpawn": 174,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Trooper"
 		},
 		{
 			"flags": 4194310,
@@ -11480,7 +11337,8 @@
 			"statePain": 220,
 			"stateRaise": 236,
 			"stateSpawn": 207,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Sargeant"
 		},
 		{
 			"flags": 4194310,
@@ -11505,7 +11363,8 @@
 			"statePain": 269,
 			"stateRaise": 0,
 			"stateSpawn": 241,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Archvile"
 		},
 		{
 			"flags": 2147484176,
@@ -11530,7 +11389,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 281,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Archvile attack"
 		},
 		{
 			"flags": 4194310,
@@ -11555,7 +11415,8 @@
 			"statePain": 343,
 			"stateRaise": 351,
 			"stateSpawn": 321,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Revenant"
 		},
 		{
 			"flags": 67088,
@@ -11580,7 +11441,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 316,
-			"radius": 720896
+			"radius": 720896,
+			"_name": "Revenant fireball"
 		},
 		{
 			"flags": 2147484176,
@@ -11605,7 +11467,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 311,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Fireball trail"
 		},
 		{
 			"flags": 4194310,
@@ -11630,7 +11493,8 @@
 			"statePain": 386,
 			"stateRaise": 398,
 			"stateSpawn": 362,
-			"radius": 3145728
+			"radius": 3145728,
+			"_name": "Mancubus"
 		},
 		{
 			"flags": 2147550736,
@@ -11655,7 +11519,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 357,
-			"radius": 393216
+			"radius": 393216,
+			"_name": "Mancubus fireball"
 		},
 		{
 			"flags": 4194310,
@@ -11680,7 +11545,8 @@
 			"statePain": 420,
 			"stateRaise": 435,
 			"stateSpawn": 406,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Chaingun Sargeant"
 		},
 		{
 			"flags": 4194310,
@@ -11705,7 +11571,8 @@
 			"statePain": 455,
 			"stateRaise": 470,
 			"stateSpawn": 442,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Imp"
 		},
 		{
 			"flags": 4194310,
@@ -11730,7 +11597,8 @@
 			"statePain": 488,
 			"stateRaise": 496,
 			"stateSpawn": 475,
-			"radius": 1966080
+			"radius": 1966080,
+			"_name": "Demon"
 		},
 		{
 			"flags": 4456454,
@@ -11755,7 +11623,8 @@
 			"statePain": 488,
 			"stateRaise": 496,
 			"stateSpawn": 475,
-			"radius": 1966080
+			"radius": 1966080,
+			"_name": "Spectre"
 		},
 		{
 			"flags": 4211206,
@@ -11780,7 +11649,8 @@
 			"statePain": 507,
 			"stateRaise": 516,
 			"stateSpawn": 502,
-			"radius": 2031616
+			"radius": 2031616,
+			"_name": "Cacodemon"
 		},
 		{
 			"flags": 4194310,
@@ -11805,7 +11675,8 @@
 			"statePain": 540,
 			"stateRaise": 549,
 			"stateSpawn": 527,
-			"radius": 1572864
+			"radius": 1572864,
+			"_name": "Baron of Hell"
 		},
 		{
 			"flags": 2147550736,
@@ -11830,7 +11701,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 522,
-			"radius": 393216
+			"radius": 393216,
+			"_name": "Baron fireball"
 		},
 		{
 			"flags": 4194310,
@@ -11855,7 +11727,8 @@
 			"statePain": 569,
 			"stateRaise": 578,
 			"stateSpawn": 556,
-			"radius": 1572864
+			"radius": 1572864,
+			"_name": "Hell Knight"
 		},
 		{
 			"flags": 16902,
@@ -11880,7 +11753,8 @@
 			"statePain": 593,
 			"stateRaise": 0,
 			"stateSpawn": 585,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Lost Soul"
 		},
 		{
 			"flags": 4194310,
@@ -11905,7 +11779,8 @@
 			"statePain": 619,
 			"stateRaise": 0,
 			"stateSpawn": 601,
-			"radius": 8388608
+			"radius": 8388608,
+			"_name": "Spiderdemon"
 		},
 		{
 			"flags": 4194310,
@@ -11930,7 +11805,8 @@
 			"statePain": 651,
 			"stateRaise": 660,
 			"stateSpawn": 632,
-			"radius": 4194304
+			"radius": 4194304,
+			"_name": "Arachnotron"
 		},
 		{
 			"flags": 4194310,
@@ -11955,7 +11831,8 @@
 			"statePain": 690,
 			"stateRaise": 0,
 			"stateSpawn": 674,
-			"radius": 2621440
+			"radius": 2621440,
+			"_name": "Cyberdemon"
 		},
 		{
 			"flags": 4211206,
@@ -11980,7 +11857,8 @@
 			"statePain": 712,
 			"stateRaise": 720,
 			"stateSpawn": 701,
-			"radius": 2031616
+			"radius": 2031616,
+			"_name": "Pain Elemental"
 		},
 		{
 			"flags": 4194310,
@@ -12005,7 +11883,8 @@
 			"statePain": 742,
 			"stateRaise": 758,
 			"stateSpawn": 726,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "SS Nazi"
 		},
 		{
 			"flags": 4195078,
@@ -12030,7 +11909,8 @@
 			"statePain": 776,
 			"stateRaise": 0,
 			"stateSpawn": 763,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Commander Keen"
 		},
 		{
 			"flags": 6,
@@ -12055,7 +11935,8 @@
 			"statePain": 779,
 			"stateRaise": 0,
 			"stateSpawn": 778,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Big Brain"
 		},
 		{
 			"flags": 24,
@@ -12080,7 +11961,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 784,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Demon spawner"
 		},
 		{
 			"flags": 24,
@@ -12105,7 +11987,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Demon spawn spot"
 		},
 		{
 			"flags": 71184,
@@ -12130,7 +12013,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 787,
-			"radius": 393216
+			"radius": 393216,
+			"_name": "Demon spawn cube"
 		},
 		{
 			"flags": 2147484176,
@@ -12155,7 +12039,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 791,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Demon spawn fire"
 		},
 		{
 			"flags": 524294,
@@ -12180,7 +12065,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 806,
-			"radius": 655360
+			"radius": 655360,
+			"_name": "Barrel"
 		},
 		{
 			"flags": 2147550736,
@@ -12205,7 +12091,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 97,
-			"radius": 393216
+			"radius": 393216,
+			"_name": "Imp fireball"
 		},
 		{
 			"flags": 2147550736,
@@ -12230,7 +12117,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 102,
-			"radius": 393216
+			"radius": 393216,
+			"_name": "Caco fireball"
 		},
 		{
 			"flags": 67088,
@@ -12255,7 +12143,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 114,
-			"radius": 720896
+			"radius": 720896,
+			"_name": "Rocket in flight"
 		},
 		{
 			"flags": 2147550736,
@@ -12280,7 +12169,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 107,
-			"radius": 851968
+			"radius": 851968,
+			"_name": "Plasma projectile"
 		},
 		{
 			"flags": 2147550736,
@@ -12305,7 +12195,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 115,
-			"radius": 851968
+			"radius": 851968,
+			"_name": "BFG projectile"
 		},
 		{
 			"flags": 2147550736,
@@ -12330,7 +12221,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 667,
-			"radius": 851968
+			"radius": 851968,
+			"_name": "Arachnotron projectile"
 		},
 		{
 			"flags": 2147484176,
@@ -12355,7 +12247,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 93,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Bullet puff"
 		},
 		{
 			"flags": 16,
@@ -12380,7 +12273,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 90,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Blood splat"
 		},
 		{
 			"flags": 2147484176,
@@ -12405,7 +12299,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 130,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Teleport fog"
 		},
 		{
 			"flags": 2147484176,
@@ -12430,7 +12325,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 142,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Item respawn fog"
 		},
 		{
 			"flags": 24,
@@ -12455,7 +12351,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 0,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Teleport exit"
 		},
 		{
 			"flags": 528,
@@ -12480,7 +12377,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 123,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "BFG impact"
 		},
 		{
 			"flags": 1,
@@ -12505,7 +12403,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 802,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Green armor"
 		},
 		{
 			"flags": 1,
@@ -12530,7 +12429,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 804,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Blue armor"
 		},
 		{
 			"flags": 8388609,
@@ -12555,7 +12455,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 816,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Health potion"
 		},
 		{
 			"flags": 8388609,
@@ -12580,7 +12481,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 822,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Armor helmet"
 		},
 		{
 			"flags": 33554433,
@@ -12605,7 +12507,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 828,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Blue keycard"
 		},
 		{
 			"flags": 33554433,
@@ -12630,7 +12533,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 830,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Red keycard"
 		},
 		{
 			"flags": 33554433,
@@ -12655,7 +12559,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 832,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Yellow keycard"
 		},
 		{
 			"flags": 33554433,
@@ -12680,7 +12585,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 838,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Yellow skull key"
 		},
 		{
 			"flags": 33554433,
@@ -12705,7 +12611,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 836,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Red skull key"
 		},
 		{
 			"flags": 33554433,
@@ -12730,7 +12637,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 834,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Blue skull key"
 		},
 		{
 			"flags": 1,
@@ -12755,7 +12663,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 840,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Stimpack"
 		},
 		{
 			"flags": 1,
@@ -12780,7 +12689,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 841,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Medical kit"
 		},
 		{
 			"flags": 2155872257,
@@ -12805,7 +12715,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 842,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Soul sphere"
 		},
 		{
 			"flags": 2155872257,
@@ -12830,7 +12741,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 848,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Invulnerability"
 		},
 		{
 			"flags": 8388609,
@@ -12855,7 +12767,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 852,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Berserk sphere"
 		},
 		{
 			"flags": 2155872257,
@@ -12880,7 +12793,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 853,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Blur sphere"
 		},
 		{
 			"flags": 1,
@@ -12905,7 +12819,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 861,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Radiation suit"
 		},
 		{
 			"flags": 8388609,
@@ -12930,7 +12845,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 862,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Computer map"
 		},
 		{
 			"flags": 8388609,
@@ -12955,7 +12871,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 868,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Light amplification visor"
 		},
 		{
 			"flags": 2155872257,
@@ -12980,7 +12897,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 857,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Mega sphere"
 		},
 		{
 			"flags": 1,
@@ -13005,7 +12923,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 870,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Ammo clip"
 		},
 		{
 			"flags": 1,
@@ -13030,7 +12949,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 871,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Box of ammo"
 		},
 		{
 			"flags": 1,
@@ -13055,7 +12975,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 872,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Rocket"
 		},
 		{
 			"flags": 1,
@@ -13080,7 +13001,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 873,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Box of rockets"
 		},
 		{
 			"flags": 1,
@@ -13105,7 +13027,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 874,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Energy cell"
 		},
 		{
 			"flags": 1,
@@ -13130,7 +13053,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 875,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Energy cell pack"
 		},
 		{
 			"flags": 1,
@@ -13155,7 +13079,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 876,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Shells"
 		},
 		{
 			"flags": 1,
@@ -13180,7 +13105,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 877,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Box of shells"
 		},
 		{
 			"flags": 1,
@@ -13205,7 +13131,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 878,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Backpack"
 		},
 		{
 			"flags": 1,
@@ -13230,7 +13157,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 879,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "BFG 9000"
 		},
 		{
 			"flags": 1,
@@ -13255,7 +13183,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 880,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Chaingun"
 		},
 		{
 			"flags": 1,
@@ -13280,7 +13209,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 881,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Chainsaw"
 		},
 		{
 			"flags": 1,
@@ -13305,7 +13235,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 882,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Rocket launcher"
 		},
 		{
 			"flags": 1,
@@ -13330,7 +13261,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 883,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Plasma rifle"
 		},
 		{
 			"flags": 1,
@@ -13355,7 +13287,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 884,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Shotgun"
 		},
 		{
 			"flags": 1,
@@ -13380,7 +13313,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 885,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Super shotgun"
 		},
 		{
 			"flags": 2,
@@ -13405,7 +13339,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 959,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Tall lamp"
 		},
 		{
 			"flags": 2,
@@ -13430,7 +13365,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 963,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Tall lamp 2"
 		},
 		{
 			"flags": 2,
@@ -13455,7 +13391,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 886,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Short lamp"
 		},
 		{
 			"flags": 2,
@@ -13480,7 +13417,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 907,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Tall green pillar"
 		},
 		{
 			"flags": 2,
@@ -13505,7 +13443,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 908,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Short green pillar"
 		},
 		{
 			"flags": 2,
@@ -13530,7 +13469,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 909,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Tall red pillar"
 		},
 		{
 			"flags": 2,
@@ -13555,7 +13495,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 910,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Short red pillar"
 		},
 		{
 			"flags": 2,
@@ -13580,7 +13521,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 913,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Pillar with skull"
 		},
 		{
 			"flags": 2,
@@ -13605,7 +13547,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 924,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Pillar with heart"
 		},
 		{
 			"flags": 2,
@@ -13630,7 +13573,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 917,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Eye in symbol"
 		},
 		{
 			"flags": 2,
@@ -13655,7 +13599,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 921,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Flaming skulls"
 		},
 		{
 			"flags": 2,
@@ -13680,7 +13625,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 914,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Grey tree"
 		},
 		{
 			"flags": 2,
@@ -13705,7 +13651,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 926,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Tall blue torch"
 		},
 		{
 			"flags": 2,
@@ -13730,7 +13677,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 930,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Tall green torch"
 		},
 		{
 			"flags": 2,
@@ -13755,7 +13703,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 934,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Tall red torch"
 		},
 		{
 			"flags": 2,
@@ -13780,7 +13729,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 938,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Small blue torch"
 		},
 		{
 			"flags": 2,
@@ -13805,7 +13755,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 942,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Small green torch"
 		},
 		{
 			"flags": 2,
@@ -13830,7 +13781,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 946,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Small red torch"
 		},
 		{
 			"flags": 2,
@@ -13855,7 +13807,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 906,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Brown stub"
 		},
 		{
 			"flags": 2,
@@ -13880,7 +13833,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 916,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Technical column"
 		},
 		{
 			"flags": 0,
@@ -13905,7 +13859,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 911,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Candle"
 		},
 		{
 			"flags": 2,
@@ -13930,7 +13885,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 912,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Candelabra"
 		},
 		{
 			"flags": 770,
@@ -13955,7 +13911,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 888,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Swaying body"
 		},
 		{
 			"flags": 770,
@@ -13980,7 +13937,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 902,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Hanging arms out"
 		},
 		{
 			"flags": 770,
@@ -14005,7 +13963,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 903,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "One-legged body"
 		},
 		{
 			"flags": 770,
@@ -14030,7 +13989,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 904,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Hanging torso"
 		},
 		{
 			"flags": 770,
@@ -14055,7 +14015,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 905,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Hanging leg"
 		},
 		{
 			"flags": 768,
@@ -14080,7 +14041,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 902,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Hanging arms out 2"
 		},
 		{
 			"flags": 768,
@@ -14105,7 +14067,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 904,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Hanging torso 2"
 		},
 		{
 			"flags": 768,
@@ -14130,7 +14093,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 903,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "One-legged body 2"
 		},
 		{
 			"flags": 768,
@@ -14155,7 +14119,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 905,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Hanging leg 2"
 		},
 		{
 			"flags": 768,
@@ -14180,7 +14145,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 888,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Swaying body 2"
 		},
 		{
 			"flags": 0,
@@ -14205,7 +14171,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 515,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Dead Cacodemon"
 		},
 		{
 			"flags": 0,
@@ -14230,7 +14197,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 164,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Dead Marine"
 		},
 		{
 			"flags": 0,
@@ -14255,7 +14223,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 193,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Dead Trooper"
 		},
 		{
 			"flags": 0,
@@ -14280,7 +14249,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 495,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Dead Demon"
 		},
 		{
 			"flags": 0,
@@ -14305,7 +14275,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 600,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Dead Lost Soul"
 		},
 		{
 			"flags": 0,
@@ -14330,7 +14301,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 461,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Dead Imp"
 		},
 		{
 			"flags": 0,
@@ -14355,7 +14327,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 226,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Dead Sargeant"
 		},
 		{
 			"flags": 0,
@@ -14380,7 +14353,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 173,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Guts and bones"
 		},
 		{
 			"flags": 0,
@@ -14405,7 +14379,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 173,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Guts and bones 2"
 		},
 		{
 			"flags": 2,
@@ -14430,7 +14405,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 894,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Skewered heads"
 		},
 		{
 			"flags": 0,
@@ -14455,7 +14431,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 895,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Pool of blood"
 		},
 		{
 			"flags": 2,
@@ -14480,7 +14457,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 896,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Pole with skull"
 		},
 		{
 			"flags": 2,
@@ -14505,7 +14483,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 897,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Pile of skulls"
 		},
 		{
 			"flags": 2,
@@ -14530,7 +14509,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 899,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Impaled body"
 		},
 		{
 			"flags": 2,
@@ -14555,7 +14535,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 900,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Twitching body"
 		},
 		{
 			"flags": 2,
@@ -14580,7 +14561,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 915,
-			"radius": 2097152
+			"radius": 2097152,
+			"_name": "Large tree"
 		},
 		{
 			"flags": 2,
@@ -14605,7 +14587,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 813,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Flaming barrel"
 		},
 		{
 			"flags": 770,
@@ -14630,7 +14613,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 950,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Hanging body 1"
 		},
 		{
 			"flags": 770,
@@ -14655,7 +14639,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 951,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Hanging body 2"
 		},
 		{
 			"flags": 770,
@@ -14680,7 +14665,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 952,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Hanging body 3"
 		},
 		{
 			"flags": 770,
@@ -14705,7 +14691,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 953,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Hanging body 4"
 		},
 		{
 			"flags": 770,
@@ -14730,7 +14717,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 954,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Hanging body 5"
 		},
 		{
 			"flags": 770,
@@ -14755,7 +14743,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 955,
-			"radius": 1048576
+			"radius": 1048576,
+			"_name": "Hanging body 6"
 		},
 		{
 			"flags": 16,
@@ -14780,7 +14769,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 956,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Pool of blood 1"
 		},
 		{
 			"flags": 16,
@@ -14805,7 +14795,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 957,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Pool of blood 2"
 		},
 		{
 			"flags": 16,
@@ -14830,7 +14821,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 958,
-			"radius": 1310720
+			"radius": 1310720,
+			"_name": "Brain"
 		},
 		{
 			"flags": 16,
@@ -14855,7 +14847,8 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 967,
-			"radius": 8
+			"radius": 8,
+			"_name": "Pusher"
 		},
 		{
 			"flags": 16,
@@ -14880,19 +14873,9 @@
 			"statePain": 0,
 			"stateRaise": 0,
 			"stateSpawn": 967,
-			"radius": 8
+			"radius": 8,
+			"_name": "Puller"
 		}
-	],
-	"weaponNames": [
-		"Fist",
-		"Pistol",
-		"Shotgun",
-		"Chaingun",
-		"Rocket launcher",
-		"Plasma rifle",
-		"BFG 9000",
-		"Chainsaw",
-		"Super-shotgun"
 	],
 	"weapons": [
 		{
@@ -14901,7 +14884,8 @@
 			"stateDeselect": 4,
 			"stateFire": 5,
 			"stateMuzzle": 0,
-			"stateSelect": 3
+			"stateSelect": 3,
+			"_name": "Fist"
 		},
 		{
 			"ammoType": 0,
@@ -14909,7 +14893,8 @@
 			"stateDeselect": 12,
 			"stateFire": 13,
 			"stateMuzzle": 17,
-			"stateSelect": 11
+			"stateSelect": 11,
+			"_name": "Pistol"
 		},
 		{
 			"ammoType": 1,
@@ -14917,7 +14902,8 @@
 			"stateDeselect": 20,
 			"stateFire": 21,
 			"stateMuzzle": 30,
-			"stateSelect": 19
+			"stateSelect": 19,
+			"_name": "Shotgun"
 		},
 		{
 			"ammoType": 0,
@@ -14925,7 +14911,8 @@
 			"stateDeselect": 51,
 			"stateFire": 52,
 			"stateMuzzle": 55,
-			"stateSelect": 50
+			"stateSelect": 50,
+			"_name": "Chaingun"
 		},
 		{
 			"ammoType": 3,
@@ -14933,7 +14920,8 @@
 			"stateDeselect": 59,
 			"stateFire": 60,
 			"stateMuzzle": 63,
-			"stateSelect": 58
+			"stateSelect": 58,
+			"_name": "Rocket launcher"
 		},
 		{
 			"ammoType": 2,
@@ -14941,7 +14929,8 @@
 			"stateDeselect": 76,
 			"stateFire": 77,
 			"stateMuzzle": 79,
-			"stateSelect": 75
+			"stateSelect": 75,
+			"_name": "Plasma rifle"
 		},
 		{
 			"ammoType": 2,
@@ -14949,7 +14938,8 @@
 			"stateDeselect": 83,
 			"stateFire": 84,
 			"stateMuzzle": 88,
-			"stateSelect": 82
+			"stateSelect": 82,
+			"_name": "BFG 9000"
 		},
 		{
 			"ammoType": 5,
@@ -14957,7 +14947,8 @@
 			"stateDeselect": 70,
 			"stateFire": 71,
 			"stateMuzzle": 0,
-			"stateSelect": 69
+			"stateSelect": 69,
+			"_name": "Chainsaw"
 		},
 		{
 			"stateDeselect": 34,
@@ -14965,10 +14956,10 @@
 			"stateMuzzle": 47,
 			"ammoType": 1,
 			"stateSelect": 33,
-			"stateFire": 35
+			"stateFire": 35,
+			"_name": "Super-shotgun"
 		}
 	],
-
 	"usedStates": [
 		149,
 		155,
@@ -14978,7 +14969,6 @@
 		799,
 		895
 	],
-
 	"defaultSound": {
 		"_name": "Unnamed",
 		"internalDataPointer": 0,
@@ -15017,10 +15007,10 @@
 	"defaultThing": {
 		"_name": "Unnamed",
 		"flags": 0,
-		"health": 1000,
+		"health": 0,
 		"height": 0,
 		"id": -1,
-		"mass": 100,
+		"mass": 0,
 		"damage": 0,
 		"painChance": 0,
 		"reactionTime": 8,
@@ -15040,6 +15030,5 @@
 		"stateSpawn": 0,
 		"radius": 0
 	},
-
 	"renderStyles": {}
 }
