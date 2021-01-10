@@ -1,7 +1,7 @@
 Version 1.3.0
 -------------
 Added: support for more DEHEXTRA features: extra thing fields and extra sounds.
-Added: additional Doom Retro strings.
+Added: Doom Retro strings and Blood and Shadow offset thing fields.
 Added: better Linux compatibility. The application starts and is somewhat usable, but a number of UI issues still prevent it from working well.
 Added: state preview now uses a state's unused 1 and 2 parameters as offsets if previewing a state from the weapons editor (right-click state label).
 Changed: engine table files can now include (base table) files. This leads to smaller filesizes and makes for easier updating. As a result of this, strings in the Doom 1.9 and Ultimate Doom 1.9 tables are now keyed by their index.

@@ -41,10 +41,12 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_VAL_DECAL: 'decal',
         windows.THING_VAL_DAMAGEFACTOR: 'damageFactor',
         windows.THING_VAL_GRAVITY: 'gravity',
-        windows.THING_VAL_DROPPED_ITEM: 'droppedItem',
+        windows.THING_VAL_DROPPED_ITEM_ID: 'droppedItemId',
         windows.THING_VAL_PICKUP_RADIUS: 'pickupRadius',
         windows.THING_VAL_PROJECTILE_PASS_HEIGHT: 'projectilePassHeight',
         windows.THING_VAL_FULLBRIGHT: 'fullbright',
+        windows.THING_VAL_BLOOD_ID: 'bloodId',
+        windows.THING_VAL_SHADOW_OFFSET: 'shadowOffset',
     }
 
     # Value types for text control validation.
@@ -68,10 +70,12 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.THING_VAL_DECAL: 'str',
         windows.THING_VAL_DAMAGEFACTOR: 'float',
         windows.THING_VAL_GRAVITY: 'float',
-        windows.THING_VAL_DROPPED_ITEM: 'int',
+        windows.THING_VAL_DROPPED_ITEM_ID: 'int',
         windows.THING_VAL_PICKUP_RADIUS: 'fixed',
         windows.THING_VAL_PROJECTILE_PASS_HEIGHT: 'fixed',
         windows.THING_VAL_FULLBRIGHT: 'bool',
+        windows.THING_VAL_BLOOD_ID: 'int',
+        windows.THING_VAL_SHADOW_OFFSET: 'fixed',
     }
 
     # State text control to partial internal key mappings.
@@ -211,7 +215,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.PanelGravity.Show(('thing.gravity' in features))
         self.PanelGame.Show(('thing.game' in features))
         self.PanelGibHealth.Show(('thing.gibHealth' in features))
-        self.PanelDroppedItem.Show(('thing.droppedItem' in features))
+        self.PanelDroppedItemID.Show(('thing.droppedItemId' in features))
         self.PanelPickupRadius.Show(('thing.pickupRadius' in features))
         self.PanelProjectilePassHeight.Show(('thing.projectilePassHeight' in features))
         self.PanelFullbright.Show(('thing.fullbright' in features))
@@ -221,6 +225,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.PanelAlpha.Show(('thing.alpha' in features))
         self.PanelScale.Show(('thing.scale' in features))
         self.PanelDecal.Show(('thing.decal' in features))
+        self.PanelBloodID.Show(('thing.bloodId' in features))
+        self.PanelShadowOffset.Show(('thing.shadowOffset' in features))
 
         self.PanelStateCrash.Show(('thing.stateCrash' in features))
         self.PanelStateFreeze.Show(('thing.stateFreeze' in features))
@@ -403,14 +409,18 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             self.ThingDamageFactor.ChangeValue(str(thing['damageFactor']))
         if 'thing.gravity' in self.patch.engine.features:
             self.ThingGravity.ChangeValue(str(thing['gravity']))
-        if 'thing.droppedItem' in self.patch.engine.features:
-            self.ThingDroppedItem.ChangeValue(str(thing['droppedItem']))
+        if 'thing.droppedItemId' in self.patch.engine.features:
+            self.ThingDroppedItemID.ChangeValue(str(thing['droppedItemId']))
         if 'thing.pickupRadius' in self.patch.engine.features:
             self.ThingPickupRadius.ChangeValue(str(thing['pickupRadius'] / self.FIXED_UNIT))
         if 'thing.projectilePassHeight' in self.patch.engine.features:
             self.ThingProjectilePassHeight.ChangeValue(str(thing['projectilePassHeight'] / self.FIXED_UNIT))
         if 'thing.fullbright' in self.patch.engine.features:
             self.ThingFullbright.SetValue(thing['fullbright'])
+        if 'thing.bloodId' in self.patch.engine.features:
+            self.ThingBloodID.SetValue(str(thing['bloodId']))
+        if 'thing.shadowOffset' in self.patch.engine.features:
+            self.ThingShadowOffset.SetValue(str(thing['shadowOffset'] / self.FIXED_UNIT))
 
         # Speed is in fixed point if this thing is a projectile, normal otherwise
         if self.thing_is_projectile:

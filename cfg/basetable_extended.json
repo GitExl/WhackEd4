@@ -2,7 +2,7 @@
 	"parent": "basetable_mbf",
 	"features": [
 		"thing.gibHealth",
-		"thing.droppedItem",
+		"thing.droppedItemId",
 		"thing.pickupRadius",
 		"thing.projectilePassHeight",
 		"thing.fullbright"
@@ -12561,7 +12561,253 @@
 	"strings": {},
 	"thingFlags": {},
 	"things": [
+    {
+      "_index": 0,
+      "gibHealth": -100
+    },
+    {
+      "_index": 1,
+      "droppedItemId": 63,
+      "gibHealth": -20
+    },
+    {
+      "_index": 2,
+      "droppedItemId": 77,
+      "gibHealth": -30
+    },
+    {
+      "_index": 3,
+      "gibHealth": -700
+    },
+    {
+      "_index": 4,
+      "fullbright": true
+    },
+    {
+      "_index": 5,
+      "gibHealth": -300
+    },
+    {
+      "_index": 6,
+      "fullbright": true
+    },
+    {
+      "_index": 8,
+      "gibHealth": -600
+    },
+    {
+      "_index": 9,
+      "fullbright": true
+    },
+    {
+      "_index": 10,
+      "droppedItemId": 73,
+      "gibHealth": -70
+    },
+    {
+      "_index": 11,
+      "gibHealth": -60
+    },
+    {
+      "_index": 12,
+      "gibHealth": -150
+    },
+    {
+      "_index": 13,
+      "gibHealth": -150
+    },
+    {
+      "_index": 14,
+      "gibHealth": -400
+    },
+    {
+      "_index": 15,
+      "gibHealth": -1000
+    },
+    {
+      "_index": 16,
+      "fullbright": true
+    },
+    {
+      "_index": 17,
+      "gibHealth": -500
+    },
+    {
+      "_index": 18,
+      "gibHealth": -100,
+      "fullbright": true
+    },
+    {
+      "_index": 19,
+      "gibHealth": -3000
+    },
+    {
+      "_index": 20,
+      "gibHealth": -500
+    },
+    {
+      "_index": 21,
+      "gibHealth": -4000
+    },
+    {
+      "_index": 22,
+      "gibHealth": -400
+    },
+    {
+      "_index": 23,
+      "droppedItemId": 63,
+      "gibHealth": -50
+    },
+    {
+      "_index": 24,
+      "gibHealth": -100
+    },
+    {
+      "_index": 25,
+      "gibHealth": -250
+    },
+    {
+      "_index": 28,
+      "fullbright": true
+    },
+    {
+      "_index": 29,
+      "fullbright": true
+    },
+    {
+      "_index": 31,
+      "fullbright": true
+    },
+    {
+      "_index": 32,
+      "fullbright": true
+    },
+    {
+      "_index": 33,
+      "fullbright": true
+    },
+    {
+      "_index": 34,
+      "fullbright": true
+    },
+    {
+      "_index": 35,
+      "fullbright": true
+    },
+    {
+      "_index": 36,
+      "fullbright": true
+    },
+    {
+      "_index": 39,
+      "fullbright": true
+    },
+    {
+      "_index": 40,
+      "fullbright": true
+    },
+    {
+      "_index": 42,
+      "fullbright": true
+    },
+    {
+      "_index": 55,
+      "fullbright": true
+    },
+    {
+      "_index": 56,
+      "fullbright": true
+    },
+    {
+      "_index": 57,
+      "fullbright": true
+    },
+    {
+      "_index": 58,
+      "fullbright": true
+    },
+    {
+      "_index": 59,
+      "fullbright": true
+    },
+    {
+      "_index": 60,
+      "fullbright": true
+    },
+    {
+      "_index": 62,
+      "fullbright": true
+    },
+    {
+      "_index": 79,
+      "fullbright": true
+    },
+    {
+      "_index": 80,
+      "fullbright": true
+    },
+    {
+      "_index": 81,
+      "fullbright": true
+    },
+    {
+      "_index": 88,
+      "fullbright": true
+    },
+    {
+      "_index": 89,
+      "fullbright": true
+    },
+    {
+      "_index": 92,
+      "fullbright": true
+    },
+    {
+      "_index": 93,
+      "fullbright": true
+    },
+    {
+      "_index": 94,
+      "fullbright": true
+    },
+    {
+      "_index": 95,
+      "fullbright": true
+    },
+    {
+      "_index": 96,
+      "fullbright": true
+    },
+    {
+      "_index": 97,
+      "fullbright": true
+    },
+    {
+      "_index": 100,
+      "fullbright": true
+    },
+    {
+      "_index": 123,
+      "fullbright": true
+    },
+    {
+      "_index": 127,
+      "fullbright": true
+    },
+    {
+      "_index": 139,
+      "gibHealth": -500
+    },
+    {
+      "_index": 140,
+      "fullbright": true
+    },
+    {
+      "_index": 141,
+      "fullbright": true
+    },
 		{
+      "_index": 144,
 			"reactionTime": 0,
 			"_name": "Music source"
 		},
@@ -12988,7 +13234,7 @@
 	],
 	"defaultThing": {
 		"gibHealth": 0,
-		"droppedItem": -1,
+		"droppedItemId": -1,
 		"pickupRadius": 0,
 		"projectilePassHeight": 0,
 		"fullbright": false

@@ -1,7 +1,9 @@
-- Add Doom Retro specific fields that do not exist in DEHEXTRA. See https://github.com/bradharding/doomretro/wiki/INFORMATION-FOR-MAPPERS#DEHACKED-LUMPS
-    - Blood
-    - Shadow offset
-    - Name1
+- Finish adding new Extended table data (take from Doom Retro).
+    - Thing pickupRadius
+    - Thing projectilePassHeight
+- Add table data for new Doom Retro fields (take from Doom Retro info.c).
+    - Thing bloodId
+    - Thing shadowOffset
 - State animation preview should not display states with 0 duration? But still run it's actions. See DV4 fist attack.
 - When opening a new patch file after modifying the current one, no warning is given and the new patch is loaded immediately.
 
@@ -10,6 +12,7 @@ Low priority bugs
 - Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
 
 Later
+- More Python type hinting.
 - Split out patch reading\writing from patch class and clean it up.
 - Calculated % number next to a thing's pain chance.
 - Muzzle flash support for weapon state previews. Needs refactoring of sprite preview code so that it can display multiple state animations overlayed on top of one another.
@@ -18,6 +21,7 @@ Later
 - Mark and display items (things, states, strings, ammo, weapons, sounds) as modified compared to engine config.
 - Allow multiple flag fields for things, for Doom Retro's "Retro Bits" field.
 - Add Doom Retro specific fields that do not exist in DEHEXTRA. See https://github.com/bradharding/doomretro/wiki/INFORMATION-FOR-MAPPERS#DEHACKED-LUMPS
+    - Name* and Plural* fields, but why does it not use regular thing names for Name1?
     - Retro bits (needs multiple flag field support first)
 - Final Doom (TNT and Plutonia) support, see https://www.doomworld.com/forum/topic/117871-dehacked-30a-special-edition-with-support-for-both-final-doom-versions/?tab=comments#comment-2212475
 - Option to manually clear list of recent files.

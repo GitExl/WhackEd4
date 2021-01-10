@@ -35,191 +35,193 @@ FRAME_THINGS = 1685
 THING_VAL_GAME = 1686
 THING_VAL_ID = 1687
 THING_VAL_SPAWNID = 1688
-THING_VAL_HEALTH = 1689
-THING_VAL_GIBHEALTH = 1690
-THING_VAL_SPEED = 1691
-THING_VAL_RADIUS = 1692
-THING_VAL_HEIGHT = 1693
-THING_VAL_PROJECTILE_PASS_HEIGHT = 1694
-THING_VAL_DAMAGE = 1695
-THING_VAL_DAMAGEFACTOR = 1696
-THING_VAL_REACTIONTIME = 1697
-THING_VAL_PAINCHANCE = 1698
-THING_VAL_MASS = 1699
-THING_VAL_GRAVITY = 1700
-THING_VAL_RESPAWNTIME = 1701
-THING_VAL_FULLBRIGHT = 1702
-THING_VAL_RENDERSTYLE = 1703
-THING_VAL_ALPHA = 1704
-THING_VAL_SCALE = 1705
-THING_VAL_DROPPED_ITEM = 1706
-THING_VAL_PICKUP_RADIUS = 1707
-THING_VAL_DECAL = 1708
-THING_STATE_SPAWN = 1709
-THING_STATENAME_SPAWN = 1710
-THING_STATESET_SPAWN = 1711
-THING_STATE_WALK = 1712
-THING_STATENAME_WALK = 1713
-THING_STATESET_WALK = 1714
-THING_STATE_PAIN = 1715
-THING_STATENAME_PAIN = 1716
-THING_STATESET_PAIN = 1717
-THING_STATE_MELEE = 1718
-THING_STATENAME_MELEE = 1719
-THING_STATESET_MELEE = 1720
-THING_STATE_ATTACK = 1721
-THING_STATENAME_ATTACK = 1722
-THING_STATESET_ATTACK = 1723
-THING_STATE_DEATH = 1724
-THING_STATENAME_DEATH = 1725
-THING_STATESET_DEATH = 1726
-THING_STATE_EXPLODE = 1727
-THING_STATENAME_EXPLODE = 1728
-THING_STATESET_EXPLODE = 1729
-THING_STATE_RAISE = 1730
-THING_STATENAME_RAISE = 1731
-THING_STATESET_RAISE = 1732
-THING_STATE_CRASH = 1733
-THING_STATENAME_CRASH = 1734
-THING_STATESET_CRASH = 1735
-THING_STATE_FREEZE = 1736
-THING_STATENAME_FREEZE = 1737
-THING_STATESET_FREEZE = 1738
-THING_STATE_BURN = 1739
-THING_STATENAME_BURN = 1740
-THING_STATESET_BURN = 1741
-THING_SOUND_ALERT = 1742
-THING_SOUNDNAME_ALERT = 1743
-THING_SOUNDSET_ALERT = 1744
-THING_SOUND_ATTACK = 1745
-THING_SOUNDNAME_ATTACK = 1746
-THING_SOUNDSET_ATTACK = 1747
-THING_SOUND_PAIN = 1748
-THING_SOUNDNAME_PAIN = 1749
-THING_SOUNDSET_PAIN = 1750
-THING_SOUND_DEATH = 1751
-THING_SOUNDNAME_DEATH = 1752
-THING_SOUNDSET_DEATH = 1753
-THING_SOUND_ACTIVE = 1754
-THING_SOUNDNAME_ACTIVE = 1755
-THING_SOUNDSET_ACTIVE = 1756
-THING_FLAGS = 1757
-THING_RENAME = 1758
-THING_RESTORE = 1759
-THING_LIST = 1760
-FRAME_STATES = 1761
-STATES_SPRITE = 1762
-STATES_FRAME = 1763
-STATES_FRAMESPIN = 1764
-STATES_LIT = 1765
-STATES_NEXT = 1766
-STATES_DURATION = 1767
-STATES_ACTION = 1768
-STATES_LABEL_UNUSED1 = 1769
-STATES_UNUSED1 = 1770
-STATES_LABEL_UNUSED2 = 1771
-STATES_UNUSED2 = 1772
-STATES_LABEL_ARG1 = 1773
-STATES_ARG1 = 1774
-STATES_LABEL_ARG2 = 1775
-STATES_ARG2 = 1776
-STATES_LABEL_ARG3 = 1777
-STATES_ARG3 = 1778
-STATES_LABEL_ARG4 = 1779
-STATES_ARG4 = 1780
-STATES_LABEL_ARG5 = 1781
-STATES_ARG5 = 1782
-STATES_LABEL_ARG6 = 1783
-STATES_ARG6 = 1784
-STATES_LABEL_ARG7 = 1785
-STATES_ARG7 = 1786
-STATES_LABEL_ARG8 = 1787
-STATES_ARG8 = 1788
-STATES_LABEL_ARG9 = 1789
-STATES_ARG9 = 1790
-STATES_FILTER = 1791
-STATES_FILTERTOOLS = 1792
-STATES_FILTERTOOLS_REFRESH = 1793
-FRAME_SOUNDS = 1794
-SOUNDS_PRIORITY = 1795
-SOUNDS_PRIORITYSPIN = 1796
-SOUNDS_SINGULAR = 1797
-SOUNDS_RESTORE = 1798
-SOUNDS_LIST = 1799
-FRAME_STRINGS = 1800
-STRINGS_LIST = 1801
-STRINGS_RESTORE = 1802
-FRAME_WEAPONS = 1803
-WEAPON_AMMOTYPE = 1804
-WEAPON_VAL_AMMO_USE = 1805
-WEAPON_VAL_MIN_AMMO = 1806
-WEAPON_VAL_DECAL = 1807
-WEAPON_STATE_SELECT = 1808
-WEAPON_STATENAME_SELECT = 1809
-WEAPON_STATESET_SELECT = 1810
-WEAPON_STATE_DESELECT = 1811
-WEAPON_STATENAME_DESELECT = 1812
-WEAPON_STATESET_DESELECT = 1813
-WEAPON_STATE_BOB = 1814
-WEAPON_STATENAME_BOB = 1815
-WEAPON_STATESET_BOB = 1816
-WEAPON_STATE_FIRE = 1817
-WEAPON_STATENAME_FIRE = 1818
-WEAPON_STATESET_FIRE = 1819
-WEAPON_STATE_MUZZLE = 1820
-WEAPON_STATENAME_MUZZLE = 1821
-WEAPON_STATESET_MUZZLE = 1822
-WEAPON_RENAME = 1823
-WEAPON_RESTORE = 1824
-FRAME_AMMO = 1825
-AMMO_VAL_MAXIMUM = 1826
-AMMO_VAL_PICKUP = 1827
-AMMO_RENAME = 1828
-AMMO_RESTORE = 1829
-AMMO_LIST = 1830
-FRAME_CHEATS = 1831
-CHEATS_LIST = 1832
-CHEATS_RESTORE = 1833
-FRAME_MISC = 1834
-MISC_VALUE = 1835
-MISC_VALUE_ENABLED = 1836
-MISC_RESTORE = 1837
-MISC_LIST = 1838
-FRAME_PAR = 1839
-PAR_EPISODE = 1840
-PAR_MAP = 1841
-PAR_SECONDS = 1842
-PAR_TOOLS = 1843
-PAR_TOOL_ADD = 1844
-PAR_TOOL_REMOVE = 1845
-PAR_LIST = 1846
-DIALOG_SPRITES = 1847
-SPRITES_FILTER = 1848
-SPRITES_FRAME = 1849
-SPRITES_FRAMESPIN = 1850
-SPRITES_OK = 1851
-SPRITES_CANCEL = 1852
-STRING_OLD = 1853
-STRING_NEW = 1854
-STRING_OK = 1855
-STRING_CANCEL = 1856
-DIALOG_PATCHINFO = 1857
-PATCHINFO_TOOLBAR = 1858
-PATCHINFO_TOOLBAR_ADD = 1859
-PATCHINFO_TOOLBAR_REMOVE = 1860
-PATCHINFO_CANCEL = 1861
-DIALOG_START = 1862
-START_NEW = 1863
-START_OPEN = 1864
-START_RECENT = 1865
-START_CANCEL = 1866
-DIALOG_ABOUT = 1867
-ABOUT_OK = 1868
-DIALOG_ERROR = 1869
-ERROR_REPORT = 1870
-ERROR_COPY = 1871
-ERROR_CLOSE = 1872
-PREVIEW_CLOSE = 1873
+THING_VAL_DROPPED_ITEM_ID = 1689
+THING_VAL_BLOOD_ID = 1690
+THING_VAL_HEALTH = 1691
+THING_VAL_GIBHEALTH = 1692
+THING_VAL_SPEED = 1693
+THING_VAL_RADIUS = 1694
+THING_VAL_PICKUP_RADIUS = 1695
+THING_VAL_HEIGHT = 1696
+THING_VAL_PROJECTILE_PASS_HEIGHT = 1697
+THING_VAL_DAMAGE = 1698
+THING_VAL_DAMAGEFACTOR = 1699
+THING_VAL_REACTIONTIME = 1700
+THING_VAL_PAINCHANCE = 1701
+THING_VAL_MASS = 1702
+THING_VAL_GRAVITY = 1703
+THING_VAL_RESPAWNTIME = 1704
+THING_VAL_FULLBRIGHT = 1705
+THING_VAL_RENDERSTYLE = 1706
+THING_VAL_ALPHA = 1707
+THING_VAL_SCALE = 1708
+THING_VAL_DECAL = 1709
+THING_VAL_SHADOW_OFFSET = 1710
+THING_STATE_SPAWN = 1711
+THING_STATENAME_SPAWN = 1712
+THING_STATESET_SPAWN = 1713
+THING_STATE_WALK = 1714
+THING_STATENAME_WALK = 1715
+THING_STATESET_WALK = 1716
+THING_STATE_PAIN = 1717
+THING_STATENAME_PAIN = 1718
+THING_STATESET_PAIN = 1719
+THING_STATE_MELEE = 1720
+THING_STATENAME_MELEE = 1721
+THING_STATESET_MELEE = 1722
+THING_STATE_ATTACK = 1723
+THING_STATENAME_ATTACK = 1724
+THING_STATESET_ATTACK = 1725
+THING_STATE_DEATH = 1726
+THING_STATENAME_DEATH = 1727
+THING_STATESET_DEATH = 1728
+THING_STATE_EXPLODE = 1729
+THING_STATENAME_EXPLODE = 1730
+THING_STATESET_EXPLODE = 1731
+THING_STATE_RAISE = 1732
+THING_STATENAME_RAISE = 1733
+THING_STATESET_RAISE = 1734
+THING_STATE_CRASH = 1735
+THING_STATENAME_CRASH = 1736
+THING_STATESET_CRASH = 1737
+THING_STATE_FREEZE = 1738
+THING_STATENAME_FREEZE = 1739
+THING_STATESET_FREEZE = 1740
+THING_STATE_BURN = 1741
+THING_STATENAME_BURN = 1742
+THING_STATESET_BURN = 1743
+THING_SOUND_ALERT = 1744
+THING_SOUNDNAME_ALERT = 1745
+THING_SOUNDSET_ALERT = 1746
+THING_SOUND_ATTACK = 1747
+THING_SOUNDNAME_ATTACK = 1748
+THING_SOUNDSET_ATTACK = 1749
+THING_SOUND_PAIN = 1750
+THING_SOUNDNAME_PAIN = 1751
+THING_SOUNDSET_PAIN = 1752
+THING_SOUND_DEATH = 1753
+THING_SOUNDNAME_DEATH = 1754
+THING_SOUNDSET_DEATH = 1755
+THING_SOUND_ACTIVE = 1756
+THING_SOUNDNAME_ACTIVE = 1757
+THING_SOUNDSET_ACTIVE = 1758
+THING_FLAGS = 1759
+THING_RENAME = 1760
+THING_RESTORE = 1761
+THING_LIST = 1762
+FRAME_STATES = 1763
+STATES_SPRITE = 1764
+STATES_FRAME = 1765
+STATES_FRAMESPIN = 1766
+STATES_LIT = 1767
+STATES_NEXT = 1768
+STATES_DURATION = 1769
+STATES_ACTION = 1770
+STATES_LABEL_UNUSED1 = 1771
+STATES_UNUSED1 = 1772
+STATES_LABEL_UNUSED2 = 1773
+STATES_UNUSED2 = 1774
+STATES_LABEL_ARG1 = 1775
+STATES_ARG1 = 1776
+STATES_LABEL_ARG2 = 1777
+STATES_ARG2 = 1778
+STATES_LABEL_ARG3 = 1779
+STATES_ARG3 = 1780
+STATES_LABEL_ARG4 = 1781
+STATES_ARG4 = 1782
+STATES_LABEL_ARG5 = 1783
+STATES_ARG5 = 1784
+STATES_LABEL_ARG6 = 1785
+STATES_ARG6 = 1786
+STATES_LABEL_ARG7 = 1787
+STATES_ARG7 = 1788
+STATES_LABEL_ARG8 = 1789
+STATES_ARG8 = 1790
+STATES_LABEL_ARG9 = 1791
+STATES_ARG9 = 1792
+STATES_FILTER = 1793
+STATES_FILTERTOOLS = 1794
+STATES_FILTERTOOLS_REFRESH = 1795
+FRAME_SOUNDS = 1796
+SOUNDS_PRIORITY = 1797
+SOUNDS_PRIORITYSPIN = 1798
+SOUNDS_SINGULAR = 1799
+SOUNDS_RESTORE = 1800
+SOUNDS_LIST = 1801
+FRAME_STRINGS = 1802
+STRINGS_LIST = 1803
+STRINGS_RESTORE = 1804
+FRAME_WEAPONS = 1805
+WEAPON_AMMOTYPE = 1806
+WEAPON_VAL_AMMO_USE = 1807
+WEAPON_VAL_MIN_AMMO = 1808
+WEAPON_VAL_DECAL = 1809
+WEAPON_STATE_SELECT = 1810
+WEAPON_STATENAME_SELECT = 1811
+WEAPON_STATESET_SELECT = 1812
+WEAPON_STATE_DESELECT = 1813
+WEAPON_STATENAME_DESELECT = 1814
+WEAPON_STATESET_DESELECT = 1815
+WEAPON_STATE_BOB = 1816
+WEAPON_STATENAME_BOB = 1817
+WEAPON_STATESET_BOB = 1818
+WEAPON_STATE_FIRE = 1819
+WEAPON_STATENAME_FIRE = 1820
+WEAPON_STATESET_FIRE = 1821
+WEAPON_STATE_MUZZLE = 1822
+WEAPON_STATENAME_MUZZLE = 1823
+WEAPON_STATESET_MUZZLE = 1824
+WEAPON_RENAME = 1825
+WEAPON_RESTORE = 1826
+FRAME_AMMO = 1827
+AMMO_VAL_MAXIMUM = 1828
+AMMO_VAL_PICKUP = 1829
+AMMO_RENAME = 1830
+AMMO_RESTORE = 1831
+AMMO_LIST = 1832
+FRAME_CHEATS = 1833
+CHEATS_LIST = 1834
+CHEATS_RESTORE = 1835
+FRAME_MISC = 1836
+MISC_VALUE = 1837
+MISC_VALUE_ENABLED = 1838
+MISC_RESTORE = 1839
+MISC_LIST = 1840
+FRAME_PAR = 1841
+PAR_EPISODE = 1842
+PAR_MAP = 1843
+PAR_SECONDS = 1844
+PAR_TOOLS = 1845
+PAR_TOOL_ADD = 1846
+PAR_TOOL_REMOVE = 1847
+PAR_LIST = 1848
+DIALOG_SPRITES = 1849
+SPRITES_FILTER = 1850
+SPRITES_FRAME = 1851
+SPRITES_FRAMESPIN = 1852
+SPRITES_OK = 1853
+SPRITES_CANCEL = 1854
+STRING_OLD = 1855
+STRING_NEW = 1856
+STRING_OK = 1857
+STRING_CANCEL = 1858
+DIALOG_PATCHINFO = 1859
+PATCHINFO_TOOLBAR = 1860
+PATCHINFO_TOOLBAR_ADD = 1861
+PATCHINFO_TOOLBAR_REMOVE = 1862
+PATCHINFO_CANCEL = 1863
+DIALOG_START = 1864
+START_NEW = 1865
+START_OPEN = 1866
+START_RECENT = 1867
+START_CANCEL = 1868
+DIALOG_ABOUT = 1869
+ABOUT_OK = 1870
+DIALOG_ERROR = 1871
+ERROR_REPORT = 1872
+ERROR_COPY = 1873
+ERROR_CLOSE = 1874
+PREVIEW_CLOSE = 1875
 
 ###########################################################################
 ## Class MainFrameBase
@@ -545,6 +547,42 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerSpawnID.Fit( self.PanelSpawnID )
 		SizerProperties.Add( self.PanelSpawnID, 0, wx.ALL|wx.EXPAND, 6 )
 
+		self.PanelDroppedItemID = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		SizerScale1 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.ThingDroppedItemIDLabel = wx.StaticText( self.PanelDroppedItemID, wx.ID_ANY, u"Dropped item ID", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
+		self.ThingDroppedItemIDLabel.Wrap( -1 )
+
+		SizerScale1.Add( self.ThingDroppedItemIDLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
+
+		self.ThingDroppedItemID = wx.TextCtrl( self.PanelDroppedItemID, THING_VAL_DROPPED_ITEM_ID, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.ThingDroppedItemID.SetMaxLength( 6 )
+		SizerScale1.Add( self.ThingDroppedItemID, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
+
+
+		self.PanelDroppedItemID.SetSizer( SizerScale1 )
+		self.PanelDroppedItemID.Layout()
+		SizerScale1.Fit( self.PanelDroppedItemID )
+		SizerProperties.Add( self.PanelDroppedItemID, 0, wx.ALL|wx.EXPAND, 6 )
+
+		self.PanelBloodID = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		SizerScale11 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.ThingBloodIDLabel = wx.StaticText( self.PanelBloodID, wx.ID_ANY, u"Blood item ID", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
+		self.ThingBloodIDLabel.Wrap( -1 )
+
+		SizerScale11.Add( self.ThingBloodIDLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
+
+		self.ThingBloodID = wx.TextCtrl( self.PanelBloodID, THING_VAL_BLOOD_ID, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.ThingBloodID.SetMaxLength( 6 )
+		SizerScale11.Add( self.ThingBloodID, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
+
+
+		self.PanelBloodID.SetSizer( SizerScale11 )
+		self.PanelBloodID.Layout()
+		SizerScale11.Fit( self.PanelBloodID )
+		SizerProperties.Add( self.PanelBloodID, 0, wx.EXPAND |wx.ALL, 5 )
+
 		self.PanelHealth = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerHealth = wx.BoxSizer( wx.HORIZONTAL )
 
@@ -616,6 +654,24 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelRadius.Layout()
 		SizerRadius.Fit( self.PanelRadius )
 		SizerProperties.Add( self.PanelRadius, 0, wx.ALL|wx.EXPAND, 6 )
+
+		self.PanelPickupRadius = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		SizerRadius1 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.ThingPickupRadiusLabel = wx.StaticText( self.PanelPickupRadius, wx.ID_ANY, u"Pickup radius", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
+		self.ThingPickupRadiusLabel.Wrap( -1 )
+
+		SizerRadius1.Add( self.ThingPickupRadiusLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
+
+		self.ThingPickupRadius = wx.TextCtrl( self.PanelPickupRadius, THING_VAL_PICKUP_RADIUS, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.ThingPickupRadius.SetMaxLength( 6 )
+		SizerRadius1.Add( self.ThingPickupRadius, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
+
+
+		self.PanelPickupRadius.SetSizer( SizerRadius1 )
+		self.PanelPickupRadius.Layout()
+		SizerRadius1.Fit( self.PanelPickupRadius )
+		SizerProperties.Add( self.PanelPickupRadius, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.PanelHeight = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerHeight = wx.BoxSizer( wx.HORIZONTAL )
@@ -851,42 +907,6 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		SizerScale.Fit( self.PanelScale )
 		SizerProperties.Add( self.PanelScale, 0, wx.ALL|wx.EXPAND, 6 )
 
-		self.PanelDroppedItem = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		SizerScale1 = wx.BoxSizer( wx.HORIZONTAL )
-
-		self.ThingDroppedItemLabel = wx.StaticText( self.PanelDroppedItem, wx.ID_ANY, u"Dropped item", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
-		self.ThingDroppedItemLabel.Wrap( -1 )
-
-		SizerScale1.Add( self.ThingDroppedItemLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
-
-		self.ThingDroppedItem = wx.TextCtrl( self.PanelDroppedItem, THING_VAL_DROPPED_ITEM, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.ThingDroppedItem.SetMaxLength( 6 )
-		SizerScale1.Add( self.ThingDroppedItem, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
-
-
-		self.PanelDroppedItem.SetSizer( SizerScale1 )
-		self.PanelDroppedItem.Layout()
-		SizerScale1.Fit( self.PanelDroppedItem )
-		SizerProperties.Add( self.PanelDroppedItem, 0, wx.ALL|wx.EXPAND, 6 )
-
-		self.PanelPickupRadius = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		SizerRadius1 = wx.BoxSizer( wx.HORIZONTAL )
-
-		self.ThingPickupRadiusLabel = wx.StaticText( self.PanelPickupRadius, wx.ID_ANY, u"Pickup radius", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
-		self.ThingPickupRadiusLabel.Wrap( -1 )
-
-		SizerRadius1.Add( self.ThingPickupRadiusLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
-
-		self.ThingPickupRadius = wx.TextCtrl( self.PanelPickupRadius, THING_VAL_PICKUP_RADIUS, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.ThingPickupRadius.SetMaxLength( 6 )
-		SizerRadius1.Add( self.ThingPickupRadius, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
-
-
-		self.PanelPickupRadius.SetSizer( SizerRadius1 )
-		self.PanelPickupRadius.Layout()
-		SizerRadius1.Fit( self.PanelPickupRadius )
-		SizerProperties.Add( self.PanelPickupRadius, 0, wx.ALL|wx.EXPAND, 6 )
-
 		self.PanelDecal = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		SizerDecal = wx.BoxSizer( wx.HORIZONTAL )
 
@@ -904,6 +924,24 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.PanelDecal.Layout()
 		SizerDecal.Fit( self.PanelDecal )
 		SizerProperties.Add( self.PanelDecal, 0, wx.ALL|wx.EXPAND, 6 )
+
+		self.PanelShadowOffset = wx.Panel( self.PanelProperties, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		SizerScale111 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.ThingShadowOffsetLabel = wx.StaticText( self.PanelShadowOffset, wx.ID_ANY, u"Shadow offset", wx.DefaultPosition, wx.Size( 160,-1 ), 0 )
+		self.ThingShadowOffsetLabel.Wrap( -1 )
+
+		SizerScale111.Add( self.ThingShadowOffsetLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
+
+		self.ThingShadowOffset = wx.TextCtrl( self.PanelShadowOffset, THING_VAL_SHADOW_OFFSET, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.ThingShadowOffset.SetMaxLength( 6 )
+		SizerScale111.Add( self.ThingShadowOffset, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
+
+
+		self.PanelShadowOffset.SetSizer( SizerScale111 )
+		self.PanelShadowOffset.Layout()
+		SizerScale111.Fit( self.PanelShadowOffset )
+		SizerProperties.Add( self.PanelShadowOffset, 0, wx.EXPAND |wx.ALL, 5 )
 
 
 		self.PanelProperties.SetSizer( SizerProperties )
@@ -1485,6 +1523,12 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSpawnIdLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingSpawnId.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingSpawnId.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingDroppedItemIDLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.ThingDroppedItemID.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.ThingDroppedItemID.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingBloodIDLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.ThingBloodID.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.ThingBloodID.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingHealthLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingHealth.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingHealth.Bind( wx.EVT_TEXT, self.set_value )
@@ -1497,6 +1541,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingRadiusLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingRadius.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingRadius.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingPickupRadiusLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.ThingPickupRadius.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.ThingPickupRadius.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingHeightLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingHeight.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingHeight.Bind( wx.EVT_TEXT, self.set_value )
@@ -1534,15 +1581,12 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingScaleLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingScale.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingScale.Bind( wx.EVT_TEXT, self.set_value )
-		self.ThingDroppedItemLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
-		self.ThingDroppedItem.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingDroppedItem.Bind( wx.EVT_TEXT, self.set_value )
-		self.ThingPickupRadiusLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
-		self.ThingPickupRadius.Bind( wx.EVT_LEFT_UP, self.focus_text )
-		self.ThingPickupRadius.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingDecalLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingDecal.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingDecal.Bind( wx.EVT_TEXT, self.set_value )
+		self.ThingShadowOffsetLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
+		self.ThingShadowOffset.Bind( wx.EVT_LEFT_UP, self.focus_text )
+		self.ThingShadowOffset.Bind( wx.EVT_TEXT, self.set_value )
 		self.ThingStateSpawnLabel.Bind( wx.EVT_ERASE_BACKGROUND, self.dummy )
 		self.ThingStateSpawn.Bind( wx.EVT_LEFT_UP, self.focus_text )
 		self.ThingStateSpawn.Bind( wx.EVT_TEXT, self.set_state )
@@ -1716,6 +1760,12 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 
 	def set_value( self, event ):
 		pass
+
+
+
+
+
+
 
 
 

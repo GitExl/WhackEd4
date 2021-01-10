@@ -6,8 +6,14 @@
 	"name": "Doom Retro",
 	"extended": true,
 	"parent": "basetable_extended",
-	"features": [],
-	"defaultThing": {},
+	"features": [
+		"thing.bloodId",
+		"thing.shadowOffset"
+	],
+	"defaultThing": {
+		"bloodId": -1,
+		"shadowOffset": 0
+	},
 	"actions": {},
 	"ammo": [],
 	"cheatData": {},
