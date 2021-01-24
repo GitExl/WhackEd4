@@ -34,6 +34,8 @@ class WhackEd4App(wx.App):
         Run after the wxWidgets app has initialized.
         """
 
+        self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
+
         # Parse common commandline arguments.
         parser = argparse.ArgumentParser()
         parser.add_argument('-debug', action='store_true', help='Enable debug mode.')
