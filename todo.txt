@@ -1,3 +1,5 @@
+- https://github.com/kraflab/mbf21/blob/master/docs/spec.md
+- https://www.doomworld.com/forum/post/2250857
 - Finish adding new Extended table data (take from Doom Retro).
     - Thing pickupRadius
     - Thing projectilePassHeight
@@ -5,7 +7,6 @@
     - Thing bloodId
     - Thing shadowOffset
 - State animation preview should not display states with 0 duration? But still run it's actions. See DV4 fist attack.
-- When opening a new patch file after modifying the current one, no warning is given and the new patch is loaded immediately.
 
 Low priority bugs
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.

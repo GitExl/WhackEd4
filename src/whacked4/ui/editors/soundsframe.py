@@ -188,6 +188,9 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         Update the displayed property controls.
         """
 
+        if not self.patch:
+            return
+
         sound = self.patch.sounds[self.selected_index]
 
         if self.selected_row == 0 or sound.unused:

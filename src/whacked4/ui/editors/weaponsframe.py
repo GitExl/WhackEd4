@@ -166,6 +166,9 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         Updates the displayed properties of the currently selected thing.
         """
 
+        if not self.patch:
+            return
+
         weapon = self.patch.weapons[self.selected_index]
 
         self.AmmoType.Select(weapon['ammoType'])

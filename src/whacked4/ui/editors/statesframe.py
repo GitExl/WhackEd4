@@ -395,6 +395,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         Updates the tool controls with the properties of the currently selected state(s).
         """
 
+        if not self.patch:
+            return
+
         # If only one state is selected, fill the property controls with that state's data.
         if self.StateList.get_selected_count() == 1:
             state = self.StateList.state_query_result.get_state_for_item_index(self.StateList.get_first_selected())

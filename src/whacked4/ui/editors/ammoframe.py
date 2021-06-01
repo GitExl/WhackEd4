@@ -138,6 +138,9 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         Updates the displayed properties of the currently selected entry.
         """
 
+        if not self.patch:
+            return
+
         ammo = self.patch.ammo[self.selected_index]
 
         self.Maximum.ChangeValue(str(ammo['maximum']))

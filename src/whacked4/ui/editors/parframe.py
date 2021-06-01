@@ -152,6 +152,9 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         Updates the property controls of the currently displayed par time.
         """
 
+        if not self.patch:
+            return
+
         par = self.patch.pars[self.selected_index]
 
         self.Episode.ChangeValue(str(par['episode']))

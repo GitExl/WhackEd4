@@ -50,6 +50,9 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         Updates the displayed properties of the currently selected entry.
         """
 
+        if not self.patch:
+            return
+
         misc_data_keys = list(self.patch.engine.misc_data.keys())
         key = misc_data_keys[self.selected_index]
         data = self.patch.engine.misc_data[key]

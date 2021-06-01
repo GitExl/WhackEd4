@@ -374,6 +374,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         Update the visible properties of the currently selected thing.
         """
 
+        if not self.patch:
+            return
+
         thing = self.patch.things[self.selected_index]
 
         self.update_is_projectile()
