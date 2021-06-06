@@ -12891,87 +12891,108 @@
     {
       "_index": 79,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 80,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 81,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 88,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 89,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 92,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 93,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 94,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 95,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 96,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 97,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
     	"pickupRadius": 1310720
@@ -12979,7 +13000,8 @@
     {
       "_index": 100,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
     	"pickupRadius": 1048576
@@ -13039,32 +13061,39 @@
     	"pickupRadius": 1310720
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
     	"pickupRadius": 1310720
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 123,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 1048576
+    	"pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
-    	"pickupRadius": 2097152
+    	"pickupRadius": 2097152,
+      "projectilePassHeight": 1048576
     },
     {
       "_index": 127,
       "fullbright": true,
-      "pickupRadius": 1048576
+      "pickupRadius": 1048576,
+      "projectilePassHeight": 1048576
     },
     {
     	"pickupRadius": 1048576
@@ -13130,7 +13159,8 @@
 			"height": 1048576,
 			"radius": 1048576,
 			"pickupRadius": 1048576,
-			"stateSpawn": 967
+			"stateSpawn": 967,
+      "projectilePassHeight": 1048576
 		},
 		{
 			"_name": "Skull pop gib",
