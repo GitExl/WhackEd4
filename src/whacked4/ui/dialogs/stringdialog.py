@@ -56,7 +56,7 @@ class StringDialog(windows.StringDialogBase):
             if cheat:
                 self.max_length = len(engine_string)
             else:
-                self.max_length = len(engine_string) + (4 - (len(engine_string) % 4)) - 1
+                self.max_length = self.get_max_string_length(len(engine_string))
 
             self.CharsLeft.Show()
 
@@ -64,6 +64,19 @@ class StringDialog(windows.StringDialogBase):
 
         self.New.SelectAll()
         self.New.SetFocus()
+
+    def get_max_string_length(self, original_len) -> int:
+        # Source: Chocolate Doom
+
+        # Enough bytes for the string and the NUL terminator
+        max_len = original_len + 1
+
+        # All strings in doom.exe are on 4-byte boundaries, so we may be able
+        # to support a slightly longer string. Extend up to the next 4-byte boundary
+        max_len += (4 - (max_len % 4)) % 4
+
+        # Less one for the NUL terminator.
+        return max_len - 1
 
     def text_enter(self, event):
         """

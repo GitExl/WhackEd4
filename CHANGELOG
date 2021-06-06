@@ -16,6 +16,7 @@ Fixed: saving a yet unsaved patch while exiting caused a crash. Thanks to TheStu
 Fixed: BEX strings that do not appear in the engine selected for a patch will now not be visible in the strings editor, but will remain in the saved patch.
 Fixed: fixed a wrong next state value in the MBF tables for S_GRENADE (968). Thanks to hawkwind3.
 Fixed: crash on startup in some rare cases where no patch was loaded yet. Thanks to Endy McGufin.
+Fixed: maximum string length calculation for non-extended patches did not take the terminating NULL character into account. Thanks to Altazimuth.
 
 Version 1.2.4
 -------------
