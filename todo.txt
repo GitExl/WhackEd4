@@ -1,7 +1,6 @@
 - https://github.com/kraflab/mbf21/blob/master/docs/spec.md
 - https://www.doomworld.com/forum/post/2250857
 - Finish adding new Extended table data (take from Doom Retro).
-    - Thing pickupRadius
     - Thing projectilePassHeight
 - Add table data for new Doom Retro fields (take from Doom Retro info.c).
     - Thing bloodId

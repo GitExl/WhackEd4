@@ -12563,273 +12563,610 @@
 	"things": [
     {
       "_index": 0,
-      "gibHealth": -100
+      "gibHealth": -100,
+      "pickupRadius": 1048576
     },
     {
       "_index": 1,
       "droppedItemId": 63,
-      "gibHealth": -20
+      "gibHealth": -20,
+      "pickupRadius": 1310720
     },
     {
       "_index": 2,
       "droppedItemId": 77,
-      "gibHealth": -30
+      "gibHealth": -30,
+      "pickupRadius": 1310720
     },
     {
       "_index": 3,
-      "gibHealth": -700
+      "gibHealth": -700,
+      "pickupRadius": 1310720
     },
     {
       "_index": 4,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
     },
     {
       "_index": 5,
-      "gibHealth": -300
+      "gibHealth": -300,
+      "pickupRadius": 1310720
     },
     {
       "_index": 6,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
+    },
+    {
+    	"_index": 7,
+      "pickupRadius": 1310720
     },
     {
       "_index": 8,
-      "gibHealth": -600
+      "gibHealth": -600,
+      "pickupRadius": 3145728
     },
     {
       "_index": 9,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 393216
     },
     {
       "_index": 10,
       "droppedItemId": 73,
-      "gibHealth": -70
+      "gibHealth": -70,
+      "pickupRadius": 1310720
     },
     {
       "_index": 11,
-      "gibHealth": -60
+      "gibHealth": -60,
+      "pickupRadius": 1310720
     },
     {
       "_index": 12,
-      "gibHealth": -150
+      "gibHealth": -150,
+      "pickupRadius": 1966080
     },
     {
       "_index": 13,
-      "gibHealth": -150
+      "gibHealth": -150,
+      "pickupRadius": 1966080
     },
     {
       "_index": 14,
-      "gibHealth": -400
+      "gibHealth": -400,
+      "pickupRadius": 2031616
     },
     {
       "_index": 15,
-      "gibHealth": -1000
+      "gibHealth": -1000,
+      "pickupRadius": 1572864
     },
     {
       "_index": 16,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 393216
     },
     {
       "_index": 17,
-      "gibHealth": -500
+      "gibHealth": -500,
+      "pickupRadius": 1572864
     },
     {
       "_index": 18,
       "gibHealth": -100,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
     },
     {
       "_index": 19,
-      "gibHealth": -3000
+      "gibHealth": -3000,
+      "pickupRadius": 8388608
     },
     {
       "_index": 20,
-      "gibHealth": -500
+      "gibHealth": -500,
+      "pickupRadius": 4194304
     },
     {
       "_index": 21,
-      "gibHealth": -4000
+      "gibHealth": -4000,
+      "pickupRadius": 2621440
     },
     {
       "_index": 22,
-      "gibHealth": -400
+      "gibHealth": -400,
+      "pickupRadius": 2031616
     },
     {
       "_index": 23,
       "droppedItemId": 63,
-      "gibHealth": -50
+      "gibHealth": -50,
+      "pickupRadius": 1310720
     },
     {
       "_index": 24,
-      "gibHealth": -100
+      "gibHealth": -100,
+      "pickupRadius": 1048576
     },
     {
       "_index": 25,
-      "gibHealth": -250
+      "gibHealth": -250,
+      "pickupRadius": 1048576
+    },
+    {
+    	"_index": 26,
+      "pickupRadius": 2097152
+    },
+    {
+    	"_index:": 27,
+      "pickupRadius": 1310720
     },
     {
       "_index": 28,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 393216
     },
     {
       "_index": 29,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
+    },
+    {
+    	"_index": 30,
+      "pickupRadius": 655360
     },
     {
       "_index": 31,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 393216
     },
     {
       "_index": 32,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 393216
     },
     {
       "_index": 33,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 720896
     },
     {
       "_index": 34,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 851968
     },
     {
       "_index": 35,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 851968
     },
     {
       "_index": 36,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 851968
     },
     {
       "_index": 39,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
     },
     {
       "_index": 40,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
+    },
+    {
+    	"_index": 41,
+      "pickupRadius": 1310720
     },
     {
       "_index": 42,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
+    },
+    {
+      "pickupRadius": 1310720
     },
     {
       "_index": 55,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
     },
     {
       "_index": 56,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
     },
     {
       "_index": 57,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
     },
     {
       "_index": 58,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
     },
     {
       "_index": 59,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
     },
     {
       "_index": 60,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
     },
     {
       "_index": 62,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
     },
     {
       "_index": 79,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
     },
     {
       "_index": 80,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
     },
     {
       "_index": 81,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
     },
     {
       "_index": 88,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
     },
     {
       "_index": 89,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
     },
     {
       "_index": 92,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
     },
     {
       "_index": 93,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
     },
     {
       "_index": 94,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
     },
     {
       "_index": 95,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
     },
     {
       "_index": 96,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
     },
     {
       "_index": 97,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1310720
     },
     {
       "_index": 100,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1048576
     },
     {
       "_index": 123,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 2097152
     },
     {
       "_index": 127,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1048576
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 1310720
+    },
+    {
+    	"pickupRadius": 524288
+    },
+    {
+    	"pickupRadius": 524288
     },
     {
       "_index": 139,
-      "gibHealth": -500
+      "gibHealth": -500,
+      "pickupRadius": 786432
     },
     {
       "_index": 140,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 851968
     },
     {
       "_index": 141,
-      "fullbright": true
+      "fullbright": true,
+      "pickupRadius": 393216
+    },
+    {
+    	"pickupRadius": 655360
+    },
+    {
+    	"pickupRadius": 1310720
     },
 		{
       "_index": 144,
-			"reactionTime": 0,
-			"_name": "Music source"
+			"_name": "Music source",
+			"id": 14164,
+			"health": 1000,
+			"mass": 100,
+			"flags": 16,
+			"height": 1048576,
+			"radius": 1048576,
+			"pickupRadius": 1048576,
+			"stateSpawn": 967
 		},
 		{
-			"reactionTime": 0,
-			"_name": "Skull pop gib"
+			"_name": "Skull pop gib",
+			"mass": 100,
+			"flags": 1040,
+			"health": 1000,
+			"height": 262144,
+			"radius": 262144,
+			"pickupRadius": 262144,
+			"stateSpawn": 967
 		},
 		{
-			"reactionTime": 0,
-			"_name": "Blue blood"
+			"_name": "Blue blood",
+			"mass": 100,
+			"health": 1000,
+			"stateSpawn": 90
 		},
 		{
-			"reactionTime": 0,
-			"_name": "Green blood"
+			"_name": "Green blood",
+			"mass": 100,
+			"health": 1000,
+			"stateSpawn": 90
 		},
 		{
-			"reactionTime": 0,
-			"_name": "Fuzzy blood"
+			"_name": "Fuzzy blood",
+			"mass": 100,
+			"health": 1000,
+			"flags": 262144,
+			"stateSpawn": 90
 		},
 		{
-			"reactionTime": 0,
-			"_name": "Rocket trail"
+			"_name": "Rocket trail",
+			"mass": 100,
+			"health": 1000,
+			"flags": 528,
+			"stateSpawn": 1077
 		},
 		{
 			"reactionTime": 0,
