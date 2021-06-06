@@ -123,67 +123,81 @@
 		  "bloodId": 39
 		},
 		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "shadowOffset": 131072
 		},
 		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "shadowOffset": 131072
 		},
 		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "shadowOffset": 262144
 		},
 		{
 		  "bloodId": 0
 		},
 		{
+		  "bloodId": 39,
+		  "shadowOffset": 262144
+		},
+		{
 		  "bloodId": 0
 		},
 		{
-		  "bloodId": 39
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 39,
+		  "shadowOffset": 131072
 		},
 		{
 		  "bloodId": 0
 		},
 		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "shadowOffset": 131072
 		},
 		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "shadowOffset": 131072
 		},
 		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "shadowOffset": 131072
 		},
 		{
-		  "bloodId": 149
+		  "bloodId": 149,
+		  "shadowOffset": 131072
 		},
 		{
 		  "bloodId": 147
 		},
 		{
-		  "bloodId": 148
+		  "bloodId": 148,
+		  "shadowOffset": 262144
 		},
 		{
 		  "bloodId": 0
 		},
 		{
-		  "bloodId": 148
+		  "bloodId": 148,
+		  "shadowOffset": 262144
 		},
 		{
 		  "bloodId": 0
 		},
 		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "shadowOffset": 1131072
 		},
 		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "shadowOffset": 262144
 		},
 		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "shadowOffset": 262144
 		},
 		{
 		  "bloodId": 39
@@ -315,7 +329,8 @@
 		  "bloodId": 0
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 0,
+		  "shadowOffset": 65536
 		},
 		{
 		  "bloodId": 0
@@ -537,7 +552,8 @@
 		  "bloodId": 0
 		},
 		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "shadowOffset": 262144
 		},
 		{
 		  "bloodId": 0

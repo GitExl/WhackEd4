@@ -1,6 +1,4 @@
 1.3.0
-- Add table data for new Doom Retro fields (take from Doom Retro info.c).
-    - Thing shadowOffset
 - State animation preview should not display states with 0 duration? But still run it's actions. See DV4 fist attack.
 
 1.3.1
