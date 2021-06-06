@@ -117,7 +117,459 @@
 		"OB_FRIENDLY4": ""
 	},
 	"thingFlags": {},
-	"things": [],
+	"things": [
+		{
+			"_index": 0,
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 149
+		},
+		{
+		  "bloodId": 147
+		},
+		{
+		  "bloodId": 148
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 148
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 184
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 147
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 39
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 0
+		},
+		{
+		  "bloodId": 204
+		},
+		{
+		  "bloodId": 122
+		},
+		{
+		  "bloodId": -1
+		},
+		{
+		  "bloodId": 0
+		}
+	],
 	"weapons": [],
 	"usedStates": [],
 	"renderStyles": {},
