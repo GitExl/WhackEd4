@@ -466,7 +466,7 @@ class Patch(object):
                     mode = ParseMode.WEAPON
                     entry_index = int(line_words[1])
                     entry_name = ' '.join(line_words[2:])[1:-1]
-                    if entry_index < 0 or entry_index >= len(self.wapons):
+                    if entry_index < 0 or entry_index >= len(self.weapons):
                         messages['NOWEAPON'] = 'The patch contains weapon data that does not exist in the chosen engine. It will not be loaded.'
                         entry_index = -1
                     else:
