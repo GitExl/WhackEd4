@@ -2,7 +2,7 @@
 	"features": [],
 	"actions": {
 		"NULL": {
-			"name": "",
+			"name": "NULL",
 			"description": "None.",
 			"type": "thing"
 		},
