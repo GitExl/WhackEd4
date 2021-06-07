@@ -4,7 +4,7 @@ Name: associate; Description: Associate with Dehacked patch files
 
 
 [Files]
-Source: .\build\exe.win32-3.8\*.*; DestDir: {app}; Flags: recursesubdirs createallsubdirs
+Source: .\build\exe.win-amd64-3.9\*.*; DestDir: {app}; Flags: recursesubdirs createallsubdirs
 Source: .\fonts\dejavu-sans-mono\DejaVuSansMono.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono
 Source: .\fonts\dejavu-sans-mono\DejaVuSansMono-Bold.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono Bold
 

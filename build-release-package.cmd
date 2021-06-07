@@ -8,7 +8,7 @@ set app_version=1.3.0
 set app_version_value=1.3.0
 set app_version_title=1.3.0
 
-set build_path=".\build\exe.win32-3.8"
+set build_path=".\build\exe.win-amd64-3.9"
 
 set python_interpreter=py -3
 set setup_compiler="C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
@@ -26,6 +26,7 @@ rmdir %build_path%\lib\xml /S /Q
 rmdir %build_path%\lib\wx\py /S /Q
 rmdir %build_path%\lib\wx\tools /S /Q
 rmdir %build_path%\lib\wx\locale /S /Q
+rmdir %build_path%\lib\wx\lib\agw /S /Q
 
 del %app_name_lower%-setup-*.exe /S /Q
 %setup_compiler% %app_name_lower%.iss
