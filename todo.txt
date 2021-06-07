@@ -1,13 +1,15 @@
 1.3.0
-- State animation preview should not display states with 0 duration? But still run it's actions. See DV4 fist attack.
+- Add Doom Retro specific fields that do not exist in DEHEXTRA. See https://github.com/bradharding/doomretro/wiki/INFORMATION-FOR-MAPPERS#DEHACKED-LUMPS
+    - Retro bits -- still needs data in table
+    - Name* and Plural* fields, but why does it not use regular thing names for Name1?
+- Calculated % number next to a thing's pain chance.
 
 1.3.1
-- Allow multiple flag fields for things, for Doom Retro's "Retro Bits" field.
-- Add Doom Retro specific fields that do not exist in DEHEXTRA. See https://github.com/bradharding/doomretro/wiki/INFORMATION-FOR-MAPPERS#DEHACKED-LUMPS
-    - Name* and Plural* fields, but why does it not use regular thing names for Name1?
-    - Retro bits (needs multiple flag field support first)
 - Add MBF21 support. https://github.com/kraflab/mbf21/blob/master/docs/spec.md
-- Calculated % number next to a thing's pain chance.
+    - New MBF21 base table.
+    - New table that inherits from the extended base table and mbf21 base table, and one table that only inherits from an mbf21 base table since they are not inclusive.
+    - Bits fields already exist in code, but they still need data added to the tables and their flags defined.
+    - Weapon, ammo and state UI need support for flags.
 
 Low priority bugs
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.

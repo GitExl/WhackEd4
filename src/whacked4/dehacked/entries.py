@@ -60,6 +60,7 @@ class StateEntry(Entry):
         'arg7':        Field('Args7',            FieldType.INT),
         'arg8':        Field('Args8',            FieldType.INT),
         'arg9':        Field('Args9',            FieldType.INT),
+        'mbf21Flags':  Field('MBF21 Bits',       FieldType.FLAGS),
     }
 
 
@@ -89,6 +90,8 @@ class ThingEntry(Entry):
         'damage':               Field('Missile damage',         FieldType.INT),
         'soundActive':          Field('Action sound',           FieldType.SOUND),
         'flags':                Field('Bits',                   FieldType.FLAGS),
+        'mbf21Flags':           Field('MBF21 Bits',             FieldType.FLAGS),
+        'retroFlags':           Field('Retro bits',             FieldType.FLAGS),
         'spawnId':              Field('SpawnID',                FieldType.INT),
         'game':                 Field('Game',                   FieldType.ENUM_GAME),
         'respawnTime':          Field('Respawn Time',           FieldType.INT),
@@ -125,6 +128,7 @@ class WeaponEntry(Entry):
         'minAmmo':       Field('Min ammo',       FieldType.INT),
         'ammoUse':       Field('Ammo use',       FieldType.INT),
         'decal':         Field('Decal',          FieldType.STRING),
+        'mbf21Flags':    Field('MBF21 Bits',     FieldType.FLAGS),
     }
 
 

@@ -2,6 +2,31 @@
 #coding=utf8
 
 import copy
+import math
+import re
+from dataclasses import dataclass
+from typing import Dict, Optional, Set
+
+
+@dataclass
+class ThingFlag:
+    key: str
+    field: str
+    name: Optional[str]
+    index: Optional[int]
+    alias: Optional[str]
+    description: Optional[str]
+
+    @staticmethod
+    def from_item(key: str, values: Dict):
+        return ThingFlag(
+            key,
+            values.get('field', 'flags'),
+            values.get('name', None),
+            values.get('index', None),
+            values.get('alias', None),
+            values.get('description', None)
+        )
 
 
 class Table(object):
@@ -14,6 +39,7 @@ class Table(object):
         self.entry_class = entry_class
         self.offset = 0
         self.engine = engine
+        self.flags: Dict[str, ThingFlag] = {}
         self.names = None
 
     def read_from_executable(self, count, f):
@@ -76,6 +102,106 @@ class Table(object):
     def apply_defaults(self, defaults):
         for entry in self.entries:
             entry.apply_defaults(defaults)
+
+    def flags_parse_string(self, field_key: str, value: str):
+        """
+        Filters a thing's flags value.
+        Extended patches can use mnemonics for flag names, separated by plus signs.
+
+        @raise LookupError: if the value contains an unknown mnemonic.
+        """
+
+        if not isinstance(value, set):
+            flag_parts = re.split(r"[,+| \t\f\r]+", str(value))
+        else:
+            flag_parts = value
+
+        out = set()
+        for flag_str in flag_parts:
+            flag_str = flag_str.strip()
+
+            # Flag is any number of bits.
+            if flag_str.isdigit():
+                keys = self._get_flag_keys_for_bits(field_key, int(flag_str))
+                out.update(keys)
+
+            # Flag is a mnemonic.
+            else:
+                if not self.engine.extended:
+                    raise LookupError('Encountered thing flag key "{}" in a non-extended patch.'.format(flag_str))
+
+                flag = self.flags.get(flag_str)
+                if flag is None:
+                    raise LookupError('Ignoring unknown thing flag key "{}".'.format(flag_str))
+
+                if flag.alias is not None:
+                    original_flag = flag.alias
+                    flag = self.flags.get(flag.alias)
+                    if flag is None:
+                        raise LookupError('Ignoring unknown thing flag alias "{}".'.format(original_flag))
+
+                out.add(flag_str)
+
+        return out
+
+    def _get_flag_keys_for_bits(self, field_key: str, bits: int) -> Set[str]:
+        out = set()
+
+        for bit in range(0, 32):
+            mask = int(math.pow(2, bit))
+            if (bits & mask) == 0:
+                continue
+
+            for key, flag in self.flags.items():
+                if flag.field != field_key or flag.index is None or flag.index != bit:
+                    continue
+
+                out.add(key)
+                break
+
+        return out
+
+    def flags_get_string(self, value: str):
+        """
+        Returns a thing flags value as a string of mnemonics.
+        """
+
+        if self.engine.extended:
+            return self._flags_get_string_extended(value)
+        else:
+            return self._flags_get_string_vanilla(value)
+
+    def _flags_get_string_extended(self, value: str):
+        """
+        Returns a thing flags value as a string of extended engine mnemonics.
+        """
+
+        out = []
+        for key in value:
+            if key not in self.flags:
+                raise LookupError('Unknown thing flag key "{}".'.format(key))
+
+            out.append(key)
+
+        if len(out) == 0:
+            return 0
+
+        return '+'.join(out)
+
+    def _flags_get_string_vanilla(self, value: str):
+        """
+        Returns a thing flags value as a 32 bit integer bitfield.
+        """
+
+        bits = 0
+        for key in value:
+            flag = self.flags.get(key)
+            if flag.index is None:
+                raise LookupError('Cannot write non-bitfield thing flag "{}" into a non-extended patch.'.format(key))
+
+            bits |= int(math.pow(2, flag.index))
+
+        return bits
 
     def clone(self):
         """

@@ -1,12 +1,13 @@
 import json
+from dataclasses import dataclass
 
 from json.encoder import JSONEncoder
-from typing import List, Dict, Set
+from typing import List, Dict, Set, Optional
 
 from whacked4.dehacked import table, entries, entry
 from whacked4.dehacked.action import Action
 from whacked4.dehacked.entry import Entry
-from whacked4.dehacked.table import Table
+from whacked4.dehacked.table import Table, ThingFlag
 
 
 class DehackedEngineError(Exception):
@@ -35,7 +36,6 @@ class Engine(object):
         # Things table.
         self.things: Table = table.Table(entries.ThingEntry, self)
         self.things.offset = 1
-        self.things.flags = {}
 
         # Other tables.
         self.states: Table = table.Table(entries.StateEntry, self)
@@ -73,11 +73,11 @@ class Engine(object):
         self.features: Set[str] = set()
 
         # Defaults for new entries and unnamed fields.
-        self.default_state: Entry = entries.StateEntry(self)
-        self.default_thing: Entry = entries.ThingEntry(self)
-        self.default_weapon: Entry = entries.WeaponEntry(self)
-        self.default_ammo: Entry = entries.AmmoEntry(self)
-        self.default_sound: Entry = entries.SoundEntry(self)
+        self.default_state: Entry = entries.StateEntry(self.states)
+        self.default_thing: Entry = entries.ThingEntry(self.things)
+        self.default_weapon: Entry = entries.WeaponEntry(self.weapons)
+        self.default_ammo: Entry = entries.AmmoEntry(self.ammo)
+        self.default_sound: Entry = entries.SoundEntry(self.sounds)
 
     def merge_data(self, filename, is_base_table=False):
         """
@@ -117,7 +117,9 @@ class Engine(object):
 
             self.features.update(set(data['features']))
 
-            self.things.flags.update(data['thingFlags'])
+            for key, value in data['thingFlags'].items():
+                self.things.flags[key] = ThingFlag.from_item(key, value)
+
             self.things.read_from_json(data['things'])
 
             self.weapons.read_from_json(data['weapons'])

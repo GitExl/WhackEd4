@@ -1,6 +1,8 @@
 import json
 import struct
 
+from whacked4.dehacked.table import ThingFlag
+
 
 class ExecutableReader:
 
@@ -38,7 +40,10 @@ class ExecutableReader:
                 f.seek(exe_config['thingOffset'])
                 self.engine.things.read_from_executable(exe_config['thingCount'], f)
                 self.engine.things.names = exe_config['thingNames']
-                self.engine.things.flags = exe_config['thingFlags']
+
+                self.engine.things.flags.clear()
+                for key, value in exe_config['thingFlags'].items():
+                    self.engine.things.flags[key] = ThingFlag.from_item(key, value)
 
                 f.seek(exe_config['stateOffset'])
                 self.engine.states.read_from_executable(exe_config['stateCount'], f)

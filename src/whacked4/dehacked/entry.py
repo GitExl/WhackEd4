@@ -1,8 +1,9 @@
 import copy
 
-from collections import namedtuple
+from dataclasses import dataclass
+from typing import Optional
 
-from whacked4.dehacked import validators
+from whacked4.dehacked.table import Table
 from whacked4.enum import WhackedEnum
 
 
@@ -25,10 +26,13 @@ class FieldType(WhackedEnum):
 
 
 # Stores information about a Dehacked field.
-Field = namedtuple('Field', ['patch_key', 'type'])
+@dataclass
+class Field:
+    patch_key: str
+    type: FieldType
 
 
-class Entry(object):
+class Entry:
 
     # The name of this patch entry.
     NAME = None
@@ -39,9 +43,9 @@ class Entry(object):
     # A dict of fields in this entry.
     FIELDS = None
 
-    def __init__(self, table):
-        self.name = None
-        self.table = table
+    def __init__(self, table: Table):
+        self.name: Optional[str] = None
+        self.table: Table = table
         self.values = {}
         self.extra_values = {}
         self.unused = False
@@ -68,7 +72,7 @@ class Entry(object):
     def __contains__(self, item):
         return item in self.values
 
-    def validate_field_value(self, key, value):
+    def parse_field_value(self, key, value):
         """
         Validates a patch field value.
 
@@ -81,7 +85,7 @@ class Entry(object):
         field = self.FIELDS[key]
 
         if field.type == FieldType.FLAGS:
-            return validators.thing_flags_read(value, self.table)
+            return self.table.flags_parse_string(key, value)
 
         elif field.type == FieldType.INT or field.type == FieldType.AMMO or field.type == FieldType.SOUND or \
                 field.type == FieldType.SPRITE or field.type == FieldType.STATE:
@@ -116,7 +120,7 @@ class Entry(object):
             if field.patch_key != patch_key:
                 continue
 
-            self.values[key] = self.validate_field_value(key, value)
+            self.values[key] = self.parse_field_value(key, value)
             return
 
         # No known patch key found, store it as extra values.
@@ -146,7 +150,7 @@ class Entry(object):
         for key in self.FIELDS.keys():
             if key not in json:
                 continue
-            self.values[key] = self.validate_field_value(key, json[key])
+            self.values[key] = self.parse_field_value(key, json[key])
 
         return self
 
@@ -198,7 +202,7 @@ class Entry(object):
             field = self.FIELDS[key]
 
             if field.type == FieldType.FLAGS:
-                value = validators.thing_flags_write(value, self.table)
+                value = self.table.flags_get_string(value)
 
             output_list.append('{} = {}'.format(field.patch_key, value))
 
@@ -214,7 +218,7 @@ class Entry(object):
 
         for key, value in default_entry.values.items():
             if key not in self.values:
-                self.values[key] = self.validate_field_value(key, value)
+                self.values[key] = self.parse_field_value(key, value)
 
     def clone(self):
         """

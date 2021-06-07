@@ -116,7 +116,116 @@
 		"OB_FRIENDLY3": "",
 		"OB_FRIENDLY4": ""
 	},
-	"thingFlags": {},
+	"thingFlags": {
+		"TRANSLUCENT": {
+			"field": "retroFlags",
+			"name": "Translucent"
+		},
+		"TRANSLUCENT_REDONLY": {
+			"field": "retroFlags",
+			"name": "Translucent, red only"
+		},
+		"TRANSLUCENT_GREENONLY": {
+			"field": "retroFlags",
+			"name": "Translucent, green only"
+		},
+		"TRANSLUCENT_BLUEONLY": {
+			"field": "retroFlags",
+			"name": "Translucent, blue only"
+		},
+		"TRANSLUCENT_33": {
+			"field": "retroFlags",
+			"name": "Translucent 33%"
+		},
+		"TRANSLUCENT_50": {
+			"field": "retroFlags",
+			"name": "Translucent 50%"
+		},
+		"TRANSLUCENT_REDWHITEONLY": {
+			"field": "retroFlags",
+			"name": "Translucent red and white only"
+		},
+		"TRANSLUCENT_REDTOGREEN_33": {
+			"field": "retroFlags",
+			"name": "Translucent red to green 33%"
+		},
+		"TRANSLUCENT_REDTOBLUE_33": {
+			"field": "retroFlags",
+			"name": "Translucent red to blue 33%"
+		},
+		"TRANSLUCENT_BLUE_25": {
+			"field": "retroFlags",
+			"name": "Translucent blue 25%"
+		},
+		"GREENTORED": {
+			"field": "retroFlags",
+			"name": "Green to red"
+		},
+		"REDTOBLUE": {
+			"field": "retroFlags",
+			"name": "Red to blue"
+		},
+		"FLOATBOB": {
+			"field": "retroFlags",
+			"name": "Float bobbing"
+		},
+		"MIRRORED": {
+			"field": "retroFlags",
+			"name": "Mirrored"
+		},
+		"FALLING": {
+			"field": "retroFlags",
+			"name": "Falling"
+		},
+		"FOOTCLIP": {
+			"field": "retroFlags",
+			"name": "Foot clipping"
+		},
+		"NOLIQUIDBOB": {
+			"field": "retroFlags",
+			"name": "No liquid bobbing"
+		},
+		"FEETARECLIPPED": {
+			"field": "retroFlags",
+			"name": "Feet are clipped"
+		},
+		"CASTSHADOW": {
+			"field": "retroFlags",
+			"name": "Casts shadow"
+		},
+		"BLOOD": {
+			"field": "retroFlags",
+			"name": "Blood"
+		},
+		"DONTMAP": {
+			"field": "retroFlags",
+			"name": "Do not map"
+		},
+		"SMOKETRAIL": {
+			"field": "retroFlags",
+			"name": "Smoke trail"
+		},
+		"CRUSHABLE": {
+			"field": "retroFlags",
+			"name": "Crushable"
+		},
+		"MASSACRE": {
+			"field": "retroFlags",
+			"name": "Massacre"
+		},
+		"DECORATION": {
+			"field": "retroFlags",
+			"name": "Decoration"
+		},
+		"DONTDRAW": {
+			"field": "retroFlags",
+			"name": "Do not draw"
+		},
+		"MONSTERMISSILE": {
+			"field": "retroFlags",
+			"name": "Monster missile"
+		}
+	},
 	"things": [
 		{
 			"_index": 0,

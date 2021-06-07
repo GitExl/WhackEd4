@@ -1,6 +1,7 @@
 from wx import PostEvent
 
 from whacked4 import utils
+from whacked4.dehacked.entries import ThingEntry
 from whacked4.dehacked.statequery.query import StateFilterQuery
 from whacked4.dehacked.statequery.stateindexsort import StateIndexSort
 from whacked4.dehacked.statequery.thingfilter import ThingStateFilter
@@ -315,11 +316,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         flaglist = []
         self.thingflag_mnemonics = []
 
-        for mnemonic, flag in self.patch.engine.things.flags.items():
-            if 'alias' in flag:
+        for key, flag in self.patch.engine.things.flags.items():
+            if flag.alias is not None:
                 continue
-            flaglist.append(' ' + flag['name'])
-            self.thingflag_mnemonics.append(mnemonic)
+            flaglist.append(' ' + flag.name)
+            self.thingflag_mnemonics.append(key)
 
         self.ThingFlags.SetItems(flaglist)
 
@@ -615,12 +616,16 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         Updates the tooltip displayed for the flags list when hovering over a flag.
         """
 
+        tip = ''
         index = self.ThingFlags.HitTest(wx.Point(event.GetX(), event.GetY()))
         if index != wx.NOT_FOUND:
-            mnemonic = self.thingflag_mnemonics[index]
-            tip = '{}\n\nMnemonic: {}'.format(self.patch.engine.things.flags[mnemonic]['description'], mnemonic)
-        else:
-            tip = ''
+            key = self.thingflag_mnemonics[index]
+            flag = self.patch.engine.things.flags[key]
+            patch_key = ThingEntry.FIELDS[flag.field].patch_key
+            if flag.description:
+                tip = '{}\n\nKey: {}\nField: {}'.format(flag.description, key, patch_key)
+            else:
+                tip = 'Key: {}\nField: {}'.format(key, patch_key)
 
         self.ThingFlags.SetToolTip(tip)
 
