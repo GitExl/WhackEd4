@@ -17,9 +17,18 @@ set zip=7za
 
 rmdir .\build /S /Q
 %python_interpreter% setup.py build
+
 del %build_path%\lib\libcrypto-1_1.dll /S /Q
 del %build_path%\lib\libssl-1_1.dll /S /Q
 del %build_path%\lib\unicodedata.pyd /S /Q
+del %build_path%\lib\wx\_adv.cp39-win_amd64.pyd /S /Q
+del %build_path%\lib\wx\_propgrid.cp39-win_amd64.pyd /S /Q
+del %build_path%\lib\wx\_richtext.cp39-win_amd64.pyd /S /Q
+del %build_path%\lib\wx\wxmsw315u_propgrid_vc140_x64.dll /S /Q
+del %build_path%\lib\wx\wxmsw315u_richtext_vc140_x64 /S /Q
+del %build_path%\lib\wx\wxmsw315u_stc_vc140_x64.dll /S /Q
+del %build_path%\lib\wx\python39.dll /S /Q
+
 rmdir %build_path%\lib\pydoc_data /S /Q
 rmdir %build_path%\lib\unittest /S /Q
 rmdir %build_path%\lib\xml /S /Q
