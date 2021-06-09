@@ -1,4 +1,4 @@
-from typing import List, Dict, Iterable, Sized
+from typing import List, Dict, Iterable, Sized, Optional
 
 from whacked4.dehacked.entry import Entry
 from whacked4.dehacked.table import Table
@@ -17,13 +17,22 @@ class StateQueryResult(Iterable, Sized):
 
         self.iter_index: int = 0
 
-    def get_state_for_item_index(self, item_index: int) -> Entry:
+    def get_state_for_item_index(self, item_index: int) -> Optional[Entry]:
+        if not len(self.state_index_by_item_index):
+            return None
+
         return self.state_table[self.state_index_by_item_index[item_index]]
 
     def get_state_index_for_item_index(self, item_index: int) -> int:
+        if not len(self.state_index_by_item_index):
+            return -1
+
         return self.state_index_by_item_index[item_index]
 
     def get_item_index_for_state_index(self, state_index: int) -> int:
+        if not len(self.item_index_by_state_index):
+            return -1
+
         return self.item_index_by_state_index[state_index]
 
     def contains_state_index(self, state_index: int) -> bool:

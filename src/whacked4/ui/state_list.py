@@ -150,7 +150,7 @@ class StateList(wx.ListCtrl):
             return
 
         state = self.state_query_result.get_state_for_item_index(0)
-        if state['sprite'] != 0:
+        if state is not None and state['sprite'] != 0:
             self.set_selected([0])
         else:
             self.set_selected([1])
@@ -159,7 +159,8 @@ class StateList(wx.ListCtrl):
         for item_index in self.selected:
             state_index = self.state_query_result.get_state_index_for_item_index(item_index)
             state = self.state_query_result.get_state_for_item_index(item_index)
-            self.update_row(item_index, state_index, state)
+            if state is not None:
+                self.update_row(item_index, state_index, state)
 
     def update_selection(self, event: ListEvent):
         self.selected.clear()
@@ -179,7 +180,8 @@ class StateList(wx.ListCtrl):
             state_index = self.state_query_result.get_state_index_for_item_index(item_index)
             state = self.state_query_result.get_state_for_item_index(item_index)
 
-            yield item_index, state_index, state
+            if state is not None:
+                yield item_index, state_index, state
 
     def get_selected_count(self) -> int:
         return len(self.selected)

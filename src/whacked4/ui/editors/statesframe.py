@@ -386,7 +386,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 continue
 
             state = self.StateList.state_query_result.get_state_for_item_index(item_index)
-            state[key] = value
+            if state is not None:
+                state[key] = value
 
         self.is_modified(True)
 
@@ -401,6 +402,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         # If only one state is selected, fill the property controls with that state's data.
         if self.StateList.get_selected_count() == 1:
             state = self.StateList.state_query_result.get_state_for_item_index(self.StateList.get_first_selected())
+            if state is None:
+                return
+
             state_index = self.StateList.state_query_result.get_state_index_for_item_index(self.StateList.get_first_selected())
 
             if state_index == 0:
@@ -538,23 +542,24 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         if self.StateList.get_selected_count() == 1:
             state = self.StateList.state_query_result.get_state_for_item_index(self.StateList.get_first_selected())
-            state_index = self.StateList.state_query_result.get_state_index_for_item_index(self.StateList.get_first_selected())
+            if state is not None:
+                state_index = self.StateList.state_query_result.get_state_index_for_item_index(self.StateList.get_first_selected())
 
-            # Find a valid sprite name and frame index.
-            if state_index != 0:
-                sprite_index = state['sprite']
-                if sprite_index != '':
-                    sprite_index = int(sprite_index)
-                    sprite_name = self.patch.sprite_names[sprite_index]
+                # Find a valid sprite name and frame index.
+                if state_index != 0:
+                    sprite_index = state['sprite']
+                    if sprite_index != '':
+                        sprite_index = int(sprite_index)
+                        sprite_name = self.patch.sprite_names[sprite_index]
 
-                    sprite_frame = state['spriteFrame'] & ~self.FRAMEFLAG_LIT
-                    if sprite_frame != '':
-                        sprite_frame = int(sprite_frame)
-                    else:
-                        sprite_frame = 0
+                        sprite_frame = state['spriteFrame'] & ~self.FRAMEFLAG_LIT
+                        if sprite_frame != '':
+                            sprite_frame = int(sprite_frame)
+                        else:
+                            sprite_frame = 0
 
-                    self.SpritePreview.show_sprite(sprite_name, sprite_frame)
-                    return
+                        self.SpritePreview.show_sprite(sprite_name, sprite_frame)
+                        return
 
         self.SpritePreview.clear()
 
@@ -582,8 +587,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         elif self.StateList.get_selected_count() > 1:
             state = self.StateList.state_query_result.get_state_for_item_index(self.StateList.get_first_selected())
-            sprite_index = state['sprite']
-            frame_index = None
+            if state is not None:
+                sprite_index = state['sprite']
+                frame_index = None
 
         else:
             sprite_index = 0
@@ -605,7 +611,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 # Update sprite frames separately to mix in lit flag.
                 for list_index in self.StateList.get_selected():
                     state = self.StateList.state_query_result.get_state_for_item_index(list_index)
-                    state['spriteFrame'] = frame_index | (state['spriteFrame'] & self.FRAMEFLAG_LIT)
+                    if state is not None:
+                        state['spriteFrame'] = frame_index | (state['spriteFrame'] & self.FRAMEFLAG_LIT)
 
             self.StateList.refresh_selected_rows()
             self.StateList.update_item_attributes()
@@ -780,9 +787,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         # Link last state to first state to loop.
         if loop:
             state_last = self.StateList.state_query_result.get_state_for_item_index(self.StateList.get_last_selected())
-            state_first_index = self.StateList.state_query_result.get_state_index_for_item_index(self.StateList.get_first_selected())
-
-            state_last['nextState'] = state_first_index
+            if state_last:
+                state_first_index = self.StateList.state_query_result.get_state_index_for_item_index(self.StateList.get_first_selected())
+                state_last['nextState'] = state_first_index
 
         self.StateList.refresh_selected_rows()
         self.update_properties()
@@ -808,7 +815,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             return
 
         state = self.StateList.state_query_result.get_state_for_item_index(self.StateList.get_first_selected())
-        self.goto_state_index(state['nextState'])
+        if state is not None:
+            self.goto_state_index(state['nextState'])
 
     def goto_state_index(self, state_index, filter_type=None, filter_index=None):
         """
