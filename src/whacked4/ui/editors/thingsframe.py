@@ -1,3 +1,5 @@
+from typing import List, Tuple, Dict, Set
+
 from wx import PostEvent
 
 from whacked4 import utils
@@ -168,7 +170,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.selected_index = 0
         self.thing_is_projectile = False
 
-        self.thingflag_mnemonics = None
+        self.thingflag_mnemonics: List[Tuple[str, str]] = []
 
         for prop in self.PROPS_STATENAMES.keys():
             item = self.FindWindowById(prop)
@@ -189,8 +191,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.preview_dialog = statepreviewdialog.StatePreviewDialog(self.GetParent())
 
         self.selected_index = 0
-
-        self.thingflag_mnemonics = None
 
         self.set_feature_visibility()
         self.flaglist_build()
@@ -314,13 +314,13 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         flaglist = []
-        self.thingflag_mnemonics = []
+        self.thingflag_mnemonics.clear()
 
         for key, flag in self.patch.engine.things.flags.items():
             if flag.alias is not None:
                 continue
             flaglist.append(' ' + flag.name)
-            self.thingflag_mnemonics.append(key)
+            self.thingflag_mnemonics.append((flag.field, key))
 
         self.ThingFlags.SetItems(flaglist)
 
@@ -434,10 +434,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingSpeed.ChangeValue(str(speed))
 
         # Set flags.
-        flags = thing['flags']
         for index in range(self.ThingFlags.GetCount()):
-            mnemonic = self.thingflag_mnemonics[index]
-            checked = (mnemonic in flags)
+            field, mnemonic = self.thingflag_mnemonics[index]
+            checked = (mnemonic in thing[field])
             self.ThingFlags.Check(index, checked)
 
         # Set state and sound values.
@@ -600,15 +599,22 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.undo_add()
 
-        flags_set = set()
+        flags_field_set: Dict[str, Set[str]] = {}
 
         # Iterate over the flags defined in the flags list, adding mnemonics that are set.
         for index in range(self.ThingFlags.GetCount()):
             if not self.ThingFlags.IsChecked(index):
                 continue
-            flags_set.add(self.thingflag_mnemonics[index])
 
-        self.patch.things[self.selected_index]['flags'] = flags_set
+            field, mnemonic = self.thingflag_mnemonics[index]
+            if not (field in flags_field_set):
+                flags_field_set[field] = set()
+
+            flags_field_set[field].add(mnemonic)
+
+        for field, flags_set in flags_field_set.items():
+            self.patch.things[self.selected_index][field] = flags_set
+
         self.is_modified(True)
 
     def set_flag_tooltip(self, event):
@@ -619,9 +625,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         tip = ''
         index = self.ThingFlags.HitTest(wx.Point(event.GetX(), event.GetY()))
         if index != wx.NOT_FOUND:
-            key = self.thingflag_mnemonics[index]
+            field, key = self.thingflag_mnemonics[index]
             flag = self.patch.engine.things.flags[key]
-            patch_key = ThingEntry.FIELDS[flag.field].patch_key
+            patch_key = ThingEntry.FIELDS[field].patch_key
             if flag.description:
                 tip = '{}\n\nKey: {}\nField: {}'.format(flag.description, key, patch_key)
             else:

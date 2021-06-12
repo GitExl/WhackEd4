@@ -12,7 +12,8 @@
 	],
 	"defaultThing": {
 		"bloodId": -1,
-		"shadowOffset": 0
+		"shadowOffset": 0,
+		"retroFlags": 0
 	},
 	"actions": {},
 	"ammo": [],
@@ -177,6 +178,18 @@
 			"field": "retroFlags",
 			"name": "Falling"
 		},
+		"ONMOBJ": {
+			"field": "retroFlags",
+			"name": "Is on top of thing"
+		},
+		"PASSMOBJ": {
+			"field": "retroFlags",
+			"name": "Can pass over/under"
+		},
+		"RESURRECTING": {
+			"field": "retroFlags",
+			"name": "Is resurrecting"
+		},
 		"FOOTCLIP": {
 			"field": "retroFlags",
 			"name": "Foot clipping"
@@ -229,204 +242,117 @@
 	"things": [
 		{
 			"_index": 0,
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "retroFlags": "CASTSHADOW + PASSMOBJ + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 131072
+		  "shadowOffset": 131072,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 131072
+		  "shadowOffset": 131072,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 262144
+		  "shadowOffset": 262144,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 39,
-		  "shadowOffset": 262144
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT + NOLIQUIDBOB"
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 131072
+		  "shadowOffset": 262144,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT + NOLIQUIDBOB"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT_33 + NOLIQUIDBOB"
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 131072
+		  "shadowOffset": 131072,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT + NOLIQUIDBOB"
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 131072
+		  "shadowOffset": 131072,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 131072
+		  "shadowOffset": 131072,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
+		},
+		{
+		  "bloodId": 39,
+		  "shadowOffset": 131072,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 149,
-		  "shadowOffset": 131072
+		  "shadowOffset": 131072,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
-		  "bloodId": 147
-		},
-		{
-		  "bloodId": 148,
-		  "shadowOffset": 262144
-		},
-		{
-		  "bloodId": 0
+		  "bloodId": 147,
+		  "retroFlags": "PASSMOBJ + CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 148,
-		  "shadowOffset": 262144
+		  "shadowOffset": 262144,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT + NOLIQUIDBOB"
+		},
+		{
+		  "bloodId": 148,
+		  "shadowOffset": 262144,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "PASSMOBJ + CASTSHADOW + TRANSLUCENT_REDONLY + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 1131072
+		  "shadowOffset": 1131072,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 262144
+		  "shadowOffset": 262144,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 262144
+		  "shadowOffset": 262144,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "PASSMOBJ + CASTSHADOW + NOLIQUIDBOB + FOOTCLIP"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 184
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
 		},
 		{
 		  "bloodId": 0
@@ -439,220 +365,438 @@
 		},
 		{
 		  "bloodId": 0,
-		  "shadowOffset": 65536
+		  "retroFlags": "CASTSHADOW"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + NOLIQUIDBOB + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT_33"
+		},
+		{
+		  "bloodId": 184,
+		  "retroFlags": "BLOOD + TRANSLUCENT_50"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT"
 		},
 		{
 		  "bloodId": 0
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + TRANSLUCENT_BLUE_25 + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + TRANSLUCENT_BLUE_25 + FLOATBOB"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + TRANSLUCENT_33 + FLOATBOB"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + TRANSLUCENT_33 + FLOATBOB"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FLOATBOB"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + TRANSLUCENT_REDONLY + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FLOATBOB"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "shadowOffset": 65536,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP"
+	  },
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_GREENONLY + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW + DECORATION"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_GREENONLY + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_GREENONLY + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP + TRANSLUCENT_REDONLY"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
+		},
+		{
+		  "bloodId": 147,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP"
+		},
+		{
+		  "bloodId": 39,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP"
 		},
 		{
 		  "bloodId": 0
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "CASTSHADOW + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "CASTSHADOW + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 0,
+		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION + FOOTCLIP"
 		},
 		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 147
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 0
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
-		},
-		{
-		  "bloodId": 39
+		  "bloodId": 39,
+		  "retroFlags": "DECORATION + FOOTCLIP"
 		},
 		{
 		  "bloodId": 0
@@ -662,7 +806,8 @@
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 262144
+		  "shadowOffset": 262144,
+		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP"
 		},
 		{
 		  "bloodId": 0
@@ -671,7 +816,12 @@
 		  "bloodId": 0
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW"
+		},
+		{
+		  "bloodId": 0,
+		  "retroFlags": "CASTSHADOW"
 		},
 		{
 		  "bloodId": 0
@@ -680,19 +830,20 @@
 		  "bloodId": 0
 		},
 		{
-		  "bloodId": 0
+		  "bloodId": 204,
+		  "retroFlags": "BLOOD + TRANSLUCENT_REDTOBLUE_33"
 		},
 		{
-		  "bloodId": 204
+		  "bloodId": 122,
+		  "retroFlags": "BLOOD + TRANSLUCENT_REDTOGREEN_33"
 		},
 		{
-		  "bloodId": 122
+		  "bloodId": -1,
+		  "retroFlags": "BLOOD"
 		},
 		{
-		  "bloodId": -1
-		},
-		{
-		  "bloodId": 0
+		  "bloodId": 0,
+		  "retroFlags": "TRANSLUCENT_50"
 		}
 	],
 	"weapons": [],

@@ -103,14 +103,13 @@ class Table(object):
         for entry in self.entries:
             entry.apply_defaults(defaults)
 
-    def flags_parse_string(self, field_key: str, value: str):
+    def flags_parse_string(self, field_key: str, value: any):
         """
         Filters a thing's flags value.
         Extended patches can use mnemonics for flag names, separated by plus signs.
 
         @raise LookupError: if the value contains an unknown mnemonic.
         """
-
         if not isinstance(value, set):
             flag_parts = re.split(r"[,+| \t\f\r]+", str(value))
         else:
