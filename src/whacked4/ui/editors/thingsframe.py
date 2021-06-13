@@ -25,6 +25,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
     # Text control to internal key mappings.
     PROPS_VALUES = {
+        windows.THING_VAL_NAME: 'name',
+        windows.THING_VAL_OBIT_NAME: 'obituaryName',
+        windows.THING_VAL_OBIT_NAME_PLURAL: 'obituaryNamePlural',
         windows.THING_VAL_ID: 'id',
         windows.THING_VAL_HEALTH: 'health',
         windows.THING_VAL_GIBHEALTH: 'gibHealth',
@@ -54,6 +57,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
     # Value types for text control validation.
     PROPS_VALUE_TYPES = {
+        windows.THING_VAL_NAME: 'str',
+        windows.THING_VAL_OBIT_NAME: 'str',
+        windows.THING_VAL_OBIT_NAME_PLURAL: 'str',
         windows.THING_VAL_ID: 'int',
         windows.THING_VAL_HEALTH: 'int',
         windows.THING_VAL_GIBHEALTH: 'int',
@@ -212,6 +218,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         features = self.patch.engine.features
 
+        self.PanelObituaryName.Show(('thing.obituaryName' in features))
+        self.PanelObituaryNamePlural.Show(('thing.obituaryNamePlural' in features))
         self.PanelDamageFactor.Show(('thing.damageFactor' in features))
         self.PanelGravity.Show(('thing.gravity' in features))
         self.PanelGame.Show(('thing.game' in features))
@@ -362,7 +370,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.undo_add()
 
         dup = self.clipboard['thing'].clone()
-        dup_name = copy.copy(self.clipboard['name'])
 
         # Copy references to newly duplicated thing.
         self.patch.things[self.selected_index] = dup
@@ -383,6 +390,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.update_is_projectile()
 
         # Set basic property text control values.
+        self.ThingName.ChangeValue(str(thing.name))
         self.ThingId.ChangeValue(str(thing['id']))
         self.ThingHealth.ChangeValue(str(thing['health']))
         self.ThingRadius.ChangeValue(str(thing['radius'] / self.FIXED_UNIT))
@@ -392,6 +400,10 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingPainChance.ChangeValue(str(thing['painChance']))
         self.ThingMass.ChangeValue(str(thing['mass']))
 
+        if 'thing.obituaryName' in self.patch.engine.features:
+            self.ThingObituaryName.ChangeValue(str(thing['obituaryName']))
+        if 'thing.obituaryNamePlural' in self.patch.engine.features:
+            self.ThingObituaryNamePlural.ChangeValue(str(thing['obituaryNamePlural']))
         if 'thing.gibHealth' in self.patch.engine.features:
             self.ThingGibHealth.ChangeValue(str(thing['gibHealth']))
         if 'thing.game' in self.patch.engine.features:
@@ -505,7 +517,13 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         elif key == 'speed' and self.thing_is_projectile:
             value = int(value * self.FIXED_UNIT)
 
-        thing[key] = value
+        # Special case handling for name field.
+        if key == 'name':
+            thing.name = value
+            parent = self.GetMDIParent()
+            parent.editor_windows[windows.MAIN_TOOL_STATES].update_filter_list()
+        else:
+            thing[key] = value
 
         self.thinglist_update_row(self.selected_index)
         self.is_modified(True)
@@ -679,33 +697,6 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.selected_index = event.GetIndex()
         self.thing_is_projectile = None
         self.update_properties()
-
-    def thing_rename(self, event):
-        """
-        Called when the current thing needs to be renamed.
-        """
-
-        self.thing_rename_action()
-
-    def thing_rename_action(self):
-        """
-        Renames the currently selected thing.
-        """
-
-        thing_name = self.patch.things[self.selected_index].name
-        new_name = wx.GetTextFromUser('Enter a new name for ' + thing_name, caption='Change name',
-                                      default_value=thing_name, parent=self)
-
-        if new_name != '':
-            self.undo_add()
-
-            self.patch.things[self.selected_index].name = new_name
-
-            self.update_properties()
-            self.is_modified(True)
-
-            parent = self.GetMDIParent()
-            parent.editor_windows[windows.MAIN_TOOL_STATES].update_filter_list()
 
     def thing_restore(self, event):
         """

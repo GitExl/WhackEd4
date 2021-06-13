@@ -112,6 +112,8 @@ class ThingEntry(Entry):
         'fullbright':           Field('Fullbright',             FieldType.INT),
         'bloodId':              Field('Blood',                  FieldType.INT),
         'shadowOffset':         Field('Shadow offset',          FieldType.INT),
+        'obituaryName':         Field('Name',                   FieldType.STRING),
+        'obituaryNamePlural':   Field('Plural',                 FieldType.STRING),
     }
 
 
