@@ -31,7 +31,7 @@ class WeaponStateFilter(StateFilterBase):
     def get_states(weapon: Entry) -> Set[int]:
         used_states = set()
         for name in WeaponStateFilter.STATE_FIELDS:
-            if name in weapon and weapon[name] > 0:
+            if name in weapon:
                 used_states.add(weapon[name])
 
         return used_states

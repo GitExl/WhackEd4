@@ -249,7 +249,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         for item_index, state_index, state in self.StateList.iterate_selected():
             self.patch.states[state_index] = self.patch.engine.states[state_index].clone()
-            self.StateList.update_row(item_index, state_index, state)
+            self.StateList.update_row(item_index, state_index, self.patch.states[state_index])
 
         self.update_properties()
         self.StateList.update_item_attributes()
@@ -416,6 +416,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.SpriteIndex.ChangeValue(str(state['sprite']))
             self.SpriteName.SetLabel(sprite_name)
             self.FrameIndex.ChangeValue(str(sprite_frame))
+            self.FrameIndexSpinner.SetValue(sprite_frame)
             self.NextStateIndex.ChangeValue(str(state['nextState']))
             self.NextStateName.SetLabel(self.patch.get_state_name(state['nextState']))
             self.Duration.ChangeValue(str(state['duration']))

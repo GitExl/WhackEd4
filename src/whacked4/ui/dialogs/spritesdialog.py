@@ -119,8 +119,10 @@ class SpritesDialog(windows.SpritesDialogBase):
         # Set the right frame index, or leave it blank if none was specified.
         if frame_index is not None:
             self.FrameIndex.ChangeValue(str(frame_index))
+            self.FrameIndexSpinner.SetValue(frame_index)
         else:
             self.FrameIndex.ChangeValue('')
+            self.FrameIndexSpinner.SetValue(0)
 
         self.Filter.SetFocus()
 

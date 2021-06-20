@@ -1,8 +1,8 @@
 Version 1.3.0
 -------------
-Added: support for DEHEXTRA thing fields Gib health, Dropped item, Pickup width, Projectile pass height and Fullbright.
+Added: support for DEHEXTRA thing fields: Gib health, Dropped item, Pickup width, Projectile pass height and Fullbright.
 Added: support for DEHEXTRA extra sounds.
-Added: Doom Retro fields Blood, Shadow offset and Retro Bits.
+Added: Doom Retro thing fields: Blood, Shadow offset, Retro Bits, Name and Plural.
 Added: better Linux compatibility. The application starts and is somewhat usable, but a number of UI issues still prevent it from working well.
 Added: state preview now uses a state's unused 1 and 2 parameters as offsets if previewing a state from the weapons editor (right-click state label).
 Changed: engine table files can now include (base table) files. This leads to smaller filesizes and makes for easier updating. As a result of this, strings in the Doom 1.9 and Ultimate Doom 1.9 tables are now keyed by their index.
@@ -18,6 +18,7 @@ Fixed: BEX strings that do not appear in the engine selected for a patch will no
 Fixed: fixed a wrong next state value in the MBF tables for S_GRENADE (968). Thanks to hawkwind3.
 Fixed: crash on startup in some rare cases where no patch was loaded yet. Thanks to Endy McGufin.
 Fixed: maximum string length calculation for non-extended patches did not take the terminating NULL character into account. Thanks to Altazimuth.
+Fixed: sprite frame selection up\down button did not work correctly.
 
 Version 1.2.4
 -------------

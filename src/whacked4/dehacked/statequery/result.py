@@ -33,7 +33,7 @@ class StateQueryResult(Iterable, Sized):
         if not len(self.item_index_by_state_index):
             return -1
 
-        return self.item_index_by_state_index[state_index]
+        return self.item_index_by_state_index.get(state_index, -1)
 
     def contains_state_index(self, state_index: int) -> bool:
         return state_index in self.state_index_set

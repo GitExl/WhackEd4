@@ -17,7 +17,10 @@ class AboutDialog(windows.AboutDialogBase):
 
         self.SetEscapeId(windows.ABOUT_OK)
 
-        self.Version.SetLabel('Version ' + config.APP_VERSION)
+        if config.APP_BETA:
+            self.Version.SetLabel('Version ' + config.APP_VERSION + ' beta')
+        else:
+            self.Version.SetLabel('Version ' + config.APP_VERSION)
 
         with open('LICENSE', 'r') as f:
             self.license_text = f.read()

@@ -369,7 +369,7 @@
 		},
 		{
 		  "bloodId": 39,
-		  "shadowOffset": 1131072,
+		  "shadowOffset": 786432,
 		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
 		  "obituaryName": "spider mastermind",
 		  "obituaryNamePlural": "spider masterminds"

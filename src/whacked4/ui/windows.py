@@ -827,19 +827,9 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 
 		SizerPainChance.Add( self.ThingPainChanceLabel, 0, wx.ALIGN_CENTER_VERTICAL, 0 )
 
-		bSizer147 = wx.BoxSizer( wx.HORIZONTAL )
-
 		self.ThingPainChance = wx.TextCtrl( self.PanelPainChance, THING_VAL_PAINCHANCE, wx.EmptyString, wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.ThingPainChance.SetMaxLength( 6 )
-		bSizer147.Add( self.ThingPainChance, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
-
-		self.ThingPainChanceFactor = wx.StaticText( self.PanelPainChance, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 30,-1 ), 0 )
-		self.ThingPainChanceFactor.Wrap( -1 )
-
-		bSizer147.Add( self.ThingPainChanceFactor, 0, wx.ALIGN_CENTER_VERTICAL|wx.FIXED_MINSIZE|wx.LEFT, 6 )
-
-
-		SizerPainChance.Add( bSizer147, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
+		SizerPainChance.Add( self.ThingPainChance, 1, wx.ALIGN_CENTER_VERTICAL, 0 )
 
 
 		self.PanelPainChance.SetSizer( SizerPainChance )

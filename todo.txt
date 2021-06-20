@@ -1,7 +1,3 @@
-1.3.0
-- Add Doom Retro specific fields that do not exist in DEHEXTRA. See https://github.com/bradharding/doomretro/wiki/INFORMATION-FOR-MAPPERS#DEHACKED-LUMPS
-    - Name* and Plural* fields, but why does it not use regular thing names for Name1?
-
 1.3.1
 - Add MBF21 support. https://github.com/kraflab/mbf21/blob/master/docs/spec.md
     - Weapon, ammo and state UI need support for flags.

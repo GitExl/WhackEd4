@@ -36,7 +36,7 @@ class ThingStateFilter(StateFilterBase):
     def get_states(thing: Entry) -> Set[int]:
         used_states = set()
         for name in ThingStateFilter.STATE_FIELDS:
-            if name in thing and thing[name] > 0:
+            if name in thing:
                 used_states.add(thing[name])
 
         return used_states

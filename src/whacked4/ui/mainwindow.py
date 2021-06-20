@@ -764,6 +764,9 @@ class MainWindow(windows.MainFrameBase):
         event.Skip()
 
     def file_new(self, event):
+        if not self.save_if_needed():
+            return
+
         self.new_file()
 
     def file_save(self, event):
