@@ -19,6 +19,7 @@ Fixed: fixed a wrong next state value in the MBF tables for S_GRENADE (968). Tha
 Fixed: crash on startup in some rare cases where no patch was loaded yet. Thanks to Endy McGufin.
 Fixed: maximum string length calculation for non-extended patches did not take the terminating NULL character into account. Thanks to Altazimuth.
 Fixed: sprite frame selection up\down button did not work correctly.
+Fixed: sound priority values can now be in the full signed integer range (though anything above 127 is useless). https://github.com/GitExl/WhackEd4/issues/12
 
 Version 1.2.4
 -------------

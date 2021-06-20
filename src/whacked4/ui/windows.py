@@ -2691,7 +2691,7 @@ class SoundsFrameBase ( wx.MDIChildFrame ):
 		bSizer52.Add( self.m_staticText39, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
 
 		self.Priority = wx.TextCtrl( self.m_panel43, SOUNDS_PRIORITY, wx.EmptyString, wx.DefaultPosition, wx.Size( 45,-1 ), 0 )
-		self.Priority.SetMaxLength( 3 )
+		self.Priority.SetMaxLength( 10 )
 		bSizer52.Add( self.Priority, 0, wx.ALIGN_CENTER_VERTICAL|wx.BOTTOM|wx.LEFT|wx.TOP, 3 )
 
 		self.PrioritySpinner = wx.SpinButton( self.m_panel43, SOUNDS_PRIORITYSPIN, wx.DefaultPosition, wx.Size( 17,21 ), 0 )

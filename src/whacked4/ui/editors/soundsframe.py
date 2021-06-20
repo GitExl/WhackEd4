@@ -150,6 +150,8 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
             # Colour-code rows by priority.
             color_index = int(sound['priority'] / 32)
+            if color_index >= len(self.priority_colours):
+                color_index = len(self.priority_colours) - 1
             self.SoundList.SetItemBackgroundColour(row_index, self.priority_colours[color_index])
 
     def sound_select_index(self, row_index, sound_index):
@@ -195,6 +197,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
         if self.selected_row == 0 or sound.unused:
             self.Priority.ChangeValue('')
+            self.PrioritySpinner.SetValue(0)
             self.Singular.SetValue(False)
 
             self.tools_set_state(False)
@@ -203,6 +206,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             singular = (sound['isSingular'] == 1)
 
             self.Priority.ChangeValue(str(sound['priority']))
+            self.PrioritySpinner.SetValue(sound['priority'])
             self.Singular.SetValue(singular)
 
             self.tools_set_state(True)
@@ -250,8 +254,8 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         # Clamp sprite to valid range.
         if value < 0:
             value = 0
-        elif value >= 127:
-            value = 127
+        elif value >= 0x7FFFFFFF:
+            value = 0x7FFFFFFF
         if window.GetValue() != value:
             window.ChangeValue(str(value))
 
