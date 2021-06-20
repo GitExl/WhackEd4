@@ -5,8 +5,8 @@ Name: associate; Description: Associate with Dehacked patch files
 
 [Files]
 Source: .\build\exe.win-amd64-3.9\*.*; DestDir: {app}; Flags: recursesubdirs createallsubdirs
-Source: .\fonts\dejavu-sans-mono\DejaVuSansMono.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono
-Source: .\fonts\dejavu-sans-mono\DejaVuSansMono-Bold.ttf; DestDir: {fonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono Bold
+Source: .\fonts\dejavu-sans-mono\DejaVuSansMono.ttf; DestDir: {autofonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono
+Source: .\fonts\dejavu-sans-mono\DejaVuSansMono-Bold.ttf; DestDir: {autofonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono Bold
 
 
 [Icons]
@@ -20,7 +20,7 @@ InternalCompressLevel=ultra64
 SolidCompression=true
 AppName=WhackEd4
 AppVerName=WhackEd4 1.3.0 beta
-DefaultDirName={pf}\WhackEd4
+DefaultDirName={autopf}\WhackEd4
 AlwaysUsePersonalGroup=false
 ShowLanguageDialog=no
 AppVersion=1.3.0 beta
