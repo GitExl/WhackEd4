@@ -442,7 +442,7 @@ class Patch(object):
                     mode = ParseMode.THING
                     entry_index = int(line_words[1]) - 1
                     entry_name = ' '.join(line_words[2:])[1:-1]
-                    if entry_index < 0 or entry_index >= len(self.sounds):
+                    if entry_index < 0 or entry_index >= len(self.things):
                         messages['NOTHING'] = 'The patch contains thing data that does not exist in the chosen engine. It will not be loaded.'
                         entry_index = -1
                     else:
