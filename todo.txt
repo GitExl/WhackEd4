@@ -10,6 +10,7 @@ Low priority bugs
 - Toolbar buttons clickable area does not extend to the side of the toolbar. An old wxWidgets bug\regression.
 
 Later
+- Patch analyzer could check for MBF\DEHEXTRA\MBF21\engine specific stuff.
 - More Python type hinting.
 - Split out patch reading\writing from patch class and clean it up.
 - Muzzle flash support for weapon state previews. Needs refactoring of sprite preview code so that it can display multiple state animations overlayed on top of one another.
