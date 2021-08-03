@@ -936,65 +936,6 @@
 			"nextState": 128,
 			"sprite": 22,
 			"spriteFrame": 32769
-		},
-		{
-			"duration": 6,
-			"nextState": 806,
-			"sprite": 58
-		},
-		{
-			"sprite": 144
-		},
-		{
-			"sprite": 144,
-			"spriteFrame": 1
-		},
-		{
-			"sprite": 144,
-			"spriteFrame": 2
-		},
-		{
-			"sprite": 144,
-			"spriteFrame": 3
-		},
-		{
-			"sprite": 144,
-			"spriteFrame": 4
-		},
-		{
-			"sprite": 144,
-			"spriteFrame": 5
-		},
-		{
-			"sprite": 144,
-			"spriteFrame": 6
-		},
-		{
-			"sprite": 144,
-			"spriteFrame": 7
-		},
-		{
-			"duration": 4,
-			"nextState": 1086,
-			"sprite": 17,
-			"spriteFrame": 32768
-		},
-		{
-			"duration": 4,
-			"nextState": 1087,
-			"sprite": 17,
-			"spriteFrame": 1
-		},
-		{
-			"duration": 10,
-			"nextState": 1088,
-			"sprite": 17,
-			"spriteFrame": 2
-		},
-		{
-			"duration": 14,
-			"sprite": 17,
-			"spriteFrame": 3
 		}
 	],
 	"strings": {},

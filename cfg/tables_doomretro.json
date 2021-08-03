@@ -40,8 +40,42 @@
 			"_name": "SCRSHT"
 		}
 	],
-	"spriteNames": [],
-	"states": [],
+	"spriteNames": [
+		"RSMK"
+	],
+	"states": [
+		{
+			"_index": 1076,
+			"duration": 6,
+			"nextState": 806,
+			"sprite": 58,
+			"spriteFrame": 0
+		},
+		{
+			"duration": 4,
+			"nextState": 1077,
+			"sprite": 245,
+			"spriteFrame": 0
+		},
+		{
+			"duration": 4,
+			"nextState": 1078,
+			"sprite": 245,
+			"spriteFrame": 1
+		},
+		{
+			"duration": 10,
+			"nextState": 1079,
+			"sprite": 245,
+			"spriteFrame": 2
+		},
+		{
+			"duration": 14,
+			"nextState": 0,
+			"sprite": 245,
+			"spriteFrame": 3
+		}
+	],
 	"strings": {
 		"SAVEGAMENAME": "doomsav",
 		"BANNER1": "                         DOOM 2: Hell on Earth v%i.%i                           ",
@@ -246,885 +280,885 @@
 	"things": [
 		{
 			"_index": 0,
-		  "bloodId": 39,
-		  "retroFlags": "CASTSHADOW + PASSMOBJ + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "player"
+			"bloodId": 39,
+			"retroFlags": "CASTSHADOW + PASSMOBJ + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "player"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 131072,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "zombieman",
-		  "obituaryNamePlural": "zombiemen"
+			"bloodId": 39,
+			"shadowOffset": 131072,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "zombieman",
+			"obituaryNamePlural": "zombiemen"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 131072,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "shotgun guy",
-		  "obituaryNamePlural": "shotgun guys"
+			"bloodId": 39,
+			"shadowOffset": 131072,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "shotgun guy",
+			"obituaryNamePlural": "shotgun guys"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 262144,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "arch-vile",
-		  "obituaryNamePlural": "arch-viles"
+			"bloodId": 39,
+			"shadowOffset": 262144,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "arch-vile",
+			"obituaryNamePlural": "arch-viles"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT + NOLIQUIDBOB",
-		  "obituaryName": "arch-vile fire"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT + NOLIQUIDBOB",
+			"obituaryName": "arch-vile fire"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 262144,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "revenant",
-		  "obituaryNamePlural": "revenants"
+			"bloodId": 39,
+			"shadowOffset": 262144,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "revenant",
+			"obituaryNamePlural": "revenants"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT + NOLIQUIDBOB",
-		  "obituaryName": "revenant",
-		  "obituaryNamePlural": "revenants"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT + NOLIQUIDBOB",
+			"obituaryName": "revenant",
+			"obituaryNamePlural": "revenants"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT_33 + NOLIQUIDBOB",
-		  "obituaryName": "smoke"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT_33 + NOLIQUIDBOB",
+			"obituaryName": "smoke"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 131072,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "mancubus",
-		  "obituaryNamePlural": "mancubi"
+			"bloodId": 39,
+			"shadowOffset": 131072,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "mancubus",
+			"obituaryNamePlural": "mancubi"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT + NOLIQUIDBOB",
-		  "obituaryName": "mancubus",
-		  "obituaryNamePlural": "mancubi"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT + NOLIQUIDBOB",
+			"obituaryName": "mancubus",
+			"obituaryNamePlural": "mancubi"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 131072,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "heavy weapon dude",
-		  "obituaryNamePlural": "heavy weapon dudes"
+			"bloodId": 39,
+			"shadowOffset": 131072,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "heavy weapon dude",
+			"obituaryNamePlural": "heavy weapon dudes"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 131072,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "imp",
-		  "obituaryNamePlural": "imps"
+			"bloodId": 39,
+			"shadowOffset": 131072,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "imp",
+			"obituaryNamePlural": "imps"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 131072,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "pinky demon",
-		  "obituaryNamePlural": "pinky demons"
+			"bloodId": 39,
+			"shadowOffset": 131072,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "pinky demon",
+			"obituaryNamePlural": "pinky demons"
 		},
 		{
-		  "bloodId": 149,
-		  "shadowOffset": 131072,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "spectre",
-		  "obituaryNamePlural": "spectres"
+			"bloodId": 149,
+			"shadowOffset": 131072,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "spectre",
+			"obituaryNamePlural": "spectres"
 		},
 		{
-		  "bloodId": 147,
-		  "retroFlags": "PASSMOBJ + CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "cacodemon",
-		  "obituaryNamePlural": "cacodemons"
+			"bloodId": 147,
+			"retroFlags": "PASSMOBJ + CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "cacodemon",
+			"obituaryNamePlural": "cacodemons"
 		},
 		{
-		  "bloodId": 148,
-		  "shadowOffset": 262144,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "baron of hell",
-		  "obituaryNamePlural": "barons of hell"
+			"bloodId": 148,
+			"shadowOffset": 262144,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "baron of hell",
+			"obituaryNamePlural": "barons of hell"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT + NOLIQUIDBOB",
-		  "obituaryName": "hell noble",
-		  "obituaryNamePlural": "hell nobles"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT + NOLIQUIDBOB",
+			"obituaryName": "hell noble",
+			"obituaryNamePlural": "hell nobles"
 		},
 		{
-		  "bloodId": 148,
-		  "shadowOffset": 262144,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "hell knight",
-		  "obituaryNamePlural": "hell knights"
+			"bloodId": 148,
+			"shadowOffset": 262144,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "hell knight",
+			"obituaryNamePlural": "hell knights"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "PASSMOBJ + CASTSHADOW + TRANSLUCENT_REDONLY + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "lost soul",
-		  "obituaryNamePlural": "lost souls"
+			"bloodId": 0,
+			"retroFlags": "PASSMOBJ + CASTSHADOW + TRANSLUCENT_REDONLY + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "lost soul",
+			"obituaryNamePlural": "lost souls"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 786432,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "spider mastermind",
-		  "obituaryNamePlural": "spider masterminds"
+			"bloodId": 39,
+			"shadowOffset": 786432,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "spider mastermind",
+			"obituaryNamePlural": "spider masterminds"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 262144,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "arachnotron",
-		  "obituaryNamePlural": "arachnotrons"
+			"bloodId": 39,
+			"shadowOffset": 262144,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "arachnotron",
+			"obituaryNamePlural": "arachnotrons"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 262144,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "cyberdemon",
-		  "obituaryNamePlural": "cyberdmeons"
+			"bloodId": 39,
+			"shadowOffset": 262144,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "cyberdemon",
+			"obituaryNamePlural": "cyberdmeons"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "PASSMOBJ + CASTSHADOW + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "pain elemental",
-		  "obituaryNamePlural": "pain elementals"
+			"bloodId": 39,
+			"retroFlags": "PASSMOBJ + CASTSHADOW + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "pain elemental",
+			"obituaryNamePlural": "pain elementals"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "Wolfenstein SS",
-		  "obituaryNamePlural": "Wolfenstein SS"
+			"bloodId": 39,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "Wolfenstein SS",
+			"obituaryNamePlural": "Wolfenstein SS"
 		},
 		{
-		  "bloodId": 39,
-		  "obituaryName": "commander keen",
-		  "obituaryNamePlural": "commander keens"
+			"bloodId": 39,
+			"obituaryName": "commander keen",
+			"obituaryNamePlural": "commander keens"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "icon of sin",
-		  "obituaryNamePlural": "icons of sin"
+			"bloodId": 0,
+			"obituaryName": "icon of sin",
+			"obituaryNamePlural": "icons of sin"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "monsters spawner"
+			"bloodId": 0,
+			"obituaryName": "monsters spawner"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "monsters target"
+			"bloodId": 0,
+			"obituaryName": "monsters target"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW",
-		  "obituaryName": "icon of sin",
-		  "obituaryNamePlural": "icons of sin"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW",
+			"obituaryName": "icon of sin",
+			"obituaryNamePlural": "icons of sin"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT",
-		  "obituaryName": "icon of sin fire"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT",
+			"obituaryName": "icon of sin fire"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "barrel",
-		  "obituaryNamePlural": "barrels"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "barrel",
+			"obituaryNamePlural": "barrels"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT",
-		  "obituaryName": "imp",
-		  "obituaryNamePlural": "imps"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT",
+			"obituaryName": "imp",
+			"obituaryNamePlural": "imps"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT",
-		  "obituaryName": "cacodemon",
-		  "obituaryNamePlural": "cacodemons"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT",
+			"obituaryName": "cacodemon",
+			"obituaryNamePlural": "cacodemons"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW",
-		  "obituaryName": "rocket"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW",
+			"obituaryName": "rocket"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT",
-		  "obituaryName": "plasma rifle"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT",
+			"obituaryName": "plasma rifle"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT",
-		  "obituaryName": "BFG-9000 projectile"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT",
+			"obituaryName": "BFG-9000 projectile"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT",
-		  "obituaryName": "arachnotron's projectile"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT",
+			"obituaryName": "arachnotron's projectile"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT_33",
-		  "obituaryName": "bullet puff"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT_33",
+			"obituaryName": "bullet puff"
 		},
 		{
-		  "bloodId": 184,
-		  "retroFlags": "BLOOD + TRANSLUCENT_50",
-		  "obituaryName": "red blood"
+			"bloodId": 184,
+			"retroFlags": "BLOOD + TRANSLUCENT_50",
+			"obituaryName": "red blood"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT",
-		  "obituaryName": "teleport fog"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT",
+			"obituaryName": "teleport fog"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT",
-		  "obituaryName": "item fog"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT",
+			"obituaryName": "item fog"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "teleport destination"
+			"bloodId": 0,
+			"obituaryName": "teleport destination"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT",
-		  "obituaryName": "BFG-9000 projectile"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT",
+			"obituaryName": "BFG-9000 projectile"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "green armor",
-		  "obituaryNamePlural": "green armor"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "green armor",
+			"obituaryNamePlural": "green armor"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "blue armor",
-		  "obituaryNamePlural": "blue armors"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "blue armor",
+			"obituaryNamePlural": "blue armors"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + TRANSLUCENT_BLUE_25 + FOOTCLIP",
-		  "obituaryName": "health bonus",
-		  "obituaryNamePlural": "health bonuses"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + TRANSLUCENT_BLUE_25 + FOOTCLIP",
+			"obituaryName": "health bonus",
+			"obituaryNamePlural": "health bonuses"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "armor bonus",
-		  "obituaryNamePlural": "armor bonuses"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "armor bonus",
+			"obituaryNamePlural": "armor bonuses"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "blue keycard",
-		  "obituaryNamePlural": "blue keycards"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "blue keycard",
+			"obituaryNamePlural": "blue keycards"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "red keycard",
-		  "obituaryNamePlural": "red keycards"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "red keycard",
+			"obituaryNamePlural": "red keycards"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "yellow keycard",
-		  "obituaryNamePlural": "yellow keycards"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "yellow keycard",
+			"obituaryNamePlural": "yellow keycards"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "yellow skull key",
-		  "obituaryNamePlural": "yellow skull keys"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "yellow skull key",
+			"obituaryNamePlural": "yellow skull keys"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "red skull key",
-		  "obituaryNamePlural": "red skull keys"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "red skull key",
+			"obituaryNamePlural": "red skull keys"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "blue skull key",
-		  "obituaryNamePlural": "blue skull keys"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "blue skull key",
+			"obituaryNamePlural": "blue skull keys"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "stimpack",
-		  "obituaryNamePlural": "stimpacks"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "stimpack",
+			"obituaryNamePlural": "stimpacks"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "medikit",
-		  "obituaryNamePlural": "medikits"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "medikit",
+			"obituaryNamePlural": "medikits"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + TRANSLUCENT_BLUE_25 + FLOATBOB",
-		  "obituaryName": "soulsphere",
-		  "obituaryNamePlural": "soulspheres"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + TRANSLUCENT_BLUE_25 + FLOATBOB",
+			"obituaryName": "soulsphere",
+			"obituaryNamePlural": "soulspheres"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + TRANSLUCENT_33 + FLOATBOB",
-		  "obituaryName": "invulnerability power-up",
-		  "obituaryNamePlural": "invulnerability power-ups"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + TRANSLUCENT_33 + FLOATBOB",
+			"obituaryName": "invulnerability power-up",
+			"obituaryNamePlural": "invulnerability power-ups"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "berserk power-up",
-		  "obituaryNamePlural": "berserk power-ups"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "berserk power-up",
+			"obituaryNamePlural": "berserk power-ups"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + TRANSLUCENT_33 + FLOATBOB",
-		  "obituaryName": "partial invisibility power-up",
-		  "obituaryNamePlural": "partial invisibility power-ups"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + TRANSLUCENT_33 + FLOATBOB",
+			"obituaryName": "partial invisibility power-up",
+			"obituaryNamePlural": "partial invisibility power-ups"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FLOATBOB",
-		  "obituaryName": "radiation shielding suit power-up",
-		  "obituaryNamePlural": "radiation shielding suit power-ups"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FLOATBOB",
+			"obituaryName": "radiation shielding suit power-up",
+			"obituaryNamePlural": "radiation shielding suit power-ups"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "computer area map power-up",
-		  "obituaryNamePlural": "computer area map power-ups"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "computer area map power-up",
+			"obituaryNamePlural": "computer area map power-ups"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + TRANSLUCENT_REDONLY + FOOTCLIP",
-		  "obituaryName": "light amplification visor power-up",
-		  "obituaryNamePlural": "light amplification visor power-ups"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + TRANSLUCENT_REDONLY + FOOTCLIP",
+			"obituaryName": "light amplification visor power-up",
+			"obituaryNamePlural": "light amplification visor power-ups"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FLOATBOB",
-		  "obituaryName": "megasphere",
-		  "obituaryNamePlural": "megaspheres"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FLOATBOB",
+			"obituaryName": "megasphere",
+			"obituaryNamePlural": "megaspheres"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "clip",
-		  "obituaryNamePlural": "clips"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "clip",
+			"obituaryNamePlural": "clips"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "box of bullets",
-		  "obituaryNamePlural": "boxes of bullets"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "box of bullets",
+			"obituaryNamePlural": "boxes of bullets"
 		},
 		{
-		  "bloodId": 0,
-		  "shadowOffset": 65536,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "rocket ammo",
-		  "obituaryNamePlural": "rocket ammo"
+			"bloodId": 0,
+			"shadowOffset": 65536,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "rocket ammo",
+			"obituaryNamePlural": "rocket ammo"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "box of rockets",
-		  "obituaryNamePlural": "boxes of rockets"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "box of rockets",
+			"obituaryNamePlural": "boxes of rockets"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "cell",
-		  "obituaryNamePlural": "cells"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "cell",
+			"obituaryNamePlural": "cells"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "cell pack",
-		  "obituaryNamePlural": "cell packs"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "cell pack",
+			"obituaryNamePlural": "cell packs"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "shotgun shell",
-		  "obituaryNamePlural": "shotgun shells"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "shotgun shell",
+			"obituaryNamePlural": "shotgun shells"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "box of shells",
-		  "obituaryNamePlural": "boxes of shells"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "box of shells",
+			"obituaryNamePlural": "boxes of shells"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "backpack",
-		  "obituaryNamePlural": "backpacks"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "backpack",
+			"obituaryNamePlural": "backpacks"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "BFG-9000",
-		  "obituaryNamePlural": "BFG-9000s"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "BFG-9000",
+			"obituaryNamePlural": "BFG-9000s"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "chaingun",
-		  "obituaryNamePlural": "chainguns"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "chaingun",
+			"obituaryNamePlural": "chainguns"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "chainsaw",
-		  "obituaryNamePlural": "chainsaws"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "chainsaw",
+			"obituaryNamePlural": "chainsaws"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "rocket launcher",
-		  "obituaryNamePlural": "rocket launchers"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "rocket launcher",
+			"obituaryNamePlural": "rocket launchers"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "plasma rifle",
-		  "obituaryNamePlural": "plasma rifles"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "plasma rifle",
+			"obituaryNamePlural": "plasma rifles"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "shotgun",
-		  "obituaryNamePlural": "shotguns"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "shotgun",
+			"obituaryNamePlural": "shotguns"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + FOOTCLIP",
-		  "obituaryName": "super shotgun",
-		  "obituaryNamePlural": "super shotguns"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + FOOTCLIP",
+			"obituaryName": "super shotgun",
+			"obituaryNamePlural": "super shotguns"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "tall techno floor lamp",
-		  "obituaryNamePlural": "tall techno floor lamps"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "tall techno floor lamp",
+			"obituaryNamePlural": "tall techno floor lamps"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "short techno floor lamp",
-		  "obituaryNamePlural": "short techno floor lamps"
-	  },
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "short techno floor lamp",
+			"obituaryNamePlural": "short techno floor lamps"
+		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "floor lamp",
-		  "obituaryNamePlural": "floor lamps"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "floor lamp",
+			"obituaryNamePlural": "floor lamps"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "tall green column",
-		  "obituaryNamePlural": "tall green columns"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "tall green column",
+			"obituaryNamePlural": "tall green columns"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "short green column",
-		  "obituaryNamePlural": "short green columns"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "short green column",
+			"obituaryNamePlural": "short green columns"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "tall red column",
-		  "obituaryNamePlural": "tall red columns"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "tall red column",
+			"obituaryNamePlural": "tall red columns"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "short red column",
-		  "obituaryNamePlural": "short red columns"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "short red column",
+			"obituaryNamePlural": "short red columns"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "short red column with skull",
-		  "obituaryNamePlural": "short red columns with skulls"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "short red column with skull",
+			"obituaryNamePlural": "short red columns with skulls"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "short green column with beating heart",
-		  "obituaryNamePlural": "short green columns with beating hearts"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "short green column with beating heart",
+			"obituaryNamePlural": "short green columns with beating hearts"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_GREENONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "evil eye",
-		  "obituaryNamePlural": "evil eyes"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_GREENONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "evil eye",
+			"obituaryNamePlural": "evil eyes"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW + DECORATION",
-		  "obituaryName": "floating skull",
-		  "obituaryNamePlural": "floating skulls"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW + DECORATION",
+			"obituaryName": "floating skull",
+			"obituaryNamePlural": "floating skulls"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "DECORATION + FOOTCLIP",
-		  "obituaryName": "torched tree",
-		  "obituaryNamePlural": "torched trees"
+			"bloodId": 0,
+			"retroFlags": "DECORATION + FOOTCLIP",
+			"obituaryName": "torched tree",
+			"obituaryNamePlural": "torched trees"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "tall blue firestick",
-		  "obituaryNamePlural": "tall blue firesticks"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "tall blue firestick",
+			"obituaryNamePlural": "tall blue firesticks"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_GREENONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "tall green firestick",
-		  "obituaryNamePlural": "tall green firesticks"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_GREENONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "tall green firestick",
+			"obituaryNamePlural": "tall green firesticks"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "tall red firestick",
-		  "obituaryNamePlural": "tall red firesticks"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "tall red firestick",
+			"obituaryNamePlural": "tall red firesticks"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "short blue firestick",
-		  "obituaryNamePlural": "short blue firesticks"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_BLUEONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "short blue firestick",
+			"obituaryNamePlural": "short blue firesticks"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_GREENONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "short green firestick",
-		  "obituaryNamePlural": "short green firesticks"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_GREENONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "short green firestick",
+			"obituaryNamePlural": "short green firesticks"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "short red firestick",
-		  "obituaryNamePlural": "short red firesticks"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "short red firestick",
+			"obituaryNamePlural": "short red firesticks"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "stalagmite",
-		  "obituaryNamePlural": "stalagmites"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "stalagmite",
+			"obituaryNamePlural": "stalagmites"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "tall techno pillar",
-		  "obituaryNamePlural": "tall techno pillars"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "tall techno pillar",
+			"obituaryNamePlural": "tall techno pillars"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP + TRANSLUCENT_REDONLY",
-		  "obituaryName": "candlestick",
-		  "obituaryNamePlural": "candlesticks"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP + TRANSLUCENT_REDONLY",
+			"obituaryName": "candlestick",
+			"obituaryNamePlural": "candlesticks"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "candelabra",
-		  "obituaryNamePlural": "candelabras"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "candelabra",
+			"obituaryNamePlural": "candelabras"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging victim (twitching, blocking)",
-		  "obituaryNamePlural": "hanging victim (twitching, blocking)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging victim (twitching, blocking)",
+			"obituaryNamePlural": "hanging victim (twitching, blocking)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging victim (arms out, blocking)",
-		  "obituaryNamePlural": "hanging victim (arms out, blocking)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging victim (arms out, blocking)",
+			"obituaryNamePlural": "hanging victim (arms out, blocking)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging victim (one-legged, blocking)",
-		  "obituaryNamePlural": "hanging victim (one-legged, blocking)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging victim (one-legged, blocking)",
+			"obituaryNamePlural": "hanging victim (one-legged, blocking)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging pair of legs (blocking)",
-		  "obituaryNamePlural": "hanging pair of legs (blocking)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging pair of legs (blocking)",
+			"obituaryNamePlural": "hanging pair of legs (blocking)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging leg (blocking)",
-		  "obituaryNamePlural": "hanging leg (blocking)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging leg (blocking)",
+			"obituaryNamePlural": "hanging leg (blocking)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging victim (arms out)",
-		  "obituaryNamePlural": "hanging victims (arms out)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging victim (arms out)",
+			"obituaryNamePlural": "hanging victims (arms out)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging pair of legs",
-		  "obituaryNamePlural": "hanging pairs of legs"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging pair of legs",
+			"obituaryNamePlural": "hanging pairs of legs"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging victim (one-legged)",
-		  "obituaryNamePlural": "hanging victims (one-legged)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging victim (one-legged)",
+			"obituaryNamePlural": "hanging victims (one-legged)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging leg",
-		  "obituaryNamePlural": "hanging legs"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging leg",
+			"obituaryNamePlural": "hanging legs"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging victim (twitching)",
-		  "obituaryNamePlural": "hanging victims (twitching)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging victim (twitching)",
+			"obituaryNamePlural": "hanging victims (twitching)"
 		},
 		{
-		  "bloodId": 147,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
-		  "obituaryName": "cacodemon's corpse"
+			"bloodId": 147,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
+			"obituaryName": "cacodemon's corpse"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
-		  "obituaryName": "marine's corpse"
+			"bloodId": 39,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
+			"obituaryName": "marine's corpse"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
-		  "obituaryName": "zombieman's corpse"
+			"bloodId": 39,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
+			"obituaryName": "zombieman's corpse"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
-		  "obituaryName": "pinky demon's corpse"
+			"bloodId": 39,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
+			"obituaryName": "pinky demon's corpse"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "lost soul's corpse"
+			"bloodId": 0,
+			"obituaryName": "lost soul's corpse"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
-		  "obituaryName": "imp's corpse"
+			"bloodId": 39,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
+			"obituaryName": "imp's corpse"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
-		  "obituaryName": "shotgun guy's corpse"
+			"bloodId": 39,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + DECORATION + FOOTCLIP",
+			"obituaryName": "shotgun guy's corpse"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "CASTSHADOW + DECORATION + FOOTCLIP",
-		  "obituaryName": "bloody mess 1",
-		  "obituaryNamePlural": "bloody mess 1"
+			"bloodId": 39,
+			"retroFlags": "CASTSHADOW + DECORATION + FOOTCLIP",
+			"obituaryName": "bloody mess 1",
+			"obituaryNamePlural": "bloody mess 1"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "CASTSHADOW + DECORATION + FOOTCLIP",
-		  "obituaryName": "bloody mess 2",
-		  "obituaryNamePlural": "bloody mess 2"
+			"bloodId": 39,
+			"retroFlags": "CASTSHADOW + DECORATION + FOOTCLIP",
+			"obituaryName": "bloody mess 2",
+			"obituaryNamePlural": "bloody mess 2"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "five skulls shishkebab",
-		  "obituaryNamePlural": "five skulls shishkebabs"
+			"bloodId": 39,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "five skulls shishkebab",
+			"obituaryNamePlural": "five skulls shishkebabs"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION + FOOTCLIP",
-		  "obituaryName": "pool of blood and bones",
-		  "obituaryNamePlural": "pools of blood and bones"
+			"bloodId": 39,
+			"retroFlags": "DECORATION + FOOTCLIP",
+			"obituaryName": "pool of blood and bones",
+			"obituaryNamePlural": "pools of blood and bones"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "skull on a pole",
-		  "obituaryNamePlural": "skulls on poles"
+			"bloodId": 39,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "skull on a pole",
+			"obituaryNamePlural": "skulls on poles"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "pile of skulls and candles",
-		  "obituaryNamePlural": "piles of skulls and candles"
+			"bloodId": 39,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "pile of skulls and candles",
+			"obituaryNamePlural": "piles of skulls and candles"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "impaled human",
-		  "obituaryNamePlural": "impaled humans"
+			"bloodId": 39,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "impaled human",
+			"obituaryNamePlural": "impaled humans"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "twitching impaled human",
-		  "obituaryNamePlural": "twitching impaled humans"
+			"bloodId": 39,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "twitching impaled human",
+			"obituaryNamePlural": "twitching impaled humans"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
-		  "obituaryName": "large brown tree",
-		  "obituaryNamePlural": "large brown trees"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + DECORATION + FOOTCLIP",
+			"obituaryName": "large brown tree",
+			"obituaryNamePlural": "large brown trees"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP",
-		  "obituaryName": "burning barrel",
-		  "obituaryNamePlural": "burning barrels"
+			"bloodId": 0,
+			"retroFlags": "NOLIQUIDBOB + TRANSLUCENT_REDONLY + DECORATION + FOOTCLIP",
+			"obituaryName": "burning barrel",
+			"obituaryNamePlural": "burning barrels"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging victim (guts removed)",
-		  "obituaryNamePlural": "hanging victims (guts removed)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging victim (guts removed)",
+			"obituaryNamePlural": "hanging victims (guts removed)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging victim (guts and brain removed)",
-		  "obituaryNamePlural": "hanging victims (guts and brain removed)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging victim (guts and brain removed)",
+			"obituaryNamePlural": "hanging victims (guts and brain removed)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging torso (looking down)",
-		  "obituaryNamePlural": "hanging torsos (looking down)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging torso (looking down)",
+			"obituaryNamePlural": "hanging torsos (looking down)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging torso (open skull)",
-		  "obituaryNamePlural": "hanging torsos (open skull)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging torso (open skull)",
+			"obituaryNamePlural": "hanging torsos (open skull)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging torso (looking up)",
-		  "obituaryNamePlural": "hanging torsos (looking up)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging torso (looking up)",
+			"obituaryNamePlural": "hanging torsos (looking up)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION",
-		  "obituaryName": "hanging torso (brain removed)",
-		  "obituaryNamePlural": "hanging torsos (brain removed)"
+			"bloodId": 39,
+			"retroFlags": "DECORATION",
+			"obituaryName": "hanging torso (brain removed)",
+			"obituaryNamePlural": "hanging torsos (brain removed)"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION + FOOTCLIP",
-		  "obituaryName": "pool of blood and guts",
-		  "obituaryNamePlural": "pools of blood and guts"
+			"bloodId": 39,
+			"retroFlags": "DECORATION + FOOTCLIP",
+			"obituaryName": "pool of blood and guts",
+			"obituaryNamePlural": "pools of blood and guts"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION + FOOTCLIP",
-		  "obituaryName": "pool of blood",
-		  "obituaryNamePlural": "pools of blood"
+			"bloodId": 39,
+			"retroFlags": "DECORATION + FOOTCLIP",
+			"obituaryName": "pool of blood",
+			"obituaryNamePlural": "pools of blood"
 		},
 		{
-		  "bloodId": 39,
-		  "retroFlags": "DECORATION + FOOTCLIP",
-		  "obituaryName": "pool of brains",
-		  "obituaryNamePlural": "pools of brains"
+			"bloodId": 39,
+			"retroFlags": "DECORATION + FOOTCLIP",
+			"obituaryName": "pool of brains",
+			"obituaryNamePlural": "pools of brains"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "point pusher",
-		  "obituaryNamePlural": "point pushers"
+			"bloodId": 0,
+			"obituaryName": "point pusher",
+			"obituaryNamePlural": "point pushers"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "point puller",
-		  "obituaryNamePlural": "point pullers"
+			"bloodId": 0,
+			"obituaryName": "point puller",
+			"obituaryNamePlural": "point pullers"
 		},
 		{
-		  "bloodId": 39,
-		  "shadowOffset": 262144,
-		  "retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
-		  "obituaryName": "dog",
-		  "obituaryNamePlural": "dogs"
+			"bloodId": 39,
+			"shadowOffset": 262144,
+			"retroFlags": "CASTSHADOW + CRUSHABLE + NOLIQUIDBOB + FOOTCLIP",
+			"obituaryName": "dog",
+			"obituaryNamePlural": "dogs"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "plasma ball 1",
-		  "obituaryNamePlural": "plasma ball 1"
+			"bloodId": 0,
+			"obituaryName": "plasma ball 1",
+			"obituaryNamePlural": "plasma ball 1"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "plasma ball 2",
-		  "obituaryNamePlural": "plasma ball 2"
+			"bloodId": 0,
+			"obituaryName": "plasma ball 2",
+			"obituaryNamePlural": "plasma ball 2"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW",
-		  "obituaryName": "evil sceptre",
-		  "obituaryNamePlural": "evil sceptres"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW",
+			"obituaryName": "evil sceptre",
+			"obituaryNamePlural": "evil sceptres"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "CASTSHADOW",
-		  "obituaryName": "unholy bible",
-		  "obituaryNamePlural": "unholy bibles"
+			"bloodId": 0,
+			"retroFlags": "CASTSHADOW",
+			"obituaryName": "unholy bible",
+			"obituaryNamePlural": "unholy bibles"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "music source",
-		  "obituaryNamePlural": "music sources"
+			"bloodId": 0,
+			"obituaryName": "music source",
+			"obituaryNamePlural": "music sources"
 		},
 		{
-		  "bloodId": 0,
-		  "obituaryName": "GIBDTH",
-		  "obituaryNamePlural": "GIBDTH"
+			"bloodId": 0,
+			"obituaryName": "GIBDTH",
+			"obituaryNamePlural": "GIBDTH"
 		},
 		{
-		  "bloodId": 204,
-		  "retroFlags": "BLOOD + TRANSLUCENT_REDTOBLUE_33",
-		  "obituaryName": "blue blood",
-		  "obituaryNamePlural": "blue blood"
+			"bloodId": 204,
+			"retroFlags": "BLOOD + TRANSLUCENT_REDTOBLUE_33",
+			"obituaryName": "blue blood",
+			"obituaryNamePlural": "blue blood"
 		},
 		{
-		  "bloodId": 122,
-		  "retroFlags": "BLOOD + TRANSLUCENT_REDTOGREEN_33",
-		  "obituaryName": "green blood",
-		  "obituaryNamePlural": "green blood"
+			"bloodId": 122,
+			"retroFlags": "BLOOD + TRANSLUCENT_REDTOGREEN_33",
+			"obituaryName": "green blood",
+			"obituaryNamePlural": "green blood"
 		},
 		{
-		  "bloodId": -1,
-		  "retroFlags": "BLOOD",
-		  "obituaryName": "fuzzy blood",
-		  "obituaryNamePlural": "fuzzy blood"
+			"bloodId": -1,
+			"retroFlags": "BLOOD",
+			"obituaryName": "fuzzy blood",
+			"obituaryNamePlural": "fuzzy blood"
 		},
 		{
-		  "bloodId": 0,
-		  "retroFlags": "TRANSLUCENT_50",
-		  "obituaryName": "rocket trail",
-		  "obituaryNamePlural": "rocket trails"
+			"bloodId": 0,
+			"retroFlags": "TRANSLUCENT_50",
+			"obituaryName": "rocket trail",
+			"obituaryNamePlural": "rocket trails"
 		}
 	],
 	"weapons": [],
