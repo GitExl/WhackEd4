@@ -940,6 +940,11 @@
 	],
 	"strings": {},
 	"thingFlags": {
+		"TRANSLATION2": {
+			"index": 27,
+			"name": "Color 2 (brown\\red)",
+			"description": "This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set)."
+		},
 		"TOUCHY": {
 			"index": 28,
 			"name": "Dies on impact",

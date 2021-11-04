@@ -327,8 +327,13 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         for key, flag in self.patch.engine.things.flags.items():
             if flag.alias is not None:
                 continue
-            flaglist.append(' ' + flag.name)
-            self.thingflag_mnemonics.append((flag.field, key))
+
+            if flag.index is not None and flag.index < len(flaglist):
+                flaglist[flag.index] = ' ' + flag.name
+                self.thingflag_mnemonics[flag.index] = (flag.field, key)
+            else:
+                flaglist.append(' ' + flag.name)
+                self.thingflag_mnemonics.append((flag.field, key))
 
         self.ThingFlags.SetItems(flaglist)
 
