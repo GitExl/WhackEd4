@@ -2,7 +2,6 @@
 #coding=utf8
 
 import platform
-import locale
 
 from whacked4 import app
 

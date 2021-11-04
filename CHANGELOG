@@ -2,6 +2,7 @@ Version 1.3.0
 -------------
 Added: support for DEHEXTRA thing fields: Gib health, Dropped item, Pickup width, Projectile pass height and Fullbright.
 Added: support for DEHEXTRA extra sounds.
+Added: Extended Dehacked configuration with the new states, sounds, things and sprites from DEHEXTRA.
 Added: Doom Retro thing fields: Blood, Shadow offset, Retro Bits, Name and Plural.
 Added: better Linux compatibility. The application starts and is somewhat usable, but a number of UI issues still prevent it from working well.
 Added: state preview now uses a state's unused 1 and 2 parameters as offsets if previewing a state from the weapons editor (right-click state label).
@@ -20,6 +21,7 @@ Fixed: crash on startup in some rare cases where no patch was loaded yet. Thanks
 Fixed: maximum string length calculation for non-extended patches did not take the terminating NULL character into account. Thanks to Altazimuth.
 Fixed: sprite frame selection up\down button did not work correctly.
 Fixed: sound priority values can now be in the full signed integer range (though anything above 127 is useless). https://github.com/GitExl/WhackEd4/issues/12
+Fixed: the MBF TRANSLATION2 flag is now available and will not be removed upon saving. Thanks to j0e.
 
 Version 1.2.4
 -------------

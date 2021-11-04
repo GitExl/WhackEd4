@@ -1,4 +1,9 @@
+1.3.0 final
+- https://www.doomworld.com/forum/topic/62909-whacked-4/?page=7 Locales other than English wont work?
+
 1.3.1
+- https://www.doomworld.com/forum/topic/124355-ultimate-doom-builder-with-dehacked-support-feedback-wanted/
+- https://doomwiki.org/wiki/DSDHacked
 - Add MBF21 support. https://github.com/kraflab/mbf21/blob/master/docs/spec.md
     - Weapon, ammo and state UI need support for flags.
     - New MBF21 base table.

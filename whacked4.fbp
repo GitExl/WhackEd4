@@ -24107,7 +24107,7 @@
                                 <property name="gripper">0</property>
                                 <property name="hidden">0</property>
                                 <property name="id">wxID_ANY</property>
-                                <property name="label">Aeyesx, Aliotroph?, Altazimuth, Andy Fox, Andy Shawaluk, antares031, Big_Al, CodeImp, CSabo, Da Werecat, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Endy McGufin, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, hawkwind3, iori, Kurisutaru, Leonard Pitre, Looney, MaiklRussia, Marc. A. Pullen, Palladium, plums, Rellik, REZ, scifista42, Skullers, SlayeR, The Doommer, TheStupidestBeing, tempun, un4seen, VGA, WildWeasel, XDelusion, Xyzzy01, Zodomaniac</property>
+                                <property name="label">Aeyesx, Aliotroph?, Altazimuth, Andy Fox, Andy Shawaluk, antares031, Big_Al, CodeImp, CSabo, Da Werecat, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Endy McGufin, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, hawkwind3, iori, j0e, Kurisutaru, Leonard Pitre, Looney, MaiklRussia, Marc. A. Pullen, Palladium, plums, Rellik, REZ, scifista42, Skullers, SlayeR, The Doommer, TheStupidestBeing, tempun, un4seen, VGA, WildWeasel, XDelusion, Xyzzy01, Zodomaniac</property>
                                 <property name="markup">0</property>
                                 <property name="max_size"></property>
                                 <property name="maximize_button">0</property>
