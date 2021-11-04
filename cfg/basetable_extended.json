@@ -915,6 +915,10 @@
 	"states": [
 		{
 			"_index": 1089,
+			"nextState": 1089,
+			"sprite": 138
+		},
+		{
 			"nextState": 1090,
 			"sprite": 138
 		},
@@ -12552,10 +12556,6 @@
 		},
 		{
 			"nextState": 3999,
-			"sprite": 138
-		},
-		{
-			"nextState": 0,
 			"sprite": 138
 		}
 	],
