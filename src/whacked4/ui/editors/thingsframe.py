@@ -323,6 +323,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         self.thingflag_mnemonics.clear()
+        flag_indices = {}
+
         list_index = 0
         for key, flag in self.patch.engine.things.flags.items():
             if flag.alias is not None:
@@ -330,10 +332,17 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
             if flag.index is not None:
                 list_index = flag.index
-            self.thingflag_mnemonics.append((list_index, flag))
+
+            use_key = '{}_{}'.format(flag.field, list_index)
+            if use_key in flag_indices:
+                self.thingflag_mnemonics[flag_indices[use_key]] = (list_index, flag)
+            else:
+                self.thingflag_mnemonics.append((list_index, flag))
+                flag_indices[use_key] = len(self.thingflag_mnemonics) - 1
+
             list_index += 1
 
-        self.thingflag_mnemonics.sort(key=lambda tup: tup[1].index if tup[1].index is not None else tup[0])
+        self.thingflag_mnemonics.sort(key=lambda tup: tup[0])
 
         flag_names = []
         for index, flag in self.thingflag_mnemonics:
