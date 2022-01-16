@@ -940,6 +940,14 @@
 	],
 	"strings": {},
 	"thingFlags": {
+		"TRANSLATION": {
+			"alias": "TRANSLATION1"
+		},
+		"TRANSLATION1": {
+			"index": 26,
+			"name": "Color 1 (grey\\red)",
+			"description": "This thing's green colors will be mapped to grey (or red if the Color 2 flag is also set)."
+		},
 		"TRANSLATION2": {
 			"index": 27,
 			"name": "Color 2 (brown\\red)",
