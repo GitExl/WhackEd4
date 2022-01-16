@@ -7,6 +7,7 @@ from whacked4.dehacked.entries import ThingEntry
 from whacked4.dehacked.statequery.query import StateFilterQuery
 from whacked4.dehacked.statequery.stateindexsort import StateIndexSort
 from whacked4.dehacked.statequery.thingfilter import ThingStateFilter
+from whacked4.dehacked.table import ThingFlag
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import statepreviewdialog
 
@@ -176,7 +177,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.selected_index = 0
         self.thing_is_projectile = False
 
-        self.thingflag_mnemonics: List[Tuple[str, str]] = []
+        self.thingflag_mnemonics: List[Tuple[int, ThingFlag]] = []
 
         for prop in self.PROPS_STATENAMES.keys():
             item = self.FindWindowById(prop)
@@ -321,21 +322,24 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         Build the flags list from scratch.
         """
 
-        flaglist = []
         self.thingflag_mnemonics.clear()
-
+        list_index = 0
         for key, flag in self.patch.engine.things.flags.items():
             if flag.alias is not None:
                 continue
 
-            if flag.index is not None and flag.index < len(flaglist):
-                flaglist[flag.index] = ' ' + flag.name
-                self.thingflag_mnemonics[flag.index] = (flag.field, key)
-            else:
-                flaglist.append(' ' + flag.name)
-                self.thingflag_mnemonics.append((flag.field, key))
+            if flag.index is not None:
+                list_index = flag.index
+            self.thingflag_mnemonics.append((list_index, flag))
+            list_index += 1
 
-        self.ThingFlags.SetItems(flaglist)
+        self.thingflag_mnemonics.sort(key=lambda tup: tup[1].index if tup[1].index is not None else tup[0])
+
+        flag_names = []
+        for index, flag in self.thingflag_mnemonics:
+            flag_names.append(' ' + flag.name)
+
+        self.ThingFlags.SetItems(flag_names)
 
     def activate(self, event):
         """
@@ -452,8 +456,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         # Set flags.
         for index in range(self.ThingFlags.GetCount()):
-            field, mnemonic = self.thingflag_mnemonics[index]
-            checked = (mnemonic in thing[field])
+            index, flag = self.thingflag_mnemonics[index]
+            checked = (flag.key in thing[flag.field])
             self.ThingFlags.Check(index, checked)
 
         # Set state and sound values.
@@ -629,11 +633,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             if not self.ThingFlags.IsChecked(index):
                 continue
 
-            field, mnemonic = self.thingflag_mnemonics[index]
-            if not (field in flags_field_set):
-                flags_field_set[field] = set()
+            index, flag = self.thingflag_mnemonics[index]
+            if not (flag.field in flags_field_set):
+                flags_field_set[flag.field] = set()
 
-            flags_field_set[field].add(mnemonic)
+            flags_field_set[flag.field].add(flag.key)
 
         for field, flags_set in flags_field_set.items():
             self.patch.things[self.selected_index][field] = flags_set
@@ -648,13 +652,12 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         tip = ''
         index = self.ThingFlags.HitTest(wx.Point(event.GetX(), event.GetY()))
         if index != wx.NOT_FOUND:
-            field, key = self.thingflag_mnemonics[index]
-            flag = self.patch.engine.things.flags[key]
-            patch_key = ThingEntry.FIELDS[field].patch_key
+            index, flag = self.thingflag_mnemonics[index]
+            patch_key = ThingEntry.FIELDS[flag.field].patch_key
             if flag.description:
-                tip = '{}\n\nKey: {}\nField: {}'.format(flag.description, key, patch_key)
+                tip = '{}\n\nKey: {}\nField: {}'.format(flag.description, flag.key, patch_key)
             else:
-                tip = 'Key: {}\nField: {}'.format(key, patch_key)
+                tip = 'Key: {}\nField: {}'.format(flag.key, patch_key)
 
         self.ThingFlags.SetToolTip(tip)
 
