@@ -664,9 +664,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             index, flag = self.thingflag_mnemonics[index]
             patch_key = ThingEntry.FIELDS[flag.field].patch_key
             if flag.description:
-                tip = '{}\n\nKey: {}\nField: {}'.format(flag.description, flag.key, patch_key)
+                tip = '{}\n\nMnemonic: {}\nField: {}'.format(flag.description, flag.key, patch_key)
             else:
-                tip = 'Key: {}\nField: {}'.format(flag.key, patch_key)
+                tip = 'Mnemonic: {}\nField: {}'.format(flag.key, patch_key)
 
         self.ThingFlags.SetToolTip(tip)
 
