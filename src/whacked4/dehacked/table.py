@@ -129,13 +129,13 @@ class Table(object):
                 if not self.engine.extended:
                     raise LookupError('Encountered thing flag key "{}" in a non-extended patch.'.format(flag_str))
 
-                flag = self.flags.get(flag_str)
+                flag = self.flags.get('{}_{}'.format(field_key, flag_str))
                 if flag is None:
                     raise LookupError('Ignoring unknown thing flag key "{}".'.format(flag_str))
 
                 if flag.alias is not None:
                     original_flag = flag.alias
-                    flag = self.flags.get(flag.alias)
+                    flag = self.flags.get('{}_{}'.format(field_key, flag.alias))
                     if flag is None:
                         raise LookupError('Ignoring unknown thing flag alias "{}".'.format(original_flag))
 
@@ -151,34 +151,35 @@ class Table(object):
             if (bits & mask) == 0:
                 continue
 
-            for key, flag in self.flags.items():
+            for flag in self.flags.values():
                 if flag.field != field_key or flag.index is None or flag.index != bit:
                     continue
 
-                out.add(key)
+                out.add(flag.key)
                 break
 
         return out
 
-    def flags_get_string(self, value: str):
+    def flags_get_string(self, field_key: str, value: str):
         """
         Returns a thing flags value as a string of mnemonics.
         """
 
         if self.engine.extended:
-            return self._flags_get_string_extended(value)
+            return self._flags_get_string_extended(field_key, value)
         else:
-            return self._flags_get_string_vanilla(value)
+            return self._flags_get_string_vanilla(field_key, value)
 
-    def _flags_get_string_extended(self, value: str):
+    def _flags_get_string_extended(self, field_key: str, value: str):
         """
         Returns a thing flags value as a string of extended engine mnemonics.
         """
 
         out = []
         for key in value:
-            if key not in self.flags:
-                raise LookupError('Unknown thing flag key "{}".'.format(key))
+            flag_key = '{}_{}'.format(field_key, key)
+            if flag_key not in self.flags:
+                raise LookupError('Unknown thing flag key "{}" for field "{}".'.format(key, field_key))
 
             out.append(key)
 
@@ -187,14 +188,15 @@ class Table(object):
 
         return '+'.join(out)
 
-    def _flags_get_string_vanilla(self, value: str):
+    def _flags_get_string_vanilla(self, field_key: str, value: str):
         """
         Returns a thing flags value as a 32 bit integer bitfield.
         """
 
         bits = 0
         for key in value:
-            flag = self.flags.get(key)
+            flag_key = '{}_{}'.format(field_key, key)
+            flag = self.flags.get(flag_key)
             if flag.index is None:
                 raise LookupError('Cannot write non-bitfield thing flag "{}" into a non-extended patch.'.format(key))
 

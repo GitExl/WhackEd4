@@ -118,7 +118,9 @@ class Engine(object):
             self.features.update(set(data['features']))
 
             for key, value in data['thingFlags'].items():
-                self.things.flags[key] = ThingFlag.from_item(key, value)
+                thing_flag = ThingFlag.from_item(key, value)
+                flag_key = '{}_{}'.format(thing_flag.field, thing_flag.key)
+                self.things.flags[flag_key] = thing_flag
 
             self.things.read_from_json(data['things'])
 

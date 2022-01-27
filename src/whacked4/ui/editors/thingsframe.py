@@ -326,14 +326,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         flag_indices = {}
 
         list_index = 0
-        for key, flag in self.patch.engine.things.flags.items():
+        for flag in self.patch.engine.things.flags.values():
             if flag.alias is not None:
                 continue
 
-            if flag.index is not None:
-                list_index = flag.index
-
-            use_key = '{}_{}'.format(flag.field, list_index)
+            use_key = '{}_{}_{}'.format(flag.field, flag.key, list_index)
             if use_key in flag_indices:
                 self.thingflag_mnemonics[flag_indices[use_key]] = (list_index, flag)
             else:

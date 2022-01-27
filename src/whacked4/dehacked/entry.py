@@ -202,7 +202,7 @@ class Entry:
             field = self.FIELDS[key]
 
             if field.type == FieldType.FLAGS:
-                value = self.table.flags_get_string(value)
+                value = self.table.flags_get_string(key, value)
 
             output_list.append('{} = {}'.format(field.patch_key, value))
 
