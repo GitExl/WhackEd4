@@ -2942,7 +2942,7 @@
 			"description": "This thing cannot push other pushable things."
 		},
 		"THRUGHOST": {
-			"name": "Paas through ghosts",
+			"name": "Pass through ghosts",
 			"description": "This projectile will pass through ghosts."
 		},
 		"BOSS": {
@@ -3177,7 +3177,7 @@
 			"description": "This thing never enters an ice death state, not even the generic one."
 		},
 		"BOSSDEATH": {
-			"name": "Boos death",
+			"name": "Boss death",
 			"description": "A_FreezeDeathChunks calls A_BossDeath."
 		},
 		"RANDOMIZE": {
