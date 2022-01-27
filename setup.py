@@ -21,7 +21,7 @@ if sys.platform == 'win32':
 exe = Executable(
 	'src/main.py',
 	base=base,
-	targetName=os.environ['app_name_lower'] + '.exe',
+	target_name=os.environ['app_name_lower'] + '.exe',
 	icon='res/icon-hatchet.ico'
 )
 

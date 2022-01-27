@@ -4,9 +4,9 @@ set app_description=A Windows Dehacked editor.
 set app_name=WhackEd4
 set app_name_lower=whacked4
 
-set app_version=1.3.0-beta
-set app_version_value=1.3.0-beta
-set app_version_title="1.3.0 beta"
+set app_version=1.3.0-beta2
+set app_version_value=1.3.0
+set app_version_title="1.3.0 beta 2"
 
 set build_path=".\build\exe.win-amd64-3.9"
 
@@ -20,6 +20,8 @@ rmdir .\build /S /Q
 
 del %build_path%\lib\libcrypto-1_1.dll /S /Q
 del %build_path%\lib\libssl-1_1.dll /S /Q
+del %build_path%\lib\tcl86t.dll /S /Q
+del %build_path%\lib\tk86t.dll /S /Q
 del %build_path%\lib\unicodedata.pyd /S /Q
 del %build_path%\lib\wx\_adv.cp39-win_amd64.pyd /S /Q
 del %build_path%\lib\wx\_propgrid.cp39-win_amd64.pyd /S /Q
@@ -32,6 +34,8 @@ del %build_path%\lib\wx\python39.dll /S /Q
 rmdir %build_path%\lib\pydoc_data /S /Q
 rmdir %build_path%\lib\unittest /S /Q
 rmdir %build_path%\lib\xml /S /Q
+rmdir %build_path%\lib\test /S /Q
+rmdir %build_path%\lib\tkinter /S /Q
 rmdir %build_path%\lib\wx\py /S /Q
 rmdir %build_path%\lib\wx\tools /S /Q
 rmdir %build_path%\lib\wx\locale /S /Q
