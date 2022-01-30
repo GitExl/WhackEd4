@@ -20,11 +20,12 @@ Fixed: fixed a wrong next state value in the MBF tables for S_GRENADE (968). Tha
 Fixed: crash on startup in some rare cases where no patch was loaded yet. Thanks to Endy McGufin.
 Fixed: maximum string length calculation for non-extended patches did not take the terminating NULL character into account. Thanks to Altazimuth.
 Fixed: sprite frame selection up\down button did not work correctly.
-Fixed: sound priority values can now be in the full signed integer range (though anything above 127 is useless). https://github.com/GitExl/WhackEd4/issues/12
+Fixed: sound priority values can now be in the full signed integer range (though anything above 127 is useless).
 Fixed: the MBF TRANSLATION2 flag is now available and will not be removed upon saving. Thanks to j0e.
 Fixed: the MBF TRANSLATION1 flag is now recognized, and aliased to TRANSLATION for Boom compatibility. Thanks to hawkwind3.
 Fixed: some typos in engine configuration files. Thanks to hawkwind3.
 Fixed: Doom Retro TRANSLUCENT flag now shows up correctly in the flag list, alongside Boom's TRANSLUCENT.
+Fixed: An MBF flag alias was missing.
 
 Version 1.2.4
 -------------

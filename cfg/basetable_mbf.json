@@ -967,6 +967,9 @@
 			"name": "Friendly",
 			"description": "A friend of the player."
 		},
+    "UNUSED1": {
+			"alias": "TRANSLATION2"
+		},
 		"UNUSED2": {
 			"alias": "TOUCHY"
 		},
