@@ -73,8 +73,10 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
 
         if workspace.iwad is not None:
             self.IWAD.SetValue(workspace.iwad)
+            self.IWADNotificationPanel.Hide()
         else:
             self.IWAD.SetValue('')
+            self.IWADNotificationPanel.Show()
 
         # Build PWAD list.
         if workspace.pwads is not None:
@@ -112,13 +114,6 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
                           parent=self)
             return
 
-        # Without an IWAD, sprite previews are not possible.
-        if self.IWAD.GetValue() == '':
-            result = wx.MessageBox(message='No IWAD selected. Sprite previews will not be available.',
-                                   caption='Missing IWAD', style=wx.OK | wx.CANCEL | wx.ICON_EXCLAMATION, parent=self)
-            if result == wx.CANCEL:
-                return
-
         # Store selected details.
         self.selected_engine = self.EngineList.GetClientData(self.EngineList.GetSelection())
         self.selected_iwad = self.IWAD.GetValue()
@@ -134,6 +129,8 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         """
 
         self.IWAD.ChangeValue('')
+        self.IWADNotificationPanel.Show()
+        self.Layout()
 
     def browse_iwad(self, event):
         """
@@ -156,6 +153,8 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
                                   style=wx.OK | wx.ICON_EXCLAMATION, parent=self)
                 else:
                     self.IWAD.SetValue(filename)
+                    self.IWADNotificationPanel.Hide()
+                    self.Layout()
 
     def pwad_add(self, event):
         """

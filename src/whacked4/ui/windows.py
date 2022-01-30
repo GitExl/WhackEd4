@@ -4059,6 +4059,30 @@ class PatchInfoDialogBase ( wx.Dialog ):
 
 		bSizer187.Add( bSizer451, 0, wx.EXPAND|wx.LEFT|wx.RIGHT, 6 )
 
+		bSizer453 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.IWADNotificationPanel = wx.Panel( self.m_panel52, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.IWADNotificationPanel.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOTEXT ) )
+		self.IWADNotificationPanel.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
+
+		bSizer154 = wx.BoxSizer( wx.VERTICAL )
+
+		self.IWADNotification = wx.StaticText( self.IWADNotificationPanel, wx.ID_ANY, u"Without an IWAD, sprite and sound previews will not be available.", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.IWADNotification.Wrap( -1 )
+
+		self.IWADNotification.SetMinSize( wx.Size( 75,-1 ) )
+
+		bSizer154.Add( self.IWADNotification, 0, wx.ALL|wx.EXPAND, 6 )
+
+
+		self.IWADNotificationPanel.SetSizer( bSizer154 )
+		self.IWADNotificationPanel.Layout()
+		bSizer154.Fit( self.IWADNotificationPanel )
+		bSizer453.Add( self.IWADNotificationPanel, 1, wx.EXPAND |wx.ALL, 0 )
+
+
+		bSizer187.Add( bSizer453, 1, wx.ALL|wx.EXPAND, 6 )
+
 		bSizer452 = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.m_staticText462 = wx.StaticText( self.m_panel52, wx.ID_ANY, u"PWADs", wx.DefaultPosition, wx.DefaultSize, 0 )
