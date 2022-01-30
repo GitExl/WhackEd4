@@ -177,7 +177,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.selected_index = 0
         self.thing_is_projectile = False
 
-        self.thingflag_mnemonics: List[Tuple[int, ThingFlag]] = []
+        self.thingflag_mnemonics: List[Tuple[str, ThingFlag]] = []
 
         for prop in self.PROPS_STATENAMES.keys():
             item = self.FindWindowById(prop)
@@ -330,11 +330,16 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             if flag.alias is not None:
                 continue
 
-            use_key = '{}_{}_{}'.format(flag.field, flag.key, list_index)
-            if use_key in flag_indices:
-                self.thingflag_mnemonics[flag_indices[use_key]] = (list_index, flag)
+            if flag.index is not None:
+                flag_index = flag.index
             else:
-                self.thingflag_mnemonics.append((list_index, flag))
+                flag_index = list_index
+
+            use_key = '{}_{:03}_{}'.format(flag.field, flag_index, flag.key)
+            if use_key in flag_indices:
+                self.thingflag_mnemonics[flag_indices[use_key]] = (use_key, flag)
+            else:
+                self.thingflag_mnemonics.append((use_key, flag))
                 flag_indices[use_key] = len(self.thingflag_mnemonics) - 1
 
             list_index += 1
@@ -462,7 +467,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         # Set flags.
         for index in range(self.ThingFlags.GetCount()):
-            index, flag = self.thingflag_mnemonics[index]
+            use_key, flag = self.thingflag_mnemonics[index]
             checked = (flag.key in thing[flag.field])
             self.ThingFlags.Check(index, checked)
 
