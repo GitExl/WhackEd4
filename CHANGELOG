@@ -25,7 +25,7 @@ Fixed: the MBF TRANSLATION2 flag is now available and will not be removed upon s
 Fixed: the MBF TRANSLATION1 flag is now recognized, and aliased to TRANSLATION for Boom compatibility. Thanks to hawkwind3.
 Fixed: some typos in engine configuration files. Thanks to hawkwind3.
 Fixed: Doom Retro TRANSLUCENT flag now shows up correctly in the flag list, alongside Boom's TRANSLUCENT.
-Fixed: An MBF flag alias was missing.
+Fixed: An MBF flag alias was missing. Thanks to hawkwind3.
 
 Version 1.2.4
 -------------
