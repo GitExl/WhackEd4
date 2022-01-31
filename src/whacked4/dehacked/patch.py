@@ -564,16 +564,19 @@ class Patch(object):
                 # Extended mode section contents.
                 if mode == ParseMode.PARS:
                     if line_words[0] == 'par':
-                        par = entries.ParEntry(self.engine)
-
                         if len(line_words) == 4:
-                            par['episode'] = int(line_words[1])
-                            par['map'] = int(line_words[2])
-                            par['seconds'] = int(line_words[3])
+                            par = entries.ParEntry(self.engine.pars).from_json({
+                                'episode': int(line_words[1]),
+                                'map': int(line_words[2]),
+                                'seconds': int(line_words[3]),
+                            })
+
                         elif len(line_words) == 3:
-                            par['episode'] = 0
-                            par['map'] = int(line_words[1])
-                            par['seconds'] = int(line_words[2])
+                            par = entries.ParEntry(self.engine.pars).from_json({
+                                'episode': 0,
+                                'map': int(line_words[1]),
+                                'seconds': int(line_words[2]),
+                            })
                         else:
                             continue
 

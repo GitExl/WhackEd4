@@ -43,6 +43,9 @@ class Engine(object):
         self.ammo: Table = table.Table(entries.AmmoEntry, self)
         self.sounds: Table = table.Table(entries.SoundEntry, self)
 
+        # Par times.
+        self.pars: Table = table.Table(entries.ParEntry, self)
+
         # Cheats table.
         self.cheats: Dict[str, str] = {}
         self.cheat_data: Dict[str, Dict[str, str]] = {}

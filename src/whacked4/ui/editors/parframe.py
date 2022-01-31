@@ -128,10 +128,11 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         self.undo_add()
 
         # Add a new par time.
-        par = entries.ParEntry(self.patch.pars)
-        par['episode'] = 0
-        par['map'] = 1
-        par['seconds'] = 666
+        par = entries.ParEntry(self.patch.pars).from_json({
+            'episode': 0,
+            'map': 1,
+            'seconds': 666,
+        })
         self.patch.pars.append(par)
 
         self.parlist_build()
