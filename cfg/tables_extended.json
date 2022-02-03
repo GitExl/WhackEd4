@@ -3,7 +3,7 @@
 		19,
 		21
 	],
-	"name": "Extended DeHackEd",
+	"name": "DeHackEd Extended (DEHEXTRA)",
 	"extended": true,
 	"parent": "basetable_extended",
 	"features": [],
