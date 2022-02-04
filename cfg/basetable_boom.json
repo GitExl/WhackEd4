@@ -7610,7 +7610,7 @@
 		"DROPPED": {
 			"index": 17,
 			"name": "Dropped by enemy",
-			"description": "This thing was dropped dropped by an enemy (internal flag)."
+			"description": "This thing was dropped by an enemy (internal flag)."
 		},
 		"SHADOW": {
 			"index": 18,
