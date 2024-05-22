@@ -101,6 +101,10 @@ class WADReader(object):
                 self.lumps.append(Lump(name, size, offset, self))
 
         self.filename = filename
+        # chex[3].wad detection.
+        if (wad_type == self.TYPE_PWAD and self.get_lump('E1M1') and self.get_lump('E3M1')
+        and self.get_lump('W94_1') and self.get_lump('POSSH0M0')):
+            wad_type = self.TYPE_IWAD
         self.type = wad_type
 
     def get_lump(self, lump_name):
