@@ -597,7 +597,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         """
 
         index = event.GetSelection()
-        renderstyle = self.patch.engine.render_styles.keys()[index]
+        renderstyle = list(self.patch.engine.render_styles.keys())[index]
         self.patch.things[self.selected_index]['renderStyle'] = renderstyle
 
         self.is_modified(True)
