@@ -410,7 +410,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             if state_index == 0:
                 sprite_name = '-'
             else:
-                sprite_name = self.patch.sprite_names[state['sprite']]
+                sprite_name = self.patch.get_sprite_name(state['sprite'])
             sprite_frame = state['spriteFrame'] & ~self.FRAMEFLAG_LIT
 
             self.SpriteIndex.ChangeValue(str(state['sprite']))
@@ -551,7 +551,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                     sprite_index = state['sprite']
                     if sprite_index != '':
                         sprite_index = int(sprite_index)
-                        sprite_name = self.patch.sprite_names[sprite_index]
+                        sprite_name = self.patch.get_sprite_name(sprite_index)
 
                         sprite_frame = state['spriteFrame'] & ~self.FRAMEFLAG_LIT
                         if sprite_frame != '':
@@ -634,7 +634,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
                 value = 0
             elif value >= len(self.patch.sprite_names):
                 value = len(self.patch.sprite_names) - 1
-            self.SpriteName.SetLabel(self.patch.sprite_names[value])
+            self.SpriteName.SetLabel(self.patch.get_sprite_name(value))
             window.ChangeValue(str(value))
 
         # Clamp next state index and update state name.

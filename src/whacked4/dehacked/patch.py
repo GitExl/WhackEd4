@@ -679,25 +679,45 @@ class Patch(object):
 
         return messages
 
-    def get_state_name(self, state_index):
+    def get_state_name(self, state_index: int) -> str:
         """
-        Returns a state's name by combining it's sprite name and frame index.
+        Returns a state's name by combining its sprite name and frame index.
+
+        :param state_index:
+
+        :return:
         """
 
         if state_index == 0:
             return '-'
 
         state = self.states[state_index]
-
-        sprite_name = self.sprite_names[state['sprite']]
+        sprite_name = self.get_sprite_name(state['sprite'])
         sprite_frame = state['spriteFrame'] & ~self.FRAME_FLAG_LIT
         sprite_frame_name = chr(sprite_frame + 65)
 
         return sprite_name + sprite_frame_name
 
-    def get_sound_name(self, sound_index):
+    def get_sprite_name(self, sprite_index: int) -> str:
+        """
+        Returns a sprite's name.
+
+        :param sprite_index:
+
+        :return:
+        """
+
+        if sprite_index < 0 or sprite_index >= len(self.sprite_names):
+            return '{:04}'.format(sprite_index)
+        return self.sprite_names[sprite_index]
+
+    def get_sound_name(self, sound_index: int) -> str:
         """
         Returns a sound's name.
+
+        :param sound_index:
+
+        :return:
         """
 
         sound_index -= 1
