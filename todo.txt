@@ -1,10 +1,11 @@
 1.3.0 final
-- When copying a thing, its speed property is wrong.
 - After reloading WADs, state editor sprite preview cache is not cleared.
-- https://www.doomworld.com/forum/topic/62909-whacked-4/?page=7 Locales other than English wont work?
+- High DPI support?
 
 1.3.1
+- Allow direct drag & drop onto application.
 - https://github.com/GitExl/WhackEd4/issues/23 - needs Final Doom strings extraction, otherwise identical tables? What about Dehacked engine numbers?
+- https://www.doomworld.com/forum/post/2508656 Par Time for vanilla? Technically not compatible with plain Dehacked.
 - https://www.doomworld.com/forum/topic/124355-ultimate-doom-builder-with-dehacked-support-feedback-wanted/
 - https://doomwiki.org/wiki/DSDHacked
 - Add MBF21 support. https://github.com/kraflab/mbf21/blob/master/docs/spec.md
@@ -12,6 +13,7 @@
     - New MBF21 base table.
     - New table that inherits from the extended base table and mbf21 base table, and one table that only inherits from an mbf21 base table since they are not inclusive.
     - Bits fields already exist in code, but they still need data added to the tables and their flags defined.
+- https://www.doomworld.com/forum/topic/124355-ultimate-doom-builder-with-dehacked-support-feedback-wanted/
 
 Low priority bugs
 - When listview column widths are resized, a scrollbar is sometimes displayed for no reason.

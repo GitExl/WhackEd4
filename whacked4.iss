@@ -4,7 +4,7 @@ Name: associate; Description: Associate with Dehacked patch files
 
 
 [Files]
-Source: .\build\exe.win-amd64-3.9\*.*; DestDir: {app}; Flags: recursesubdirs createallsubdirs
+Source: .\build\exe.win-amd64-3.12\*.*; DestDir: {app}; Flags: recursesubdirs createallsubdirs
 Source: .\fonts\dejavu-sans-mono\DejaVuSansMono.ttf; DestDir: {autofonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono
 Source: .\fonts\dejavu-sans-mono\DejaVuSansMono-Bold.ttf; DestDir: {autofonts}; Flags: onlyifdoesntexist uninsneveruninstall; FontInstall: DejaVu Sans Mono Bold
 
@@ -19,11 +19,11 @@ Name: {group}\{cm:UninstallProgram, WhackEd4}; Filename: {uninstallexe}
 InternalCompressLevel=ultra64
 SolidCompression=true
 AppName=WhackEd4
-AppVerName=WhackEd4 1.3.0 beta 2
+AppVerName=WhackEd4 1.3.0 beta 3
 DefaultDirName={autopf}\WhackEd4
 AlwaysUsePersonalGroup=false
 ShowLanguageDialog=no
-AppVersion=1.3.0 beta 2
+AppVersion=1.3.0 beta 3
 UninstallDisplayIcon={app}\whacked4.exe
 UninstallDisplayName=WhackEd4
 AppendDefaultGroupName=true
@@ -31,7 +31,7 @@ DefaultGroupName=WhackEd4
 Compression=lzma2/ultra64
 OutputDir=.
 SourceDir=.
-OutputBaseFilename=whacked4-setup-1.3.0-beta2
+OutputBaseFilename=whacked4-setup-1.3.0-beta3
 AllowNoIcons=true
 PrivilegesRequired=admin
 ChangesAssociations=true
