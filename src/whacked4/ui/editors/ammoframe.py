@@ -86,9 +86,9 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
             return
 
         column_width = self.AmmoList.GetClientSize()[0] - 4
-        self.AmmoList.SetColumnWidth(0, column_width / 3)
-        self.AmmoList.SetColumnWidth(1, column_width / 3)
-        self.AmmoList.SetColumnWidth(2, column_width / 3)
+        self.AmmoList.SetColumnWidth(0, column_width // 3)
+        self.AmmoList.SetColumnWidth(1, column_width // 3)
+        self.AmmoList.SetColumnWidth(2, column_width // 3)
 
     def ammo_select(self, event):
         """

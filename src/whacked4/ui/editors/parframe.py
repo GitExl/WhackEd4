@@ -96,7 +96,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         if not self.ParList.GetColumnCount():
             return
 
-        column_width = (self.ParList.GetClientSize()[0] - 4) / 3
+        column_width = (self.ParList.GetClientSize()[0] - 4) // 3
         self.ParList.SetColumnWidth(0, column_width)
         self.ParList.SetColumnWidth(1, column_width)
         self.ParList.SetColumnWidth(2, column_width)

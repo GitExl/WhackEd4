@@ -1,7 +1,7 @@
 import copy
 
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, Dict
 
 from whacked4.dehacked.table import Table
 from whacked4.enum import WhackedEnum
@@ -46,8 +46,8 @@ class Entry:
     def __init__(self, table: Table):
         self.name: Optional[str] = None
         self.table: Table = table
-        self.values = {}
-        self.extra_values = {}
+        self.values: Dict[str, any] = {}
+        self.extra_values: Dict[str, any] = {}
         self.unused = False
 
     def __getitem__(self, key):

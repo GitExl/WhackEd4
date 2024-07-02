@@ -394,6 +394,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         # Copy references to newly duplicated thing.
         self.patch.things[self.selected_index] = dup
 
+        self.update_is_projectile(reset=True)
         self.update_properties()
         self.is_modified(True)
 
@@ -726,6 +727,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.patch.things[self.selected_index] = self.patch.engine.things[self.selected_index].clone()
 
+        self.update_is_projectile(reset=True)
         self.update_properties()
         self.is_modified(True)
 
@@ -770,6 +772,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.patch.things[index] = item['item']
 
+        self.update_is_projectile(reset=True)
         self.thinglist_update_row(index)
         self.update_properties()
 
@@ -813,6 +816,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.patch.things[self.selected_index] = self.patch.engine.default_thing.clone()
 
+        self.update_is_projectile(reset=True)
         self.update_properties()
         self.is_modified(True)
 
@@ -827,13 +831,17 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.preview_dialog.prepare(self.pwads, self.patch, state_index, self.selected_index)
         self.preview_dialog.ShowModal()
 
-    def update_is_projectile(self):
+    def update_is_projectile(self, reset=False):
         """
-        Updates the thing_is_projectile variable. If any of the current thing's states sets a momentum then it is no
-        a projectile.
+        Updates the thing_is_projectile variable. If any of the current thing's states sets a momentum then
+        it is not a projectile.
         """
 
-        is_before = self.thing_is_projectile
+        if reset:
+            is_before = None
+        else:
+            is_before = self.thing_is_projectile
+
         self.thing_is_projectile = True
 
         state_query = StateFilterQuery(self.patch)

@@ -125,8 +125,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.pwads = self.GetMDIParent().pwads
         self.clipboard = None
 
-        self.sprites_dialog = spritesdialog.SpritesDialog(self.GetParent())
-        self.preview_dialog = statepreviewdialog.StatePreviewDialog(self.GetParent())
+        self.sprites_dialog = spritesdialog.SpritesDialog(self)
+        self.preview_dialog = statepreviewdialog.StatePreviewDialog(self)
 
         # Setup sprite preview control.
         self.SpritePreview.set_source(self.pwads)

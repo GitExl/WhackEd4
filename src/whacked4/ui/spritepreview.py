@@ -251,7 +251,7 @@ class SpritePreview(wx.Panel):
 
     def create_floor_points(self):
         size = self.GetClientSize()
-        baseline = size[1] * self.baseline_factor
+        baseline = int(size[1] * self.baseline_factor)
 
         self.floor_points = [
             wx.Point(0, baseline),

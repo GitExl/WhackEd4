@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version 3.10.1-0-g8feb16b3)
+## Python code generated with wxFormBuilder (version 4.2.1-0-g80c4cb6)
 ## http://www.wxformbuilder.org/
 ##
 ## PLEASE DO *NOT* EDIT THIS FILE!
@@ -1022,7 +1022,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateSpawnName = wx.StaticText( self.PanelStateSpawn, THING_STATENAME_SPAWN, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateSpawnName.Wrap( -1 )
 
-		self.ThingStateSpawnName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStateSpawnName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateSpawnName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStateSpawn.Add( self.ThingStateSpawnName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1053,7 +1053,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateWalkName = wx.StaticText( self.PanelStateWalk, THING_STATENAME_WALK, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateWalkName.Wrap( -1 )
 
-		self.ThingStateWalkName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStateWalkName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateWalkName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStateWalk.Add( self.ThingStateWalkName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1084,7 +1084,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStatePainName = wx.StaticText( self.PanelStatePain, THING_STATENAME_PAIN, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStatePainName.Wrap( -1 )
 
-		self.ThingStatePainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStatePainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStatePainName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStatePain.Add( self.ThingStatePainName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1115,7 +1115,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateMeleeName = wx.StaticText( self.PanelStateMelee, THING_STATENAME_MELEE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateMeleeName.Wrap( -1 )
 
-		self.ThingStateMeleeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStateMeleeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateMeleeName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStateMelee.Add( self.ThingStateMeleeName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1146,7 +1146,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateAttackName = wx.StaticText( self.PanelStateAttack, THING_STATENAME_ATTACK, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateAttackName.Wrap( -1 )
 
-		self.ThingStateAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStateAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateAttackName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStateAttack.Add( self.ThingStateAttackName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1177,7 +1177,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateDeathName = wx.StaticText( self.PanelStateDeath, THING_STATENAME_DEATH, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateDeathName.Wrap( -1 )
 
-		self.ThingStateDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStateDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateDeathName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStateDeath.Add( self.ThingStateDeathName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1208,7 +1208,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateExplodeName = wx.StaticText( self.PanelStateExplode, THING_STATENAME_EXPLODE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateExplodeName.Wrap( -1 )
 
-		self.ThingStateExplodeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStateExplodeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateExplodeName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStateExplode.Add( self.ThingStateExplodeName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1239,7 +1239,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateRaiseName = wx.StaticText( self.PanelStateRaise, THING_STATENAME_RAISE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateRaiseName.Wrap( -1 )
 
-		self.ThingStateRaiseName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStateRaiseName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateRaiseName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStateRaise.Add( self.ThingStateRaiseName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1270,7 +1270,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateCrashName = wx.StaticText( self.PanelStateCrash, THING_STATENAME_CRASH, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateCrashName.Wrap( -1 )
 
-		self.ThingStateCrashName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStateCrashName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateCrashName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStateCrash.Add( self.ThingStateCrashName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1301,7 +1301,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateFreezeName = wx.StaticText( self.PanelStateFreeze, THING_STATENAME_FREEZE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateFreezeName.Wrap( -1 )
 
-		self.ThingStateFreezeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStateFreezeName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateFreezeName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStateFreeze.Add( self.ThingStateFreezeName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1332,7 +1332,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingStateBurnName = wx.StaticText( self.PanelStateBurn, THING_STATENAME_BURN, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingStateBurnName.Wrap( -1 )
 
-		self.ThingStateBurnName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingStateBurnName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingStateBurnName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerStateBurn.Add( self.ThingStateBurnName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1371,7 +1371,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundAlertName = wx.StaticText( self.PanelSoundAlert, THING_SOUNDNAME_ALERT, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundAlertName.Wrap( -1 )
 
-		self.ThingSoundAlertName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingSoundAlertName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingSoundAlertName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerSoundAlert.Add( self.ThingSoundAlertName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1402,7 +1402,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundAttackName = wx.StaticText( self.PanelSoundAttack, THING_SOUNDNAME_ATTACK, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundAttackName.Wrap( -1 )
 
-		self.ThingSoundAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingSoundAttackName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingSoundAttackName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerSoundAttack.Add( self.ThingSoundAttackName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1433,7 +1433,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundPainName = wx.StaticText( self.PanelSoundPain, THING_SOUNDNAME_PAIN, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundPainName.Wrap( -1 )
 
-		self.ThingSoundPainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingSoundPainName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingSoundPainName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerSoundPain.Add( self.ThingSoundPainName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1464,7 +1464,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundDeathName = wx.StaticText( self.PanelSoundDeath, THING_SOUNDNAME_DEATH, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundDeathName.Wrap( -1 )
 
-		self.ThingSoundDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingSoundDeathName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingSoundDeathName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerSoundDeath.Add( self.ThingSoundDeathName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -1495,7 +1495,7 @@ class ThingsFrameBase ( wx.MDIChildFrame ):
 		self.ThingSoundActiveName = wx.StaticText( self.PanelSoundActive, THING_SOUNDNAME_ACTIVE, u"PLPAIN", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.ThingSoundActiveName.Wrap( -1 )
 
-		self.ThingSoundActiveName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.ThingSoundActiveName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.ThingSoundActiveName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerSoundActive.Add( self.ThingSoundActiveName, 1, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -2129,7 +2129,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.SpriteName = wx.StaticText( self, wx.ID_ANY, u"TROO", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.SpriteName.Wrap( -1 )
 
-		self.SpriteName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.SpriteName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.SpriteName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerPropSprite.Add( self.SpriteName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -2178,7 +2178,7 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		self.NextStateName = wx.StaticText( self, wx.ID_ANY, u"PLAYD", wx.DefaultPosition, wx.Size( 70,-1 ), wx.ST_NO_AUTORESIZE )
 		self.NextStateName.Wrap( -1 )
 
-		self.NextStateName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.NextStateName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.NextStateName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		SizerPropNext.Add( self.NextStateName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -2972,7 +2972,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateSelectName = wx.StaticText( self.PanelStateLower, WEAPON_STATENAME_SELECT, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateSelectName.Wrap( -1 )
 
-		self.WeaponStateSelectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.WeaponStateSelectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.WeaponStateSelectName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		bSizer124.Add( self.WeaponStateSelectName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -3008,7 +3008,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateDeselectName = wx.StaticText( self.PanelStateRaise, WEAPON_STATENAME_DESELECT, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateDeselectName.Wrap( -1 )
 
-		self.WeaponStateDeselectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.WeaponStateDeselectName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.WeaponStateDeselectName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		bSizer1241.Add( self.WeaponStateDeselectName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -3044,7 +3044,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateBobName = wx.StaticText( self.PanelStateBob, WEAPON_STATENAME_BOB, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateBobName.Wrap( -1 )
 
-		self.WeaponStateBobName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.WeaponStateBobName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.WeaponStateBobName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		bSizer1242.Add( self.WeaponStateBobName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -3080,7 +3080,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateFireName = wx.StaticText( self.PanelStateFire, WEAPON_STATENAME_FIRE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateFireName.Wrap( -1 )
 
-		self.WeaponStateFireName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.WeaponStateFireName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.WeaponStateFireName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		bSizer1243.Add( self.WeaponStateFireName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -3116,7 +3116,7 @@ class WeaponsFrameBase ( wx.MDIChildFrame ):
 		self.WeaponStateMuzzleName = wx.StaticText( self.PanelStateMuzzle, WEAPON_STATENAME_MUZZLE, u"TROOA", wx.DefaultPosition, wx.Size( 60,-1 ), wx.ST_NO_AUTORESIZE )
 		self.WeaponStateMuzzleName.Wrap( -1 )
 
-		self.WeaponStateMuzzleName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.WeaponStateMuzzleName.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 		self.WeaponStateMuzzleName.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		bSizer1244.Add( self.WeaponStateMuzzleName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 3 )
@@ -3753,19 +3753,14 @@ class SpritesDialogBase ( wx.Dialog ):
 		bSizer42 = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.SpriteNames = wx.ListCtrl( self.m_panel49, wx.ID_ANY, wx.DefaultPosition, wx.Size( 74,-1 ), wx.LC_NO_HEADER|wx.LC_REPORT|wx.LC_SINGLE_SEL )
-		self.SpriteNames.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.SpriteNames.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 
 		bSizer42.Add( self.SpriteNames, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 6 )
 
-		bSizer40 = wx.BoxSizer( wx.VERTICAL )
-
-		self.SpritePreview = spritepreview.SpritePreview(self)
+		self.SpritePreview = spritepreview.SpritePreview(self.m_panel49)
 		self.SpritePreview.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_3DDKSHADOW ) )
 
-		bSizer40.Add( self.SpritePreview, 1, wx.EXPAND|wx.RIGHT|wx.TOP, 6 )
-
-
-		bSizer42.Add( bSizer40, 1, wx.EXPAND, 5 )
+		bSizer42.Add( self.SpritePreview, 1, wx.EXPAND|wx.RIGHT|wx.TOP, 6 )
 
 
 		self.m_panel49.SetSizer( bSizer42 )
@@ -3799,7 +3794,7 @@ class SpritesDialogBase ( wx.Dialog ):
 		self.m_panel48.SetSizer( bSizer431 )
 		self.m_panel48.Layout()
 		bSizer431.Fit( self.m_panel48 )
-		bSizer39.Add( self.m_panel48, 0, 0, 0 )
+		bSizer39.Add( self.m_panel48, 0, wx.EXPAND, 0 )
 
 		bSizer43 = wx.BoxSizer( wx.HORIZONTAL )
 
@@ -4430,7 +4425,7 @@ class ErrorDialogBase ( wx.Dialog ):
 		self.m_staticText91 = wx.StaticText( self.m_panel54, wx.ID_ANY, u"Oops! Something terrible has happened.", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText91.Wrap( -1 )
 
-		self.m_staticText91.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.m_staticText91.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 
 		bSizer189.Add( self.m_staticText91, 0, wx.ALL, 12 )
 
@@ -4521,7 +4516,7 @@ class StatePreviewDialogBase ( wx.Dialog ):
 		self.StateInfo = wx.StaticText( self, wx.ID_ANY, u"TROOA0", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.StateInfo.Wrap( -1 )
 
-		self.StateInfo.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.StateInfo.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
 
 		bSizer141.Add( self.StateInfo, 2, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 6 )
 
@@ -4553,14 +4548,14 @@ class StatePreviewDialogBase ( wx.Dialog ):
 		self.SetSizer( bSizer140 )
 		self.Layout()
 		self.Timer = wx.Timer()
-		self.Timer.SetOwner( self, wx.ID_ANY )
+		self.Timer.SetOwner( self, self.Timer.GetId() )
 
 		self.Centre( wx.BOTH )
 
 		# Connect Events
 		self.Bind( wx.EVT_INIT_DIALOG, self.activate )
 		self.Close.Bind( wx.EVT_BUTTON, self.close )
-		self.Bind( wx.EVT_TIMER, self.timer, id=wx.ID_ANY )
+		self.Bind( wx.EVT_TIMER, self.timer, id=self.Timer.GetId() )
 
 	def __del__( self ):
 		pass

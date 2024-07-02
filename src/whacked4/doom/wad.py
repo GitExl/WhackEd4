@@ -96,7 +96,8 @@ class WADReader(object):
                 offset, size, name = self.S_LUMP.unpack(f.read(self.S_LUMP.size))
 
                 # Strip trailing NULL characters.
-                name = name.decode('ascii').split('\x00')[0]
+                decoded_name = name.decode('ascii', errors='replace')
+                name = decoded_name.split('\x00')[0]
 
                 self.lumps.append(Lump(name, size, offset, self))
 

@@ -34,8 +34,6 @@ class WhackEd4App(wx.App):
         Run after the wxWidgets app has initialized.
         """
 
-        self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
-
         # Parse common commandline arguments.
         parser = argparse.ArgumentParser()
         parser.add_argument('-debug', action='store_true', help='Enable debug mode.')
@@ -72,6 +70,11 @@ class WhackEd4App(wx.App):
             mainwind.show_start()
 
         return True
+
+    def InitLocale(self):
+        if sys.platform.startswith('win') and sys.version_info > (3, 8):
+            import locale
+            locale.setlocale(locale.LC_ALL, "C")
 
     def redirect_logs(self):
         """

@@ -147,8 +147,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             return
 
         column_width = self.WeaponList.GetClientSize()[0] - 4
-        self.WeaponList.SetColumnWidth(0, column_width / 2)
-        self.WeaponList.SetColumnWidth(1, column_width / 2)
+        self.WeaponList.SetColumnWidth(0, column_width // 2)
+        self.WeaponList.SetColumnWidth(1, column_width // 2)
 
     def ammolist_build(self):
         """
