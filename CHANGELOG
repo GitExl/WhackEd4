@@ -5,6 +5,7 @@ Added: support for DEHEXTRA thing fields: Gib health, Dropped item, Pickup width
 Added: Doom Retro thing fields: Blood, Shadow offset, Retro Bits, Name and Plural.
 Added: state preview now uses a state's unused 1 and 2 parameters as offsets if previewing a state from the weapons editor (right-click state label).
 Added: better Linux compatibility. The application starts and is somewhat usable, but a number of UI issues still prevent it from working well.
+Added: IWAD detection for chex.wad and chex3.wad (official version). Thanks to Acts19quiz.
 Changed: engine table files can now include (base table) files. This leads to smaller filesizes and makes for easier updating. As a result of this, strings in the Doom 1.9 and Ultimate Doom 1.9 tables are now keyed by their index.
 Changed: engine table files list only fields used by that engine to reduce their size and improve maintainability. Default entries for things, states, weapons, ammo and sounds are provided for tables that extend existing ones.
 Changed: string editing for vanilla patches will allow any number of characters to be entered, but disallow using the new string if it is too long.
@@ -26,8 +27,11 @@ Fixed: the MBF TRANSLATION1 flag is now recognized, and aliased to TRANSLATION f
 Fixed: some typos in engine configuration files. Thanks to hawkwind3.
 Fixed: Doom Retro TRANSLUCENT flag now shows up correctly in the flag list, alongside Boom's TRANSLUCENT.
 Fixed: an MBF flag alias was missing. Thanks to hawkwind3.
-Fixed: when copying a thing or unding changes to one, its speed property was wrong if it changed from or to a projectile.
+Fixed: when copying a thing or undoing changes to one, its speed property was wrong if it changed from or to a projectile.
 Fixed: hopefully, locale issues.
+Fixed: Zdaemon misc. rocketExplosionStyle is a string. Thanks to Acts19quiz.
+Fixed: selecting a Render Style would crash the application. Thanks to Acts19quiz.
+Fixed: prevent out of range sprite indices from causing errors. Thanks to NeophyteRonin.
 
 Version 1.2.4
 -------------
