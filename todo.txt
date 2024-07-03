@@ -1,10 +1,9 @@
 1.3.0 final
 - After reloading WADs, state editor sprite preview cache is not cleared.
-- High DPI support?
+- High DPI support? Process output from wxFormBuilder, set DPI awareness, increase asset size?
 
-1.3.1
+1.4.0
 - Allow direct drag & drop onto application.
-- https://github.com/GitExl/WhackEd4/issues/23 - needs Final Doom strings extraction, otherwise identical tables? What about Dehacked engine numbers?
 - https://www.doomworld.com/forum/post/2508656 Par Time for vanilla? Technically not compatible with plain Dehacked.
 - https://www.doomworld.com/forum/topic/124355-ultimate-doom-builder-with-dehacked-support-feedback-wanted/
 - https://doomwiki.org/wiki/DSDHacked
@@ -27,7 +26,10 @@ Later
 - VGA: "Also, it would be cool if the states had one extra column with the name of the thing that is using them."
   - Check to see if any things use states that use the wrong type of action (weapon or monster).
 - Mark and display items (things, states, strings, ammo, weapons, sounds) as modified compared to engine config.
-- Final Doom (TNT and Plutonia) support, see https://www.doomworld.com/forum/topic/117871-dehacked-30a-special-edition-with-support-for-both-final-doom-versions/?tab=comments#comment-2212475
+- Final Doom (TNT and Plutonia) support
+    - needs Final Doom strings extraction, otherwise identical tables? What about Dehacked engine numbers?
+    - See https://www.doomworld.com/forum/topic/117871-dehacked-30a-special-edition-with-support-for-both-final-doom-versions/?tab=comments#comment-2212475
+    - https://github.com/GitExl/WhackEd4/issues/23
 - Option to manually clear list of recent files.
 - Investigate pyInstaller for executable generation. Single file, less dependencies?
 - UI manual \ Dehacked tutorial.

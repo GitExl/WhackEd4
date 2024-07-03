@@ -13,7 +13,7 @@ if __name__ == '__main__':
         from ctypes import windll
         win_version = platform.version().split('.')
         if int(win_version[0]) >= 6:
-            windll.user32.SetProcessDPIAware()
+            windll.shcore.SetProcessDpiAwareness(1)
 
     main_app = app.WhackEd4App()
     main_app.MainLoop()
