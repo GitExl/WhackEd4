@@ -1,6 +1,5 @@
 1.3.0 final
 - After reloading WADs, state editor sprite preview cache is not cleared.
-- High DPI support? Process output from wxFormBuilder, set DPI awareness, increase asset size?
 
 1.4.0
 - Allow direct drag & drop onto application.
@@ -46,6 +45,5 @@ Later
 - ZDaemon: Add and parse relevant actors from http://www.zdaemon.org/?CMD=info&NAME=deh. Is this related to DEHSUPP?
 - Read\write DEHACKED lumps directly from a WAD file.
 - Improve tab traversal everywhere.
-- Proper high DPI support. Needs wxFormBuilder to output device independent pixels. See https://github.com/wxFormBuilder/wxFormBuilder/issues/356
 - Redesign base interface so that it works in non-MDI window systems (GTK, MacOS).
 - Finish Linux support.

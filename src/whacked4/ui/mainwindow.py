@@ -4,6 +4,7 @@
 from whacked4 import config, utils
 from whacked4.dehacked import engine, patch
 from whacked4.doom import wadlist, wad
+from whacked4.doom.wad import WAD
 from whacked4.ui import windows, workspace
 from whacked4.ui.dialogs import startdialog, aboutdialog, patchinfodialog
 from whacked4.ui.editors import thingsframe, statesframe, soundsframe, stringsframe, weaponsframe, ammoframe, \
@@ -339,7 +340,7 @@ class MainWindow(windows.MainFrameBase):
         wx.BeginBusyCursor()
 
         # Load and add the IWAD to the WAD list.
-        self.iwad = wad.WADReader(self.workspace.iwad)
+        self.iwad = WAD.from_file(self.workspace.iwad)
         self.pwads.add_wad(self.iwad)
 
         # Load PWADs.
@@ -351,7 +352,7 @@ class MainWindow(windows.MainFrameBase):
                 self.patch_modified = True
 
             else:
-                pwad = wad.WADReader(pwad_file)
+                pwad = WAD.from_file(pwad_file)
                 self.pwads.add_wad(pwad)
 
         # Build the sprite lookup tables.

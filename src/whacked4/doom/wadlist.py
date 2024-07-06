@@ -2,52 +2,56 @@
 #coding=utf8
 
 from collections import OrderedDict
+from typing import Dict, List, Optional, Tuple
 
 from whacked4.doom import sound, graphics
+from whacked4.doom.graphics import Image, Palette
+from whacked4.doom.sound import Sound
+from whacked4.doom.wad import Lump, WAD
 
 
-class SpriteFrame(object):
+class SpriteFrame:
     """
-    Describes a sprite'a animation frame and all of it's possible rotations.
+    Describes a sprite's animation frame and all of its possible rotations.
     """
 
-    def __init__(self, index):
-        self.index = index
-        self.rotations = {}
-        self.is_mirrored = {}
-        self.has_rotations = False
+    def __init__(self, index: str):
+        self.index: str = index
+        self.rotations: Dict[int, Lump] = {}
+        self.is_mirrored: Dict[int, bool] = {}
+        self.has_rotations: bool = False
 
-    def add_rotation(self, rotation, lump, is_mirrored):
+    def add_rotation(self, rotation: int, lump: Lump, is_mirrored: bool):
         """
         Adds a new rotation to this frame. Any 0-rotations will overwrite all others.
         Also see https://github.com/id-Software/DOOM/blob/master/linuxdoom-1.10/r_things.c#L101
         """
 
-        if rotation == '0':
-            self.rotations = {'0': lump}
-            self.is_mirrored = {'0': False}
+        if rotation == 0:
+            self.rotations = {0: lump}
+            self.is_mirrored = {0: False}
             self.has_rotations = False
 
         else:
-            self.rotations[rotation] = lump
-            self.is_mirrored[rotation] = is_mirrored
+            self.rotations[int(rotation)] = lump
+            self.is_mirrored[int(rotation)] = is_mirrored
             self.has_rotations = True
 
-    def get_rotation_lump(self, rotation):
+    def get_rotation_lump(self, rotation: int) -> Tuple[Lump, bool]:
         return self.rotations.get(rotation, None), self.is_mirrored.get(rotation, False)
 
 
-class SpriteEntry(object):
+class SpriteEntry:
     """
     Defines a sprite entry and it's frames and rotations.
     """
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, name: str):
+        self.name: str = name
 
-        self.frames = {}
+        self.frames: Dict[str, SpriteFrame] = {}
 
-    def add_frame(self, frame_name, rotation, lump, is_mirrored):
+    def add_frame(self, frame_name: str, rotation: int, lump: Lump, is_mirrored: bool):
         if frame_name not in self.frames:
             frame = SpriteFrame(frame_name)
             self.frames[frame_name] = frame
@@ -56,7 +60,7 @@ class SpriteEntry(object):
 
         frame.add_rotation(rotation, lump, is_mirrored)
 
-    def get_frame_lump(self, frame_name, rotation):
+    def get_frame_lump(self, frame_name: str, rotation: int) -> Tuple[Optional[Lump], bool]:
         frame = self.frames.get(frame_name, None)
         if frame:
             return frame.get_rotation_lump(rotation)
@@ -64,43 +68,42 @@ class SpriteEntry(object):
         return None, False
 
 
-class WADList(object):
+class WADList:
     """
     Maintains a list of WAD files that can be queried for specific lump data.
     """
 
     def __init__(self):
-        self.wads = None
+        self.wads: List[WAD] = []
 
-        self.sprites = None
-        self.sprite_image_cache = None
-        self.palette = None
+        self.sprites: Dict[str, SpriteEntry] = {}
+        self.sprite_image_cache: Dict[str, Image] = {}
 
-        self.sound_cache = None
+        self.palette: Optional[Palette] = None
 
-        self.clear()
+        self.sound_cache: Dict[str, Sound] = {}
 
     def clear(self):
         """
         Empties this WAD list of all data.
         """
 
-        self.wads = []
+        self.wads.clear()
 
-        self.sprites = {}
-        self.sprite_image_cache = {}
+        self.sprites.clear()
+        self.sprite_image_cache.clear()
         self.palette = None
 
-        self.sound_cache = {}
+        self.sound_cache.clear()
 
-    def add_wad(self, wad):
+    def add_wad(self, wad: WAD):
         """
         Adds a new WAD to this list.
         """
 
         self.wads.append(wad)
 
-    def get_lump(self, lump_name):
+    def get_lump(self, lump_name: str) -> Optional[Lump]:
         """
         Returns a lump with the specified name.
 
@@ -117,7 +120,7 @@ class WADList(object):
 
         return None
 
-    def get_sound(self, lump_name):
+    def get_sound(self, lump_name: str) -> Optional[Sound]:
         """
         Returns a sound object for a lump name.
 
@@ -137,7 +140,7 @@ class WADList(object):
 
         return sound_data
 
-    def get_sprite_lump(self, sprite_name, frame_index=0, rotation=0):
+    def get_sprite_lump(self, sprite_name: str, frame_index: int = 0, rotation: int = 0) -> Tuple[Optional[Lump], bool]:
         """
         Returns a sprite entry from this WAD list.
 
@@ -153,11 +156,11 @@ class WADList(object):
 
         sprite = self.sprites[sprite_name]
         frame_name = chr(frame_index + 65)
-        rotation = str(rotation)
+        rotation = int(rotation)
 
         return sprite.get_frame_lump(frame_name, rotation)
 
-    def get_sprite_image(self, lump, mirror):
+    def get_sprite_image(self, lump: Lump, mirror: bool) -> Optional[Image]:
         """
         Returns an image object from a sprite lump.
 
@@ -176,7 +179,7 @@ class WADList(object):
         if lump_name in self.sprite_image_cache:
             return self.sprite_image_cache[lump_name]
 
-        image = graphics.Image(lump.get_data(), self.palette, mirror)
+        image = Image.from_doom_patch(lump.get_data(), self.palette, mirror)
 
         # Add the loaded image to the cache.
         self.sprite_image_cache[lump_name] = image
@@ -188,7 +191,7 @@ class WADList(object):
         Builds a lookup table of sprite lumps, and loads a PLAYPAL palette from the current WAD list.
         """
 
-        sprite_lumps = OrderedDict()
+        sprite_lumps: Dict[str, Lump] = OrderedDict()
         for wad in self.wads:
             sprite_lumps.update(wad.get_sprite_lumps())
 
@@ -208,13 +211,13 @@ class WADList(object):
                     continue
 
                 frame = lump_name[4]
-                rotation = lump_name[5]
+                rotation = int(lump_name[5])
                 sprite_entry.add_frame(frame, rotation, lump, False)
 
                 # Mirrored sprite lump.
                 if len(lump_name) == 8:
                     frame = lump_name[6]
-                    rotation = lump_name[7]
+                    rotation = int(lump_name[7])
                     sprite_entry.add_frame(frame, rotation, lump, True)
 
         # Find a PLAYPAL lump to use as palette.
@@ -222,5 +225,5 @@ class WADList(object):
         if playpal is not None:
             self.palette = graphics.Palette(playpal.get_data())
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self.wads)

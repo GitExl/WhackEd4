@@ -3,6 +3,7 @@
 
 from whacked4 import utils
 from whacked4.doom import wad
+from whacked4.doom.wad import WAD
 from whacked4.ui import windows
 import os.path
 import wx
@@ -143,7 +144,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         if filename is not None:
             # Validate the WAD file.
             try:
-                iwad = wad.WADReader(filename)
+                iwad = WAD.from_file(filename)
             except wad.WADTypeError:
                 wx.MessageBox(message='The selected WAD is not a valid WAD file.', caption='Invalid WAD file',
                               style=wx.OK | wx.ICON_EXCLAMATION, parent=self)
@@ -167,7 +168,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         if filename is not None:
             # Validate the WAD file.
             try:
-                pwad = wad.WADReader(filename)
+                pwad = WAD.from_file(filename)
             except wad.WADTypeError:
                 wx.MessageBox(message='The selected WAD is not a valid WAD file.', caption='Invalid WAD file',
                               style=wx.OK | wx.ICON_EXCLAMATION, parent=self)

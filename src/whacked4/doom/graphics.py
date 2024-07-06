@@ -6,16 +6,22 @@ Contains classes to read Doom style patch graphics, and Doom PLAYPAL lump palett
 """
 
 import struct
+from typing import Tuple, List, Optional
+
 import wx
+from wx import Bitmap
 
 
-class Palette(object):
+Color = Tuple[int, int, int, int]
+
+
+class Palette:
     """
     A 256 color RGB palette.
     """
 
-    def __init__(self, data):
-        self.colors = []
+    def __init__(self, data: bytes):
+        self.colors: List[Color] = []
 
         if len(data) < 768:
             raise Exception('Not enough data for a 256 RGB color palette.')
@@ -29,29 +35,33 @@ class Palette(object):
             offset += 3
 
 
-class Image(object):
+class Image:
     """
     A Doom style patch.
     """
 
     S_HEADER = struct.Struct('<HHhh')
 
-    def __init__(self, data, palette, mirror=False):
-        self.set_empty()
-        self.invalid = False
+    def __init__(self, width, height, top, left, image):
+        self.width: int = width
+        self.height: int = height
+        self.top: int = top
+        self.left: int = left
+        self.image: Optional[Bitmap] = image
+        self.invalid: bool = False
 
-        width, height, left, top = self.S_HEADER.unpack_from(data)
+    @staticmethod
+    def from_doom_patch(data: bytes, palette: Palette, mirror=False):
+        width, height, left, top = Image.S_HEADER.unpack_from(data)
 
         # Attempt to detect invalid data.
         if width > 2048 or height > 2048 or top > 2048 or left > 2048:
-            self.set_invalid()
-            return
+            return Image.invalid()
         if width <= 0 or height <= 0:
-            self.set_invalid()
-            return
+            return Image.invalid()
 
-        # Initialize an empty bitmap.
-        image_data = bytearray([0, 0, 0, 0] * width * height)
+        # Initialize data for an empty bitmap.
+        image_data = bytearray((0, 0, 0, 0) * width * height)
 
         # Read column offsets.
         offset_struct = struct.Struct('<' + ('I' * width))
@@ -65,8 +75,7 @@ class Image(object):
 
             # Attempt to detect invalid data.
             if offset < 0 or offset > len(data):
-                self.set_invalid()
-                return
+                return Image.invalid()
 
             prev_delta = 0
             while True:
@@ -93,10 +102,7 @@ class Image(object):
                         dest = ((pixel_index + column_top) * width + column_index) * 4
 
                     # Plot pixel from palette.
-                    image_data[dest] = palette.colors[pixel][0]
-                    image_data[dest + 1] = palette.colors[pixel][1]
-                    image_data[dest + 2] = palette.colors[pixel][2]
-                    image_data[dest + 3] = 255
+                    image_data[dest:dest+4] = palette.colors[pixel]
 
                     pixel_index += 1
 
@@ -104,22 +110,15 @@ class Image(object):
 
             column_index += 1
 
-        self.width = width
-        self.height = height
-        self.top = top
-        self.left = left
+        bitmap = wx.Bitmap.FromBufferRGBA(width, height, image_data)
+        return Image(width, height, top, left, bitmap)
 
-        # Create usable bitmap.
-        self.image = wx.Bitmap.FromBufferRGBA(width, height, image_data)
+    @staticmethod
+    def empty():
+        return Image(0, 0, 0, 0, None)
 
-    def set_empty(self):
-        self.width = 0
-        self.height = 0
-        self.top = 0
-        self.left = 0
-
-        self.image = None
-
-    def set_invalid(self):
-        self.set_empty()
-        self.invalid = True
+    @staticmethod
+    def invalid():
+        image = Image(0, 0, 0, 0, None)
+        image.invalid = True
+        return image

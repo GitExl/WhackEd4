@@ -6,11 +6,12 @@ Classes for Doom audio reading and playback using the PyAudio PortAudio bindings
 """
 
 import struct
+from typing import Optional
 
 import whacked4.playbackthread
 
 
-class Sound(object):
+class Sound:
     """
     Doom sound data.
     """
@@ -19,12 +20,12 @@ class Sound(object):
     SOUND_HEADER = struct.Struct('<HHI')
 
     def __init__(self):
-        self.format = 0
-        self.sample_rate = 0
-        self.sample_count = 0
-        self.samples = None
+        self.format: int = 0
+        self.sample_rate: int = 0
+        self.sample_count: int = 0
+        self.samples: Optional[bytes] = None
 
-    def read_from(self, data):
+    def read_from(self, data: bytes):
         """
         Reads sound data from a lump.
         """

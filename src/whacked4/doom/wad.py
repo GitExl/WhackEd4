@@ -6,6 +6,7 @@ Contains Doom WAD file reading classes.
 """
 
 import struct
+from typing import Optional, List
 
 
 class WADError(Exception):
@@ -26,7 +27,7 @@ class WADTypeError(WADError):
     """
 
 
-class Lump(object):
+class Lump:
     """
     A lump that is part of a WAD file.
 
@@ -56,7 +57,7 @@ class Lump(object):
         return self.data
 
 
-class WADReader(object):
+class WAD:
     """
     Reads Doom WAD files.
     """
@@ -67,14 +68,14 @@ class WADReader(object):
     S_HEADER = struct.Struct("<4sII")
     S_LUMP = struct.Struct("<II8s")
 
-    def __init__(self, filename):
-        self.filename = None
-        self.lumps = None
-        self.type = None
+    def __init__(self, filename: str, wad_type: str):
+        self.filename: str = filename
+        self.type: str = wad_type
 
-        self.read(filename)
+        self.lumps: List[Lump] = []
 
-    def read(self, filename):
+    @staticmethod
+    def from_file(filename: str):
         """
         Reads a WAD file's header and lump directory.
 
@@ -84,31 +85,32 @@ class WADReader(object):
         with open(filename, 'rb') as f:
 
             # Read and validate header. Should contain PWAD or IWAD magic bytes.
-            wad_type, entry_count, dir_offset = self.S_HEADER.unpack(f.read(self.S_HEADER.size))
+            wad_type, entry_count, dir_offset = WAD.S_HEADER.unpack(f.read(WAD.S_HEADER.size))
             wad_type = wad_type.decode('ascii')
-            if wad_type != self.TYPE_IWAD and wad_type != self.TYPE_PWAD:
-                raise WADTypeError('Invalid WAD type "{}"'.format(type))
+            if wad_type != WAD.TYPE_IWAD and wad_type != WAD.TYPE_PWAD:
+                raise WADTypeError('Invalid WAD type "{}"'.format(wad_type))
+
+            wad = WAD(filename, wad_type)
 
             # Read lump directory.
             f.seek(dir_offset)
-            self.lumps = []
             for _ in range(entry_count):
-                offset, size, name = self.S_LUMP.unpack(f.read(self.S_LUMP.size))
+                offset, size, name = WAD.S_LUMP.unpack(f.read(WAD.S_LUMP.size))
 
                 # Strip trailing NULL characters.
                 decoded_name = name.decode('ascii', errors='replace')
                 name = decoded_name.split('\x00')[0]
 
-                self.lumps.append(Lump(name, size, offset, self))
+                wad.lumps.append(Lump(name, size, offset, wad))
 
-        self.filename = filename
         # chex[3].wad detection.
-        if (wad_type == self.TYPE_PWAD and self.get_lump('E1M1') and self.get_lump('E3M1')
-        and self.get_lump('W94_1') and self.get_lump('POSSH0M0')):
-            wad_type = self.TYPE_IWAD
-        self.type = wad_type
+        if (wad_type == WAD.TYPE_PWAD and wad.get_lump('E1M1') and wad.get_lump('E3M1')
+            and wad.get_lump('W94_1') and wad.get_lump('POSSH0M0')):
+            wad.type = WAD.TYPE_IWAD
 
-    def get_lump(self, lump_name):
+        return wad
+
+    def get_lump(self, lump_name: str):
         """
         Searches this WAD's lump directory for a lump by name.
 
