@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 #coding=utf8
+from typing import Dict, Optional
 
 from whacked4 import utils
+from whacked4.dehacked.engine import Engine
 from whacked4.doom import wad
 from whacked4.doom.wad import WAD
 from whacked4.ui import windows
 import os.path
 import wx
+
+from whacked4.ui.workspace import Workspace
 
 
 class PatchInfoDialog(windows.PatchInfoDialogBase):
@@ -23,7 +27,6 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         self.selected_iwad = None
         self.selected_pwads = None
 
-        self.patch = None
         self.engines = None
         self.workspace = None
 
@@ -38,7 +41,6 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         self.selected_iwad = None
         self.selected_pwads = None
 
-        self.patch = None
         self.engines = None
         self.workspace = None
 
@@ -50,11 +52,13 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
         client_width = self.PWADList.GetClientSize()[0]
         self.PWADList.InsertColumn(0, 'Filename', width=client_width)
 
-    def set_state(self, patch, engines, workspace, modify_engine=True):
+    def set_state(self, filename: Optional[str], version: Optional[int], is_extended: Optional[bool], engines: Dict[str, Engine], workspace: Workspace, modify_engine: bool = True):
         """
         Sets this dialog's state.
 
-        @param patch: the patch object to display this dialog for.
+        @param filename: the filename of the patch.
+        @param version: optional detected patch version.
+        @param is_extended: optional extended engine state.
         @param engines: a dict of engine configurations.
         @param workspace: a loaded workspace object.
         @param modify_engine: set to True if the user is allowed to change the engine.
@@ -62,13 +66,12 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
 
         self.reset()
 
-        self.patch = patch
         self.engines = engines
         self.workspace = workspace
 
         # Display the patch filename if it exists.
-        if patch.filename is not None:
-            self.SetLabel('Patch settings - ' + os.path.basename(patch.filename))
+        if filename is not None:
+            self.SetLabel('Patch settings - ' + os.path.basename(filename))
         else:
             self.SetLabel('Patch settings')
 
@@ -87,7 +90,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
 
         # Display a list of engines that are supported by the patch.
         for name, engine in self.engines.items():
-            if engine.is_compatible(self.patch) or self.patch.version == 0:
+            if engine.is_compatible(version, is_extended) or version is None or version == 0:
                 self.EngineList.Append(engine.name, clientData=name)
 
                 if workspace.engine == name:

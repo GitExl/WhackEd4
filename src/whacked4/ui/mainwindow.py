@@ -3,6 +3,7 @@
 
 from whacked4 import config, utils
 from whacked4.dehacked import engine, patch
+from whacked4.dehacked.patch import Patch
 from whacked4.doom import wadlist, wad
 from whacked4.doom.wad import WAD
 from whacked4.ui import windows, workspace
@@ -136,7 +137,7 @@ class MainWindow(windows.MainFrameBase):
         Displays the patch settings dialog.
         """
 
-        self.patch_info.set_state(self.patch, self.engines, self.workspace, modify_engine=False)
+        self.patch_info.set_state(self.patch.filename, self.patch.version, self.patch.extended, self.engines, self.workspace, modify_engine=False)
         self.patch_info.ShowModal()
 
         # Alter workspace settings if the user clicked Ok.
@@ -201,9 +202,9 @@ class MainWindow(windows.MainFrameBase):
             new_workspace.load(filename)
 
         # Analyze the patch file to determine what engines support it.
-        new_patch = patch.Patch()
+
         try:
-            new_patch.analyze_patch(filename, self.engines)
+            version, is_extended = Patch.analyze(filename, self.engines)
         except patch.DehackedPatchError as e:
             wx.MessageBox(message=e.__str__(), caption='Patch error', style=wx.OK | wx.ICON_ERROR, parent=self)
             return
@@ -211,7 +212,7 @@ class MainWindow(windows.MainFrameBase):
         # Display the patch info dialog to let the user select patch settings.
         # Do not show the info dialog if a workspace was found, unless forced.
         patch_info = patchinfodialog.PatchInfoDialog(self)
-        patch_info.set_state(new_patch, self.engines, new_workspace)
+        patch_info.set_state(filename, version, is_extended, self.engines, new_workspace)
         if new_workspace.engine is None or force_show_settings:
             patch_info.ShowModal()
 
@@ -227,7 +228,7 @@ class MainWindow(windows.MainFrameBase):
 
         # Initialize the patch with tables from the selected engine.
         selected_engine = self.engines[new_workspace.engine]
-        new_patch.initialize_from_engine(selected_engine)
+        new_patch = Patch(selected_engine)
 
         # Attempt to parse the patch file.
         try:
@@ -276,16 +277,16 @@ class MainWindow(windows.MainFrameBase):
         """
 
         # Analyze the patch file to determine what engines support it.
-        new_patch = patch.Patch()
         try:
-            new_patch.analyze_patch(filename, self.engines)
+            version, is_extended = Patch.analyze(filename, self.engines)
         except patch.DehackedPatchError as e:
             wx.MessageBox(message=e.__str__(), caption='Patch error', style=wx.OK | wx.ICON_ERROR, parent=self)
             return
 
         # Check for compatibility.
-        if new_patch.version != self.patch.version or new_patch.extended != self.patch.extended:
-            wx.MessageBox(message='The patch is not compatible with the currently loaded patch. Check the patch version and any extended features.', caption='Patch not compatible', style=wx.OK | wx.ICON_ERROR, parent=self)
+        if version != self.patch.version or is_extended != self.patch.extended:
+            wx.MessageBox(message='The patch is not compatible with the currently loaded patch. Check the patch '
+                                  'version and any extended features.', caption='Patch not compatible', style=wx.OK | wx.ICON_ERROR, parent=self)
             return
 
         # Attempt to parse the patch file.
@@ -497,12 +498,9 @@ class MainWindow(windows.MainFrameBase):
 
         new_workspace = workspace.Workspace()
 
-        new_patch = patch.Patch()
-        new_patch.filename = None
-
         # Ask the user to provide patch details.
         patch_info = patchinfodialog.PatchInfoDialog(self)
-        patch_info.set_state(new_patch, self.engines, new_workspace)
+        patch_info.set_state(None, None, None, self.engines, new_workspace)
         patch_info.ShowModal()
 
         if patch_info.selected_engine is None:
@@ -515,9 +513,9 @@ class MainWindow(windows.MainFrameBase):
 
         # Initialize patch table data.
         selected_engine = self.engines[patch_info.selected_engine]
+        new_patch = patch.Patch(selected_engine)
         new_patch.version = max(selected_engine.versions)
         new_patch.extended = selected_engine.extended
-        new_patch.initialize_from_engine(selected_engine)
 
         # Store new patch info.
         self.patch = new_patch

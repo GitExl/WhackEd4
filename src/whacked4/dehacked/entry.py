@@ -1,7 +1,7 @@
 import copy
 
 from dataclasses import dataclass
-from typing import Optional, Dict
+from typing import Optional, Dict, Self, BinaryIO
 
 from whacked4.dehacked.table import Table
 from whacked4.enum import WhackedEnum
@@ -48,16 +48,16 @@ class Entry:
         self.table: Table = table
         self.values: Dict[str, any] = {}
         self.extra_values: Dict[str, any] = {}
-        self.unused = False
+        self.unused: bool = False
 
-    def __getitem__(self, key):
+    def __getitem__(self, key: str) -> any:
         """
         Returns an item from the fields list.
         """
 
         return self.values[key]
 
-    def __setitem__(self, key, value):
+    def __setitem__(self, key: str, value: any):
         """
         Sets an item in the fields list.
 
@@ -69,10 +69,10 @@ class Entry:
 
         self.values[key] = value
 
-    def __contains__(self, item):
+    def __contains__(self, item: str) -> bool:
         return item in self.values
 
-    def parse_field_value(self, key, value):
+    def parse_field_value(self, key: str, value: any) -> any:
         """
         Validates a patch field value.
 
@@ -106,7 +106,7 @@ class Entry:
 
         raise ValueError('Unknown field value type "{}".'.format(field.type))
 
-    def set_patch_key(self, patch_key, value):
+    def set_patch_key(self, patch_key: str, value: any):
         """
         Sets a field's value directly from a Dehacked patch key.
 
@@ -126,7 +126,7 @@ class Entry:
         # No known patch key found, store it as extra values.
         self.extra_values[patch_key] = value
 
-    def read_from_executable(self, f):
+    def read_from_executable(self, f: BinaryIO):
         """
         Reads this entry's values from an executable.
         """
@@ -139,7 +139,7 @@ class Entry:
 
         return self
 
-    def from_json(self, json):
+    def from_json(self, json: Dict[str, any]):
         """
         Reads this entry's values from a JSON object.
         """
@@ -154,14 +154,14 @@ class Entry:
 
         return self
 
-    def to_json(self):
+    def to_json(self) -> Dict[str, any]:
         """
         Writes this entry's values to a JSON object. Currently just returns it's values dict.
         """
 
         return self.values
 
-    def get_patch_header(self, index, offset=0):
+    def get_patch_header(self, index: int, offset: int = 0) -> str:
         """
         Returns a string representing this entry's header in a Dehacked file.
         """
@@ -171,7 +171,7 @@ class Entry:
         else:
             return '\n{} {}\n'.format(self.NAME, index + offset)
 
-    def get_patch_string(self, original):
+    def get_patch_string(self, original: Self) -> Optional[str]:
         """
         Returns a string with all of this entry's modified values, for writing to a Dehacked patch.
 
@@ -212,7 +212,7 @@ class Entry:
 
         return '\n'.join(output_list) + '\n'
 
-    def apply_defaults(self, default_entry):
+    def apply_defaults(self, default_entry: Self):
         if self.name is None:
             self.name = default_entry.name
 
@@ -220,7 +220,7 @@ class Entry:
             if key not in self.values:
                 self.values[key] = self.parse_field_value(key, value)
 
-    def clone(self):
+    def clone(self) -> Self:
         """
         Returns a clone of this entry.
         """
@@ -232,5 +232,5 @@ class Entry:
 
         return dup
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return '{}: {}'.format(self.NAME, self.values)

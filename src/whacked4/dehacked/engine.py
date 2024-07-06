@@ -1,5 +1,4 @@
 import json
-from dataclasses import dataclass
 
 from json.encoder import JSONEncoder
 from typing import List, Dict, Set, Optional
@@ -16,7 +15,7 @@ class DehackedEngineError(Exception):
     """
 
 
-class Engine(object):
+class Engine:
     """
     An engine contains all the data needed to be able to edit Dehacked patches. This data can be extracted from a
     game executable, or loaded from a JSON file.
@@ -55,7 +54,7 @@ class Engine(object):
         self.misc_data: Dict[str, Dict[str, str]] = {}
 
         # Strings dictionary.
-        self.strings: Dict[str] = {}
+        self.strings: Dict[str, str] = {}
 
         # Sprite names.
         self.sprite_names: List[str] = []
@@ -64,13 +63,13 @@ class Engine(object):
         self.action_index_to_state: List[int] = []
 
         # A dict of actions available to this engine.
-        self.actions: Dict[Action] = {}
+        self.actions: Dict[str, Action] = {}
 
         # A set of state indices whose use is hardcoded in the game executable.
         self.used_states: Set[int] = set()
 
         # A list of supported render styles.
-        self.render_styles: Dict[str] = {}
+        self.render_styles: Dict[str, str] = {}
 
         # A set of supported features.
         self.features: Set[str] = set()
@@ -82,7 +81,7 @@ class Engine(object):
         self.default_ammo: Entry = entries.AmmoEntry(self.ammo)
         self.default_sound: Entry = entries.SoundEntry(self.sounds)
 
-    def merge_data(self, filename, is_base_table=False):
+    def merge_data(self, filename: str, is_base_table: bool = False):
         """
         Reads and merges engine data from a JSON table configuration file into the current engine.
 
@@ -165,7 +164,7 @@ class Engine(object):
         self.ammo.apply_defaults(self.default_ammo)
         self.sounds.apply_defaults(self.default_sound)
 
-    def get_action_key_from_name(self, action_name):
+    def get_action_key_from_name(self, action_name: str):
         """
         Returns an action key from an action name. Useful for getting action names for non-extended engines.
 
@@ -181,16 +180,16 @@ class Engine(object):
 
         return None
 
-    def is_compatible(self, patch):
+    def is_compatible(self, version: int, is_extended: bool):
         """
         Returns True if the patch can be loaded with this engine.
 
         @param patch: the patch to examine.
         """
 
-        if patch.version not in self.versions:
+        if version not in self.versions:
             return False
-        if patch.extended and not self.extended:
+        if is_extended and not self.extended:
             return False
 
         return True
@@ -215,7 +214,7 @@ class EngineJSONEncoder(JSONEncoder):
         return JSONEncoder.default(self, o)
 
 
-def get_key_from_patchkey(data, patch_key):
+def get_key_from_patchkey(data: Dict[str, Dict[str, str]], patch_key: str) -> Optional[str]:
     """
     Returns an internal entry key from a key used in a Dehacked patch file.
     This is used by the cheats and miscellaneous sections, since they do not have an associated table.

@@ -3,7 +3,7 @@ This module contains classes to create, read and write Dehacked patches.
 """
 
 import copy
-from typing import Dict, Optional, List
+from typing import Dict, Optional, List, Tuple
 
 from whacked4 import config
 from whacked4.dehacked import entries
@@ -89,7 +89,7 @@ def write_dict(f, items, source_items, data, header):
             f.write('{} = {}\n'.format(key, out[key]))
 
 
-class Patch(object):
+class Patch:
     """
     A Dehacked patch object.
 
@@ -98,46 +98,24 @@ class Patch(object):
 
     FRAME_FLAG_LIT = 0x8000
 
-    def __init__(self):
+    def __init__(self, parent_engine: Engine):
         self.filename: Optional[str] = None
-        self.engine: Optional[Engine] = None
+        self.engine: Engine = parent_engine
         self.version: int = 0
         self.extended: bool = False
 
-        self.things: Optional[Table] = None
-        self.states: Optional[Table] = None
-        self.sounds: Optional[Table] = None
-        self.weapons: Optional[Table] = None
-        self.ammo: Optional[Table] = None
+        self.things: Table = parent_engine.things.clone()
+        self.states: Table = parent_engine.states.clone()
+        self.sounds: Table = parent_engine.sounds.clone()
+        self.weapons: Table = parent_engine.weapons.clone()
+        self.ammo: Table = parent_engine.ammo.clone()
 
-        self.strings: Optional[Dict[str, str]] = None
-        self.cheats: Optional[Dict[str, str]] = None
-        self.misc: Optional[dict] = None
-        self.pars: Optional[List] = None
+        self.strings: Dict[str, str] = copy.deepcopy(parent_engine.strings)
+        self.cheats: Dict[str, str] = copy.deepcopy(parent_engine.cheats)
+        self.misc: Dict[str, any] = copy.deepcopy(parent_engine.misc)
+        self.pars: List = []
 
-        self.sprite_names: Optional[List[str]] = None
-
-    def initialize_from_engine(self, parent_engine: Engine):
-        """
-        Initializes this patch with the data from an engine.
-        """
-
-        self.engine = parent_engine
-        self.extended = parent_engine.extended
-
-        self.things = parent_engine.things.clone()
-        self.states = parent_engine.states.clone()
-        self.sounds = parent_engine.sounds.clone()
-        self.weapons = parent_engine.weapons.clone()
-        self.ammo = parent_engine.ammo.clone()
-
-        self.strings = copy.deepcopy(parent_engine.strings)
-        self.cheats = copy.deepcopy(parent_engine.cheats)
-        self.misc = copy.deepcopy(parent_engine.misc)
-        self.sprite_names = copy.deepcopy(parent_engine.sprite_names)
-
-        if parent_engine.extended:
-            self.pars = []
+        self.sprite_names: List[str] = copy.deepcopy(parent_engine.sprite_names)
 
     def update_string_externals(self, engine_names, patch_names):
         """
@@ -334,11 +312,10 @@ class Patch(object):
                 for index, action in out.items():
                     f.write('FRAME {} = {}\n'.format(index, action))
 
-    def analyze_patch(self, filename, engines):
+    @staticmethod
+    def analyze(filename: str, engines: Dict[str, Engine]) -> Tuple[int, bool]:
         """
         Analyzes a Dehacked patch file without loading it.
-
-        This patch object will have it's state altered to reflect the results of the analysis.
 
         @param filename: The filename of the patch to analyze.
         @param engines: A dict of engine objects.
@@ -348,9 +325,8 @@ class Patch(object):
         @raise DehackedPatchError: if the patch contains extended Dehacked features alongside conflicting normal ones.
         """
 
-        self.filename = filename
-        self.extended = False
-        self.version = 0
+        extended = False
+        version = 0
 
         with open(filename, 'r') as f:
             while True:
@@ -366,33 +342,35 @@ class Patch(object):
                 if line.startswith('Doom version = '):
                     version = int(line[15:])
                     for find_engine in engines.values():
-                        if version in find_engine.versions and self.extended == find_engine.extended:
-                            self.version = version
+                        if version in find_engine.versions and extended == find_engine.extended:
+                            version = version
                             break
 
-                    if self.version == 0:
+                    if version == 0:
                         raise DehackedVersionError('{} with engine version {} does not match any supported engine'
                                                    'version.'.format(filename, version))
 
                 # Detect extended patches from section headers.
                 elif line.startswith('[') and line.endswith(']'):
-                    self.extended = True
+                    extended = True
 
                 # Detect extended patches from thing flag mnemonics.
                 elif line.startswith('Bits = ') and not line[7:].isdigit():
-                    self.extended = True
+                    extended = True
 
                 # Detect normal patches from action pointer values in frames.
                 # Mixing action pointers and [CODEPTR] blocks does not make sense.
                 elif line.startswith('Action pointer = '):
-                    if self.extended:
+                    if extended:
                         raise DehackedPatchError('Conflicting patch extension mechanisms.')
-                    self.extended = False
+                    extended = False
 
-        if self.version == 0:
+        if version == 0:
             raise DehackedVersionError('{} does not define a Doom version.'.format(filename))
 
-    def read_dehacked(self, filename):
+        return version, extended
+
+    def read_dehacked(self, filename: str):
         """
         Reads a Dehacked file.
 
@@ -403,12 +381,12 @@ class Patch(object):
         """
 
         # State.
-        valid = False
-        mode = ParseMode.NOTHING
-        entry_index = -1
+        valid: bool = False
+        mode: ParseMode = ParseMode.NOTHING
+        entry_index: int = -1
 
         # A dict of messages to return.
-        messages = {}
+        messages: Dict[str, str] = {}
 
         with open(filename, 'r') as f:
             while True:
@@ -732,7 +710,7 @@ class Patch(object):
             return self.sounds[sound_index].name.upper()
 
 
-def string_escape(string):
+def string_escape(string: str) -> str:
     """
     Returns an escaped string for use in Dehacked patch writing.
     """
@@ -746,7 +724,7 @@ def string_escape(string):
     return string
 
 
-def string_unescape(string):
+def string_unescape(string: str) -> str:
     """
     Returns an escaped string for use in Dehacked patch reading.
     """
