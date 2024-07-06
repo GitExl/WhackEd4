@@ -117,7 +117,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.Bind(wx.EVT_CHAR_HOOK, self.state_key)
 
-        self.StateList.Bind(EVT_STATE_LIST_EVENT, self.update_properties)
+        self.StateList.Bind(EVT_STATE_LIST_EVENT, self.statelist_event)
         self.StateList.Bind(wx.EVT_KEY_DOWN, self.statelist_key_down)
 
     def build(self, patch):
@@ -938,6 +938,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
     def frame_spin_down(self, event):
         self.frame_set(-1)
+
+    def statelist_event(self, _):
+        self.update_properties()
 
 
 def get_action_param_counts(action):
