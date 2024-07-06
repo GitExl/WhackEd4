@@ -25,7 +25,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         windows.ParFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
-        self.SetIcon(wx.Icon('res/editor-par.ico'))
+        self.SetIcon(wx.Icon('res/editor-par.png'))
 
         self.patch = None
         self.selected_index = 0

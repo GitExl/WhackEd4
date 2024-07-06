@@ -30,7 +30,7 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
             self.Restore
         ]
 
-        self.SetIcon(wx.Icon('res/editor-sounds.ico'))
+        self.SetIcon(wx.Icon('res/editor-sounds.png'))
 
         self.priority_colours = []
         self.build_colours()

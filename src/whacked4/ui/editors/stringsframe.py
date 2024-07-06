@@ -18,7 +18,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         windows.StringsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
-        self.SetIcon(wx.Icon('res/editor-strings.ico'))
+        self.SetIcon(wx.Icon('res/editor-strings.png'))
 
         self.patch = None
         self.string_dialog = None

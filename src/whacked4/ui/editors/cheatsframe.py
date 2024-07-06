@@ -17,7 +17,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         windows.CheatsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
-        self.SetIcon(wx.Icon('res/editor-cheats.ico'))
+        self.SetIcon(wx.Icon('res/editor-cheats.png'))
 
         self.patch = None
         self.selected_index = 0

@@ -4,6 +4,7 @@
 """
 Generic about dialog interface.
 """
+from math import ceil
 
 from whacked4 import config
 from whacked4.ui import windows

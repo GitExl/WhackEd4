@@ -166,7 +166,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         windows.ThingsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
-        self.SetIcon(wx.Icon('res/editor-things.ico'))
+        self.SetIcon(wx.Icon('res/editor-things.png'))
 
         self.patch = None
         self.pwads = None

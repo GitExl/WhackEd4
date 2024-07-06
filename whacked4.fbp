@@ -119,7 +119,7 @@
         <property name="window_name"></property>
         <property name="window_style"></property>
         <object class="tool" expanded="false">
-          <property name="bitmap">Load From File; .\res\editor-things.ico</property>
+          <property name="bitmap">Load From File; res/editor-things.png</property>
           <property name="context_menu">0</property>
           <property name="id">MAIN_TOOL_THINGS</property>
           <property name="kind">wxITEM_CHECK</property>
@@ -131,7 +131,7 @@
           <event name="OnToolClicked">editor_window_tooltoggle</event>
         </object>
         <object class="tool" expanded="false">
-          <property name="bitmap">Load From File; .\res\editor-states.ico</property>
+          <property name="bitmap">Load From File; res/editor-states.png</property>
           <property name="context_menu">0</property>
           <property name="id">MAIN_TOOL_STATES</property>
           <property name="kind">wxITEM_CHECK</property>
@@ -143,7 +143,7 @@
           <event name="OnToolClicked">editor_window_tooltoggle</event>
         </object>
         <object class="tool" expanded="false">
-          <property name="bitmap">Load From File; .\res\editor-sounds.ico</property>
+          <property name="bitmap">Load From File; res/editor-sounds.png</property>
           <property name="context_menu">0</property>
           <property name="id">MAIN_TOOL_SOUNDS</property>
           <property name="kind">wxITEM_CHECK</property>
@@ -155,7 +155,7 @@
           <event name="OnToolClicked">editor_window_tooltoggle</event>
         </object>
         <object class="tool" expanded="false">
-          <property name="bitmap">Load From File; .\res\editor-strings.ico</property>
+          <property name="bitmap">Load From File; res/editor-strings.png</property>
           <property name="context_menu">0</property>
           <property name="id">MAIN_TOOL_STRINGS</property>
           <property name="kind">wxITEM_CHECK</property>
@@ -167,7 +167,7 @@
           <event name="OnToolClicked">editor_window_tooltoggle</event>
         </object>
         <object class="tool" expanded="false">
-          <property name="bitmap">Load From File; .\res\editor-weapons.ico</property>
+          <property name="bitmap">Load From File; res/editor-weapons.png</property>
           <property name="context_menu">0</property>
           <property name="id">MAIN_TOOL_WEAPONS</property>
           <property name="kind">wxITEM_CHECK</property>
@@ -179,7 +179,7 @@
           <event name="OnToolClicked">editor_window_tooltoggle</event>
         </object>
         <object class="tool" expanded="false">
-          <property name="bitmap">Load From File; .\res\editor-ammo.ico</property>
+          <property name="bitmap">Load From File; res/editor-ammo.png</property>
           <property name="context_menu">0</property>
           <property name="id">MAIN_TOOL_AMMO</property>
           <property name="kind">wxITEM_CHECK</property>
@@ -191,7 +191,7 @@
           <event name="OnToolClicked">editor_window_tooltoggle</event>
         </object>
         <object class="tool" expanded="false">
-          <property name="bitmap">Load From File; .\res\editor-cheats.ico</property>
+          <property name="bitmap">Load From File; res/editor-cheats.png</property>
           <property name="context_menu">0</property>
           <property name="id">MAIN_TOOL_CHEATS</property>
           <property name="kind">wxITEM_CHECK</property>
@@ -203,7 +203,7 @@
           <event name="OnToolClicked">editor_window_tooltoggle</event>
         </object>
         <object class="tool" expanded="false">
-          <property name="bitmap">Load From File; .\res\editor-misc.ico</property>
+          <property name="bitmap">Load From File; res/editor-misc.png</property>
           <property name="context_menu">0</property>
           <property name="id">MAIN_TOOL_MISC</property>
           <property name="kind">wxITEM_CHECK</property>
@@ -215,7 +215,7 @@
           <event name="OnToolClicked">editor_window_tooltoggle</event>
         </object>
         <object class="tool" expanded="false">
-          <property name="bitmap">Load From File; .\res\editor-par.ico</property>
+          <property name="bitmap">Load From File; res/editor-par.png</property>
           <property name="context_menu">0</property>
           <property name="id">MAIN_TOOL_PAR</property>
           <property name="kind">wxITEM_CHECK</property>
@@ -15200,7 +15200,7 @@
                       <property name="window_name"></property>
                       <property name="window_style"></property>
                       <object class="tool" expanded="false">
-                        <property name="bitmap">Load From File; .\res\icon-refresh.png</property>
+                        <property name="bitmap">Load From File; res/icon-refresh.png</property>
                         <property name="context_menu">0</property>
                         <property name="id">STATES_FILTERTOOLS_REFRESH</property>
                         <property name="kind">wxITEM_NORMAL</property>
@@ -20940,7 +20940,7 @@
                       <property name="aui_row">0</property>
                       <property name="best_size"></property>
                       <property name="bg"></property>
-                      <property name="bitmapsize"></property>
+                      <property name="bitmapsize">18,18</property>
                       <property name="caption"></property>
                       <property name="caption_visible">1</property>
                       <property name="center_pane">0</property>
@@ -23255,7 +23255,7 @@
                           <property name="aui_row">0</property>
                           <property name="best_size"></property>
                           <property name="bg"></property>
-                          <property name="bitmapsize"></property>
+                          <property name="bitmapsize">18,18</property>
                           <property name="caption"></property>
                           <property name="caption_visible">1</property>
                           <property name="center_pane">0</property>
@@ -23507,7 +23507,7 @@
         </object>
       </object>
     </object>
-    <object class="Dialog" expanded="true">
+    <object class="Dialog" expanded="false">
       <property name="aui_managed">0</property>
       <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
       <property name="bg"></property>
@@ -23535,16 +23535,16 @@
       <property name="window_extra_style"></property>
       <property name="window_name"></property>
       <property name="window_style"></property>
-      <object class="wxBoxSizer" expanded="true">
+      <object class="wxBoxSizer" expanded="false">
         <property name="minimum_size"></property>
         <property name="name">bSizer50</property>
         <property name="orient">wxVERTICAL</property>
         <property name="permission">none</property>
-        <object class="sizeritem" expanded="true">
+        <object class="sizeritem" expanded="false">
           <property name="border">0</property>
           <property name="flag">wxEXPAND</property>
           <property name="proportion">1</property>
-          <object class="wxPanel" expanded="true">
+          <object class="wxPanel" expanded="false">
             <property name="BottomDockable">1</property>
             <property name="LeftDockable">1</property>
             <property name="RightDockable">1</property>
@@ -23596,7 +23596,7 @@
             <property name="window_extra_style"></property>
             <property name="window_name"></property>
             <property name="window_style">wxTAB_TRAVERSAL</property>
-            <object class="wxBoxSizer" expanded="true">
+            <object class="wxBoxSizer" expanded="false">
               <property name="minimum_size"></property>
               <property name="name">bSizer188</property>
               <property name="orient">wxVERTICAL</property>
@@ -24096,7 +24096,7 @@
         </object>
       </object>
     </object>
-    <object class="Dialog" expanded="true">
+    <object class="Dialog" expanded="false">
       <property name="aui_managed">0</property>
       <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
       <property name="bg"></property>
@@ -24124,7 +24124,7 @@
       <property name="window_extra_style"></property>
       <property name="window_name"></property>
       <property name="window_style"></property>
-      <object class="wxBoxSizer" expanded="true">
+      <object class="wxBoxSizer" expanded="false">
         <property name="minimum_size"></property>
         <property name="name">bSizer55</property>
         <property name="orient">wxHORIZONTAL</property>
@@ -24199,11 +24199,11 @@
             </object>
           </object>
         </object>
-        <object class="sizeritem" expanded="true">
+        <object class="sizeritem" expanded="false">
           <property name="border">12</property>
           <property name="flag">wxBOTTOM|wxEXPAND|wxRIGHT|wxTOP</property>
           <property name="proportion">1</property>
-          <object class="wxBoxSizer" expanded="true">
+          <object class="wxBoxSizer" expanded="false">
             <property name="minimum_size"></property>
             <property name="name">bSizer56</property>
             <property name="orient">wxVERTICAL</property>
@@ -24223,7 +24223,7 @@
                 <property name="aui_row">0</property>
                 <property name="best_size"></property>
                 <property name="bg"></property>
-                <property name="bitmap">Load From File; .\res\logo.png</property>
+                <property name="bitmap">Load From File; res/logo.png</property>
                 <property name="caption"></property>
                 <property name="caption_visible">1</property>
                 <property name="center_pane">0</property>
@@ -24249,7 +24249,7 @@
                 <property name="minimize_button">0</property>
                 <property name="minimum_size"></property>
                 <property name="moveable">1</property>
-                <property name="name">m_bitmap4</property>
+                <property name="name">Logo</property>
                 <property name="pane_border">1</property>
                 <property name="pane_position"></property>
                 <property name="pane_size"></property>
@@ -24258,7 +24258,7 @@
                 <property name="pos"></property>
                 <property name="resize">Resizable</property>
                 <property name="show">1</property>
-                <property name="size"></property>
+                <property name="size">-1,-1</property>
                 <property name="subclass"></property>
                 <property name="toolbar_pane">0</property>
                 <property name="tooltip"></property>
@@ -24690,11 +24690,11 @@
                 <property name="width">0</property>
               </object>
             </object>
-            <object class="sizeritem" expanded="true">
+            <object class="sizeritem" expanded="false">
               <property name="border">0</property>
               <property name="flag">wxEXPAND</property>
               <property name="proportion">0</property>
-              <object class="wxBoxSizer" expanded="true">
+              <object class="wxBoxSizer" expanded="false">
                 <property name="minimum_size"></property>
                 <property name="name">bSizer58</property>
                 <property name="orient">wxHORIZONTAL</property>

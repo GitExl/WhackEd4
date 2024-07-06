@@ -23,7 +23,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         windows.AmmoFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
-        self.SetIcon(wx.Icon('res/editor-ammo.ico'))
+        self.SetIcon(wx.Icon('res/editor-ammo.png'))
 
         self.patch = None
         self.selected_index = -1

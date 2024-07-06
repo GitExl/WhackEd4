@@ -17,7 +17,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         windows.MiscFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
-        self.SetIcon(wx.Icon('res/editor-misc.ico'))
+        self.SetIcon(wx.Icon('res/editor-misc.png'))
 
         self.patch = None
         self.selected_index = -1
