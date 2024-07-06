@@ -52,7 +52,7 @@ class StateList(wx.ListCtrl):
         self.item_colors: List[Colour] = []
         self.mix_state_colours()
 
-        self.state_query_result: Optional[StateQueryResult] = None
+        self.query_result: Optional[StateQueryResult] = None
 
     def mix_state_colours(self):
         background_color = self.GetBackgroundColour()
@@ -77,7 +77,7 @@ class StateList(wx.ListCtrl):
         colour_index = 0
         previous_sprite = 0
         list_index = 0
-        for item_index, state_index, state in self.state_query_result:
+        for item_index, state_index, state in self.query_result:
             if state['sprite'] != previous_sprite:
                 colour_index += 1
                 if colour_index == len(self.item_colors):
@@ -105,7 +105,7 @@ class StateList(wx.ListCtrl):
             self.InsertColumn(StateColumn.ACTION, 'Action', width=floor(160 * self.GetDPIScaleFactor()))
             self.InsertColumn(StateColumn.PARAMETERS, 'Parameters', width=floor(107 * self.GetDPIScaleFactor()))
 
-        for item_index, state_index, state in self.state_query_result:
+        for item_index, state_index, state in self.query_result:
             self.InsertItem(item_index, '')
             self.update_row(item_index, state_index, state)
             self.SetItemFont(item_index, config.FONT_MONOSPACED)
@@ -139,17 +139,17 @@ class StateList(wx.ListCtrl):
 
     def set_patch(self, patch: Patch):
         self.patch = patch
-        self.state_query_result = None
+        self.query_result = None
 
     def set_state_query_result(self, state_query_result: StateQueryResult):
-        self.state_query_result = state_query_result
+        self.query_result = state_query_result
         self.build()
 
     def select_first_valid_state(self):
-        if self.state_query_result is None or not len(self.state_query_result):
+        if self.query_result is None or not len(self.query_result):
             return
 
-        state = self.state_query_result.get_state_for_item_index(0)
+        state = self.query_result.get_state_for_item_index(0)
         if state is not None and state['sprite'] != 0:
             self.set_selected([0])
         else:
@@ -157,8 +157,8 @@ class StateList(wx.ListCtrl):
 
     def refresh_selected_rows(self):
         for item_index in self.selected:
-            state_index = self.state_query_result.get_state_index_for_item_index(item_index)
-            state = self.state_query_result.get_state_for_item_index(item_index)
+            state_index = self.query_result.get_state_index_for_item_index(item_index)
+            state = self.query_result.get_state_for_item_index(item_index)
             if state is not None:
                 self.update_row(item_index, state_index, state)
 
@@ -177,8 +177,8 @@ class StateList(wx.ListCtrl):
 
     def iterate_selected(self) -> Tuple[int, int, Entry]:
         for item_index in self.selected:
-            state_index = self.state_query_result.get_state_index_for_item_index(item_index)
-            state = self.state_query_result.get_state_for_item_index(item_index)
+            state_index = self.query_result.get_state_index_for_item_index(item_index)
+            state = self.query_result.get_state_for_item_index(item_index)
 
             if state is not None:
                 yield item_index, state_index, state
