@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #coding=utf8
+from math import floor
 
 from whacked4 import utils
 from whacked4.ui import editormixin, windows
@@ -85,8 +86,8 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
 
         # Add column headers if necessary.
         if self.MiscList.GetColumnCount() == 0:
-            self.MiscList.InsertColumn(0, 'Name', width=76)
-            self.MiscList.InsertColumn(1, 'Value', width=67)
+            self.MiscList.InsertColumn(0, 'Name', width=floor(76 * self.GetDPIScaleFactor()))
+            self.MiscList.InsertColumn(1, 'Value', width=floor(67 * self.GetDPIScaleFactor()))
 
         misc_values = list(self.patch.engine.misc_data.values())
         for misc_index in range(len(misc_values)):

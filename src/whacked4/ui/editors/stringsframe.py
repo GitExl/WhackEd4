@@ -1,4 +1,5 @@
 import copy
+from math import floor
 
 import wx
 
@@ -49,11 +50,11 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
 
         if self.StringList.GetColumnCount() == 0:
             if self.patch.extended:
-                self.StringList.InsertColumn(0, 'Name', width=134)
-                self.StringList.InsertColumn(1, 'String', width=800)
+                self.StringList.InsertColumn(0, 'Name', width=floor(134 * self.GetDPIScaleFactor()))
+                self.StringList.InsertColumn(1, 'String', width=floor(800 * self.GetDPIScaleFactor()))
             else:
-                self.StringList.InsertColumn(0, 'Index', width=42)
-                self.StringList.InsertColumn(1, 'String', width=800)
+                self.StringList.InsertColumn(0, 'Index', width=floor(42 * self.GetDPIScaleFactor()))
+                self.StringList.InsertColumn(1, 'String', width=floor(800 * self.GetDPIScaleFactor()))
 
         for row_index, string_key in enumerate(self.patch.strings.keys()):
             if string_key not in self.patch.engine.strings:

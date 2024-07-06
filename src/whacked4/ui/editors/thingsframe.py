@@ -1,3 +1,4 @@
+from math import floor
 from typing import List, Tuple, Dict, Set
 
 from wx import PostEvent
@@ -274,11 +275,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingList.ClearAll()
 
         if self.ThingList.GetColumnCount() == 0:
-            self.ThingList.InsertColumn(0, '', width=36)
-            self.ThingList.InsertColumn(1, 'Name', width=225)
-            self.ThingList.InsertColumn(2, 'ID', width=46)
+            self.ThingList.InsertColumn(0, '', width=floor(36 * self.GetDPIScaleFactor()))
+            self.ThingList.InsertColumn(1, 'Name', width=floor(225 * self.GetDPIScaleFactor()))
+            self.ThingList.InsertColumn(2, 'ID', width=floor(46 * self.GetDPIScaleFactor()))
             if 'thing.game' in self.patch.engine.features:
-                self.ThingList.InsertColumn(3, 'Game', width=50)
+                self.ThingList.InsertColumn(3, 'Game', width=floor(50 * self.GetDPIScaleFactor()))
 
         for index, thing in enumerate(self.patch.things):
             self.ThingList.InsertItem(index, '')

@@ -1,12 +1,12 @@
 from enum import IntEnum
+from math import floor
 from typing import Optional, List, Tuple
 
 import wx
-from wx import ItemAttr, Colour, ListEvent, PostEvent, SizeEvent
+from wx import Colour, ListEvent, PostEvent, SizeEvent
 from wx.lib.newevent import NewEvent
 
 from whacked4 import config, utils
-from whacked4.dehacked.action import Action
 from whacked4.dehacked.entry import Entry
 from whacked4.dehacked.patch import Patch
 from whacked4.dehacked.statequery.result import StateQueryResult
@@ -95,15 +95,15 @@ class StateList(wx.ListCtrl):
         self.ClearAll()
 
         if self.GetColumnCount() == 0:
-            self.InsertColumn(StateColumn.INDEX, '', width=47)
-            self.InsertColumn(StateColumn.NAME, 'Name', width=59)
-            self.InsertColumn(StateColumn.SPRITE, 'Spr', width=42)
-            self.InsertColumn(StateColumn.FRAME, 'Frm', width=42)
-            self.InsertColumn(StateColumn.LIT, 'Lit', width=27)
-            self.InsertColumn(StateColumn.NEXT, 'Next', width=50)
-            self.InsertColumn(StateColumn.DURATION, 'Dur', width=50)
-            self.InsertColumn(StateColumn.ACTION, 'Action', width=160)
-            self.InsertColumn(StateColumn.PARAMETERS, 'Parameters', width=107)
+            self.InsertColumn(StateColumn.INDEX, '', width=floor(47 * self.GetDPIScaleFactor()))
+            self.InsertColumn(StateColumn.NAME, 'Name', width=floor(59 * self.GetDPIScaleFactor()))
+            self.InsertColumn(StateColumn.SPRITE, 'Spr', width=floor(42 * self.GetDPIScaleFactor()))
+            self.InsertColumn(StateColumn.FRAME, 'Frm', width=floor(42 * self.GetDPIScaleFactor()))
+            self.InsertColumn(StateColumn.LIT, 'Lit', width=floor(27 * self.GetDPIScaleFactor()))
+            self.InsertColumn(StateColumn.NEXT, 'Next', width=floor(50 * self.GetDPIScaleFactor()))
+            self.InsertColumn(StateColumn.DURATION, 'Dur', width=floor(50 * self.GetDPIScaleFactor()))
+            self.InsertColumn(StateColumn.ACTION, 'Action', width=floor(160 * self.GetDPIScaleFactor()))
+            self.InsertColumn(StateColumn.PARAMETERS, 'Parameters', width=floor(107 * self.GetDPIScaleFactor()))
 
         for item_index, state_index, state in self.state_query_result:
             self.InsertItem(item_index, '')

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #coding=utf8
+from math import floor
 
 from whacked4 import config, utils
 from whacked4.ui import editormixin, windows
@@ -103,10 +104,10 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
         # Add column headers if necessary.
         if self.SoundList.GetColumnCount() == 0:
-            self.SoundList.InsertColumn(0, 'Index', width=41)
-            self.SoundList.InsertColumn(1, 'Name', width=54)
-            self.SoundList.InsertColumn(2, 'Priority', width=50)
-            self.SoundList.InsertColumn(3, 'Singular', width=58)
+            self.SoundList.InsertColumn(0, 'Index', width=floor(41 * self.GetDPIScaleFactor()))
+            self.SoundList.InsertColumn(1, 'Name', width=floor(54 * self.GetDPIScaleFactor()))
+            self.SoundList.InsertColumn(2, 'Priority', width=floor(50 * self.GetDPIScaleFactor()))
+            self.SoundList.InsertColumn(3, 'Singular', width=floor(58 * self.GetDPIScaleFactor()))
 
         # Add dummy sound.
         self.SoundList.InsertItem(0, '0')

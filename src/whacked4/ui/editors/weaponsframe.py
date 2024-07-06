@@ -1,3 +1,5 @@
+from math import floor
+
 from whacked4 import utils
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import statepreviewdialog
@@ -120,8 +122,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.WeaponList.ClearAll()
 
         if self.WeaponList.GetColumnCount() == 0:
-            self.WeaponList.InsertColumn(0, 'Name', width=120)
-            self.WeaponList.InsertColumn(1, 'Ammo', width=120)
+            self.WeaponList.InsertColumn(0, 'Name', width=floor(120 * self.GetDPIScaleFactor()))
+            self.WeaponList.InsertColumn(1, 'Ammo', width=floor(120 * self.GetDPIScaleFactor()))
 
         for index in range(len(self.patch.weapons)):
             self.WeaponList.InsertItem(index, '')

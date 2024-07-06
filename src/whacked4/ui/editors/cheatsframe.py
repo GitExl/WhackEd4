@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #coding=utf8
+from math import floor
 
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import stringdialog
@@ -51,8 +52,8 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
 
         # Add column headers if necessary.
         if self.CheatList.GetColumnCount() == 0:
-            self.CheatList.InsertColumn(0, 'Name', width=185)
-            self.CheatList.InsertColumn(1, 'Code', width=138)
+            self.CheatList.InsertColumn(0, 'Name', width=floor(185 * self.GetDPIScaleFactor()))
+            self.CheatList.InsertColumn(1, 'Code', width=floor(138 * self.GetDPIScaleFactor()))
 
         for index, key in enumerate(self.patch.engine.cheat_data.keys()):
             self.CheatList.InsertItem(index, self.patch.engine.cheat_data[key]['name'])

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #coding=utf8
+from math import floor
 
 from whacked4 import utils
 import wx
@@ -34,7 +35,7 @@ class SpritePreview(wx.Panel):
         self.baseline_factor = 0.8
 
         # Scale to draw sprites at.
-        self.scale = 1.0
+        self.scale = 1.0 * self.GetDPIScaleFactor()
 
         # The icon to display instead of missing sprites.
         self.missing = wx.Bitmap('res/icon-missing.png', wx.BITMAP_TYPE_PNG)
@@ -211,7 +212,7 @@ class SpritePreview(wx.Panel):
 
         self.src_dc.SelectObject(bitmap)
         if self.scale != 1:
-            dc.StretchBlit(x, y, bitmap.Width * self.scale, bitmap.Height * self.scale, self.src_dc, 0, 0, bitmap.Width, bitmap.Height, wx.COPY, True)
+            dc.StretchBlit(x, y, floor(bitmap.Width * self.scale), floor(bitmap.Height * self.scale), self.src_dc, 0, 0, bitmap.Width, bitmap.Height, wx.COPY, True)
         else:
             dc.Blit(x, y, bitmap.Width, bitmap.Height, self.src_dc, 0, 0, wx.COPY, True)
 
@@ -245,7 +246,7 @@ class SpritePreview(wx.Panel):
         self.create_floor_points()
 
     def set_scale(self, scale):
-        self.scale = scale
+        self.scale = scale * self.GetDPIScaleFactor()
         self.create_floor_points()
         self.update_paint()
 

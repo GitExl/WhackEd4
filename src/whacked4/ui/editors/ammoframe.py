@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #coding=utf8
+from math import floor
 
 from whacked4 import utils
 from whacked4.ui import editormixin, windows
@@ -54,9 +55,9 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
 
         # Add column headers if necessary.
         if self.AmmoList.GetColumnCount() == 0:
-            self.AmmoList.InsertColumn(0, 'Name', width=76)
-            self.AmmoList.InsertColumn(1, 'Maximum', width=67)
-            self.AmmoList.InsertColumn(2, 'Pickup', width=49)
+            self.AmmoList.InsertColumn(0, 'Name', width=floor(76 * self.GetDPIScaleFactor()))
+            self.AmmoList.InsertColumn(1, 'Maximum', width=floor(67 * self.GetDPIScaleFactor()))
+            self.AmmoList.InsertColumn(2, 'Pickup', width=floor(49 * self.GetDPIScaleFactor()))
 
         for ammo_index in range(len(self.patch.ammo)):
             self.AmmoList.InsertItem(ammo_index, '')

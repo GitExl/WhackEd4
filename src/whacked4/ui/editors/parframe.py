@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #coding=utf8
+from math import floor
 
 from whacked4 import utils
 from whacked4.dehacked import entries
@@ -58,9 +59,9 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
 
         # Add columns if needed.
         if self.ParList.GetColumnCount() == 0:
-            self.ParList.InsertColumn(0, 'Map', width=59)
-            self.ParList.InsertColumn(1, 'Seconds', width=58)
-            self.ParList.InsertColumn(2, 'Minutes', width=69)
+            self.ParList.InsertColumn(0, 'Map', width=floor(59 * self.GetDPIScaleFactor()))
+            self.ParList.InsertColumn(1, 'Seconds', width=floor(58 * self.GetDPIScaleFactor()))
+            self.ParList.InsertColumn(2, 'Minutes', width=floor(69 * self.GetDPIScaleFactor()))
 
         for index in range(len(self.patch.pars)):
             self.ParList.InsertItem(index, '')
