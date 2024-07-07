@@ -1,5 +1,11 @@
+"""
+Startup dialog UI.
+"""
+
 import webbrowser
 import os
+
+from wx import Window, CommandEvent, ListEvent
 
 from whacked4 import config
 from whacked4.ui import windows
@@ -7,11 +13,12 @@ from whacked4.ui import windows
 
 class StartDialog(windows.StartDialogBase):
     """
-    This dialog is meant to be displayed on startup of the application. It allows the user to quickly
-    access some common functions without having to dig down into a menu first.
+    This dialog is meant to be displayed on startup of the application. It allows
+    the user to quickly access some common functions without having to dig down into
+    a menu first.
     """
 
-    def __init__(self, parent):
+    def __init__(self, parent: Window):
         windows.StartDialogBase.__init__(self, parent)
 
         self.SetEscapeId(windows.START_CANCEL)
@@ -25,7 +32,7 @@ class StartDialog(windows.StartDialogBase):
         for index, filename in enumerate(recent_files):
             self.FileList.InsertItem(index, filename)
 
-    def open_file_list(self, event):
+    def open_file_list(self, event: ListEvent):
         """
         Opens a Dehacked patch directly from the file list.
         """
@@ -34,17 +41,17 @@ class StartDialog(windows.StartDialogBase):
         filename = config.settings['recent_files'][event.GetIndex()]
         self.GetParent().open_file(filename)
 
-    def new_file(self, event):
+    def new_file(self, event: CommandEvent):
         self.EndModal(0)
         self.GetParent().new_file()
 
-    def open_file(self, event):
+    def open_file(self, event: CommandEvent):
         self.EndModal(0)
         self.GetParent().open_file_dialog()
 
-    def cancel(self, event):
+    def cancel(self, event: CommandEvent):
         self.EndModal(0)
 
-    def help(self, event):
+    def help(self, event: CommandEvent):
         file = 'file://' + os.path.join(os.getcwd(), 'docs/index.html')
         webbrowser.open(file)

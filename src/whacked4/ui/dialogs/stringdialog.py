@@ -1,8 +1,14 @@
-from whacked4.ui import windows
+"""
+String editor UI.
+"""
 
-import whacked4.config as config
+from typing import Optional
 
 import wx
+from wx import Window, CommandEvent, ActivateEvent
+
+from whacked4 import config
+from whacked4.ui import windows
 
 
 class StringDialog(windows.StringDialogBase):
@@ -10,7 +16,7 @@ class StringDialog(windows.StringDialogBase):
     This dialog displays a string to be edited by the user.
     """
 
-    def __init__(self, parent):
+    def __init__(self, parent: Window):
         windows.StringDialogBase.__init__(self, parent)
 
         self.SetEscapeId(windows.STRING_CANCEL)
@@ -18,13 +24,20 @@ class StringDialog(windows.StringDialogBase):
         self.Original.SetFont(config.FONT_MONOSPACED)
         self.New.SetFont(config.FONT_MONOSPACED)
 
-        self.engine_string = None
-        self.old_string = None
-        self.new_string = None
-        self.extended = False
-        self.max_length = 0
+        self.engine_string: Optional[str] = None
+        self.old_string: Optional[str] = None
+        self.new_string: Optional[str] = None
+        self.extended: bool = False
+        self.max_length: int = 0
 
-    def set_state(self, engine_string, old_string, extended, name, cheat=False):
+    def set_state(
+        self,
+        engine_string: str,
+        old_string: str,
+        extended: bool,
+        name: str,
+        cheat: bool = False
+    ):
         """
         Sets a new state for this string dialog.
         """
@@ -38,11 +51,16 @@ class StringDialog(windows.StringDialogBase):
         self.New.ChangeValue(old_string)
 
         if cheat:
-            self.SetLabel('Cheat - {}'.format(name))
+            self.SetLabel(f'Cheat - {name}')
             self.New.SetWindowStyleFlag(wx.TE_DONTWRAP)
         else:
-            self.SetLabel('String - {}'.format(name))
-            self.New.SetWindowStyleFlag(wx.TE_MULTILINE | wx.TE_DONTWRAP | wx.TE_PROCESS_ENTER | wx.TE_PROCESS_TAB)
+            self.SetLabel(f'String - {name}')
+            self.New.SetWindowStyleFlag(
+                wx.TE_MULTILINE |
+                wx.TE_DONTWRAP |
+                wx.TE_PROCESS_ENTER |
+                wx.TE_PROCESS_TAB
+            )
 
         if extended:
             self.max_length = 0
@@ -62,8 +80,16 @@ class StringDialog(windows.StringDialogBase):
         self.New.SelectAll()
         self.New.SetFocus()
 
-    def get_max_string_length(self, original_len) -> int:
-        # Source: Chocolate Doom
+    def get_max_string_length(self, original_len: int) -> int:
+        """
+        Calculate the maximum allowed string length.
+
+        Source: Chocolate Doom
+
+        :param original_len: length in the original engine string
+
+        :return: maximmum allowed length that can be stored inside the executable
+        """
 
         # Enough bytes for the string and the NUL terminator
         max_len = original_len + 1
@@ -75,7 +101,7 @@ class StringDialog(windows.StringDialogBase):
         # Less one for the NUL terminator.
         return max_len - 1
 
-    def text_enter(self, event):
+    def text_enter(self, event: CommandEvent):
         """
         Called when text is entered.
         """
@@ -101,32 +127,37 @@ class StringDialog(windows.StringDialogBase):
             plural = 's'
 
         if chars_left < 0:
-            label = '{} character{} too many'.format(abs(chars_left), plural)
+            chars_left = abs(chars_left)
+            label = f'{chars_left} character{plural} too many'
         else:
             if chars_left == 0:
                 chars_left = 'No more'
-            label = '{} character{} left'.format(chars_left, plural)
+            label = f'{chars_left} character{plural} left'
 
         self.CharsLeft.SetLabel(label)
         self.ButtonOk.Enable(self.is_new_length_valid())
 
-    def activate(self, event):
+    def activate(self, event: ActivateEvent):
         self.New.SetFocus()
 
-    def is_new_length_valid(self):
+    def is_new_length_valid(self) -> bool:
+        """
+        Returns if a new text control length is a valid length.
+        """
+
         if self.extended:
             return True
 
         text = self.New.GetValue()
         return len(text) <= self.max_length
 
-    def ok(self, event):
+    def ok(self, event: CommandEvent):
         if not self.is_new_length_valid():
             return
 
         self.new_string = self.New.GetValue()
         self.EndModal(0)
 
-    def cancel(self, event):
+    def cancel(self, event: CommandEvent):
         self.new_string = None
         self.EndModal(0)

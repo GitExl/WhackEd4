@@ -1,3 +1,7 @@
+"""
+Main UI frame.
+"""
+
 from whacked4 import config, utils
 from whacked4.dehacked import engine, patch
 from whacked4.dehacked.patch import Patch

@@ -1,3 +1,7 @@
+"""
+Custom state list control.
+"""
+
 from enum import IntEnum
 from math import floor
 from typing import Optional, List, Tuple

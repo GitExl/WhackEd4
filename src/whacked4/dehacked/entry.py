@@ -1,6 +1,7 @@
 import copy
 
 from dataclasses import dataclass
+from struct import Struct
 from typing import Optional, Dict, Self, BinaryIO
 
 from whacked4.dehacked.table import Table
@@ -35,13 +36,13 @@ class Field:
 class Entry:
 
     # The name of this patch entry.
-    NAME = None
+    NAME: Optional[str] = None
 
     # The struct definition to use when reading this entry directly from an executable.
-    STRUCTURE = None
+    STRUCTURE: Optional[Struct] = None
 
     # A dict of fields in this entry.
-    FIELDS = None
+    FIELDS: Optional[Dict[str, Field]] = None
 
     def __init__(self, table: Table):
         self.name: Optional[str] = None
@@ -100,8 +101,8 @@ class Entry:
             except ValueError:
                 raise ValueError('Value "{}" for field "{}" is not a float.'.format(value, key))
 
-        elif field.type == FieldType.STRING or field.type == FieldType.ACTION or field.type == FieldType.ENUM_GAME or \
-                field.type == FieldType.ENUM_RENDER_STYLE:
+        elif field.type == FieldType.STRING or field.type == FieldType.ACTION or \
+                field.type == FieldType.ENUM_GAME or field.type == FieldType.ENUM_RENDER_STYLE:
             return str(value)
 
         raise ValueError('Unknown field value type "{}".'.format(field.type))

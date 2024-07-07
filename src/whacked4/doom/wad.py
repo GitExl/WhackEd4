@@ -3,7 +3,7 @@ Contains Doom WAD file reading classes.
 """
 
 import struct
-from typing import Optional, List
+from typing import List, Optional
 
 
 class WADError(Exception):
@@ -11,7 +11,7 @@ class WADError(Exception):
     Base class for errors in WAD files.
     """
 
-    def __init__(self, msg):
+    def __init__(self, msg: str):
         self.msg = msg
 
     def __str__(self):
@@ -32,14 +32,14 @@ class Lump:
     WAD's data in memory.
     """
 
-    def __init__(self, name, size, offset, owner):
-        self.name = name
-        self.size = size
-        self.offset = offset
-        self.data = None
-        self.owner = owner
+    def __init__(self, name: str, size: int, offset: int, owner):
+        self.name: str = name
+        self.size: int = size
+        self.offset: int = offset
+        self.data: Optional[bytes] = None
+        self.owner: WAD = owner
 
-    def get_data(self):
+    def get_data(self) -> bytes:
         """
         Returns this lump's data.
 

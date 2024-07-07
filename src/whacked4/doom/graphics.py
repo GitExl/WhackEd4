@@ -116,6 +116,6 @@ class Image:
 
     @staticmethod
     def invalid():
-        image = Image(0, 0, 0, 0, None)
+        image = Image.empty()
         image.invalid = True
         return image

@@ -1,9 +1,19 @@
-from math import floor
+"""
+Cheats editor UI.
+"""
 
+from math import floor
+from typing import Optional
+import copy
+
+import wx
+from wx import Window, ListEvent, CommandEvent, SizeEvent
+
+from whacked4.dehacked.patch import Patch
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import stringdialog
-import copy
-import wx
+from whacked4.ui.dialogs.stringdialog import StringDialog
+from whacked4.ui.editormixin import UndoItem
 
 
 class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
@@ -11,18 +21,18 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
     Cheats editor window.
     """
 
-    def __init__(self, parent):
+    def __init__(self, parent: Window):
         windows.CheatsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-cheats.png'))
 
-        self.patch = None
-        self.selected_index = 0
+        self.patch: Optional[Patch] = None
+        self.selected_index: int = 0
 
-        self.string_dialog = None
+        self.string_dialog: Optional[StringDialog] = None
 
-    def build(self, patch):
+    def build(self, patch: Patch):
         """
         @see: EditorMixin.build
         """
@@ -38,8 +48,6 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         """
         @see: EditorMixin.update
         """
-
-        pass
 
     def cheatlist_build(self):
         """
@@ -61,7 +69,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         self.list_autosize(self.CheatList)
         self.CheatList.Select(0, True)
 
-    def cheatlist_update_row(self, row_index):
+    def cheatlist_update_row(self, row_index: int):
         """
         Updates a row in the cheats list.
         """
@@ -70,7 +78,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         cheat = self.patch.cheats[key]
         self.CheatList.SetItem(row_index, 1, cheat)
 
-    def cheatlist_resize(self, row_index):
+    def cheatlist_resize(self, event: SizeEvent):
         """
         Called when the cheats list is resized.
 
@@ -83,7 +91,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         width = self.CheatList.GetClientSize()[0] - self.CheatList.GetColumnWidth(0) - 4
         self.CheatList.SetColumnWidth(1, width)
 
-    def cheat_edit(self, event):
+    def cheat_edit(self, event: ListEvent):
         """
         Edit a cheat string by displaying a strings dialog.
         """
@@ -106,9 +114,9 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
             self.cheatlist_update_row(row_index)
             self.is_modified(True)
 
-    def cheat_restore(self, event):
+    def cheat_restore(self, event: CommandEvent):
         """
-        Restores a cheat to it's engine state.
+        Restores a cheat to its engine state.
         """
 
         self.undo_add()
@@ -119,14 +127,14 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         self.cheatlist_update_row(self.selected_index)
         self.is_modified(True)
 
-    def cheat_select(self, event):
+    def cheat_select(self, event: ListEvent):
         """
         Stores the index of the currently selected cheat.
         """
 
         self.selected_index = event.GetIndex()
 
-    def cheat_get_key(self, index):
+    def cheat_get_key(self, index: int):
         """
         Returns a cheat dict key for a cheat index.
         """
@@ -134,7 +142,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
         cheat_data_keys = list(self.patch.engine.cheat_data.keys())
         return cheat_data_keys[index]
 
-    def undo_restore_item(self, item):
+    def undo_restore_item(self, item: UndoItem):
         """
         @see: EditorMixin.undo_restore_item
         """
@@ -146,7 +154,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
 
         self.is_modified(True)
 
-    def undo_store_item(self):
+    def undo_store_item(self) -> UndoItem:
         """
         @see: EditorMixin.undo_store_item
         """

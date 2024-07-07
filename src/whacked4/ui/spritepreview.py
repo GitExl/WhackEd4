@@ -1,3 +1,7 @@
+"""
+Custom sprite preview control.
+"""
+
 from math import floor
 from typing import Optional, List
 

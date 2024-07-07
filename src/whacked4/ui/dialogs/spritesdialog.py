@@ -1,39 +1,50 @@
-from whacked4 import utils, config
-from whacked4.ui import windows
+"""
+Sprite selection UI.
+"""
+
+from typing import Optional, List
+
 import wx
+from wx import Window, ActivateEvent, CommandEvent, ListEvent, KeyEvent, SpinEvent, MouseEvent
+
+from whacked4 import utils, config
+from whacked4.dehacked.patch import Patch
+from whacked4.doom.wadlist import WADList
+from whacked4.ui import windows
 
 
 class SpritesDialog(windows.SpritesDialogBase):
     """
-    This dialog displays a list of sprites and sprite frames, and lets the user select one of them.
+    This dialog displays a list of sprites and sprite frames, and lets
+    the user select one of them.
     """
 
-    def __init__(self, parent):
+    def __init__(self, parent: Window):
         windows.SpritesDialogBase.__init__(self, parent)
 
         self.SetEscapeId(windows.SPRITES_CANCEL)
 
-        self.selected_sprite = None
-        self.selected_frame = None
+        self.selected_sprite: Optional[int] = None
+        self.selected_frame: Optional[int] = None
 
-        self.patch = None
-        self.pwads = None
+        self.patch: Optional[Patch] = None
+        self.pwads: Optional[WADList] = None
 
         self.SpritePreview.set_baseline_factor(0.85)
         self.SpritePreview.set_scale(2)
 
         self.SpriteNames.SetFont(config.FONT_MONOSPACED)
 
-        self.filter_list = None
+        self.filter_list: Optional[List[int]] = None
 
-    def activate(self, event):
+    def activate(self, event: ActivateEvent):
         """
         Called when the dialog is activated.
         """
 
         self.Filter.SetFocus()
 
-    def ok(self, event):
+    def ok(self, event: CommandEvent):
         """
         Called when the user clicks the Ok button.
         """
@@ -42,20 +53,18 @@ class SpritesDialog(windows.SpritesDialogBase):
         selection = self.SpriteNames.GetFirstSelected()
         if selection == -1:
             return
+        self.selected_sprite = self.filter_list[selection]
 
+        # Store the frame index if one was selected.
+        frame_index = self.FrameIndex.GetValue()
+        if frame_index == '':
+            self.selected_frame = -1
         else:
-            self.selected_sprite = self.filter_list[selection]
-
-            # Store the frame index if one was selected.
-            frame_index = self.FrameIndex.GetValue()
-            if frame_index == '':
-                self.selected_frame = -1
-            else:
-                self.selected_frame = int(frame_index)
+            self.selected_frame = int(frame_index)
 
         self.EndModal(0)
 
-    def sprite_select_list(self, event):
+    def sprite_select_list(self, event: ListEvent):
         """
         Called when a sprite name is selected in the list.
         """
@@ -65,7 +74,7 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         self.update_preview()
 
-    def sprite_select_index(self, list_index):
+    def sprite_select_index(self, list_index: int):
         """
         Selects a sprite name from the list based on a list index.
         """
@@ -94,7 +103,13 @@ class SpritesDialog(windows.SpritesDialogBase):
 
             self.SpritePreview.show_sprite(sprite_name, sprite_frame)
 
-    def set_state(self, patch, pwads, sprite_index=None, frame_index=None):
+    def set_state(
+        self,
+        patch: Patch,
+        pwads: WADList,
+        sprite_index: Optional[int] = None,
+        frame_index: Optional[int] = None
+    ):
         """
         Sets this dialog's user interface state.
         """
@@ -126,13 +141,19 @@ class SpritesDialog(windows.SpritesDialogBase):
         self.SpritePreview.set_source(self.pwads)
         self.update_preview()
 
-    def update(self, pwads):
+    def update(self, pwads: WADList):
+        """
+        Update this dialog's sprites from a WADList.
+
+        :param pwads: WADList
+        """
+
         self.pwads = pwads
 
         self.SpritePreview.set_source(self.pwads)
         self.update_preview()
 
-    def update_frame(self, event):
+    def update_frame(self, event: CommandEvent):
         """
         Called when the frame index text control is updated.
 
@@ -157,11 +178,12 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         self.update_preview()
 
-    def filter_key(self, event):
+    def filter_key(self, event: KeyEvent):
         """
         Called when a key is pressed in the filter text control.
 
-        Catches up and down keys to move through the filter list without giving the names list focus.
+        Catches up and down keys to move through the filter list without giving the
+        names list focus.
         """
 
         key = event.GetKeyCode()
@@ -180,7 +202,7 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         event.Skip()
 
-    def filter_build(self, filter_string):
+    def filter_build(self, filter_string: str):
         """
         Builds a newly filtered sprite list.
         """
@@ -206,7 +228,7 @@ class SpritesDialog(windows.SpritesDialogBase):
 
         self.update_preview()
 
-    def frameindex_set(self, modifier):
+    def frameindex_set(self, modifier: int):
         """
         Modifies the frame index value by a specified amount.
         """
@@ -217,19 +239,19 @@ class SpritesDialog(windows.SpritesDialogBase):
         index = int(self.FrameIndex.GetValue())
         self.FrameIndex.SetValue(str(index + modifier))
 
-    def frameindex_spin_up(self, event):
+    def frameindex_spin_up(self, event: SpinEvent):
         self.frameindex_set(1)
 
-    def frameindex_spin_down(self, event):
+    def frameindex_spin_down(self, event: SpinEvent):
         self.frameindex_set(-1)
 
-    def focus_text(self, event):
+    def focus_text(self, event: MouseEvent):
         utils.focus_text(event, self)
         event.Skip()
 
-    def cancel(self, event):
+    def cancel(self, event: CommandEvent):
         self.EndModal(0)
 
-    def filter_update(self, event):
+    def filter_update(self, event: CommandEvent):
         window = self.FindWindowById(event.GetId())
         self.filter_build(window.GetValue().upper())

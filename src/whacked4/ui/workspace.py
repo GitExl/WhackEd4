@@ -5,9 +5,16 @@ window and any auxiliary information required to restore a user's workspace to a
 
 import json
 import os.path
+from typing import Optional, Dict
+
+from wx import Window, Frame, MDIParentFrame
+
+from whacked4.dehacked.engine import Engine
+from whacked4.doom.wad import WAD
+from whacked4.doom.wadlist import WADList
 
 
-class Workspace(object):
+class Workspace:
     """
     Describes a workspace, and provides functionality for it to be saved and restored.
     """
@@ -16,14 +23,14 @@ class Workspace(object):
     WINDOW_STATE_MAXIMIZED = 1
 
     def __init__(self):
-        self.engine = None
+        self.engine: Optional[Engine] = None
 
-        self.iwad = None
-        self.pwads = None
+        self.iwad: Optional[WAD] = None
+        self.pwads: Optional[WADList] = None
 
         self.windows = None
 
-    def load(self, base_filename):
+    def load(self, base_filename: str):
         """
         Loads a workspace from a JSON file.
 
@@ -32,7 +39,7 @@ class Workspace(object):
 
         filename = get_filename(base_filename)
 
-        with open(filename, 'r') as f:
+        with open(filename, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
         self.engine = data['engine']
@@ -42,7 +49,7 @@ class Workspace(object):
 
         self.windows = data['windows']
 
-    def save(self, base_filename):
+    def save(self, base_filename: str):
         """
         Writes a workspace to a JSON file.
 
@@ -57,10 +64,10 @@ class Workspace(object):
         }
 
         filename = get_filename(base_filename)
-        with open(filename, 'w') as f:
+        with open(filename, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4)
 
-    def restore_windows(self, workspace_windows):
+    def restore_windows(self, workspace_windows: Dict[str, Frame]):
         """
         Restores all editor windows' state.
 
@@ -100,7 +107,7 @@ class Workspace(object):
             window.Raise()
             window.SetFocus()
 
-    def store_windows(self, frame, workspace_windows):
+    def store_windows(self, frame: MDIParentFrame, workspace_windows: Dict[str, Frame]):
         """
         Stores all editor windows' state.
 
@@ -135,7 +142,7 @@ class Workspace(object):
             self.windows[window_name] = window_data
 
 
-def get_filename(base_filename):
+def get_filename(base_filename: str) -> str:
     """
     Returns a workspace filename from any full path.
     """
@@ -144,7 +151,7 @@ def get_filename(base_filename):
     return os.path.splitext(base_filename)[0] + '.whacked'
 
 
-def _get_dict_value(src, value, default):
+def _get_dict_value(src: Dict[str, any], value: any, default: any):
     """
     Returns a default value for a dict key if it was not found, otherwise returns the dict item.
     """

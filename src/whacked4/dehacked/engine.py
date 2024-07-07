@@ -184,7 +184,8 @@ class Engine:
         """
         Returns True if the patch can be loaded with this engine.
 
-        @param patch: the patch to examine.
+        @param version: the patch version.
+        @param is_extended: is the patch extended?
         """
 
         if version not in self.versions:

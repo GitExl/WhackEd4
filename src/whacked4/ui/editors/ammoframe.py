@@ -1,8 +1,17 @@
+"""
+Ammo editor UI.
+"""
+
 from math import floor
+from typing import Dict, Optional
+
+import wx
+from wx import Window, SizeEvent, ListEvent, CommandEvent
 
 from whacked4 import utils
+from whacked4.dehacked.patch import Patch
 from whacked4.ui import editormixin, windows
-import wx
+from whacked4.ui.editormixin import UndoItem
 
 
 class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
@@ -11,27 +20,26 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
     """
 
     # Text control to internal key mappings.
-    PROPS_VALUES = {
+    PROPS_VALUES: Dict[int, str] = {
         windows.AMMO_VAL_MAXIMUM: 'maximum',
         windows.AMMO_VAL_PICKUP: 'clip'
     }
 
-    def __init__(self, parent):
+    def __init__(self, parent: Window):
         windows.AmmoFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-ammo.png'))
 
-        self.patch = None
-        self.selected_index = -1
+        self.patch: Optional[Patch] = None
+        self.selected_index: int = -1
 
-    def build(self, patch):
+    def build(self, patch: Patch):
         """
         @see: EditorMixin.build
         """
 
         self.patch = patch
-
         self.selected_index = -1
 
         self.ammolist_build()
@@ -40,8 +48,6 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         """
         @see: EditorMixin.update
         """
-
-        pass
 
     def ammolist_build(self):
         """
@@ -64,7 +70,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.list_autosize(self.AmmoList)
         self.AmmoList.Select(0, True)
 
-    def ammolist_update_row(self, row_index):
+    def ammolist_update_row(self, row_index: int):
         """
         Updates a row in the ammo list.
         """
@@ -75,7 +81,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.AmmoList.SetItem(row_index, 1, str(ammo['maximum']))
         self.AmmoList.SetItem(row_index, 2, str(ammo['clip']))
 
-    def ammolist_resize(self, event):
+    def ammolist_resize(self, event: SizeEvent):
         """
         Resize the ammo name column as wide as possible.
         """
@@ -88,7 +94,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.AmmoList.SetColumnWidth(1, column_width // 3)
         self.AmmoList.SetColumnWidth(2, column_width // 3)
 
-    def ammo_select(self, event):
+    def ammo_select(self, event: ListEvent):
         """
         Selects a new ammo entry.
         """
@@ -96,7 +102,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.selected_index = event.GetIndex()
         self.update_properties()
 
-    def ammo_rename(self, event):
+    def ammo_rename(self, event: CommandEvent):
         """
         Called when the current ammo entry needs to be renamed.
         """
@@ -119,7 +125,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
             self.update_properties()
             self.is_modified(True)
 
-    def ammo_restore(self, event):
+    def ammo_restore(self, event: CommandEvent):
         """
         Restores the currently selected ammo entry to it's engine state.
         """
@@ -153,7 +159,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
             self.Restore.Enable()
             self.Rename.Enable()
 
-    def set_value(self, event):
+    def set_value(self, event: CommandEvent):
         """
         Sets the currently selected ammo entry's property value.
         """
@@ -170,7 +176,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.ammolist_update_row(self.selected_index)
         self.is_modified(True)
 
-    def undo_restore_item(self, item):
+    def undo_restore_item(self, item: UndoItem):
         """
         @see: EditorMixin.undo_restore_item
         """
@@ -183,7 +189,7 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
 
         self.is_modified(True)
 
-    def undo_store_item(self):
+    def undo_store_item(self) -> UndoItem:
         """
         @see: EditorMixin.undo_store_item
         """
