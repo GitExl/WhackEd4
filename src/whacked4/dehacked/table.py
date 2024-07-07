@@ -29,7 +29,7 @@ class ThingFlag:
         )
 
 
-class Table(object):
+class Table:
     """
     A table containing Dehacked entry objects.
     """

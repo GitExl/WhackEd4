@@ -3,12 +3,14 @@ State editing UI.
 """
 
 from collections import OrderedDict
-from typing import Dict, Optional, List
+from typing import Dict, Optional, List, Tuple
 
 import wx
-from wx import Control
+from wx import Control, CommandEvent, KeyEvent, ListEvent, MenuEvent, SpinEvent
 
 from whacked4 import config, utils
+from whacked4.dehacked.action import Action
+from whacked4.dehacked.entry import Entry
 from whacked4.dehacked.patch import Patch
 from whacked4.dehacked.statequery.query import StateFilterQuery
 from whacked4.dehacked.statequery.stateindexsort import StateIndexSort
@@ -20,6 +22,7 @@ from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import spritesdialog, statepreviewdialog
 from whacked4.ui.dialogs.spritesdialog import SpritesDialog
 from whacked4.ui.dialogs.statepreviewdialog import StatePreviewDialog
+from whacked4.ui.editormixin import UndoItem
 from whacked4.ui.state_list import EVT_STATE_LIST_EVENT
 
 
@@ -35,7 +38,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     """
 
     # Maps window ids to state property keys.
-    PROPS_STATE = {
+    PROPS_STATE: Dict[int, str] = {
         windows.STATES_DURATION: 'duration',
         windows.STATES_NEXT: 'nextState',
         windows.STATES_SPRITE: 'sprite',
@@ -53,20 +56,20 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     }
 
     # Window ids grouped by state parameter value.
-    UNUSED_IDS = [
-        [windows.STATES_LABEL_UNUSED1, windows.STATES_UNUSED1],
-        [windows.STATES_LABEL_UNUSED2, windows.STATES_UNUSED2]
+    UNUSED_IDS: List[Tuple[int, int]] = [
+        (windows.STATES_LABEL_UNUSED1, windows.STATES_UNUSED1),
+        (windows.STATES_LABEL_UNUSED2, windows.STATES_UNUSED2),
     ]
-    ARG_IDS = [
-        [windows.STATES_LABEL_ARG1, windows.STATES_ARG1],
-        [windows.STATES_LABEL_ARG2, windows.STATES_ARG2],
-        [windows.STATES_LABEL_ARG3, windows.STATES_ARG3],
-        [windows.STATES_LABEL_ARG4, windows.STATES_ARG4],
-        [windows.STATES_LABEL_ARG5, windows.STATES_ARG5],
-        [windows.STATES_LABEL_ARG6, windows.STATES_ARG6],
-        [windows.STATES_LABEL_ARG7, windows.STATES_ARG7],
-        [windows.STATES_LABEL_ARG8, windows.STATES_ARG8],
-        [windows.STATES_LABEL_ARG9, windows.STATES_ARG9],
+    ARG_IDS: List[Tuple[int, int]] = [
+        (windows.STATES_LABEL_ARG1, windows.STATES_ARG1),
+        (windows.STATES_LABEL_ARG2, windows.STATES_ARG2),
+        (windows.STATES_LABEL_ARG3, windows.STATES_ARG3),
+        (windows.STATES_LABEL_ARG4, windows.STATES_ARG4),
+        (windows.STATES_LABEL_ARG5, windows.STATES_ARG5),
+        (windows.STATES_LABEL_ARG6, windows.STATES_ARG6),
+        (windows.STATES_LABEL_ARG7, windows.STATES_ARG7),
+        (windows.STATES_LABEL_ARG8, windows.STATES_ARG8),
+        (windows.STATES_LABEL_ARG9, windows.STATES_ARG9),
     ]
 
     # Doom lit flag. Frame indices with this flag set are always lit by Doom's rendering engine.
@@ -106,7 +109,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.patch: Optional[Patch] = None
         self.pwads: Optional[WADList] = None
-        self.clipboard = None
+        self.clipboard: Optional[Entry] = None
         self.sprites_dialog: Optional[SpritesDialog] = None
         self.preview_dialog: Optional[StatePreviewDialog] = None
 
@@ -158,7 +161,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.SpritePreview.set_source(self.pwads)
         self.update_sprite_preview()
 
-    def undo_restore_item(self, item):
+    def undo_restore_item(self, item: UndoItem):
         """
         @see: EditorMixin.undo_restore_item
         """
@@ -178,7 +181,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.is_modified(True)
 
-    def undo_store_item(self):
+    def undo_store_item(self) -> UndoItem:
         """
         @see: EditorMixin.undo_store_item
         """
@@ -237,7 +240,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.update_item_attributes()
         self.is_modified(True)
 
-    def tools_set_state(self, enabled):
+    def tools_set_state(self, enabled: bool):
         """
         Sets the state of all tool controls.
         """
@@ -245,7 +248,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         for window in self.windows_tools:
             window.Enable(enabled)
 
-    def state_restore(self, event):
+    def state_restore(self, event: CommandEvent):
         """
         Restores all currently selected states to the way they are in the
         engine configuration.
@@ -261,7 +264,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.update_item_attributes()
         self.is_modified(True)
 
-    def state_link(self, event):
+    def state_link(self, event: KeyEvent):
         """
         Connects the currently selected state's next state property to the state being
         clicked, while the alt key is held down.
@@ -348,7 +351,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.Action.SetItems(action_items)
 
-    def filter_update(self, index):
+    def filter_update(self, index: int):
         """
         Updates the current state filter and rebuilds the state list accordingly.
         """
@@ -377,7 +380,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         else:
             self.update_properties()
 
-    def set_selected_property(self, key, value):
+    def set_selected_property(self, key: str, value: any):
         """
         Sets a property of all currently selected states.
 
@@ -501,7 +504,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.update_sprite_preview()
 
-    def set_param_visibility(self, action_key):
+    def set_param_visibility(self, action_key: str):
         """
         Sets the visibility of action parameters for the currently selected states.
         """
@@ -573,7 +576,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.SpritePreview.clear()
 
-    def statelist_key_down(self, event):
+    def statelist_key_down(self, event: KeyEvent):
         """
         Handle key presses for the states list.
         """
@@ -585,7 +588,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         else:
             event.Skip()
 
-    def select_sprite(self, event):
+    def select_sprite(self, event: CommandEvent):
         """
         Shows the sprite select dialog to replace the currently selected state's sprites.
         """
@@ -633,7 +636,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             self.StateList.update_item_attributes()
             self.update_sprite_preview()
 
-    def set_value(self, event):
+    def set_value(self, event: CommandEvent):
         """
         Validates and sets a property of all currently selected states.
         """
@@ -677,7 +680,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         if window_id == windows.STATES_SPRITE:
             self.StateList.update_item_attributes()
 
-    def set_lit(self, event):
+    def set_lit(self, event: CommandEvent):
         """
         Sets the lit property of all currently selected states.
         """
@@ -698,7 +701,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.refresh_selected_rows()
         self.is_modified(True)
 
-    def set_action(self, event):
+    def set_action(self, event: CommandEvent):
         """
         Sets the action property of all currently selected states.
         """
@@ -723,7 +726,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.StateList.refresh_selected_rows()
         self.is_modified(True)
 
-    def set_frame(self, event):
+    def set_frame(self, event: CommandEvent):
         """
         Sets the frame index property of all currently selected states.
         """
@@ -750,7 +753,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.update_sprite_preview()
         self.is_modified(True)
 
-    def set_selected_action(self, action_key):
+    def set_selected_action(self, action_key: str):
         """
         Sets the action choice box' index to reflect the specified action value.
         """
@@ -760,7 +763,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.set_param_visibility(action_key)
 
-    def state_context(self, event):
+    def state_context(self, event: ListEvent):
         """
         Displays the context menu for states.
         """
@@ -771,19 +774,19 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.StateList.PopupMenu(self.StateContext, event.GetPoint())
 
-    def state_context_copy(self, event):
+    def state_context_copy(self, event: MenuEvent):
         """
         Context menu copy redirect.
         """
         self.edit_copy()
 
-    def state_context_paste(self, event):
+    def state_context_paste(self, event: MenuEvent):
         """
         Context menu paste redirect.
         """
         self.edit_paste()
 
-    def link_selected_states(self, loop):
+    def link_selected_states(self, loop: bool):
         """
         Links the currently selected states together.
         """
@@ -814,7 +817,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.update_properties()
         self.is_modified(True)
 
-    def frame_set(self, modifier):
+    def frame_set(self, modifier: int):
         """
         Modifies the state frame index value by a specified amount.
         """
@@ -825,7 +828,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             index = int(self.FrameIndex.GetValue())
             self.FrameIndex.SetValue(str(index + modifier))
 
-    def goto_next_state(self, event):
+    def goto_next_state(self, event: CommandEvent):
         """
         Select the currently selected state's next state.
         """
@@ -838,7 +841,12 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         if state is not None:
             self.goto_state_index(state['nextState'])
 
-    def goto_state_index(self, state_index, filter_type=None, filter_index=None):
+    def goto_state_index(
+        self,
+        state_index: int,
+        filter_type: Optional[str] = None,
+        filter_index: Optional[int] = None
+    ):
         """
         Selects a state and applies a filter.
 
@@ -899,7 +907,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         self.preview_dialog.prepare(self.pwads, self.patch, state_index, thing_index)
         self.preview_dialog.ShowModal()
 
-    def state_key(self, event):
+    def state_key(self, event: KeyEvent):
         """
         Intercept key presses to this entire frame.
         """
@@ -909,7 +917,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         else:
             event.Skip()
 
-    def state_context_clear(self, event):
+    def state_context_clear(self, event: MenuEvent):
         """
         Clears all selected states.
         """
@@ -921,29 +929,32 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.StateList.refresh_selected_rows()
 
-    def state_context_link(self, event):
+    def state_context_link(self, event: MenuEvent):
         self.link_selected_states(False)
 
-    def state_context_link_loop(self, event):
+    def state_context_link_loop(self, event: MenuEvent):
         self.link_selected_states(True)
 
-    def state_context_preview(self, event):
+    def state_context_preview(self, event: MenuEvent):
         self.preview()
 
-    def filter_select(self, event):
+    def filter_select(self, event: ListEvent):
         self.filter_update(self.Filter.GetSelection())
 
-    def frame_spin_up(self, event):
+    def frame_spin_up(self, event: SpinEvent):
         self.frame_set(1)
 
-    def frame_spin_down(self, event):
+    def frame_spin_down(self, event: SpinEvent):
         self.frame_set(-1)
 
-    def statelist_event(self, _):
+    def statelist_event(self, _: ListEvent):
+        """
+        Event redirect for updating properties.
+        """
         self.update_properties()
 
 
-def get_action_param_counts(action):
+def get_action_param_counts(action: Optional[Action]) -> int:
     """
     Returns the number of parameters for an action.
 
@@ -957,7 +968,7 @@ def get_action_param_counts(action):
     return len(action.arguments)
 
 
-def get_action_param_properties(unused_count=0, arg_count=0):
+def get_action_param_properties(unused_count: int = 0, arg_count: int = 0) -> List[str]:
     """
     Returns action property state fields.
 

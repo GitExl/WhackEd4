@@ -3,18 +3,23 @@ Thing editor UI.
 """
 
 from math import floor
-from typing import List, Tuple, Dict, Set
+from typing import List, Tuple, Dict, Set, Optional
 
 import wx
+from wx import Window, SizeEvent, ActivateEvent, CommandEvent, ListEvent, MouseEvent, MenuEvent
 
 from whacked4 import utils, config
 from whacked4.dehacked.entries import ThingEntry
+from whacked4.dehacked.entry import Entry
+from whacked4.dehacked.patch import Patch
 from whacked4.dehacked.statequery.query import StateFilterQuery
 from whacked4.dehacked.statequery.stateindexsort import StateIndexSort
 from whacked4.dehacked.statequery.thingfilter import ThingStateFilter
 from whacked4.dehacked.table import ThingFlag
+from whacked4.doom.wadlist import WADList
 from whacked4.ui import editormixin, windows
-from whacked4.ui.dialogs import statepreviewdialog
+from whacked4.ui.dialogs.statepreviewdialog import StatePreviewDialog
+from whacked4.ui.editormixin import UndoItem
 from whacked4.ui.editors import statesframe
 
 
@@ -24,7 +29,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     """
 
     # Text control to internal key mappings.
-    PROPS_VALUES = {
+    PROPS_VALUES: Dict[int, str] = {
         windows.THING_VAL_NAME: 'name',
         windows.THING_VAL_OBIT_NAME: 'obituaryName',
         windows.THING_VAL_OBIT_NAME_PLURAL: 'obituaryNamePlural',
@@ -56,7 +61,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     }
 
     # Value types for text control validation.
-    PROPS_VALUE_TYPES = {
+    PROPS_VALUE_TYPES: Dict[int, str] = {
         windows.THING_VAL_NAME: 'str',
         windows.THING_VAL_OBIT_NAME: 'str',
         windows.THING_VAL_OBIT_NAME_PLURAL: 'str',
@@ -88,7 +93,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     }
 
     # State text control to partial internal key mappings.
-    PROPS_STATES = {
+    PROPS_STATES: Dict[int, str] = {
         windows.THING_STATE_SPAWN: 'Spawn',
         windows.THING_STATE_WALK: 'Walk',
         windows.THING_STATE_PAIN: 'Pain',
@@ -103,7 +108,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     }
 
     # State name label to partial internal key mappings.
-    PROPS_STATENAMES = {
+    PROPS_STATENAMES: Dict[int, str] = {
         windows.THING_STATENAME_SPAWN: 'Spawn',
         windows.THING_STATENAME_WALK: 'Walk',
         windows.THING_STATENAME_PAIN: 'Pain',
@@ -118,7 +123,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     }
 
     # State set button to partial internal key mappings.
-    PROPS_STATESET = {
+    PROPS_STATESET: Dict[int, int] = {
         windows.THING_STATESET_SPAWN: windows.THING_STATE_SPAWN,
         windows.THING_STATESET_WALK: windows.THING_STATE_WALK,
         windows.THING_STATESET_PAIN: windows.THING_STATE_PAIN,
@@ -133,7 +138,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     }
 
     # Sound text control to partial internal key mappings.
-    PROPS_SOUNDS = {
+    PROPS_SOUNDS: Dict[int, str] = {
         windows.THING_SOUND_ALERT: 'Alert',
         windows.THING_SOUND_ATTACK: 'Attack',
         windows.THING_SOUND_PAIN: 'Pain',
@@ -142,7 +147,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     }
 
     # Sound set button to partial internal key mappings.
-    PROPS_SOUNDSET = {
+    PROPS_SOUNDSET: Dict[int, int] = {
         windows.THING_SOUNDSET_ALERT: windows.THING_SOUND_ALERT,
         windows.THING_SOUNDSET_ATTACK: windows.THING_SOUND_ATTACK,
         windows.THING_SOUNDSET_PAIN: windows.THING_SOUND_PAIN,
@@ -151,7 +156,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     }
 
     # State name label to partial internal key mappings.
-    PROPS_SOUNDNAMES = {
+    PROPS_SOUNDNAMES: Dict[int, str] = {
         windows.THING_SOUNDNAME_ALERT: 'Alert',
         windows.THING_SOUNDNAME_ATTACK: 'Attack',
         windows.THING_SOUNDNAME_PAIN: 'Pain',
@@ -162,19 +167,19 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
     # Fixed point unit divisor for certain thing properties.
     FIXED_UNIT = 0x10000
 
-    def __init__(self, parent):
+    def __init__(self, parent: Window):
         windows.ThingsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-things.png'))
 
-        self.patch = None
-        self.pwads = None
-        self.clipboard = None
-        self.preview_dialog = None
+        self.patch: Optional[Patch] = None
+        self.pwads: Optional[WADList] = None
+        self.clipboard: Optional[Entry] = None
+        self.preview_dialog: Optional[StatePreviewDialog] = None
 
-        self.selected_index = 0
-        self.thing_is_projectile = False
+        self.selected_index: int = 0
+        self.thing_is_projectile: bool = False
 
         self.thingflag_mnemonics: List[Tuple[str, ThingFlag]] = []
 
@@ -186,7 +191,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             item = self.FindWindowById(prop)
             item.SetFont(config.FONT_MONOSPACED_BOLD)
 
-    def build(self, patch):
+    def build(self, patch: Patch):
         """
         @see EditorMixin.build
         """
@@ -194,7 +199,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.patch = patch
         self.pwads = self.GetMDIParent().pwads
         self.clipboard = None
-        self.preview_dialog = statepreviewdialog.StatePreviewDialog(self.GetParent())
+        self.preview_dialog = StatePreviewDialog(self.GetParent())
 
         self.selected_index = 0
 
@@ -286,7 +291,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.list_autosize(self.ThingList)
         self.ThingList.Select(0, True)
 
-    def thinglist_update_row(self, row_index):
+    def thinglist_update_row(self, row_index: int):
         """
         Updates a thing name in the list.
         """
@@ -299,7 +304,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         if 'thing.game' in self.patch.engine.features:
             self.ThingList.SetItem(row_index, 3, thing['game'])
 
-    def thinglist_resize(self, event):
+    def thinglist_resize(self, event: SizeEvent):
         """
         Resizes the thing name column to match the control's width.
         """
@@ -351,7 +356,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.ThingFlags.SetItems(flag_names)
 
-    def activate(self, event):
+    def activate(self, event: ActivateEvent):
         """
         Called when this editor window is activated by the user.
         """
@@ -483,7 +488,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         # Update name.
         self.thinglist_update_row(self.selected_index)
 
-    def set_display_state(self, state_name):
+    def set_display_state(self, state_name: str):
         """
         Sets state control values based on the partial name of a state thing property.
         """
@@ -498,7 +503,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.__dict__['ThingState' + state_name].ChangeValue(str(state_index))
         self.__dict__['ThingState' + state_name + 'Name'].SetLabel(label)
 
-    def set_display_sound(self, sound_name):
+    def set_display_sound(self, sound_name: str):
         """
         Sets sound control values based on the partial name of a sound thing property.
         """
@@ -513,7 +518,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.__dict__['ThingSound' + sound_name].ChangeValue(str(sound_index))
         self.__dict__['ThingSound' + sound_name + 'Name'].SetLabel(label)
 
-    def set_value(self, event):
+    def set_value(self, event: CommandEvent):
         """
         Sets the currently selected thing's property value.
 
@@ -556,7 +561,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.thinglist_update_row(self.selected_index)
         self.is_modified(True)
 
-    def set_state(self, event):
+    def set_state(self, event: CommandEvent):
         """
         Sets the currently selected thing's property value.
 
@@ -585,18 +590,18 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.update_is_projectile()
         self.update_properties()
 
-    def set_game(self, event):
-        """
-        Sets the currently selected thing's game property.
-        """
+    # def set_game(self, event):
+    #     """
+    #     Sets the currently selected thing's game property.
+    #     """
+    #
+    #     game = event.GetString()
+    #     self.patch.things[self.selected_index]['game'] = game
+    #
+    #     self.thinglist_update_row(self.selected_index)
+    #     self.is_modified(True)
 
-        game = event.GetString()
-        self.patch.things[self.selected_index]['game'] = game
-
-        self.thinglist_update_row(self.selected_index)
-        self.is_modified(True)
-
-    def set_renderstyle(self, event):
+    def set_renderstyle(self, event: ListEvent):
         """
         Sets the currently selected thing's render style property.
         """
@@ -607,7 +612,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.is_modified(True)
 
-    def set_sound(self, event):
+    def set_sound(self, event: CommandEvent):
         """
         Sets the currently selected thing's sound index.
 
@@ -634,7 +639,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.__dict__['ThingSound' + key + 'Name'].SetLabel(self.patch.get_sound_name(value))
         self.is_modified(True)
 
-    def set_flags(self, event):
+    def set_flags(self, event: ListEvent):
         """
         Sets the currently selected thing's flags value.
         """
@@ -659,7 +664,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.is_modified(True)
 
-    def set_flag_tooltip(self, event):
+    def set_flag_tooltip(self, event: MouseEvent):
         """
         Updates the tooltip displayed for the flags list when hovering over a flag.
         """
@@ -676,7 +681,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.ThingFlags.SetToolTip(tip)
 
-    def set_state_external(self, event):
+    def set_state_external(self, event: CommandEvent):
         """
         Sets a state property based on the state that is currently selected in the
         state editor.
@@ -694,7 +699,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.update_is_projectile()
         self.update_properties()
 
-    def set_sound_external(self, event):
+    def set_sound_external(self, event: CommandEvent):
         """
         Sets a sound property based on the sound that is currently selected in the
         sound editor.
@@ -714,7 +719,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         text_ctrl.SetValue(str(row_index))
         self.is_modified(True)
 
-    def thing_select(self, event):
+    def thing_select(self, event: ListEvent):
         """
         Called when a thing is selected from the thing names list.
         """
@@ -723,7 +728,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.thing_is_projectile = None
         self.update_properties()
 
-    def thing_restore(self, event):
+    def thing_restore(self, event: CommandEvent):
         """
         Restores the currently selected thing to the one stored in the engine configuration.
         """
@@ -737,7 +742,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.update_properties()
         self.is_modified(True)
 
-    def goto_state_event(self, event):
+    def goto_state_event(self, event: CommandEvent):
         """
         Changes the selected state in the states editor window to the one of a thing's
         state property.
@@ -748,7 +753,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.goto_state(state_index, statesframe.FILTER_TYPE_THING, self.selected_index)
 
-    def goto_sound_event(self, event):
+    def goto_sound_event(self, event: CommandEvent):
         """
         Changes the selected sound in the sounds editor window to the one of a thing's
         sound property.
@@ -759,7 +764,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.goto_sound(sound_index)
 
-    def sound_play(self, event):
+    def sound_play(self, event: CommandEvent):
         """
         Plays a sound entry.
         """
@@ -771,7 +776,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         utils.sound_play(self.patch.sounds[sound_index - 1].name, self.pwads)
 
-    def undo_restore_item(self, item):
+    def undo_restore_item(self, item: UndoItem):
         """
         @see EditorMixin.undo_restore_item
         """
@@ -786,7 +791,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         self.is_modified(True)
 
-    def undo_store_item(self):
+    def undo_store_item(self) -> UndoItem:
         """
         @see EditorMixin.undo_store_item
         """
@@ -796,26 +801,26 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             'index': self.selected_index
         }
 
-    def thing_context(self, event):
+    def thing_context(self, event: ListEvent):
         """
         Displays the context menu for things.
         """
 
         self.ThingList.PopupMenu(self.ThingContext, event.GetPoint())
 
-    def thing_context_copy(self, event):
+    def thing_context_copy(self, event: MenuEvent):
         """
         Context menu copy redirect.
         """
         self.edit_copy()
 
-    def thing_context_paste(self, event):
+    def thing_context_paste(self, event: MenuEvent):
         """
         Context menu paste redirect.
         """
         self.edit_paste()
 
-    def thing_context_clear(self, event):
+    def thing_context_clear(self, event: MenuEvent):
         """
         Clears a thing's properties.
         """
@@ -828,7 +833,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.update_properties()
         self.is_modified(True)
 
-    def preview_state(self, event):
+    def preview_state(self, event: MenuEvent):
         """
         Preview animation from a state.
         """
@@ -839,7 +844,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.preview_dialog.prepare(self.pwads, self.patch, state_index, self.selected_index)
         self.preview_dialog.ShowModal()
 
-    def update_is_projectile(self, reset=False):
+    def update_is_projectile(self, reset: bool = False):
         """
         Updates the thing_is_projectile variable. If any of the current thing's states sets
         a momentum then it is not a projectile.

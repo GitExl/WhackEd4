@@ -12,7 +12,7 @@ Changed: string editing for vanilla patches will allow any number of characters 
 Changed: thing editor properties, states, sounds and flags are now tabbed to save on screen real estate. Especially useful if an engine has many thing properties.
 Changed: WhackEd4 is now a 64 bit application.
 Changed: moved preview availability warning to notification text inside the patch settings window.
-Changed: properly scale UI for high DPI displays.
+Changed: scale UI and bitmap assets for high DPI displays.
 Fixed: the state animation preview now displays action names instead of code pointers for non-extended patches.
 Fixed: a weapon's FireCGun and FirePlasma actions would only mark the extra muzzle flash state as used if the action was used on the first fire state.
 Fixed: loading non-extended patches that try to set a codepointer on a state that originally had none will now display a warning. Thanks to Zodomaniac.

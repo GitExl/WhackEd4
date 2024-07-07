@@ -1,12 +1,20 @@
+"""
+String editor UI.
+"""
+
 import copy
 from math import floor
+from typing import Optional
 
 import wx
+from wx import Window, SizeEvent, CommandEvent
 
 from whacked4 import config
-from whacked4.dehacked import patch
+from whacked4.dehacked.patch import Patch, string_escape
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import stringdialog
+from whacked4.ui.dialogs.stringdialog import StringDialog
+from whacked4.ui.editormixin import UndoItem
 
 
 class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
@@ -14,22 +22,22 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
     Strings editor window.
     """
 
-    def __init__(self, parent):
+    def __init__(self, parent: Window):
         windows.StringsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-strings.png'))
 
-        self.patch = None
-        self.string_dialog = None
-        self.selected_index = -1
+        self.patch: Optional[Patch] = None
+        self.string_dialog: Optional[StringDialog] = None
+        self.selected_index: int = -1
 
-    def build(self, new_patch):
+    def build(self, patch: Patch):
         """
         @see: EditorMixin.build
         """
 
-        self.patch = new_patch
+        self.patch = patch
         self.string_dialog = stringdialog.StringDialog(self.GetParent())
 
         self.stringlist_build()
@@ -49,12 +57,13 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         self.StringList.ClearAll()
 
         if self.StringList.GetColumnCount() == 0:
+            scale = self.GetDPIScaleFactor()
             if self.patch.extended:
-                self.StringList.InsertColumn(0, 'Name', width=floor(134 * self.GetDPIScaleFactor()))
-                self.StringList.InsertColumn(1, 'String', width=floor(800 * self.GetDPIScaleFactor()))
+                self.StringList.InsertColumn(0, 'Name', width=floor(134 * scale))
+                self.StringList.InsertColumn(1, 'String', width=floor(800 * scale))
             else:
-                self.StringList.InsertColumn(0, 'Index', width=floor(42 * self.GetDPIScaleFactor()))
-                self.StringList.InsertColumn(1, 'String', width=floor(800 * self.GetDPIScaleFactor()))
+                self.StringList.InsertColumn(0, 'Index', width=floor(42 * scale))
+                self.StringList.InsertColumn(1, 'String', width=floor(800 * scale))
 
         for row_index, string_key in enumerate(self.patch.strings.keys()):
             if string_key not in self.patch.engine.strings:
@@ -68,15 +77,15 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         self.list_autosize(self.StringList)
         self.StringList.Select(0, True)
 
-    def stringlist_update_row(self, row_index, string_key):
+    def stringlist_update_row(self, row_index: int, string_key: str):
         """
         Updates a single row in the strings list.
         """
 
         string = self.patch.strings[string_key]
-        self.StringList.SetItem(row_index, 1, patch.string_escape(string))
+        self.StringList.SetItem(row_index, 1, string_escape(string))
 
-    def stringlist_resize(self, event):
+    def stringlist_resize(self, event: SizeEvent):
         """
         Called when the string list is resized. Adjusts the list column widths to match.
         """
@@ -90,13 +99,13 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
 
         event.Skip()
 
-    def string_edit(self, event):
+    def string_edit(self, event: CommandEvent):
         """
         Show the string editing dialog to edit the selected string.
         """
 
         string_key = self.get_string_key_from_index(self.selected_index)
-        if string_key == -1:
+        if string_key is None:
             return
 
         engine_string = self.patch.engine.strings[string_key]
@@ -118,18 +127,18 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
             self.update_externals(dup)
             self.is_modified(True)
 
-    def get_string_key_from_index(self, row_index):
+    def get_string_key_from_index(self, row_index: int) -> Optional[str]:
         """
         Returns the string key belonging to a row index.
         """
 
-        keys = list(self.patch.engine.strings)
+        keys = list(self.patch.engine.strings.keys())
         if row_index < 0 or row_index >= len(keys):
-            return -1
+            return None
 
         return keys[row_index]
 
-    def string_restore(self, event):
+    def string_restore(self, event: CommandEvent):
         """
         Restores the currently selected string to it's engine state.
         """
@@ -148,7 +157,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
 
         self.is_modified(True)
 
-    def update_externals(self, new_string):
+    def update_externals(self, new_string: str):
         """
         Updates name lists in case a relevant string was changed.
         """
@@ -157,17 +166,23 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
             return
 
         if len(new_string) <= 6:
-            self.patch.update_string_externals(self.patch.engine.sounds, self.patch.sounds)
+            self.patch.update_string_externals(
+                self.patch.engine.sounds,
+                self.patch.sounds
+            )
         if len(new_string) == 4:
-            self.patch.update_string_externals(self.patch.engine.sprite_names, self.patch.sprite_names)
+            self.patch.update_string_externals(
+                self.patch.engine.sprite_names,
+                self.patch.sprite_names
+            )
 
-    def undo_restore_item(self, item):
+    def undo_restore_item(self, item: UndoItem):
         """
         @see: EditorMixin.undo_restore_item
         """
 
         string_key = self.get_string_key_from_index(item['index'])
-        if string_key == -1:
+        if string_key is None:
             return
 
         self.patch.strings[string_key] = item['item']
@@ -175,14 +190,14 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
 
         self.is_modified(True)
 
-    def undo_store_item(self):
+    def undo_store_item(self) -> Optional[UndoItem]:
         """
         @see: EditorMixin.undo_store_item
         """
 
         string_key = self.get_string_key_from_index(self.selected_index)
-        if string_key == -1:
-            return
+        if string_key is None:
+            return None
 
         return {
             'item': copy.deepcopy(self.patch.strings[string_key]),

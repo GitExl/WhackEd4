@@ -1,9 +1,22 @@
+"""
+Mixin for common editor UI functionality.
+"""
+
 #!/usr/bin/env python
 #coding=utf8
 
-from whacked4 import config, utils
-from whacked4.ui import windows
+from typing import List, Dict, Optional
+
 import wx
+from wx import ListCtrl, Event, MouseEvent, ActivateEvent, CloseEvent
+
+from whacked4 import config, utils
+from whacked4.dehacked.patch import Patch
+from whacked4.ui import windows
+
+
+UndoItem = Dict[str, any]
+WorkspaceData = Dict[str, int]
 
 
 class EditorMixin(wx.MDIChildFrame):
@@ -12,11 +25,11 @@ class EditorMixin(wx.MDIChildFrame):
     """
 
     def __init__(self):
-        self.undo = []
-        self.undo_index = -1
+        self.undo: List[UndoItem] = []
+        self.undo_index: int = -1
 
         # Stores the position of this editor window.
-        self.workspace_data = {
+        self.workspace_data: WorkspaceData = {
             'x': 0,
             'y': 0,
             'width': self.GetMinWidth(),
@@ -28,23 +41,24 @@ class EditorMixin(wx.MDIChildFrame):
         self.Bind(wx.EVT_ACTIVATE, self.activate)
         self.Bind(wx.EVT_CLOSE, self.close)
 
-    def build(self, patch):
+    def build(self, patch: Patch):
         """
-        Called when this editor window needs to build it's UI contents.
+        Called when this editor window needs to build its UI contents.
         """
 
         raise NotImplementedError()
 
     def update(self):
         """
-        Called when this editor window needs to update it's UI contents.
+        Called when this editor window needs to update its UI contents.
         """
 
         raise NotImplementedError()
 
-    def list_autosize(self, list_control):
+    def list_autosize(self, list_control: ListCtrl):
         """
-        Sizes all the columns in a ListCtrl to match the widest value in it's contents or itself.
+        Sizes all the columns in a ListCtrl to match the widest value in its contents
+        or itself.
 
         @param list_control: the list control whose columns should be sized.
         """
@@ -81,7 +95,7 @@ class EditorMixin(wx.MDIChildFrame):
         self.undo_index -= 1
         self.undo_restore_item(undo_item)
 
-    def undo_restore_item(self, item):
+    def undo_restore_item(self, item: UndoItem):
         """
         Called when an undo item needs to be restored.
 
@@ -99,7 +113,7 @@ class EditorMixin(wx.MDIChildFrame):
 
         raise NotImplementedError()
 
-    def workspace_update_data(self, event):
+    def workspace_update_data(self, event: Event):
         """
         Updates this editor window's position data.
         """
@@ -120,7 +134,7 @@ class EditorMixin(wx.MDIChildFrame):
 
         event.Skip()
 
-    def enter_state(self, event):
+    def enter_state(self, event: MouseEvent):
         """
         Called when the mouse enters a state label.
         """
@@ -132,7 +146,7 @@ class EditorMixin(wx.MDIChildFrame):
         window.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
         window.Refresh()
 
-    def leave_state(self, event):
+    def leave_state(self, event: MouseEvent):
         """
         Called when the mouse leaves a state label.
         """
@@ -144,7 +158,7 @@ class EditorMixin(wx.MDIChildFrame):
         window.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_WINDOWTEXT))
         window.Refresh()
 
-    def is_modified(self, modified):
+    def is_modified(self, modified: bool):
         """
         Marks the currently loaded patch as modified or not.
 
@@ -153,7 +167,7 @@ class EditorMixin(wx.MDIChildFrame):
 
         self.GetMDIParent().set_modified(modified)
 
-    def focus_text(self, event):
+    def focus_text(self, event: MouseEvent):
         """
         Focuses an entire text control.
         """
@@ -161,7 +175,7 @@ class EditorMixin(wx.MDIChildFrame):
         utils.focus_text(event, self)
         event.Skip()
 
-    def activate(self, event):
+    def activate(self, _: ActivateEvent):
         """
         Called when this window is activated.
         """
@@ -171,7 +185,7 @@ class EditorMixin(wx.MDIChildFrame):
 
         self.GetMDIParent().editor_window_activate()
 
-    def close(self, event):
+    def close(self, _: CloseEvent):
         """
         Called when this editor window is closed.
         """
@@ -179,7 +193,12 @@ class EditorMixin(wx.MDIChildFrame):
         self.Maximize(False)
         self.GetMDIParent().editor_window_closed(self)
 
-    def goto_state(self, state_index, filter_type, filter_index):
+    def goto_state(
+        self,
+        state_index: int,
+        filter_type: Optional[str] = None,
+        filter_index: Optional[int] = None
+    ):
         """
         Displays a state in the states editor, and enables a filter.
 
@@ -193,10 +212,14 @@ class EditorMixin(wx.MDIChildFrame):
 
         # Set selected state and display the state editor window.
         states_frame = parent.editor_windows[windows.MAIN_TOOL_STATES]
-        states_frame.goto_state_index(state_index, filter_type=filter_type, filter_index=filter_index)
+        states_frame.goto_state_index(
+            state_index,
+            filter_type=filter_type,
+            filter_index=filter_index
+        )
         states_frame.Raise()
 
-    def goto_sound(self, sound_index):
+    def goto_sound(self, sound_index: int):
         """
         Displays a sound in the sounds editor.
 
@@ -211,16 +234,12 @@ class EditorMixin(wx.MDIChildFrame):
         sounds_frame.goto_sound_index(sound_index)
         sounds_frame.Raise()
 
-    def dummy(self, event):
+    def dummy(self, event: Event):
         """
         Dummy event consumer.
         """
-
-        pass
 
     def before_save(self):
         """
         Called by the main window before saving the current patch.
         """
-
-        pass
