@@ -1,14 +1,20 @@
-from math import floor
+"""
+Weapon editor UI.
+"""
 
-from whacked4 import utils
+from math import floor
+from typing import Dict, Optional
+
+import wx
+from wx import Window, ActivateEvent, SizeEvent, CommandEvent, ListEvent, MouseEvent
+
+from whacked4 import utils, config
+from whacked4.dehacked.patch import Patch
+from whacked4.doom.wadlist import WADList
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import statepreviewdialog
-
-import whacked4.config as config
-
-import copy
-import wx
-
+from whacked4.ui.dialogs.statepreviewdialog import StatePreviewDialog
+from whacked4.ui.editormixin import UndoItem
 from whacked4.ui.editors import statesframe
 
 
@@ -18,14 +24,14 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
     """
 
     # Text control to internal key mappings.
-    PROPS_VALUES = {
+    PROPS_VALUES: Dict[int, str] = {
         windows.WEAPON_VAL_AMMO_USE: 'ammoUse',
         windows.WEAPON_VAL_MIN_AMMO: 'minAmmo',
         windows.WEAPON_VAL_DECAL: 'decal',
     }
 
     # State text control to partial internal key mappings.
-    PROPS_STATES = {
+    PROPS_STATES: Dict[int, str] = {
         windows.WEAPON_STATE_SELECT: 'Select',
         windows.WEAPON_STATE_DESELECT: 'Deselect',
         windows.WEAPON_STATE_BOB: 'Bob',
@@ -34,7 +40,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
     }
 
     # State name label to partial internal key mappings.
-    PROPS_STATENAMES = {
+    PROPS_STATENAMES: Dict[int, str] = {
         windows.WEAPON_STATENAME_SELECT: 'Select',
         windows.WEAPON_STATENAME_DESELECT: 'Deselect',
         windows.WEAPON_STATENAME_BOB: 'Bob',
@@ -43,7 +49,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
     }
 
     # State set button to partial internal key mappings.
-    PROPS_STATESET = {
+    PROPS_STATESET: Dict[int, int] = {
         windows.WEAPON_STATESET_SELECT: windows.WEAPON_STATE_SELECT,
         windows.WEAPON_STATESET_DESELECT: windows.WEAPON_STATE_DESELECT,
         windows.WEAPON_STATESET_BOB: windows.WEAPON_STATE_BOB,
@@ -51,22 +57,22 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         windows.WEAPON_STATESET_MUZZLE: windows.WEAPON_STATE_MUZZLE
     }
 
-    def __init__(self, parent):
+    def __init__(self, parent: Window):
         windows.WeaponsFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-weapons.png'))
 
-        self.patch = None
-        self.pwads = None
-        self.selected_index = 0
-        self.preview_dialog = None
+        self.patch: Optional[Patch] = None
+        self.pwads: Optional[WADList] = None
+        self.selected_index: int = 0
+        self.preview_dialog: Optional[StatePreviewDialog] = None
 
-        for prop in self.PROPS_STATENAMES.keys():
-            item = self.FindWindowById(prop)
+        for prop_key in self.PROPS_STATENAMES:
+            item = self.FindWindowById(prop_key)
             item.SetFont(config.FONT_MONOSPACED_BOLD)
 
-    def build(self, patch):
+    def build(self, patch: Patch):
         """
         @see: EditorMixin.build
         """
@@ -100,7 +106,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         self.Layout()
 
-    def activate(self, event):
+    def activate(self, event: ActivateEvent):
         """
         Called when this editor window is activated by the user.
         """
@@ -131,7 +137,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         self.WeaponList.Select(0, True)
 
-    def weaponlist_update_row(self, row_index):
+    def weaponlist_update_row(self, row_index: int):
         """
         Updates a row in the weapons list.
         """
@@ -141,7 +147,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.WeaponList.SetItemText(row_index, weapon.name)
         self.WeaponList.SetItem(row_index, 1, self.patch.get_ammo_name(weapon['ammoType']))
 
-    def weaponlist_resize(self, event):
+    def weaponlist_resize(self, event: SizeEvent):
         """
         Resizes the weapon list to fill as much space as is available.
         """
@@ -192,9 +198,12 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         for name in self.PROPS_STATES.values():
             self.set_display_state(name)
 
-        self.WeaponList.SetItemText(self.selected_index, self.patch.weapons[self.selected_index].name)
+        self.WeaponList.SetItemText(
+            self.selected_index,
+            self.patch.weapons[self.selected_index].name
+        )
 
-    def set_state_index(self, event):
+    def set_state_index(self, event: CommandEvent):
         """
         Sets the currently selected weapon's state.
         """
@@ -208,10 +217,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         weapon = self.patch.weapons[self.selected_index]
 
         # Clamp to valid state indices.
-        if value < 0:
-            value = 0
-        if value >= len(self.patch.states):
-            value = len(self.patch.states) - 1
+        value = max(0, min(value, len(self.patch.states) - 1))
 
         if str(value) != window.GetValue():
             window.ChangeValue(str(value))
@@ -221,7 +227,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.__dict__['WeaponState' + key + 'Name'].SetLabel(self.patch.get_state_name(value))
         self.is_modified(True)
 
-    def set_value(self, event):
+    def set_value(self, event: CommandEvent):
         """
         Sets the currently selected weapon entry's property value.
         """
@@ -244,7 +250,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.weaponlist_update_row(self.selected_index)
         self.is_modified(True)
 
-    def set_ammo(self, event):
+    def set_ammo(self, event: ListEvent):
         """
         Update the ammo type for the currently selected weapon.
         """
@@ -257,9 +263,10 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.weaponlist_update_row(self.selected_index)
         self.is_modified(True)
 
-    def set_state_external(self, event):
+    def set_state_external(self, event: CommandEvent):
         """
-        Sets a state property based on the state that is currently selected in the states editor.
+        Sets a state property based on the state that is currently selected in
+        the state editor.
         """
 
         self.undo_add()
@@ -272,17 +279,18 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         text_ctrl.SetValue(str(states_frame.get_selected_state_index()))
         self.is_modified(True)
 
-    def set_display_state(self, state_name):
+    def set_display_state(self, state_name: str):
         """
         Sets state control values based on the partial name of a weapon state property.
         """
 
         state_key = 'state' + state_name
         state_index = self.patch.weapons[self.selected_index][state_key]
+        label = self.patch.get_state_name(state_index)
         self.__dict__['WeaponState' + state_name].ChangeValue(str(state_index))
-        self.__dict__['WeaponState' + state_name + 'Name'].SetLabel(self.patch.get_state_name(state_index))
+        self.__dict__['WeaponState' + state_name + 'Name'].SetLabel(label)
 
-    def weapon_rename(self, event):
+    def weapon_rename(self, event: CommandEvent):
         """
         Called when the current weapon needs to be renamed.
         """
@@ -295,8 +303,12 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         """
 
         weapon_name = self.patch.weapons[self.selected_index].name
-        new_name = wx.GetTextFromUser('Enter a new name for ' + weapon_name, caption='Change name',
-                                      default_value=weapon_name, parent=self)
+        new_name = wx.GetTextFromUser(
+            'Enter a new name for ' + weapon_name,
+            caption='Change name',
+            default_value=weapon_name,
+            parent=self
+        )
 
         if new_name != '':
             self.undo_add()
@@ -305,19 +317,20 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             self.update_properties()
             self.is_modified(True)
 
-    def weapon_restore(self, event):
+    def weapon_restore(self, event: CommandEvent):
         """
-        Restores the selected weapon to it's engine state.
+        Restores the selected weapon to its engine state.
         """
 
         self.undo_add()
 
-        self.patch.weapons[self.selected_index] = self.patch.engine.weapons[self.selected_index].clone()
+        weapon_clone = self.patch.engine.weapons[self.selected_index].clone()
+        self.patch.weapons[self.selected_index] = weapon_clone
 
         self.update_properties()
         self.is_modified(True)
 
-    def undo_restore_item(self, item):
+    def undo_restore_item(self, item: UndoItem):
         """
         @see: EditorMixin.undo_restore_item
         """
@@ -330,7 +343,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         self.is_modified(True)
 
-    def undo_store_item(self):
+    def undo_store_item(self) -> UndoItem:
         """
         @see: EditorMixin.undo_store_item
         """
@@ -340,9 +353,10 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             'index': self.selected_index
         }
 
-    def goto_state_event(self, event):
+    def goto_state_event(self, event: MouseEvent):
         """
-        Changes the selected state in the states editor window to the one of a weapon's state property.
+        Changes the selected state in the states editor window to the one of a weapon's
+        state property.
         """
 
         key = self.PROPS_STATENAMES[event.GetId()]
@@ -350,7 +364,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         self.goto_state(state_index, statesframe.FILTER_TYPE_WEAPON, self.selected_index)
 
-    def weapon_select(self, event):
+    def weapon_select(self, event: ListEvent):
         """
         Selects a new weapon from the list.
         """
@@ -358,7 +372,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.selected_index = event.GetIndex()
         self.update_properties()
 
-    def preview_state(self, event):
+    def preview_state(self, event: MouseEvent):
         """
         Preview animation from a state.
         """
@@ -367,5 +381,10 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         weapon = self.patch.weapons[self.selected_index]
         state_index = weapon['state' + key]
 
-        self.preview_dialog.prepare(self.pwads, self.patch, state_index, weapon_index=self.selected_index)
+        self.preview_dialog.prepare(
+            self.pwads,
+            self.patch,
+            state_index,
+            weapon_index=self.selected_index
+        )
         self.preview_dialog.ShowModal()

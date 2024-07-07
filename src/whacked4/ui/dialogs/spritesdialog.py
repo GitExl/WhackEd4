@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#coding=utf8
-
 from whacked4 import utils, config
 from whacked4.ui import windows
 import wx

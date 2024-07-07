@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#coding=utf8
-
 """
 Contains program configuration constants and a settings object which contains user-definable configuration details.
 """

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-#coding=utf8
 from math import floor
 from typing import Optional, List
 

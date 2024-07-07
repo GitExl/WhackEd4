@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#coding=utf8
-
 """
 Contains classes to read Doom style patch graphics, and Doom PLAYPAL lump palette data.
 """

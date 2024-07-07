@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#coding=utf8
-
 import platform
 
 from whacked4 import app

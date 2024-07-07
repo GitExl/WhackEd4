@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#coding=utf8
-
 """
 Classes for Doom audio reading and playback using the PyAudio PortAudio bindings.
 """

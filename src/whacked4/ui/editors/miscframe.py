@@ -1,11 +1,19 @@
-#!/usr/bin/env python
-#coding=utf8
+"""
+Miscellaneous editor UI.
+"""
+
 from math import floor
 
-from whacked4 import utils
-from whacked4.ui import editormixin, windows
 import copy
+from typing import Optional
+
 import wx
+from wx import Window, ListEvent, SizeEvent, CommandEvent
+
+from whacked4 import utils
+from whacked4.dehacked.patch import Patch
+from whacked4.ui import editormixin, windows
+from whacked4.ui.editormixin import UndoItem
 
 
 class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
@@ -13,17 +21,17 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
     Misc editor window.
     """
 
-    def __init__(self, parent):
+    def __init__(self, parent: Window):
         windows.MiscFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
 
         self.SetIcon(wx.Icon('res/editor-misc.png'))
 
-        self.patch = None
-        self.selected_index = -1
-        self.data_type = None
+        self.patch: Optional[Patch] = None
+        self.selected_index: int = -1
+        self.data_type: Optional[str] = None
 
-    def build(self, patch):
+    def build(self, patch: Patch):
         """
         @see: EditorMixin.build
         """
@@ -36,9 +44,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         @see: EditorMixin.update
         """
 
-        pass
-
-    def misc_select(self, event):
+    def misc_select(self, event: ListEvent):
         """
         Selects a new ammo entry.
         """
@@ -90,17 +96,14 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
             self.MiscList.InsertColumn(1, 'Value', width=floor(67 * self.GetDPIScaleFactor()))
 
         misc_values = list(self.patch.engine.misc_data.values())
-        for misc_index in range(len(misc_values)):
-            misc_value = misc_values[misc_index]
-
+        for misc_index, misc_value in enumerate(misc_values):
             self.MiscList.InsertItem(misc_index, misc_value['name'])
-
             self.misclist_update_row(misc_index)
 
         self.list_autosize(self.MiscList)
         self.MiscList.Select(0, True)
 
-    def misclist_update_row(self, row_index):
+    def misclist_update_row(self, row_index: int):
         """
         Updates a row in the misc list.
         """
@@ -122,7 +125,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
 
         self.MiscList.SetItem(row_index, 1, str_value)
 
-    def misclist_resize(self, event):
+    def misclist_resize(self, event: SizeEvent):
         """
         Resize the misc name column as wide as possible.
         """
@@ -134,7 +137,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         self.MiscList.SetColumnWidth(0, 200)
         self.MiscList.SetColumnWidth(1, column_width - 200)
 
-    def set_value(self, event):
+    def set_value(self, event: CommandEvent):
         """
         Validates and sets a misc. property.
         """
@@ -144,7 +147,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         window_id = event.GetId()
         window = self.FindWindowById(window_id)
 
-        if self.data_type == 'int' or self.data_type == 'byte':
+        if self.data_type in {'int', 'byte'}:
             value = utils.validate_numeric(window)
         elif self.data_type == 'float':
             value = utils.validate_numeric_float(window)
@@ -174,7 +177,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         self.is_modified(True)
         self.misclist_update_row(self.selected_index)
 
-    def set_bool_value(self, event):
+    def set_bool_value(self, event: CommandEvent):
         """
         Validates and sets a misc. boolean property.
         """
@@ -193,7 +196,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         self.is_modified(True)
         self.misclist_update_row(self.selected_index)
 
-    def misc_action(self, event):
+    def misc_action(self, event: ListEvent):
         """
         Performs the default action for a misc. item.
         """
@@ -221,10 +224,9 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
             self.Value.SetFocus()
             self.Value.SetSelection(-1, -1)
 
-
-    def restore(self, event):
+    def restore(self, event: CommandEvent):
         """
-        Restore the selected misc item to it's engine state.
+        Restore the selected misc item to its engine state.
         """
 
         self.undo_add()
@@ -236,7 +238,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         self.misclist_update_row(self.selected_index)
         self.update_properties()
 
-    def undo_restore_item(self, item):
+    def undo_restore_item(self, item: UndoItem):
         """
         @see: EditorMixin.undo_restore_item
         """
@@ -248,7 +250,7 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
 
         self.is_modified(True)
 
-    def undo_store_item(self):
+    def undo_store_item(self) -> UndoItem:
         """
         @see: EditorMixin.undo_store_item
         """

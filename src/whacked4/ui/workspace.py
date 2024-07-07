@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-#coding=utf8
-
 """
 Workspaces describe the position and state of windows opened in it, as well as the position and state of the main
 window and any auxiliary information required to restore a user's workspace to a former state.

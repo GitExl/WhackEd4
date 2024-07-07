@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-#coding=utf8
 from typing import Dict, Optional
 
 from whacked4 import utils

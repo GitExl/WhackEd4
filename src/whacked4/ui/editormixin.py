@@ -2,9 +2,6 @@
 Mixin for common editor UI functionality.
 """
 
-#!/usr/bin/env python
-#coding=utf8
-
 from typing import List, Dict, Optional
 
 import wx
