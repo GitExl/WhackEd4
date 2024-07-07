@@ -60,6 +60,9 @@ class EditorMixin(wx.MDIChildFrame):
         @param list_control: the list control whose columns should be sized.
         """
 
+        if not list_control.GetItemCount():
+            return
+
         for i in range(list_control.GetColumnCount()):
             list_control.SetColumnWidth(i, wx.LIST_AUTOSIZE_USEHEADER)
         list_control.Layout()

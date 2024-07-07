@@ -109,11 +109,11 @@ class Patch:
         self.sounds: Table = parent_engine.sounds.clone()
         self.weapons: Table = parent_engine.weapons.clone()
         self.ammo: Table = parent_engine.ammo.clone()
+        self.pars: Table = parent_engine.pars.clone()
 
         self.strings: Dict[str, str] = copy.deepcopy(parent_engine.strings)
         self.cheats: Dict[str, str] = copy.deepcopy(parent_engine.cheats)
         self.misc: Dict[str, any] = copy.deepcopy(parent_engine.misc)
-        self.pars: List = []
 
         self.sprite_names: List[str] = copy.deepcopy(parent_engine.sprite_names)
 
@@ -558,7 +558,7 @@ class Patch:
                         else:
                             continue
 
-                        self.pars.append(par)
+                        self.pars.entries.append(par)
 
                     continue
 

@@ -46,7 +46,6 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
             return
 
         self.selected_index = 0
-
         self.parlist_build()
 
     def update(self):
@@ -60,22 +59,18 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         """
 
         self.ParList.ClearAll()
+        self.ParList.InsertColumn(0, 'Map', width=floor(59 * self.GetDPIScaleFactor()))
+        self.ParList.InsertColumn(1, 'Seconds', width=floor(58 * self.GetDPIScaleFactor()))
+        self.ParList.InsertColumn(2, 'Minutes', width=floor(69 * self.GetDPIScaleFactor()))
 
-        # Add columns if needed.
-        if self.ParList.GetColumnCount() == 0:
-            self.ParList.InsertColumn(0, 'Map', width=floor(59 * self.GetDPIScaleFactor()))
-            self.ParList.InsertColumn(1, 'Seconds', width=floor(58 * self.GetDPIScaleFactor()))
-            self.ParList.InsertColumn(2, 'Minutes', width=floor(69 * self.GetDPIScaleFactor()))
-
-        for index in range(len(self.patch.pars)):
+        for index, _ in enumerate(self.patch.pars.entries):
             self.ParList.InsertItem(index, '')
-
             self.parlist_update_row(index)
 
         self.list_autosize(self.ParList)
 
         # Select the first entry if it is available.
-        if self.ParList.GetItemCount() > 0 and self.selected_index < len(self.patch.pars):
+        if self.ParList.GetItemCount() > 0 and self.selected_index < len(self.patch.pars.entries):
             self.ParList.Select(self.selected_index, True)
             self.properties_set_state(True)
         else:
@@ -87,7 +82,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         Updates a row in the par times list.
         """
 
-        par = self.patch.pars[row_index]
+        par = self.patch.pars.entries[row_index]
 
         self.ParList.SetItem(row_index, 0, utils.get_map_name(par['episode'], par['map']))
         self.ParList.SetItem(row_index, 1, str(par['seconds']))
@@ -98,13 +93,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         Resize the parlist columns to divide them over the width of the client area.
         """
 
-        if not self.ParList.GetColumnCount():
-            return
-
-        column_width = (self.ParList.GetClientSize()[0] - 4) // 3
-        self.ParList.SetColumnWidth(0, column_width)
-        self.ParList.SetColumnWidth(1, column_width)
-        self.ParList.SetColumnWidth(2, column_width)
+        self.list_autosize(self.ParList)
 
     def properties_set_state(self, state: bool):
         """
@@ -138,10 +127,10 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
             'map': 1,
             'seconds': 666,
         })
-        self.patch.pars.append(par)
+        self.patch.pars.entries.append(par)
 
         self.parlist_build()
-        self.ParList.Select(len(self.patch.pars) - 1, True)
+        self.ParList.Select(len(self.patch.pars.entries) - 1, True)
 
     def par_remove(self, event: CommandEvent):
         """
@@ -150,7 +139,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
 
         self.undo_add()
 
-        del self.patch.pars[self.selected_index]
+        del self.patch.pars.entries[self.selected_index]
         self.parlist_build()
 
     def update_properties(self):
@@ -161,7 +150,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         if not self.patch:
             return
 
-        par = self.patch.pars[self.selected_index]
+        par = self.patch.pars.entries[self.selected_index]
 
         self.Episode.ChangeValue(str(par['episode']))
         self.Map.ChangeValue(str(par['map']))
@@ -189,7 +178,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
             value = max(0, value)
         window.ChangeValue(str(value))
 
-        self.patch.pars[self.selected_index][key] = value
+        self.patch.pars.entries[self.selected_index][key] = value
 
         self.parlist_update_row(self.selected_index)
         self.is_modified(True)
@@ -199,7 +188,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         @see: EditorMixin.undo_restore_item
         """
 
-        self.patch.pars = item['pars']
+        self.patch.pars.entries = item['pars']
         self.parlist_build()
 
         self.is_modified(True)
@@ -212,7 +201,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         """
 
         dup = []
-        for par in self.patch.pars:
+        for par in self.patch.pars.entries:
             dup.append(par.clone())
 
         return {

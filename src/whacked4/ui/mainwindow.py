@@ -226,6 +226,9 @@ class MainWindow(windows.MainFrameBase):
         # Initialize the patch with tables from the selected engine.
         selected_engine = self.engines[new_workspace.engine]
         new_patch = Patch(selected_engine)
+        new_patch.filename = filename
+        new_patch.extended = is_extended
+        new_patch.version = version
 
         # Attempt to parse the patch file.
         try:
