@@ -3,13 +3,12 @@ Custom sprite preview control.
 """
 
 from math import floor
-from typing import Optional, List
+from typing import Optional, List, Tuple
 
-from wx import Bitmap, Brush, Point, MouseEvent, PaintEvent, MemoryDC, SizeEvent
+import wx
+from wx import Bitmap, Brush, MouseEvent, PaintEvent, MemoryDC, SizeEvent, Point
 
 from whacked4 import utils
-import wx
-
 from whacked4.doom.graphics import Image
 from whacked4.doom.wadlist import WADList
 
@@ -19,11 +18,26 @@ class SpritePreview(wx.Panel):
     Renders a sprite preview to a StaticBitmap control.
     """
 
-    # The sensitivity of mouse dragging moving the sprite's rotation. Lower values are more sensitive.
+    # The sensitivity of mouse dragging moving the sprite's rotation. Lower values
+    # are more sensitive.
     DRAG_SENSITIVITY = 20
 
-    def __init__(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.NO_BORDER):
-        wx.Panel.__init__(self, parent, id=id, pos=pos, size=size, style=style | wx.NO_FULL_REPAINT_ON_RESIZE)
+    def __init__(
+        self,
+        parent,
+        id=wx.ID_ANY,
+        pos=wx.DefaultPosition,
+        size=wx.DefaultSize,
+        style=wx.NO_BORDER
+    ):
+        wx.Panel.__init__(
+            self,
+            parent,
+            id=id,
+            pos=pos,
+            size=size,
+            style=style | wx.NO_FULL_REPAINT_ON_RESIZE
+        )
 
         # WAD list to use for sprite rendering.
         self.wads: Optional[WADList] = None
@@ -37,7 +51,8 @@ class SpritePreview(wx.Panel):
         self.offset_y: int = 0
         self.is_clear: bool = False
 
-        # The baseline at which to render sprites. Consider this to be the invisible floor on which sprites are placed.
+        # The baseline at which to render sprites. Consider this to be the invisible
+        # floor on which sprites are placed.
         self.baseline_factor: float = 0.8
 
         # Scale to draw sprites at.
@@ -48,7 +63,11 @@ class SpritePreview(wx.Panel):
         self.invalid: Bitmap = wx.Bitmap('res/icon-invalid.png', wx.BITMAP_TYPE_PNG)
 
         # Create "floor" fill color.
-        floor_colour = utils.mix_colors(self.GetBackgroundColour(), wx.Colour(0, 0, 0), 0.65)
+        floor_colour = utils.mix_colors(
+            self.GetBackgroundColour(),
+            wx.Colour(0, 0, 0),
+            0.65
+        )
         self.floor_brush: Brush = wx.Brush(floor_colour)
         self.floor_points: List[Point] = self.create_floor_points()
 
@@ -72,6 +91,10 @@ class SpritePreview(wx.Panel):
         self.update_cursor()
 
     def drag_start(self, event: MouseEvent):
+        """
+        Drag start event handler.
+        """
+
         if self.lock_angle:
             return
 
@@ -79,7 +102,11 @@ class SpritePreview(wx.Panel):
         self.drag_angle_start = self.angle
         self.update_cursor()
 
-    def drag_end(self, event: MouseEvent):
+    def drag_end(self, _: MouseEvent):
+        """
+        Drag end event handler.
+        """
+
         if self.drag_point_start is None:
             return
 
@@ -87,13 +114,18 @@ class SpritePreview(wx.Panel):
         self.update_cursor()
 
     def drag_move(self, event: MouseEvent):
+        """
+        Drag move event handler.
+        """
+
         if self.drag_point_start is None:
             return
 
         drag_point_end = event.GetLogicalPosition(wx.WindowDC(self))
         drag_distance = drag_point_end.x - self.drag_point_start.x
 
-        drag_angle = (self.drag_angle_start - 1) - (drag_distance / (SpritePreview.DRAG_SENSITIVITY * self.GetDPIScaleFactor()))
+        sensitivity = SpritePreview.DRAG_SENSITIVITY * self.GetDPIScaleFactor()
+        drag_angle = (self.drag_angle_start - 1) - (drag_distance / sensitivity)
         drag_angle = int((drag_angle % 8) + 1)
 
         if self.angle != drag_angle:
@@ -101,6 +133,10 @@ class SpritePreview(wx.Panel):
             self.show_sprite(self.sprite_name, self.sprite_frame)
 
     def update_cursor(self):
+        """
+        Update the cursor of this frame based on state.
+        """
+
         if self.lock_angle:
             self.SetCursor(wx.Cursor(wx.CURSOR_ARROW))
         elif self.drag_point_start is None:
@@ -115,9 +151,15 @@ class SpritePreview(wx.Panel):
 
         self.wads = wads
 
-    def show_sprite(self, sprite_name: str, sprite_frame: int, offset_x: int = 0, offset_y: int = 0):
+    def show_sprite(
+        self,
+        sprite_name: str,
+        sprite_frame: int,
+        offset_x: int = 0,
+        offset_y: int = 0
+    ):
         """
-        Shows a sprite.
+        Shows a new sprite.
         """
 
         self.sprite = None
@@ -129,13 +171,31 @@ class SpritePreview(wx.Panel):
 
         # Refresh sprite preview with new sprite.
         if self.wads is not None:
-            self.sprite, self.lock_angle = self.get_sprite_lump(sprite_name, sprite_frame, self.angle)
+            self.sprite, self.lock_angle = self.get_sprite_lump(
+                sprite_name,
+                sprite_frame,
+                self.angle
+            )
 
         self.is_clear = False
         self.update_cursor()
         self.update_paint()
 
-    def get_sprite_lump(self, sprite_name: str, sprite_frame: int, angle: int):
+    def get_sprite_lump(
+        self,
+        sprite_name: str,
+        sprite_frame: int,
+        angle: int
+    ) -> Tuple[Image, bool]:
+        """
+        Returns a sprite lump for a given sprite, frame and angle.
+
+        :param sprite_name:
+        :param sprite_frame:
+        :param angle:
+
+        :return:
+        """
         sprite = None
 
         # Try to get a rotation sprite.
@@ -144,7 +204,11 @@ class SpritePreview(wx.Panel):
 
         # Try to get a 0 rotation (front-facing) sprite.
         if sprite_lump is None:
-            sprite_lump, is_mirrored = self.wads.get_sprite_lump(sprite_name, sprite_frame, 0)
+            sprite_lump, is_mirrored = self.wads.get_sprite_lump(
+                sprite_name,
+                sprite_frame,
+                0
+            )
             lock_angle = True
 
         if sprite_lump is not None:
@@ -152,7 +216,7 @@ class SpritePreview(wx.Panel):
 
         return sprite, lock_angle
 
-    def paint(self, event: PaintEvent):
+    def paint(self, _: PaintEvent):
         """
         Called when this control is painted.
         """
@@ -160,6 +224,10 @@ class SpritePreview(wx.Panel):
         wx.BufferedPaintDC(self, self.buffer)
 
     def update_paint(self):
+        """
+        Paint event handler.
+        """
+
         dc = wx.MemoryDC()
         dc.SelectObject(self.buffer)
         dc.SetBackground(wx.Brush(self.GetBackgroundColour()))
@@ -179,6 +247,14 @@ class SpritePreview(wx.Panel):
         self.Update()
 
     def blit_sprite(self, dc: MemoryDC, sprite: Image, offset_x: int, offset_y: int):
+        """
+        Blit a sprite to the preview surface.
+
+        :param dc:
+        :param sprite:
+        :param offset_x:
+        :param offset_y:
+        """
 
         # Determine what icon or sprite to render.
         bitmap = None
@@ -199,7 +275,8 @@ class SpritePreview(wx.Panel):
             x = size[0] / 2
             y = baseline
 
-            # Adjust sprite coordinates on whether it is to be used as a thing, or a screen graphic (like weapons).
+            # Adjust sprite coordinates on whether it is to be used as a thing, or a screen
+            # graphic (like weapons).
             if sprite.left > 0 and sprite.top > 0:
                 x -= (sprite.left - offset_x) * self.scale
                 y -= (sprite.top - offset_y) * self.scale
@@ -217,14 +294,37 @@ class SpritePreview(wx.Panel):
 
         self.src_dc.SelectObject(bitmap)
         if self.scale != 1:
-            dc.StretchBlit(x, y, floor(bitmap.Width * self.scale), floor(bitmap.Height * self.scale), self.src_dc, 0, 0, bitmap.Width, bitmap.Height, wx.COPY, True)
+            dc.StretchBlit(
+                x, y,
+                floor(bitmap.Width * self.scale), floor(bitmap.Height * self.scale),
+                self.src_dc,
+                0, 0,
+                bitmap.Width, bitmap.Height,
+                wx.COPY,
+                True
+            )
         else:
-            dc.Blit(x, y, bitmap.Width, bitmap.Height, self.src_dc, 0, 0, wx.COPY, True)
+            dc.Blit(
+                x, y,
+                bitmap.Width, bitmap.Height,
+                self.src_dc,
+                0, 0,
+                wx.COPY,
+                True
+            )
 
-    def resize(self, event: SizeEvent):
+    def resize(self, _: SizeEvent):
+        """
+        Size update event handler.
+        """
+
         self.update_size()
 
     def update_size(self):
+        """
+        Update the size of the contents.
+        """
+
         size = self.GetClientSize()
         if size[0] <= 0 or size[1] <= 0:
             return
@@ -254,11 +354,21 @@ class SpritePreview(wx.Panel):
         self.floor_points = self.create_floor_points()
 
     def set_scale(self, scale: float):
+        """
+        Set a new render scale.
+
+        :param scale:
+        """
+
         self.scale = scale * self.GetDPIScaleFactor()
         self.floor_points = self.create_floor_points()
         self.update_paint()
 
     def create_floor_points(self) -> List[Point]:
+        """
+        Generates the points for drawing the preview "floor".
+        """
+
         size = self.GetClientSize()
         baseline = int(size[1] * self.baseline_factor)
 

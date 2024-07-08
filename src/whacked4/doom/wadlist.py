@@ -1,3 +1,7 @@
+"""
+WAD list and sprite management.
+"""
+
 from collections import OrderedDict
 from typing import Dict, List, Optional, Tuple
 
@@ -21,7 +25,7 @@ class SpriteFrame:
     def add_rotation(self, rotation: int, lump: Lump, is_mirrored: bool):
         """
         Adds a new rotation to this frame. Any 0-rotations will overwrite all others.
-        Also see https://github.com/id-Software/DOOM/blob/master/linuxdoom-1.10/r_things.c#L101
+        See https://github.com/id-Software/DOOM/blob/master/linuxdoom-1.10/r_things.c#L101
         """
 
         if rotation == 0:
@@ -35,6 +39,12 @@ class SpriteFrame:
             self.has_rotations = True
 
     def get_rotation_lump(self, rotation: int) -> Tuple[Lump, bool]:
+        """
+        Returns a sprite lump for a given rotation.
+
+        :param rotation: rotation index
+        """
+
         return self.rotations.get(rotation, None), self.is_mirrored.get(rotation, False)
 
 
@@ -49,6 +59,15 @@ class SpriteEntry:
         self.frames: Dict[str, SpriteFrame] = {}
 
     def add_frame(self, frame_name: str, rotation: int, lump: Lump, is_mirrored: bool):
+        """
+        Adds a new frame to this sprite.
+
+        :param frame_name: 4 character name
+        :param rotation: rotation index
+        :param lump: lump with image data
+        :param is_mirrored: is this a mirrored version of another rotation?
+        """
+
         if frame_name not in self.frames:
             frame = SpriteFrame(frame_name)
             self.frames[frame_name] = frame
@@ -58,6 +77,13 @@ class SpriteEntry:
         frame.add_rotation(rotation, lump, is_mirrored)
 
     def get_frame_lump(self, frame_name: str, rotation: int) -> Tuple[Optional[Lump], bool]:
+        """
+       Returns a lump for a given frame.
+
+        :param frame_name: 4 character frame name
+        :param rotation: rotation index
+        """
+
         frame = self.frames.get(frame_name, None)
         if frame:
             return frame.get_rotation_lump(rotation)
@@ -104,8 +130,8 @@ class WADList:
         """
         Returns a lump with the specified name.
 
-        The last WAD is searched first, in reverse order. This way the lumps in the last WAD that was added will
-        override any that were in previously added ones.
+        The last WAD is searched first, in reverse order. This way the lumps in the last
+        WAD that was added will override any that were in previously added ones.
 
         @return: a lump object, or None if the lump could not be found.
         """
@@ -129,7 +155,7 @@ class WADList:
 
         lump = self.get_lump(lump_name)
         if lump is None:
-            return
+            return None
 
         sound_data = sound.Sound()
         sound_data.read_from(lump.get_data())
@@ -137,7 +163,12 @@ class WADList:
 
         return sound_data
 
-    def get_sprite_lump(self, sprite_name: str, frame_index: int = 0, rotation: int = 0) -> Tuple[Optional[Lump], bool]:
+    def get_sprite_lump(
+        self,
+        sprite_name: str,
+        frame_index: int = 0,
+        rotation: int = 0
+    ) -> Tuple[Optional[Lump], bool]:
         """
         Returns a sprite entry from this WAD list.
 
@@ -161,15 +192,15 @@ class WADList:
         """
         Returns an image object from a sprite lump.
 
-        Previously requested sprites are cached so that they will not have to be rendered again. A palette has to be
-        loaded for this function to work.
+        Previously requested sprites are cached so that they will not have to be
+        rendered again. A palette has to be loaded for this function to work.
         """
 
         if self.palette is None:
             return None
 
         if mirror:
-            lump_name = '{}M'.format(lump.name)
+            lump_name = f'{lump.name}M'
         else:
             lump_name = lump.name
 
@@ -185,7 +216,8 @@ class WADList:
 
     def build_sprite_list(self):
         """
-        Builds a lookup table of sprite lumps, and loads a PLAYPAL palette from the current WAD list.
+        Builds a lookup table of sprite lumps, and loads a PLAYPAL palette
+        from the current WAD list.
         """
 
         sprite_lumps: Dict[str, Lump] = OrderedDict()

@@ -1,5 +1,6 @@
 """
-Contains classes to read Doom style patch graphics, and Doom PLAYPAL lump palette data.
+Contains classes to read Doom style patch graphics, and Doom PLAYPAL
+lump palette data.
 """
 
 import struct
@@ -21,7 +22,7 @@ class Palette:
         self.colors: List[Color] = []
 
         if len(data) < 768:
-            raise Exception('Not enough data for a 256 RGB color palette.')
+            raise RuntimeError('Not enough data for a 256 RGB color palette.')
 
         data = bytearray(data)
 
@@ -49,13 +50,20 @@ class Image:
 
     @staticmethod
     def from_doom_patch(data: bytes, palette: Palette, mirror=False):
+        """
+        Creates a new Image from Doom patch data.
+
+        :param data: Doom patch data.
+        :param palette: Doom palette.
+        :param mirror: Should be created as a mirrored version?
+        """
         width, height, left, top = Image.S_HEADER.unpack_from(data)
 
         # Attempt to detect invalid data.
         if width > 2048 or height > 2048 or top > 2048 or left > 2048:
-            return Image.invalid()
+            return Image.create_invalid()
         if width <= 0 or height <= 0:
-            return Image.invalid()
+            return Image.create_invalid()
 
         # Initialize data for an empty bitmap.
         image_data = bytearray((0, 0, 0, 0) * width * height)
@@ -72,7 +80,7 @@ class Image:
 
             # Attempt to detect invalid data.
             if offset < 0 or offset > len(data):
-                return Image.invalid()
+                return Image.create_invalid()
 
             prev_delta = 0
             while True:
@@ -94,9 +102,13 @@ class Image:
                 while pixel_index < pixel_count:
                     pixel = data[offset + pixel_index]
                     if mirror:
-                        dest = ((pixel_index + column_top) * width + ((width - 1) - column_index)) * 4
+                        dest = (
+                           (pixel_index + column_top) * width + ((width - 1) - column_index)
+                        ) * 4
                     else:
-                        dest = ((pixel_index + column_top) * width + column_index) * 4
+                        dest = (
+                           (pixel_index + column_top) * width + column_index
+                        ) * 4
 
                     # Plot pixel from palette.
                     image_data[dest:dest+4] = palette.colors[pixel]
@@ -111,11 +123,19 @@ class Image:
         return Image(width, height, top, left, bitmap)
 
     @staticmethod
-    def empty():
+    def create_empty():
+        """
+        Creates a new empty Image.
+        """
+
         return Image(0, 0, 0, 0, None)
 
     @staticmethod
-    def invalid():
-        image = Image.empty()
+    def create_invalid():
+        """
+        Creates a new "invalid" image.
+        """
+
+        image = Image.create_empty()
         image.invalid = True
         return image

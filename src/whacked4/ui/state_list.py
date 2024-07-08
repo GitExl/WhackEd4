@@ -18,7 +18,7 @@ from whacked4.dehacked.statequery.result import StateQueryResult
 
 FRAMEFLAG_LIT = 0x8000
 
-ITEM_COLORS = [
+ITEM_COLORS: List[Colour] = [
     wx.Colour(red=255, green=0, blue=0),
     wx.Colour(red=255, green=255, blue=255)
 ]
@@ -28,6 +28,10 @@ StateListEvent, EVT_STATE_LIST_EVENT = NewEvent()
 
 
 class StateColumn(IntEnum):
+    """
+    State column index.
+    """
+
     INDEX = 0
     NAME = 1
     SPRITE = 2
@@ -40,8 +44,18 @@ class StateColumn(IntEnum):
 
 
 class StateList(wx.ListCtrl):
+    """
+    Custom statelist ListCtrl wrapper.
+    """
 
-    def __init__(self, parent=None, id=wx.ID_ANY, pos=wx.DefaultPosition, size=wx.DefaultSize, style=0):
+    def __init__(
+        self,
+        parent=None,
+        id=wx.ID_ANY,
+        pos=wx.DefaultPosition,
+        size=wx.DefaultSize,
+        style=0
+    ):
         super().__init__(parent, id, pos, size, style | wx.LC_NO_SORT_HEADER | wx.LC_REPORT)
 
         self.patch: Optional[Patch] = None
@@ -59,11 +73,21 @@ class StateList(wx.ListCtrl):
         self.query_result: Optional[StateQueryResult] = None
 
     def mix_state_colours(self):
+        """
+        Mix the state colors with system colors.
+        """
+
         background_color = self.GetBackgroundColour()
         for color in ITEM_COLORS:
             self.item_colors.append(utils.mix_colors(color, background_color, 0.95))
 
-    def resize(self, event: SizeEvent):
+    def resize(self, _: SizeEvent):
+        """
+        Dialog resize event handler.
+
+        :param _:
+        """
+
         columns_width = 0
         for column_index in range(0, self.GetColumnCount()):
             if column_index == StateColumn.PARAMETERS:
@@ -76,12 +100,15 @@ class StateList(wx.ListCtrl):
             self.SetColumnWidth(StateColumn.PARAMETERS, width)
 
     def update_item_attributes(self):
+        """
+        Updates the attributes of all list items.
+        """
         self.Freeze()
 
         colour_index = 0
         previous_sprite = 0
         list_index = 0
-        for item_index, state_index, state in self.query_result:
+        for _, _, state in self.query_result:
             if state['sprite'] != previous_sprite:
                 colour_index += 1
                 if colour_index == len(self.item_colors):
@@ -95,19 +122,24 @@ class StateList(wx.ListCtrl):
         self.Thaw()
 
     def build(self):
+        """
+        Rebuild dialog contents.
+        """
+
         self.Freeze()
         self.ClearAll()
 
         if self.GetColumnCount() == 0:
-            self.InsertColumn(StateColumn.INDEX, '', width=floor(47 * self.GetDPIScaleFactor()))
-            self.InsertColumn(StateColumn.NAME, 'Name', width=floor(59 * self.GetDPIScaleFactor()))
-            self.InsertColumn(StateColumn.SPRITE, 'Spr', width=floor(42 * self.GetDPIScaleFactor()))
-            self.InsertColumn(StateColumn.FRAME, 'Frm', width=floor(42 * self.GetDPIScaleFactor()))
-            self.InsertColumn(StateColumn.LIT, 'Lit', width=floor(27 * self.GetDPIScaleFactor()))
-            self.InsertColumn(StateColumn.NEXT, 'Next', width=floor(50 * self.GetDPIScaleFactor()))
-            self.InsertColumn(StateColumn.DURATION, 'Dur', width=floor(50 * self.GetDPIScaleFactor()))
-            self.InsertColumn(StateColumn.ACTION, 'Action', width=floor(160 * self.GetDPIScaleFactor()))
-            self.InsertColumn(StateColumn.PARAMETERS, 'Parameters', width=floor(107 * self.GetDPIScaleFactor()))
+            scale = self.GetDPIScaleFactor()
+            self.InsertColumn(StateColumn.INDEX, '', width=floor(47 * scale))
+            self.InsertColumn(StateColumn.NAME, 'Name', width=floor(59 * scale))
+            self.InsertColumn(StateColumn.SPRITE, 'Spr', width=floor(42 * scale))
+            self.InsertColumn(StateColumn.FRAME, 'Frm', width=floor(42 * scale))
+            self.InsertColumn(StateColumn.LIT, 'Lit', width=floor(27 * scale))
+            self.InsertColumn(StateColumn.NEXT, 'Next', width=floor(50 * scale))
+            self.InsertColumn(StateColumn.DURATION, 'Dur', width=floor(50 * scale))
+            self.InsertColumn(StateColumn.ACTION, 'Action', width=floor(160 * scale))
+            self.InsertColumn(StateColumn.PARAMETERS, 'Parameters', width=floor(107 * scale))
 
         for item_index, state_index, state in self.query_result:
             self.InsertItem(item_index, '')
@@ -120,6 +152,15 @@ class StateList(wx.ListCtrl):
         self.Thaw()
 
     def update_row(self, item_index, state_index, state):
+        """
+        Update a single state row.
+
+        :param item_index:
+        :param state_index:
+        :param state:
+
+
+        """
         action = self.patch.engine.actions.get(state['action'], None)
 
         if action is not None:
@@ -129,28 +170,44 @@ class StateList(wx.ListCtrl):
             action_name = ''
             parameters = (str(state['unused1']), str(state['unused2']))
 
+        lit = '◾' if state['spriteFrame'] & FRAMEFLAG_LIT else ''
+        frame_name = str(state['spriteFrame'] & ~FRAMEFLAG_LIT)
         parameters_text = ', '.join(parameters)
 
         self.SetItemText(item_index, str(state_index))
         self.SetItem(item_index, StateColumn.NAME, self.patch.get_state_name(state_index))
         self.SetItem(item_index, StateColumn.SPRITE, str(state['sprite']))
-        self.SetItem(item_index, StateColumn.FRAME, str(state['spriteFrame'] & ~FRAMEFLAG_LIT))
-        self.SetItem(item_index, StateColumn.LIT, '◾' if state['spriteFrame'] & FRAMEFLAG_LIT else '')
+        self.SetItem(item_index, StateColumn.FRAME, frame_name)
+        self.SetItem(item_index, StateColumn.LIT, lit)
         self.SetItem(item_index, StateColumn.NEXT, str(state['nextState']))
         self.SetItem(item_index, StateColumn.DURATION, str(state['duration']))
         self.SetItem(item_index, StateColumn.ACTION, action_name)
         self.SetItem(item_index, StateColumn.PARAMETERS, parameters_text)
 
     def set_patch(self, patch: Patch):
+        """
+        Set the patch referenced by this dialog.
+
+        :param patch:
+        """
         self.patch = patch
         self.query_result = None
 
     def set_state_query_result(self, state_query_result: StateQueryResult):
+        """
+        Set a state query result.
+
+        :param state_query_result:
+        """
         self.query_result = state_query_result
         self.build()
 
     def select_first_valid_state(self):
-        if self.query_result is None or not len(self.query_result):
+        """
+        Selects the first state in the list that is valid.
+        """
+
+        if self.query_result is None or len(self.query_result) == 0:
             return
 
         state = self.query_result.get_state_for_item_index(0)
@@ -160,13 +217,23 @@ class StateList(wx.ListCtrl):
             self.set_selected([1])
 
     def refresh_selected_rows(self):
+        """
+        Refreshes the contents of the selected rows.
+        """
+
         for item_index in self.selected:
             state_index = self.query_result.get_state_index_for_item_index(item_index)
             state = self.query_result.get_state_for_item_index(item_index)
             if state is not None:
                 self.update_row(item_index, state_index, state)
 
-    def update_selection(self, event: ListEvent):
+    def update_selection(self, _: ListEvent):
+        """
+        Update the selected state list.
+
+        :param _:
+        """
+
         self.selected.clear()
 
         item = self.GetFirstSelected()
@@ -177,9 +244,17 @@ class StateList(wx.ListCtrl):
         PostEvent(self, StateListEvent(selection=self.selected))
 
     def get_selected(self) -> List[int]:
+        """
+        Returns the selected states.
+        """
+
         return self.selected
 
     def iterate_selected(self) -> Tuple[int, int, Entry]:
+        """
+        Iterator for selected states.
+        """
+
         for item_index in self.selected:
             state_index = self.query_result.get_state_index_for_item_index(item_index)
             state = self.query_result.get_state_for_item_index(item_index)
@@ -188,24 +263,46 @@ class StateList(wx.ListCtrl):
                 yield item_index, state_index, state
 
     def get_selected_count(self) -> int:
+        """
+        Return the number of selected states.
+        """
+
         return len(self.selected)
 
     def get_first_selected(self) -> int:
-        if len(self.selected):
+        """
+        Returns the index of the first selected state.
+        """
+
+        if len(self.selected) > 0:
             return self.selected[0]
         return -1
 
     def get_last_selected(self) -> int:
-        if len(self.selected):
+        """
+        Returns the index of the last selected state.
+        """
+
+        if len(self.selected) > 0:
             return self.selected[-1]
         return -1
 
     def set_selected(self, selected: List[int]):
+        """
+        Set the list of selected states.
+
+        :param selected:
+        """
+
         self.clear_selection()
         for index in selected:
             self.Select(index, 1)
 
     def clear_selection(self):
+        """
+        Clear the state selection.
+        """
+
         item = self.GetFirstSelected()
         while item != -1:
             self.Select(item, 0)

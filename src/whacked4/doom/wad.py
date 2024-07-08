@@ -3,7 +3,7 @@ Contains Doom WAD file reading classes.
 """
 
 import struct
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 
 class WADError(Exception):
@@ -28,8 +28,8 @@ class Lump:
     """
     A lump that is part of a WAD file.
 
-    It is recommended to access a lump's data through the get_data() method to prevent having to load an entire
-    WAD's data in memory.
+    It is recommended to access a lump's data through the get_data() method to
+    prevent having to load an entire WAD's data in memory.
     """
 
     def __init__(self, name: str, size: int, offset: int, owner):
@@ -43,7 +43,8 @@ class Lump:
         """
         Returns this lump's data.
 
-        If the data has not yet been read, it will open the WAD file and read it before returning it.
+        If the data has not yet been read, it will open the WAD file and read
+        it before returning it.
         """
 
         if self.data is None:
@@ -84,8 +85,8 @@ class WAD:
             # Read and validate header. Should contain PWAD or IWAD magic bytes.
             wad_type, entry_count, dir_offset = WAD.S_HEADER.unpack(f.read(WAD.S_HEADER.size))
             wad_type = wad_type.decode('ascii')
-            if wad_type != WAD.TYPE_IWAD and wad_type != WAD.TYPE_PWAD:
-                raise WADTypeError('Invalid WAD type "{}"'.format(wad_type))
+            if wad_type not in {WAD.TYPE_IWAD, WAD.TYPE_PWAD}:
+                raise WADTypeError(f'Invalid WAD type "{wad_type}"')
 
             wad = WAD(filename, wad_type)
 
@@ -107,11 +108,12 @@ class WAD:
 
         return wad
 
-    def get_lump(self, lump_name: str):
+    def get_lump(self, lump_name: str) -> Optional[Lump]:
         """
         Searches this WAD's lump directory for a lump by name.
 
-        @return: the first matching lump with the specified name, or None if no lump with that name could be found.
+        @return: the first matching lump with the specified name, or None if
+        no lump with that name could be found.
         """
 
         for lump in reversed(self.lumps):
@@ -120,20 +122,26 @@ class WAD:
 
         return None
 
-    def get_sprite_lumps(self):
+    def get_sprite_lumps(self) -> Dict[str, Lump]:
+        """
+        Returns a dict of all sprite lumps.
+        """
+
         sprites = {}
         section_active = False
 
-        # Note that these are iterated in reverse, so reverse logic applies for deleting the start and end of
-        # the sprite list.
+        # Note that these are iterated in reverse, so reverse logic applies for
+        # deleting the start and end of the sprite list.
         for lump in reversed(self.lumps):
-            if lump.name == 'SS_START' or lump.name == 'S_START':
+            if lump.name in {'SS_START', 'S_START'}:
                 section_active = False
                 continue
-            elif lump.name == 'SS_END' or lump.name == 'S_END':
+
+            if lump.name in {'SS_END', 'S_END'}:
                 section_active = True
                 continue
-            elif section_active:
+
+            if section_active:
                 sprites[lump.name] = lump
 
         return sprites

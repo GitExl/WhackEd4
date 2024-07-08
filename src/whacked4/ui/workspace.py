@@ -1,13 +1,14 @@
 """
-Workspaces describe the position and state of windows opened in it, as well as the position and state of the main
-window and any auxiliary information required to restore a user's workspace to a former state.
+Workspaces describe the position and state of windows opened in it, as well as
+the position and state of the main window and any auxiliary information required
+to restore a user's workspace to a former state.
 """
 
 import json
 import os.path
-from typing import Optional, Dict
+from typing import Optional, Dict, List
 
-from wx import Window, Frame, MDIParentFrame
+from wx import Frame, MDIParentFrame
 
 from whacked4.dehacked.engine import Engine
 from whacked4.doom.wad import WAD
@@ -23,12 +24,12 @@ class Workspace:
     WINDOW_STATE_MAXIMIZED = 1
 
     def __init__(self):
-        self.engine: Optional[Engine] = None
+        self.engine: Optional[str] = None
 
-        self.iwad: Optional[WAD] = None
-        self.pwads: Optional[WADList] = None
+        self.iwad: Optional[str] = None
+        self.pwads: Optional[List[str]] = None
 
-        self.windows = None
+        self.windows: Optional[Dict[str, any]] = None
 
     def load(self, base_filename: str):
         """
@@ -112,7 +113,8 @@ class Workspace:
         Stores all editor windows' state.
 
         @param frame: the MDI parent frame to store windows from.
-        @param workspace_windows: a dict containing window names and window objects to store.
+        @param workspace_windows: a dict containing window names and window
+            objects to store.
         """
 
         self.windows = {}
@@ -158,5 +160,5 @@ def _get_dict_value(src: Dict[str, any], value: any, default: any):
 
     if value in src:
         return src[value]
-    else:
-        return default
+
+    return default

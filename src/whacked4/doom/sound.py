@@ -45,5 +45,9 @@ class Sound:
         """
 
         # Start a new playback thread so that this function call does not block.
-        player = whacked4.playbackthread.PlaybackThread(pyaudio_instance, self.sample_rate, self.samples)
+        player = whacked4.playbackthread.PlaybackThread(
+            pyaudio_instance,
+            self.sample_rate,
+            self.samples
+        )
         player.start()

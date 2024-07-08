@@ -26,14 +26,14 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
 
         self.SetEscapeId(windows.PATCHINFO_CANCEL)
 
-        self.selected_engine: Optional[Engine] = None
-        self.selected_iwad: Optional[WAD] = None
-        self.selected_pwads: Optional[List[WAD]] = None
+        self.selected_engine: Optional[str] = None
+        self.selected_iwad: Optional[str] = None
+        self.selected_pwads: Optional[List[str]] = None
 
         self.engines: Optional[Dict[str, Engine]] = None
         self.workspace: Optional[Workspace] = None
 
-        self.pwads: Optional[List[WAD]] = None
+        self.pwads: Optional[List[str]] = None
 
     def reset(self):
         """
