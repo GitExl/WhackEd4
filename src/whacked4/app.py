@@ -1,12 +1,15 @@
-#!/usr/bin/env python
-#coding=utf8
+"""
+wxWidgets app entrypoint.
+"""
 
 import argparse
 import sys
 import traceback
-import wx
 import os
+import locale
+from typing import TextIO, Optional
 
+import wx
 import pyaudio
 
 from whacked4 import config
@@ -24,9 +27,14 @@ class WhackEd4App(wx.App):
     def __init__(self):
         super().__init__()
 
+        self.log: Optional[TextIO] = None
         self.pyaudio_instance = pyaudio.PyAudio()
 
     def OnExit(self):
+        """
+        App exit event.
+        """
+
         self.pyaudio_instance.terminate()
 
     def OnInit(self):
@@ -36,9 +44,21 @@ class WhackEd4App(wx.App):
 
         # Parse common commandline arguments.
         parser = argparse.ArgumentParser()
-        parser.add_argument('-debug', action='store_true', help='Enable debug mode.')
-        parser.add_argument('-open', action='store', help='Open patch file.')
-        parser.add_argument('-workdir', action='store', help='Set application working directory (for opening from shell).')
+        parser.add_argument(
+            '-debug',
+            action='store_true',
+            help='Enable debug mode.'
+        )
+        parser.add_argument(
+            '-open',
+            action='store',
+            help='Open patch file.'
+        )
+        parser.add_argument(
+            '-workdir',
+            action='store',
+            help='Set application working directory (for opening from shell).'
+        )
         args = parser.parse_known_args()[0]
 
         # Enable debugging mode.
@@ -61,8 +81,13 @@ class WhackEd4App(wx.App):
         self.SetTopWindow(mainwind)
 
         if config.APP_BETA:
-            wx.MessageBox(message='This is a beta version. Please beware of bugs, and report them on the GitHub issue ' \
-                                  'tracker.', caption=config.APP_NAME, style=wx.OK | wx.ICON_INFORMATION, parent=mainwind)
+            wx.MessageBox(
+                message='This is a beta version. Please beware of bugs, and report them on the ' \
+                'GitHub issue tracker.',
+                caption=config.APP_NAME,
+                style=wx.OK | wx.ICON_INFORMATION,
+                parent=mainwind
+            )
 
         if args.open and os.path.exists(args.open):
             mainwind.open_file(args.open)
@@ -73,7 +98,6 @@ class WhackEd4App(wx.App):
 
     def InitLocale(self):
         if sys.platform.startswith('win') and sys.version_info > (3, 8):
-            import locale
             locale.setlocale(locale.LC_ALL, "C")
 
     def redirect_logs(self):
@@ -81,7 +105,7 @@ class WhackEd4App(wx.App):
         Redirects stdout and stderr to a single text file.
         """
 
-        self.log = open(config.LOG_PATH, 'w+')
+        self.log = open(config.LOG_PATH, 'w+', encoding='utf-8')
 
         sys.stdout = self.log
         sys.stderr = self.log
@@ -111,9 +135,17 @@ def set_monospace_font():
 
     font_size = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT).GetPointSize()
 
-    config.FONT_MONOSPACED = wx.Font(font_size, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL,
-                                     faceName=config.FONT_MONOSPACED_NAME
+    config.FONT_MONOSPACED = wx.Font(
+        font_size,
+        wx.FONTFAMILY_DEFAULT,
+        wx.FONTSTYLE_NORMAL,
+        wx.FONTWEIGHT_NORMAL,
+        faceName=config.FONT_MONOSPACED_NAME
     )
-    config.FONT_MONOSPACED_BOLD = wx.Font(font_size, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD,
-                                          faceName=config.FONT_MONOSPACED_NAME
+    config.FONT_MONOSPACED_BOLD = wx.Font(
+        font_size,
+        wx.FONTFAMILY_DEFAULT,
+        wx.FONTSTYLE_NORMAL,
+        wx.FONTWEIGHT_BOLD,
+        faceName=config.FONT_MONOSPACED_NAME
     )

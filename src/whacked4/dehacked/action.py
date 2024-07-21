@@ -1,3 +1,7 @@
+"""
+Dehacked state action definition.
+"""
+
 from typing import List, Optional
 
 from whacked4.dehacked.entry import Entry
@@ -42,7 +46,8 @@ class Action:
 
     def get_state_parameter_properties(self, state: Entry) -> List[str]:
         """
-        Returns a list of action argument properties from a state that are valid for this action.
+        Returns a list of action argument properties from a state that are valid
+        for this action.
 
         :param state: the state to return the property values of.
 
@@ -52,7 +57,7 @@ class Action:
         param_keys = []
 
         param_keys.extend(['unused1', 'unused2'])
-        param_keys.extend(['arg{}'.format(x) for x in range(1, len(self.arguments) + 1)])
+        param_keys.extend([f'arg{x}' for x in range(1, len(self.arguments) + 1)])
 
         return [str(state[key]) for key in param_keys]
 

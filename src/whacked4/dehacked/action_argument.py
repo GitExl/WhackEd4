@@ -1,3 +1,7 @@
+"""
+State action argument descriptors.
+"""
+
 from typing import Tuple, Optional
 
 from whacked4.enum import WhackedEnum
@@ -54,7 +58,7 @@ class ActionArgument:
         )
 
         # Accept range for numeric types.
-        if argument.type == ActionArgumentType.INTEGER or argument.type == ActionArgumentType.FIXED_POINT:
+        if argument.type in {ActionArgumentType.INTEGER, ActionArgumentType.FIXED_POINT}:
             argument.range = (int(json['range'][0]), int(json['range'][1]))
 
         return argument

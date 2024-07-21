@@ -1,3 +1,7 @@
+"""
+Data table entry code.
+"""
+
 import copy
 
 from dataclasses import dataclass
@@ -29,11 +33,18 @@ class FieldType(WhackedEnum):
 # Stores information about a Dehacked field.
 @dataclass
 class Field:
+    """
+    A single dehacked table field.
+    """
+
     patch_key: str
     type: FieldType
 
 
 class Entry:
+    """
+    A single entry in a Dehacked data table.
+    """
 
     # The name of this patch entry.
     NAME: Optional[str] = None
@@ -66,7 +77,7 @@ class Entry:
         """
 
         if key not in self.values:
-            raise KeyError('Cannot find patch key "{}".'.format(key))
+            raise KeyError(f'Cannot find patch key "{key}".')
 
         self.values[key] = value
 
@@ -83,29 +94,29 @@ class Entry:
         @returns: A validated value.
         """
 
-        field = self.FIELDS[key]
+        field = self.FIELDS.get(key)
 
         if field.type == FieldType.FLAGS:
             return self.table.flags_parse_string(key, value)
 
-        elif field.type == FieldType.INT or field.type == FieldType.AMMO or field.type == FieldType.SOUND or \
-                field.type == FieldType.SPRITE or field.type == FieldType.STATE:
+        if field.type in {FieldType.INT, FieldType.AMMO,
+                          FieldType.SOUND, FieldType.SPRITE, FieldType.STATE}:
             try:
                 return int(value)
-            except ValueError:
-                raise ValueError('Value "{}" for field "{}" is not an integer.'.format(value, key))
+            except ValueError as e:
+                raise ValueError(f'Value "{value}" for field "{key}" is not an integer.') from e
 
-        elif field.type == FieldType.FLOAT:
+        if field.type == FieldType.FLOAT:
             try:
                 return float(value)
-            except ValueError:
-                raise ValueError('Value "{}" for field "{}" is not a float.'.format(value, key))
+            except ValueError as e:
+                raise ValueError(f'Value "{value}" for field "{key}" is not a float.') from e
 
-        elif field.type == FieldType.STRING or field.type == FieldType.ACTION or \
-                field.type == FieldType.ENUM_GAME or field.type == FieldType.ENUM_RENDER_STYLE:
+        if field.type in {FieldType.STRING, FieldType.ACTION,
+                          FieldType.ENUM_GAME, FieldType.ENUM_RENDER_STYLE}:
             return str(value)
 
-        raise ValueError('Unknown field value type "{}".'.format(field.type))
+        raise ValueError(f'Unknown field value type "{field.type}".')
 
     def set_patch_key(self, patch_key: str, value: any):
         """
@@ -157,7 +168,8 @@ class Entry:
 
     def to_json(self) -> Dict[str, any]:
         """
-        Writes this entry's values to a JSON object. Currently just returns it's values dict.
+        Writes this entry's values to a JSON object. Currently just returns
+        its values dict.
         """
 
         return self.values
@@ -168,13 +180,13 @@ class Entry:
         """
 
         if self.name is not None:
-            return '\n{} {} ({})\n'.format(self.NAME, index + offset, self.name)
-        else:
-            return '\n{} {}\n'.format(self.NAME, index + offset)
+            return f'\n{self.NAME} {index + offset} ({self.name})\n'
+        return f'\n{self.NAME} {index + offset}\n'
 
     def get_patch_string(self, original: Self) -> Optional[str]:
         """
-        Returns a string with all of this entry's modified values, for writing to a Dehacked patch.
+        Returns a string with all of this entry's modified values, for writing to a
+        Dehacked patch.
 
         @param original: The original entry containing unmodified engine data.
         """
@@ -200,20 +212,27 @@ class Entry:
         # Create a list of patch key\value pairs to output.
         output_list = []
         for key, value in output.items():
-            field = self.FIELDS[key]
+            field = self.FIELDS.get(key)
 
             if field.type == FieldType.FLAGS:
                 value = self.table.flags_get_string(key, value)
 
-            output_list.append('{} = {}'.format(field.patch_key, value))
+            output_list.append(f'{field.patch_key} = {value}')
 
         # Add extra values.
         for key, value in self.extra_values.items():
-            output_list.append('{} = {}'.format(key, value))
+            output_list.append(f'{key} = {value}')
 
         return '\n'.join(output_list) + '\n'
 
     def apply_defaults(self, default_entry: Self):
+        """
+        Apply default property values to this entry,
+
+        :param default_entry:
+
+        :return:
+        """
         if self.name is None:
             self.name = default_entry.name
 
@@ -234,4 +253,4 @@ class Entry:
         return dup
 
     def __repr__(self) -> str:
-        return '{}: {}'.format(self.NAME, self.values)
+        return f'{self.NAME}: {self.values}'

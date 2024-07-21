@@ -1,3 +1,7 @@
+"""
+PyAudio playback thread.
+"""
+
 import threading
 import pyaudio
 
@@ -11,8 +15,8 @@ class PlaybackThread(threading.Thread):
         threading.Thread.__init__(self)
 
         self.pyaudio_instance = pyaudio_instance
-        self.sample_rate = sample_rate
-        self.samples = samples
+        self.sample_rate: int = sample_rate
+        self.samples: int = samples
 
     def run(self):
         stream = self.pyaudio_instance.open(

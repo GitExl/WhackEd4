@@ -3,7 +3,7 @@ This module contains classes to create, read and write Dehacked patches.
 """
 
 import copy
-from typing import Dict, Optional, List, Tuple
+from typing import Dict, Optional, List, Tuple, TextIO
 
 from whacked4 import config
 from whacked4.dehacked import entries
@@ -18,7 +18,7 @@ class DehackedPatchError(Exception):
     Base class for errors in Dehacked file reading/writing.
     """
 
-    def __init__(self, msg):
+    def __init__(self, msg: str):
         self.msg = msg
 
     def __str__(self):
@@ -64,16 +64,23 @@ class ParseMode(WhackedEnum):
     POINTERS_EXT = 13
 
 
-def write_dict(f, items, source_items, data, header):
+def write_dict(
+    f: TextIO,
+    items: Dict[str, any],
+    source_items: Dict[str, any],
+    data: Dict[str, any],
+    header: str
+):
     """
-    Writes a dictionary of key\\value pairs to a Dehacked patch file, if they have been modified compared to a
-    source dict.
+    Writes a dictionary of key\\value pairs to a Dehacked patch file, if they
+    have been modified compared to a source dict.
 
     :param f: the file object to write to.
     :param items: the modified item dict.
     :param source_items: the original item dict.
-    :param data: a dictionary containing information about each key\\value pair that is written to the Dehacked file.
-    Each value is another dict containing at least a 'patchKey' item that describes what key to write to the file.
+    :param data: a dictionary containing information about each key\\value pair
+    that is written to the Dehacked file. Each value is another dict containing
+    at least a 'patchKey' item that describes what key to write to the file.
     :param header: string to write as header.
     """
 
@@ -84,9 +91,9 @@ def write_dict(f, items, source_items, data, header):
             out[data[key]['patchKey']] = item
 
     if len(out) > 0:
-        f.write('\n{}\n'.format(header))
-        for key in out:
-            f.write('{} = {}\n'.format(key, out[key]))
+        f.write(f'\n{header}\n')
+        for key, value in out.items():
+            f.write(f'{key} = {value}\n')
 
 
 class Patch:
@@ -121,7 +128,8 @@ class Patch:
         """
         Updates a names list to reflect their string list name.
 
-        This is used to update sound and sprite names after the strings list has been altered.
+        This is used to update sound and sprite names after the strings
+        list has been altered.
 
         @param engine_names: the list of names in the engine object.
         @param patch_names: the list of names in the patch object.
@@ -151,9 +159,9 @@ class Patch:
 
         if ammo_index == len(self.ammo):
             return 'Unknown'
-        elif ammo_index == len(self.ammo) + 1:
+        if ammo_index == len(self.ammo) + 1:
             return 'Infinite'
-        elif ammo_index < len(self.ammo):
+        if ammo_index < len(self.ammo):
             return self.ammo[ammo_index].name
 
         return None
@@ -163,18 +171,18 @@ class Patch:
         Writes this patch to a Dehacked file.
         """
 
-        with open(filename, 'w') as f:
+        with open(filename, 'w', encoding='latin1') as f:
             # Write header.
             f.write('Patch File for DeHackEd v3.0\n')
 
             if config.APP_BETA:
-                f.write('# Created with {} {} BETA\n'.format(config.APP_NAME, config.APP_VERSION))
+                f.write(f'# Created with {config.APP_NAME} {config.APP_VERSION} BETA\n')
             else:
-                f.write('# Created with {} {}\n'.format(config.APP_NAME, config.APP_VERSION))
+                f.write(f'# Created with {config.APP_NAME} {config.APP_VERSION}\n')
 
             f.write('# Note: Use the pound sign (\'#\') to start comment lines.\n\n')
 
-            f.write('Doom version = {}\n'.format(self.version))
+            f.write(f'Doom version = {self.version}\n')
             f.write('Patch format = 6\n\n')
 
             # Write tables.
@@ -192,7 +200,7 @@ class Patch:
             try:
                 self.write_patch_codepointers(f)
             except LookupError as e:
-                return e.__str__()
+                return str(e)
 
             # Write simple strings.
             if not self.extended:
@@ -215,16 +223,20 @@ class Patch:
 
         # Create a list of modified strings.
         modified = []
-        for key, value in self.strings.items():
+        for key in self.strings:
             if self.strings[key] != self.engine.strings[key]:
                 modified.append(key)
 
         # Write only modified strings to the patch file.
         for key in modified:
-            f.write('\nText {} {}\n'.format(len(self.engine.strings[key]), len(self.strings[key])))
-            f.write('{}{}'.format(self.engine.strings[key], self.strings[key]))
+            org_len = len(self.engine.strings[key])
+            org_str = self.engine.strings[key]
+            new_len = len(self.strings[key])
+            new_str = self.strings[key]
+            f.write(f'\nText {org_len} {new_len}\n')
+            f.write(f'{org_str}{new_str}')
 
-    def write_patch_ext_strings(self, f):
+    def write_patch_ext_strings(self, f: TextIO):
         """
         Writes this patch's strings in extended Dehacked format.
 
@@ -242,9 +254,10 @@ class Patch:
         if len(out) > 0:
             f.write('\n[STRINGS]\n')
             for name, string in out.items():
-                f.write('{} = {}\n'.format(name, string_escape(string)))
+                escaped_string = string_escape(string)
+                f.write(f'{name} = {escaped_string}\n')
 
-    def write_patch_pars(self, f):
+    def write_patch_pars(self, f: TextIO):
         """
         Writes par times to a Dehacked patch.
 
@@ -258,51 +271,32 @@ class Patch:
         f.write('\n[PARS]\n')
         for entry in self.pars:
             if entry['episode'] == 0:
-                f.write('par {} {}\n'.format(entry['map'], entry['seconds']))
+                map = entry['map']
+                seconds = entry['seconds']
+                f.write(f'par {map} {seconds}\n')
             else:
-                f.write('par {} {} {}\n'.format(entry['episode'], entry['map'], entry['seconds']))
+                episode = entry['episode']
+                map = entry['map']
+                seconds = entry['seconds']
+                f.write(f'par {episode} {map} {seconds}\n')
 
-    def write_patch_codepointers(self, f):
+    def write_patch_codepointers(self, f: TextIO):
         """
         Writes codepointer data to a Dehacked patch.
 
-        @raise LookupError: if an action pointer index cannot be found, or if there is no engine state with the
-        new action pointer.
+        @raise LookupError: if an action pointer index cannot be found, or if there
+        is no engine state with the new action pointer.
         """
 
         if not self.extended:
-            # For non-extended patches, each state's action has an index. States without an action are skipped.
-            # When writing these action pointers to a patch file, state actions are matched to action pointer indices.
-            # Their value refers to a state in the original engine data with this particular action.
-            for i in range(len(self.states)):
-                action_pointer = self.states[i]['action']
-
-                if action_pointer != self.engine.states[i]['action']:
-                    # Attempt to find this state's action pointer index in the action index lookup list.
-                    try:
-                        action_pointer_index = self.engine.action_index_to_state.index(i)
-                    except ValueError:
-                        raise LookupError('Cannot find an action pointer index for state {}'.format(i))
-
-                    # Find a state in the engine state table that uses the new action pointer.
-                    state_index = -1
-                    for j in range(len(self.engine.states)):
-                        if self.engine.states[j]['action'] == action_pointer:
-                            state_index = j
-                            break
-
-                    if state_index == -1:
-                        raise LookupError('Cannot find a state for action pointer {}'.format(action_pointer))
-
-                    f.write('\nPointer {} (Frame {})\n'.format(action_pointer_index, i))
-                    f.write('Codep Frame = {}\n'.format(state_index))
+            self.write_patch_codepointers_extended(f)
 
         else:
             out = {}
 
             # Create a dict of modified actions.
             # [state index] = action pointer
-            for index in range(len(self.states)):
+            for index in enumerate(self.states):
                 action_pointer = self.states[index]['action']
                 if action_pointer != self.engine.states[index]['action']:
                     out[index] = action_pointer
@@ -310,7 +304,41 @@ class Patch:
             if len(out) > 0:
                 f.write('\n[CODEPTR]\n')
                 for index, action in out.items():
-                    f.write('FRAME {} = {}\n'.format(index, action))
+                    f.write(f'FRAME {index} = {action}\n')
+
+    def write_patch_codepointers_extended(self, f: TextIO):
+        """
+        Writes extended  codepointer data to a Dehacked patch.
+        """
+
+        # For non-extended patches, each state's action has an index. States without an
+        # action are skipped. When writing these action pointers to a patch file, state
+        # actions are matched to action pointer indices. Their value refers to a state
+        # in the original engine data with this particular action.
+        for i in enumerate(self.states):
+            action_pointer = self.states[i]['action']
+
+            if action_pointer != self.engine.states[i]['action']:
+                # Attempt to find this state's action pointer index in the action
+                # index lookup list.
+                try:
+                    action_pointer_index = self.engine.action_index_to_state.index(i)
+                except ValueError as e:
+                    raise LookupError(f'Cannot find an action pointer '
+                                      f'index for state {i}') from e
+
+                # Find a state in the engine state table that uses the new action pointer.
+                state_index = -1
+                for j in enumerate(self.engine.states):
+                    if self.engine.states[j]['action'] == action_pointer:
+                        state_index = j
+                        break
+
+                if state_index == -1:
+                    raise LookupError(f'Cannot find a state for action pointer {action_pointer}')
+
+                f.write(f'\nPointer {action_pointer_index} (Frame {i})\n')
+                f.write(f'Codep Frame = {state_index}\n')
 
     @staticmethod
     def analyze(filename: str, engines: Dict[str, Engine]) -> Tuple[int, bool]:
@@ -320,15 +348,16 @@ class Patch:
         @param filename: The filename of the patch to analyze.
         @param engines: A dict of engine objects.
 
-        @raise DehackedVersionError: if this patch cannot be loaded by any of the specified engines, or if the patch
-        does not define a Doom version at all.
-        @raise DehackedPatchError: if the patch contains extended Dehacked features alongside conflicting normal ones.
+        @raise DehackedVersionError: if this patch cannot be loaded by any of the
+        specified engines, or if the patch does not define a Doom version at all.
+        @raise DehackedPatchError: if the patch contains extended Dehacked features
+        alongside conflicting normal ones.
         """
 
         extended = False
         version = 0
 
-        with open(filename, 'r') as f:
+        with open(filename, 'r', encoding='latin1') as f:
             while True:
                 line = f.readline()
                 if not line:
@@ -340,15 +369,17 @@ class Patch:
                 # Detect version number.
                 # Searches the engines list for an engine that supports loading this patch.
                 if line.startswith('Doom version = '):
-                    version = int(line[15:])
+                    patch_version = int(line[15:])
                     for find_engine in engines.values():
-                        if version in find_engine.versions and extended == find_engine.extended:
-                            version = version
+                        if patch_version in find_engine.versions and extended == find_engine.extended:
+                            version = patch_version
                             break
 
                     if version == 0:
-                        raise DehackedVersionError('{} with engine version {} does not match any supported engine'
-                                                   'version.'.format(filename, version))
+                        raise DehackedVersionError(
+                            f'{filename} with engine version {version} does not '
+                            f'match any supported engine version.'
+                        )
 
                 # Detect extended patches from section headers.
                 elif line.startswith('[') and line.endswith(']'):
@@ -366,7 +397,7 @@ class Patch:
                     extended = False
 
         if version == 0:
-            raise DehackedVersionError('{} does not define a Doom version.'.format(filename))
+            raise DehackedVersionError(f'{filename} does not define a Doom version.')
 
         return version, extended
 
@@ -377,7 +408,8 @@ class Patch:
         @raise DehackedPatchError: if the patch file has no valid Dehacked header.
         @raise DehackedFormatError: if the patch format is not supported.
 
-        @return: a dict containing non-fatal warnings and messages that occurred during the parsing process.
+        @return: a dict containing non-fatal warnings and messages that occurred
+        during the parsing process.
         """
 
         # State.
@@ -388,7 +420,7 @@ class Patch:
         # A dict of messages to return.
         messages: Dict[str, str] = {}
 
-        with open(filename, 'r') as f:
+        with open(filename, 'r', encoding='latin1') as f:
             while True:
                 line = f.readline()
                 if not line:
@@ -404,13 +436,17 @@ class Patch:
                     if line == 'Patch File for DeHackEd v3.0':
                         valid = True
                 if not valid:
-                    raise DehackedPatchError('The file {} does not have a valid Dehacked header.'.format(filename))
+                    raise DehackedPatchError(
+                        f'The file {filename} does not have a valid Dehacked header.'
+                    )
 
                 # Header pairs.
                 if line.startswith('Patch format = '):
                     value = int(line[15:])
                     if value != 6:
-                        raise DehackedFormatError('{} has an unsupported patch format ({}).'.format(filename, value))
+                        raise DehackedFormatError(
+                            f'{filename} has an unsupported patch format ({value}).'
+                        )
                     continue
 
                 line_words = line.split(' ')
@@ -421,73 +457,78 @@ class Patch:
                     entry_index = int(line_words[1]) - 1
                     entry_name = ' '.join(line_words[2:])[1:-1]
                     if entry_index < 0 or entry_index >= len(self.things):
-                        messages['NOTHING'] = 'The patch contains thing data that does not exist in the chosen engine. It will not be loaded.'
+                        messages['NOTHING'] = 'The patch contains thing data that does not exist '\
+                                              'in the chosen engine. It will not be loaded.'
                         entry_index = -1
                     else:
                         self.things[entry_index].name = entry_name
                     continue
-                elif line.startswith('Frame ') and len(line_words) >= 2:
+                if line.startswith('Frame ') and len(line_words) >= 2:
                     mode = ParseMode.STATE
                     entry_index = int(line_words[1])
                     if entry_index < 0 or entry_index >= len(self.states):
-                        messages['NOSTATE'] = 'The patch contains state data that does not exist in the chosen engine. It will not be loaded.'
+                        messages['NOSTATE'] = 'The patch contains state data that does not exist '\
+                                              'in the chosen engine. It will not be loaded.'
                         entry_index = -1
                     continue
-                elif line.startswith('Sound ') and len(line_words) >= 2:
+                if line.startswith('Sound ') and len(line_words) >= 2:
                     mode = ParseMode.SOUND
                     entry_index = int(line_words[1])
                     if entry_index < 0 or entry_index >= len(self.sounds):
-                        messages['NOSOUND'] = 'The patch contains sound data that does not exist in the chosen engine. It will not be loaded.'
+                        messages['NOSOUND'] = 'The patch contains sound data that does not exist '\
+                                              'in the chosen engine. It will not be loaded.'
                         entry_index = -1
                     continue
-                elif line.startswith('Weapon ') and len(line_words) >= 3:
+                if line.startswith('Weapon ') and len(line_words) >= 3:
                     mode = ParseMode.WEAPON
                     entry_index = int(line_words[1])
                     entry_name = ' '.join(line_words[2:])[1:-1]
                     if entry_index < 0 or entry_index >= len(self.weapons):
-                        messages['NOWEAPON'] = 'The patch contains weapon data that does not exist in the chosen engine. It will not be loaded.'
+                        messages['NOWEAPON'] = 'The patch contains weapon data that does not '\
+                                               'exist in the chosen engine. It will not be loaded.'
                         entry_index = -1
                     else:
                         self.weapons[entry_index].name = entry_name
                     continue
-                elif line.startswith('Ammo ') and len(line_words) >= 3 and line_words[2][0] == '(':
+                if line.startswith('Ammo ') and len(line_words) >= 3 and line_words[2][0] == '(':
                     mode = ParseMode.AMMO
                     entry_index = int(line_words[1])
                     entry_name = ' '.join(line_words[2:])[1:-1]
                     if entry_index < 0 or entry_index >= len(self.ammo):
-                        messages['NOAMMO'] = 'The patch contains ammo data that does not exist in the chosen engine. It will not be loaded.'
+                        messages['NOAMMO'] = 'The patch contains ammo data that does not exist '\
+                                             'in the chosen engine. It will not be loaded.'
                         entry_index = -1
                     else:
                         self.ammo[entry_index].name = entry_name
                     continue
-                elif line.startswith('Sprite ') and len(line_words) == 2:
+                if line.startswith('Sprite ') and len(line_words) == 2:
                     mode = ParseMode.SPRITE
                     entry_index = int(line_words[1])
-                    messages['UNSUPPORTED_SPRITE'] = 'The patch contains sprite blocks, which are unsupported and ' \
-                                                     'will not be loaded.'
+                    messages['UNSUPPORTED_SPRITE'] = 'The patch contains sprite blocks, which '\
+                                                     'are unsupported and will not be loaded.'
                     continue
-                elif line.startswith('Pointer ') and len(line_words) >= 4:
+                if line.startswith('Pointer ') and len(line_words) >= 4:
                     mode = ParseMode.POINTER
                     entry_index = int(line_words[3][:-1])
                     continue
-                elif line.startswith('Cheat 0'):
+                if line.startswith('Cheat 0'):
                     mode = ParseMode.CHEATS
                     continue
-                elif line.startswith('Misc 0'):
+                if line.startswith('Misc 0'):
                     mode = ParseMode.MISC
                     continue
-                elif line.startswith('[PARS]'):
+                if line.startswith('[PARS]'):
                     mode = ParseMode.PARS
                     continue
-                elif line.startswith('[CODEPTR]'):
+                if line.startswith('[CODEPTR]'):
                     mode = ParseMode.POINTERS_EXT
                     continue
-                elif line.startswith('[STRINGS]'):
+                if line.startswith('[STRINGS]'):
                     mode = ParseMode.STRINGS_EXT
                     continue
 
                 # Text header.
-                elif line.startswith('Text ') and len(line_words) == 3:
+                if line.startswith('Text ') and len(line_words) == 3:
                     mode = ParseMode.STRING
 
                     entry_len1 = int(line_words[1])
@@ -505,18 +546,21 @@ class Patch:
                                 break
 
                         if found_key is None:
-                            messages['NOSTRING_' + str(len(messages))] = 'The engine string "{}" could not be found. ' \
-                                                                         'It will not be loaded.'.format(original)
+                            message_key = 'NOSTRING_' + str(len(messages))
+                            messages[message_key] = f'The engine string "{original}" could not be '\
+                                                    'found. It will not be loaded.'
                         else:
-                            self.strings[key] = new
+                            self.strings[found_key] = new
 
-                        # Also replace sprite names, so that patches can alter them without offset modifications.
+                        # Also replace sprite names, so that patches can alter them
+                        # without offset modifications.
                         for i, name in enumerate(self.engine.sprite_names):
                             if name == original:
                                 self.sprite_names[i] = new
                                 break
 
-                        # Also replace sound names, so that patches can alter them without offset modifications.
+                        # Also replace sound names, so that patches can alter them without
+                        # offset modifications.
                         for i, sound in enumerate(self.engine.sounds):
                             if sound.name == original:
                                 self.sounds[i].name = new
@@ -532,8 +576,9 @@ class Patch:
                                 break
 
                         if key is None:
-                            messages['NOSTRING_' + str(len(messages))] = 'The engine string "{}" could not be found.' \
-                                                                         'It will not be loaded.'.format(original)
+                            message_key = 'NOSTRING_' + str(len(messages))
+                            messages[message_key] = f'The engine string "{original}" could not be '\
+                                                    'found. It will not be loaded.'
                         else:
                             self.strings[key] = new
 
@@ -562,7 +607,7 @@ class Patch:
 
                     continue
 
-                elif mode == ParseMode.STRINGS_EXT:
+                if mode == ParseMode.STRINGS_EXT:
                     pair = line.split(' = ')
                     if len(pair) < 2:
                         continue
@@ -588,13 +633,12 @@ class Patch:
                             if not line.endswith('\\'):
                                 value += line.lstrip()
                                 break
-                            else:
-                                value += line.lstrip()[:-1]
+                            value += line.lstrip()[:-1]
 
                     self.strings[key] = string_unescape(value)
                     continue
 
-                elif mode == ParseMode.POINTERS_EXT:
+                if mode == ParseMode.POINTERS_EXT:
                     pair = line.split(' = ')
                     if len(pair) < 2:
                         continue
@@ -606,7 +650,8 @@ class Patch:
                     if value not in self.engine.actions:
                         messages['UNKNOWN_ACTION_NAME'] = 'Unknown action name ' + value
                     elif index < 0 or index >= len(self.states):
-                        messages['INVALID_CODEPOINTER'] = 'Invalid codepointer values were encountered.'
+                        messages['INVALID_CODEPOINTER'] = 'Invalid codepointer values were '\
+                                                          'encountered.'
                     else:
                         self.states[index]['action'] = value
 
@@ -639,21 +684,23 @@ class Patch:
                     elif mode == ParseMode.CHEATS:
                         table_key = engine.get_key_from_patchkey(self.engine.cheat_data, key)
                         if table_key is None:
-                            messages['PATCH_CHEAT_KEY_' + str(len(messages))] = 'Unknown patch cheat key {}. This' \
-                                                                                'entry will be ignored.'.format(key)
+                            msg_key = 'PATCH_CHEAT_KEY_' + str(len(messages))
+                            messages[msg_key] = f'Unknown patch cheat key {key}. This entry '\
+                                                'will be ignored.'
                         else:
                             self.cheats[table_key] = value
                     elif mode == ParseMode.MISC:
                         table_key = engine.get_key_from_patchkey(self.engine.misc_data, key)
                         if table_key is None:
-                            messages['PATCH_MISC_KEY_' + str(len(messages))] = 'Unknown patch miscellaneous key {}.' \
-                                                                               'This entry will be ignored.'.format(key)
+                            msg_key = 'PATCH_MISC_KEY_' + str(len(messages))
+                            messages[msg_key] = f'Unknown patch miscellaneous key {key}.' \
+                                                'This entry will be ignored.'
                         else:
                             self.misc[table_key] = value
 
-                except Exception as e:
-                    messages['EXCEPTION'] = 'Exceptions occurred during loading. The patch may be corrupted.\n\n' \
-                                            'Last exception:\n' + str(e)
+                except DehackedPatchError as e:
+                    messages['EXCEPTION'] = 'Exceptions occurred during loading. The patch may '\
+                                            'be corrupted.\n\nLast exception:\n' + str(e)
 
         return messages
 
@@ -686,7 +733,7 @@ class Patch:
         """
 
         if sprite_index < 0 or sprite_index >= len(self.sprite_names):
-            return '{:04}'.format(sprite_index)
+            return f'{sprite_index:04}'
         return self.sprite_names[sprite_index]
 
     def get_sound_name(self, sound_index: int) -> str:
@@ -706,8 +753,7 @@ class Patch:
 
         if sound_index > len(self.engine.sounds):
             return '????'
-        else:
-            return self.sounds[sound_index].name.upper()
+        return self.sounds[sound_index].name.upper()
 
 
 def string_escape(string: str) -> str:

@@ -2,7 +2,7 @@
 Error dialog UI.
 """
 
-from typing import TextIO
+from typing import TextIO, Optional
 
 import wx
 from wx import Window, CommandEvent
@@ -16,7 +16,7 @@ class ErrorDialog(windows.ErrorDialogBase):
     Error reporting dialog.
     """
 
-    def __init__(self, parent: Window):
+    def __init__(self, parent: Optional[Window]):
         windows.ErrorDialogBase.__init__(self, parent)
 
         self.SetEscapeId(windows.ERROR_CLOSE)

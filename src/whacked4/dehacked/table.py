@@ -1,12 +1,22 @@
+"""
+Table data storage.
+"""
+
 import copy
 import math
 import re
 from dataclasses import dataclass
-from typing import Dict, Optional, Set
+from typing import Dict, Optional, Set, BinaryIO, List
+
+from whacked4.dehacked.engine import Engine
 
 
 @dataclass
 class ThingFlag:
+    """
+    A thing flag descriptor.
+    """
+
     key: str
     field: str
     name: Optional[str]
@@ -16,6 +26,10 @@ class ThingFlag:
 
     @staticmethod
     def from_item(key: str, values: Dict):
+        """
+        Creates a new ThingFLag from JSON item data.
+        """
+
         return ThingFlag(
             key,
             values.get('field', 'flags'),
@@ -31,7 +45,7 @@ class Table:
     A table containing Dehacked entry objects.
     """
 
-    def __init__(self, entry_class, engine):
+    def __init__(self, entry_class, engine: Engine):
         self.entries = []
         self.entry_class = entry_class
         self.offset = 0
@@ -39,7 +53,7 @@ class Table:
         self.flags: Dict[str, ThingFlag] = {}
         self.names = None
 
-    def read_from_executable(self, count, f):
+    def read_from_executable(self, count: int, f: BinaryIO):
         """
         Reads a number of entries from an executable.
         """
@@ -47,7 +61,7 @@ class Table:
         for _ in range(count):
             self.entries.append(self.entry_class(self).read_from_executable(f))
 
-    def read_from_json(self, json):
+    def read_from_json(self, json: List[Dict[str, any]]):
         """
         Reads this table's entries from a JSON object.
         """
@@ -97,6 +111,10 @@ class Table:
                 f.write(entry.get_patch_header(index, offset=self.offset))
 
     def apply_defaults(self, defaults):
+        """
+        Apply defaults to each of this table's entries.
+        """
+
         for entry in self.entries:
             entry.apply_defaults(defaults)
 
@@ -124,17 +142,18 @@ class Table:
             # Flag is a mnemonic.
             else:
                 if not self.engine.extended:
-                    raise LookupError('Encountered thing flag key "{}" in a non-extended patch.'.format(flag_str))
+                    raise LookupError(f'Encountered thing flag key "{flag_str}" in a'
+                                      f'non-extended patch.')
 
-                flag = self.flags.get('{}_{}'.format(field_key, flag_str))
+                flag = self.flags.get(f'{field_key}_{flag_str}')
                 if flag is None:
-                    raise LookupError('Ignoring unknown thing flag key "{}".'.format(flag_str))
+                    raise LookupError(f'Ignoring unknown thing flag key "{flag_str}".')
 
                 if flag.alias is not None:
                     original_flag = flag.alias
-                    flag = self.flags.get('{}_{}'.format(field_key, flag.alias))
+                    flag = self.flags.get(f'{field_key}_{flag.alias}')
                     if flag is None:
-                        raise LookupError('Ignoring unknown thing flag alias "{}".'.format(original_flag))
+                        raise LookupError(f'Ignoring unknown thing flag alias "{original_flag}".')
 
                 out.add(flag_str)
 
@@ -164,8 +183,7 @@ class Table:
 
         if self.engine.extended:
             return self._flags_get_string_extended(field_key, value)
-        else:
-            return self._flags_get_string_vanilla(field_key, value)
+        return self._flags_get_string_vanilla(field_key, value)
 
     def _flags_get_string_extended(self, field_key: str, value: str):
         """
@@ -174,9 +192,10 @@ class Table:
 
         out = []
         for key in value:
-            flag_key = '{}_{}'.format(field_key, key)
+            flag_key = f'{field_key}_{key}'
             if flag_key not in self.flags:
-                raise LookupError('Unknown thing flag key "{}" for field "{}".'.format(key, field_key))
+                raise LookupError(f'Unknown thing flag key "{key}" for '
+                                  f'field "{field_key}".')
 
             out.append(key)
 
@@ -187,15 +206,16 @@ class Table:
 
     def _flags_get_string_vanilla(self, field_key: str, value: str):
         """
-        Returns a thing flags value as a 32 bit integer bitfield.
+        Returns a thing flags value as a 32-bit integer bitfield.
         """
 
         bits = 0
         for key in value:
-            flag_key = '{}_{}'.format(field_key, key)
+            flag_key = f'{field_key}_{key}'
             flag = self.flags.get(flag_key)
             if flag.index is None:
-                raise LookupError('Cannot write non-bitfield thing flag "{}" into a non-extended patch.'.format(key))
+                raise LookupError(f'Cannot write non-bitfield thing flag "{key}" into '
+                                  f'a non-extended patch.')
 
             bits |= int(math.pow(2, flag.index))
 
@@ -218,7 +238,7 @@ class Table:
         return dup
 
     def __repr__(self):
-        return '{}: {}'.format(self.entry_class, self.entries)
+        return f'{self.entry_class}: {self.entries}'
 
     def __getitem__(self, index):
         return self.entries[index]

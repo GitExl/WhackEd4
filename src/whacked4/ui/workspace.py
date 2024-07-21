@@ -10,10 +10,6 @@ from typing import Optional, Dict, List
 
 from wx import Frame, MDIParentFrame
 
-from whacked4.dehacked.engine import Engine
-from whacked4.doom.wad import WAD
-from whacked4.doom.wadlist import WADList
-
 
 class Workspace:
     """

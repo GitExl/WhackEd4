@@ -8,6 +8,10 @@ from whacked4.dehacked.entry import Entry, Field, FieldType
 
 
 class AmmoEntry(Entry):
+    """
+    Ammo item.
+    """
+
     NAME = 'Ammo'
     FIELDS = {
         'maximum': Field('Max ammo', FieldType.INT),
@@ -16,6 +20,10 @@ class AmmoEntry(Entry):
 
 
 class ParEntry(Entry):
+    """
+    Level par time.
+    """
+
     NAME = 'Par'
     FIELDS = {
         'episode': Field('Episode', FieldType.INT),
@@ -25,6 +33,10 @@ class ParEntry(Entry):
 
 
 class SoundEntry(Entry):
+    """
+    Sound definition.
+    """
+
     NAME = 'Sound'
     STRUCTURE = struct.Struct('<iiiiiiiii')
     FIELDS = {
@@ -41,6 +53,10 @@ class SoundEntry(Entry):
 
 
 class StateEntry(Entry):
+    """
+    Thing/weapon state.
+    """
+
     NAME = 'Frame'
     STRUCTURE = struct.Struct('<iiiiiii')
     FIELDS = {
@@ -65,6 +81,10 @@ class StateEntry(Entry):
 
 
 class ThingEntry(Entry):
+    """
+    A Doom thing.
+    """
+
     NAME = 'Thing'
     STRUCTURE = struct.Struct('<iiiiiiiiiiiiiiiiiiiiiii')
     FIELDS = {
@@ -118,6 +138,10 @@ class ThingEntry(Entry):
 
 
 class WeaponEntry(Entry):
+    """
+    A weapon definition.
+    """
+
     NAME = 'Weapon'
     STRUCTURE = struct.Struct('<iiiiii')
     FIELDS = {
@@ -135,6 +159,10 @@ class WeaponEntry(Entry):
 
 
 class SpriteEntry(Entry):
+    """
+    A sprite name.
+    """
+
     NAME = 'Sprite'
     STRUCTURE = None
     FIELDS = {

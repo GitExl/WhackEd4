@@ -1,52 +1,59 @@
+"""
+Settings handler base class.
+"""
+
 import json
 import os
+from typing import Dict
 
 
-class SettingsHandler(object):
+class SettingsHandler:
     """
     Stores application related settings.
     """
 
-    def __init__(self, path):
-        self.path = path
+    def __init__(self, path: str):
+        self.path: str = path
 
-        self.settings = {}
-        self.defaults = {}
+        self.settings: Dict[str, any] = {}
+        self.defaults: Dict[str, any] = {}
 
         self.register()
         self.load()
 
     def register(self):
         """
-        Called when an implementing class needs to register all of it's settings.
+        Called when an implementing class needs to register all of its settings.
         """
 
         raise NotImplementedError
 
-    def register_setting(self, name, default):
+    def register_setting(self, name: str, default: any):
         """
         Registers a setting with this handler.
         """
 
         self.defaults[name] = default
 
-    def get_setting(self, name):
+    def get_setting(self, name: str) -> any:
         """
         Returns a setting from this handler.
 
-        @return: a default value if the setting has not yet been altered, otherwise it will return the current setting.
+        @return: a default value if the setting has not yet been altered, otherwise
+        it will return the current setting.
 
         @raise LookupError: if the setting has not been registered with this handler.
         """
 
         if name in self.settings:
             return self.settings[name]
-        elif name in self.defaults:
-            return self.defaults[name]
-        else:
-            raise LookupError('The setting with name {} has not been registered.'.format(name))
 
-    def put_setting(self, name, value):
+        if name in self.defaults:
+            return self.defaults[name]
+
+        raise LookupError(f'The setting with name {name} has not been registered.')
+
+    def put_setting(self, name: str, value: any):
         """
         Stores a setting in this handler.
 
@@ -56,13 +63,14 @@ class SettingsHandler(object):
         if name in self.defaults:
             self.settings[name] = value
         else:
-            raise LookupError('The setting with name {} has not been registered.'.format(name))
+            raise LookupError(f'The setting with name {name} has not been registered.')
 
     def load(self):
         """
         Loads settings data from a JSON file.
 
-        Creates a new settings file and the directories leading up to it if the path does not exist.
+        Creates a new settings file and the directories leading up to it if
+        the path does not exist.
         """
 
         # Create config directory if needed.
@@ -75,10 +83,10 @@ class SettingsHandler(object):
             self.save()
             return
 
-        with open(self.path, 'r') as f:
+        with open(self.path, 'r', encoding='utf-8') as f:
             try:
                 settings = json.load(f)
-            except ValueError or json.JSONDecodeError:
+            except (ValueError, json.JSONDecodeError):
                 print('Could not decode settings, using defaults.')
                 settings = {}
 
@@ -87,7 +95,7 @@ class SettingsHandler(object):
                 if setting_name in self.defaults:
                     self.settings[setting_name] = settings[setting_name]
                 else:
-                    print('Ignoring unknown setting {}'.format(setting_name))
+                    print(f'Ignoring unknown setting {setting_name}')
 
     def save(self):
         """
@@ -96,7 +104,7 @@ class SettingsHandler(object):
         Settings that have not yet been altered are not saved.
         """
 
-        with open(self.path, 'w') as f:
+        with open(self.path, 'w', encoding='utf-8') as f:
             json.dump(self.settings, f, indent=4)
 
     def __getitem__(self, name):

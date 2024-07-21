@@ -1,8 +1,12 @@
 """
-Contains program configuration constants and a settings object which contains user-definable configuration details.
+Contains program configuration constants and a settings object which contains
+user-definable configuration details.
 """
+
 import os.path
 import sys
+
+import wx
 
 from whacked4 import settingshandler
 
@@ -42,7 +46,7 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
     Settings for WhackEd4.
     """
 
-    def __init__(self, path):
+    def __init__(self, path: str):
         settingshandler.SettingsHandler.__init__(self, path)
 
         self.recent_files_clean()
@@ -59,7 +63,7 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
         self.register_setting('undo_size', 256)
         self.register_setting('recent_files_count', 10)
 
-    def main_window_state_store(self, x, y, width, height, is_maximized):
+    def main_window_state_store(self, x: int, y: int, width: int, height: int, is_maximized: bool):
         """
         Stores the state of the main window.
         """
@@ -73,7 +77,7 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
         }
         self.put_setting('main_window_state', main_window)
 
-    def main_window_state_restore(self, window):
+    def main_window_state_restore(self, window: wx.MDIChildFrame):
         """
         Restores the main window's state from these settings.
         """
@@ -89,7 +93,7 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
         window.Maximize(main_window['maximized'])
         window.Refresh()
 
-    def recent_files_add(self, filename):
+    def recent_files_add(self, filename: str):
         """
         Adds a filename to the list of recent filenames.
         """

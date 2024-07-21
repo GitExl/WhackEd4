@@ -1,3 +1,7 @@
+"""
+Executable data reading.
+"""
+
 import json
 import struct
 
@@ -5,6 +9,9 @@ from whacked4.dehacked.table import ThingFlag
 
 
 class ExecutableReader:
+    """
+    Reader for binary executable Dehacked data.
+    """
 
     def __init__(self, engine):
         self.engine = engine
@@ -13,14 +20,14 @@ class ExecutableReader:
         """
         Reads engine data from a game executable, using a JSON file as base.
 
-        @param engine_filename: The filename of the configuration file containing direction on how to read the data
-        from the executable.
+        @param engine_filename: The filename of the configuration file containing directions
+        on how to read the data from the executable.
         @param exe_filename: The filename of the game executable to read engine data from.
 
         @raise KeyError: if the executable data file does not contain all necessary data.
         """
 
-        with open(engine_filename, 'r') as f:
+        with open(engine_filename, 'r', encoding='utf-8') as f:
             exe_config = json.load(f)
 
         try:
@@ -65,8 +72,8 @@ class ExecutableReader:
                 self.read_executable_ammo(f, exe_config)
                 self.engine.ammo.names = exe_config['ammoNames']
 
-        except KeyError:
-            raise Exception('Invalid executable data.')
+        except KeyError as e:
+            raise RuntimeError('Invalid executable data.') from e
 
     def read_executable_sound_names(self, f, exe_config):
         """
@@ -119,10 +126,10 @@ class ExecutableReader:
             data_type = item['type']
             if data_type == 'int':
                 self.engine.misc[name] = int_struct.unpack(f.read(4))[0]
-            elif data_type == 'byte' or data_type == 'boolean':
+            elif data_type in {'byte', 'boolean'}:
                 self.engine.misc[name] = byte_struct.unpack(f.read(1))[0]
             else:
-                raise Exception('Unknown miscellaneous data type {}'.format(data_type))
+                raise RuntimeError(f'Unknown miscellaneous data type {data_type}')
 
     def read_executable_ammo(self, f, exe_config):
         """
@@ -226,4 +233,4 @@ def _decrypt_cheat_string(text):
 
         i += 1
 
-    return bytes(output).encode('ascii')
+    return str(output).encode('ascii')

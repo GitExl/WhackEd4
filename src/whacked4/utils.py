@@ -1,15 +1,20 @@
 """
 General utility functions.
 """
+
 import wx
 
+from whacked4.doom.wadlist import WADList
 
-def validate_numeric(window):
+
+def validate_numeric(window: wx.TextCtrl) -> int:
     """
-    Validates the contents of a window (usually a text control), to make sure it is numeric.
+    Validates the contents of a window (usually a text control), to make sure it
+    is numeric.
 
-    The window's contents are altered if the user entered any non-numeric input. 0 is returned if only a minus sign
-    is present in the control, to allow the user to enter negative numbers.
+    The window's contents are altered if the user entered any non-numeric input. 0 is
+    returned if only a minus sign is present in the control, to allow the user to
+    enter negative numbers.
 
     @return: the validated integer value that is present in the control.
     """
@@ -28,7 +33,8 @@ def validate_numeric(window):
             else:
                 value = int(value)
 
-        # Otherwise directly return 0 as a temporary value until the user finishes entering a valid value.
+        # Otherwise directly return 0 as a temporary value until the user finishes entering
+        # a valid value.
         else:
             return 0
 
@@ -48,12 +54,14 @@ def validate_numeric(window):
     return value
 
 
-def validate_numeric_float(window):
+def validate_numeric_float(window: wx.TextCtrl) -> float:
     """
-    Validates the contents of a window (usually a text control), to make sure it is numeric, and floating point.
+    Validates the contents of a window (usually a text control), to make sure it is
+    numeric, and floating point.
 
-    The window's contents are altered if the user entered any non-numeric input. 0 is returned if only a minus sign
-    is present in the control, to allow the user to enter negative numbers.
+    The window's contents are altered if the user entered any non-numeric input. 0 is
+    returned if only a minus sign is present in the control, to allow the user to
+    enter negative numbers.
 
     @return: the validated floating point value that is present in the control.
     """
@@ -62,10 +70,9 @@ def validate_numeric_float(window):
 
     if len(value) == 0:
         return 0
-
     if '.' not in value:
         return validate_numeric(window)
-    elif value[-1] == '.':
+    if value[-1] == '.':
         return 0
 
     # Handle negative values.
@@ -80,7 +87,8 @@ def validate_numeric_float(window):
             else:
                 value = temp
 
-        # Otherwise directly return 0 as a temporary value until the user finishes entering a valid value.
+        # Otherwise directly return 0 as a temporary value until the user finishes
+        # entering a valid value.
         else:
             return 0
 
@@ -99,9 +107,10 @@ def validate_numeric_float(window):
     return value
 
 
-def focus_text(event, parent):
+def focus_text(event, parent: wx.Window):
     """
-    Selects the entire contents of a text control so that the user can immediately type to replace it.
+    Selects the entire contents of a text control so that the user can immediately
+    type to replace it.
     """
 
     window = parent.FindWindowById(event.GetId())
@@ -114,7 +123,7 @@ def focus_text(event, parent):
     window.SetSelection(-1, -1)
 
 
-def sound_play(name, wadlist):
+def sound_play(name: str, wadlist: WADList):
     """
     Plays back a sound.
     """
@@ -132,7 +141,7 @@ def sound_play(name, wadlist):
         sound_data.play(app.pyaudio_instance)
 
 
-def mix_colors(color1, color2, mix):
+def mix_colors(color1: wx.Colour, color2: wx.Colour, mix: float) -> wx.Colour:
     """
     Mixes two colors together.
 
@@ -148,32 +157,42 @@ def mix_colors(color1, color2, mix):
     )
 
 
-def get_map_name(episode_index, map_index):
+def get_map_name(episode_index: int, map_index: int) -> str:
     """
     Returns a map name from an episode and map index.
 
-    @param episode_index: the index of the episode. If this is 0, a Doom 2 style MAPxx name is returned.
+    @param episode_index: the index of the episode. If this is 0, a Doom 2 style
+    MAPxx name is returned.
+
     @param map_index: the index of the map.
 
     @return: a ExMx map name if episode_index is non-zero, a MAPxx name otherwise.
     """
 
     if episode_index == 0:
-        return 'MAP{:0>2}'.format(map_index)
-    else:
-        return 'E{}M{}'.format(episode_index, map_index)
+        return f'MAP{map_index:0>2}'
+    return f'E{episode_index}M{map_index}'
 
 
-def seconds_to_minutes(seconds):
+def seconds_to_minutes(seconds: int) -> str:
     """
     Returns a number of seconds formatted as minutes:seconds.
     """
 
-    return '{}:{:0>2}'.format(int(seconds / 60), seconds % 60)
+    minutes = int(seconds / 60)
+    seconds_left = seconds % 60
+    return f'{minutes}:{seconds_left:0>2}'
 
 
-def file_dialog(parent, message=wx.FileSelectorPromptStr, default_dir=wx.EmptyString, default_file=wx.EmptyString,
-                wildcard=wx.FileSelectorDefaultWildcardStr, style=wx.FD_DEFAULT_STYLE, pos=wx.DefaultPosition):
+def file_dialog(
+    parent,
+    message=wx.FileSelectorPromptStr,
+    default_dir=wx.EmptyString,
+    default_file=wx.EmptyString,
+    wildcard=wx.FileSelectorDefaultWildcardStr,
+    style=wx.FD_DEFAULT_STYLE,
+    pos=wx.DefaultPosition
+):
     """
     Wrapper around the wxWidgets file dialog class.
 
@@ -187,5 +206,4 @@ def file_dialog(parent, message=wx.FileSelectorPromptStr, default_dir=wx.EmptySt
     result = dialog.ShowModal()
     if result == wx.ID_OK:
         return dialog.GetPath()
-    else:
-        return None
+    return None

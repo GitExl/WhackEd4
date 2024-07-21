@@ -1,3 +1,7 @@
+"""
+Game engine definition.
+"""
+
 import json
 
 from json.encoder import JSONEncoder
@@ -17,8 +21,8 @@ class DehackedEngineError(Exception):
 
 class Engine:
     """
-    An engine contains all the data needed to be able to edit Dehacked patches. This data can be extracted from a
-    game executable, or loaded from a JSON file.
+    An engine contains all the data needed to be able to edit Dehacked patches.
+    This data can be extracted from a game executable, or loaded from a JSON file.
     """
 
     def __init__(self):
@@ -83,7 +87,8 @@ class Engine:
 
     def merge_data(self, filename: str, is_base_table: bool = False):
         """
-        Reads and merges engine data from a JSON table configuration file into the current engine.
+        Reads and merges engine data from a JSON table configuration file into
+        the current engine.
 
         @param filename: the name of the file to read table data from.
         @param is_base_table: if True, only base table data will be merged.
@@ -92,11 +97,11 @@ class Engine:
         """
 
         data = None
-        with open(filename, 'r') as f:
+        with open(filename, 'r', encoding='utf-8') as f:
             try:
                 data = json.load(f)
             except ValueError as e:
-                print('Error in table file {}'.format(filename))
+                print(f'Error in table file {filename}')
                 raise e
 
         try:
@@ -108,7 +113,7 @@ class Engine:
             # Load parents before any other data.
             if 'parent' in data:
                 parent = data['parent']
-                parent_filename = 'cfg/{}.json'.format(parent)
+                parent_filename = f'cfg/{parent}.json'
                 self.merge_data(parent_filename, True)
 
             self.default_state.from_json(data['defaultState'])
@@ -121,7 +126,7 @@ class Engine:
 
             for key, value in data['thingFlags'].items():
                 thing_flag = ThingFlag.from_item(key, value)
-                flag_key = '{}_{}'.format(thing_flag.field, thing_flag.key)
+                flag_key = f'{thing_flag.field}_{thing_flag.key}'
                 self.things.flags[flag_key] = thing_flag
 
             self.things.read_from_json(data['things'])
@@ -151,7 +156,7 @@ class Engine:
                 self.action_index_to_state += data['actionIndexToState']
 
         except KeyError as e:
-            raise DehackedEngineError('Invalid engine table data. KeyError {}'.format(e))
+            raise DehackedEngineError(f'Invalid engine table data. KeyError {e}') from e
 
     def apply_defaults(self):
         """
@@ -166,7 +171,8 @@ class Engine:
 
     def get_action_key_from_name(self, action_name: str):
         """
-        Returns an action key from an action name. Useful for getting action names for non-extended engines.
+        Returns an action key from an action name. Useful for getting action names
+        for non-extended engines.
 
         @param action_name: the name of the action to find the key of.
         """
@@ -198,7 +204,8 @@ class Engine:
 
 class EngineJSONEncoder(JSONEncoder):
     """
-    A small encoder object to assist the json module in encoding engine Table and Entry objects.
+    A small encoder object to assist the json module in encoding engine Table and
+    Entry objects.
     """
 
     def default(self, o):
@@ -218,7 +225,8 @@ class EngineJSONEncoder(JSONEncoder):
 def get_key_from_patchkey(data: Dict[str, Dict[str, str]], patch_key: str) -> Optional[str]:
     """
     Returns an internal entry key from a key used in a Dehacked patch file.
-    This is used by the cheats and miscellaneous sections, since they do not have an associated table.
+    This is used by the cheats and miscellaneous sections, since they do not have an
+    associated table.
 
     @param data: a dict of cheat or misc data.
     @param patch_key: the string used in a patch file to identify.
