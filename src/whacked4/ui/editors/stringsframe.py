@@ -165,16 +165,17 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         if self.patch.extended:
             return
 
+        # Update potential sound names from strings.
         if len(new_string) <= 6:
-            self.patch.update_string_externals(
-                self.patch.engine.sounds,
-                self.patch.sounds
-            )
+            for index, engine_sound in enumerate(self.patch.engine.sounds):
+                if engine_sound.name in self.patch.engine.strings:
+                    self.patch.sounds[index].name = self.patch.engine.strings[engine_sound.name]
+
+        # Update potential sprite names from strings.
         if len(new_string) == 4:
-            self.patch.update_string_externals(
-                self.patch.engine.sprite_names,
-                self.patch.sprite_names
-            )
+            for index, engine_sprite_name in enumerate(self.patch.engine.sprite_names):
+                if engine_sprite_name in self.patch.engine.strings:
+                    self.patch.sprite_names[index] = self.patch.engine.strings[engine_sprite_name]
 
     def undo_restore_item(self, item: UndoItem):
         """

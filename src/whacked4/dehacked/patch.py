@@ -9,6 +9,8 @@ from whacked4 import config
 from whacked4.dehacked import entries
 from whacked4.dehacked import engine
 from whacked4.dehacked.engine import Engine
+from whacked4.dehacked.entries import (ThingEntry, StateEntry, SoundEntry, WeaponEntry, AmmoEntry,
+                                       ParEntry)
 from whacked4.dehacked.table import Table
 from whacked4.enum import WhackedEnum
 
@@ -111,44 +113,18 @@ class Patch:
         self.version: int = 0
         self.extended: bool = False
 
-        self.things: Table = parent_engine.things.clone()
-        self.states: Table = parent_engine.states.clone()
-        self.sounds: Table = parent_engine.sounds.clone()
-        self.weapons: Table = parent_engine.weapons.clone()
-        self.ammo: Table = parent_engine.ammo.clone()
-        self.pars: Table = parent_engine.pars.clone()
+        self.things: Table[ThingEntry] = parent_engine.things.clone()
+        self.states: Table[StateEntry] = parent_engine.states.clone()
+        self.sounds: Table[SoundEntry] = parent_engine.sounds.clone()
+        self.weapons: Table[WeaponEntry] = parent_engine.weapons.clone()
+        self.ammo: Table[AmmoEntry] = parent_engine.ammo.clone()
+        self.pars: Table[ParEntry] = parent_engine.pars.clone()
 
         self.strings: Dict[str, str] = copy.deepcopy(parent_engine.strings)
         self.cheats: Dict[str, str] = copy.deepcopy(parent_engine.cheats)
         self.misc: Dict[str, any] = copy.deepcopy(parent_engine.misc)
 
         self.sprite_names: List[str] = copy.deepcopy(parent_engine.sprite_names)
-
-    def update_string_externals(self, engine_names, patch_names):
-        """
-        Updates a names list to reflect their string list name.
-
-        This is used to update sound and sprite names after the strings
-        list has been altered.
-
-        @param engine_names: the list of names in the engine object.
-        @param patch_names: the list of names in the patch object.
-        """
-
-        if self.extended:
-            return
-
-        if isinstance(engine_names, Table):
-            for index, entry in enumerate(engine_names):
-                if entry.name in self.engine.strings:
-                    string_index = self.engine.strings.index(entry.name)
-                    patch_names[index].name = self.strings[string_index]
-
-        else:
-            for name_index, name in enumerate(engine_names):
-                if name in self.engine.strings:
-                    string_index = self.engine.strings.index(name)
-                    patch_names[name_index] = self.strings[string_index]
 
     def get_ammo_name(self, ammo_index):
         """
@@ -296,7 +272,7 @@ class Patch:
 
             # Create a dict of modified actions.
             # [state index] = action pointer
-            for index in enumerate(self.states):
+            for index, _ in enumerate(self.states):
                 action_pointer = self.states[index]['action']
                 if action_pointer != self.engine.states[index]['action']:
                     out[index] = action_pointer
@@ -315,10 +291,10 @@ class Patch:
         # action are skipped. When writing these action pointers to a patch file, state
         # actions are matched to action pointer indices. Their value refers to a state
         # in the original engine data with this particular action.
-        for i in enumerate(self.states):
-            action_pointer = self.states[i]['action']
+        for i, state in enumerate(self.states):
+            action_pointer = state['action']
 
-            if action_pointer != self.engine.states[i]['action']:
+            if action_pointer != state['action']:
                 # Attempt to find this state's action pointer index in the action
                 # index lookup list.
                 try:
@@ -329,8 +305,8 @@ class Patch:
 
                 # Find a state in the engine state table that uses the new action pointer.
                 state_index = -1
-                for j in enumerate(self.engine.states):
-                    if self.engine.states[j]['action'] == action_pointer:
+                for j, inner_state in enumerate(self.engine.states):
+                    if inner_state['action'] == action_pointer:
                         state_index = j
                         break
 
@@ -414,7 +390,7 @@ class Patch:
 
         # State.
         valid: bool = False
-        mode: ParseMode = ParseMode.NOTHING
+        mode: int = ParseMode.NOTHING
         entry_index: int = -1
 
         # A dict of messages to return.
@@ -552,14 +528,14 @@ class Patch:
                         else:
                             self.strings[found_key] = new
 
-                        # Also replace sprite names, so that patches can alter them
+                        # Replace sprite names, so that patches can alter them
                         # without offset modifications.
                         for i, name in enumerate(self.engine.sprite_names):
                             if name == original:
                                 self.sprite_names[i] = new
                                 break
 
-                        # Also replace sound names, so that patches can alter them without
+                        # Replace sound names, so that patches can alter them without
                         # offset modifications.
                         for i, sound in enumerate(self.engine.sounds):
                             if sound.name == original:

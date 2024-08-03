@@ -7,9 +7,9 @@ import json
 from json.encoder import JSONEncoder
 from typing import List, Dict, Set, Optional
 
-from whacked4.dehacked import table, entries, entry
+from whacked4.dehacked import table, entry
 from whacked4.dehacked.action import Action
-from whacked4.dehacked.entry import Entry
+from whacked4.dehacked.entries import ThingEntry, WeaponEntry, StateEntry, AmmoEntry, ParEntry, SoundEntry
 from whacked4.dehacked.table import Table, ThingFlag
 
 
@@ -37,17 +37,17 @@ class Engine:
         self.name: str = 'UNNAMED'
 
         # Things table.
-        self.things: Table = table.Table(entries.ThingEntry, self)
+        self.things: Table[ThingEntry] = table.Table[ThingEntry](ThingEntry, self)
         self.things.offset = 1
 
         # Other tables.
-        self.states: Table = table.Table(entries.StateEntry, self)
-        self.weapons: Table = table.Table(entries.WeaponEntry, self)
-        self.ammo: Table = table.Table(entries.AmmoEntry, self)
-        self.sounds: Table = table.Table(entries.SoundEntry, self)
+        self.states: Table[StateEntry] = table.Table[StateEntry](StateEntry, self)
+        self.weapons: Table[WeaponEntry] = table.Table[WeaponEntry](WeaponEntry, self)
+        self.ammo: Table[AmmoEntry] = table.Table[AmmoEntry](AmmoEntry, self)
+        self.sounds: Table[SoundEntry] = table.Table[SoundEntry](SoundEntry, self)
 
         # Par times.
-        self.pars: Table = table.Table(entries.ParEntry, self)
+        self.pars: Table[ParEntry] = table.Table[ParEntry](ParEntry, self)
 
         # Cheats table.
         self.cheats: Dict[str, str] = {}
@@ -79,11 +79,11 @@ class Engine:
         self.features: Set[str] = set()
 
         # Defaults for new entries and unnamed fields.
-        self.default_state: Entry = entries.StateEntry(self.states)
-        self.default_thing: Entry = entries.ThingEntry(self.things)
-        self.default_weapon: Entry = entries.WeaponEntry(self.weapons)
-        self.default_ammo: Entry = entries.AmmoEntry(self.ammo)
-        self.default_sound: Entry = entries.SoundEntry(self.sounds)
+        self.default_state: StateEntry = StateEntry(self.states)
+        self.default_thing: ThingEntry = ThingEntry(self.things)
+        self.default_weapon: WeaponEntry = WeaponEntry(self.weapons)
+        self.default_ammo: AmmoEntry = AmmoEntry(self.ammo)
+        self.default_sound: SoundEntry = SoundEntry(self.sounds)
 
     def merge_data(self, filename: str, is_base_table: bool = False):
         """

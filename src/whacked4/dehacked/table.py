@@ -6,7 +6,7 @@ import copy
 import math
 import re
 from dataclasses import dataclass
-from typing import Dict, Optional, Set, BinaryIO, List
+from typing import Dict, Optional, Set, BinaryIO, List, TypeVar, Generic, Type, Iterator
 
 
 @dataclass
@@ -38,14 +38,17 @@ class ThingFlag:
         )
 
 
-class Table:
+T = TypeVar('T')
+
+
+class Table(Generic[T]):
     """
     A table containing Dehacked entry objects.
     """
 
-    def __init__(self, entry_class, engine):
-        self.entries = []
-        self.entry_class = entry_class
+    def __init__(self, entry_class: Type[T], engine):
+        self.entries: List[T] = []
+        self.entry_class: Type[T] = entry_class
         self.offset = 0
         self.engine = engine
         self.flags: Dict[str, ThingFlag] = {}
@@ -108,7 +111,7 @@ class Table:
             elif entry.name != source_table.entries[index].name:
                 f.write(entry.get_patch_header(index, offset=self.offset))
 
-    def apply_defaults(self, defaults):
+    def apply_defaults(self, defaults: T):
         """
         Apply defaults to each of this table's entries.
         """
@@ -235,17 +238,17 @@ class Table:
 
         return dup
 
-    def __repr__(self):
-        return f'{self.entry_class}: {self.entries}'
+    def __repr__(self) -> str:
+        return f'{T}: {self.entries}'
 
-    def __getitem__(self, index):
+    def __getitem__(self, index) -> T:
         return self.entries[index]
 
-    def __setitem__(self, index, value):
+    def __setitem__(self, index: int, value: T):
         self.entries[index] = value
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self.entries)
 
-    def __iter__(self):
+    def __iter__(self) -> Iterator[T]:
         return iter(self.entries)
