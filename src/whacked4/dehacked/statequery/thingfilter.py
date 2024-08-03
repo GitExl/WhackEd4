@@ -1,3 +1,7 @@
+"""
+Filter states by thing.
+"""
+
 from typing import Set
 
 from whacked4.dehacked.entry import Entry
@@ -6,6 +10,9 @@ from whacked4.dehacked.statequery.filterbase import StateFilterBase
 
 
 class ThingStateFilter(StateFilterBase):
+    """
+    Filter states by things using them.
+    """
 
     STATE_FIELDS = [
         'stateAttack',
@@ -34,6 +41,12 @@ class ThingStateFilter(StateFilterBase):
 
     @staticmethod
     def get_states(thing: Entry) -> Set[int]:
+        """
+        Returns the states referred to by  a thing.
+
+        :param thing:
+        """
+
         used_states = set()
         for name in ThingStateFilter.STATE_FIELDS:
             if name in thing:

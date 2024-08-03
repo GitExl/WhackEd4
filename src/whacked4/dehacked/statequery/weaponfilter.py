@@ -1,3 +1,7 @@
+"""
+Weapon state filter.
+"""
+
 from typing import Set
 
 from whacked4.dehacked.entry import Entry
@@ -6,6 +10,9 @@ from whacked4.dehacked.statequery.filterbase import StateFilterBase
 
 
 class WeaponStateFilter(StateFilterBase):
+    """
+    Filter states by weapons that use them.
+    """
 
     STATE_FIELDS = [
         'stateBob',
@@ -29,6 +36,12 @@ class WeaponStateFilter(StateFilterBase):
 
     @staticmethod
     def get_states(weapon: Entry) -> Set[int]:
+        """
+        Returns all state entries used by a weapon entry.
+
+        :param weapon:
+        """
+
         used_states = set()
         for name in WeaponStateFilter.STATE_FIELDS:
             if name in weapon:
@@ -38,6 +51,15 @@ class WeaponStateFilter(StateFilterBase):
 
     @staticmethod
     def process_states(patch: Patch, weapon: Entry, state_indices: Set[int]):
+        """
+        Expand states based on actions if needed.
+
+        :param patch:
+        :param weapon:
+        :param state_indices:
+
+        """
+
         extra_state_indices = set()
 
         for state_index in state_indices:

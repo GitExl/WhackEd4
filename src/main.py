@@ -1,3 +1,7 @@
+"""
+Application entrypoint.
+"""
+
 import platform
 
 from whacked4 import app

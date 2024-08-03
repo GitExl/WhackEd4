@@ -8,8 +8,6 @@ import re
 from dataclasses import dataclass
 from typing import Dict, Optional, Set, BinaryIO, List
 
-from whacked4.dehacked.engine import Engine
-
 
 @dataclass
 class ThingFlag:
@@ -45,7 +43,7 @@ class Table:
     A table containing Dehacked entry objects.
     """
 
-    def __init__(self, entry_class, engine: Engine):
+    def __init__(self, entry_class, engine):
         self.entries = []
         self.entry_class = entry_class
         self.offset = 0

@@ -1,3 +1,7 @@
+"""
+Unused state filter.
+"""
+
 from typing import Set
 
 from whacked4.dehacked.statequery.filterbase import StateFilterBase
@@ -6,6 +10,9 @@ from whacked4.dehacked.statequery.weaponfilter import WeaponStateFilter
 
 
 class UnusedStateFilter(StateFilterBase):
+    """
+    Filter states out that are used by things, weapons or the engine.
+    """
 
     def apply(self, state_indices: Set[int]) -> Set[int]:
         used_states = set()
@@ -17,8 +24,8 @@ class UnusedStateFilter(StateFilterBase):
         self.expand_used_states(thing_states)
         used_states.update(thing_states)
 
-        # Add all states used by weapons. Weapon states are further processed per weapon to take care of the
-        # usesExtraFlashState property of some actions.
+        # Add all states used by weapons. Weapon states are further processed per weapon to
+        # take care of the usesExtraFlashState property of some actions.
         for weapon in self.patch.weapons:
             weapon_states = WeaponStateFilter.get_states(weapon)
             self.expand_used_states(weapon_states)
