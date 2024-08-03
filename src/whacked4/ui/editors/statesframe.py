@@ -649,8 +649,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         if window_id == windows.STATES_SPRITE:
             if value < 0:
                 value = 0
+                wx.Bell()
             elif value >= len(self.patch.sprite_names):
                 value = len(self.patch.sprite_names) - 1
+                wx.Bell()
             self.SpriteName.SetLabel(self.patch.get_sprite_name(value))
             window.ChangeValue(str(value))
 
@@ -658,8 +660,10 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         elif window_id == windows.STATES_NEXT:
             if value < 0:
                 value = 0
+                wx.Bell()
             elif value >= len(self.patch.states):
                 value = len(self.patch.states) - 1
+                wx.Bell()
             self.NextStateName.SetLabel(self.patch.get_state_name(value))
             window.ChangeValue(str(value))
 
@@ -668,6 +672,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             if value < -1:
                 value = 0
                 window.ChangeValue(str(value))
+                wx.Bell()
 
         key = self.PROPS_STATE[window_id]
         self.set_selected_property(key, value)
@@ -741,9 +746,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             value = 0
         elif value >= config.MAX_SPRITE_FRAME:
             value = config.MAX_SPRITE_FRAME - 1
-
         if window.GetValue() != str(value):
             window.ChangeValue(str(value))
+            wx.Bell()
 
         # Manually update all selected states so that the lit frame index flag can be retained.
         for _, _, state in self.StateList.iterate_selected():

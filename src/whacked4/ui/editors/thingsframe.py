@@ -581,6 +581,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         value = max(0, min(value, len(self.patch.states) - 1))
 
         if str(value) != window.GetValue():
+            wx.Bell()
             window.ChangeValue(str(value))
 
         key = self.PROPS_STATES[window_id]
@@ -630,8 +631,8 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
 
         # Clamp to valid sound indices.
         value = max(0, min(value, len(self.patch.sounds) - 1))
-
         if str(value) != window.GetValue():
+            wx.Bell()
             window.ChangeValue(str(value))
 
         key = self.PROPS_SOUNDS[window_id]

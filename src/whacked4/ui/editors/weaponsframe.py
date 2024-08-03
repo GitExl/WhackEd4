@@ -218,9 +218,9 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
 
         # Clamp to valid state indices.
         value = max(0, min(value, len(self.patch.states) - 1))
-
         if str(value) != window.GetValue():
             window.ChangeValue(str(value))
+            wx.Bell()
 
         key = self.PROPS_STATES[window_id]
         weapon['state' + key] = value
@@ -240,9 +240,9 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
             value = window.GetValue()
         else:
             value = utils.validate_numeric(window)
-
         if str(value) != window.GetValue():
             window.ChangeValue(str(value))
+            wx.Bell()
 
         key = self.PROPS_VALUES[window_id]
         self.patch.weapons[self.selected_index][key] = value

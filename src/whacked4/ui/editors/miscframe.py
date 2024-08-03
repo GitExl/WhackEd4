@@ -161,15 +161,19 @@ class MiscFrame(editormixin.EditorMixin, windows.MiscFrameBase):
         if self.data_type == 'int':
             if value < -0x80000000:
                 value = -0x80000000
+                wx.Bell()
             elif value > 0x80000000:
                 value = 0x80000000
+                wx.Bell()
             window.ChangeValue(str(value))
 
         elif self.data_type == 'byte':
             if value < 0:
                 value = 0
+                wx.Bell()
             elif value > 255:
                 value = 255
+                wx.Bell()
             window.ChangeValue(str(value))
 
         self.patch.misc[key] = value

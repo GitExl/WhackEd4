@@ -262,11 +262,13 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
         window = self.FindWindowById(windows.SOUNDS_PRIORITY)
         value = utils.validate_numeric(window)
 
-        # Clamp sprite to valid range.
+        # Clamp priority to valid range.
         if value < 0:
             value = 0
+            wx.Bell()
         elif value >= 0x7FFFFFFF:
             value = 0x7FFFFFFF
+            wx.Bell()
         if window.GetValue() != value:
             window.ChangeValue(str(value))
 
