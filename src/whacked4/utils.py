@@ -113,14 +113,12 @@ def focus_text(event, parent: wx.Window):
     type to replace it.
     """
 
-    window = parent.FindWindowById(event.GetId())
+    ctrl: wx.TextCtrl = parent.FindWindowById(event.GetId())
 
-    # Detect already selected characters.
-    selfrom, selto = window.GetSelection()
-    if selfrom != selto:
-        return
-
-    window.SetSelection(-1, -1)
+    # Select all text if clicked at the end of the text.
+    selfrom, selto = ctrl.GetSelection()
+    if selfrom == selto == len(ctrl.GetValue()):
+        ctrl.SetSelection(-1, -1)
 
 
 def sound_play(name: str, wadlist: WADList):
