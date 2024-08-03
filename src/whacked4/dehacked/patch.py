@@ -210,7 +210,7 @@ class Patch:
             new_len = len(self.strings[key])
             new_str = self.strings[key]
             f.write(f'\nText {org_len} {new_len}\n')
-            f.write(f'{org_str}{new_str}')
+            f.write(f'{org_str}{new_str}\n')
 
     def write_patch_ext_strings(self, f: TextIO):
         """
