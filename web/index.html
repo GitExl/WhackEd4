@@ -40,12 +40,12 @@
 				<a class="lightbox" href="images/screen03.png"><img src="images/screen03_thumb.png"></a>
 			</div>
 
-			<a class="button normal" href="files/whacked4-setup-1.2.4.exe">Download 1.2.4</a>
+			<a class="button normal" href="files/whacked4-setup-1.3.0.exe">Download 1.3.0</a>
 			<a class="button side" href="#section-changelog">Changelog</a>
 			<a class="button side" href="#section-source">Source code</a>
 
 			<p class="below-button">
-				<a href="files/whacked4-1.2.4.7z">Download standalone 7zip archive</a>
+				<a href="files/whacked4-1.3.0.7z">Download standalone 7zip archive</a>
 			</p>
 		</div>
 	</div>
@@ -53,41 +53,79 @@
 	<div id="container">
 		<div id="content">
 			<h1 id="section-changelog">Changelog</h1>
-      <h2>Version 1.2.4</h2>
-      <ul>
-        <li>Fixed: invalid sprite names no longer cause a crash when loading\creating a patch, but are ignored instead.</li>
-        <li>Fixed: changing miscellaneous values would result in a crash. Thanks to antares031, Xyzzy01.</li>
-      </ul>
+                <h2>Version 1.3.0</h2>
+            <ul>
+                <li>Added: DeHackEd Extended (DEHEXTRA) configuration with extra states, sounds, things and sprites.</li>
+                <li>Added: support for DEHEXTRA thing fields: Gib health, Dropped item, Pickup width, Projectile pass height and Fullbright.</li>
+                <li>Added: Doom Retro thing fields: Blood, Shadow offset, Retro Bits, Name and Plural.</li>
+                <li>Added: state preview now uses a state's unused 1 and 2 parameters as offsets if previewing a state from the weapons editor (right-click state label).</li>
+                <li>Added: better Linux compatibility. The application starts and is somewhat usable, but a number of UI issues still prevent it from working well.</li>
+                <li>Added: IWAD detection for chex.wad and chex3.wad (official version). Thanks to Acts19quiz.</li>
+                <li>Changed: engine table files can now include (base table) files. This leads to smaller filesizes and makes for easier updating. As a result of this, strings in the Doom 1.9 and Ultimate Doom 1.9 tables are now keyed by their index.</li>
+                <li>Changed: engine table files list only fields used by that engine to reduce their size and improve maintainability. Default entries for things, states, weapons, ammo and sounds are provided for tables that extend existing ones.</li>
+                <li>Changed: string editing for vanilla patches will allow any number of characters to be entered, but disallow using the new string if it is too long.</li>
+                <li>Changed: thing editor properties, states, sounds and flags are now tabbed to save on screen real estate. Especially useful if an engine has many thing properties.</li>
+                <li>Changed: WhackEd4 is now a 64 bit application.</li>
+                <li>Changed: moved preview availability warning to notification text inside the patch settings window.</li>
+                <li>Changed: scale UI and bitmap assets for high DPI displays.</li>
+                <li>Changed: text input controls only select the entire contents when the end is selected.</li>
+                <li>Fixed: the state animation preview now displays action names instead of code pointers for non-extended patches.</li>
+                <li>Fixed: a weapon's FireCGun and FirePlasma actions would only mark the extra muzzle flash state as used if the action was used on the first fire state.</li>
+                <li>Fixed: loading non-extended patches that try to set a codepointer on a state that originally had none will now display a warning. Thanks to Zodomaniac.</li>
+                <li>Fixed: saving a yet unsaved patch while exiting caused a crash. Thanks to TheStupidestBeing.</li>
+                <li>Fixed: BEX strings that do not appear in the engine selected for a patch will now not be visible in the strings editor, but will remain in the saved patch.</li>
+                <li>Fixed: fixed a wrong next state value in the MBF tables for S_GRENADE (968). Thanks to hawkwind3.</li>
+                <li>Fixed: crash on startup in some rare cases where no patch was loaded yet. Thanks to Endy McGufin.</li>
+                <li>Fixed: maximum string length calculation for non-extended patches did not take the terminating NULL character into account. Thanks to Altazimuth.</li>
+                <li>Fixed: sprite frame selection up\down button did not work correctly.</li>
+                <li>Fixed: sound priority values can now be in the full signed integer range (though anything above 127 is useless).</li>
+                <li>Fixed: the MBF TRANSLATION2 flag is now available and will not be removed upon saving. Thanks to j0e.</li>
+                <li>Fixed: the MBF TRANSLATION1 flag is now recognized, and aliased to TRANSLATION for Boom compatibility. Thanks to hawkwind3.</li>
+                <li>Fixed: some typos in engine configuration files. Thanks to hawkwind3.</li>
+                <li>Fixed: Doom Retro TRANSLUCENT flag now shows up correctly in the flag list, alongside Boom's TRANSLUCENT.</li>
+                <li>Fixed: an MBF flag alias was missing. Thanks to hawkwind3.</li>
+                <li>Fixed: when copying a thing or undoing changes to one, its speed property was wrong if it changed from or to a projectile.</li>
+                <li>Fixed: hopefully, locale issues.</li>
+                <li>Fixed: Zdaemon misc. rocketExplosionStyle is a string. Thanks to Acts19quiz.</li>
+                <li>Fixed: selecting a Render Style would crash the application. Thanks to Acts19quiz.</li>
+                <li>Fixed: prevent out of range sprite indices from causing errors. Thanks to NeophyteRonin.</li>
+            </ul>
 
-      <h2>Version 1.2.3</h2>
-      <ul>
-        <li>Fixed: no longer allow a state's action to be removed in non-extended patches. Thanks to Mechadon.</li>
-        <li>Fixed: Boom configurations now properly refer to the red skullcard pickup string key as REDSKULL instead of REDSKUL. Thanks to EarthQuake.</li>
-        <li>Fixed: a crash on startup if the program settings became empty or corrupted somehow. Default settings will now be loaded if this is the case.</li>
-        <li>Changed: doubled size of sprite previews in the state editor.</li>
-        <li>Changed: updated wxPython to 4.0.6.</li>
-        <li>Changed: updated to Python 3.7.</li>
-        <li>Changed: enabled high DPI support.</li>
-        <li>Changed: reduced size of installed files.</li>
-      </ul>
+              <h2>Version 1.2.4</h2>
+              <ul>
+                <li>Fixed: invalid sprite names no longer cause a crash when loading\creating a patch, but are ignored instead.</li>
+                <li>Fixed: changing miscellaneous values would result in a crash. Thanks to antares031, Xyzzy01.</li>
+              </ul>
 
-      <h2>Version 1.2.2</h2>
-      <ul>
-        <li>Fixed: a serious issue with saving thing, weapon and ammo names that could cause no names to be saved and the wrong names loaded when opening a second patch. Thanks to Da Werecat.</li>
-        <li>Changed: detecting if a thing is a projectile is now done by looking for actions in it's used list of states that set the momentum as a non-fixed point value. Currently Chase and VileChase being used will cause a thing to not be considered a projectile and it's speed property to be automatically cast to a non-fixed point value internally and in written patches.</li>
-      </ul>
+              <h2>Version 1.2.3</h2>
+              <ul>
+                <li>Fixed: no longer allow a state's action to be removed in non-extended patches. Thanks to Mechadon.</li>
+                <li>Fixed: Boom configurations now properly refer to the red skullcard pickup string key as REDSKULL instead of REDSKUL. Thanks to EarthQuake.</li>
+                <li>Fixed: a crash on startup if the program settings became empty or corrupted somehow. Default settings will now be loaded if this is the case.</li>
+                <li>Changed: doubled size of sprite previews in the state editor.</li>
+                <li>Changed: updated wxPython to 4.0.6.</li>
+                <li>Changed: updated to Python 3.7.</li>
+                <li>Changed: enabled high DPI support.</li>
+                <li>Changed: reduced size of installed files.</li>
+              </ul>
 
-			<h2>Version 1.2.1</h2>
-      <ul>
-        <li>Added: support the RandomJump action in state previews.</li>
-        <li>Added: Extended DehackEd configuration with the extra things and empty states from Doom Retro. Crispy Doom also supports these.</li>
-        <li>Added: state actions that spawn things (like missiles from monster attacks) will now play that thing's sound during a preview.</li>
-        <li>Fixed: unused state parameter descriptions would not be updated when an action using them was selected.</li>
-        <li>Fixed: added missing things to the Doom Retro configuration. Thanks to VGA.</li>
-        <li>Changed: WAD reloading is now faster and doesn't reset the UI state.</li>
-      </ul>
+              <h2>Version 1.2.2</h2>
+              <ul>
+                <li>Fixed: a serious issue with saving thing, weapon and ammo names that could cause no names to be saved and the wrong names loaded when opening a second patch. Thanks to Da Werecat.</li>
+                <li>Changed: detecting if a thing is a projectile is now done by looking for actions in it's used list of states that set the momentum as a non-fixed point value. Currently Chase and VileChase being used will cause a thing to not be considered a projectile and it's speed property to be automatically cast to a non-fixed point value internally and in written patches.</li>
+              </ul>
 
-      <h2>Version 1.2.0</h2>
+                    <h2>Version 1.2.1</h2>
+              <ul>
+                <li>Added: support the RandomJump action in state previews.</li>
+                <li>Added: Extended DehackEd configuration with the extra things and empty states from Doom Retro. Crispy Doom also supports these.</li>
+                <li>Added: state actions that spawn things (like missiles from monster attacks) will now play that thing's sound during a preview.</li>
+                <li>Fixed: unused state parameter descriptions would not be updated when an action using them was selected.</li>
+                <li>Fixed: added missing things to the Doom Retro configuration. Thanks to VGA.</li>
+                <li>Changed: WAD reloading is now faster and doesn't reset the UI state.</li>
+              </ul>
+
+              <h2>Version 1.2.0</h2>
 			<ul>
 				<li>Added: state animation preview (with sounds) by pressing ~ on a state or using the new state context menu. Pressing ~ again inside the animation preview will restart it. Right-clicking a thing or weapon state from their respective dialogs will preview it directly.</li>
 				<li>Added: linking states together can now be done by selecting them, right-clicking and selecting a link option (or use the respective shortcut key). Linking is done in the order of selection.</li>
