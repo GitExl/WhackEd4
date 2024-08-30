@@ -265,8 +265,9 @@ class Patch:
         """
 
         if not self.extended:
-            self.write_patch_codepointers_extended(f)
+            self.write_patch_codepointers_vanilla(f)
 
+        # Write extended style codepointers.
         else:
             out = {}
 
@@ -282,9 +283,9 @@ class Patch:
                 for index, action in out.items():
                     f.write(f'FRAME {index} = {action}\n')
 
-    def write_patch_codepointers_extended(self, f: TextIO):
+    def write_patch_codepointers_vanilla(self, f: TextIO):
         """
-        Writes extended  codepointer data to a Dehacked patch.
+        Writes vanilla-style codepointer data to a Dehacked patch.
         """
 
         # For non-extended patches, each state's action has an index. States without an
@@ -294,7 +295,7 @@ class Patch:
         for i, state in enumerate(self.states):
             action_pointer = state['action']
 
-            if action_pointer != state['action']:
+            if action_pointer != self.engine.states[i]['action']:
                 # Attempt to find this state's action pointer index in the action
                 # index lookup list.
                 try:

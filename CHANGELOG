@@ -1,3 +1,7 @@
+Version 1.3.1
+-------------
+Fixed: writing actions/code pointers for vanilla-styles patches. Thanks to Asht Mslf.
+
 Version 1.3.0
 -------------
 Added: DeHackEd Extended (DEHEXTRA) configuration with extra states, sounds, things and sprites.
