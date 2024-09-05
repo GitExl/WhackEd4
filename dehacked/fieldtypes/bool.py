@@ -9,11 +9,16 @@ from dehacked.fieldtypes.base import BaseFieldType
 
 class BoolFieldType(BaseFieldType):
 
-    def __init__(self, key: str, name: str, default: any):
-        super().__init__(key, name, default)
+    def __init__(self, key: str, name: str, default: any, target: Target):
+        super().__init__(key, name, default, target)
 
         self.value_true: any = 1
         self.value_false: any = 0
+
+    def validate(self, value: any) -> bool:
+        if type(value) != int:
+            return False
+        return value == self.value_true or value == self.value_false
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):

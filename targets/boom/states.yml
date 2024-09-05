@@ -24,7 +24,7 @@ schema:
             type: action
             name: Actions
             patch_key: Action pointer
-            default: ''
+            default: 'NULL'
         next:
             type: reference
             reference: state

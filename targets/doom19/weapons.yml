@@ -6,8 +6,7 @@ schema:
             default: Unnamed
             group: properties
         ammo_type:
-            type: reference
-            reference: ammo
+            type: ammo
             name: Ammo type
             patch_key: Ammo type
             default: 0
@@ -68,7 +67,7 @@ data:
         - state_deselect: 20
           state_bob: 18
           state_muzzle: 30
-          ammoType: 1
+          ammo_type: 1
           state_select: 19
           state_fire: 21
           name: Shotgun
@@ -83,7 +82,7 @@ data:
         - state_deselect: 59
           state_bob: 57
           state_muzzle: 63
-          ammoType: 3
+          ammo_type: 3
           state_select: 58
           state_fire: 60
           name: Rocket launcher
@@ -91,7 +90,7 @@ data:
         - state_deselect: 76
           state_bob: 74
           state_muzzle: 79
-          ammoType: 2
+          ammo_type: 2
           state_select: 75
           state_fire: 77
           name: Plasma rifle
@@ -99,14 +98,14 @@ data:
         - state_deselect: 83
           state_bob: 81
           state_muzzle: 88
-          ammoType: 2
+          ammo_type: 2
           state_select: 82
           state_fire: 84
           name: BFG 9000
 
         - state_deselect: 70
           state_bob: 67
-          ammoType: 5
+          ammo_type: 5
           state_select: 69
           state_fire: 71
           name: Chainsaw
@@ -114,7 +113,7 @@ data:
         - state_deselect: 34
           state_bob: 32
           state_muzzle: 47
-          ammoType: 1
+          ammo_type: 1
           state_select: 33
           state_fire: 35
           name: Super-shotgun

@@ -29,3 +29,13 @@ class Table:
         row = self.default_row.copy()
         row.update(data)
         self.rows.append(row)
+
+    def validate(self):
+        for row_index, row in enumerate(self.rows):
+            for field_key, value in row.items():
+                if field_key not in self.fields:
+                    raise RuntimeError(f'Table "{self.name}", row {row_index} contains unknown field "{field_key}".')
+                field = self.fields[field_key]
+
+                if not field.validate(value):
+                    raise RuntimeError(f'Table "{self.name}", row {row_index}, field "{field_key}" contains invalid value "{value}".')

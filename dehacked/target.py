@@ -3,7 +3,7 @@ from typing import List, Dict, Set
 
 from dehacked.action import Action
 from dehacked.dehacked_enum import DehackedEnum
-from dehacked.flag import FlagSet, Flag
+from dehacked.flagset import FlagSet, Flag
 from dehacked.table import Table
 
 
@@ -40,10 +40,13 @@ class Target:
 
     def add_flagset(self, key: str, data: dict):
         if key not in self.flagsets:
-            self.flagsets[key] = {}
+            flagset = FlagSet(key)
+            self.flagsets[key] = flagset
+        else:
+            flagset = self.flagsets[key]
 
         for flag_key, flag_data in data.items():
-            self.flagsets[key][flag_key] = Flag.parse(key, flag_key, flag_data)
+            flagset.add_flag(Flag.parse(key, flag_key, flag_data))
 
     def add_action(self, key: str, data: dict):
         self.actions[key] = Action.parse(key, data)
@@ -56,9 +59,10 @@ class Target:
             self.tables[key].add_field(field_key, field_data)
 
     def add_rows(self, table_key: str, rows: list):
-        if table_key not in self.tables:
-            raise RuntimeError(f'Unknown table {table_key}, a schema must be defined for it.')
-
         table = self.tables[table_key]
         for row in rows:
             table.add_row(row)
+
+    def validate(self):
+        for table in self.tables.values():
+            table.validate()

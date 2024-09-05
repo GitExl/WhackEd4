@@ -9,11 +9,17 @@ from dehacked.fieldtypes.base import BaseFieldType
 
 class StringFieldType(BaseFieldType):
 
-    def __init__(self, key: str, name: str, default: any):
-        super().__init__(key, name, default)
+    def __init__(self, key: str, name: str, default: any, target: Target):
+        super().__init__(key, name, default, target)
 
         self.min: int = 0
         self.max: int = 0xFFFF
+
+    def validate(self, value: any) -> bool:
+        if type(value) != str:
+            return False
+
+        return self.min <= len(value) <= self.max
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):

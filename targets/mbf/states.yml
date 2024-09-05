@@ -2,494 +2,494 @@ data:
     state:
         - action: "Die"
           duration: 1000
-          nextState: 968
+          next: 968
           sprite: 22
-          spriteFrame: 32768
+          frame: 32768
         - action: "Scream"
           duration: 4
-          nextState: 970
+          next: 970
           sprite: 22
-          spriteFrame: 32769
+          frame: 32769
         - action: "Detonate"
           duration: 6
-          nextState: 971
+          next: 971
           sprite: 22
-          spriteFrame: 32770
+          frame: 32770
         - duration: 10
           sprite: 22
-          spriteFrame: 32771
+          frame: 32771
         - action: "Look"
           duration: 10
-          nextState: 973
+          next: 973
           sprite: 139
         - action: "Look"
           duration: 10
-          nextState: 972
+          next: 972
           sprite: 139
-          spriteFrame: 1
+          frame: 1
         - action: "Chase"
           duration: 2
-          nextState: 975
-          sprite: 139
-        - action: "Chase"
-          duration: 2
-          nextState: 976
+          next: 975
           sprite: 139
         - action: "Chase"
           duration: 2
-          nextState: 977
+          next: 976
           sprite: 139
-          spriteFrame: 1
         - action: "Chase"
           duration: 2
-          nextState: 978
+          next: 977
           sprite: 139
-          spriteFrame: 1
+          frame: 1
         - action: "Chase"
           duration: 2
-          nextState: 979
+          next: 978
           sprite: 139
-          spriteFrame: 2
+          frame: 1
         - action: "Chase"
           duration: 2
-          nextState: 980
+          next: 979
           sprite: 139
-          spriteFrame: 2
+          frame: 2
         - action: "Chase"
           duration: 2
-          nextState: 981
+          next: 980
           sprite: 139
-          spriteFrame: 3
+          frame: 2
         - action: "Chase"
           duration: 2
-          nextState: 974
+          next: 981
           sprite: 139
-          spriteFrame: 3
+          frame: 3
+        - action: "Chase"
+          duration: 2
+          next: 974
+          sprite: 139
+          frame: 3
         - action: "FaceTarget"
           duration: 8
-          nextState: 983
+          next: 983
           sprite: 139
-          spriteFrame: 4
+          frame: 4
         - action: "FaceTarget"
           duration: 8
-          nextState: 984
+          next: 984
           sprite: 139
-          spriteFrame: 5
+          frame: 5
         - action: "SargAttack"
           duration: 8
-          nextState: 974
+          next: 974
           sprite: 139
-          spriteFrame: 6
+          frame: 6
         - duration: 2
-          nextState: 986
+          next: 986
           sprite: 139
-          spriteFrame: 7
+          frame: 7
         - action: "Pain"
           duration: 2
-          nextState: 974
+          next: 974
           sprite: 139
-          spriteFrame: 7
+          frame: 7
         - duration: 8
-          nextState: 988
+          next: 988
           sprite: 139
-          spriteFrame: 8
+          frame: 8
         - action: "Scream"
           duration: 8
-          nextState: 989
+          next: 989
           sprite: 139
-          spriteFrame: 9
+          frame: 9
         - duration: 4
-          nextState: 990
+          next: 990
           sprite: 139
-          spriteFrame: 10
+          frame: 10
         - action: "Fall"
           duration: 4
-          nextState: 991
+          next: 991
           sprite: 139
-          spriteFrame: 11
+          frame: 11
         - duration: 4
-          nextState: 992
+          next: 992
           sprite: 139
-          spriteFrame: 12
+          frame: 12
         - sprite: 139
-          spriteFrame: 13
+          frame: 13
         - duration: 5
-          nextState: 994
+          next: 994
           sprite: 139
-          spriteFrame: 13
+          frame: 13
         - duration: 5
-          nextState: 995
+          next: 995
           sprite: 139
-          spriteFrame: 12
+          frame: 12
         - duration: 5
-          nextState: 996
+          next: 996
           sprite: 139
-          spriteFrame: 11
+          frame: 11
         - duration: 5
-          nextState: 997
+          next: 997
           sprite: 139
-          spriteFrame: 10
+          frame: 10
         - duration: 5
-          nextState: 998
+          next: 998
           sprite: 139
-          spriteFrame: 9
+          frame: 9
         - duration: 5
-          nextState: 974
+          next: 974
           sprite: 139
-          spriteFrame: 8
+          frame: 8
         - action: "BFGSound"
           duration: 10
-          nextState: 1000
+          next: 1000
           sprite: 14
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1001
+          next: 1001
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1002
+          next: 1002
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1003
+          next: 1003
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1004
+          next: 1004
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1005
+          next: 1005
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1006
+          next: 1006
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1007
+          next: 1007
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1008
+          next: 1008
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1009
+          next: 1009
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1010
+          next: 1010
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1011
+          next: 1011
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1012
+          next: 1012
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1013
+          next: 1013
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1014
+          next: 1014
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1015
+          next: 1015
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1016
+          next: 1016
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1017
+          next: 1017
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1018
+          next: 1018
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1019
+          next: 1019
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1020
+          next: 1020
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1021
+          next: 1021
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1022
+          next: 1022
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1023
+          next: 1023
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1024
+          next: 1024
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1025
+          next: 1025
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1026
+          next: 1026
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1027
+          next: 1027
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1028
+          next: 1028
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1029
+          next: 1029
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1030
+          next: 1030
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1031
+          next: 1031
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1032
+          next: 1032
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1033
+          next: 1033
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1034
+          next: 1034
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1035
+          next: 1035
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1036
+          next: 1036
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1037
+          next: 1037
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1038
+          next: 1038
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1039
+          next: 1039
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "FireOldBFG"
           duration: 1
-          nextState: 1040
+          next: 1040
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "Light0"
           duration: 0
-          nextState: 1041
+          next: 1041
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - action: "ReFire"
           duration: 20
-          nextState: 81
+          next: 81
           sprite: 14
-          spriteFrame: 1
+          frame: 1
         - duration: 6
-          nextState: 1043
+          next: 1043
           sprite: 140
-          spriteFrame: 32768
+          frame: 32768
         - duration: 6
-          nextState: 1042
+          next: 1042
           sprite: 140
-          spriteFrame: 32769
+          frame: 32769
         - duration: 4
-          nextState: 1045
+          next: 1045
           sprite: 140
-          spriteFrame: 32770
+          frame: 32770
         - duration: 4
-          nextState: 1046
+          next: 1046
           sprite: 140
-          spriteFrame: 32771
+          frame: 32771
         - duration: 4
-          nextState: 1047
+          next: 1047
           sprite: 140
-          spriteFrame: 32772
+          frame: 32772
         - duration: 4
-          nextState: 1048
+          next: 1048
           sprite: 140
-          spriteFrame: 32773
+          frame: 32773
         - duration: 4
           sprite: 140
-          spriteFrame: 32774
+          frame: 32774
         - duration: 4
-          nextState: 1050
+          next: 1050
           sprite: 141
-          spriteFrame: 32768
+          frame: 32768
         - duration: 4
-          nextState: 1049
+          next: 1049
           sprite: 141
-          spriteFrame: 32769
+          frame: 32769
         - duration: 6
-          nextState: 1052
+          next: 1052
           sprite: 141
-          spriteFrame: 32770
+          frame: 32770
         - duration: 6
-          nextState: 1053
+          next: 1053
           sprite: 141
-          spriteFrame: 32771
+          frame: 32771
         - duration: 6
           sprite: 141
-          spriteFrame: 32772
+          frame: 32772
         - duration: 6
-          nextState: 1054
+          next: 1054
           sprite: 142
         - duration: 6
-          nextState: 1055
+          next: 1055
           sprite: 143
         - action: "Look"
           duration: 10
-          nextState: 1056
+          next: 1056
           sprite: 44
         - action: "Chase"
           duration: 5
-          nextState: 1058
+          next: 1058
           sprite: 44
-          spriteFrame: 1
+          frame: 1
         - action: "Chase"
           duration: 5
-          nextState: 1059
+          next: 1059
           sprite: 44
-          spriteFrame: 2
+          frame: 2
         - action: "Chase"
           duration: 5
-          nextState: 1060
+          next: 1060
           sprite: 44
-          spriteFrame: 3
+          frame: 3
         - action: "Chase"
           duration: 5
-          nextState: 1057
+          next: 1057
           sprite: 44
         - action: "FaceTarget"
           duration: 4
-          nextState: 1062
+          next: 1062
           sprite: 44
-          spriteFrame: 4
+          frame: 4
         - action: "BetaSkullAttack"
           duration: 5
-          nextState: 1063
+          next: 1063
           sprite: 44
-          spriteFrame: 5
+          frame: 5
         - duration: 4
-          nextState: 1057
+          next: 1057
           sprite: 44
-          spriteFrame: 5
+          frame: 5
         - duration: 4
-          nextState: 1065
+          next: 1065
           sprite: 44
-          spriteFrame: 6
+          frame: 6
         - action: "Pain"
           duration: 2
-          nextState: 1057
+          next: 1057
           sprite: 44
-          spriteFrame: 7
+          frame: 7
         - duration: 4
-          nextState: 1057
+          next: 1057
           sprite: 44
-          spriteFrame: 8
+          frame: 8
         - duration: 5
-          nextState: 1068
+          next: 1068
           sprite: 44
-          spriteFrame: 9
+          frame: 9
         - duration: 5
-          nextState: 1069
+          next: 1069
           sprite: 44
-          spriteFrame: 10
+          frame: 10
         - duration: 5
-          nextState: 1070
+          next: 1070
           sprite: 44
-          spriteFrame: 11
+          frame: 11
         - duration: 5
-          nextState: 1071
+          next: 1071
           sprite: 44
-          spriteFrame: 12
+          frame: 12
         - action: "Scream"
           duration: 5
-          nextState: 1072
+          next: 1072
           sprite: 44
-          spriteFrame: 13
+          frame: 13
         - duration: 5
-          nextState: 1073
+          next: 1073
           sprite: 44
-          spriteFrame: 14
+          frame: 14
         - action: "Fall"
           duration: 5
-          nextState: 1074
+          next: 1074
           sprite: 44
-          spriteFrame: 15
+          frame: 15
         - action: "Stop"
           duration: 5
-          nextState: 1074
+          next: 1074
           sprite: 44
-          spriteFrame: 16
+          frame: 16
         - action: "Mushroom"
           duration: 8
-          nextState: 128
+          next: 128
           sprite: 22
-          spriteFrame: 32769
+          frame: 32769

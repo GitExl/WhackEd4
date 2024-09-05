@@ -52,11 +52,11 @@ class ActionArgument:
         """
 
         if 'name' not in data:
-            raise RuntimeError(f'Action {action_key} argument {argument_key} requires a name.')
+            raise RuntimeError(f'Action "{action_key}" argument "{argument_key}" requires a "name" property.')
         if 'description' not in data:
-            raise RuntimeError(f'Action {action_key} argument {argument_key} requires a description.')
+            raise RuntimeError(f'Action "{action_key}" argument "{argument_key}" requires a "description" property.')
         if 'type' not in data:
-            raise RuntimeError(f'Action {action_key} argument {argument_key} requires a type.')
+            raise RuntimeError(f'Action "{action_key}" argument "{argument_key}" requires a "type" property.')
 
         argument = cls(
             data['name'],

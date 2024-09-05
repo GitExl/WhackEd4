@@ -38,19 +38,19 @@ data:
            height: 1835008
            id: 888
            mass: 100
-           painChance: 180
-           soundActive: 111
-           soundAlert: 109
-           soundAttack: 110
-           soundDeath: 112
-           soundPain: 113
+           pain_chance: 180
+           sound_active: 110
+           sound_alert: 108
+           sound_attack: 109
+           sound_death: 111
+           sound_pain: 112
            speed: 10
-           stateDeath: 987
-           stateMelee: 982
-           stateWalk: 974
-           statePain: 985
-           stateRaise: 993
-           stateSpawn: 972
+           state_death: 987
+           state_melee: 982
+           state_walk: 974
+           state_pain: 985
+           state_raise: 993
+           state_spawn: 972
            radius: 786432
            name: "Dog"
 
@@ -59,11 +59,11 @@ data:
            height: 524288
            mass: 100
            damage: 4
-           soundAlert: 8
-           soundDeath: 17
+           sound_alert: 8
+           sound_death: 17
            speed: 1638400
-           stateDeath: 1044
-           stateSpawn: 1042
+           state_death: 1044
+           state_spawn: 1042
            radius: 851968
            name: "Beta Plasma 1"
 
@@ -72,11 +72,11 @@ data:
            height: 524288
            mass: 100
            damage: 4
-           soundAlert: 8
-           soundDeath: 17
+           sound_alert: 8
+           sound_death: 17
            speed: 1638400
-           stateDeath: 1051
-           stateSpawn: 1049
+           state_death: 1051
+           state_spawn: 1049
            radius: 393216
            name: "Beta Plasma 2"
 
@@ -85,7 +85,7 @@ data:
            height: 1048576
            id: 2016
            mass: 100
-           stateSpawn: 1054
+           state_spawn: 1054
            radius: 655360
            name: "Beta Sceptre"
 
@@ -94,6 +94,6 @@ data:
            height: 655360
            id: 2017
            mass: 100
-           stateSpawn: 1055
+           state_spawn: 1055
            radius: 1310720
            name: "Beta Bible"

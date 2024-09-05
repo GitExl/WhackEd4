@@ -94,7 +94,9 @@ def load(target_id: str) -> Target:
         for table_key, table_rows in data['data'].items():
             target.add_rows(table_key, table_rows)
 
-    # TODO: data, track _index
+    target.validate()
+
+    # TODO: track data _index
 
     print(data)
     print(info)

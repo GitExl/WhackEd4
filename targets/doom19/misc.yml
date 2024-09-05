@@ -95,9 +95,9 @@ data:
           health_start: 100
           health_godmode: 100
           health_soulsphere: 100
-          health_max_soulsphere: 200
-          megasphere_health: 200
+          health_soulsphere_max: 200
+          health_megasphere: 200
           health_max: 200
           bullets_start: 50
-          bfg_ammo_usage: 40
+          ammo_usage_bfg: 40
           monsters_infight: 0

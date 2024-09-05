@@ -12,11 +12,16 @@ class IntegerFieldType(BaseFieldType):
     MIN_ABSOLUTE = 0
     MAX_ABSOLUTE = 255
 
-    def __init__(self, key: str, name: str, default: any):
-        super().__init__(key, name, default)
+    def __init__(self, key: str, name: str, default: any, target: Target):
+        super().__init__(key, name, default, target)
 
         self.min: int = self.MIN_ABSOLUTE
         self.max: int = self.MAX_ABSOLUTE
+
+    def validate(self, value: any) -> bool:
+        if type(value) != int:
+            return False
+        return self.min <= value <= self.max
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):
@@ -35,8 +40,8 @@ class Int32FieldType(IntegerFieldType):
     MIN_ABSOLUTE = -2147483648
     MAX_ABSOLUTE = 2147483647
 
-    def __init__(self, key: str, name: str, default: any):
-        super().__init__(key, name, default)
+    def __init__(self, key: str, name: str, default: any, target: Target):
+        super().__init__(key, name, default, target)
 
         self.min = self.MIN_ABSOLUTE
         self.max = self.MAX_ABSOLUTE

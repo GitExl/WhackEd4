@@ -34,4 +34,16 @@ class Flag:
         return flag
 
 
-FlagSet = Dict[str, Flag]
+class FlagSet:
+
+    def __init__(self, key: str):
+        self.key = key
+
+        self.flags: Dict[str, Flag] = {}
+        self.flag_by_index: Dict[int, Flag] = {}
+
+    def add_flag(self, flag: Flag):
+        self.flags[flag.key] = flag
+
+        if flag.index is not None:
+            self.flag_by_index[flag.index] = flag

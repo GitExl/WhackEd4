@@ -73,7 +73,7 @@ class Action:
         """
 
         if 'description' not in data:
-            raise RuntimeError(f'Action {key} requires a description.')
+            raise RuntimeError(f'Action "{key}" requires a "description" property.')
 
         if 'name' not in data:
             name = key

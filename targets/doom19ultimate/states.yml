@@ -5,19 +5,19 @@ data:
     state:
         - sprite: 0
         - sprite: 1
-          action: 187520
+          action: '187520'
           duration: 0
           frame: 4
         - sprite: 2
-          action: 185392
+          action: '185392'
           duration: 1
           next: 2
         - sprite: 2
-          action: 185808
+          action: '185808'
           duration: 1
           next: 3
         - sprite: 2
-          action: 185872
+          action: '185872'
           duration: 1
           next: 4
         - sprite: 2
@@ -25,7 +25,7 @@ data:
           frame: 1
           next: 6
         - sprite: 2
-          action: 186000
+          action: '186000'
           duration: 4
           frame: 2
           next: 7
@@ -38,27 +38,27 @@ data:
           frame: 2
           next: 9
         - sprite: 2
-          action: 185648
+          action: '185648'
           duration: 5
           frame: 1
           next: 2
         - sprite: 3
-          action: 185392
+          action: '185392'
           duration: 1
           next: 10
         - sprite: 3
-          action: 185808
+          action: '185808'
           duration: 1
           next: 11
         - sprite: 3
-          action: 185872
+          action: '185872'
           duration: 1
           next: 12
         - sprite: 3
           duration: 4
           next: 14
         - sprite: 3
-          action: 186832
+          action: '186832'
           duration: 6
           frame: 1
           next: 15
@@ -67,33 +67,33 @@ data:
           frame: 2
           next: 16
         - sprite: 3
-          action: 185648
+          action: '185648'
           duration: 5
           frame: 1
           next: 10
         - sprite: 4
-          action: 187536
+          action: '187536'
           duration: 7
           frame: 0
           next: 1
           is_lit: 1
         - sprite: 1
-          action: 185392
+          action: '185392'
           duration: 1
           next: 18
         - sprite: 1
-          action: 185808
+          action: '185808'
           duration: 1
           next: 19
         - sprite: 1
-          action: 185872
+          action: '185872'
           duration: 1
           next: 20
         - sprite: 1
           duration: 3
           next: 22
         - sprite: 1
-          action: 186960
+          action: '186960'
           duration: 7
           next: 23
         - sprite: 1
@@ -120,38 +120,38 @@ data:
           duration: 3
           next: 29
         - sprite: 1
-          action: 185648
+          action: '185648'
           duration: 7
           next: 18
         - sprite: 5
-          action: 187536
+          action: '187536'
           duration: 4
           frame: 0
           next: 31
           is_lit: 1
         - sprite: 5
-          action: 187552
+          action: '187552'
           duration: 3
           frame: 1
           next: 1
           is_lit: 1
         - sprite: 6
-          action: 185392
+          action: '185392'
           duration: 1
           next: 32
         - sprite: 6
-          action: 185808
+          action: '185808'
           duration: 1
           next: 33
         - sprite: 6
-          action: 185872
+          action: '185872'
           duration: 1
           next: 34
         - sprite: 6
           duration: 3
           next: 36
         - sprite: 6
-          action: 187120
+          action: '187120'
           duration: 7
           next: 37
         - sprite: 6
@@ -159,12 +159,12 @@ data:
           frame: 1
           next: 38
         - sprite: 6
-          action: 185760
+          action: '185760'
           duration: 7
           frame: 2
           next: 39
         - sprite: 6
-          action: 166848
+          action: '166848'
           duration: 7
           frame: 3
           next: 40
@@ -173,7 +173,7 @@ data:
           frame: 4
           next: 41
         - sprite: 6
-          action: 166864
+          action: '166864'
           duration: 7
           frame: 5
           next: 42
@@ -182,12 +182,12 @@ data:
           frame: 6
           next: 43
         - sprite: 6
-          action: 166880
+          action: '166880'
           duration: 6
           frame: 7
           next: 44
         - sprite: 6
-          action: 185648
+          action: '185648'
           duration: 5
           next: 32
         - sprite: 6
@@ -198,84 +198,84 @@ data:
           duration: 3
           next: 33
         - sprite: 6
-          action: 187536
+          action: '187536'
           duration: 5
           frame: 8
           next: 48
           is_lit: 1
         - sprite: 6
-          action: 187552
+          action: '187552'
           duration: 4
           frame: 9
           next: 1
           is_lit: 1
         - sprite: 7
-          action: 185392
+          action: '185392'
           duration: 1
           next: 49
         - sprite: 7
-          action: 185808
+          action: '185808'
           duration: 1
           next: 50
         - sprite: 7
-          action: 185872
+          action: '185872'
           duration: 1
           next: 51
         - sprite: 7
-          action: 187312
+          action: '187312'
           duration: 4
           next: 53
         - sprite: 7
-          action: 187312
+          action: '187312'
           duration: 4
           frame: 1
           next: 54
         - sprite: 7
-          action: 185648
+          action: '185648'
           duration: 0
           frame: 1
           next: 49
         - sprite: 8
-          action: 187536
+          action: '187536'
           duration: 5
           frame: 0
           next: 1
           is_lit: 1
         - sprite: 8
-          action: 187552
+          action: '187552'
           duration: 5
           frame: 1
           next: 1
           is_lit: 1
         - sprite: 9
-          action: 185392
+          action: '185392'
           duration: 1
           next: 57
         - sprite: 9
-          action: 185808
+          action: '185808'
           duration: 1
           next: 58
         - sprite: 9
-          action: 185872
+          action: '185872'
           duration: 1
           next: 59
         - sprite: 9
-          action: 185936
+          action: '185936'
           duration: 8
           frame: 1
           next: 61
         - sprite: 9
-          action: 186432
+          action: '186432'
           duration: 12
           frame: 1
           next: 62
         - sprite: 9
-          action: 185648
+          action: '185648'
           duration: 0
           frame: 1
           next: 57
         - sprite: 10
-          action: 187536
+          action: '187536'
           duration: 3
           frame: 0
           next: 64
@@ -286,123 +286,123 @@ data:
           next: 65
           is_lit: 1
         - sprite: 10
-          action: 187552
+          action: '187552'
           duration: 4
           frame: 2
           next: 66
           is_lit: 1
         - sprite: 10
-          action: 187552
+          action: '187552'
           duration: 4
           frame: 3
           next: 1
           is_lit: 1
         - sprite: 11
-          action: 185392
+          action: '185392'
           duration: 4
           frame: 2
           next: 68
         - sprite: 11
-          action: 185392
+          action: '185392'
           duration: 4
           frame: 3
           next: 67
         - sprite: 11
-          action: 185808
+          action: '185808'
           duration: 1
           frame: 2
           next: 69
         - sprite: 11
-          action: 185872
+          action: '185872'
           duration: 1
           frame: 2
           next: 70
         - sprite: 11
-          action: 186176
+          action: '186176'
           duration: 4
           next: 72
         - sprite: 11
-          action: 186176
+          action: '186176'
           duration: 4
           frame: 1
           next: 73
         - sprite: 11
-          action: 185648
+          action: '185648'
           duration: 0
           frame: 1
           next: 67
         - sprite: 12
-          action: 185392
+          action: '185392'
           duration: 1
           next: 74
         - sprite: 12
-          action: 185808
+          action: '185808'
           duration: 1
           next: 75
         - sprite: 12
-          action: 185872
+          action: '185872'
           duration: 1
           next: 76
         - sprite: 12
-          action: 186528
+          action: '186528'
           duration: 3
           next: 78
         - sprite: 12
-          action: 185648
+          action: '185648'
           duration: 20
           frame: 1
           next: 74
         - sprite: 13
-          action: 187536
+          action: '187536'
           duration: 4
           frame: 0
           next: 1
           is_lit: 1
         - sprite: 13
-          action: 187536
+          action: '187536'
           duration: 4
           frame: 1
           next: 1
           is_lit: 1
         - sprite: 14
-          action: 185392
+          action: '185392'
           duration: 1
           next: 81
         - sprite: 14
-          action: 185808
+          action: '185808'
           duration: 1
           next: 82
         - sprite: 14
-          action: 185872
+          action: '185872'
           duration: 1
           next: 83
         - sprite: 14
-          action: 187744
+          action: '187744'
           duration: 20
           next: 85
         - sprite: 14
-          action: 185936
+          action: '185936'
           duration: 10
           frame: 1
           next: 86
         - sprite: 14
-          action: 186480
+          action: '186480'
           duration: 10
           frame: 1
           next: 87
         - sprite: 14
-          action: 185648
+          action: '185648'
           duration: 20
           frame: 1
           next: 81
         - sprite: 15
-          action: 187536
+          action: '187536'
           duration: 11
           frame: 0
           next: 89
           is_lit: 1
         - sprite: 15
-          action: 187552
+          action: '187552'
           duration: 6
           frame: 1
           next: 1
@@ -541,7 +541,7 @@ data:
           next: 119
           is_lit: 1
         - sprite: 24
-          action: 187568
+          action: '187568'
           duration: 8
           frame: 2
           next: 120
@@ -580,7 +580,7 @@ data:
           frame: 3
           is_lit: 1
         - sprite: 22
-          action: 166160
+          action: '166160'
           duration: 8
           frame: 1
           next: 128
@@ -717,7 +717,7 @@ data:
           frame: 6
           next: 157
         - sprite: 28
-          action: 166112
+          action: '166112'
           duration: 4
           frame: 6
           next: 149
@@ -726,12 +726,12 @@ data:
           frame: 7
           next: 159
         - sprite: 28
-          action: 167808
+          action: '167808'
           duration: 10
           frame: 8
           next: 160
         - sprite: 28
-          action: 166144
+          action: '166144'
           duration: 10
           frame: 9
           next: 161
@@ -754,12 +754,12 @@ data:
           frame: 14
           next: 166
         - sprite: 28
-          action: 166096
+          action: '166096'
           duration: 5
           frame: 15
           next: 167
         - sprite: 28
-          action: 166144
+          action: '166144'
           duration: 5
           frame: 16
           next: 168
@@ -786,59 +786,59 @@ data:
         - sprite: 28
           frame: 22
         - sprite: 29
-          action: 161536
+          action: '161536'
           duration: 10
           next: 175
         - sprite: 29
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 174
         - sprite: 29
-          action: 161744
+          action: '161744'
           duration: 4
           next: 177
         - sprite: 29
-          action: 161744
+          action: '161744'
           duration: 4
           next: 178
         - sprite: 29
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 1
           next: 179
         - sprite: 29
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 1
           next: 180
         - sprite: 29
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 2
           next: 181
         - sprite: 29
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 2
           next: 182
         - sprite: 29
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 3
           next: 183
         - sprite: 29
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 3
           next: 176
         - sprite: 29
-          action: 162224
+          action: '162224'
           duration: 10
           frame: 4
           next: 185
         - sprite: 29
-          action: 162320
+          action: '162320'
           duration: 8
           frame: 5
           next: 186
@@ -851,7 +851,7 @@ data:
           frame: 6
           next: 188
         - sprite: 29
-          action: 166112
+          action: '166112'
           duration: 3
           frame: 6
           next: 176
@@ -860,12 +860,12 @@ data:
           frame: 7
           next: 190
         - sprite: 29
-          action: 165984
+          action: '165984'
           duration: 5
           frame: 8
           next: 191
         - sprite: 29
-          action: 166144
+          action: '166144'
           duration: 5
           frame: 9
           next: 192
@@ -880,12 +880,12 @@ data:
           frame: 12
           next: 195
         - sprite: 29
-          action: 166096
+          action: '166096'
           duration: 5
           frame: 13
           next: 196
         - sprite: 29
-          action: 166144
+          action: '166144'
           duration: 5
           frame: 14
           next: 197
@@ -928,59 +928,59 @@ data:
           frame: 7
           next: 176
         - sprite: 30
-          action: 161536
+          action: '161536'
           duration: 10
           next: 208
         - sprite: 30
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 207
         - sprite: 30
-          action: 161744
+          action: '161744'
           duration: 3
           next: 210
         - sprite: 30
-          action: 161744
+          action: '161744'
           duration: 3
           next: 211
         - sprite: 30
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 212
         - sprite: 30
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 213
         - sprite: 30
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 214
         - sprite: 30
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 215
         - sprite: 30
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 216
         - sprite: 30
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 209
         - sprite: 30
-          action: 162224
+          action: '162224'
           duration: 10
           frame: 4
           next: 218
         - sprite: 30
-          action: 162448
+          action: '162448'
           duration: 10
           frame: 5
           next: 219
@@ -994,7 +994,7 @@ data:
           frame: 6
           next: 221
         - sprite: 30
-          action: 166112
+          action: '166112'
           duration: 3
           frame: 6
           next: 209
@@ -1003,12 +1003,12 @@ data:
           frame: 7
           next: 223
         - sprite: 30
-          action: 165984
+          action: '165984'
           duration: 5
           frame: 8
           next: 224
         - sprite: 30
-          action: 166144
+          action: '166144'
           duration: 5
           frame: 9
           next: 225
@@ -1023,12 +1023,12 @@ data:
           frame: 12
           next: 228
         - sprite: 30
-          action: 166096
+          action: '166096'
           duration: 5
           frame: 13
           next: 229
         - sprite: 30
-          action: 166144
+          action: '166144'
           duration: 5
           frame: 14
           next: 230
@@ -1075,128 +1075,128 @@ data:
           frame: 7
           next: 209
         - sprite: 31
-          action: 161536
+          action: '161536'
           duration: 10
           next: 242
         - sprite: 31
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 241
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           next: 244
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           next: 245
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           frame: 1
           next: 246
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           frame: 1
           next: 247
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           frame: 2
           next: 248
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           frame: 2
           next: 249
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           frame: 3
           next: 250
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           frame: 3
           next: 251
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           frame: 4
           next: 252
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           frame: 4
           next: 253
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           frame: 5
           next: 254
         - sprite: 31
-          action: 164160
+          action: '164160'
           duration: 2
           frame: 5
           next: 243
         - sprite: 31
-          action: 164496
+          action: '164496'
           duration: 0
           frame: 6
           next: 256
           is_lit: 1
         - sprite: 31
-          action: 162224
+          action: '162224'
           duration: 10
           frame: 6
           next: 257
           is_lit: 1
         - sprite: 31
-          action: 164704
+          action: '164704'
           duration: 8
           frame: 7
           next: 258
           is_lit: 1
         - sprite: 31
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 8
           next: 259
           is_lit: 1
         - sprite: 31
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 9
           next: 260
           is_lit: 1
         - sprite: 31
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 10
           next: 261
           is_lit: 1
         - sprite: 31
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 11
           next: 262
           is_lit: 1
         - sprite: 31
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 12
           next: 263
           is_lit: 1
         - sprite: 31
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 13
           next: 264
           is_lit: 1
         - sprite: 31
-          action: 164784
+          action: '164784'
           duration: 8
           frame: 14
           next: 265
@@ -1226,7 +1226,7 @@ data:
           frame: 16
           next: 270
         - sprite: 31
-          action: 166112
+          action: '166112'
           duration: 5
           frame: 16
           next: 243
@@ -1235,12 +1235,12 @@ data:
           frame: 16
           next: 272
         - sprite: 31
-          action: 165984
+          action: '165984'
           duration: 7
           frame: 17
           next: 273
         - sprite: 31
-          action: 166144
+          action: '166144'
           duration: 7
           frame: 18
           next: 274
@@ -1271,181 +1271,181 @@ data:
         - sprite: 31
           frame: 25
         - sprite: 32
-          action: 164512
+          action: '164512'
           duration: 2
           frame: 0
           next: 282
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 1
           next: 283
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 0
           next: 284
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 1
           next: 285
           is_lit: 1
         - sprite: 32
-          action: 164544
+          action: '164544'
           duration: 2
           frame: 2
           next: 286
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 1
           next: 287
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 2
           next: 288
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 1
           next: 289
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 2
           next: 290
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 3
           next: 291
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 2
           next: 292
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 3
           next: 293
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 2
           next: 294
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 3
           next: 295
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 4
           next: 296
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 3
           next: 297
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 4
           next: 298
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 3
           next: 299
           is_lit: 1
         - sprite: 32
-          action: 164544
+          action: '164544'
           duration: 2
           frame: 4
           next: 300
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 5
           next: 301
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 4
           next: 302
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 5
           next: 303
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 4
           next: 304
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 5
           next: 305
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 6
           next: 306
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 7
           next: 307
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 6
           next: 308
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 7
           next: 309
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 6
           next: 310
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 2
           frame: 7
           is_lit: 1
@@ -1469,13 +1469,13 @@ data:
           duration: 4
           frame: 3
         - sprite: 33
-          action: 163424
+          action: '163424'
           duration: 2
           frame: 0
           next: 317
           is_lit: 1
         - sprite: 33
-          action: 163424
+          action: '163424'
           duration: 2
           frame: 1
           next: 316
@@ -1495,111 +1495,111 @@ data:
           frame: 2
           is_lit: 1
         - sprite: 35
-          action: 161536
+          action: '161536'
           duration: 10
           next: 322
         - sprite: 35
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 321
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           next: 324
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           next: 325
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 1
           next: 326
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 1
           next: 327
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 2
           next: 328
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 2
           next: 329
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 3
           next: 330
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 3
           next: 331
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 4
           next: 332
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 4
           next: 333
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 5
           next: 334
         - sprite: 35
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 5
           next: 323
         - sprite: 35
-          action: 162224
+          action: '162224'
           duration: 0
           frame: 6
           next: 336
         - sprite: 35
-          action: 163808
+          action: '163808'
           duration: 6
           frame: 6
           next: 337
         - sprite: 35
-          action: 162224
+          action: '162224'
           duration: 6
           frame: 7
           next: 338
         - sprite: 35
-          action: 163840
+          action: '163840'
           duration: 6
           frame: 8
           next: 323
         - sprite: 35
-          action: 162224
+          action: '162224'
           duration: 0
           frame: 9
           next: 340
           is_lit: 1
         - sprite: 35
-          action: 162224
+          action: '162224'
           duration: 10
           frame: 9
           next: 341
           is_lit: 1
         - sprite: 35
-          action: 163328
+          action: '163328'
           duration: 10
           frame: 10
           next: 342
         - sprite: 35
-          action: 162224
+          action: '162224'
           duration: 10
           frame: 10
           next: 323
@@ -1608,7 +1608,7 @@ data:
           frame: 11
           next: 344
         - sprite: 35
-          action: 166112
+          action: '166112'
           duration: 5
           frame: 11
           next: 323
@@ -1621,12 +1621,12 @@ data:
           frame: 12
           next: 347
         - sprite: 35
-          action: 165984
+          action: '165984'
           duration: 7
           frame: 13
           next: 348
         - sprite: 35
-          action: 166144
+          action: '166144'
           duration: 7
           frame: 14
           next: 349
@@ -1685,122 +1685,122 @@ data:
           frame: 3
           is_lit: 1
         - sprite: 37
-          action: 161536
+          action: '161536'
           duration: 15
           next: 363
         - sprite: 37
-          action: 161536
+          action: '161536'
           duration: 15
           frame: 1
           next: 362
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           next: 365
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           next: 366
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 1
           next: 367
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 1
           next: 368
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 2
           next: 369
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 2
           next: 370
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 3
           next: 371
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 3
           next: 372
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 4
           next: 373
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 4
           next: 374
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 5
           next: 375
         - sprite: 37
-          action: 161744
+          action: '161744'
           duration: 4
           frame: 5
           next: 364
         - sprite: 37
-          action: 164992
+          action: '164992'
           duration: 20
           frame: 6
           next: 377
         - sprite: 37
-          action: 165024
+          action: '165024'
           duration: 10
           frame: 7
           next: 378
           is_lit: 1
         - sprite: 37
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 8
           next: 379
         - sprite: 37
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 6
           next: 380
         - sprite: 37
-          action: 165152
+          action: '165152'
           duration: 10
           frame: 7
           next: 381
           is_lit: 1
         - sprite: 37
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 8
           next: 382
         - sprite: 37
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 6
           next: 383
         - sprite: 37
-          action: 165280
+          action: '165280'
           duration: 10
           frame: 7
           next: 384
           is_lit: 1
         - sprite: 37
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 8
           next: 385
         - sprite: 37
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 6
           next: 364
@@ -1809,7 +1809,7 @@ data:
           frame: 9
           next: 387
         - sprite: 37
-          action: 166112
+          action: '166112'
           duration: 3
           frame: 9
           next: 364
@@ -1818,12 +1818,12 @@ data:
           frame: 10
           next: 389
         - sprite: 37
-          action: 165984
+          action: '165984'
           duration: 6
           frame: 11
           next: 390
         - sprite: 37
-          action: 166144
+          action: '166144'
           duration: 6
           frame: 12
           next: 391
@@ -1852,7 +1852,7 @@ data:
           frame: 18
           next: 397
         - sprite: 37
-          action: 166208
+          action: '166208'
           frame: 19
         - sprite: 37
           duration: 5
@@ -1887,71 +1887,71 @@ data:
           frame: 10
           next: 364
         - sprite: 38
-          action: 161536
+          action: '161536'
           duration: 10
           next: 407
         - sprite: 38
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 406
         - sprite: 38
-          action: 161744
+          action: '161744'
           duration: 3
           next: 409
         - sprite: 38
-          action: 161744
+          action: '161744'
           duration: 3
           next: 410
         - sprite: 38
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 411
         - sprite: 38
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 412
         - sprite: 38
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 413
         - sprite: 38
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 414
         - sprite: 38
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 415
         - sprite: 38
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 408
         - sprite: 38
-          action: 162224
+          action: '162224'
           duration: 10
           frame: 4
           next: 417
         - sprite: 38
-          action: 162592
+          action: '162592'
           duration: 4
           frame: 5
           next: 418
           is_lit: 1
         - sprite: 38
-          action: 162592
+          action: '162592'
           duration: 4
           frame: 4
           next: 419
           is_lit: 1
         - sprite: 38
-          action: 162720
+          action: '162720'
           duration: 1
           frame: 5
           next: 417
@@ -1960,7 +1960,7 @@ data:
           frame: 6
           next: 421
         - sprite: 38
-          action: 166112
+          action: '166112'
           duration: 3
           frame: 6
           next: 408
@@ -1969,12 +1969,12 @@ data:
           frame: 7
           next: 423
         - sprite: 38
-          action: 165984
+          action: '165984'
           duration: 5
           frame: 8
           next: 424
         - sprite: 38
-          action: 166144
+          action: '166144'
           duration: 5
           frame: 9
           next: 425
@@ -1997,12 +1997,12 @@ data:
           frame: 14
           next: 430
         - sprite: 38
-          action: 166096
+          action: '166096'
           duration: 5
           frame: 15
           next: 431
         - sprite: 38
-          action: 166144
+          action: '166144'
           duration: 5
           frame: 16
           next: 432
@@ -2044,73 +2044,73 @@ data:
           duration: 5
           frame: 7
           next: 408
-        - action: 161536
+        - action: '161536'
           duration: 10
           next: 443
-        - action: 161536
+        - action: '161536'
           duration: 10
           frame: 1
           next: 442
-        - action: 161744
+        - action: '161744'
           duration: 3
           next: 445
-        - action: 161744
+        - action: '161744'
           duration: 3
           next: 446
-        - action: 161744
+        - action: '161744'
           duration: 3
           frame: 1
           next: 447
-        - action: 161744
+        - action: '161744'
           duration: 3
           frame: 1
           next: 448
-        - action: 161744
+        - action: '161744'
           duration: 3
           frame: 2
           next: 449
-        - action: 161744
+        - action: '161744'
           duration: 3
           frame: 2
           next: 450
-        - action: 161744
+        - action: '161744'
           duration: 3
           frame: 3
           next: 451
-        - action: 161744
+        - action: '161744'
           duration: 3
           frame: 3
           next: 444
-        - action: 162224
+        - action: '162224'
           duration: 8
           frame: 4
           next: 453
-        - action: 162224
+        - action: '162224'
           duration: 8
           frame: 5
           next: 454
-        - action: 162896
+        - action: '162896'
           duration: 6
           frame: 6
           next: 444
         - duration: 2
           frame: 7
           next: 456
-        - action: 166112
+        - action: '166112'
           duration: 2
           frame: 7
           next: 444
         - duration: 8
           frame: 8
           next: 458
-        - action: 165984
+        - action: '165984'
           duration: 8
           frame: 9
           next: 459
         - duration: 6
           frame: 10
           next: 460
-        - action: 166144
+        - action: '166144'
           duration: 6
           frame: 11
           next: 461
@@ -2118,14 +2118,14 @@ data:
         - duration: 5
           frame: 13
           next: 463
-        - action: 166096
+        - action: '166096'
           duration: 5
           frame: 14
           next: 464
         - duration: 5
           frame: 15
           next: 465
-        - action: 166144
+        - action: '166144'
           duration: 5
           frame: 16
           next: 466
@@ -2155,64 +2155,64 @@ data:
           frame: 8
           next: 444
         - sprite: 39
-          action: 161536
+          action: '161536'
           duration: 10
           next: 476
         - sprite: 39
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 475
         - sprite: 39
-          action: 161744
+          action: '161744'
           duration: 2
           next: 478
         - sprite: 39
-          action: 161744
+          action: '161744'
           duration: 2
           next: 479
         - sprite: 39
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 1
           next: 480
         - sprite: 39
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 1
           next: 481
         - sprite: 39
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 2
           next: 482
         - sprite: 39
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 2
           next: 483
         - sprite: 39
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 3
           next: 484
         - sprite: 39
-          action: 161744
+          action: '161744'
           duration: 2
           frame: 3
           next: 477
         - sprite: 39
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 4
           next: 486
         - sprite: 39
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 5
           next: 487
         - sprite: 39
-          action: 163008
+          action: '163008'
           duration: 8
           frame: 6
           next: 477
@@ -2221,7 +2221,7 @@ data:
           frame: 7
           next: 489
         - sprite: 39
-          action: 166112
+          action: '166112'
           duration: 2
           frame: 7
           next: 477
@@ -2230,7 +2230,7 @@ data:
           frame: 8
           next: 491
         - sprite: 39
-          action: 165984
+          action: '165984'
           duration: 8
           frame: 9
           next: 492
@@ -2239,7 +2239,7 @@ data:
           frame: 10
           next: 493
         - sprite: 39
-          action: 166144
+          action: '166144'
           duration: 4
           frame: 11
           next: 494
@@ -2274,25 +2274,25 @@ data:
           frame: 8
           next: 477
         - sprite: 40
-          action: 161536
+          action: '161536'
           duration: 10
           next: 502
         - sprite: 40
-          action: 161744
+          action: '161744'
           duration: 3
           next: 503
         - sprite: 40
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 1
           next: 505
         - sprite: 40
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 2
           next: 506
         - sprite: 40
-          action: 163088
+          action: '163088'
           duration: 5
           frame: 3
           next: 503
@@ -2302,7 +2302,7 @@ data:
           frame: 4
           next: 508
         - sprite: 40
-          action: 166112
+          action: '166112'
           duration: 3
           frame: 4
           next: 509
@@ -2315,7 +2315,7 @@ data:
           frame: 6
           next: 511
         - sprite: 40
-          action: 165984
+          action: '165984'
           duration: 8
           frame: 7
           next: 512
@@ -2328,7 +2328,7 @@ data:
           frame: 9
           next: 514
         - sprite: 40
-          action: 166144
+          action: '166144'
           duration: 8
           frame: 10
           next: 515
@@ -2383,64 +2383,64 @@ data:
           frame: 4
           is_lit: 1
         - sprite: 42
-          action: 161536
+          action: '161536'
           duration: 10
           next: 528
         - sprite: 42
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 527
         - sprite: 42
-          action: 161744
+          action: '161744'
           duration: 3
           next: 530
         - sprite: 42
-          action: 161744
+          action: '161744'
           duration: 3
           next: 531
         - sprite: 42
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 532
         - sprite: 42
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 533
         - sprite: 42
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 534
         - sprite: 42
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 535
         - sprite: 42
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 536
         - sprite: 42
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 529
         - sprite: 42
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 4
           next: 538
         - sprite: 42
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 5
           next: 539
         - sprite: 42
-          action: 163232
+          action: '163232'
           duration: 8
           frame: 6
           next: 529
@@ -2449,7 +2449,7 @@ data:
           frame: 7
           next: 541
         - sprite: 42
-          action: 166112
+          action: '166112'
           duration: 2
           frame: 7
           next: 529
@@ -2458,7 +2458,7 @@ data:
           frame: 8
           next: 543
         - sprite: 42
-          action: 165984
+          action: '165984'
           duration: 8
           frame: 9
           next: 544
@@ -2467,7 +2467,7 @@ data:
           frame: 10
           next: 545
         - sprite: 42
-          action: 166144
+          action: '166144'
           duration: 8
           frame: 11
           next: 546
@@ -2480,7 +2480,7 @@ data:
           frame: 13
           next: 548
         - sprite: 42
-          action: 166208
+          action: '166208'
           frame: 14
         - sprite: 42
           duration: 8
@@ -2511,64 +2511,64 @@ data:
           frame: 8
           next: 529
         - sprite: 43
-          action: 161536
+          action: '161536'
           duration: 10
           next: 557
         - sprite: 43
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 556
         - sprite: 43
-          action: 161744
+          action: '161744'
           duration: 3
           next: 559
         - sprite: 43
-          action: 161744
+          action: '161744'
           duration: 3
           next: 560
         - sprite: 43
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 561
         - sprite: 43
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 562
         - sprite: 43
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 563
         - sprite: 43
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 564
         - sprite: 43
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 565
         - sprite: 43
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 558
         - sprite: 43
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 4
           next: 567
         - sprite: 43
-          action: 162224
+          action: '162224'
           duration: 8
           frame: 5
           next: 568
         - sprite: 43
-          action: 163232
+          action: '163232'
           duration: 8
           frame: 6
           next: 558
@@ -2577,7 +2577,7 @@ data:
           frame: 7
           next: 570
         - sprite: 43
-          action: 166112
+          action: '166112'
           duration: 2
           frame: 7
           next: 558
@@ -2586,7 +2586,7 @@ data:
           frame: 8
           next: 572
         - sprite: 43
-          action: 165984
+          action: '165984'
           duration: 8
           frame: 9
           next: 573
@@ -2595,7 +2595,7 @@ data:
           frame: 10
           next: 574
         - sprite: 43
-          action: 166144
+          action: '166144'
           duration: 8
           frame: 11
           next: 575
@@ -2638,37 +2638,37 @@ data:
           frame: 8
           next: 558
         - sprite: 44
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 0
           next: 586
           is_lit: 1
         - sprite: 44
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 585
           is_lit: 1
         - sprite: 44
-          action: 161744
+          action: '161744'
           duration: 6
           frame: 0
           next: 588
           is_lit: 1
         - sprite: 44
-          action: 161744
+          action: '161744'
           duration: 6
           frame: 1
           next: 587
           is_lit: 1
         - sprite: 44
-          action: 162224
+          action: '162224'
           duration: 10
           frame: 2
           next: 590
           is_lit: 1
         - sprite: 44
-          action: 165472
+          action: '165472'
           duration: 4
           frame: 3
           next: 591
@@ -2689,7 +2689,7 @@ data:
           next: 594
           is_lit: 1
         - sprite: 44
-          action: 166112
+          action: '166112'
           duration: 3
           frame: 4
           next: 587
@@ -2700,7 +2700,7 @@ data:
           next: 596
           is_lit: 1
         - sprite: 44
-          action: 165984
+          action: '165984'
           duration: 6
           frame: 6
           next: 597
@@ -2711,7 +2711,7 @@ data:
           next: 598
           is_lit: 1
         - sprite: 44
-          action: 166144
+          action: '166144'
           duration: 6
           frame: 8
           next: 599
@@ -2724,92 +2724,92 @@ data:
           duration: 6
           frame: 10
         - sprite: 45
-          action: 161536
+          action: '161536'
           duration: 10
           next: 602
         - sprite: 45
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 601
         - sprite: 45
-          action: 166784
+          action: '166784'
           duration: 3
           next: 604
         - sprite: 45
-          action: 161744
+          action: '161744'
           duration: 3
           next: 605
         - sprite: 45
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 606
         - sprite: 45
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 607
         - sprite: 45
-          action: 166784
+          action: '166784'
           duration: 3
           frame: 2
           next: 608
         - sprite: 45
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 609
         - sprite: 45
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 610
         - sprite: 45
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 611
         - sprite: 45
-          action: 166784
+          action: '166784'
           duration: 3
           frame: 4
           next: 612
         - sprite: 45
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 4
           next: 613
         - sprite: 45
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 5
           next: 614
         - sprite: 45
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 5
           next: 603
         - sprite: 45
-          action: 162224
+          action: '162224'
           duration: 20
           frame: 0
           next: 616
           is_lit: 1
         - sprite: 45
-          action: 162448
+          action: '162448'
           duration: 4
           frame: 6
           next: 617
           is_lit: 1
         - sprite: 45
-          action: 162448
+          action: '162448'
           duration: 4
           frame: 7
           next: 618
           is_lit: 1
         - sprite: 45
-          action: 162784
+          action: '162784'
           duration: 1
           frame: 7
           next: 616
@@ -2819,17 +2819,17 @@ data:
           frame: 8
           next: 620
         - sprite: 45
-          action: 166112
+          action: '166112'
           duration: 3
           frame: 8
           next: 603
         - sprite: 45
-          action: 165984
+          action: '165984'
           duration: 20
           frame: 9
           next: 622
         - sprite: 45
-          action: 166144
+          action: '166144'
           duration: 10
           frame: 10
           next: 623
@@ -2866,14 +2866,14 @@ data:
           frame: 18
           next: 631
         - sprite: 45
-          action: 166208
+          action: '166208'
           frame: 18
         - sprite: 46
-          action: 161536
+          action: '161536'
           duration: 10
           next: 633
         - sprite: 46
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 632
@@ -2881,71 +2881,71 @@ data:
           duration: 20
           next: 635
         - sprite: 46
-          action: 166816
+          action: '166816'
           duration: 3
           next: 636
         - sprite: 46
-          action: 161744
+          action: '161744'
           duration: 3
           next: 637
         - sprite: 46
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 638
         - sprite: 46
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 639
         - sprite: 46
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 640
         - sprite: 46
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 641
         - sprite: 46
-          action: 166816
+          action: '166816'
           duration: 3
           frame: 3
           next: 642
         - sprite: 46
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 643
         - sprite: 46
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 4
           next: 644
         - sprite: 46
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 4
           next: 645
         - sprite: 46
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 5
           next: 646
         - sprite: 46
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 5
           next: 635
         - sprite: 46
-          action: 162224
+          action: '162224'
           duration: 20
           frame: 0
           next: 648
           is_lit: 1
         - sprite: 46
-          action: 162848
+          action: '162848'
           duration: 4
           frame: 6
           next: 649
@@ -2956,7 +2956,7 @@ data:
           next: 650
           is_lit: 1
         - sprite: 46
-          action: 162784
+          action: '162784'
           duration: 1
           frame: 7
           next: 648
@@ -2966,17 +2966,17 @@ data:
           frame: 8
           next: 652
         - sprite: 46
-          action: 166112
+          action: '166112'
           duration: 3
           frame: 8
           next: 635
         - sprite: 46
-          action: 165984
+          action: '165984'
           duration: 20
           frame: 9
           next: 654
         - sprite: 46
-          action: 166144
+          action: '166144'
           duration: 7
           frame: 10
           next: 655
@@ -2997,7 +2997,7 @@ data:
           frame: 14
           next: 659
         - sprite: 46
-          action: 166208
+          action: '166208'
           frame: 15
         - sprite: 46
           duration: 5
@@ -3062,84 +3062,84 @@ data:
           frame: 4
           is_lit: 1
         - sprite: 49
-          action: 161536
+          action: '161536'
           duration: 10
           next: 675
         - sprite: 49
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 674
         - sprite: 49
-          action: 166752
+          action: '166752'
           duration: 3
           next: 677
         - sprite: 49
-          action: 161744
+          action: '161744'
           duration: 3
           next: 678
         - sprite: 49
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 679
         - sprite: 49
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 680
         - sprite: 49
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 681
         - sprite: 49
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 682
         - sprite: 49
-          action: 166784
+          action: '166784'
           duration: 3
           frame: 3
           next: 683
         - sprite: 49
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 676
         - sprite: 49
-          action: 162224
+          action: '162224'
           duration: 6
           frame: 4
           next: 685
         - sprite: 49
-          action: 163184
+          action: '163184'
           duration: 12
           frame: 5
           next: 686
         - sprite: 49
-          action: 162224
+          action: '162224'
           duration: 12
           frame: 4
           next: 687
         - sprite: 49
-          action: 163184
+          action: '163184'
           duration: 12
           frame: 5
           next: 688
         - sprite: 49
-          action: 162224
+          action: '162224'
           duration: 12
           frame: 4
           next: 689
         - sprite: 49
-          action: 163184
+          action: '163184'
           duration: 12
           frame: 5
           next: 676
         - sprite: 49
-          action: 166112
+          action: '166112'
           duration: 10
           frame: 6
           next: 676
@@ -3148,7 +3148,7 @@ data:
           frame: 7
           next: 692
         - sprite: 49
-          action: 165984
+          action: '165984'
           duration: 10
           frame: 8
           next: 693
@@ -3165,7 +3165,7 @@ data:
           frame: 11
           next: 696
         - sprite: 49
-          action: 166144
+          action: '166144'
           duration: 10
           frame: 12
           next: 697
@@ -3182,58 +3182,58 @@ data:
           frame: 15
           next: 700
         - sprite: 49
-          action: 166208
+          action: '166208'
           frame: 15
         - sprite: 50
-          action: 161536
+          action: '161536'
           duration: 10
           next: 701
         - sprite: 50
-          action: 161744
+          action: '161744'
           duration: 3
           next: 703
         - sprite: 50
-          action: 161744
+          action: '161744'
           duration: 3
           next: 704
         - sprite: 50
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 705
         - sprite: 50
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 706
         - sprite: 50
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 707
         - sprite: 50
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 702
         - sprite: 50
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 3
           next: 709
         - sprite: 50
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 4
           next: 710
         - sprite: 50
-          action: 162224
+          action: '162224'
           duration: 5
           frame: 5
           next: 711
           is_lit: 1
         - sprite: 50
-          action: 165888
+          action: '165888'
           duration: 0
           frame: 5
           next: 702
@@ -3243,7 +3243,7 @@ data:
           frame: 6
           next: 713
         - sprite: 50
-          action: 166112
+          action: '166112'
           duration: 6
           frame: 6
           next: 702
@@ -3253,7 +3253,7 @@ data:
           next: 715
           is_lit: 1
         - sprite: 50
-          action: 165984
+          action: '165984'
           duration: 8
           frame: 8
           next: 716
@@ -3269,7 +3269,7 @@ data:
           next: 718
           is_lit: 1
         - sprite: 50
-          action: 165920
+          action: '165920'
           duration: 8
           frame: 11
           next: 719
@@ -3303,81 +3303,81 @@ data:
           frame: 7
           next: 702
         - sprite: 51
-          action: 161536
+          action: '161536'
           duration: 10
           next: 727
         - sprite: 51
-          action: 161536
+          action: '161536'
           duration: 10
           frame: 1
           next: 726
         - sprite: 51
-          action: 161744
+          action: '161744'
           duration: 3
           next: 729
         - sprite: 51
-          action: 161744
+          action: '161744'
           duration: 3
           next: 730
         - sprite: 51
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 731
         - sprite: 51
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 1
           next: 732
         - sprite: 51
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 733
         - sprite: 51
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 2
           next: 734
         - sprite: 51
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 735
         - sprite: 51
-          action: 161744
+          action: '161744'
           duration: 3
           frame: 3
           next: 728
         - sprite: 51
-          action: 162224
+          action: '162224'
           duration: 10
           frame: 4
           next: 737
         - sprite: 51
-          action: 162224
+          action: '162224'
           duration: 10
           frame: 5
           next: 738
         - sprite: 51
-          action: 162592
+          action: '162592'
           duration: 4
           frame: 6
           next: 739
           is_lit: 1
         - sprite: 51
-          action: 162224
+          action: '162224'
           duration: 6
           frame: 5
           next: 740
         - sprite: 51
-          action: 162592
+          action: '162592'
           duration: 4
           frame: 6
           next: 741
           is_lit: 1
         - sprite: 51
-          action: 162720
+          action: '162720'
           duration: 1
           frame: 5
           next: 737
@@ -3386,7 +3386,7 @@ data:
           frame: 7
           next: 743
         - sprite: 51
-          action: 166112
+          action: '166112'
           duration: 3
           frame: 7
           next: 728
@@ -3395,12 +3395,12 @@ data:
           frame: 8
           next: 745
         - sprite: 51
-          action: 165984
+          action: '165984'
           duration: 5
           frame: 9
           next: 746
         - sprite: 51
-          action: 166144
+          action: '166144'
           duration: 5
           frame: 10
           next: 747
@@ -3415,12 +3415,12 @@ data:
           frame: 13
           next: 750
         - sprite: 51
-          action: 166096
+          action: '166096'
           duration: 5
           frame: 14
           next: 751
         - sprite: 51
-          action: 166144
+          action: '166144'
           duration: 5
           frame: 15
           next: 752
@@ -3476,7 +3476,7 @@ data:
           frame: 1
           next: 766
         - sprite: 52
-          action: 165984
+          action: '165984'
           duration: 6
           frame: 2
           next: 767
@@ -3509,7 +3509,7 @@ data:
           frame: 9
           next: 774
         - sprite: 52
-          action: 161440
+          action: '161440'
           duration: 6
           frame: 10
           next: 775
@@ -3520,18 +3520,18 @@ data:
           frame: 12
           next: 777
         - sprite: 52
-          action: 166112
+          action: '166112'
           duration: 8
           frame: 12
           next: 763
         - sprite: 53
         - sprite: 53
-          action: 167008
+          action: '167008'
           duration: 36
           frame: 1
           next: 778
         - sprite: 53
-          action: 167024
+          action: '167024'
           duration: 100
           next: 781
         - sprite: 53
@@ -3541,87 +3541,87 @@ data:
           duration: 10
           next: 783
         - sprite: 53
-          action: 167312
+          action: '167312'
         - sprite: 51
-          action: 161536
+          action: '161536'
           duration: 10
           next: 784
         - sprite: 51
-          action: 166912
+          action: '166912'
           duration: 181
           next: 786
         - sprite: 51
-          action: 167328
+          action: '167328'
           duration: 150
           next: 786
         - sprite: 54
-          action: 167488
+          action: '167488'
           duration: 3
           frame: 0
           next: 788
           is_lit: 1
         - sprite: 54
-          action: 167520
+          action: '167520'
           duration: 3
           frame: 1
           next: 789
           is_lit: 1
         - sprite: 54
-          action: 167520
+          action: '167520'
           duration: 3
           frame: 2
           next: 790
           is_lit: 1
         - sprite: 54
-          action: 167520
+          action: '167520'
           duration: 3
           frame: 3
           next: 787
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 4
           frame: 0
           next: 792
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 4
           frame: 1
           next: 793
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 4
           frame: 2
           next: 794
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 4
           frame: 3
           next: 795
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 4
           frame: 4
           next: 796
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 4
           frame: 5
           next: 797
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 4
           frame: 6
           next: 798
           is_lit: 1
         - sprite: 32
-          action: 164576
+          action: '164576'
           duration: 4
           frame: 7
           is_lit: 1
@@ -3636,7 +3636,7 @@ data:
           next: 801
           is_lit: 1
         - sprite: 22
-          action: 167184
+          action: '167184'
           duration: 10
           frame: 3
           is_lit: 1
@@ -3669,7 +3669,7 @@ data:
           next: 809
           is_lit: 1
         - sprite: 58
-          action: 165984
+          action: '165984'
           duration: 5
           frame: 1
           next: 810
@@ -3680,7 +3680,7 @@ data:
           next: 811
           is_lit: 1
         - sprite: 58
-          action: 166160
+          action: '166160'
           duration: 10
           frame: 3
           next: 812

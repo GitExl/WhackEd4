@@ -1,5 +1,5 @@
 actions:
-    NULL:
+    'NULL':
       description: None.
     KeenDie:
       description: Same as the 'Fall' action and triggering tag 666 if all things with the same type are dead.

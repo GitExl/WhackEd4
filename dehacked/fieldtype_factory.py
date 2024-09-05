@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dehacked.fieldtypes.action import ActionFieldType
+from dehacked.fieldtypes.ammo import AmmoFieldType
 from dehacked.fieldtypes.base import BaseFieldType
 from dehacked.fieldtypes.bool import BoolFieldType
 from dehacked.fieldtypes.enum import EnumFieldType
@@ -40,7 +41,9 @@ def create(key: str, data: dict, target: Target) -> BaseFieldType:
         cls = FlagsFieldType
     elif type_str == 'reference':
         cls = ReferenceFieldType
+    elif type_str == 'ammo':
+        cls = AmmoFieldType
     else:
-        raise RuntimeError(f'Unknown field type {type_str}.')
+        raise RuntimeError(f'Unknown field type "{type_str}".')
 
     return cls.parse(key, data, target)

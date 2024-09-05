@@ -280,7 +280,7 @@ data:
           radius: 1048576
           sound_death: 57
           state_death: 158
-          reactionTime: 0
+          reaction_time: 0
           state_spawn: 149
           health: 100
           flags: 33557510
