@@ -1,0 +1,19 @@
+
+name: Doom 1.9
+patch_versions:
+    - 19
+features:
+    - classic_codepointers
+    - classic_strings
+    - classic_ammo_type
+load:
+    - strings
+    - actions
+    - sprites
+    - states
+    - sounds
+    - things
+    - ammo
+    - weapons
+    - misc
+    - cheats

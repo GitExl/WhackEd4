@@ -1,0 +1,4730 @@
+schema:
+    state:
+        sprite:
+            type: reference
+            reference: sprite
+            name: Sprite
+            patch_key: Sprite number
+            default: 0
+        frame:
+            type: int32
+            name: Sprite frame
+            patch_key: Sprite subnumber
+            default: 0
+        is_lit:
+            type: bool
+            name: Always lit
+            default: 0
+        duration:
+            type: int32
+            name: Duration
+            patch_key: Duration
+            default: -1
+        action:
+            type: action
+            name: Actions
+            patch_key: Action pointer
+            default: ''
+        next:
+            type: reference
+            reference: state
+            name: Next state
+            patch_key: Next frame
+            default: 0
+        unused1:
+            type: int32
+            name: Unused 1
+            patch_key: Unknown 1
+            default: 0
+        unused2:
+            type: int32
+            name: Unused 2
+            patch_key: Unknown 2
+            default: 0
+
+# Hardcoded states that the engine refers to. These are always marked as used.
+states_used:
+    - 149
+    - 155
+    - 52
+    - 56
+    - 266
+    - 799
+    - 895
+
+# Mapping of codepointer (array index) to state (value).
+codepointer_to_state:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 6
+    - 9
+    - 10
+    - 11
+    - 12
+    - 14
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 22
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 36
+    - 38
+    - 39
+    - 41
+    - 43
+    - 44
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    - 54
+    - 55
+    - 56
+    - 57
+    - 58
+    - 59
+    - 60
+    - 61
+    - 62
+    - 63
+    - 65
+    - 66
+    - 67
+    - 68
+    - 69
+    - 70
+    - 71
+    - 72
+    - 73
+    - 74
+    - 75
+    - 76
+    - 77
+    - 78
+    - 79
+    - 80
+    - 81
+    - 82
+    - 83
+    - 84
+    - 85
+    - 86
+    - 87
+    - 88
+    - 89
+    - 119
+    - 127
+    - 157
+    - 159
+    - 160
+    - 166
+    - 167
+    - 174
+    - 175
+    - 176
+    - 177
+    - 178
+    - 179
+    - 180
+    - 181
+    - 182
+    - 183
+    - 184
+    - 185
+    - 188
+    - 190
+    - 191
+    - 195
+    - 196
+    - 207
+    - 208
+    - 209
+    - 210
+    - 211
+    - 212
+    - 213
+    - 214
+    - 215
+    - 216
+    - 217
+    - 218
+    - 221
+    - 223
+    - 224
+    - 228
+    - 229
+    - 241
+    - 242
+    - 243
+    - 244
+    - 245
+    - 246
+    - 247
+    - 248
+    - 249
+    - 250
+    - 251
+    - 252
+    - 253
+    - 254
+    - 255
+    - 256
+    - 257
+    - 258
+    - 259
+    - 260
+    - 261
+    - 262
+    - 263
+    - 264
+    - 270
+    - 272
+    - 273
+    - 281
+    - 282
+    - 283
+    - 284
+    - 285
+    - 286
+    - 287
+    - 288
+    - 289
+    - 290
+    - 291
+    - 292
+    - 293
+    - 294
+    - 295
+    - 296
+    - 297
+    - 298
+    - 299
+    - 300
+    - 301
+    - 302
+    - 303
+    - 304
+    - 305
+    - 306
+    - 307
+    - 308
+    - 309
+    - 310
+    - 316
+    - 317
+    - 321
+    - 322
+    - 323
+    - 324
+    - 325
+    - 326
+    - 327
+    - 328
+    - 329
+    - 330
+    - 331
+    - 332
+    - 333
+    - 334
+    - 335
+    - 336
+    - 337
+    - 338
+    - 339
+    - 340
+    - 341
+    - 342
+    - 344
+    - 347
+    - 348
+    - 362
+    - 363
+    - 364
+    - 365
+    - 366
+    - 367
+    - 368
+    - 369
+    - 370
+    - 371
+    - 372
+    - 373
+    - 374
+    - 375
+    - 376
+    - 377
+    - 378
+    - 379
+    - 380
+    - 381
+    - 382
+    - 383
+    - 384
+    - 385
+    - 387
+    - 389
+    - 390
+    - 397
+    - 406
+    - 407
+    - 408
+    - 409
+    - 410
+    - 411
+    - 412
+    - 413
+    - 414
+    - 415
+    - 416
+    - 417
+    - 418
+    - 419
+    - 421
+    - 423
+    - 424
+    - 430
+    - 431
+    - 442
+    - 443
+    - 444
+    - 445
+    - 446
+    - 447
+    - 448
+    - 449
+    - 450
+    - 451
+    - 452
+    - 453
+    - 454
+    - 456
+    - 458
+    - 460
+    - 463
+    - 465
+    - 475
+    - 476
+    - 477
+    - 478
+    - 479
+    - 480
+    - 481
+    - 482
+    - 483
+    - 484
+    - 485
+    - 486
+    - 487
+    - 489
+    - 491
+    - 493
+    - 502
+    - 503
+    - 504
+    - 505
+    - 506
+    - 508
+    - 511
+    - 514
+    - 527
+    - 528
+    - 529
+    - 530
+    - 531
+    - 532
+    - 533
+    - 534
+    - 535
+    - 536
+    - 537
+    - 538
+    - 539
+    - 541
+    - 543
+    - 545
+    - 548
+    - 556
+    - 557
+    - 558
+    - 559
+    - 560
+    - 561
+    - 562
+    - 563
+    - 564
+    - 565
+    - 566
+    - 567
+    - 568
+    - 570
+    - 572
+    - 574
+    - 585
+    - 586
+    - 587
+    - 588
+    - 589
+    - 590
+    - 594
+    - 596
+    - 598
+    - 601
+    - 602
+    - 603
+    - 604
+    - 605
+    - 606
+    - 607
+    - 608
+    - 609
+    - 610
+    - 611
+    - 612
+    - 613
+    - 614
+    - 615
+    - 616
+    - 617
+    - 618
+    - 620
+    - 621
+    - 622
+    - 631
+    - 632
+    - 633
+    - 635
+    - 636
+    - 637
+    - 638
+    - 639
+    - 640
+    - 641
+    - 642
+    - 643
+    - 644
+    - 645
+    - 646
+    - 647
+    - 648
+    - 650
+    - 652
+    - 653
+    - 654
+    - 659
+    - 674
+    - 675
+    - 676
+    - 677
+    - 678
+    - 679
+    - 680
+    - 681
+    - 682
+    - 683
+    - 684
+    - 685
+    - 686
+    - 687
+    - 688
+    - 689
+    - 690
+    - 692
+    - 696
+    - 700
+    - 701
+    - 702
+    - 703
+    - 704
+    - 705
+    - 706
+    - 707
+    - 708
+    - 709
+    - 710
+    - 711
+    - 713
+    - 715
+    - 718
+    - 726
+    - 727
+    - 728
+    - 729
+    - 730
+    - 731
+    - 732
+    - 733
+    - 734
+    - 735
+    - 736
+    - 737
+    - 738
+    - 739
+    - 740
+    - 741
+    - 743
+    - 745
+    - 746
+    - 750
+    - 751
+    - 766
+    - 774
+    - 777
+    - 779
+    - 780
+    - 783
+    - 784
+    - 785
+    - 786
+    - 787
+    - 788
+    - 789
+    - 790
+    - 791
+    - 792
+    - 793
+    - 794
+    - 795
+    - 796
+    - 797
+    - 798
+    - 801
+    - 809
+    - 811
+
+data:
+    state:
+        - sprite: 0
+        - sprite: 1
+          action: 187200
+          duration: 0
+          frame: 4
+        - sprite: 2
+          action: 185072
+          duration: 1
+          next: 2
+        - sprite: 2
+          action: 185488
+          duration: 1
+          next: 3
+        - sprite: 2
+          action: 185552
+          duration: 1
+          next: 4
+        - sprite: 2
+          duration: 4
+          frame: 1
+          next: 6
+        - sprite: 2
+          action: 185680
+          duration: 4
+          frame: 2
+          next: 7
+        - sprite: 2
+          duration: 5
+          frame: 3
+          next: 8
+        - sprite: 2
+          duration: 4
+          frame: 2
+          next: 9
+        - sprite: 2
+          action: 185328
+          duration: 5
+          frame: 1
+          next: 2
+        - sprite: 3
+          action: 185072
+          duration: 1
+          next: 10
+        - sprite: 3
+          action: 185488
+          duration: 1
+          next: 11
+        - sprite: 3
+          action: 185552
+          duration: 1
+          next: 12
+        - sprite: 3
+          duration: 4
+          next: 14
+        - sprite: 3
+          action: 186512
+          duration: 6
+          frame: 1
+          next: 15
+        - sprite: 3
+          duration: 4
+          frame: 2
+          next: 16
+        - sprite: 3
+          action: 185328
+          duration: 5
+          frame: 1
+          next: 10
+        - sprite: 4
+          action: 187216
+          duration: 7
+          frame: 0
+          next: 1
+          is_lit: 1
+        - sprite: 1
+          action: 185072
+          duration: 1
+          next: 18
+        - sprite: 1
+          action: 185488
+          duration: 1
+          next: 19
+        - sprite: 1
+          action: 185552
+          duration: 1
+          next: 20
+        - sprite: 1
+          duration: 3
+          next: 22
+        - sprite: 1
+          action: 186640
+          duration: 7
+          next: 23
+        - sprite: 1
+          duration: 5
+          frame: 1
+          next: 24
+        - sprite: 1
+          duration: 5
+          frame: 2
+          next: 25
+        - sprite: 1
+          duration: 4
+          frame: 3
+          next: 26
+        - sprite: 1
+          duration: 5
+          frame: 2
+          next: 27
+        - sprite: 1
+          duration: 5
+          frame: 1
+          next: 28
+        - sprite: 1
+          duration: 3
+          next: 29
+        - sprite: 1
+          action: 185328
+          duration: 7
+          next: 18
+        - sprite: 5
+          action: 187216
+          duration: 4
+          frame: 0
+          next: 31
+          is_lit: 1
+        - sprite: 5
+          action: 187232
+          duration: 3
+          frame: 1
+          next: 1
+          is_lit: 1
+        - sprite: 6
+          action: 185072
+          duration: 1
+          next: 32
+        - sprite: 6
+          action: 185488
+          duration: 1
+          next: 33
+        - sprite: 6
+          action: 185552
+          duration: 1
+          next: 34
+        - sprite: 6
+          duration: 3
+          next: 36
+        - sprite: 6
+          action: 186800
+          duration: 7
+          next: 37
+        - sprite: 6
+          duration: 7
+          frame: 1
+          next: 38
+        - sprite: 6
+          action: 185440
+          duration: 7
+          frame: 2
+          next: 39
+        - sprite: 6
+          action: 166528
+          duration: 7
+          frame: 3
+          next: 40
+        - sprite: 6
+          duration: 7
+          frame: 4
+          next: 41
+        - sprite: 6
+          action: 166544
+          duration: 7
+          frame: 5
+          next: 42
+        - sprite: 6
+          duration: 6
+          frame: 6
+          next: 43
+        - sprite: 6
+          action: 166560
+          duration: 6
+          frame: 7
+          next: 44
+        - sprite: 6
+          action: 185328
+          duration: 5
+          next: 32
+        - sprite: 6
+          duration: 7
+          frame: 1
+          next: 46
+        - sprite: 6
+          duration: 3
+          next: 33
+        - sprite: 6
+          action: 187216
+          duration: 5
+          frame: 8
+          next: 48
+          is_lit: 1
+        - sprite: 6
+          action: 187232
+          duration: 4
+          frame: 9
+          next: 1
+          is_lit: 1
+        - sprite: 7
+          action: 185072
+          duration: 1
+          next: 49
+        - sprite: 7
+          action: 185488
+          duration: 1
+          next: 50
+        - sprite: 7
+          action: 185552
+          duration: 1
+          next: 51
+        - sprite: 7
+          action: 186992
+          duration: 4
+          next: 53
+        - sprite: 7
+          action: 186992
+          duration: 4
+          frame: 1
+          next: 54
+        - sprite: 7
+          action: 185328
+          duration: 0
+          frame: 1
+          next: 49
+        - sprite: 8
+          action: 187216
+          duration: 5
+          frame: 0
+          next: 1
+          is_lit: 1
+        - sprite: 8
+          action: 187232
+          duration: 5
+          frame: 1
+          next: 1
+          is_lit: 1
+        - sprite: 9
+          action: 185072
+          duration: 1
+          next: 57
+        - sprite: 9
+          action: 185488
+          duration: 1
+          next: 58
+        - sprite: 9
+          action: 185552
+          duration: 1
+          next: 59
+        - sprite: 9
+          action: 185616
+          duration: 8
+          frame: 1
+          next: 61
+        - sprite: 9
+          action: 186112
+          duration: 12
+          frame: 1
+          next: 62
+        - sprite: 9
+          action: 185328
+          duration: 0
+          frame: 1
+          next: 57
+        - sprite: 10
+          action: 187216
+          duration: 3
+          frame: 0
+          next: 64
+          is_lit: 1
+        - sprite: 10
+          duration: 4
+          frame: 1
+          next: 65
+          is_lit: 1
+        - sprite: 10
+          action: 187232
+          duration: 4
+          frame: 2
+          next: 66
+          is_lit: 1
+        - sprite: 10
+          action: 187232
+          duration: 4
+          frame: 3
+          next: 1
+          is_lit: 1
+        - sprite: 11
+          action: 185072
+          duration: 4
+          frame: 2
+          next: 68
+        - sprite: 11
+          action: 185072
+          duration: 4
+          frame: 3
+          next: 67
+        - sprite: 11
+          action: 185488
+          duration: 1
+          frame: 2
+          next: 69
+        - sprite: 11
+          action: 185552
+          duration: 1
+          frame: 2
+          next: 70
+        - sprite: 11
+          action: 185856
+          duration: 4
+          next: 72
+        - sprite: 11
+          action: 185856
+          duration: 4
+          frame: 1
+          next: 73
+        - sprite: 11
+          action: 185328
+          duration: 0
+          frame: 1
+          next: 67
+        - sprite: 12
+          action: 185072
+          duration: 1
+          next: 74
+        - sprite: 12
+          action: 185488
+          duration: 1
+          next: 75
+        - sprite: 12
+          action: 185552
+          duration: 1
+          next: 76
+        - sprite: 12
+          action: 186208
+          duration: 3
+          next: 78
+        - sprite: 12
+          action: 185328
+          duration: 20
+          frame: 1
+          next: 74
+        - sprite: 13
+          action: 187216
+          duration: 4
+          frame: 0
+          next: 1
+          is_lit: 1
+        - sprite: 13
+          action: 187216
+          duration: 4
+          frame: 1
+          next: 1
+          is_lit: 1
+        - sprite: 14
+          action: 185072
+          duration: 1
+          next: 81
+        - sprite: 14
+          action: 185488
+          duration: 1
+          next: 82
+        - sprite: 14
+          action: 185552
+          duration: 1
+          next: 83
+        - sprite: 14
+          action: 187424
+          duration: 20
+          next: 85
+        - sprite: 14
+          action: 185616
+          duration: 10
+          frame: 1
+          next: 86
+        - sprite: 14
+          action: 186160
+          duration: 10
+          frame: 1
+          next: 87
+        - sprite: 14
+          action: 185328
+          duration: 20
+          frame: 1
+          next: 81
+        - sprite: 15
+          action: 187216
+          duration: 11
+          frame: 0
+          next: 89
+          is_lit: 1
+        - sprite: 15
+          action: 187232
+          duration: 6
+          frame: 1
+          next: 1
+          is_lit: 1
+        - sprite: 16
+          duration: 8
+          frame: 2
+          next: 91
+        - sprite: 16
+          duration: 8
+          frame: 1
+          next: 92
+        - sprite: 16
+          duration: 8
+        - sprite: 17
+          duration: 4
+          frame: 0
+          next: 94
+          is_lit: 1
+        - sprite: 17
+          duration: 4
+          frame: 1
+          next: 95
+        - sprite: 17
+          duration: 4
+          frame: 2
+          next: 96
+        - sprite: 17
+          duration: 4
+          frame: 3
+        - sprite: 18
+          duration: 4
+          frame: 0
+          next: 98
+          is_lit: 1
+        - sprite: 18
+          duration: 4
+          frame: 1
+          next: 97
+          is_lit: 1
+        - sprite: 18
+          duration: 6
+          frame: 2
+          next: 100
+          is_lit: 1
+        - sprite: 18
+          duration: 6
+          frame: 3
+          next: 101
+          is_lit: 1
+        - sprite: 18
+          duration: 6
+          frame: 4
+          is_lit: 1
+        - sprite: 19
+          duration: 4
+          frame: 0
+          next: 103
+          is_lit: 1
+        - sprite: 19
+          duration: 4
+          frame: 1
+          next: 102
+          is_lit: 1
+        - sprite: 19
+          duration: 6
+          frame: 2
+          next: 105
+          is_lit: 1
+        - sprite: 19
+          duration: 6
+          frame: 3
+          next: 106
+          is_lit: 1
+        - sprite: 19
+          duration: 6
+          frame: 4
+          is_lit: 1
+        - sprite: 20
+          duration: 6
+          frame: 0
+          next: 108
+          is_lit: 1
+        - sprite: 20
+          duration: 6
+          frame: 1
+          next: 107
+          is_lit: 1
+        - sprite: 21
+          duration: 4
+          frame: 0
+          next: 110
+          is_lit: 1
+        - sprite: 21
+          duration: 4
+          frame: 1
+          next: 111
+          is_lit: 1
+        - sprite: 21
+          duration: 4
+          frame: 2
+          next: 112
+          is_lit: 1
+        - sprite: 21
+          duration: 4
+          frame: 3
+          next: 113
+          is_lit: 1
+        - sprite: 21
+          duration: 4
+          frame: 4
+          is_lit: 1
+        - sprite: 22
+          duration: 1
+          frame: 0
+          next: 114
+          is_lit: 1
+        - sprite: 23
+          duration: 4
+          frame: 0
+          next: 116
+          is_lit: 1
+        - sprite: 23
+          duration: 4
+          frame: 1
+          next: 115
+          is_lit: 1
+        - sprite: 24
+          duration: 8
+          frame: 0
+          next: 118
+          is_lit: 1
+        - sprite: 24
+          duration: 8
+          frame: 1
+          next: 119
+          is_lit: 1
+        - sprite: 24
+          action: 187248
+          duration: 8
+          frame: 2
+          next: 120
+          is_lit: 1
+        - sprite: 24
+          duration: 8
+          frame: 3
+          next: 121
+          is_lit: 1
+        - sprite: 24
+          duration: 8
+          frame: 4
+          next: 122
+          is_lit: 1
+        - sprite: 24
+          duration: 8
+          frame: 5
+          is_lit: 1
+        - sprite: 25
+          duration: 8
+          frame: 0
+          next: 124
+          is_lit: 1
+        - sprite: 25
+          duration: 8
+          frame: 1
+          next: 125
+          is_lit: 1
+        - sprite: 25
+          duration: 8
+          frame: 2
+          next: 126
+          is_lit: 1
+        - sprite: 25
+          duration: 8
+          frame: 3
+          is_lit: 1
+        - sprite: 22
+          action: 166096
+          duration: 8
+          frame: 1
+          next: 128
+          is_lit: 1
+        - sprite: 22
+          duration: 6
+          frame: 2
+          next: 129
+          is_lit: 1
+        - sprite: 22
+          duration: 4
+          frame: 3
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 0
+          next: 131
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 1
+          next: 132
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 0
+          next: 133
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 1
+          next: 134
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 2
+          next: 135
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 3
+          next: 136
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 4
+          next: 137
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 5
+          next: 138
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 6
+          next: 139
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 7
+          next: 140
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 8
+          next: 141
+          is_lit: 1
+        - sprite: 26
+          duration: 6
+          frame: 9
+          is_lit: 1
+        - sprite: 27
+          duration: 6
+          frame: 0
+          next: 143
+          is_lit: 1
+        - sprite: 27
+          duration: 6
+          frame: 1
+          next: 144
+          is_lit: 1
+        - sprite: 27
+          duration: 6
+          frame: 0
+          next: 145
+          is_lit: 1
+        - sprite: 27
+          duration: 6
+          frame: 1
+          next: 146
+          is_lit: 1
+        - sprite: 27
+          duration: 6
+          frame: 2
+          next: 147
+          is_lit: 1
+        - sprite: 27
+          duration: 6
+          frame: 3
+          next: 148
+          is_lit: 1
+        - sprite: 27
+          duration: 6
+          frame: 4
+          is_lit: 1
+        - sprite: 28
+        - sprite: 28
+          duration: 4
+          next: 151
+        - sprite: 28
+          duration: 4
+          frame: 1
+          next: 152
+        - sprite: 28
+          duration: 4
+          frame: 2
+          next: 153
+        - sprite: 28
+          duration: 4
+          frame: 3
+          next: 150
+        - sprite: 28
+          duration: 12
+          frame: 4
+          next: 149
+        - sprite: 28
+          duration: 6
+          frame: 5
+          next: 154
+          is_lit: 1
+        - sprite: 28
+          duration: 4
+          frame: 6
+          next: 157
+        - sprite: 28
+          action: 166048
+          duration: 4
+          frame: 6
+          next: 149
+        - sprite: 28
+          duration: 10
+          frame: 7
+          next: 159
+        - sprite: 28
+          action: 167488
+          duration: 10
+          frame: 8
+          next: 160
+        - sprite: 28
+          action: 166080
+          duration: 10
+          frame: 9
+          next: 161
+        - sprite: 28
+          duration: 10
+          frame: 10
+          next: 162
+        - sprite: 28
+          duration: 10
+          frame: 11
+          next: 163
+        - sprite: 28
+          duration: 10
+          frame: 12
+          next: 164
+        - sprite: 28
+          frame: 13
+        - sprite: 28
+          duration: 5
+          frame: 14
+          next: 166
+        - sprite: 28
+          action: 166032
+          duration: 5
+          frame: 15
+          next: 167
+        - sprite: 28
+          action: 166080
+          duration: 5
+          frame: 16
+          next: 168
+        - sprite: 28
+          duration: 5
+          frame: 17
+          next: 169
+        - sprite: 28
+          duration: 5
+          frame: 18
+          next: 170
+        - sprite: 28
+          duration: 5
+          frame: 19
+          next: 171
+        - sprite: 28
+          duration: 5
+          frame: 20
+          next: 172
+        - sprite: 28
+          duration: 5
+          frame: 21
+          next: 173
+        - sprite: 28
+          frame: 22
+        - sprite: 29
+          action: 161472
+          duration: 10
+          next: 175
+        - sprite: 29
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 174
+        - sprite: 29
+          action: 161680
+          duration: 4
+          next: 177
+        - sprite: 29
+          action: 161680
+          duration: 4
+          next: 178
+        - sprite: 29
+          action: 161680
+          duration: 4
+          frame: 1
+          next: 179
+        - sprite: 29
+          action: 161680
+          duration: 4
+          frame: 1
+          next: 180
+        - sprite: 29
+          action: 161680
+          duration: 4
+          frame: 2
+          next: 181
+        - sprite: 29
+          action: 161680
+          duration: 4
+          frame: 2
+          next: 182
+        - sprite: 29
+          action: 161680
+          duration: 4
+          frame: 3
+          next: 183
+        - sprite: 29
+          action: 161680
+          duration: 4
+          frame: 3
+          next: 176
+        - sprite: 29
+          action: 162160
+          duration: 10
+          frame: 4
+          next: 185
+        - sprite: 29
+          action: 162256
+          duration: 8
+          frame: 5
+          next: 186
+        - sprite: 29
+          duration: 8
+          frame: 4
+          next: 176
+        - sprite: 29
+          duration: 3
+          frame: 6
+          next: 188
+        - sprite: 29
+          action: 166048
+          duration: 3
+          frame: 6
+          next: 176
+        - sprite: 29
+          duration: 5
+          frame: 7
+          next: 190
+        - sprite: 29
+          action: 165920
+          duration: 5
+          frame: 8
+          next: 191
+        - sprite: 29
+          action: 166080
+          duration: 5
+          frame: 9
+          next: 192
+        - sprite: 29
+          duration: 5
+          frame: 10
+          next: 193
+        - sprite: 29
+          frame: 11
+        - sprite: 29
+          duration: 5
+          frame: 12
+          next: 195
+        - sprite: 29
+          action: 166032
+          duration: 5
+          frame: 13
+          next: 196
+        - sprite: 29
+          action: 166080
+          duration: 5
+          frame: 14
+          next: 197
+        - sprite: 29
+          duration: 5
+          frame: 15
+          next: 198
+        - sprite: 29
+          duration: 5
+          frame: 16
+          next: 199
+        - sprite: 29
+          duration: 5
+          frame: 17
+          next: 200
+        - sprite: 29
+          duration: 5
+          frame: 18
+          next: 201
+        - sprite: 29
+          duration: 5
+          frame: 19
+          next: 202
+        - sprite: 29
+          frame: 20
+        - sprite: 29
+          duration: 5
+          frame: 10
+          next: 204
+        - sprite: 29
+          duration: 5
+          frame: 9
+          next: 205
+        - sprite: 29
+          duration: 5
+          frame: 8
+          next: 206
+        - sprite: 29
+          duration: 5
+          frame: 7
+          next: 176
+        - sprite: 30
+          action: 161472
+          duration: 10
+          next: 208
+        - sprite: 30
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 207
+        - sprite: 30
+          action: 161680
+          duration: 3
+          next: 210
+        - sprite: 30
+          action: 161680
+          duration: 3
+          next: 211
+        - sprite: 30
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 212
+        - sprite: 30
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 213
+        - sprite: 30
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 214
+        - sprite: 30
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 215
+        - sprite: 30
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 216
+        - sprite: 30
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 209
+        - sprite: 30
+          action: 162160
+          duration: 10
+          frame: 4
+          next: 218
+        - sprite: 30
+          action: 162384
+          duration: 10
+          frame: 5
+          next: 219
+          is_lit: 1
+        - sprite: 30
+          duration: 10
+          frame: 4
+          next: 209
+        - sprite: 30
+          duration: 3
+          frame: 6
+          next: 221
+        - sprite: 30
+          action: 166048
+          duration: 3
+          frame: 6
+          next: 209
+        - sprite: 30
+          duration: 5
+          frame: 7
+          next: 223
+        - sprite: 30
+          action: 165920
+          duration: 5
+          frame: 8
+          next: 224
+        - sprite: 30
+          action: 166080
+          duration: 5
+          frame: 9
+          next: 225
+        - sprite: 30
+          duration: 5
+          frame: 10
+          next: 226
+        - sprite: 30
+          frame: 11
+        - sprite: 30
+          duration: 5
+          frame: 12
+          next: 228
+        - sprite: 30
+          action: 166032
+          duration: 5
+          frame: 13
+          next: 229
+        - sprite: 30
+          action: 166080
+          duration: 5
+          frame: 14
+          next: 230
+        - sprite: 30
+          duration: 5
+          frame: 15
+          next: 231
+        - sprite: 30
+          duration: 5
+          frame: 16
+          next: 232
+        - sprite: 30
+          duration: 5
+          frame: 17
+          next: 233
+        - sprite: 30
+          duration: 5
+          frame: 18
+          next: 234
+        - sprite: 30
+          duration: 5
+          frame: 19
+          next: 235
+        - sprite: 30
+          frame: 20
+        - sprite: 30
+          duration: 5
+          frame: 11
+          next: 237
+        - sprite: 30
+          duration: 5
+          frame: 10
+          next: 238
+        - sprite: 30
+          duration: 5
+          frame: 9
+          next: 239
+        - sprite: 30
+          duration: 5
+          frame: 8
+          next: 240
+        - sprite: 30
+          duration: 5
+          frame: 7
+          next: 209
+        - sprite: 31
+          action: 161472
+          duration: 10
+          next: 242
+        - sprite: 31
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 241
+        - sprite: 31
+          action: 164096
+          duration: 2
+          next: 244
+        - sprite: 31
+          action: 164096
+          duration: 2
+          next: 245
+        - sprite: 31
+          action: 164096
+          duration: 2
+          frame: 1
+          next: 246
+        - sprite: 31
+          action: 164096
+          duration: 2
+          frame: 1
+          next: 247
+        - sprite: 31
+          action: 164096
+          duration: 2
+          frame: 2
+          next: 248
+        - sprite: 31
+          action: 164096
+          duration: 2
+          frame: 2
+          next: 249
+        - sprite: 31
+          action: 164096
+          duration: 2
+          frame: 3
+          next: 250
+        - sprite: 31
+          action: 164096
+          duration: 2
+          frame: 3
+          next: 251
+        - sprite: 31
+          action: 164096
+          duration: 2
+          frame: 4
+          next: 252
+        - sprite: 31
+          action: 164096
+          duration: 2
+          frame: 4
+          next: 253
+        - sprite: 31
+          action: 164096
+          duration: 2
+          frame: 5
+          next: 254
+        - sprite: 31
+          action: 164096
+          duration: 2
+          frame: 5
+          next: 243
+        - sprite: 31
+          action: 164432
+          duration: 0
+          frame: 6
+          next: 256
+          is_lit: 1
+        - sprite: 31
+          action: 162160
+          duration: 10
+          frame: 6
+          next: 257
+          is_lit: 1
+        - sprite: 31
+          action: 164640
+          duration: 8
+          frame: 7
+          next: 258
+          is_lit: 1
+        - sprite: 31
+          action: 162160
+          duration: 8
+          frame: 8
+          next: 259
+          is_lit: 1
+        - sprite: 31
+          action: 162160
+          duration: 8
+          frame: 9
+          next: 260
+          is_lit: 1
+        - sprite: 31
+          action: 162160
+          duration: 8
+          frame: 10
+          next: 261
+          is_lit: 1
+        - sprite: 31
+          action: 162160
+          duration: 8
+          frame: 11
+          next: 262
+          is_lit: 1
+        - sprite: 31
+          action: 162160
+          duration: 8
+          frame: 12
+          next: 263
+          is_lit: 1
+        - sprite: 31
+          action: 162160
+          duration: 8
+          frame: 13
+          next: 264
+          is_lit: 1
+        - sprite: 31
+          action: 164720
+          duration: 8
+          frame: 14
+          next: 265
+          is_lit: 1
+        - sprite: 31
+          duration: 20
+          frame: 15
+          next: 243
+          is_lit: 1
+        - sprite: 31
+          duration: 10
+          frame: 26
+          next: 267
+          is_lit: 1
+        - sprite: 31
+          duration: 10
+          frame: 27
+          next: 268
+          is_lit: 1
+        - sprite: 31
+          duration: 10
+          frame: 28
+          next: 243
+          is_lit: 1
+        - sprite: 31
+          duration: 5
+          frame: 16
+          next: 270
+        - sprite: 31
+          action: 166048
+          duration: 5
+          frame: 16
+          next: 243
+        - sprite: 31
+          duration: 7
+          frame: 16
+          next: 272
+        - sprite: 31
+          action: 165920
+          duration: 7
+          frame: 17
+          next: 273
+        - sprite: 31
+          action: 166080
+          duration: 7
+          frame: 18
+          next: 274
+        - sprite: 31
+          duration: 7
+          frame: 19
+          next: 275
+        - sprite: 31
+          duration: 7
+          frame: 20
+          next: 276
+        - sprite: 31
+          duration: 7
+          frame: 21
+          next: 277
+        - sprite: 31
+          duration: 7
+          frame: 22
+          next: 278
+        - sprite: 31
+          duration: 5
+          frame: 23
+          next: 279
+        - sprite: 31
+          duration: 5
+          frame: 24
+          next: 280
+        - sprite: 31
+          frame: 25
+        - sprite: 32
+          action: 164448
+          duration: 2
+          frame: 0
+          next: 282
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 1
+          next: 283
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 0
+          next: 284
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 1
+          next: 285
+          is_lit: 1
+        - sprite: 32
+          action: 164480
+          duration: 2
+          frame: 2
+          next: 286
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 1
+          next: 287
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 2
+          next: 288
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 1
+          next: 289
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 2
+          next: 290
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 3
+          next: 291
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 2
+          next: 292
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 3
+          next: 293
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 2
+          next: 294
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 3
+          next: 295
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 4
+          next: 296
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 3
+          next: 297
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 4
+          next: 298
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 3
+          next: 299
+          is_lit: 1
+        - sprite: 32
+          action: 164480
+          duration: 2
+          frame: 4
+          next: 300
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 5
+          next: 301
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 4
+          next: 302
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 5
+          next: 303
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 4
+          next: 304
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 5
+          next: 305
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 6
+          next: 306
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 7
+          next: 307
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 6
+          next: 308
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 7
+          next: 309
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 6
+          next: 310
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 2
+          frame: 7
+          is_lit: 1
+        - sprite: 17
+          duration: 4
+          frame: 1
+          next: 312
+        - sprite: 17
+          duration: 4
+          frame: 2
+          next: 313
+        - sprite: 17
+          duration: 4
+          frame: 1
+          next: 314
+        - sprite: 17
+          duration: 4
+          frame: 2
+          next: 315
+        - sprite: 17
+          duration: 4
+          frame: 3
+        - sprite: 33
+          action: 163360
+          duration: 2
+          frame: 0
+          next: 317
+          is_lit: 1
+        - sprite: 33
+          action: 163360
+          duration: 2
+          frame: 1
+          next: 316
+          is_lit: 1
+        - sprite: 34
+          duration: 8
+          frame: 0
+          next: 319
+          is_lit: 1
+        - sprite: 34
+          duration: 6
+          frame: 1
+          next: 320
+          is_lit: 1
+        - sprite: 34
+          duration: 4
+          frame: 2
+          is_lit: 1
+        - sprite: 35
+          action: 161472
+          duration: 10
+          next: 322
+        - sprite: 35
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 321
+        - sprite: 35
+          action: 161680
+          duration: 2
+          next: 324
+        - sprite: 35
+          action: 161680
+          duration: 2
+          next: 325
+        - sprite: 35
+          action: 161680
+          duration: 2
+          frame: 1
+          next: 326
+        - sprite: 35
+          action: 161680
+          duration: 2
+          frame: 1
+          next: 327
+        - sprite: 35
+          action: 161680
+          duration: 2
+          frame: 2
+          next: 328
+        - sprite: 35
+          action: 161680
+          duration: 2
+          frame: 2
+          next: 329
+        - sprite: 35
+          action: 161680
+          duration: 2
+          frame: 3
+          next: 330
+        - sprite: 35
+          action: 161680
+          duration: 2
+          frame: 3
+          next: 331
+        - sprite: 35
+          action: 161680
+          duration: 2
+          frame: 4
+          next: 332
+        - sprite: 35
+          action: 161680
+          duration: 2
+          frame: 4
+          next: 333
+        - sprite: 35
+          action: 161680
+          duration: 2
+          frame: 5
+          next: 334
+        - sprite: 35
+          action: 161680
+          duration: 2
+          frame: 5
+          next: 323
+        - sprite: 35
+          action: 162160
+          duration: 0
+          frame: 6
+          next: 336
+        - sprite: 35
+          action: 163744
+          duration: 6
+          frame: 6
+          next: 337
+        - sprite: 35
+          action: 162160
+          duration: 6
+          frame: 7
+          next: 338
+        - sprite: 35
+          action: 163776
+          duration: 6
+          frame: 8
+          next: 323
+        - sprite: 35
+          action: 162160
+          duration: 0
+          frame: 9
+          next: 340
+          is_lit: 1
+        - sprite: 35
+          action: 162160
+          duration: 10
+          frame: 9
+          next: 341
+          is_lit: 1
+        - sprite: 35
+          action: 163264
+          duration: 10
+          frame: 10
+          next: 342
+        - sprite: 35
+          action: 162160
+          duration: 10
+          frame: 10
+          next: 323
+        - sprite: 35
+          duration: 5
+          frame: 11
+          next: 344
+        - sprite: 35
+          action: 166048
+          duration: 5
+          frame: 11
+          next: 323
+        - sprite: 35
+          duration: 7
+          frame: 11
+          next: 346
+        - sprite: 35
+          duration: 7
+          frame: 12
+          next: 347
+        - sprite: 35
+          action: 165920
+          duration: 7
+          frame: 13
+          next: 348
+        - sprite: 35
+          action: 166080
+          duration: 7
+          frame: 14
+          next: 349
+        - sprite: 35
+          duration: 7
+          frame: 15
+          next: 350
+        - sprite: 35
+          frame: 16
+        - sprite: 35
+          duration: 5
+          frame: 16
+          next: 352
+        - sprite: 35
+          duration: 5
+          frame: 15
+          next: 353
+        - sprite: 35
+          duration: 5
+          frame: 14
+          next: 354
+        - sprite: 35
+          duration: 5
+          frame: 13
+          next: 355
+        - sprite: 35
+          duration: 5
+          frame: 12
+          next: 356
+        - sprite: 35
+          duration: 5
+          frame: 11
+          next: 323
+        - sprite: 36
+          duration: 4
+          frame: 0
+          next: 358
+          is_lit: 1
+        - sprite: 36
+          duration: 4
+          frame: 1
+          next: 357
+          is_lit: 1
+        - sprite: 22
+          duration: 8
+          frame: 1
+          next: 360
+          is_lit: 1
+        - sprite: 22
+          duration: 6
+          frame: 2
+          next: 361
+          is_lit: 1
+        - sprite: 22
+          duration: 4
+          frame: 3
+          is_lit: 1
+        - sprite: 37
+          action: 161472
+          duration: 15
+          next: 363
+        - sprite: 37
+          action: 161472
+          duration: 15
+          frame: 1
+          next: 362
+        - sprite: 37
+          action: 161680
+          duration: 4
+          next: 365
+        - sprite: 37
+          action: 161680
+          duration: 4
+          next: 366
+        - sprite: 37
+          action: 161680
+          duration: 4
+          frame: 1
+          next: 367
+        - sprite: 37
+          action: 161680
+          duration: 4
+          frame: 1
+          next: 368
+        - sprite: 37
+          action: 161680
+          duration: 4
+          frame: 2
+          next: 369
+        - sprite: 37
+          action: 161680
+          duration: 4
+          frame: 2
+          next: 370
+        - sprite: 37
+          action: 161680
+          duration: 4
+          frame: 3
+          next: 371
+        - sprite: 37
+          action: 161680
+          duration: 4
+          frame: 3
+          next: 372
+        - sprite: 37
+          action: 161680
+          duration: 4
+          frame: 4
+          next: 373
+        - sprite: 37
+          action: 161680
+          duration: 4
+          frame: 4
+          next: 374
+        - sprite: 37
+          action: 161680
+          duration: 4
+          frame: 5
+          next: 375
+        - sprite: 37
+          action: 161680
+          duration: 4
+          frame: 5
+          next: 364
+        - sprite: 37
+          action: 164928
+          duration: 20
+          frame: 6
+          next: 377
+        - sprite: 37
+          action: 164960
+          duration: 10
+          frame: 7
+          next: 378
+          is_lit: 1
+        - sprite: 37
+          action: 162160
+          duration: 5
+          frame: 8
+          next: 379
+        - sprite: 37
+          action: 162160
+          duration: 5
+          frame: 6
+          next: 380
+        - sprite: 37
+          action: 165088
+          duration: 10
+          frame: 7
+          next: 381
+          is_lit: 1
+        - sprite: 37
+          action: 162160
+          duration: 5
+          frame: 8
+          next: 382
+        - sprite: 37
+          action: 162160
+          duration: 5
+          frame: 6
+          next: 383
+        - sprite: 37
+          action: 165216
+          duration: 10
+          frame: 7
+          next: 384
+          is_lit: 1
+        - sprite: 37
+          action: 162160
+          duration: 5
+          frame: 8
+          next: 385
+        - sprite: 37
+          action: 162160
+          duration: 5
+          frame: 6
+          next: 364
+        - sprite: 37
+          duration: 3
+          frame: 9
+          next: 387
+        - sprite: 37
+          action: 166048
+          duration: 3
+          frame: 9
+          next: 364
+        - sprite: 37
+          duration: 6
+          frame: 10
+          next: 389
+        - sprite: 37
+          action: 165920
+          duration: 6
+          frame: 11
+          next: 390
+        - sprite: 37
+          action: 166080
+          duration: 6
+          frame: 12
+          next: 391
+        - sprite: 37
+          duration: 6
+          frame: 13
+          next: 392
+        - sprite: 37
+          duration: 6
+          frame: 14
+          next: 393
+        - sprite: 37
+          duration: 6
+          frame: 15
+          next: 394
+        - sprite: 37
+          duration: 6
+          frame: 16
+          next: 395
+        - sprite: 37
+          duration: 6
+          frame: 17
+          next: 396
+        - sprite: 37
+          duration: 6
+          frame: 18
+          next: 397
+        - sprite: 37
+          action: 166128
+          frame: 19
+        - sprite: 37
+          duration: 5
+          frame: 17
+          next: 399
+        - sprite: 37
+          duration: 5
+          frame: 16
+          next: 400
+        - sprite: 37
+          duration: 5
+          frame: 15
+          next: 401
+        - sprite: 37
+          duration: 5
+          frame: 14
+          next: 402
+        - sprite: 37
+          duration: 5
+          frame: 13
+          next: 403
+        - sprite: 37
+          duration: 5
+          frame: 12
+          next: 404
+        - sprite: 37
+          duration: 5
+          frame: 11
+          next: 405
+        - sprite: 37
+          duration: 5
+          frame: 10
+          next: 364
+        - sprite: 38
+          action: 161472
+          duration: 10
+          next: 407
+        - sprite: 38
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 406
+        - sprite: 38
+          action: 161680
+          duration: 3
+          next: 409
+        - sprite: 38
+          action: 161680
+          duration: 3
+          next: 410
+        - sprite: 38
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 411
+        - sprite: 38
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 412
+        - sprite: 38
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 413
+        - sprite: 38
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 414
+        - sprite: 38
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 415
+        - sprite: 38
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 408
+        - sprite: 38
+          action: 162160
+          duration: 10
+          frame: 4
+          next: 417
+        - sprite: 38
+          action: 162528
+          duration: 4
+          frame: 5
+          next: 418
+          is_lit: 1
+        - sprite: 38
+          action: 162528
+          duration: 4
+          frame: 4
+          next: 419
+          is_lit: 1
+        - sprite: 38
+          action: 162656
+          duration: 1
+          frame: 5
+          next: 417
+        - sprite: 38
+          duration: 3
+          frame: 6
+          next: 421
+        - sprite: 38
+          action: 166048
+          duration: 3
+          frame: 6
+          next: 408
+        - sprite: 38
+          duration: 5
+          frame: 7
+          next: 423
+        - sprite: 38
+          action: 165920
+          duration: 5
+          frame: 8
+          next: 424
+        - sprite: 38
+          action: 166080
+          duration: 5
+          frame: 9
+          next: 425
+        - sprite: 38
+          duration: 5
+          frame: 10
+          next: 426
+        - sprite: 38
+          duration: 5
+          frame: 11
+          next: 427
+        - sprite: 38
+          duration: 5
+          frame: 12
+          next: 428
+        - sprite: 38
+          frame: 13
+        - sprite: 38
+          duration: 5
+          frame: 14
+          next: 430
+        - sprite: 38
+          action: 166032
+          duration: 5
+          frame: 15
+          next: 431
+        - sprite: 38
+          action: 166080
+          duration: 5
+          frame: 16
+          next: 432
+        - sprite: 38
+          duration: 5
+          frame: 17
+          next: 433
+        - sprite: 38
+          duration: 5
+          frame: 18
+          next: 434
+        - sprite: 38
+          frame: 19
+        - sprite: 38
+          duration: 5
+          frame: 13
+          next: 436
+        - sprite: 38
+          duration: 5
+          frame: 12
+          next: 437
+        - sprite: 38
+          duration: 5
+          frame: 11
+          next: 438
+        - sprite: 38
+          duration: 5
+          frame: 10
+          next: 439
+        - sprite: 38
+          duration: 5
+          frame: 9
+          next: 440
+        - sprite: 38
+          duration: 5
+          frame: 8
+          next: 441
+        - sprite: 38
+          duration: 5
+          frame: 7
+          next: 408
+        - action: 161472
+          duration: 10
+          next: 443
+        - action: 161472
+          duration: 10
+          frame: 1
+          next: 442
+        - action: 161680
+          duration: 3
+          next: 445
+        - action: 161680
+          duration: 3
+          next: 446
+        - action: 161680
+          duration: 3
+          frame: 1
+          next: 447
+        - action: 161680
+          duration: 3
+          frame: 1
+          next: 448
+        - action: 161680
+          duration: 3
+          frame: 2
+          next: 449
+        - action: 161680
+          duration: 3
+          frame: 2
+          next: 450
+        - action: 161680
+          duration: 3
+          frame: 3
+          next: 451
+        - action: 161680
+          duration: 3
+          frame: 3
+          next: 444
+        - action: 162160
+          duration: 8
+          frame: 4
+          next: 453
+        - action: 162160
+          duration: 8
+          frame: 5
+          next: 454
+        - action: 162832
+          duration: 6
+          frame: 6
+          next: 444
+        - duration: 2
+          frame: 7
+          next: 456
+        - action: 166048
+          duration: 2
+          frame: 7
+          next: 444
+        - duration: 8
+          frame: 8
+          next: 458
+        - action: 165920
+          duration: 8
+          frame: 9
+          next: 459
+        - duration: 6
+          frame: 10
+          next: 460
+        - action: 166080
+          duration: 6
+          frame: 11
+          next: 461
+        - frame: 12
+        - duration: 5
+          frame: 13
+          next: 463
+        - action: 166032
+          duration: 5
+          frame: 14
+          next: 464
+        - duration: 5
+          frame: 15
+          next: 465
+        - action: 166080
+          duration: 5
+          frame: 16
+          next: 466
+        - duration: 5
+          frame: 17
+          next: 467
+        - duration: 5
+          frame: 18
+          next: 468
+        - duration: 5
+          frame: 19
+          next: 469
+        - frame: 20
+        - duration: 8
+          frame: 12
+          next: 471
+        - duration: 8
+          frame: 11
+          next: 472
+        - duration: 6
+          frame: 10
+          next: 473
+        - duration: 6
+          frame: 9
+          next: 474
+        - duration: 6
+          frame: 8
+          next: 444
+        - sprite: 39
+          action: 161472
+          duration: 10
+          next: 476
+        - sprite: 39
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 475
+        - sprite: 39
+          action: 161680
+          duration: 2
+          next: 478
+        - sprite: 39
+          action: 161680
+          duration: 2
+          next: 479
+        - sprite: 39
+          action: 161680
+          duration: 2
+          frame: 1
+          next: 480
+        - sprite: 39
+          action: 161680
+          duration: 2
+          frame: 1
+          next: 481
+        - sprite: 39
+          action: 161680
+          duration: 2
+          frame: 2
+          next: 482
+        - sprite: 39
+          action: 161680
+          duration: 2
+          frame: 2
+          next: 483
+        - sprite: 39
+          action: 161680
+          duration: 2
+          frame: 3
+          next: 484
+        - sprite: 39
+          action: 161680
+          duration: 2
+          frame: 3
+          next: 477
+        - sprite: 39
+          action: 162160
+          duration: 8
+          frame: 4
+          next: 486
+        - sprite: 39
+          action: 162160
+          duration: 8
+          frame: 5
+          next: 487
+        - sprite: 39
+          action: 162944
+          duration: 8
+          frame: 6
+          next: 477
+        - sprite: 39
+          duration: 2
+          frame: 7
+          next: 489
+        - sprite: 39
+          action: 166048
+          duration: 2
+          frame: 7
+          next: 477
+        - sprite: 39
+          duration: 8
+          frame: 8
+          next: 491
+        - sprite: 39
+          action: 165920
+          duration: 8
+          frame: 9
+          next: 492
+        - sprite: 39
+          duration: 4
+          frame: 10
+          next: 493
+        - sprite: 39
+          action: 166080
+          duration: 4
+          frame: 11
+          next: 494
+        - sprite: 39
+          duration: 4
+          frame: 12
+          next: 495
+        - sprite: 39
+          frame: 13
+        - sprite: 39
+          duration: 5
+          frame: 13
+          next: 497
+        - sprite: 39
+          duration: 5
+          frame: 12
+          next: 498
+        - sprite: 39
+          duration: 5
+          frame: 11
+          next: 499
+        - sprite: 39
+          duration: 5
+          frame: 10
+          next: 500
+        - sprite: 39
+          duration: 5
+          frame: 9
+          next: 501
+        - sprite: 39
+          duration: 5
+          frame: 8
+          next: 477
+        - sprite: 40
+          action: 161472
+          duration: 10
+          next: 502
+        - sprite: 40
+          action: 161680
+          duration: 3
+          next: 503
+        - sprite: 40
+          action: 162160
+          duration: 5
+          frame: 1
+          next: 505
+        - sprite: 40
+          action: 162160
+          duration: 5
+          frame: 2
+          next: 506
+        - sprite: 40
+          action: 163024
+          duration: 5
+          frame: 3
+          next: 503
+          is_lit: 1
+        - sprite: 40
+          duration: 3
+          frame: 4
+          next: 508
+        - sprite: 40
+          action: 166048
+          duration: 3
+          frame: 4
+          next: 509
+        - sprite: 40
+          duration: 6
+          frame: 5
+          next: 503
+        - sprite: 40
+          duration: 8
+          frame: 6
+          next: 511
+        - sprite: 40
+          action: 165920
+          duration: 8
+          frame: 7
+          next: 512
+        - sprite: 40
+          duration: 8
+          frame: 8
+          next: 513
+        - sprite: 40
+          duration: 8
+          frame: 9
+          next: 514
+        - sprite: 40
+          action: 166080
+          duration: 8
+          frame: 10
+          next: 515
+        - sprite: 40
+          frame: 11
+        - sprite: 40
+          duration: 8
+          frame: 11
+          next: 517
+        - sprite: 40
+          duration: 8
+          frame: 10
+          next: 518
+        - sprite: 40
+          duration: 8
+          frame: 9
+          next: 519
+        - sprite: 40
+          duration: 8
+          frame: 8
+          next: 520
+        - sprite: 40
+          duration: 8
+          frame: 7
+          next: 521
+        - sprite: 40
+          duration: 8
+          frame: 6
+          next: 503
+        - sprite: 41
+          duration: 4
+          frame: 0
+          next: 523
+          is_lit: 1
+        - sprite: 41
+          duration: 4
+          frame: 1
+          next: 522
+          is_lit: 1
+        - sprite: 41
+          duration: 6
+          frame: 2
+          next: 525
+          is_lit: 1
+        - sprite: 41
+          duration: 6
+          frame: 3
+          next: 526
+          is_lit: 1
+        - sprite: 41
+          duration: 6
+          frame: 4
+          is_lit: 1
+        - sprite: 42
+          action: 161472
+          duration: 10
+          next: 528
+        - sprite: 42
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 527
+        - sprite: 42
+          action: 161680
+          duration: 3
+          next: 530
+        - sprite: 42
+          action: 161680
+          duration: 3
+          next: 531
+        - sprite: 42
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 532
+        - sprite: 42
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 533
+        - sprite: 42
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 534
+        - sprite: 42
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 535
+        - sprite: 42
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 536
+        - sprite: 42
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 529
+        - sprite: 42
+          action: 162160
+          duration: 8
+          frame: 4
+          next: 538
+        - sprite: 42
+          action: 162160
+          duration: 8
+          frame: 5
+          next: 539
+        - sprite: 42
+          action: 163168
+          duration: 8
+          frame: 6
+          next: 529
+        - sprite: 42
+          duration: 2
+          frame: 7
+          next: 541
+        - sprite: 42
+          action: 166048
+          duration: 2
+          frame: 7
+          next: 529
+        - sprite: 42
+          duration: 8
+          frame: 8
+          next: 543
+        - sprite: 42
+          action: 165920
+          duration: 8
+          frame: 9
+          next: 544
+        - sprite: 42
+          duration: 8
+          frame: 10
+          next: 545
+        - sprite: 42
+          action: 166080
+          duration: 8
+          frame: 11
+          next: 546
+        - sprite: 42
+          duration: 8
+          frame: 12
+          next: 547
+        - sprite: 42
+          duration: 8
+          frame: 13
+          next: 548
+        - sprite: 42
+          action: 166128
+          frame: 14
+        - sprite: 42
+          duration: 8
+          frame: 14
+          next: 550
+        - sprite: 42
+          duration: 8
+          frame: 13
+          next: 551
+        - sprite: 42
+          duration: 8
+          frame: 12
+          next: 552
+        - sprite: 42
+          duration: 8
+          frame: 11
+          next: 553
+        - sprite: 42
+          duration: 8
+          frame: 10
+          next: 554
+        - sprite: 42
+          duration: 8
+          frame: 9
+          next: 555
+        - sprite: 42
+          duration: 8
+          frame: 8
+          next: 529
+        - sprite: 43
+          action: 161472
+          duration: 10
+          next: 557
+        - sprite: 43
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 556
+        - sprite: 43
+          action: 161680
+          duration: 3
+          next: 559
+        - sprite: 43
+          action: 161680
+          duration: 3
+          next: 560
+        - sprite: 43
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 561
+        - sprite: 43
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 562
+        - sprite: 43
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 563
+        - sprite: 43
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 564
+        - sprite: 43
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 565
+        - sprite: 43
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 558
+        - sprite: 43
+          action: 162160
+          duration: 8
+          frame: 4
+          next: 567
+        - sprite: 43
+          action: 162160
+          duration: 8
+          frame: 5
+          next: 568
+        - sprite: 43
+          action: 163168
+          duration: 8
+          frame: 6
+          next: 558
+        - sprite: 43
+          duration: 2
+          frame: 7
+          next: 570
+        - sprite: 43
+          action: 166048
+          duration: 2
+          frame: 7
+          next: 558
+        - sprite: 43
+          duration: 8
+          frame: 8
+          next: 572
+        - sprite: 43
+          action: 165920
+          duration: 8
+          frame: 9
+          next: 573
+        - sprite: 43
+          duration: 8
+          frame: 10
+          next: 574
+        - sprite: 43
+          action: 166080
+          duration: 8
+          frame: 11
+          next: 575
+        - sprite: 43
+          duration: 8
+          frame: 12
+          next: 576
+        - sprite: 43
+          duration: 8
+          frame: 13
+          next: 577
+        - sprite: 43
+          frame: 14
+        - sprite: 43
+          duration: 8
+          frame: 14
+          next: 579
+        - sprite: 43
+          duration: 8
+          frame: 13
+          next: 580
+        - sprite: 43
+          duration: 8
+          frame: 12
+          next: 581
+        - sprite: 43
+          duration: 8
+          frame: 11
+          next: 582
+        - sprite: 43
+          duration: 8
+          frame: 10
+          next: 583
+        - sprite: 43
+          duration: 8
+          frame: 9
+          next: 584
+        - sprite: 43
+          duration: 8
+          frame: 8
+          next: 558
+        - sprite: 44
+          action: 161472
+          duration: 10
+          frame: 0
+          next: 586
+          is_lit: 1
+        - sprite: 44
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 585
+          is_lit: 1
+        - sprite: 44
+          action: 161680
+          duration: 6
+          frame: 0
+          next: 588
+          is_lit: 1
+        - sprite: 44
+          action: 161680
+          duration: 6
+          frame: 1
+          next: 587
+          is_lit: 1
+        - sprite: 44
+          action: 162160
+          duration: 10
+          frame: 2
+          next: 590
+          is_lit: 1
+        - sprite: 44
+          action: 165408
+          duration: 4
+          frame: 3
+          next: 591
+          is_lit: 1
+        - sprite: 44
+          duration: 4
+          frame: 2
+          next: 592
+          is_lit: 1
+        - sprite: 44
+          duration: 4
+          frame: 3
+          next: 591
+          is_lit: 1
+        - sprite: 44
+          duration: 3
+          frame: 4
+          next: 594
+          is_lit: 1
+        - sprite: 44
+          action: 166048
+          duration: 3
+          frame: 4
+          next: 587
+          is_lit: 1
+        - sprite: 44
+          duration: 6
+          frame: 5
+          next: 596
+          is_lit: 1
+        - sprite: 44
+          action: 165920
+          duration: 6
+          frame: 6
+          next: 597
+          is_lit: 1
+        - sprite: 44
+          duration: 6
+          frame: 7
+          next: 598
+          is_lit: 1
+        - sprite: 44
+          action: 166080
+          duration: 6
+          frame: 8
+          next: 599
+          is_lit: 1
+        - sprite: 44
+          duration: 6
+          frame: 9
+          next: 600
+        - sprite: 44
+          duration: 6
+          frame: 10
+        - sprite: 45
+          action: 161472
+          duration: 10
+          next: 602
+        - sprite: 45
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 601
+        - sprite: 45
+          action: 166464
+          duration: 3
+          next: 604
+        - sprite: 45
+          action: 161680
+          duration: 3
+          next: 605
+        - sprite: 45
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 606
+        - sprite: 45
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 607
+        - sprite: 45
+          action: 166464
+          duration: 3
+          frame: 2
+          next: 608
+        - sprite: 45
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 609
+        - sprite: 45
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 610
+        - sprite: 45
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 611
+        - sprite: 45
+          action: 166464
+          duration: 3
+          frame: 4
+          next: 612
+        - sprite: 45
+          action: 161680
+          duration: 3
+          frame: 4
+          next: 613
+        - sprite: 45
+          action: 161680
+          duration: 3
+          frame: 5
+          next: 614
+        - sprite: 45
+          action: 161680
+          duration: 3
+          frame: 5
+          next: 603
+        - sprite: 45
+          action: 162160
+          duration: 20
+          frame: 0
+          next: 616
+          is_lit: 1
+        - sprite: 45
+          action: 162384
+          duration: 4
+          frame: 6
+          next: 617
+          is_lit: 1
+        - sprite: 45
+          action: 162384
+          duration: 4
+          frame: 7
+          next: 618
+          is_lit: 1
+        - sprite: 45
+          action: 162720
+          duration: 1
+          frame: 7
+          next: 616
+          is_lit: 1
+        - sprite: 45
+          duration: 3
+          frame: 8
+          next: 620
+        - sprite: 45
+          action: 166048
+          duration: 3
+          frame: 8
+          next: 603
+        - sprite: 45
+          action: 165920
+          duration: 20
+          frame: 9
+          next: 622
+        - sprite: 45
+          action: 166080
+          duration: 10
+          frame: 10
+          next: 623
+        - sprite: 45
+          duration: 10
+          frame: 11
+          next: 624
+        - sprite: 45
+          duration: 10
+          frame: 12
+          next: 625
+        - sprite: 45
+          duration: 10
+          frame: 13
+          next: 626
+        - sprite: 45
+          duration: 10
+          frame: 14
+          next: 627
+        - sprite: 45
+          duration: 10
+          frame: 15
+          next: 628
+        - sprite: 45
+          duration: 10
+          frame: 16
+          next: 629
+        - sprite: 45
+          duration: 10
+          frame: 17
+          next: 630
+        - sprite: 45
+          duration: 30
+          frame: 18
+          next: 631
+        - sprite: 45
+          action: 166128
+          frame: 18
+        - sprite: 46
+          action: 161472
+          duration: 10
+          next: 633
+        - sprite: 46
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 632
+        - sprite: 46
+          duration: 20
+          next: 635
+        - sprite: 46
+          action: 166496
+          duration: 3
+          next: 636
+        - sprite: 46
+          action: 161680
+          duration: 3
+          next: 637
+        - sprite: 46
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 638
+        - sprite: 46
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 639
+        - sprite: 46
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 640
+        - sprite: 46
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 641
+        - sprite: 46
+          action: 166496
+          duration: 3
+          frame: 3
+          next: 642
+        - sprite: 46
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 643
+        - sprite: 46
+          action: 161680
+          duration: 3
+          frame: 4
+          next: 644
+        - sprite: 46
+          action: 161680
+          duration: 3
+          frame: 4
+          next: 645
+        - sprite: 46
+          action: 161680
+          duration: 3
+          frame: 5
+          next: 646
+        - sprite: 46
+          action: 161680
+          duration: 3
+          frame: 5
+          next: 635
+        - sprite: 46
+          action: 162160
+          duration: 20
+          frame: 0
+          next: 648
+          is_lit: 1
+        - sprite: 46
+          action: 162784
+          duration: 4
+          frame: 6
+          next: 649
+          is_lit: 1
+        - sprite: 46
+          duration: 4
+          frame: 7
+          next: 650
+          is_lit: 1
+        - sprite: 46
+          action: 162720
+          duration: 1
+          frame: 7
+          next: 648
+          is_lit: 1
+        - sprite: 46
+          duration: 3
+          frame: 8
+          next: 652
+        - sprite: 46
+          action: 166048
+          duration: 3
+          frame: 8
+          next: 635
+        - sprite: 46
+          action: 165920
+          duration: 20
+          frame: 9
+          next: 654
+        - sprite: 46
+          action: 166080
+          duration: 7
+          frame: 10
+          next: 655
+        - sprite: 46
+          duration: 7
+          frame: 11
+          next: 656
+        - sprite: 46
+          duration: 7
+          frame: 12
+          next: 657
+        - sprite: 46
+          duration: 7
+          frame: 13
+          next: 658
+        - sprite: 46
+          duration: 7
+          frame: 14
+          next: 659
+        - sprite: 46
+          action: 166128
+          frame: 15
+        - sprite: 46
+          duration: 5
+          frame: 15
+          next: 661
+        - sprite: 46
+          duration: 5
+          frame: 14
+          next: 662
+        - sprite: 46
+          duration: 5
+          frame: 13
+          next: 663
+        - sprite: 46
+          duration: 5
+          frame: 12
+          next: 664
+        - sprite: 46
+          duration: 5
+          frame: 11
+          next: 665
+        - sprite: 46
+          duration: 5
+          frame: 10
+          next: 666
+        - sprite: 46
+          duration: 5
+          frame: 9
+          next: 635
+        - sprite: 47
+          duration: 5
+          frame: 0
+          next: 668
+          is_lit: 1
+        - sprite: 47
+          duration: 5
+          frame: 1
+          next: 667
+          is_lit: 1
+        - sprite: 48
+          duration: 5
+          frame: 0
+          next: 670
+          is_lit: 1
+        - sprite: 48
+          duration: 5
+          frame: 1
+          next: 671
+          is_lit: 1
+        - sprite: 48
+          duration: 5
+          frame: 2
+          next: 672
+          is_lit: 1
+        - sprite: 48
+          duration: 5
+          frame: 3
+          next: 673
+          is_lit: 1
+        - sprite: 48
+          duration: 5
+          frame: 4
+          is_lit: 1
+        - sprite: 49
+          action: 161472
+          duration: 10
+          next: 675
+        - sprite: 49
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 674
+        - sprite: 49
+          action: 166432
+          duration: 3
+          next: 677
+        - sprite: 49
+          action: 161680
+          duration: 3
+          next: 678
+        - sprite: 49
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 679
+        - sprite: 49
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 680
+        - sprite: 49
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 681
+        - sprite: 49
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 682
+        - sprite: 49
+          action: 166464
+          duration: 3
+          frame: 3
+          next: 683
+        - sprite: 49
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 676
+        - sprite: 49
+          action: 162160
+          duration: 6
+          frame: 4
+          next: 685
+        - sprite: 49
+          action: 163120
+          duration: 12
+          frame: 5
+          next: 686
+        - sprite: 49
+          action: 162160
+          duration: 12
+          frame: 4
+          next: 687
+        - sprite: 49
+          action: 163120
+          duration: 12
+          frame: 5
+          next: 688
+        - sprite: 49
+          action: 162160
+          duration: 12
+          frame: 4
+          next: 689
+        - sprite: 49
+          action: 163120
+          duration: 12
+          frame: 5
+          next: 676
+        - sprite: 49
+          action: 166048
+          duration: 10
+          frame: 6
+          next: 676
+        - sprite: 49
+          duration: 10
+          frame: 7
+          next: 692
+        - sprite: 49
+          action: 165920
+          duration: 10
+          frame: 8
+          next: 693
+        - sprite: 49
+          duration: 10
+          frame: 9
+          next: 694
+        - sprite: 49
+          duration: 10
+          frame: 10
+          next: 695
+        - sprite: 49
+          duration: 10
+          frame: 11
+          next: 696
+        - sprite: 49
+          action: 166080
+          duration: 10
+          frame: 12
+          next: 697
+        - sprite: 49
+          duration: 10
+          frame: 13
+          next: 698
+        - sprite: 49
+          duration: 10
+          frame: 14
+          next: 699
+        - sprite: 49
+          duration: 30
+          frame: 15
+          next: 700
+        - sprite: 49
+          action: 166128
+          frame: 15
+        - sprite: 50
+          action: 161472
+          duration: 10
+          next: 701
+        - sprite: 50
+          action: 161680
+          duration: 3
+          next: 703
+        - sprite: 50
+          action: 161680
+          duration: 3
+          next: 704
+        - sprite: 50
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 705
+        - sprite: 50
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 706
+        - sprite: 50
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 707
+        - sprite: 50
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 702
+        - sprite: 50
+          action: 162160
+          duration: 5
+          frame: 3
+          next: 709
+        - sprite: 50
+          action: 162160
+          duration: 5
+          frame: 4
+          next: 710
+        - sprite: 50
+          action: 162160
+          duration: 5
+          frame: 5
+          next: 711
+          is_lit: 1
+        - sprite: 50
+          action: 165824
+          duration: 0
+          frame: 5
+          next: 702
+          is_lit: 1
+        - sprite: 50
+          duration: 6
+          frame: 6
+          next: 713
+        - sprite: 50
+          action: 166048
+          duration: 6
+          frame: 6
+          next: 702
+        - sprite: 50
+          duration: 8
+          frame: 7
+          next: 715
+          is_lit: 1
+        - sprite: 50
+          action: 165920
+          duration: 8
+          frame: 8
+          next: 716
+          is_lit: 1
+        - sprite: 50
+          duration: 8
+          frame: 9
+          next: 717
+          is_lit: 1
+        - sprite: 50
+          duration: 8
+          frame: 10
+          next: 718
+          is_lit: 1
+        - sprite: 50
+          action: 165856
+          duration: 8
+          frame: 11
+          next: 719
+          is_lit: 1
+        - sprite: 50
+          duration: 8
+          frame: 12
+          is_lit: 1
+        - sprite: 50
+          duration: 8
+          frame: 12
+          next: 721
+        - sprite: 50
+          duration: 8
+          frame: 11
+          next: 722
+        - sprite: 50
+          duration: 8
+          frame: 10
+          next: 723
+        - sprite: 50
+          duration: 8
+          frame: 9
+          next: 724
+        - sprite: 50
+          duration: 8
+          frame: 8
+          next: 725
+        - sprite: 50
+          duration: 8
+          frame: 7
+          next: 702
+        - sprite: 51
+          action: 161472
+          duration: 10
+          next: 727
+        - sprite: 51
+          action: 161472
+          duration: 10
+          frame: 1
+          next: 726
+        - sprite: 51
+          action: 161680
+          duration: 3
+          next: 729
+        - sprite: 51
+          action: 161680
+          duration: 3
+          next: 730
+        - sprite: 51
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 731
+        - sprite: 51
+          action: 161680
+          duration: 3
+          frame: 1
+          next: 732
+        - sprite: 51
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 733
+        - sprite: 51
+          action: 161680
+          duration: 3
+          frame: 2
+          next: 734
+        - sprite: 51
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 735
+        - sprite: 51
+          action: 161680
+          duration: 3
+          frame: 3
+          next: 728
+        - sprite: 51
+          action: 162160
+          duration: 10
+          frame: 4
+          next: 737
+        - sprite: 51
+          action: 162160
+          duration: 10
+          frame: 5
+          next: 738
+        - sprite: 51
+          action: 162528
+          duration: 4
+          frame: 6
+          next: 739
+          is_lit: 1
+        - sprite: 51
+          action: 162160
+          duration: 6
+          frame: 5
+          next: 740
+        - sprite: 51
+          action: 162528
+          duration: 4
+          frame: 6
+          next: 741
+          is_lit: 1
+        - sprite: 51
+          action: 162656
+          duration: 1
+          frame: 5
+          next: 737
+        - sprite: 51
+          duration: 3
+          frame: 7
+          next: 743
+        - sprite: 51
+          action: 166048
+          duration: 3
+          frame: 7
+          next: 728
+        - sprite: 51
+          duration: 5
+          frame: 8
+          next: 745
+        - sprite: 51
+          action: 165920
+          duration: 5
+          frame: 9
+          next: 746
+        - sprite: 51
+          action: 166080
+          duration: 5
+          frame: 10
+          next: 747
+        - sprite: 51
+          duration: 5
+          frame: 11
+          next: 748
+        - sprite: 51
+          frame: 12
+        - sprite: 51
+          duration: 5
+          frame: 13
+          next: 750
+        - sprite: 51
+          action: 166032
+          duration: 5
+          frame: 14
+          next: 751
+        - sprite: 51
+          action: 166080
+          duration: 5
+          frame: 15
+          next: 752
+        - sprite: 51
+          duration: 5
+          frame: 16
+          next: 753
+        - sprite: 51
+          duration: 5
+          frame: 17
+          next: 754
+        - sprite: 51
+          duration: 5
+          frame: 18
+          next: 755
+        - sprite: 51
+          duration: 5
+          frame: 19
+          next: 756
+        - sprite: 51
+          duration: 5
+          frame: 20
+          next: 757
+        - sprite: 51
+          frame: 21
+        - sprite: 51
+          duration: 5
+          frame: 12
+          next: 759
+        - sprite: 51
+          duration: 5
+          frame: 11
+          next: 760
+        - sprite: 51
+          duration: 5
+          frame: 10
+          next: 761
+        - sprite: 51
+          duration: 5
+          frame: 9
+          next: 762
+        - sprite: 51
+          duration: 5
+          frame: 8
+          next: 728
+        - sprite: 52
+          next: 763
+        - sprite: 52
+          duration: 6
+          next: 765
+        - sprite: 52
+          duration: 6
+          frame: 1
+          next: 766
+        - sprite: 52
+          action: 165920
+          duration: 6
+          frame: 2
+          next: 767
+        - sprite: 52
+          duration: 6
+          frame: 3
+          next: 768
+        - sprite: 52
+          duration: 6
+          frame: 4
+          next: 769
+        - sprite: 52
+          duration: 6
+          frame: 5
+          next: 770
+        - sprite: 52
+          duration: 6
+          frame: 6
+          next: 771
+        - sprite: 52
+          duration: 6
+          frame: 7
+          next: 772
+        - sprite: 52
+          duration: 6
+          frame: 8
+          next: 773
+        - sprite: 52
+          duration: 6
+          frame: 9
+          next: 774
+        - sprite: 52
+          action: 161376
+          duration: 6
+          frame: 10
+          next: 775
+        - sprite: 52
+          frame: 11
+        - sprite: 52
+          duration: 4
+          frame: 12
+          next: 777
+        - sprite: 52
+          action: 166048
+          duration: 8
+          frame: 12
+          next: 763
+        - sprite: 53
+        - sprite: 53
+          action: 166688
+          duration: 36
+          frame: 1
+          next: 778
+        - sprite: 53
+          action: 166704
+          duration: 100
+          next: 781
+        - sprite: 53
+          duration: 10
+          next: 782
+        - sprite: 53
+          duration: 10
+          next: 783
+        - sprite: 53
+          action: 166992
+        - sprite: 51
+          action: 161472
+          duration: 10
+          next: 784
+        - sprite: 51
+          action: 166592
+          duration: 181
+          next: 786
+        - sprite: 51
+          action: 167008
+          duration: 150
+          next: 786
+        - sprite: 54
+          action: 167168
+          duration: 3
+          frame: 0
+          next: 788
+          is_lit: 1
+        - sprite: 54
+          action: 167200
+          duration: 3
+          frame: 1
+          next: 789
+          is_lit: 1
+        - sprite: 54
+          action: 167200
+          duration: 3
+          frame: 2
+          next: 790
+          is_lit: 1
+        - sprite: 54
+          action: 167200
+          duration: 3
+          frame: 3
+          next: 787
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 4
+          frame: 0
+          next: 792
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 4
+          frame: 1
+          next: 793
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 4
+          frame: 2
+          next: 794
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 4
+          frame: 3
+          next: 795
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 4
+          frame: 4
+          next: 796
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 4
+          frame: 5
+          next: 797
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 4
+          frame: 6
+          next: 798
+          is_lit: 1
+        - sprite: 32
+          action: 164512
+          duration: 4
+          frame: 7
+          is_lit: 1
+        - sprite: 22
+          duration: 10
+          frame: 1
+          next: 800
+          is_lit: 1
+        - sprite: 22
+          duration: 10
+          frame: 2
+          next: 801
+          is_lit: 1
+        - sprite: 22
+          action: 166864
+          duration: 10
+          frame: 3
+          is_lit: 1
+        - sprite: 55
+          duration: 6
+          next: 803
+        - sprite: 55
+          duration: 7
+          frame: 1
+          next: 802
+          is_lit: 1
+        - sprite: 56
+          duration: 6
+          next: 805
+        - sprite: 56
+          duration: 6
+          frame: 1
+          next: 804
+          is_lit: 1
+        - sprite: 57
+          duration: 6
+          next: 807
+        - sprite: 57
+          duration: 6
+          frame: 1
+          next: 806
+        - sprite: 58
+          duration: 5
+          frame: 0
+          next: 809
+          is_lit: 1
+        - sprite: 58
+          action: 165920
+          duration: 5
+          frame: 1
+          next: 810
+          is_lit: 1
+        - sprite: 58
+          duration: 5
+          frame: 2
+          next: 811
+          is_lit: 1
+        - sprite: 58
+          action: 166096
+          duration: 10
+          frame: 3
+          next: 812
+          is_lit: 1
+        - sprite: 58
+          duration: 10
+          frame: 4
+          is_lit: 1
+        - sprite: 59
+          duration: 4
+          frame: 0
+          next: 814
+          is_lit: 1
+        - sprite: 59
+          duration: 4
+          frame: 1
+          next: 815
+          is_lit: 1
+        - sprite: 59
+          duration: 4
+          frame: 2
+          next: 813
+          is_lit: 1
+        - sprite: 60
+          duration: 6
+          next: 817
+        - sprite: 60
+          duration: 6
+          frame: 1
+          next: 818
+        - sprite: 60
+          duration: 6
+          frame: 2
+          next: 819
+        - sprite: 60
+          duration: 6
+          frame: 3
+          next: 820
+        - sprite: 60
+          duration: 6
+          frame: 2
+          next: 821
+        - sprite: 60
+          duration: 6
+          frame: 1
+          next: 816
+        - sprite: 61
+          duration: 6
+          next: 823
+        - sprite: 61
+          duration: 6
+          frame: 1
+          next: 824
+        - sprite: 61
+          duration: 6
+          frame: 2
+          next: 825
+        - sprite: 61
+          duration: 6
+          frame: 3
+          next: 826
+        - sprite: 61
+          duration: 6
+          frame: 2
+          next: 827
+        - sprite: 61
+          duration: 6
+          frame: 1
+          next: 822
+        - sprite: 62
+          duration: 10
+          next: 829
+        - sprite: 62
+          duration: 10
+          frame: 1
+          next: 828
+          is_lit: 1
+        - sprite: 63
+          duration: 10
+          next: 831
+        - sprite: 63
+          duration: 10
+          frame: 1
+          next: 830
+          is_lit: 1
+        - sprite: 64
+          duration: 10
+          next: 833
+        - sprite: 64
+          duration: 10
+          frame: 1
+          next: 832
+          is_lit: 1
+        - sprite: 65
+          duration: 10
+          next: 835
+        - sprite: 65
+          duration: 10
+          frame: 1
+          next: 834
+          is_lit: 1
+        - sprite: 66
+          duration: 10
+          next: 837
+        - sprite: 66
+          duration: 10
+          frame: 1
+          next: 836
+          is_lit: 1
+        - sprite: 67
+          duration: 10
+          next: 839
+        - sprite: 67
+          duration: 10
+          frame: 1
+          next: 838
+          is_lit: 1
+        - sprite: 68
+        - sprite: 69
+        - sprite: 70
+          duration: 6
+          frame: 0
+          next: 843
+          is_lit: 1
+        - sprite: 70
+          duration: 6
+          frame: 1
+          next: 844
+          is_lit: 1
+        - sprite: 70
+          duration: 6
+          frame: 2
+          next: 845
+          is_lit: 1
+        - sprite: 70
+          duration: 6
+          frame: 3
+          next: 846
+          is_lit: 1
+        - sprite: 70
+          duration: 6
+          frame: 2
+          next: 847
+          is_lit: 1
+        - sprite: 70
+          duration: 6
+          frame: 1
+          next: 842
+          is_lit: 1
+        - sprite: 71
+          duration: 6
+          frame: 0
+          next: 849
+          is_lit: 1
+        - sprite: 71
+          duration: 6
+          frame: 1
+          next: 850
+          is_lit: 1
+        - sprite: 71
+          duration: 6
+          frame: 2
+          next: 851
+          is_lit: 1
+        - sprite: 71
+          duration: 6
+          frame: 3
+          next: 848
+          is_lit: 1
+        - sprite: 72
+          frame: 0
+          is_lit: 1
+        - sprite: 73
+          duration: 6
+          frame: 0
+          next: 854
+          is_lit: 1
+        - sprite: 73
+          duration: 6
+          frame: 1
+          next: 855
+          is_lit: 1
+        - sprite: 73
+          duration: 6
+          frame: 2
+          next: 856
+          is_lit: 1
+        - sprite: 73
+          duration: 6
+          frame: 3
+          next: 853
+          is_lit: 1
+        - sprite: 74
+          duration: 6
+          frame: 0
+          next: 858
+          is_lit: 1
+        - sprite: 74
+          duration: 6
+          frame: 1
+          next: 859
+          is_lit: 1
+        - sprite: 74
+          duration: 6
+          frame: 2
+          next: 860
+          is_lit: 1
+        - sprite: 74
+          duration: 6
+          frame: 3
+          next: 857
+          is_lit: 1
+        - sprite: 75
+          frame: 0
+          is_lit: 1
+        - sprite: 76
+          duration: 6
+          frame: 0
+          next: 863
+          is_lit: 1
+        - sprite: 76
+          duration: 6
+          frame: 1
+          next: 864
+          is_lit: 1
+        - sprite: 76
+          duration: 6
+          frame: 2
+          next: 865
+          is_lit: 1
+        - sprite: 76
+          duration: 6
+          frame: 3
+          next: 866
+          is_lit: 1
+        - sprite: 76
+          duration: 6
+          frame: 2
+          next: 867
+          is_lit: 1
+        - sprite: 76
+          duration: 6
+          frame: 1
+          next: 862
+          is_lit: 1
+        - sprite: 77
+          duration: 6
+          frame: 0
+          next: 869
+          is_lit: 1
+        - sprite: 77
+          duration: 6
+          frame: 1
+          next: 868
+        - sprite: 78
+        - sprite: 79
+        - sprite: 80
+        - sprite: 81
+        - sprite: 82
+        - sprite: 83
+        - sprite: 84
+        - sprite: 85
+        - sprite: 86
+        - sprite: 87
+        - sprite: 88
+        - sprite: 89
+        - sprite: 90
+        - sprite: 91
+        - sprite: 92
+        - sprite: 93
+        - sprite: 94
+          frame: 0
+          is_lit: 1
+        - sprite: 95
+        - sprite: 96
+          duration: 10
+          next: 889
+        - sprite: 96
+          duration: 15
+          frame: 1
+          next: 890
+        - sprite: 96
+          duration: 8
+          frame: 2
+          next: 891
+        - sprite: 96
+          duration: 6
+          frame: 1
+          next: 888
+        - sprite: 28
+          frame: 13
+        - sprite: 28
+          frame: 18
+        - sprite: 97
+        - sprite: 98
+        - sprite: 99
+        - sprite: 100
+          duration: 6
+          frame: 0
+          next: 898
+          is_lit: 1
+        - sprite: 100
+          duration: 6
+          frame: 1
+          next: 897
+          is_lit: 1
+        - sprite: 101
+        - sprite: 102
+          duration: 6
+          next: 901
+        - sprite: 102
+          duration: 8
+          frame: 1
+          next: 900
+        - sprite: 103
+        - sprite: 104
+        - sprite: 105
+        - sprite: 106
+        - sprite: 107
+        - sprite: 108
+        - sprite: 109
+        - sprite: 110
+        - sprite: 111
+        - sprite: 112
+          frame: 0
+          is_lit: 1
+        - sprite: 113
+          frame: 0
+          is_lit: 1
+        - sprite: 114
+        - sprite: 115
+        - sprite: 116
+        - sprite: 117
+        - sprite: 118
+          duration: 6
+          frame: 0
+          next: 918
+          is_lit: 1
+        - sprite: 118
+          duration: 6
+          frame: 1
+          next: 919
+          is_lit: 1
+        - sprite: 118
+          duration: 6
+          frame: 2
+          next: 920
+          is_lit: 1
+        - sprite: 118
+          duration: 6
+          frame: 1
+          next: 917
+          is_lit: 1
+        - sprite: 119
+          duration: 6
+          frame: 0
+          next: 922
+          is_lit: 1
+        - sprite: 119
+          duration: 6
+          frame: 1
+          next: 923
+          is_lit: 1
+        - sprite: 119
+          duration: 6
+          frame: 2
+          next: 921
+          is_lit: 1
+        - sprite: 120
+          duration: 14
+          next: 925
+        - sprite: 120
+          duration: 14
+          frame: 1
+          next: 924
+        - sprite: 121
+          duration: 4
+          frame: 0
+          next: 927
+          is_lit: 1
+        - sprite: 121
+          duration: 4
+          frame: 1
+          next: 928
+          is_lit: 1
+        - sprite: 121
+          duration: 4
+          frame: 2
+          next: 929
+          is_lit: 1
+        - sprite: 121
+          duration: 4
+          frame: 3
+          next: 926
+          is_lit: 1
+        - sprite: 122
+          duration: 4
+          frame: 0
+          next: 931
+          is_lit: 1
+        - sprite: 122
+          duration: 4
+          frame: 1
+          next: 932
+          is_lit: 1
+        - sprite: 122
+          duration: 4
+          frame: 2
+          next: 933
+          is_lit: 1
+        - sprite: 122
+          duration: 4
+          frame: 3
+          next: 930
+          is_lit: 1
+        - sprite: 123
+          duration: 4
+          frame: 0
+          next: 935
+          is_lit: 1
+        - sprite: 123
+          duration: 4
+          frame: 1
+          next: 936
+          is_lit: 1
+        - sprite: 123
+          duration: 4
+          frame: 2
+          next: 937
+          is_lit: 1
+        - sprite: 123
+          duration: 4
+          frame: 3
+          next: 934
+          is_lit: 1
+        - sprite: 124
+          duration: 4
+          frame: 0
+          next: 939
+          is_lit: 1
+        - sprite: 124
+          duration: 4
+          frame: 1
+          next: 940
+          is_lit: 1
+        - sprite: 124
+          duration: 4
+          frame: 2
+          next: 941
+          is_lit: 1
+        - sprite: 124
+          duration: 4
+          frame: 3
+          next: 938
+          is_lit: 1
+        - sprite: 125
+          duration: 4
+          frame: 0
+          next: 943
+          is_lit: 1
+        - sprite: 125
+          duration: 4
+          frame: 1
+          next: 944
+          is_lit: 1
+        - sprite: 125
+          duration: 4
+          frame: 2
+          next: 945
+          is_lit: 1
+        - sprite: 125
+          duration: 4
+          frame: 3
+          next: 942
+          is_lit: 1
+        - sprite: 126
+          duration: 4
+          frame: 0
+          next: 947
+          is_lit: 1
+        - sprite: 126
+          duration: 4
+          frame: 1
+          next: 948
+          is_lit: 1
+        - sprite: 126
+          duration: 4
+          frame: 2
+          next: 949
+          is_lit: 1
+        - sprite: 126
+          duration: 4
+          frame: 3
+          next: 946
+          is_lit: 1
+        - sprite: 127
+        - sprite: 128
+        - sprite: 129
+        - sprite: 130
+        - sprite: 131
+        - sprite: 132
+        - sprite: 133
+        - sprite: 134
+        - sprite: 135
+        - sprite: 136
+          duration: 4
+          frame: 0
+          next: 960
+          is_lit: 1
+        - sprite: 136
+          duration: 4
+          frame: 1
+          next: 961
+          is_lit: 1
+        - sprite: 136
+          duration: 4
+          frame: 2
+          next: 962
+          is_lit: 1
+        - sprite: 136
+          duration: 4
+          frame: 3
+          next: 959
+          is_lit: 1
+        - sprite: 137
+          duration: 4
+          frame: 0
+          next: 964
+          is_lit: 1
+        - sprite: 137
+          duration: 4
+          frame: 1
+          next: 965
+          is_lit: 1
+        - sprite: 137
+          duration: 4
+          frame: 2
+          next: 966
+          is_lit: 1
+        - sprite: 137
+          duration: 4
+          frame: 3
+          next: 963
+          is_lit: 1
+

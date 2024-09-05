@@ -1,0 +1,4280 @@
+schema:
+    state:
+        sprite:
+            type: reference
+            reference: sprite
+            name: Sprite
+            patch_key: Sprite number
+            default: 0
+        frame:
+            type: int32
+            name: Sprite frame
+            patch_key: Sprite subnumber
+            default: 0
+        is_lit:
+            type: bool
+            name: Always lit
+            default: 0
+        duration:
+            type: int32
+            name: Duration
+            patch_key: Duration
+            default: -1
+        action:
+            type: action
+            name: Actions
+            patch_key: Action pointer
+            default: ''
+        next:
+            type: reference
+            reference: state
+            name: Next state
+            patch_key: Next frame
+            default: 0
+        unused1:
+            type: int32
+            name: Unused 1
+            patch_key: Unknown 1
+            default: 0
+        unused2:
+            type: int32
+            name: Unused 2
+            patch_key: Unknown 2
+            default: 0
+
+# Hardcoded states that the engine refers to. These are always marked as used.
+states_used:
+    - 149
+    - 155
+    - 52
+    - 56
+    - 266
+    - 799
+    - 895
+
+data:
+    state:
+        - sprite: 0
+        - action: Light0
+          duration: 0
+          sprite: 1
+          frame: 4
+        - action: WeaponReady
+          duration: 1
+          sprite: 2
+          next: 2
+        - action: Lower
+          duration: 1
+          sprite: 2
+          next: 3
+        - action: Raise
+          duration: 1
+          sprite: 2
+          next: 4
+        - duration: 4
+          sprite: 2
+          frame: 1
+          next: 6
+        - action: Punch
+          duration: 4
+          sprite: 2
+          frame: 2
+          next: 7
+        - duration: 5
+          sprite: 2
+          frame: 3
+          next: 8
+        - duration: 4
+          sprite: 2
+          frame: 2
+          next: 9
+        - action: ReFire
+          duration: 5
+          sprite: 2
+          frame: 1
+          next: 2
+        - action: WeaponReady
+          duration: 1
+          sprite: 3
+          next: 10
+        - action: Lower
+          duration: 1
+          sprite: 3
+          next: 11
+        - action: Raise
+          duration: 1
+          sprite: 3
+          next: 12
+        - duration: 4
+          sprite: 3
+          next: 14
+        - action: FirePistol
+          duration: 6
+          sprite: 3
+          frame: 1
+          next: 15
+        - duration: 4
+          sprite: 3
+          frame: 2
+          next: 16
+        - action: ReFire
+          duration: 5
+          sprite: 3
+          frame: 1
+          next: 10
+        - action: Light1
+          duration: 7
+          sprite: 4
+          frame: 0
+          next: 1
+          is_lit: 1
+        - action: WeaponReady
+          duration: 1
+          sprite: 1
+          next: 18
+        - action: Lower
+          duration: 1
+          sprite: 1
+          next: 19
+        - action: Raise
+          duration: 1
+          sprite: 1
+          next: 20
+        - duration: 3
+          sprite: 1
+          next: 22
+        - action: FireShotgun
+          duration: 7
+          sprite: 1
+          next: 23
+        - duration: 5
+          sprite: 1
+          frame: 1
+          next: 24
+        - duration: 5
+          sprite: 1
+          frame: 2
+          next: 25
+        - duration: 4
+          sprite: 1
+          frame: 3
+          next: 26
+        - duration: 5
+          sprite: 1
+          frame: 2
+          next: 27
+        - duration: 5
+          sprite: 1
+          frame: 1
+          next: 28
+        - duration: 3
+          sprite: 1
+          next: 29
+        - action: ReFire
+          duration: 7
+          sprite: 1
+          next: 18
+        - action: Light1
+          duration: 4
+          sprite: 5
+          frame: 0
+          next: 31
+          is_lit: 1
+        - action: Light2
+          duration: 3
+          sprite: 5
+          frame: 1
+          next: 1
+          is_lit: 1
+        - action: WeaponReady
+          duration: 1
+          sprite: 6
+          next: 32
+        - action: Lower
+          duration: 1
+          sprite: 6
+          next: 33
+        - action: Raise
+          duration: 1
+          sprite: 6
+          next: 34
+        - duration: 3
+          sprite: 6
+          next: 36
+        - action: FireShotgun2
+          duration: 7
+          sprite: 6
+          next: 37
+        - duration: 7
+          sprite: 6
+          frame: 1
+          next: 38
+        - action: CheckReload
+          duration: 7
+          sprite: 6
+          frame: 2
+          next: 39
+        - action: OpenShotgun2
+          duration: 7
+          sprite: 6
+          frame: 3
+          next: 40
+        - duration: 7
+          sprite: 6
+          frame: 4
+          next: 41
+        - action: LoadShotgun2
+          duration: 7
+          sprite: 6
+          frame: 5
+          next: 42
+        - duration: 6
+          sprite: 6
+          frame: 6
+          next: 43
+        - action: CloseShotgun2
+          duration: 6
+          sprite: 6
+          frame: 7
+          next: 44
+        - action: ReFire
+          duration: 5
+          sprite: 6
+          next: 32
+        - duration: 7
+          sprite: 6
+          frame: 1
+          next: 46
+        - duration: 3
+          sprite: 6
+          next: 33
+        - action: Light1
+          duration: 5
+          sprite: 6
+          frame: 8
+          next: 48
+          is_lit: 1
+        - action: Light2
+          duration: 4
+          sprite: 6
+          frame: 9
+          next: 1
+          is_lit: 1
+        - action: WeaponReady
+          duration: 1
+          sprite: 7
+          next: 49
+        - action: Lower
+          duration: 1
+          sprite: 7
+          next: 50
+        - action: Raise
+          duration: 1
+          sprite: 7
+          next: 51
+        - action: FireCGun
+          duration: 4
+          sprite: 7
+          next: 53
+        - action: FireCGun
+          duration: 4
+          sprite: 7
+          frame: 1
+          next: 54
+        - action: ReFire
+          duration: 0
+          sprite: 7
+          frame: 1
+          next: 49
+        - action: Light1
+          duration: 5
+          sprite: 8
+          frame: 0
+          next: 1
+          is_lit: 1
+        - action: Light2
+          duration: 5
+          sprite: 8
+          frame: 1
+          next: 1
+          is_lit: 1
+        - action: WeaponReady
+          duration: 1
+          sprite: 9
+          next: 57
+        - action: Lower
+          duration: 1
+          sprite: 9
+          next: 58
+        - action: Raise
+          duration: 1
+          sprite: 9
+          next: 59
+        - action: GunFlash
+          duration: 8
+          sprite: 9
+          frame: 1
+          next: 61
+        - action: FireMissile
+          duration: 12
+          sprite: 9
+          frame: 1
+          next: 62
+        - action: ReFire
+          duration: 0
+          sprite: 9
+          frame: 1
+          next: 57
+        - action: Light1
+          duration: 3
+          sprite: 10
+          frame: 0
+          next: 64
+          is_lit: 1
+        - duration: 4
+          sprite: 10
+          frame: 1
+          next: 65
+          is_lit: 1
+        - action: Light2
+          duration: 4
+          sprite: 10
+          frame: 2
+          next: 66
+          is_lit: 1
+        - action: Light2
+          duration: 4
+          sprite: 10
+          frame: 3
+          next: 1
+          is_lit: 1
+        - action: WeaponReady
+          duration: 4
+          sprite: 11
+          frame: 2
+          next: 68
+        - action: WeaponReady
+          duration: 4
+          sprite: 11
+          frame: 3
+          next: 67
+        - action: Lower
+          duration: 1
+          sprite: 11
+          frame: 2
+          next: 69
+        - action: Raise
+          duration: 1
+          sprite: 11
+          frame: 2
+          next: 70
+        - action: Saw
+          duration: 4
+          sprite: 11
+          next: 72
+        - action: Saw
+          duration: 4
+          sprite: 11
+          frame: 1
+          next: 73
+        - action: ReFire
+          duration: 0
+          sprite: 11
+          frame: 1
+          next: 67
+        - action: WeaponReady
+          duration: 1
+          sprite: 12
+          next: 74
+        - action: Lower
+          duration: 1
+          sprite: 12
+          next: 75
+        - action: Raise
+          duration: 1
+          sprite: 12
+          next: 76
+        - action: FirePlasma
+          duration: 3
+          sprite: 12
+          next: 78
+        - action: ReFire
+          duration: 20
+          sprite: 12
+          frame: 1
+          next: 74
+        - action: Light1
+          duration: 4
+          sprite: 13
+          frame: 0
+          next: 1
+          is_lit: 1
+        - action: Light1
+          duration: 4
+          sprite: 13
+          frame: 1
+          next: 1
+          is_lit: 1
+        - action: WeaponReady
+          duration: 1
+          sprite: 14
+          next: 81
+        - action: Lower
+          duration: 1
+          sprite: 14
+          next: 82
+        - action: Raise
+          duration: 1
+          sprite: 14
+          next: 83
+        - action: BFGSound
+          duration: 20
+          sprite: 14
+          next: 85
+        - action: GunFlash
+          duration: 10
+          sprite: 14
+          frame: 1
+          next: 86
+        - action: FireBFG
+          duration: 10
+          sprite: 14
+          frame: 1
+          next: 87
+        - action: ReFire
+          duration: 20
+          sprite: 14
+          frame: 1
+          next: 81
+        - action: Light1
+          duration: 11
+          sprite: 15
+          frame: 0
+          next: 89
+          is_lit: 1
+        - action: Light2
+          duration: 6
+          sprite: 15
+          frame: 1
+          next: 1
+          is_lit: 1
+        - duration: 8
+          sprite: 16
+          frame: 2
+          next: 91
+        - duration: 8
+          sprite: 16
+          frame: 1
+          next: 92
+        - duration: 8
+          sprite: 16
+        - duration: 4
+          sprite: 17
+          frame: 0
+          next: 94
+          is_lit: 1
+        - duration: 4
+          sprite: 17
+          frame: 1
+          next: 95
+        - duration: 4
+          sprite: 17
+          frame: 2
+          next: 96
+        - duration: 4
+          sprite: 17
+          frame: 3
+        - duration: 4
+          sprite: 18
+          frame: 0
+          next: 98
+          is_lit: 1
+        - duration: 4
+          sprite: 18
+          frame: 1
+          next: 97
+          is_lit: 1
+        - duration: 6
+          sprite: 18
+          frame: 2
+          next: 100
+          is_lit: 1
+        - duration: 6
+          sprite: 18
+          frame: 3
+          next: 101
+          is_lit: 1
+        - duration: 6
+          sprite: 18
+          frame: 4
+          is_lit: 1
+        - duration: 4
+          sprite: 19
+          frame: 0
+          next: 103
+          is_lit: 1
+        - duration: 4
+          sprite: 19
+          frame: 1
+          next: 102
+          is_lit: 1
+        - duration: 6
+          sprite: 19
+          frame: 2
+          next: 105
+          is_lit: 1
+        - duration: 6
+          sprite: 19
+          frame: 3
+          next: 106
+          is_lit: 1
+        - duration: 6
+          sprite: 19
+          frame: 4
+          is_lit: 1
+        - duration: 6
+          sprite: 20
+          frame: 0
+          next: 108
+          is_lit: 1
+        - duration: 6
+          sprite: 20
+          frame: 1
+          next: 107
+          is_lit: 1
+        - duration: 4
+          sprite: 21
+          frame: 0
+          next: 110
+          is_lit: 1
+        - duration: 4
+          sprite: 21
+          frame: 1
+          next: 111
+          is_lit: 1
+        - duration: 4
+          sprite: 21
+          frame: 2
+          next: 112
+          is_lit: 1
+        - duration: 4
+          sprite: 21
+          frame: 3
+          next: 113
+          is_lit: 1
+        - duration: 4
+          sprite: 21
+          frame: 4
+          is_lit: 1
+        - duration: 1
+          sprite: 22
+          frame: 0
+          next: 114
+          is_lit: 1
+        - duration: 4
+          sprite: 23
+          frame: 0
+          next: 116
+          is_lit: 1
+        - duration: 4
+          sprite: 23
+          frame: 1
+          next: 115
+          is_lit: 1
+        - duration: 8
+          sprite: 24
+          frame: 0
+          next: 118
+          is_lit: 1
+        - duration: 8
+          sprite: 24
+          frame: 1
+          next: 119
+          is_lit: 1
+        - action: BFGSpray
+          duration: 8
+          sprite: 24
+          frame: 2
+          next: 120
+          is_lit: 1
+        - duration: 8
+          sprite: 24
+          frame: 3
+          next: 121
+          is_lit: 1
+        - duration: 8
+          sprite: 24
+          frame: 4
+          next: 122
+          is_lit: 1
+        - duration: 8
+          sprite: 24
+          frame: 5
+          is_lit: 1
+        - duration: 8
+          sprite: 25
+          frame: 0
+          next: 124
+          is_lit: 1
+        - duration: 8
+          sprite: 25
+          frame: 1
+          next: 125
+          is_lit: 1
+        - duration: 8
+          sprite: 25
+          frame: 2
+          next: 126
+          is_lit: 1
+        - duration: 8
+          sprite: 25
+          frame: 3
+          is_lit: 1
+        - action: Explode
+          duration: 8
+          sprite: 22
+          frame: 1
+          next: 128
+          is_lit: 1
+        - duration: 6
+          sprite: 22
+          frame: 2
+          next: 129
+          is_lit: 1
+        - duration: 4
+          sprite: 22
+          frame: 3
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 0
+          next: 131
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 1
+          next: 132
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 0
+          next: 133
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 1
+          next: 134
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 2
+          next: 135
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 3
+          next: 136
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 4
+          next: 137
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 5
+          next: 138
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 6
+          next: 139
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 7
+          next: 140
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 8
+          next: 141
+          is_lit: 1
+        - duration: 6
+          sprite: 26
+          frame: 9
+          is_lit: 1
+        - duration: 6
+          sprite: 27
+          frame: 0
+          next: 143
+          is_lit: 1
+        - duration: 6
+          sprite: 27
+          frame: 1
+          next: 144
+          is_lit: 1
+        - duration: 6
+          sprite: 27
+          frame: 0
+          next: 145
+          is_lit: 1
+        - duration: 6
+          sprite: 27
+          frame: 1
+          next: 146
+          is_lit: 1
+        - duration: 6
+          sprite: 27
+          frame: 2
+          next: 147
+          is_lit: 1
+        - duration: 6
+          sprite: 27
+          frame: 3
+          next: 148
+          is_lit: 1
+        - duration: 6
+          sprite: 27
+          frame: 4
+          is_lit: 1
+        - sprite: 28
+        - duration: 4
+          sprite: 28
+          next: 151
+        - duration: 4
+          sprite: 28
+          frame: 1
+          next: 152
+        - duration: 4
+          sprite: 28
+          frame: 2
+          next: 153
+        - duration: 4
+          sprite: 28
+          frame: 3
+          next: 150
+        - duration: 12
+          sprite: 28
+          frame: 4
+          next: 149
+        - duration: 6
+          sprite: 28
+          frame: 5
+          next: 154
+          is_lit: 1
+        - duration: 4
+          sprite: 28
+          frame: 6
+          next: 157
+        - action: Pain
+          duration: 4
+          sprite: 28
+          frame: 6
+          next: 149
+        - duration: 10
+          sprite: 28
+          frame: 7
+          next: 159
+        - action: PlayerScream
+          duration: 10
+          sprite: 28
+          frame: 8
+          next: 160
+        - action: Fall
+          duration: 10
+          sprite: 28
+          frame: 9
+          next: 161
+        - duration: 10
+          sprite: 28
+          frame: 10
+          next: 162
+        - duration: 10
+          sprite: 28
+          frame: 11
+          next: 163
+        - duration: 10
+          sprite: 28
+          frame: 12
+          next: 164
+        - sprite: 28
+          frame: 13
+        - duration: 5
+          sprite: 28
+          frame: 14
+          next: 166
+        - action: XScream
+          duration: 5
+          sprite: 28
+          frame: 15
+          next: 167
+        - action: Fall
+          duration: 5
+          sprite: 28
+          frame: 16
+          next: 168
+        - duration: 5
+          sprite: 28
+          frame: 17
+          next: 169
+        - duration: 5
+          sprite: 28
+          frame: 18
+          next: 170
+        - duration: 5
+          sprite: 28
+          frame: 19
+          next: 171
+        - duration: 5
+          sprite: 28
+          frame: 20
+          next: 172
+        - duration: 5
+          sprite: 28
+          frame: 21
+          next: 173
+        - sprite: 28
+          frame: 22
+        - action: Look
+          duration: 10
+          sprite: 29
+          next: 175
+        - action: Look
+          duration: 10
+          sprite: 29
+          frame: 1
+          next: 174
+        - action: Chase
+          duration: 4
+          sprite: 29
+          next: 177
+        - action: Chase
+          duration: 4
+          sprite: 29
+          next: 178
+        - action: Chase
+          duration: 4
+          sprite: 29
+          frame: 1
+          next: 179
+        - action: Chase
+          duration: 4
+          sprite: 29
+          frame: 1
+          next: 180
+        - action: Chase
+          duration: 4
+          sprite: 29
+          frame: 2
+          next: 181
+        - action: Chase
+          duration: 4
+          sprite: 29
+          frame: 2
+          next: 182
+        - action: Chase
+          duration: 4
+          sprite: 29
+          frame: 3
+          next: 183
+        - action: Chase
+          duration: 4
+          sprite: 29
+          frame: 3
+          next: 176
+        - action: FaceTarget
+          duration: 10
+          sprite: 29
+          frame: 4
+          next: 185
+        - action: PosAttack
+          duration: 8
+          sprite: 29
+          frame: 5
+          next: 186
+        - duration: 8
+          sprite: 29
+          frame: 4
+          next: 176
+        - duration: 3
+          sprite: 29
+          frame: 6
+          next: 188
+        - action: Pain
+          duration: 3
+          sprite: 29
+          frame: 6
+          next: 176
+        - duration: 5
+          sprite: 29
+          frame: 7
+          next: 190
+        - action: Scream
+          duration: 5
+          sprite: 29
+          frame: 8
+          next: 191
+        - action: Fall
+          duration: 5
+          sprite: 29
+          frame: 9
+          next: 192
+        - duration: 5
+          sprite: 29
+          frame: 10
+          next: 193
+        - sprite: 29
+          frame: 11
+        - duration: 5
+          sprite: 29
+          frame: 12
+          next: 195
+        - action: XScream
+          duration: 5
+          sprite: 29
+          frame: 13
+          next: 196
+        - action: Fall
+          duration: 5
+          sprite: 29
+          frame: 14
+          next: 197
+        - duration: 5
+          sprite: 29
+          frame: 15
+          next: 198
+        - duration: 5
+          sprite: 29
+          frame: 16
+          next: 199
+        - duration: 5
+          sprite: 29
+          frame: 17
+          next: 200
+        - duration: 5
+          sprite: 29
+          frame: 18
+          next: 201
+        - duration: 5
+          sprite: 29
+          frame: 19
+          next: 202
+        - sprite: 29
+          frame: 20
+        - duration: 5
+          sprite: 29
+          frame: 10
+          next: 204
+        - duration: 5
+          sprite: 29
+          frame: 9
+          next: 205
+        - duration: 5
+          sprite: 29
+          frame: 8
+          next: 206
+        - duration: 5
+          sprite: 29
+          frame: 7
+          next: 176
+        - action: Look
+          duration: 10
+          sprite: 30
+          next: 208
+        - action: Look
+          duration: 10
+          sprite: 30
+          frame: 1
+          next: 207
+        - action: Chase
+          duration: 3
+          sprite: 30
+          next: 210
+        - action: Chase
+          duration: 3
+          sprite: 30
+          next: 211
+        - action: Chase
+          duration: 3
+          sprite: 30
+          frame: 1
+          next: 212
+        - action: Chase
+          duration: 3
+          sprite: 30
+          frame: 1
+          next: 213
+        - action: Chase
+          duration: 3
+          sprite: 30
+          frame: 2
+          next: 214
+        - action: Chase
+          duration: 3
+          sprite: 30
+          frame: 2
+          next: 215
+        - action: Chase
+          duration: 3
+          sprite: 30
+          frame: 3
+          next: 216
+        - action: Chase
+          duration: 3
+          sprite: 30
+          frame: 3
+          next: 209
+        - action: FaceTarget
+          duration: 10
+          sprite: 30
+          frame: 4
+          next: 218
+        - action: SPosAttack
+          duration: 10
+          sprite: 30
+          frame: 5
+          next: 219
+          is_lit: 1
+        - duration: 10
+          sprite: 30
+          frame: 4
+          next: 209
+        - duration: 3
+          sprite: 30
+          frame: 6
+          next: 221
+        - action: Pain
+          duration: 3
+          sprite: 30
+          frame: 6
+          next: 209
+        - duration: 5
+          sprite: 30
+          frame: 7
+          next: 223
+        - action: Scream
+          duration: 5
+          sprite: 30
+          frame: 8
+          next: 224
+        - action: Fall
+          duration: 5
+          sprite: 30
+          frame: 9
+          next: 225
+        - duration: 5
+          sprite: 30
+          frame: 10
+          next: 226
+        - sprite: 30
+          frame: 11
+        - duration: 5
+          sprite: 30
+          frame: 12
+          next: 228
+        - action: XScream
+          duration: 5
+          sprite: 30
+          frame: 13
+          next: 229
+        - action: Fall
+          duration: 5
+          sprite: 30
+          frame: 14
+          next: 230
+        - duration: 5
+          sprite: 30
+          frame: 15
+          next: 231
+        - duration: 5
+          sprite: 30
+          frame: 16
+          next: 232
+        - duration: 5
+          sprite: 30
+          frame: 17
+          next: 233
+        - duration: 5
+          sprite: 30
+          frame: 18
+          next: 234
+        - duration: 5
+          sprite: 30
+          frame: 19
+          next: 235
+        - sprite: 30
+          frame: 20
+        - duration: 5
+          sprite: 30
+          frame: 11
+          next: 237
+        - duration: 5
+          sprite: 30
+          frame: 10
+          next: 238
+        - duration: 5
+          sprite: 30
+          frame: 9
+          next: 239
+        - duration: 5
+          sprite: 30
+          frame: 8
+          next: 240
+        - duration: 5
+          sprite: 30
+          frame: 7
+          next: 209
+        - action: Look
+          duration: 10
+          sprite: 31
+          next: 242
+        - action: Look
+          duration: 10
+          sprite: 31
+          frame: 1
+          next: 241
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          next: 244
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          next: 245
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          frame: 1
+          next: 246
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          frame: 1
+          next: 247
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          frame: 2
+          next: 248
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          frame: 2
+          next: 249
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          frame: 3
+          next: 250
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          frame: 3
+          next: 251
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          frame: 4
+          next: 252
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          frame: 4
+          next: 253
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          frame: 5
+          next: 254
+        - action: VileChase
+          duration: 2
+          sprite: 31
+          frame: 5
+          next: 243
+        - action: VileStart
+          duration: 0
+          sprite: 31
+          frame: 6
+          next: 256
+          is_lit: 1
+        - action: FaceTarget
+          duration: 10
+          sprite: 31
+          frame: 6
+          next: 257
+          is_lit: 1
+        - action: VileTarget
+          duration: 8
+          sprite: 31
+          frame: 7
+          next: 258
+          is_lit: 1
+        - action: FaceTarget
+          duration: 8
+          sprite: 31
+          frame: 8
+          next: 259
+          is_lit: 1
+        - action: FaceTarget
+          duration: 8
+          sprite: 31
+          frame: 9
+          next: 260
+          is_lit: 1
+        - action: FaceTarget
+          duration: 8
+          sprite: 31
+          frame: 10
+          next: 261
+          is_lit: 1
+        - action: FaceTarget
+          duration: 8
+          sprite: 31
+          frame: 11
+          next: 262
+          is_lit: 1
+        - action: FaceTarget
+          duration: 8
+          sprite: 31
+          frame: 12
+          next: 263
+          is_lit: 1
+        - action: FaceTarget
+          duration: 8
+          sprite: 31
+          frame: 13
+          next: 264
+          is_lit: 1
+        - action: VileAttack
+          duration: 8
+          sprite: 31
+          frame: 14
+          next: 265
+          is_lit: 1
+        - duration: 20
+          sprite: 31
+          frame: 15
+          next: 243
+          is_lit: 1
+        - duration: 10
+          sprite: 31
+          frame: 26
+          next: 267
+          is_lit: 1
+        - duration: 10
+          sprite: 31
+          frame: 27
+          next: 268
+          is_lit: 1
+        - duration: 10
+          sprite: 31
+          frame: 28
+          next: 243
+          is_lit: 1
+        - duration: 5
+          sprite: 31
+          frame: 16
+          next: 270
+        - action: Pain
+          duration: 5
+          sprite: 31
+          frame: 16
+          next: 243
+        - duration: 7
+          sprite: 31
+          frame: 16
+          next: 272
+        - action: Scream
+          duration: 7
+          sprite: 31
+          frame: 17
+          next: 273
+        - action: Fall
+          duration: 7
+          sprite: 31
+          frame: 18
+          next: 274
+        - duration: 7
+          sprite: 31
+          frame: 19
+          next: 275
+        - duration: 7
+          sprite: 31
+          frame: 20
+          next: 276
+        - duration: 7
+          sprite: 31
+          frame: 21
+          next: 277
+        - duration: 7
+          sprite: 31
+          frame: 22
+          next: 278
+        - duration: 5
+          sprite: 31
+          frame: 23
+          next: 279
+        - duration: 5
+          sprite: 31
+          frame: 24
+          next: 280
+        - sprite: 31
+          frame: 25
+        - action: StartFire
+          duration: 2
+          sprite: 32
+          frame: 0
+          next: 282
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 1
+          next: 283
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 0
+          next: 284
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 1
+          next: 285
+          is_lit: 1
+        - action: FireCrackle
+          duration: 2
+          sprite: 32
+          frame: 2
+          next: 286
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 1
+          next: 287
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 2
+          next: 288
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 1
+          next: 289
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 2
+          next: 290
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 3
+          next: 291
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 2
+          next: 292
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 3
+          next: 293
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 2
+          next: 294
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 3
+          next: 295
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 4
+          next: 296
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 3
+          next: 297
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 4
+          next: 298
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 3
+          next: 299
+          is_lit: 1
+        - action: FireCrackle
+          duration: 2
+          sprite: 32
+          frame: 4
+          next: 300
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 5
+          next: 301
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 4
+          next: 302
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 5
+          next: 303
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 4
+          next: 304
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 5
+          next: 305
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 6
+          next: 306
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 7
+          next: 307
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 6
+          next: 308
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 7
+          next: 309
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 6
+          next: 310
+          is_lit: 1
+        - action: Fire
+          duration: 2
+          sprite: 32
+          frame: 7
+          is_lit: 1
+        - duration: 4
+          sprite: 17
+          frame: 1
+          next: 312
+        - duration: 4
+          sprite: 17
+          frame: 2
+          next: 313
+        - duration: 4
+          sprite: 17
+          frame: 1
+          next: 314
+        - duration: 4
+          sprite: 17
+          frame: 2
+          next: 315
+        - duration: 4
+          sprite: 17
+          frame: 3
+        - action: Tracer
+          duration: 2
+          sprite: 33
+          frame: 0
+          next: 317
+          is_lit: 1
+        - action: Tracer
+          duration: 2
+          sprite: 33
+          frame: 1
+          next: 316
+          is_lit: 1
+        - duration: 8
+          sprite: 34
+          frame: 0
+          next: 319
+          is_lit: 1
+        - duration: 6
+          sprite: 34
+          frame: 1
+          next: 320
+          is_lit: 1
+        - duration: 4
+          sprite: 34
+          frame: 2
+          is_lit: 1
+        - action: Look
+          duration: 10
+          sprite: 35
+          next: 322
+        - action: Look
+          duration: 10
+          sprite: 35
+          frame: 1
+          next: 321
+        - action: Chase
+          duration: 2
+          sprite: 35
+          next: 324
+        - action: Chase
+          duration: 2
+          sprite: 35
+          next: 325
+        - action: Chase
+          duration: 2
+          sprite: 35
+          frame: 1
+          next: 326
+        - action: Chase
+          duration: 2
+          sprite: 35
+          frame: 1
+          next: 327
+        - action: Chase
+          duration: 2
+          sprite: 35
+          frame: 2
+          next: 328
+        - action: Chase
+          duration: 2
+          sprite: 35
+          frame: 2
+          next: 329
+        - action: Chase
+          duration: 2
+          sprite: 35
+          frame: 3
+          next: 330
+        - action: Chase
+          duration: 2
+          sprite: 35
+          frame: 3
+          next: 331
+        - action: Chase
+          duration: 2
+          sprite: 35
+          frame: 4
+          next: 332
+        - action: Chase
+          duration: 2
+          sprite: 35
+          frame: 4
+          next: 333
+        - action: Chase
+          duration: 2
+          sprite: 35
+          frame: 5
+          next: 334
+        - action: Chase
+          duration: 2
+          sprite: 35
+          frame: 5
+          next: 323
+        - action: FaceTarget
+          duration: 0
+          sprite: 35
+          frame: 6
+          next: 336
+        - action: SkelWhoosh
+          duration: 6
+          sprite: 35
+          frame: 6
+          next: 337
+        - action: FaceTarget
+          duration: 6
+          sprite: 35
+          frame: 7
+          next: 338
+        - action: SkelFist
+          duration: 6
+          sprite: 35
+          frame: 8
+          next: 323
+        - action: FaceTarget
+          duration: 0
+          sprite: 35
+          frame: 9
+          next: 340
+          is_lit: 1
+        - action: FaceTarget
+          duration: 10
+          sprite: 35
+          frame: 9
+          next: 341
+          is_lit: 1
+        - action: SkelMissile
+          duration: 10
+          sprite: 35
+          frame: 10
+          next: 342
+        - action: FaceTarget
+          duration: 10
+          sprite: 35
+          frame: 10
+          next: 323
+        - duration: 5
+          sprite: 35
+          frame: 11
+          next: 344
+        - action: Pain
+          duration: 5
+          sprite: 35
+          frame: 11
+          next: 323
+        - duration: 7
+          sprite: 35
+          frame: 11
+          next: 346
+        - duration: 7
+          sprite: 35
+          frame: 12
+          next: 347
+        - action: Scream
+          duration: 7
+          sprite: 35
+          frame: 13
+          next: 348
+        - action: Fall
+          duration: 7
+          sprite: 35
+          frame: 14
+          next: 349
+        - duration: 7
+          sprite: 35
+          frame: 15
+          next: 350
+        - sprite: 35
+          frame: 16
+        - duration: 5
+          sprite: 35
+          frame: 16
+          next: 352
+        - duration: 5
+          sprite: 35
+          frame: 15
+          next: 353
+        - duration: 5
+          sprite: 35
+          frame: 14
+          next: 354
+        - duration: 5
+          sprite: 35
+          frame: 13
+          next: 355
+        - duration: 5
+          sprite: 35
+          frame: 12
+          next: 356
+        - duration: 5
+          sprite: 35
+          frame: 11
+          next: 323
+        - duration: 4
+          sprite: 36
+          frame: 0
+          next: 358
+          is_lit: 1
+        - duration: 4
+          sprite: 36
+          frame: 1
+          next: 357
+          is_lit: 1
+        - duration: 8
+          sprite: 22
+          frame: 1
+          next: 360
+          is_lit: 1
+        - duration: 6
+          sprite: 22
+          frame: 2
+          next: 361
+          is_lit: 1
+        - duration: 4
+          sprite: 22
+          frame: 3
+          is_lit: 1
+        - action: Look
+          duration: 15
+          sprite: 37
+          next: 363
+        - action: Look
+          duration: 15
+          sprite: 37
+          frame: 1
+          next: 362
+        - action: Chase
+          duration: 4
+          sprite: 37
+          next: 365
+        - action: Chase
+          duration: 4
+          sprite: 37
+          next: 366
+        - action: Chase
+          duration: 4
+          sprite: 37
+          frame: 1
+          next: 367
+        - action: Chase
+          duration: 4
+          sprite: 37
+          frame: 1
+          next: 368
+        - action: Chase
+          duration: 4
+          sprite: 37
+          frame: 2
+          next: 369
+        - action: Chase
+          duration: 4
+          sprite: 37
+          frame: 2
+          next: 370
+        - action: Chase
+          duration: 4
+          sprite: 37
+          frame: 3
+          next: 371
+        - action: Chase
+          duration: 4
+          sprite: 37
+          frame: 3
+          next: 372
+        - action: Chase
+          duration: 4
+          sprite: 37
+          frame: 4
+          next: 373
+        - action: Chase
+          duration: 4
+          sprite: 37
+          frame: 4
+          next: 374
+        - action: Chase
+          duration: 4
+          sprite: 37
+          frame: 5
+          next: 375
+        - action: Chase
+          duration: 4
+          sprite: 37
+          frame: 5
+          next: 364
+        - action: FatRaise
+          duration: 20
+          sprite: 37
+          frame: 6
+          next: 377
+        - action: FatAttack1
+          duration: 10
+          sprite: 37
+          frame: 7
+          next: 378
+          is_lit: 1
+        - action: FaceTarget
+          duration: 5
+          sprite: 37
+          frame: 8
+          next: 379
+        - action: FaceTarget
+          duration: 5
+          sprite: 37
+          frame: 6
+          next: 380
+        - action: FatAttack2
+          duration: 10
+          sprite: 37
+          frame: 7
+          next: 381
+          is_lit: 1
+        - action: FaceTarget
+          duration: 5
+          sprite: 37
+          frame: 8
+          next: 382
+        - action: FaceTarget
+          duration: 5
+          sprite: 37
+          frame: 6
+          next: 383
+        - action: FatAttack3
+          duration: 10
+          sprite: 37
+          frame: 7
+          next: 384
+          is_lit: 1
+        - action: FaceTarget
+          duration: 5
+          sprite: 37
+          frame: 8
+          next: 385
+        - action: FaceTarget
+          duration: 5
+          sprite: 37
+          frame: 6
+          next: 364
+        - duration: 3
+          sprite: 37
+          frame: 9
+          next: 387
+        - action: Pain
+          duration: 3
+          sprite: 37
+          frame: 9
+          next: 364
+        - duration: 6
+          sprite: 37
+          frame: 10
+          next: 389
+        - action: Scream
+          duration: 6
+          sprite: 37
+          frame: 11
+          next: 390
+        - action: Fall
+          duration: 6
+          sprite: 37
+          frame: 12
+          next: 391
+        - duration: 6
+          sprite: 37
+          frame: 13
+          next: 392
+        - duration: 6
+          sprite: 37
+          frame: 14
+          next: 393
+        - duration: 6
+          sprite: 37
+          frame: 15
+          next: 394
+        - duration: 6
+          sprite: 37
+          frame: 16
+          next: 395
+        - duration: 6
+          sprite: 37
+          frame: 17
+          next: 396
+        - duration: 6
+          sprite: 37
+          frame: 18
+          next: 397
+        - action: BossDeath
+          sprite: 37
+          frame: 19
+        - duration: 5
+          sprite: 37
+          frame: 17
+          next: 399
+        - duration: 5
+          sprite: 37
+          frame: 16
+          next: 400
+        - duration: 5
+          sprite: 37
+          frame: 15
+          next: 401
+        - duration: 5
+          sprite: 37
+          frame: 14
+          next: 402
+        - duration: 5
+          sprite: 37
+          frame: 13
+          next: 403
+        - duration: 5
+          sprite: 37
+          frame: 12
+          next: 404
+        - duration: 5
+          sprite: 37
+          frame: 11
+          next: 405
+        - duration: 5
+          sprite: 37
+          frame: 10
+          next: 364
+        - action: Look
+          duration: 10
+          sprite: 38
+          next: 407
+        - action: Look
+          duration: 10
+          sprite: 38
+          frame: 1
+          next: 406
+        - action: Chase
+          duration: 3
+          sprite: 38
+          next: 409
+        - action: Chase
+          duration: 3
+          sprite: 38
+          next: 410
+        - action: Chase
+          duration: 3
+          sprite: 38
+          frame: 1
+          next: 411
+        - action: Chase
+          duration: 3
+          sprite: 38
+          frame: 1
+          next: 412
+        - action: Chase
+          duration: 3
+          sprite: 38
+          frame: 2
+          next: 413
+        - action: Chase
+          duration: 3
+          sprite: 38
+          frame: 2
+          next: 414
+        - action: Chase
+          duration: 3
+          sprite: 38
+          frame: 3
+          next: 415
+        - action: Chase
+          duration: 3
+          sprite: 38
+          frame: 3
+          next: 408
+        - action: FaceTarget
+          duration: 10
+          sprite: 38
+          frame: 4
+          next: 417
+        - action: CPosAttack
+          duration: 4
+          sprite: 38
+          frame: 5
+          next: 418
+          is_lit: 1
+        - action: CPosAttack
+          duration: 4
+          sprite: 38
+          frame: 4
+          next: 419
+          is_lit: 1
+        - action: CPosRefire
+          duration: 1
+          sprite: 38
+          frame: 5
+          next: 417
+        - duration: 3
+          sprite: 38
+          frame: 6
+          next: 421
+        - action: Pain
+          duration: 3
+          sprite: 38
+          frame: 6
+          next: 408
+        - duration: 5
+          sprite: 38
+          frame: 7
+          next: 423
+        - action: Scream
+          duration: 5
+          sprite: 38
+          frame: 8
+          next: 424
+        - action: Fall
+          duration: 5
+          sprite: 38
+          frame: 9
+          next: 425
+        - duration: 5
+          sprite: 38
+          frame: 10
+          next: 426
+        - duration: 5
+          sprite: 38
+          frame: 11
+          next: 427
+        - duration: 5
+          sprite: 38
+          frame: 12
+          next: 428
+        - sprite: 38
+          frame: 13
+        - duration: 5
+          sprite: 38
+          frame: 14
+          next: 430
+        - action: XScream
+          duration: 5
+          sprite: 38
+          frame: 15
+          next: 431
+        - action: Fall
+          duration: 5
+          sprite: 38
+          frame: 16
+          next: 432
+        - duration: 5
+          sprite: 38
+          frame: 17
+          next: 433
+        - duration: 5
+          sprite: 38
+          frame: 18
+          next: 434
+        - sprite: 38
+          frame: 19
+        - duration: 5
+          sprite: 38
+          frame: 13
+          next: 436
+        - duration: 5
+          sprite: 38
+          frame: 12
+          next: 437
+        - duration: 5
+          sprite: 38
+          frame: 11
+          next: 438
+        - duration: 5
+          sprite: 38
+          frame: 10
+          next: 439
+        - duration: 5
+          sprite: 38
+          frame: 9
+          next: 440
+        - duration: 5
+          sprite: 38
+          frame: 8
+          next: 441
+        - duration: 5
+          sprite: 38
+          frame: 7
+          next: 408
+        - action: Look
+          duration: 10
+          next: 443
+        - action: Look
+          duration: 10
+          frame: 1
+          next: 442
+        - action: Chase
+          duration: 3
+          next: 445
+        - action: Chase
+          duration: 3
+          next: 446
+        - action: Chase
+          duration: 3
+          frame: 1
+          next: 447
+        - action: Chase
+          duration: 3
+          frame: 1
+          next: 448
+        - action: Chase
+          duration: 3
+          frame: 2
+          next: 449
+        - action: Chase
+          duration: 3
+          frame: 2
+          next: 450
+        - action: Chase
+          duration: 3
+          frame: 3
+          next: 451
+        - action: Chase
+          duration: 3
+          frame: 3
+          next: 444
+        - action: FaceTarget
+          duration: 8
+          frame: 4
+          next: 453
+        - action: FaceTarget
+          duration: 8
+          frame: 5
+          next: 454
+        - action: TroopAttack
+          duration: 6
+          frame: 6
+          next: 444
+        - duration: 2
+          frame: 7
+          next: 456
+        - action: Pain
+          duration: 2
+          frame: 7
+          next: 444
+        - duration: 8
+          frame: 8
+          next: 458
+        - action: Scream
+          duration: 8
+          frame: 9
+          next: 459
+        - duration: 6
+          frame: 10
+          next: 460
+        - action: Fall
+          duration: 6
+          frame: 11
+          next: 461
+        - frame: 12
+        - duration: 5
+          frame: 13
+          next: 463
+        - action: XScream
+          duration: 5
+          frame: 14
+          next: 464
+        - duration: 5
+          frame: 15
+          next: 465
+        - action: Fall
+          duration: 5
+          frame: 16
+          next: 466
+        - duration: 5
+          frame: 17
+          next: 467
+        - duration: 5
+          frame: 18
+          next: 468
+        - duration: 5
+          frame: 19
+          next: 469
+        - frame: 20
+        - duration: 8
+          frame: 12
+          next: 471
+        - duration: 8
+          frame: 11
+          next: 472
+        - duration: 6
+          frame: 10
+          next: 473
+        - duration: 6
+          frame: 9
+          next: 474
+        - duration: 6
+          frame: 8
+          next: 444
+        - action: Look
+          duration: 10
+          sprite: 39
+          next: 476
+        - action: Look
+          duration: 10
+          sprite: 39
+          frame: 1
+          next: 475
+        - action: Chase
+          duration: 2
+          sprite: 39
+          next: 478
+        - action: Chase
+          duration: 2
+          sprite: 39
+          next: 479
+        - action: Chase
+          duration: 2
+          sprite: 39
+          frame: 1
+          next: 480
+        - action: Chase
+          duration: 2
+          sprite: 39
+          frame: 1
+          next: 481
+        - action: Chase
+          duration: 2
+          sprite: 39
+          frame: 2
+          next: 482
+        - action: Chase
+          duration: 2
+          sprite: 39
+          frame: 2
+          next: 483
+        - action: Chase
+          duration: 2
+          sprite: 39
+          frame: 3
+          next: 484
+        - action: Chase
+          duration: 2
+          sprite: 39
+          frame: 3
+          next: 477
+        - action: FaceTarget
+          duration: 8
+          sprite: 39
+          frame: 4
+          next: 486
+        - action: FaceTarget
+          duration: 8
+          sprite: 39
+          frame: 5
+          next: 487
+        - action: SargAttack
+          duration: 8
+          sprite: 39
+          frame: 6
+          next: 477
+        - duration: 2
+          sprite: 39
+          frame: 7
+          next: 489
+        - action: Pain
+          duration: 2
+          sprite: 39
+          frame: 7
+          next: 477
+        - duration: 8
+          sprite: 39
+          frame: 8
+          next: 491
+        - action: Scream
+          duration: 8
+          sprite: 39
+          frame: 9
+          next: 492
+        - duration: 4
+          sprite: 39
+          frame: 10
+          next: 493
+        - action: Fall
+          duration: 4
+          sprite: 39
+          frame: 11
+          next: 494
+        - duration: 4
+          sprite: 39
+          frame: 12
+          next: 495
+        - sprite: 39
+          frame: 13
+        - duration: 5
+          sprite: 39
+          frame: 13
+          next: 497
+        - duration: 5
+          sprite: 39
+          frame: 12
+          next: 498
+        - duration: 5
+          sprite: 39
+          frame: 11
+          next: 499
+        - duration: 5
+          sprite: 39
+          frame: 10
+          next: 500
+        - duration: 5
+          sprite: 39
+          frame: 9
+          next: 501
+        - duration: 5
+          sprite: 39
+          frame: 8
+          next: 477
+        - action: Look
+          duration: 10
+          sprite: 40
+          next: 502
+        - action: Chase
+          duration: 3
+          sprite: 40
+          next: 503
+        - action: FaceTarget
+          duration: 5
+          sprite: 40
+          frame: 1
+          next: 505
+        - action: FaceTarget
+          duration: 5
+          sprite: 40
+          frame: 2
+          next: 506
+        - action: HeadAttack
+          duration: 5
+          sprite: 40
+          frame: 3
+          next: 503
+          is_lit: 1
+        - duration: 3
+          sprite: 40
+          frame: 4
+          next: 508
+        - action: Pain
+          duration: 3
+          sprite: 40
+          frame: 4
+          next: 509
+        - duration: 6
+          sprite: 40
+          frame: 5
+          next: 503
+        - duration: 8
+          sprite: 40
+          frame: 6
+          next: 511
+        - action: Scream
+          duration: 8
+          sprite: 40
+          frame: 7
+          next: 512
+        - duration: 8
+          sprite: 40
+          frame: 8
+          next: 513
+        - duration: 8
+          sprite: 40
+          frame: 9
+          next: 514
+        - action: Fall
+          duration: 8
+          sprite: 40
+          frame: 10
+          next: 515
+        - sprite: 40
+          frame: 11
+        - duration: 8
+          sprite: 40
+          frame: 11
+          next: 517
+        - duration: 8
+          sprite: 40
+          frame: 10
+          next: 518
+        - duration: 8
+          sprite: 40
+          frame: 9
+          next: 519
+        - duration: 8
+          sprite: 40
+          frame: 8
+          next: 520
+        - duration: 8
+          sprite: 40
+          frame: 7
+          next: 521
+        - duration: 8
+          sprite: 40
+          frame: 6
+          next: 503
+        - duration: 4
+          sprite: 41
+          frame: 0
+          next: 523
+          is_lit: 1
+        - duration: 4
+          sprite: 41
+          frame: 1
+          next: 522
+          is_lit: 1
+        - duration: 6
+          sprite: 41
+          frame: 2
+          next: 525
+          is_lit: 1
+        - duration: 6
+          sprite: 41
+          frame: 3
+          next: 526
+          is_lit: 1
+        - duration: 6
+          sprite: 41
+          frame: 4
+          is_lit: 1
+        - action: Look
+          duration: 10
+          sprite: 42
+          next: 528
+        - action: Look
+          duration: 10
+          sprite: 42
+          frame: 1
+          next: 527
+        - action: Chase
+          duration: 3
+          sprite: 42
+          next: 530
+        - action: Chase
+          duration: 3
+          sprite: 42
+          next: 531
+        - action: Chase
+          duration: 3
+          sprite: 42
+          frame: 1
+          next: 532
+        - action: Chase
+          duration: 3
+          sprite: 42
+          frame: 1
+          next: 533
+        - action: Chase
+          duration: 3
+          sprite: 42
+          frame: 2
+          next: 534
+        - action: Chase
+          duration: 3
+          sprite: 42
+          frame: 2
+          next: 535
+        - action: Chase
+          duration: 3
+          sprite: 42
+          frame: 3
+          next: 536
+        - action: Chase
+          duration: 3
+          sprite: 42
+          frame: 3
+          next: 529
+        - action: FaceTarget
+          duration: 8
+          sprite: 42
+          frame: 4
+          next: 538
+        - action: FaceTarget
+          duration: 8
+          sprite: 42
+          frame: 5
+          next: 539
+        - action: BruisAttack
+          duration: 8
+          sprite: 42
+          frame: 6
+          next: 529
+        - duration: 2
+          sprite: 42
+          frame: 7
+          next: 541
+        - action: Pain
+          duration: 2
+          sprite: 42
+          frame: 7
+          next: 529
+        - duration: 8
+          sprite: 42
+          frame: 8
+          next: 543
+        - action: Scream
+          duration: 8
+          sprite: 42
+          frame: 9
+          next: 544
+        - duration: 8
+          sprite: 42
+          frame: 10
+          next: 545
+        - action: Fall
+          duration: 8
+          sprite: 42
+          frame: 11
+          next: 546
+        - duration: 8
+          sprite: 42
+          frame: 12
+          next: 547
+        - duration: 8
+          sprite: 42
+          frame: 13
+          next: 548
+        - action: BossDeath
+          sprite: 42
+          frame: 14
+        - duration: 8
+          sprite: 42
+          frame: 14
+          next: 550
+        - duration: 8
+          sprite: 42
+          frame: 13
+          next: 551
+        - duration: 8
+          sprite: 42
+          frame: 12
+          next: 552
+        - duration: 8
+          sprite: 42
+          frame: 11
+          next: 553
+        - duration: 8
+          sprite: 42
+          frame: 10
+          next: 554
+        - duration: 8
+          sprite: 42
+          frame: 9
+          next: 555
+        - duration: 8
+          sprite: 42
+          frame: 8
+          next: 529
+        - action: Look
+          duration: 10
+          sprite: 43
+          next: 557
+        - action: Look
+          duration: 10
+          sprite: 43
+          frame: 1
+          next: 556
+        - action: Chase
+          duration: 3
+          sprite: 43
+          next: 559
+        - action: Chase
+          duration: 3
+          sprite: 43
+          next: 560
+        - action: Chase
+          duration: 3
+          sprite: 43
+          frame: 1
+          next: 561
+        - action: Chase
+          duration: 3
+          sprite: 43
+          frame: 1
+          next: 562
+        - action: Chase
+          duration: 3
+          sprite: 43
+          frame: 2
+          next: 563
+        - action: Chase
+          duration: 3
+          sprite: 43
+          frame: 2
+          next: 564
+        - action: Chase
+          duration: 3
+          sprite: 43
+          frame: 3
+          next: 565
+        - action: Chase
+          duration: 3
+          sprite: 43
+          frame: 3
+          next: 558
+        - action: FaceTarget
+          duration: 8
+          sprite: 43
+          frame: 4
+          next: 567
+        - action: FaceTarget
+          duration: 8
+          sprite: 43
+          frame: 5
+          next: 568
+        - action: BruisAttack
+          duration: 8
+          sprite: 43
+          frame: 6
+          next: 558
+        - duration: 2
+          sprite: 43
+          frame: 7
+          next: 570
+        - action: Pain
+          duration: 2
+          sprite: 43
+          frame: 7
+          next: 558
+        - duration: 8
+          sprite: 43
+          frame: 8
+          next: 572
+        - action: Scream
+          duration: 8
+          sprite: 43
+          frame: 9
+          next: 573
+        - duration: 8
+          sprite: 43
+          frame: 10
+          next: 574
+        - action: Fall
+          duration: 8
+          sprite: 43
+          frame: 11
+          next: 575
+        - duration: 8
+          sprite: 43
+          frame: 12
+          next: 576
+        - duration: 8
+          sprite: 43
+          frame: 13
+          next: 577
+        - sprite: 43
+          frame: 14
+        - duration: 8
+          sprite: 43
+          frame: 14
+          next: 579
+        - duration: 8
+          sprite: 43
+          frame: 13
+          next: 580
+        - duration: 8
+          sprite: 43
+          frame: 12
+          next: 581
+        - duration: 8
+          sprite: 43
+          frame: 11
+          next: 582
+        - duration: 8
+          sprite: 43
+          frame: 10
+          next: 583
+        - duration: 8
+          sprite: 43
+          frame: 9
+          next: 584
+        - duration: 8
+          sprite: 43
+          frame: 8
+          next: 558
+        - action: Look
+          duration: 10
+          sprite: 44
+          frame: 0
+          next: 586
+          is_lit: 1
+        - action: Look
+          duration: 10
+          sprite: 44
+          frame: 1
+          next: 585
+          is_lit: 1
+        - action: Chase
+          duration: 6
+          sprite: 44
+          frame: 0
+          next: 588
+          is_lit: 1
+        - action: Chase
+          duration: 6
+          sprite: 44
+          frame: 1
+          next: 587
+          is_lit: 1
+        - action: FaceTarget
+          duration: 10
+          sprite: 44
+          frame: 2
+          next: 590
+          is_lit: 1
+        - action: SkullAttack
+          duration: 4
+          sprite: 44
+          frame: 3
+          next: 591
+          is_lit: 1
+        - duration: 4
+          sprite: 44
+          frame: 2
+          next: 592
+          is_lit: 1
+        - duration: 4
+          sprite: 44
+          frame: 3
+          next: 591
+          is_lit: 1
+        - duration: 3
+          sprite: 44
+          frame: 4
+          next: 594
+          is_lit: 1
+        - action: Pain
+          duration: 3
+          sprite: 44
+          frame: 4
+          next: 587
+          is_lit: 1
+        - duration: 6
+          sprite: 44
+          frame: 5
+          next: 596
+          is_lit: 1
+        - action: Scream
+          duration: 6
+          sprite: 44
+          frame: 6
+          next: 597
+          is_lit: 1
+        - duration: 6
+          sprite: 44
+          frame: 7
+          next: 598
+          is_lit: 1
+        - action: Fall
+          duration: 6
+          sprite: 44
+          frame: 8
+          next: 599
+          is_lit: 1
+        - duration: 6
+          sprite: 44
+          frame: 9
+          next: 600
+        - duration: 6
+          sprite: 44
+          frame: 10
+        - action: Look
+          duration: 10
+          sprite: 45
+          next: 602
+        - action: Look
+          duration: 10
+          sprite: 45
+          frame: 1
+          next: 601
+        - action: Metal
+          duration: 3
+          sprite: 45
+          next: 604
+        - action: Chase
+          duration: 3
+          sprite: 45
+          next: 605
+        - action: Chase
+          duration: 3
+          sprite: 45
+          frame: 1
+          next: 606
+        - action: Chase
+          duration: 3
+          sprite: 45
+          frame: 1
+          next: 607
+        - action: Metal
+          duration: 3
+          sprite: 45
+          frame: 2
+          next: 608
+        - action: Chase
+          duration: 3
+          sprite: 45
+          frame: 2
+          next: 609
+        - action: Chase
+          duration: 3
+          sprite: 45
+          frame: 3
+          next: 610
+        - action: Chase
+          duration: 3
+          sprite: 45
+          frame: 3
+          next: 611
+        - action: Metal
+          duration: 3
+          sprite: 45
+          frame: 4
+          next: 612
+        - action: Chase
+          duration: 3
+          sprite: 45
+          frame: 4
+          next: 613
+        - action: Chase
+          duration: 3
+          sprite: 45
+          frame: 5
+          next: 614
+        - action: Chase
+          duration: 3
+          sprite: 45
+          frame: 5
+          next: 603
+        - action: FaceTarget
+          duration: 20
+          sprite: 45
+          frame: 0
+          next: 616
+          is_lit: 1
+        - action: SPosAttack
+          duration: 4
+          sprite: 45
+          frame: 6
+          next: 617
+          is_lit: 1
+        - action: SPosAttack
+          duration: 4
+          sprite: 45
+          frame: 7
+          next: 618
+          is_lit: 1
+        - action: SpidRefire
+          duration: 1
+          sprite: 45
+          frame: 7
+          next: 616
+          is_lit: 1
+        - duration: 3
+          sprite: 45
+          frame: 8
+          next: 620
+        - action: Pain
+          duration: 3
+          sprite: 45
+          frame: 8
+          next: 603
+        - action: Scream
+          duration: 20
+          sprite: 45
+          frame: 9
+          next: 622
+        - action: Fall
+          duration: 10
+          sprite: 45
+          frame: 10
+          next: 623
+        - duration: 10
+          sprite: 45
+          frame: 11
+          next: 624
+        - duration: 10
+          sprite: 45
+          frame: 12
+          next: 625
+        - duration: 10
+          sprite: 45
+          frame: 13
+          next: 626
+        - duration: 10
+          sprite: 45
+          frame: 14
+          next: 627
+        - duration: 10
+          sprite: 45
+          frame: 15
+          next: 628
+        - duration: 10
+          sprite: 45
+          frame: 16
+          next: 629
+        - duration: 10
+          sprite: 45
+          frame: 17
+          next: 630
+        - duration: 30
+          sprite: 45
+          frame: 18
+          next: 631
+        - action: BossDeath
+          sprite: 45
+          frame: 18
+        - action: Look
+          duration: 10
+          sprite: 46
+          next: 633
+        - action: Look
+          duration: 10
+          sprite: 46
+          frame: 1
+          next: 632
+        - duration: 20
+          sprite: 46
+          next: 635
+        - action: BabyMetal
+          duration: 3
+          sprite: 46
+          next: 636
+        - action: Chase
+          duration: 3
+          sprite: 46
+          next: 637
+        - action: Chase
+          duration: 3
+          sprite: 46
+          frame: 1
+          next: 638
+        - action: Chase
+          duration: 3
+          sprite: 46
+          frame: 1
+          next: 639
+        - action: Chase
+          duration: 3
+          sprite: 46
+          frame: 2
+          next: 640
+        - action: Chase
+          duration: 3
+          sprite: 46
+          frame: 2
+          next: 641
+        - action: BabyMetal
+          duration: 3
+          sprite: 46
+          frame: 3
+          next: 642
+        - action: Chase
+          duration: 3
+          sprite: 46
+          frame: 3
+          next: 643
+        - action: Chase
+          duration: 3
+          sprite: 46
+          frame: 4
+          next: 644
+        - action: Chase
+          duration: 3
+          sprite: 46
+          frame: 4
+          next: 645
+        - action: Chase
+          duration: 3
+          sprite: 46
+          frame: 5
+          next: 646
+        - action: Chase
+          duration: 3
+          sprite: 46
+          frame: 5
+          next: 635
+        - action: FaceTarget
+          duration: 20
+          sprite: 46
+          frame: 0
+          next: 648
+          is_lit: 1
+        - action: BspiAttack
+          duration: 4
+          sprite: 46
+          frame: 6
+          next: 649
+          is_lit: 1
+        - duration: 4
+          sprite: 46
+          frame: 7
+          next: 650
+          is_lit: 1
+        - action: SpidRefire
+          duration: 1
+          sprite: 46
+          frame: 7
+          next: 648
+          is_lit: 1
+        - duration: 3
+          sprite: 46
+          frame: 8
+          next: 652
+        - action: Pain
+          duration: 3
+          sprite: 46
+          frame: 8
+          next: 635
+        - action: Scream
+          duration: 20
+          sprite: 46
+          frame: 9
+          next: 654
+        - action: Fall
+          duration: 7
+          sprite: 46
+          frame: 10
+          next: 655
+        - duration: 7
+          sprite: 46
+          frame: 11
+          next: 656
+        - duration: 7
+          sprite: 46
+          frame: 12
+          next: 657
+        - duration: 7
+          sprite: 46
+          frame: 13
+          next: 658
+        - duration: 7
+          sprite: 46
+          frame: 14
+          next: 659
+        - action: BossDeath
+          sprite: 46
+          frame: 15
+        - duration: 5
+          sprite: 46
+          frame: 15
+          next: 661
+        - duration: 5
+          sprite: 46
+          frame: 14
+          next: 662
+        - duration: 5
+          sprite: 46
+          frame: 13
+          next: 663
+        - duration: 5
+          sprite: 46
+          frame: 12
+          next: 664
+        - duration: 5
+          sprite: 46
+          frame: 11
+          next: 665
+        - duration: 5
+          sprite: 46
+          frame: 10
+          next: 666
+        - duration: 5
+          sprite: 46
+          frame: 9
+          next: 635
+        - duration: 5
+          sprite: 47
+          frame: 0
+          next: 668
+          is_lit: 1
+        - duration: 5
+          sprite: 47
+          frame: 1
+          next: 667
+          is_lit: 1
+        - duration: 5
+          sprite: 48
+          frame: 0
+          next: 670
+          is_lit: 1
+        - duration: 5
+          sprite: 48
+          frame: 1
+          next: 671
+          is_lit: 1
+        - duration: 5
+          sprite: 48
+          frame: 2
+          next: 672
+          is_lit: 1
+        - duration: 5
+          sprite: 48
+          frame: 3
+          next: 673
+          is_lit: 1
+        - duration: 5
+          sprite: 48
+          frame: 4
+          is_lit: 1
+        - action: Look
+          duration: 10
+          sprite: 49
+          next: 675
+        - action: Look
+          duration: 10
+          sprite: 49
+          frame: 1
+          next: 674
+        - action: Hoof
+          duration: 3
+          sprite: 49
+          next: 677
+        - action: Chase
+          duration: 3
+          sprite: 49
+          next: 678
+        - action: Chase
+          duration: 3
+          sprite: 49
+          frame: 1
+          next: 679
+        - action: Chase
+          duration: 3
+          sprite: 49
+          frame: 1
+          next: 680
+        - action: Chase
+          duration: 3
+          sprite: 49
+          frame: 2
+          next: 681
+        - action: Chase
+          duration: 3
+          sprite: 49
+          frame: 2
+          next: 682
+        - action: Metal
+          duration: 3
+          sprite: 49
+          frame: 3
+          next: 683
+        - action: Chase
+          duration: 3
+          sprite: 49
+          frame: 3
+          next: 676
+        - action: FaceTarget
+          duration: 6
+          sprite: 49
+          frame: 4
+          next: 685
+        - action: CyberAttack
+          duration: 12
+          sprite: 49
+          frame: 5
+          next: 686
+        - action: FaceTarget
+          duration: 12
+          sprite: 49
+          frame: 4
+          next: 687
+        - action: CyberAttack
+          duration: 12
+          sprite: 49
+          frame: 5
+          next: 688
+        - action: FaceTarget
+          duration: 12
+          sprite: 49
+          frame: 4
+          next: 689
+        - action: CyberAttack
+          duration: 12
+          sprite: 49
+          frame: 5
+          next: 676
+        - action: Pain
+          duration: 10
+          sprite: 49
+          frame: 6
+          next: 676
+        - duration: 10
+          sprite: 49
+          frame: 7
+          next: 692
+        - action: Scream
+          duration: 10
+          sprite: 49
+          frame: 8
+          next: 693
+        - duration: 10
+          sprite: 49
+          frame: 9
+          next: 694
+        - duration: 10
+          sprite: 49
+          frame: 10
+          next: 695
+        - duration: 10
+          sprite: 49
+          frame: 11
+          next: 696
+        - action: Fall
+          duration: 10
+          sprite: 49
+          frame: 12
+          next: 697
+        - duration: 10
+          sprite: 49
+          frame: 13
+          next: 698
+        - duration: 10
+          sprite: 49
+          frame: 14
+          next: 699
+        - duration: 30
+          sprite: 49
+          frame: 15
+          next: 700
+        - action: BossDeath
+          sprite: 49
+          frame: 15
+        - action: Look
+          duration: 10
+          sprite: 50
+          next: 701
+        - action: Chase
+          duration: 3
+          sprite: 50
+          next: 703
+        - action: Chase
+          duration: 3
+          sprite: 50
+          next: 704
+        - action: Chase
+          duration: 3
+          sprite: 50
+          frame: 1
+          next: 705
+        - action: Chase
+          duration: 3
+          sprite: 50
+          frame: 1
+          next: 706
+        - action: Chase
+          duration: 3
+          sprite: 50
+          frame: 2
+          next: 707
+        - action: Chase
+          duration: 3
+          sprite: 50
+          frame: 2
+          next: 702
+        - action: FaceTarget
+          duration: 5
+          sprite: 50
+          frame: 3
+          next: 709
+        - action: FaceTarget
+          duration: 5
+          sprite: 50
+          frame: 4
+          next: 710
+        - action: FaceTarget
+          duration: 5
+          sprite: 50
+          frame: 5
+          next: 711
+          is_lit: 1
+        - action: PainAttack
+          duration: 0
+          sprite: 50
+          frame: 5
+          next: 702
+          is_lit: 1
+        - duration: 6
+          sprite: 50
+          frame: 6
+          next: 713
+        - action: Pain
+          duration: 6
+          sprite: 50
+          frame: 6
+          next: 702
+        - duration: 8
+          sprite: 50
+          frame: 7
+          next: 715
+          is_lit: 1
+        - action: Scream
+          duration: 8
+          sprite: 50
+          frame: 8
+          next: 716
+          is_lit: 1
+        - duration: 8
+          sprite: 50
+          frame: 9
+          next: 717
+          is_lit: 1
+        - duration: 8
+          sprite: 50
+          frame: 10
+          next: 718
+          is_lit: 1
+        - action: PainDie
+          duration: 8
+          sprite: 50
+          frame: 11
+          next: 719
+          is_lit: 1
+        - duration: 8
+          sprite: 50
+          frame: 12
+          is_lit: 1
+        - duration: 8
+          sprite: 50
+          frame: 12
+          next: 721
+        - duration: 8
+          sprite: 50
+          frame: 11
+          next: 722
+        - duration: 8
+          sprite: 50
+          frame: 10
+          next: 723
+        - duration: 8
+          sprite: 50
+          frame: 9
+          next: 724
+        - duration: 8
+          sprite: 50
+          frame: 8
+          next: 725
+        - duration: 8
+          sprite: 50
+          frame: 7
+          next: 702
+        - action: Look
+          duration: 10
+          sprite: 51
+          next: 727
+        - action: Look
+          duration: 10
+          sprite: 51
+          frame: 1
+          next: 726
+        - action: Chase
+          duration: 3
+          sprite: 51
+          next: 729
+        - action: Chase
+          duration: 3
+          sprite: 51
+          next: 730
+        - action: Chase
+          duration: 3
+          sprite: 51
+          frame: 1
+          next: 731
+        - action: Chase
+          duration: 3
+          sprite: 51
+          frame: 1
+          next: 732
+        - action: Chase
+          duration: 3
+          sprite: 51
+          frame: 2
+          next: 733
+        - action: Chase
+          duration: 3
+          sprite: 51
+          frame: 2
+          next: 734
+        - action: Chase
+          duration: 3
+          sprite: 51
+          frame: 3
+          next: 735
+        - action: Chase
+          duration: 3
+          sprite: 51
+          frame: 3
+          next: 728
+        - action: FaceTarget
+          duration: 10
+          sprite: 51
+          frame: 4
+          next: 737
+        - action: FaceTarget
+          duration: 10
+          sprite: 51
+          frame: 5
+          next: 738
+        - action: CPosAttack
+          duration: 4
+          sprite: 51
+          frame: 6
+          next: 739
+          is_lit: 1
+        - action: FaceTarget
+          duration: 6
+          sprite: 51
+          frame: 5
+          next: 740
+        - action: CPosAttack
+          duration: 4
+          sprite: 51
+          frame: 6
+          next: 741
+          is_lit: 1
+        - action: CPosRefire
+          duration: 1
+          sprite: 51
+          frame: 5
+          next: 737
+        - duration: 3
+          sprite: 51
+          frame: 7
+          next: 743
+        - action: Pain
+          duration: 3
+          sprite: 51
+          frame: 7
+          next: 728
+        - duration: 5
+          sprite: 51
+          frame: 8
+          next: 745
+        - action: Scream
+          duration: 5
+          sprite: 51
+          frame: 9
+          next: 746
+        - action: Fall
+          duration: 5
+          sprite: 51
+          frame: 10
+          next: 747
+        - duration: 5
+          sprite: 51
+          frame: 11
+          next: 748
+        - sprite: 51
+          frame: 12
+        - duration: 5
+          sprite: 51
+          frame: 13
+          next: 750
+        - action: XScream
+          duration: 5
+          sprite: 51
+          frame: 14
+          next: 751
+        - action: Fall
+          duration: 5
+          sprite: 51
+          frame: 15
+          next: 752
+        - duration: 5
+          sprite: 51
+          frame: 16
+          next: 753
+        - duration: 5
+          sprite: 51
+          frame: 17
+          next: 754
+        - duration: 5
+          sprite: 51
+          frame: 18
+          next: 755
+        - duration: 5
+          sprite: 51
+          frame: 19
+          next: 756
+        - duration: 5
+          sprite: 51
+          frame: 20
+          next: 757
+        - sprite: 51
+          frame: 21
+        - duration: 5
+          sprite: 51
+          frame: 12
+          next: 759
+        - duration: 5
+          sprite: 51
+          frame: 11
+          next: 760
+        - duration: 5
+          sprite: 51
+          frame: 10
+          next: 761
+        - duration: 5
+          sprite: 51
+          frame: 9
+          next: 762
+        - duration: 5
+          sprite: 51
+          frame: 8
+          next: 728
+        - sprite: 52
+          next: 763
+        - duration: 6
+          sprite: 52
+          next: 765
+        - duration: 6
+          sprite: 52
+          frame: 1
+          next: 766
+        - action: Scream
+          duration: 6
+          sprite: 52
+          frame: 2
+          next: 767
+        - duration: 6
+          sprite: 52
+          frame: 3
+          next: 768
+        - duration: 6
+          sprite: 52
+          frame: 4
+          next: 769
+        - duration: 6
+          sprite: 52
+          frame: 5
+          next: 770
+        - duration: 6
+          sprite: 52
+          frame: 6
+          next: 771
+        - duration: 6
+          sprite: 52
+          frame: 7
+          next: 772
+        - duration: 6
+          sprite: 52
+          frame: 8
+          next: 773
+        - duration: 6
+          sprite: 52
+          frame: 9
+          next: 774
+        - action: KeenDie
+          duration: 6
+          sprite: 52
+          frame: 10
+          next: 775
+        - sprite: 52
+          frame: 11
+        - duration: 4
+          sprite: 52
+          frame: 12
+          next: 777
+        - action: Pain
+          duration: 8
+          sprite: 52
+          frame: 12
+          next: 763
+        - sprite: 53
+        - action: BrainPain
+          duration: 36
+          sprite: 53
+          frame: 1
+          next: 778
+        - action: BrainScream
+          duration: 100
+          sprite: 53
+          next: 781
+        - duration: 10
+          sprite: 53
+          next: 782
+        - duration: 10
+          sprite: 53
+          next: 783
+        - action: BrainDie
+          sprite: 53
+        - action: Look
+          duration: 10
+          sprite: 51
+          next: 784
+        - action: BrainAwake
+          duration: 181
+          sprite: 51
+          next: 786
+        - action: BrainSpit
+          duration: 150
+          sprite: 51
+          next: 786
+        - action: SpawnSound
+          duration: 3
+          sprite: 54
+          frame: 0
+          next: 788
+          is_lit: 1
+        - action: SpawnFly
+          duration: 3
+          sprite: 54
+          frame: 1
+          next: 789
+          is_lit: 1
+        - action: SpawnFly
+          duration: 3
+          sprite: 54
+          frame: 2
+          next: 790
+          is_lit: 1
+        - action: SpawnFly
+          duration: 3
+          sprite: 54
+          frame: 3
+          next: 787
+          is_lit: 1
+        - action: Fire
+          duration: 4
+          sprite: 32
+          frame: 0
+          next: 792
+          is_lit: 1
+        - action: Fire
+          duration: 4
+          sprite: 32
+          frame: 1
+          next: 793
+          is_lit: 1
+        - action: Fire
+          duration: 4
+          sprite: 32
+          frame: 2
+          next: 794
+          is_lit: 1
+        - action: Fire
+          duration: 4
+          sprite: 32
+          frame: 3
+          next: 795
+          is_lit: 1
+        - action: Fire
+          duration: 4
+          sprite: 32
+          frame: 4
+          next: 796
+          is_lit: 1
+        - action: Fire
+          duration: 4
+          sprite: 32
+          frame: 5
+          next: 797
+          is_lit: 1
+        - action: Fire
+          duration: 4
+          sprite: 32
+          frame: 6
+          next: 798
+          is_lit: 1
+        - action: Fire
+          duration: 4
+          sprite: 32
+          frame: 7
+          is_lit: 1
+        - duration: 10
+          sprite: 22
+          frame: 1
+          next: 800
+          is_lit: 1
+        - duration: 10
+          sprite: 22
+          frame: 2
+          next: 801
+          is_lit: 1
+        - action: BrainExplode
+          duration: 10
+          sprite: 22
+          frame: 3
+          is_lit: 1
+        - duration: 6
+          sprite: 55
+          next: 803
+        - duration: 7
+          sprite: 55
+          frame: 1
+          next: 802
+          is_lit: 1
+        - duration: 6
+          sprite: 56
+          next: 805
+        - duration: 6
+          sprite: 56
+          frame: 1
+          next: 804
+          is_lit: 1
+        - duration: 6
+          sprite: 57
+          next: 807
+        - duration: 6
+          sprite: 57
+          frame: 1
+          next: 806
+        - duration: 5
+          sprite: 58
+          frame: 0
+          next: 809
+          is_lit: 1
+        - action: Scream
+          duration: 5
+          sprite: 58
+          frame: 1
+          next: 810
+          is_lit: 1
+        - duration: 5
+          sprite: 58
+          frame: 2
+          next: 811
+          is_lit: 1
+        - action: Explode
+          duration: 10
+          sprite: 58
+          frame: 3
+          next: 812
+          is_lit: 1
+        - duration: 10
+          sprite: 58
+          frame: 4
+          is_lit: 1
+        - duration: 4
+          sprite: 59
+          frame: 0
+          next: 814
+          is_lit: 1
+        - duration: 4
+          sprite: 59
+          frame: 1
+          next: 815
+          is_lit: 1
+        - duration: 4
+          sprite: 59
+          frame: 2
+          next: 813
+          is_lit: 1
+        - duration: 6
+          sprite: 60
+          next: 817
+        - duration: 6
+          sprite: 60
+          frame: 1
+          next: 818
+        - duration: 6
+          sprite: 60
+          frame: 2
+          next: 819
+        - duration: 6
+          sprite: 60
+          frame: 3
+          next: 820
+        - duration: 6
+          sprite: 60
+          frame: 2
+          next: 821
+        - duration: 6
+          sprite: 60
+          frame: 1
+          next: 816
+        - duration: 6
+          sprite: 61
+          next: 823
+        - duration: 6
+          sprite: 61
+          frame: 1
+          next: 824
+        - duration: 6
+          sprite: 61
+          frame: 2
+          next: 825
+        - duration: 6
+          sprite: 61
+          frame: 3
+          next: 826
+        - duration: 6
+          sprite: 61
+          frame: 2
+          next: 827
+        - duration: 6
+          sprite: 61
+          frame: 1
+          next: 822
+        - duration: 10
+          sprite: 62
+          next: 829
+        - duration: 10
+          sprite: 62
+          frame: 1
+          next: 828
+          is_lit: 1
+        - duration: 10
+          sprite: 63
+          next: 831
+        - duration: 10
+          sprite: 63
+          frame: 1
+          next: 830
+          is_lit: 1
+        - duration: 10
+          sprite: 64
+          next: 833
+        - duration: 10
+          sprite: 64
+          frame: 1
+          next: 832
+          is_lit: 1
+        - duration: 10
+          sprite: 65
+          next: 835
+        - duration: 10
+          sprite: 65
+          frame: 1
+          next: 834
+          is_lit: 1
+        - duration: 10
+          sprite: 66
+          next: 837
+        - duration: 10
+          sprite: 66
+          frame: 1
+          next: 836
+          is_lit: 1
+        - duration: 10
+          sprite: 67
+          next: 839
+        - duration: 10
+          sprite: 67
+          frame: 1
+          next: 838
+          is_lit: 1
+        - sprite: 68
+        - sprite: 69
+        - duration: 6
+          sprite: 70
+          frame: 0
+          next: 843
+          is_lit: 1
+        - duration: 6
+          sprite: 70
+          frame: 1
+          next: 844
+          is_lit: 1
+        - duration: 6
+          sprite: 70
+          frame: 2
+          next: 845
+          is_lit: 1
+        - duration: 6
+          sprite: 70
+          frame: 3
+          next: 846
+          is_lit: 1
+        - duration: 6
+          sprite: 70
+          frame: 2
+          next: 847
+          is_lit: 1
+        - duration: 6
+          sprite: 70
+          frame: 1
+          next: 842
+          is_lit: 1
+        - duration: 6
+          sprite: 71
+          frame: 0
+          next: 849
+          is_lit: 1
+        - duration: 6
+          sprite: 71
+          frame: 1
+          next: 850
+          is_lit: 1
+        - duration: 6
+          sprite: 71
+          frame: 2
+          next: 851
+          is_lit: 1
+        - duration: 6
+          sprite: 71
+          frame: 3
+          next: 848
+          is_lit: 1
+        - sprite: 72
+          frame: 0
+          is_lit: 1
+        - duration: 6
+          sprite: 73
+          frame: 0
+          next: 854
+          is_lit: 1
+        - duration: 6
+          sprite: 73
+          frame: 1
+          next: 855
+          is_lit: 1
+        - duration: 6
+          sprite: 73
+          frame: 2
+          next: 856
+          is_lit: 1
+        - duration: 6
+          sprite: 73
+          frame: 3
+          next: 853
+          is_lit: 1
+        - duration: 6
+          sprite: 74
+          frame: 0
+          next: 858
+          is_lit: 1
+        - duration: 6
+          sprite: 74
+          frame: 1
+          next: 859
+          is_lit: 1
+        - duration: 6
+          sprite: 74
+          frame: 2
+          next: 860
+          is_lit: 1
+        - duration: 6
+          sprite: 74
+          frame: 3
+          next: 857
+          is_lit: 1
+        - sprite: 75
+          frame: 0
+          is_lit: 1
+        - duration: 6
+          sprite: 76
+          frame: 0
+          next: 863
+          is_lit: 1
+        - duration: 6
+          sprite: 76
+          frame: 1
+          next: 864
+          is_lit: 1
+        - duration: 6
+          sprite: 76
+          frame: 2
+          next: 865
+          is_lit: 1
+        - duration: 6
+          sprite: 76
+          frame: 3
+          next: 866
+          is_lit: 1
+        - duration: 6
+          sprite: 76
+          frame: 2
+          next: 867
+          is_lit: 1
+        - duration: 6
+          sprite: 76
+          frame: 1
+          next: 862
+          is_lit: 1
+        - duration: 6
+          sprite: 77
+          frame: 0
+          next: 869
+          is_lit: 1
+        - duration: 6
+          sprite: 77
+          frame: 1
+          next: 868
+        - sprite: 78
+        - sprite: 79
+        - sprite: 80
+        - sprite: 81
+        - sprite: 82
+        - sprite: 83
+        - sprite: 84
+        - sprite: 85
+        - sprite: 86
+        - sprite: 87
+        - sprite: 88
+        - sprite: 89
+        - sprite: 90
+        - sprite: 91
+        - sprite: 92
+        - sprite: 93
+        - sprite: 94
+          frame: 0
+          is_lit: 1
+        - sprite: 95
+        - duration: 10
+          sprite: 96
+          next: 889
+        - duration: 15
+          sprite: 96
+          frame: 1
+          next: 890
+        - duration: 8
+          sprite: 96
+          frame: 2
+          next: 891
+        - duration: 6
+          sprite: 96
+          frame: 1
+          next: 888
+        - sprite: 28
+          frame: 13
+        - sprite: 28
+          frame: 18
+        - sprite: 97
+        - sprite: 98
+        - sprite: 99
+        - duration: 6
+          sprite: 100
+          frame: 0
+          next: 898
+          is_lit: 1
+        - duration: 6
+          sprite: 100
+          frame: 1
+          next: 897
+          is_lit: 1
+        - sprite: 101
+        - duration: 6
+          sprite: 102
+          next: 901
+        - duration: 8
+          sprite: 102
+          frame: 1
+          next: 900
+        - sprite: 103
+        - sprite: 104
+        - sprite: 105
+        - sprite: 106
+        - sprite: 107
+        - sprite: 108
+        - sprite: 109
+        - sprite: 110
+        - sprite: 111
+        - sprite: 112
+          frame: 0
+          is_lit: 1
+        - sprite: 113
+          frame: 0
+          is_lit: 1
+        - sprite: 114
+        - sprite: 115
+        - sprite: 116
+        - sprite: 117
+        - duration: 6
+          sprite: 118
+          frame: 0
+          next: 918
+          is_lit: 1
+        - duration: 6
+          sprite: 118
+          frame: 1
+          next: 919
+          is_lit: 1
+        - duration: 6
+          sprite: 118
+          frame: 2
+          next: 920
+          is_lit: 1
+        - duration: 6
+          sprite: 118
+          frame: 1
+          next: 917
+          is_lit: 1
+        - duration: 6
+          sprite: 119
+          frame: 0
+          next: 922
+          is_lit: 1
+        - duration: 6
+          sprite: 119
+          frame: 1
+          next: 923
+          is_lit: 1
+        - duration: 6
+          sprite: 119
+          frame: 2
+          next: 921
+          is_lit: 1
+        - duration: 14
+          sprite: 120
+          next: 925
+        - duration: 14
+          sprite: 120
+          frame: 1
+          next: 924
+        - duration: 4
+          sprite: 121
+          frame: 0
+          next: 927
+          is_lit: 1
+        - duration: 4
+          sprite: 121
+          frame: 1
+          next: 928
+          is_lit: 1
+        - duration: 4
+          sprite: 121
+          frame: 2
+          next: 929
+          is_lit: 1
+        - duration: 4
+          sprite: 121
+          frame: 3
+          next: 926
+          is_lit: 1
+        - duration: 4
+          sprite: 122
+          frame: 0
+          next: 931
+          is_lit: 1
+        - duration: 4
+          sprite: 122
+          frame: 1
+          next: 932
+          is_lit: 1
+        - duration: 4
+          sprite: 122
+          frame: 2
+          next: 933
+          is_lit: 1
+        - duration: 4
+          sprite: 122
+          frame: 3
+          next: 930
+          is_lit: 1
+        - duration: 4
+          sprite: 123
+          frame: 0
+          next: 935
+          is_lit: 1
+        - duration: 4
+          sprite: 123
+          frame: 1
+          next: 936
+          is_lit: 1
+        - duration: 4
+          sprite: 123
+          frame: 2
+          next: 937
+          is_lit: 1
+        - duration: 4
+          sprite: 123
+          frame: 3
+          next: 934
+          is_lit: 1
+        - duration: 4
+          sprite: 124
+          frame: 0
+          next: 939
+          is_lit: 1
+        - duration: 4
+          sprite: 124
+          frame: 1
+          next: 940
+          is_lit: 1
+        - duration: 4
+          sprite: 124
+          frame: 2
+          next: 941
+          is_lit: 1
+        - duration: 4
+          sprite: 124
+          frame: 3
+          next: 938
+          is_lit: 1
+        - duration: 4
+          sprite: 125
+          frame: 0
+          next: 943
+          is_lit: 1
+        - duration: 4
+          sprite: 125
+          frame: 1
+          next: 944
+          is_lit: 1
+        - duration: 4
+          sprite: 125
+          frame: 2
+          next: 945
+          is_lit: 1
+        - duration: 4
+          sprite: 125
+          frame: 3
+          next: 942
+          is_lit: 1
+        - duration: 4
+          sprite: 126
+          frame: 0
+          next: 947
+          is_lit: 1
+        - duration: 4
+          sprite: 126
+          frame: 1
+          next: 948
+          is_lit: 1
+        - duration: 4
+          sprite: 126
+          frame: 2
+          next: 949
+          is_lit: 1
+        - duration: 4
+          sprite: 126
+          frame: 3
+          next: 946
+          is_lit: 1
+        - sprite: 127
+        - sprite: 128
+        - sprite: 129
+        - sprite: 130
+        - sprite: 131
+        - sprite: 132
+        - sprite: 133
+        - sprite: 134
+        - sprite: 135
+        - duration: 4
+          sprite: 136
+          frame: 0
+          next: 960
+          is_lit: 1
+        - duration: 4
+          sprite: 136
+          frame: 1
+          next: 961
+          is_lit: 1
+        - duration: 4
+          sprite: 136
+          frame: 2
+          next: 962
+          is_lit: 1
+        - duration: 4
+          sprite: 136
+          frame: 3
+          next: 959
+          is_lit: 1
+        - duration: 4
+          sprite: 137
+          frame: 0
+          next: 964
+          is_lit: 1
+        - duration: 4
+          sprite: 137
+          frame: 1
+          next: 965
+          is_lit: 1
+        - duration: 4
+          sprite: 137
+          frame: 2
+          next: 966
+          is_lit: 1
+        - duration: 4
+          sprite: 137
+          frame: 3
+          next: 963
+          is_lit: 1
+        - sprite: 138
+

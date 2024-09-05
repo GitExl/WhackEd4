@@ -1,0 +1,103 @@
+schema:
+    misc:
+        idkfa_armor_class:
+            type: int32
+            name: IDKFA armor class
+            patch_key: IDKFA Armor Class
+            default: 2
+        idkfa_armor:
+            type: int32
+            name: IDKFA armor
+            patch_key: IDKFA Armor
+            default: 200
+        idfa_armor_class:
+            type: int32
+            name: IDFA armor class
+            patch_key: IDFA Armor Class
+            default: 2
+        idfa_armor:
+            type: int32
+            name: IDFA armor
+            patch_key: IDFA Armor
+            default: 200
+        armor_class_green:
+            type: int32
+            name: Green armor class
+            patch_key: Green Armor Class
+            default: 1
+        armor_class_blue:
+            type: int32
+            name: Blue armor class
+            patch_key: Blue Armor Class
+            default: 2
+        armor_max:
+            type: int32
+            name: Maximum armor
+            patch_key: Max Armor
+            default: 200
+        health_start:
+            type: int32
+            name: Initial health
+            patch_key: Initial Health
+            default: 100
+        health_godmode:
+            type: int32
+            name: Godmode health
+            patch_key: God Mode Health
+            default: 100
+        health_soulsphere:
+            type: ubyte
+            name: Soulsphere health
+            patch_key: Soulsphere Health
+            default: 100
+        health_soulsphere_max:
+            type: int32
+            name: Maximum soulsphere health
+            patch_key: Max Soulsphere
+            default: 200
+        health_megasphere:
+            type: int32
+            name: Megasphere health
+            patch_key: Megasphere Health
+            default: 200
+        health_max:
+            type: int32
+            name: Maximum health
+            patch_key: Max Health
+            default: 200
+        bullets_start:
+            type: int32
+            name: Initial bullet ammo
+            patch_key: Initial Bullets
+            default: 50
+        ammo_usage_bfg:
+            type: ubyte
+            name: BFG cells per shot
+            patch_key: 'BFG Cells/Shot'
+            default: 40
+        monsters_infight:
+            type: bool
+            name: Monsters infight
+            patch_key: Monsters Infight
+            value_true: 221
+            value_false: 202
+            default: 0
+
+data:
+    misc:
+        - idkfa_armor_class: 2
+          idkfa_armor: 200
+          idfa_armor_class: 2
+          idfa_armor: 200
+          armor_class_green: 1
+          armor_class_blue: 2
+          armor_max: 200
+          health_start: 100
+          health_godmode: 100
+          health_soulsphere: 100
+          health_max_soulsphere: 200
+          megasphere_health: 200
+          health_max: 200
+          bullets_start: 50
+          bfg_ammo_usage: 40
+          monsters_infight: 0

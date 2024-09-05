@@ -1,0 +1,16 @@
+name: Boom
+patch_versions:
+    - 19
+    - 21
+load:
+    - strings
+    - actions
+    - sprites
+    - states
+    - sounds
+    - things
+    - ammo
+    - weapons
+    - misc
+    - pars
+    - cheats

@@ -1,0 +1,567 @@
+schema:
+    sound:
+        name:
+            type: string
+            name: Name
+            default: Unnamed
+            max: 6
+            min: 1
+        name_pointer:
+            type: int32
+            name: Name pointer
+            patch_key: Offset
+            default: 0
+            hidden: 1
+        is_singular:
+            type: bool
+            name: Singular
+            patch_key: 'Zero/One'
+            default: 1
+        priority:
+            type: int32
+            name: Priority
+            patch_key: Value
+            default: 64
+        link_pointer:
+            type: int32
+            name: Linked pointer
+            patch_key: Zero 1
+            default: 0
+            hidden: 1
+        link_pitch:
+            type: int32
+            name: Linked pitch
+            patch_key: Neg. One 1
+            default: -1
+            hidden: 1
+        link_volume:
+            type: int32
+            name: Linked volume
+            patch_key: Neg. One 2
+            default: -1
+            hidden: 1
+        data_pointer:
+            type: int32
+            name: Data pointer
+            patch_key: Zero 2
+            default: 0
+            hidden: 1
+        ref_count:
+            type: int32
+            name: Reference count
+            patch_key: Zero 3
+            default: 0
+            hidden: 1
+        lump_index:
+            type: int32
+            name: Lump index
+            patch_key: Zero 4
+            default: 0
+            hidden: 1
+
+data:
+    sound:
+        - is_singular: 0
+          name_pointer: 151340
+          name: pistol
+
+        - is_singular: 0
+          name_pointer: 151348
+          name: shotgn
+
+        - is_singular: 0
+          name_pointer: 151356
+          name: sgcock
+
+        - is_singular: 0
+          name_pointer: 151364
+          name: dshtgn
+
+        - is_singular: 0
+          name_pointer: 151372
+          name: dbopn
+
+        - is_singular: 0
+          name_pointer: 151380
+          name: dbcls
+
+        - is_singular: 0
+          name_pointer: 151388
+          name: dbload
+
+        - is_singular: 0
+          name_pointer: 151396
+          name: plasma
+
+        - is_singular: 0
+          name_pointer: 151404
+          name: bfg
+
+        - is_singular: 0
+          name_pointer: 151408
+          name: sawup
+
+        - is_singular: 0
+          priority: 118
+          name_pointer: 151416
+          name: sawidl
+
+        - is_singular: 0
+          name_pointer: 151424
+          name: sawful
+
+        - is_singular: 0
+          name_pointer: 151432
+          name: sawhit
+
+        - is_singular: 0
+          name_pointer: 151440
+          name: rlaunc
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151448
+          name: rxplod
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151456
+          name: firsht
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151464
+          name: firxpl
+
+        - is_singular: 0
+          priority: 100
+          name_pointer: 151472
+          name: pstart
+
+        - is_singular: 0
+          priority: 100
+          name_pointer: 151480
+          name: pstop
+
+        - is_singular: 0
+          priority: 100
+          name_pointer: 151488
+          name: doropn
+
+        - is_singular: 0
+          priority: 100
+          name_pointer: 151496
+          name: dorcls
+
+        - is_singular: 0
+          priority: 119
+          name_pointer: 151504
+          name: stnmov
+
+        - is_singular: 0
+          priority: 78
+          name_pointer: 151512
+          name: swtchn
+
+        - is_singular: 0
+          priority: 78
+          name_pointer: 151520
+          name: swtchx
+
+        - is_singular: 0
+          priority: 96
+          name_pointer: 151528
+          name: plpain
+
+        - is_singular: 0
+          priority: 96
+          name_pointer: 151536
+          name: dmpain
+
+        - is_singular: 0
+          priority: 96
+          name_pointer: 151544
+          name: popain
+
+        - is_singular: 0
+          priority: 96
+          name_pointer: 151552
+          name: vipain
+
+        - is_singular: 0
+          priority: 96
+          name_pointer: 151560
+          name: mnpain
+
+        - is_singular: 0
+          priority: 96
+          name_pointer: 151568
+          name: pepain
+
+        - is_singular: 0
+          priority: 78
+          name_pointer: 151576
+          name: slop
+
+        - priority: 78
+          name_pointer: 151584
+          name: itemup
+
+        - priority: 78
+          name_pointer: 151592
+          name: wpnup
+
+        - is_singular: 0
+          priority: 96
+          name_pointer: 151600
+          name: oof
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151604
+          name: telept
+
+        - priority: 98
+          name_pointer: 151612
+          name: posit1
+
+        - priority: 98
+          name_pointer: 151620
+          name: posit2
+
+        - priority: 98
+          name_pointer: 151628
+          name: posit3
+
+        - priority: 98
+          name_pointer: 151636
+          name: bgsit1
+
+        - priority: 98
+          name_pointer: 151644
+          name: bgsit2
+
+        - priority: 98
+          name_pointer: 151652
+          name: sgtsit
+
+        - priority: 98
+          name_pointer: 151660
+          name: cacsit
+
+        - priority: 94
+          name_pointer: 151668
+          name: brssit
+
+        - priority: 92
+          name_pointer: 151676
+          name: cybsit
+
+        - priority: 90
+          name_pointer: 151684
+          name: spisit
+
+        - priority: 90
+          name_pointer: 151692
+          name: bspsit
+
+        - priority: 90
+          name_pointer: 151700
+          name: kntsit
+
+        - priority: 90
+          name_pointer: 151708
+          name: vilsit
+
+        - priority: 90
+          name_pointer: 151716
+          name: mansit
+
+        - priority: 90
+          name_pointer: 151724
+          name: pesit
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151732
+          name: sklatk
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151740
+          name: sgtatk
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151748
+          name: skepch
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151756
+          name: vilatk
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151764
+          name: claw
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151772
+          name: skeswg
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151780
+          name: pldeth
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151788
+          name: pdiehi
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151796
+          name: podth1
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151804
+          name: podth2
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151812
+          name: podth3
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151820
+          name: bgdth1
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151828
+          name: bgdth2
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151836
+          name: sgtdth
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151844
+          name: cacdth
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151852
+          name: skldth
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151860
+          name: brsdth
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151868
+          name: cybdth
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151876
+          name: spidth
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151884
+          name: bspdth
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151892
+          name: vildth
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151900
+          name: kntdth
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151908
+          name: pedth
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 151916
+          name: skedth
+
+        - priority: 120
+          name_pointer: 151924
+          name: posact
+
+        - priority: 120
+          name_pointer: 151932
+          name: bgact
+
+        - priority: 120
+          name_pointer: 151940
+          name: dmact
+
+        - priority: 100
+          name_pointer: 151948
+          name: bspact
+
+        - priority: 100
+          name_pointer: 151956
+          name: bspwlk
+
+        - priority: 100
+          name_pointer: 151964
+          name: vilact
+
+        - is_singular: 0
+          priority: 78
+          name_pointer: 151972
+          name: noway
+
+        - is_singular: 0
+          priority: 60
+          name_pointer: 151980
+          name: barexp
+
+        - is_singular: 0
+          name_pointer: 151988
+          name: punch
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 151996
+          name: hoof
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152004
+          name: metal
+
+        - link_pointer: 84240
+          link_pitch: 150
+          link_volume: 0
+          is_singular: 0
+          name_pointer: 152012
+          name: chgun
+
+        - is_singular: 0
+          priority: 60
+          name_pointer: 152020
+          name: tink
+
+        - is_singular: 0
+          priority: 100
+          name_pointer: 152028
+          name: bdopn
+
+        - is_singular: 0
+          priority: 100
+          name_pointer: 152036
+          name: bdcls
+
+        - is_singular: 0
+          priority: 100
+          name_pointer: 152044
+          name: itmbk
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 152052
+          name: flame
+
+        - is_singular: 0
+          priority: 32
+          name_pointer: 152060
+          name: flamst
+
+        - is_singular: 0
+          priority: 60
+          name_pointer: 152068
+          name: getpow
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152076
+          name: bospit
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152084
+          name: boscub
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152092
+          name: bossit
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152100
+          name: bospn
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152108
+          name: bosdth
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152116
+          name: manatk
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152124
+          name: mandth
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152132
+          name: sssit
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152140
+          name: ssdth
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152148
+          name: keenpn
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152156
+          name: keendt
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152164
+          name: skeact
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152172
+          name: skesit
+
+        - is_singular: 0
+          priority: 70
+          name_pointer: 152180
+          name: skeatk
+
+        - is_singular: 0
+          priority: 60
+          name_pointer: 152188
+          name: radio

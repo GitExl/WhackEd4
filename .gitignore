@@ -131,6 +131,7 @@ Desktop.ini
 ## Project
 #############
 test
+test_idgames
 releases
 *.exe
 *.7z

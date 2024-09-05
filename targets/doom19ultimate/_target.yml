@@ -1,0 +1,8 @@
+name: Ultimate Doom 1.9
+patch_versions:
+    - 21
+extends: doom19
+load:
+    - strings
+    - actions
+    - states

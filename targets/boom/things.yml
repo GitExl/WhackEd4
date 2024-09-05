@@ -1,0 +1,1773 @@
+schema:
+    thing:
+        name:
+            type: string
+            name: Name
+            default: Unnamed
+            group: properties
+        id:
+            type: int32
+            name: ID
+            patch_key: 'ID #'
+            default: -1
+            group: properties
+        state_spawn:
+            type: reference
+            reference: state
+            name: Spawn state
+            patch_key: Initial frame
+            default: 0
+            group: states
+        health:
+            type: int32
+            name: Hit points
+            patch_key: Hit points
+            default: 0
+            group: properties
+        state_walk:
+            type: reference
+            reference: state
+            name: Walk state
+            patch_key: First moving frame
+            default: 0
+            group: states
+        sound_alert:
+            type: reference
+            reference: sound
+            name: Alert sound
+            patch_key: Alert sound
+            default: 0
+            group: sounds
+        reaction_time:
+            type: int32
+            name: Reaction time
+            patch_key: Reaction time
+            default: 8
+            group: properties
+        sound_attack:
+            type: reference
+            reference: sound
+            name: Attack sound
+            patch_key: Attack sound
+            default: 0
+            group: sounds
+        state_pain:
+            type: reference
+            reference: state
+            name: Pain state
+            patch_key: Injury frame
+            default: 0
+            group: states
+        pain_chance:
+            type: int32
+            name: Pain chance
+            patch_key: Pain chance
+            default: 0
+            group: properties
+        sound_pain:
+            type: reference
+            reference: sound
+            name: Pain sound
+            patch_key: Pain sound
+            default: 0
+            group: sounds
+        state_melee:
+            type: reference
+            reference: state
+            name: Melee state
+            patch_key: Close attack frame
+            default: 0
+            group: states
+        state_attack:
+            type: reference
+            reference: state
+            name: Attack state
+            patch_key: Far attack frame
+            default: 0
+            group: states
+        state_death:
+            type: reference
+            reference: state
+            name: Death state
+            patch_key: Death frame
+            default: 0
+            group: states
+        state_explode:
+            type: reference
+            reference: state
+            name: Explode state
+            patch_key: Exploding frame
+            default: 0
+            group: states
+        sound_death:
+            type: reference
+            reference: sound
+            name: Death sound
+            patch_key: Death sound
+            default: 0
+            group: sounds
+        speed:
+            type: fixed
+            name: Speed
+            patch_key: Speed
+            default: 0
+            group: properties
+        radius:
+            type: fixed
+            name: Radius
+            patch_key: Width
+            default: 0
+            group: properties
+        height:
+            type: fixed
+            name: Height
+            patch_key: Height
+            default: 0
+            group: properties
+        mass:
+            type: int32
+            name: Mass
+            patch_key: Mass
+            default: 0
+            group: properties
+        damage:
+            type: int32
+            name: Damage
+            patch_key: Missile damage
+            default: 0
+            group: properties
+        sound_active:
+            type: reference
+            reference: sound
+            name: Active sound
+            patch_key: Action sound
+            default: 0
+            group: sounds
+        flags:
+            type: flags
+            flagset: thing_vanilla
+            name: Flags
+            patch_key: Bits
+            default: 0
+            group: flags
+        state_raise:
+            type: reference
+            reference: state
+            name: Raise state
+            patch_key: Respawn frame
+            default: 0
+            group: states
+
+flags:
+    thing_vanilla:
+        SPECIAL:
+          index: 0
+          name: Can be picked up
+          description: This thing can be picked up.
+        SOLID:
+          index: 1
+          name: Obstacle
+          description: This thing blocks other things from moving through it.
+        SHOOTABLE:
+          index: 2
+          name: Shootable
+          description: This thing can get hit by projectiles and hitscan weapons.
+        NOSECTOR:
+          index: 3
+          name: Invisible && touchable
+          description: This thing is invisible, but touchable.
+        NOBLOCKMAP:
+          index: 4
+          name: Visible && untouchable
+          description: This thing is visible, but untouchable.
+        AMBUSH:
+          index: 5
+          name: Deaf (ambush)
+          description: This thing cannot be woken up by sounds, only by sight (internal flag).
+        JUSTHIT:
+          index: 6
+          name: Attack right back
+          description: This thing is going to attack right after being attacked itself (internal flag).
+        JUSTATTACKED:
+          index: 7
+          name: Steps before attack
+          description: This thing is going to take a single step before it attacks (internal flag).
+        SPAWNCEILING:
+          index: 8
+          name: Spawned on ceiling
+          description: This thing will spawn hanging from the ceiling.
+        NOGRAVITY:
+          index: 9
+          name: No gravity
+          description: This thing is not affected by gravity.
+        DROPOFF:
+          index: 10
+          name: Travels over cliffs
+          description: This thing is able to travel over height differences bigger than 24 units.
+        PICKUP:
+          index: 11
+          name: Picks up items
+          description: This thing can pick up other things that can be picked up.
+        NOCLIP:
+          index: 12
+          name: No clipping
+          description: This thing can move through walls and through blocking obstacles.
+        SLIDE:
+          index: 13
+          name: Keep wall-slide info
+          description: This thing will remember wall-sliding information (internal flag).
+        FLOAT:
+          index: 14
+          name: Floating
+          description: This thing floats.
+        TELEPORT:
+          index: 15
+          name: Semi no-clipping
+          description: This thing can walk through obstacles, but not through walls.
+        MISSILE:
+          index: 16
+          name: Projectile
+          description: This thing is a projectile.
+        DROPPED:
+          index: 17
+          name: Dropped by enemy
+          description: This thing was dropped by an enemy (internal flag).
+        SHADOW:
+          index: 18
+          name: Draw as shadow
+          description: This thing is drawn using the Spectre fuzz effect.
+        NOBLOOD:
+          index: 19
+          name: Puffs (vs. bleeds)
+          description: This thing emits puffs when hit instead of blood splats.
+        CORPSE:
+          index: 20
+          name: Corpse slides off steps
+          description: This thing slides off steps (internal flag).
+        INFLOAT:
+          index: 21
+          name: No auto-levelling
+          description: This thing won't automatically get equal to the floor's level.
+        COUNTKILL:
+          index: 22
+          name: Affects kill %
+          description: This thing counts towards the 'killed' percentage in the intermission screen.
+        COUNTITEM:
+          index: 23
+          name: Affects item %
+          description: This thing counts towards the 'items' percentage in the intermission screen.
+        SKULLFLY:
+          index: 24
+          name: Flying skull
+          description: This thing is a skull (Lost Soul) in mid-flight (internal flag).
+        NOTDMATCH:
+          index: 25
+          name: Not in deathmatch
+          description: This thing won't be spawned during deathmatch.
+        TRANSLATION:
+          index: 26
+          name: Color 1 (grey\red)
+          description: This thing's green colors will be mapped to grey (or red if the Color 2 flag is also set).
+        UNUSED1:
+          index: 27
+          name: Color 2 (brown\red)
+          description: This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set).
+
+data:
+    thing:
+        - height: 3670016
+          sound_pain: 25
+          radius: 1048576
+          sound_death: 57
+          state_death: 158
+          reactionTime: 0
+          state_spawn: 149
+          health: 100
+          flags: 33557510
+          state_explode: 165
+          mass: 100
+          state_pain: 156
+          state_attack: 154
+          state_walk: 150
+          pain_chance: 255
+          name: Player
+
+        - sound_active: 75
+          height: 3670016
+          sound_pain: 27
+          radius: 1310720
+          sound_death: 59
+          speed: 8
+          id: 3004
+          sound_alert: 36
+          state_death: 189
+          sound_attack: 1
+          state_spawn: 174
+          health: 20
+          flags: 4194310
+          state_raise: 203
+          state_explode: 194
+          mass: 100
+          state_pain: 187
+          state_attack: 184
+          state_walk: 176
+          pain_chance: 200
+          name: Trooper
+
+        - sound_active: 75
+          height: 3670016
+          sound_pain: 27
+          radius: 1310720
+          sound_death: 60
+          speed: 8
+          id: 9
+          sound_alert: 37
+          state_death: 222
+          state_spawn: 207
+          health: 30
+          flags: 4194310
+          state_raise: 236
+          state_explode: 227
+          mass: 100
+          state_pain: 220
+          state_attack: 217
+          state_walk: 209
+          pain_chance: 170
+          name: Sargeant
+
+        - sound_active: 80
+          height: 3670016
+          sound_pain: 28
+          radius: 1310720
+          sound_death: 71
+          speed: 15
+          id: 64
+          sound_alert: 48
+          state_death: 271
+          state_spawn: 241
+          health: 700
+          flags: 4194310
+          mass: 500
+          state_pain: 269
+          state_attack: 255
+          state_walk: 243
+          pain_chance: 10
+          name: Archvile
+
+        - height: 1048576
+          radius: 1310720
+          state_spawn: 281
+          health: 1000
+          flags: 528
+          mass: 100
+          name: Archvile attack
+
+        - sound_active: 105
+          height: 3670016
+          sound_pain: 27
+          state_melee: 335
+          radius: 1310720
+          sound_death: 74
+          speed: 10
+          id: 66
+          sound_alert: 106
+          state_death: 345
+          state_spawn: 321
+          health: 300
+          flags: 4194310
+          state_raise: 351
+          mass: 500
+          state_pain: 343
+          state_attack: 339
+          state_walk: 323
+          pain_chance: 100
+          name: Revenant
+
+        - height: 524288
+          radius: 720896
+          sound_death: 82
+          speed: 655360
+          sound_alert: 107
+          state_death: 318
+          damage: 10
+          state_spawn: 316
+          health: 1000
+          flags: 67088
+          mass: 100
+          name: Revenant fireball
+
+        - height: 1048576
+          radius: 1310720
+          state_spawn: 311
+          health: 1000
+          flags: 528
+          mass: 100
+          name: Fireball trail
+
+        - sound_active: 75
+          height: 4194304
+          sound_pain: 29
+          radius: 3145728
+          sound_death: 100
+          speed: 8
+          id: 67
+          sound_alert: 49
+          state_death: 388
+          state_spawn: 362
+          health: 600
+          flags: 4194310
+          state_raise: 398
+          mass: 1000
+          state_pain: 386
+          state_attack: 376
+          state_walk: 364
+          pain_chance: 80
+          name: Mancubus
+
+        - height: 524288
+          radius: 393216
+          sound_death: 17
+          speed: 1310720
+          sound_alert: 16
+          state_death: 359
+          damage: 8
+          state_spawn: 357
+          health: 1000
+          flags: 67088
+          mass: 100
+          name: Mancubus fireball
+
+        - sound_active: 75
+          height: 3670016
+          sound_pain: 27
+          radius: 1310720
+          sound_death: 60
+          speed: 8
+          id: 65
+          sound_alert: 37
+          state_death: 422
+          state_spawn: 406
+          health: 70
+          flags: 4194310
+          state_raise: 435
+          state_explode: 429
+          mass: 100
+          state_pain: 420
+          state_attack: 416
+          state_walk: 408
+          pain_chance: 170
+          name: Chaingun Sargeant
+
+        - sound_active: 76
+          height: 3670016
+          sound_pain: 27
+          state_melee: 452
+          radius: 1310720
+          sound_death: 62
+          speed: 8
+          id: 3001
+          sound_alert: 39
+          state_death: 457
+          state_spawn: 442
+          health: 60
+          flags: 4194310
+          state_raise: 470
+          state_explode: 462
+          mass: 100
+          state_pain: 455
+          state_attack: 452
+          state_walk: 444
+          pain_chance: 200
+          name: Imp
+
+        - sound_active: 77
+          height: 3670016
+          sound_pain: 26
+          state_melee: 485
+          radius: 1966080
+          sound_death: 64
+          speed: 10
+          id: 3002
+          sound_alert: 41
+          state_death: 490
+          sound_attack: 52
+          state_spawn: 475
+          health: 150
+          flags: 4194310
+          state_raise: 496
+          mass: 400
+          state_pain: 488
+          state_walk: 477
+          pain_chance: 180
+          name: Demon
+
+        - sound_active: 77
+          height: 3670016
+          sound_pain: 26
+          state_melee: 485
+          radius: 1966080
+          sound_death: 64
+          speed: 10
+          id: 58
+          sound_alert: 41
+          state_death: 490
+          sound_attack: 52
+          state_spawn: 475
+          health: 150
+          flags: 4456454
+          state_raise: 496
+          mass: 400
+          state_pain: 488
+          state_walk: 477
+          pain_chance: 180
+          name: Spectre
+
+        - sound_active: 77
+          height: 3670016
+          sound_pain: 26
+          radius: 2031616
+          sound_death: 65
+          speed: 8
+          id: 3005
+          sound_alert: 42
+          state_death: 510
+          state_spawn: 502
+          health: 400
+          flags: 4211206
+          state_raise: 516
+          mass: 400
+          state_pain: 507
+          state_attack: 504
+          state_walk: 503
+          pain_chance: 128
+          name: Cacodemon
+
+        - sound_active: 77
+          height: 4194304
+          sound_pain: 26
+          state_melee: 537
+          radius: 1572864
+          sound_death: 67
+          speed: 8
+          id: 3003
+          sound_alert: 43
+          state_death: 542
+          state_spawn: 527
+          health: 1000
+          flags: 4194310
+          state_raise: 549
+          mass: 1000
+          state_pain: 540
+          state_attack: 537
+          state_walk: 529
+          pain_chance: 50
+          name: Baron of Hell
+
+        - height: 524288
+          radius: 393216
+          sound_death: 17
+          speed: 983040
+          sound_alert: 16
+          state_death: 524
+          damage: 8
+          state_spawn: 522
+          health: 1000
+          flags: 67088
+          mass: 100
+          name: Baron fireball
+
+        - sound_active: 77
+          height: 4194304
+          sound_pain: 26
+          state_melee: 566
+          radius: 1572864
+          sound_death: 72
+          speed: 8
+          id: 69
+          sound_alert: 47
+          state_death: 571
+          state_spawn: 556
+          health: 500
+          flags: 4194310
+          state_raise: 578
+          mass: 1000
+          state_pain: 569
+          state_attack: 566
+          state_walk: 558
+          pain_chance: 50
+          name: Hell Knight
+
+        - sound_active: 77
+          height: 3670016
+          sound_pain: 26
+          radius: 1048576
+          sound_death: 17
+          speed: 8
+          id: 3006
+          state_death: 595
+          sound_attack: 51
+          damage: 3
+          state_spawn: 585
+          health: 100
+          flags: 16902
+          mass: 50
+          state_pain: 593
+          state_attack: 589
+          state_walk: 587
+          pain_chance: 256
+          name: Lost Soul
+
+        - sound_active: 77
+          height: 6553600
+          sound_pain: 26
+          radius: 8388608
+          sound_death: 69
+          speed: 12
+          id: 7
+          sound_alert: 45
+          state_death: 621
+          sound_attack: 2
+          state_spawn: 601
+          health: 3000
+          flags: 4194310
+          mass: 1000
+          state_pain: 619
+          state_attack: 615
+          state_walk: 603
+          pain_chance: 40
+          name: Spiderdemon
+
+        - sound_active: 78
+          height: 4194304
+          sound_pain: 26
+          radius: 4194304
+          sound_death: 70
+          speed: 12
+          id: 68
+          sound_alert: 46
+          state_death: 653
+          state_spawn: 632
+          health: 500
+          flags: 4194310
+          state_raise: 660
+          mass: 600
+          state_pain: 651
+          state_attack: 647
+          state_walk: 634
+          pain_chance: 128
+          name: Arachnotron
+
+        - sound_active: 77
+          height: 7208960
+          sound_pain: 26
+          radius: 2621440
+          sound_death: 68
+          speed: 16
+          id: 16
+          sound_alert: 44
+          state_death: 691
+          state_spawn: 674
+          health: 4000
+          flags: 4194310
+          mass: 1000
+          state_pain: 690
+          state_attack: 684
+          state_walk: 676
+          pain_chance: 20
+          name: Cyberdemon
+
+        - sound_active: 77
+          height: 3670016
+          sound_pain: 30
+          radius: 2031616
+          sound_death: 73
+          speed: 8
+          id: 71
+          sound_alert: 50
+          state_death: 714
+          state_spawn: 701
+          health: 400
+          flags: 4211206
+          state_raise: 720
+          mass: 400
+          state_pain: 712
+          state_attack: 708
+          state_walk: 702
+          pain_chance: 128
+          name: Pain Elemental
+
+        - sound_active: 75
+          height: 3670016
+          sound_pain: 27
+          radius: 1310720
+          sound_death: 102
+          speed: 8
+          id: 84
+          sound_alert: 101
+          state_death: 744
+          state_spawn: 726
+          health: 50
+          flags: 4194310
+          state_raise: 758
+          state_explode: 749
+          mass: 100
+          state_pain: 742
+          state_attack: 736
+          state_walk: 728
+          pain_chance: 170
+          name: SS Nazi
+
+        - height: 4718592
+          sound_pain: 103
+          radius: 1048576
+          sound_death: 104
+          id: 72
+          state_death: 764
+          state_spawn: 763
+          health: 100
+          flags: 4195078
+          mass: 10000000
+          state_pain: 776
+          pain_chance: 256
+          name: Commander Keen
+
+        - height: 1048576
+          sound_pain: 97
+          radius: 1048576
+          sound_death: 98
+          id: 88
+          state_death: 780
+          state_spawn: 778
+          health: 250
+          flags: 6
+          mass: 10000000
+          state_pain: 779
+          pain_chance: 255
+          name: Big Brain
+
+        - height: 2097152
+          radius: 1310720
+          id: 89
+          state_spawn: 784
+          health: 1000
+          flags: 24
+          mass: 100
+          state_walk: 785
+          name: Demon spawner
+
+        - height: 2097152
+          radius: 1310720
+          id: 87
+          health: 1000
+          flags: 24
+          mass: 100
+          name: Demon spawn spot
+
+        - height: 2097152
+          radius: 393216
+          sound_death: 17
+          speed: 655360
+          sound_alert: 94
+          damage: 3
+          state_spawn: 787
+          health: 1000
+          flags: 71184
+          mass: 100
+          name: Demon spawn cube
+
+        - height: 1048576
+          radius: 1310720
+          state_spawn: 791
+          health: 1000
+          flags: 528
+          mass: 100
+          name: Demon spawn fire
+
+        - height: 2752512
+          radius: 655360
+          sound_death: 82
+          id: 2035
+          state_death: 808
+          state_spawn: 806
+          health: 20
+          flags: 524294
+          mass: 100
+          name: Barrel
+
+        - height: 524288
+          radius: 393216
+          sound_death: 17
+          speed: 655360
+          sound_alert: 16
+          state_death: 99
+          damage: 3
+          state_spawn: 97
+          health: 1000
+          flags: 67088
+          mass: 100
+          name: Imp fireball
+
+        - height: 524288
+          radius: 393216
+          sound_death: 17
+          speed: 655360
+          sound_alert: 16
+          state_death: 104
+          damage: 5
+          state_spawn: 102
+          health: 1000
+          flags: 67088
+          mass: 100
+          name: Caco fireball
+
+        - height: 524288
+          radius: 720896
+          sound_death: 82
+          speed: 1310720
+          sound_alert: 14
+          state_death: 127
+          damage: 20
+          state_spawn: 114
+          health: 1000
+          flags: 67088
+          mass: 100
+          name: Rocket in flight
+
+        - height: 524288
+          radius: 851968
+          sound_death: 17
+          speed: 1638400
+          sound_alert: 8
+          state_death: 109
+          damage: 5
+          state_spawn: 107
+          health: 1000
+          flags: 67088
+          mass: 100
+          name: Plasma projectile
+
+        - height: 524288
+          radius: 851968
+          sound_death: 15
+          speed: 1638400
+          state_death: 117
+          damage: 100
+          state_spawn: 115
+          health: 1000
+          flags: 67088
+          mass: 100
+          name: BFG projectile
+
+        - height: 524288
+          radius: 851968
+          sound_death: 17
+          speed: 1638400
+          sound_alert: 8
+          state_death: 669
+          damage: 5
+          state_spawn: 667
+          health: 1000
+          flags: 67088
+          mass: 100
+          name: Arachnotron projectile
+
+        - height: 1048576
+          radius: 1310720
+          state_spawn: 93
+          health: 1000
+          flags: 528
+          mass: 100
+          name: Bullet puff
+
+        - height: 1048576
+          radius: 1310720
+          state_spawn: 90
+          health: 1000
+          flags: 16
+          mass: 100
+          name: Blood splat
+
+        - height: 1048576
+          radius: 1310720
+          state_spawn: 130
+          health: 1000
+          flags: 528
+          mass: 100
+          name: Teleport fog
+
+        - height: 1048576
+          radius: 1310720
+          state_spawn: 142
+          health: 1000
+          flags: 528
+          mass: 100
+          name: Item respawn fog
+
+        - height: 1048576
+          radius: 1310720
+          id: 14
+          health: 1000
+          flags: 24
+          mass: 100
+          name: Teleport exit
+
+        - height: 1048576
+          radius: 1310720
+          state_spawn: 123
+          health: 1000
+          flags: 528
+          mass: 100
+          name: BFG impact
+
+        - height: 1048576
+          radius: 1310720
+          id: 2018
+          state_spawn: 802
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Green armor
+
+        - height: 1048576
+          radius: 1310720
+          id: 2019
+          state_spawn: 804
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Blue armor
+
+        - height: 1048576
+          radius: 1310720
+          id: 2014
+          state_spawn: 816
+          health: 1000
+          flags: 8388609
+          mass: 100
+          name: Health potion
+
+        - height: 1048576
+          radius: 1310720
+          id: 2015
+          state_spawn: 822
+          health: 1000
+          flags: 8388609
+          mass: 100
+          name: Armor helmet
+
+        - height: 1048576
+          radius: 1310720
+          id: 5
+          state_spawn: 828
+          health: 1000
+          flags: 33554433
+          mass: 100
+          name: Blue keycard
+
+        - height: 1048576
+          radius: 1310720
+          id: 13
+          state_spawn: 830
+          health: 1000
+          flags: 33554433
+          mass: 100
+          name: Red keycard
+
+        - height: 1048576
+          radius: 1310720
+          id: 6
+          state_spawn: 832
+          health: 1000
+          flags: 33554433
+          mass: 100
+          name: Yellow keycard
+
+        - height: 1048576
+          radius: 1310720
+          id: 39
+          state_spawn: 838
+          health: 1000
+          flags: 33554433
+          mass: 100
+          name: Yellow skull key
+
+        - height: 1048576
+          radius: 1310720
+          id: 38
+          state_spawn: 836
+          health: 1000
+          flags: 33554433
+          mass: 100
+          name: Red skull key
+
+        - height: 1048576
+          radius: 1310720
+          id: 40
+          state_spawn: 834
+          health: 1000
+          flags: 33554433
+          mass: 100
+          name: Blue skull key
+
+        - height: 1048576
+          radius: 1310720
+          id: 2011
+          state_spawn: 840
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Stimpack
+
+        - height: 1048576
+          radius: 1310720
+          id: 2012
+          state_spawn: 841
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Medical kit
+
+        - height: 1048576
+          radius: 1310720
+          id: 2013
+          state_spawn: 842
+          health: 1000
+          flags: 8388609
+          mass: 100
+          name: Soul sphere
+
+        - height: 1048576
+          radius: 1310720
+          id: 2022
+          state_spawn: 848
+          health: 1000
+          flags: 8388609
+          mass: 100
+          name: Invulnerability
+
+        - height: 1048576
+          radius: 1310720
+          id: 2023
+          state_spawn: 852
+          health: 1000
+          flags: 8388609
+          mass: 100
+          name: Berserk sphere
+
+        - height: 1048576
+          radius: 1310720
+          id: 2024
+          state_spawn: 853
+          health: 1000
+          flags: 8388609
+          mass: 100
+          name: Blur sphere
+
+        - height: 1048576
+          radius: 1310720
+          id: 2025
+          state_spawn: 861
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Radiation suit
+
+        - height: 1048576
+          radius: 1310720
+          id: 2026
+          state_spawn: 862
+          health: 1000
+          flags: 8388609
+          mass: 100
+          name: Computer map
+
+        - height: 1048576
+          radius: 1310720
+          id: 2045
+          state_spawn: 868
+          health: 1000
+          flags: 8388609
+          mass: 100
+          name: Lite amplification visor
+
+        - height: 1048576
+          radius: 1310720
+          id: 83
+          state_spawn: 857
+          health: 1000
+          flags: 8388609
+          mass: 100
+          name: Mega sphere
+
+        - height: 1048576
+          radius: 1310720
+          id: 2007
+          state_spawn: 870
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Ammo clip
+
+        - height: 1048576
+          radius: 1310720
+          id: 2048
+          state_spawn: 871
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Box of ammo
+
+        - height: 1048576
+          radius: 1310720
+          id: 2010
+          state_spawn: 872
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Rocket
+
+        - height: 1048576
+          radius: 1310720
+          id: 2046
+          state_spawn: 873
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Box of rockets
+
+        - height: 1048576
+          radius: 1310720
+          id: 2047
+          state_spawn: 874
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Energy cell
+
+        - height: 1048576
+          radius: 1310720
+          id: 17
+          state_spawn: 875
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Energy cell pack
+
+        - height: 1048576
+          radius: 1310720
+          id: 2008
+          state_spawn: 876
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Shells
+
+        - height: 1048576
+          radius: 1310720
+          id: 2049
+          state_spawn: 877
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Box of shells
+
+        - height: 1048576
+          radius: 1310720
+          id: 8
+          state_spawn: 878
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Backpack
+
+        - height: 1048576
+          radius: 1310720
+          id: 2006
+          state_spawn: 879
+          health: 1000
+          flags: 1
+          mass: 100
+          name: BFG 9000
+
+        - height: 1048576
+          radius: 1310720
+          id: 2002
+          state_spawn: 880
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Chaingun
+
+        - height: 1048576
+          radius: 1310720
+          id: 2005
+          state_spawn: 881
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Chainsaw
+
+        - height: 1048576
+          radius: 1310720
+          id: 2003
+          state_spawn: 882
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Rocket launcher
+
+        - height: 1048576
+          radius: 1310720
+          id: 2004
+          state_spawn: 883
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Plasma rifle
+
+        - height: 1048576
+          radius: 1310720
+          id: 2001
+          state_spawn: 884
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Shotgun
+
+        - height: 1048576
+          radius: 1310720
+          id: 82
+          state_spawn: 885
+          health: 1000
+          flags: 1
+          mass: 100
+          name: Super shotgun
+
+        - height: 1048576
+          radius: 1048576
+          id: 85
+          state_spawn: 959
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Tall lamp
+
+        - height: 1048576
+          radius: 1048576
+          id: 86
+          state_spawn: 963
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Tall lamp 2
+
+        - height: 1048576
+          radius: 1048576
+          id: 2028
+          state_spawn: 886
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Short lamp
+
+        - height: 1048576
+          radius: 1048576
+          id: 30
+          state_spawn: 907
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Tall green pillar
+
+        - height: 1048576
+          radius: 1048576
+          id: 31
+          state_spawn: 908
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Short green pillar
+
+        - height: 1048576
+          radius: 1048576
+          id: 32
+          state_spawn: 909
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Tall red pillar
+
+        - height: 1048576
+          radius: 1048576
+          id: 33
+          state_spawn: 910
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Short red pillar
+
+        - height: 1048576
+          radius: 1048576
+          id: 37
+          state_spawn: 913
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Pillar with skull
+
+        - height: 1048576
+          radius: 1048576
+          id: 36
+          state_spawn: 924
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Pillar with heart
+
+        - height: 1048576
+          radius: 1048576
+          id: 41
+          state_spawn: 917
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Eye in symbol
+
+        - height: 1048576
+          radius: 1048576
+          id: 42
+          state_spawn: 921
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Flaming skulls
+
+        - height: 1048576
+          radius: 1048576
+          id: 43
+          state_spawn: 914
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Grey tree
+
+        - height: 1048576
+          radius: 1048576
+          id: 44
+          state_spawn: 926
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Tall blue torch
+
+        - height: 1048576
+          radius: 1048576
+          id: 45
+          state_spawn: 930
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Tall green torch
+
+        - height: 1048576
+          radius: 1048576
+          id: 46
+          state_spawn: 934
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Tall red torch
+
+        - height: 1048576
+          radius: 1048576
+          id: 55
+          state_spawn: 938
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Small blue torch
+
+        - height: 1048576
+          radius: 1048576
+          id: 56
+          state_spawn: 942
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Small green torch
+
+        - height: 1048576
+          radius: 1048576
+          id: 57
+          state_spawn: 946
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Small red torch
+
+        - height: 1048576
+          radius: 1048576
+          id: 47
+          state_spawn: 906
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Brown stub
+
+        - height: 1048576
+          radius: 1048576
+          id: 48
+          state_spawn: 916
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Technical column
+
+        - height: 1048576
+          radius: 1310720
+          id: 34
+          state_spawn: 911
+          health: 1000
+          mass: 100
+          name: Candle
+
+        - height: 1048576
+          radius: 1048576
+          id: 35
+          state_spawn: 912
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Candelabra
+
+        - height: 4456448
+          radius: 1048576
+          id: 49
+          state_spawn: 888
+          health: 1000
+          flags: 770
+          mass: 100
+          name: Swaying body
+
+        - height: 5505024
+          radius: 1048576
+          id: 50
+          state_spawn: 902
+          health: 1000
+          flags: 770
+          mass: 100
+          name: Hanging arms out
+
+        - height: 5505024
+          radius: 1048576
+          id: 51
+          state_spawn: 903
+          health: 1000
+          flags: 770
+          mass: 100
+          name: One-legged body
+
+        - height: 4456448
+          radius: 1048576
+          id: 52
+          state_spawn: 904
+          health: 1000
+          flags: 770
+          mass: 100
+          name: Hanging torso
+
+        - height: 3407872
+          radius: 1048576
+          id: 53
+          state_spawn: 905
+          health: 1000
+          flags: 770
+          mass: 100
+          name: Hanging leg
+
+        - height: 5505024
+          radius: 1310720
+          id: 59
+          state_spawn: 902
+          health: 1000
+          flags: 768
+          mass: 100
+          name: Hanging arms out 2
+
+        - height: 4456448
+          radius: 1310720
+          id: 60
+          state_spawn: 904
+          health: 1000
+          flags: 768
+          mass: 100
+          name: Hanging torso 2
+
+        - height: 3407872
+          radius: 1310720
+          id: 61
+          state_spawn: 903
+          health: 1000
+          flags: 768
+          mass: 100
+          name: One-legged body 2
+
+        - height: 3407872
+          radius: 1310720
+          id: 62
+          state_spawn: 905
+          health: 1000
+          flags: 768
+          mass: 100
+          name: Hanging leg 2
+
+        - height: 4456448
+          radius: 1310720
+          id: 63
+          state_spawn: 888
+          health: 1000
+          flags: 768
+          mass: 100
+          name: Swaying body 2
+
+        - height: 1048576
+          radius: 1310720
+          id: 22
+          state_spawn: 515
+          health: 1000
+          mass: 100
+          name: Dead Cacodemon
+
+        - height: 1048576
+          radius: 1310720
+          id: 15
+          state_spawn: 164
+          health: 1000
+          mass: 100
+          name: Dead Marine
+
+        - height: 1048576
+          radius: 1310720
+          id: 18
+          state_spawn: 193
+          health: 1000
+          mass: 100
+          name: Dead Trooper
+
+        - height: 1048576
+          radius: 1310720
+          id: 21
+          state_spawn: 495
+          health: 1000
+          mass: 100
+          name: Dead Demon
+
+        - height: 1048576
+          radius: 1310720
+          id: 23
+          state_spawn: 600
+          health: 1000
+          mass: 100
+          name: Dead Lost Soul
+
+        - height: 1048576
+          radius: 1310720
+          id: 20
+          state_spawn: 461
+          health: 1000
+          mass: 100
+          name: Dead Imp
+
+        - height: 1048576
+          radius: 1310720
+          id: 19
+          state_spawn: 226
+          health: 1000
+          mass: 100
+          name: Dead Sargeant
+
+        - height: 1048576
+          radius: 1310720
+          id: 10
+          state_spawn: 173
+          health: 1000
+          mass: 100
+          name: Guts and bones
+
+        - height: 1048576
+          radius: 1310720
+          id: 12
+          state_spawn: 173
+          health: 1000
+          mass: 100
+          name: Guts and bones 2
+
+        - height: 1048576
+          radius: 1048576
+          id: 28
+          state_spawn: 894
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Skewered heads
+
+        - height: 1048576
+          radius: 1310720
+          id: 24
+          state_spawn: 895
+          health: 1000
+          mass: 100
+          name: Pool of blood
+
+        - height: 1048576
+          radius: 1048576
+          id: 27
+          state_spawn: 896
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Pole with skull
+
+        - height: 1048576
+          radius: 1048576
+          id: 29
+          state_spawn: 897
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Pile of skulls
+
+        - height: 1048576
+          radius: 1048576
+          id: 25
+          state_spawn: 899
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Impaled body
+
+        - height: 1048576
+          radius: 1048576
+          id: 26
+          state_spawn: 900
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Twitching body
+
+        - height: 1048576
+          radius: 2097152
+          id: 54
+          state_spawn: 915
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Large tree
+
+        - height: 1048576
+          radius: 1048576
+          id: 70
+          state_spawn: 813
+          health: 1000
+          flags: 2
+          mass: 100
+          name: Flaming barrel
+
+        - height: 5767168
+          radius: 1048576
+          id: 73
+          state_spawn: 950
+          health: 1000
+          flags: 770
+          mass: 100
+          name: Hanging body 1
+
+        - height: 5767168
+          radius: 1048576
+          id: 74
+          state_spawn: 951
+          health: 1000
+          flags: 770
+          mass: 100
+          name: Hanging body 2
+
+        - height: 4194304
+          radius: 1048576
+          id: 75
+          state_spawn: 952
+          health: 1000
+          flags: 770
+          mass: 100
+          name: Hanging body 3
+
+        - height: 4194304
+          radius: 1048576
+          id: 76
+          state_spawn: 953
+          health: 1000
+          flags: 770
+          mass: 100
+          name: Hanging body 4
+
+        - height: 4194304
+          radius: 1048576
+          id: 77
+          state_spawn: 954
+          health: 1000
+          flags: 770
+          mass: 100
+          name: Hanging body 5
+
+        - height: 4194304
+          radius: 1048576
+          id: 78
+          state_spawn: 955
+          health: 1000
+          flags: 770
+          mass: 100
+          name: Hanging body 6
+
+        - height: 1048576
+          radius: 1310720
+          id: 79
+          state_spawn: 956
+          health: 1000
+          flags: 16
+          mass: 100
+          name: Pool of blood 1
+
+        - height: 1048576
+          radius: 1310720
+          id: 80
+          state_spawn: 957
+          health: 1000
+          flags: 16
+          mass: 100
+          name: Pool of blood 2
+
+        - height: 1048576
+          radius: 1310720
+          id: 81
+          state_spawn: 958
+          health: 1000
+          flags: 16
+          mass: 100
+          name: Brain
+
+        - flags: 16
+          health: 1000
+          height: 8
+          id: 5001
+          mass: 10
+          state_spawn: 967
+          radius: 8
+          name: Pusher
+
+        - flags: 16
+          health: 1000
+          height: 8
+          id: 5002
+          mass: 10
+          stateSpawn: 967
+          radius: 8
+          name: Puller
