@@ -1,0 +1,10 @@
+name: "Extended (DEHEXTRA)"
+extends: mbf
+patch_versions:
+    - 19
+    - 21
+load:
+    - sprites
+    - states
+    - sounds
+    - things

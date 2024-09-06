@@ -1,3 +1,6 @@
-from dehacked import target_loader
+from pathlib import Path
 
-target_loader.load('mbf')
+from dehacked.target_loader import TargetLoader
+
+target_loader = TargetLoader(Path('targets'))
+target_loader.load('dehextra')

@@ -1,0 +1,792 @@
+schema:
+    thing:
+        gib_health:
+            type: int32
+            name: Gib health
+            patch_key: Gib health
+            default: 0
+            group: properties
+        dropped_item_id:
+            type: int32
+            name: Dropped item
+            patch_key: Dropped item
+            default: -1
+            group: properties
+        pickup_radius:
+            type: fixed
+            name: Pickup radius
+            patch_key: Pickup width
+            default: 0
+            group: properties
+        projectile_pass_height:
+            type: int32
+            name: Projectile pass height
+            patch_key: Projectile pass height
+            default: 0
+            group: properties
+        is_fullbright:
+            type: bool
+            name: Fullbright
+            patch_key: Fullbright
+            default: 0
+            group: properties
+
+data:
+    thing:
+        - _index: 0
+          gib_health: -100
+          pickup_radius: 1048576
+
+        - _index: 1
+          dropped_item_id: 63
+          gib_health: -20
+          pickup_radius: 1310720
+
+        - _index: 2
+          dropped_item_id: 77
+          gib_health: -30
+          pickup_radius: 1310720
+
+        - _index: 3
+          gib_health: -700
+          pickup_radius: 1310720
+
+        - _index: 4
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - _index: 5
+          gib_health: -300
+          pickup_radius: 1310720
+
+        - _index: 6
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - _index: 7
+          pickup_radius: 1310720
+
+        - _index: 8
+          gib_health: -600
+          pickup_radius: 3145728
+
+        - _index: 9
+          is_fullbright: 1
+          pickup_radius: 393216
+
+        - _index: 10
+          dropped_item_id: 73
+          gib_health: -70
+          pickup_radius: 1310720
+
+        - _index: 11
+          gib_health: -60
+          pickup_radius: 1310720
+
+        - _index: 12
+          gib_health: -150
+          pickup_radius: 1966080
+
+        - _index: 13
+          gib_health: -150
+          pickup_radius: 1966080
+
+        - _index: 14
+          gib_health: -400
+          pickup_radius: 2031616
+
+        - _index: 15
+          gib_health: -1000
+          pickup_radius: 1572864
+
+        - _index: 16
+          is_fullbright: 1
+          pickup_radius: 393216
+
+        - _index: 17
+          gib_health: -500
+          pickup_radius: 1572864
+
+        - _index: 18
+          gib_health: -100
+          is_fullbright: 1
+          pickup_radius: 1048576
+
+        - _index: 19
+          gib_health: -3000
+          pickup_radius: 8388608
+
+        - _index: 20
+          gib_health: -500
+          pickup_radius: 4194304
+
+        - _index: 21
+          gib_health: -4000
+          pickup_radius: 2621440
+
+        - _index: 22
+          gib_health: -400
+          pickup_radius: 2031616
+
+        - _index: 23
+          dropped_item_id: 63
+          gib_health: -50
+          pickup_radius: 1310720
+
+        - _index: 24
+          gib_health: -100
+          pickup_radius: 1048576
+
+        - _index: 25
+          gib_health: -250
+          pickup_radius: 1048576
+
+        - _index: 26
+          pickup_radius: 2097152
+
+        - _index: 27
+          pickup_radius: 1310720
+
+        - _index: 28
+          is_fullbright: 1
+          pickup_radius: 393216
+
+        - _index: 29
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - _index: 30
+          pickup_radius: 655360
+
+        - _index: 31
+          is_fullbright: 1
+          pickup_radius: 393216
+
+        - _index: 32
+          is_fullbright: 1
+          pickup_radius: 393216
+
+        - _index: 33
+          is_fullbright: 1
+          pickup_radius: 720896
+
+        - _index: 34
+          is_fullbright: 1
+          pickup_radius: 851968
+
+        - _index: 35
+          is_fullbright: 1
+          pickup_radius: 851968
+
+        - _index: 36
+          is_fullbright: 1
+          pickup_radius: 851968
+
+        - _index: 39
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - _index: 40
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - _index: 41
+          pickup_radius: 1310720
+
+        - _index: 42
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - _index: 55
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - _index: 56
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - _index: 57
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - _index: 58
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - _index: 59
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - _index: 60
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - _index: 62
+          is_fullbright: 1
+          pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - _index: 79
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 80
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 81
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 88
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 89
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 92
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 93
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 94
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 95
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 96
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 97
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1310720
+
+        - _index: 100
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - _index: 123
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 2097152
+          projectile_pass_height: 1048576
+
+        - _index: 127
+          is_fullbright: 1
+          pickup_radius: 1048576
+          projectile_pass_height: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1048576
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 1310720
+
+        - pickup_radius: 524288
+
+        - pickup_radius: 524288
+
+        - _index: 139
+          gib_health: -500
+          pickup_radius: 786432
+
+        - _index: 140
+          is_fullbright: 1
+          pickup_radius: 851968
+
+        - _index: 141
+          is_fullbright: 1
+          pickup_radius: 393216
+
+        - pickup_radius: 655360
+
+        - pickup_radius: 1310720
+
+        - _index: 144
+          name: Music source
+          id: 14164
+          health: 1000
+          mass: 100
+          flags: 16
+          height: 1048576
+          radius: 1048576
+          pickup_radius: 1048576
+          state_spawn: 967
+          projectile_pass_height: 1048576
+
+        - _index: 150
+          reaction_time: 0
+          name: Extra thing 0
+
+        - reaction_time: 0
+          name: Extra thing 1
+
+        - reaction_time: 0
+          name: Extra thing 2
+
+        - reaction_time: 0
+          name: Extra thing 3
+
+        - reaction_time: 0
+          name: Extra thing 4
+
+        - reaction_time: 0
+          name: Extra thing 5
+
+        - reaction_time: 0
+          name: Extra thing 6
+
+        - reaction_time: 0
+          name: Extra thing 7
+
+        - reaction_time: 0
+          name: Extra thing 8
+
+        - reaction_time: 0
+          name: Extra thing 9
+
+        - reaction_time: 0
+          name: Extra thing 10
+
+        - reaction_time: 0
+          name: Extra thing 11
+
+        - reaction_time: 0
+          name: Extra thing 12
+
+        - reaction_time: 0
+          name: Extra thing 13
+
+        - reaction_time: 0
+          name: Extra thing 14
+
+        - reaction_time: 0
+          name: Extra thing 15
+
+        - reaction_time: 0
+          name: Extra thing 16
+
+        - reaction_time: 0
+          name: Extra thing 17
+
+        - reaction_time: 0
+          name: Extra thing 18
+
+        - reaction_time: 0
+          name: Extra thing 19
+
+        - reaction_time: 0
+          name: Extra thing 20
+
+        - reaction_time: 0
+          name: Extra thing 21
+
+        - reaction_time: 0
+          name: Extra thing 22
+
+        - reaction_time: 0
+          name: Extra thing 23
+
+        - reaction_time: 0
+          name: Extra thing 24
+
+        - reaction_time: 0
+          name: Extra thing 25
+
+        - reaction_time: 0
+          name: Extra thing 26
+
+        - reaction_time: 0
+          name: Extra thing 27
+
+        - reaction_time: 0
+          name: Extra thing 28
+
+        - reaction_time: 0
+          name: Extra thing 29
+
+        - reaction_time: 0
+          name: Extra thing 30
+
+        - reaction_time: 0
+          name: Extra thing 31
+
+        - reaction_time: 0
+          name: Extra thing 32
+
+        - reaction_time: 0
+          name: Extra thing 33
+
+        - reaction_time: 0
+          name: Extra thing 34
+
+        - reaction_time: 0
+          name: Extra thing 35
+
+        - reaction_time: 0
+          name: Extra thing 36
+
+        - reaction_time: 0
+          name: Extra thing 37
+
+        - reaction_time: 0
+          name: Extra thing 38
+
+        - reaction_time: 0
+          name: Extra thing 39
+
+        - reaction_time: 0
+          name: Extra thing 40
+
+        - reaction_time: 0
+          name: Extra thing 41
+
+        - reaction_time: 0
+          name: Extra thing 42
+
+        - reaction_time: 0
+          name: Extra thing 43
+
+        - reaction_time: 0
+          name: Extra thing 44
+
+        - reaction_time: 0
+          name: Extra thing 45
+
+        - reaction_time: 0
+          name: Extra thing 46
+
+        - reaction_time: 0
+          name: Extra thing 47
+
+        - reaction_time: 0
+          name: Extra thing 48
+
+        - reaction_time: 0
+          name: Extra thing 49
+
+        - reaction_time: 0
+          name: Extra thing 50
+
+        - reaction_time: 0
+          name: Extra thing 51
+
+        - reaction_time: 0
+          name: Extra thing 52
+
+        - reaction_time: 0
+          name: Extra thing 53
+
+        - reaction_time: 0
+          name: Extra thing 54
+
+        - reaction_time: 0
+          name: Extra thing 55
+
+        - reaction_time: 0
+          name: Extra thing 56
+
+        - reaction_time: 0
+          name: Extra thing 57
+
+        - reaction_time: 0
+          name: Extra thing 58
+
+        - reaction_time: 0
+          name: Extra thing 59
+
+        - reaction_time: 0
+          name: Extra thing 60
+
+        - reaction_time: 0
+          name: Extra thing 61
+
+        - reaction_time: 0
+          name: Extra thing 62
+
+        - reaction_time: 0
+          name: Extra thing 63
+
+        - reaction_time: 0
+          name: Extra thing 64
+
+        - reaction_time: 0
+          name: Extra thing 65
+
+        - reaction_time: 0
+          name: Extra thing 66
+
+        - reaction_time: 0
+          name: Extra thing 67
+
+        - reaction_time: 0
+          name: Extra thing 68
+
+        - reaction_time: 0
+          name: Extra thing 69
+
+        - reaction_time: 0
+          name: Extra thing 70
+
+        - reaction_time: 0
+          name: Extra thing 71
+
+        - reaction_time: 0
+          name: Extra thing 72
+
+        - reaction_time: 0
+          name: Extra thing 73
+
+        - reaction_time: 0
+          name: Extra thing 74
+
+        - reaction_time: 0
+          name: Extra thing 75
+
+        - reaction_time: 0
+          name: Extra thing 76
+
+        - reaction_time: 0
+          name: Extra thing 77
+
+        - reaction_time: 0
+          name: Extra thing 78
+
+        - reaction_time: 0
+          name: Extra thing 79
+
+        - reaction_time: 0
+          name: Extra thing 80
+
+        - reaction_time: 0
+          name: Extra thing 81
+
+        - reaction_time: 0
+          name: Extra thing 82
+
+        - reaction_time: 0
+          name: Extra thing 83
+
+        - reaction_time: 0
+          name: Extra thing 84
+
+        - reaction_time: 0
+          name: Extra thing 85
+
+        - reaction_time: 0
+          name: Extra thing 86
+
+        - reaction_time: 0
+          name: Extra thing 87
+
+        - reaction_time: 0
+          name: Extra thing 88
+
+        - reaction_time: 0
+          name: Extra thing 89
+
+        - reaction_time: 0
+          name: Extra thing 90
+
+        - reaction_time: 0
+          name: Extra thing 91
+
+        - reaction_time: 0
+          name: Extra thing 92
+
+        - reaction_time: 0
+          name: Extra thing 93
+
+        - reaction_time: 0
+          name: Extra thing 94
+
+        - reaction_time: 0
+          name: Extra thing 95
+
+        - reaction_time: 0
+          name: Extra thing 96
+
+        - reaction_time: 0
+          name: Extra thing 97
+
+        - reaction_time: 0
+          name: Extra thing 98
+
+        - reaction_time: 0
+          name: Extra thing 99

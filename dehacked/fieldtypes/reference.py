@@ -20,7 +20,7 @@ class ReferenceFieldType(BaseFieldType):
             return False
 
         table = self.target.tables[self.table_name]
-        return 0 <= value < len(table.rows)
+        return value in table.rows
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):

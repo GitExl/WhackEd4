@@ -17,8 +17,10 @@ class Table:
         self.target: Target = target
 
         self.fields: Dict[str, BaseFieldType] = {}
+
         self.default_row: Dict[str, any] = {}
-        self.rows: List = []
+        self.rows: Dict[int, dict] = {}
+        self.next_index: int = 0
 
     def add_field(self, key: str, data: dict):
         field_type = fieldtype_factory.create(key, data, self.target)
@@ -26,12 +28,24 @@ class Table:
         self.default_row[key] = field_type.default
 
     def add_row(self, data: dict):
-        row = self.default_row.copy()
-        row.update(data)
-        self.rows.append(row)
+
+        # Start from a specific index.
+        if '_index' in data:
+            self.next_index = data['_index']
+            del data['_index']
+
+        # Extend an existing row or create a new one from default data.
+        if self.next_index in self.rows:
+            self.rows[self.next_index].update(data)
+        else:
+            row = self.default_row.copy()
+            row.update(data)
+            self.rows[self.next_index] = row
+
+        self.next_index += 1
 
     def validate(self):
-        for row_index, row in enumerate(self.rows):
+        for row_index, row in self.rows.items():
             for field_key, value in row.items():
                 if field_key not in self.fields:
                     raise RuntimeError(f'Table "{self.name}", row {row_index} contains unknown field "{field_key}".')

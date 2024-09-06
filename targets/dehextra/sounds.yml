@@ -1,0 +1,602 @@
+data:
+    sound:
+        - _index: 499
+          priority: 127
+          name: FRE000
+
+        - priority: 127
+          name: FRE001
+
+        - priority: 127
+          name: FRE002
+
+        - priority: 127
+          name: FRE003
+
+        - priority: 127
+          name: FRE004
+
+        - priority: 127
+          name: FRE005
+
+        - priority: 127
+          name: FRE006
+
+        - priority: 127
+          name: FRE007
+
+        - priority: 127
+          name: FRE008
+
+        - priority: 127
+          name: FRE009
+
+        - priority: 127
+          name: FRE010
+
+        - priority: 127
+          name: FRE011
+
+        - priority: 127
+          name: FRE012
+
+        - priority: 127
+          name: FRE013
+
+        - priority: 127
+          name: FRE014
+
+        - priority: 127
+          name: FRE015
+
+        - priority: 127
+          name: FRE016
+
+        - priority: 127
+          name: FRE017
+
+        - priority: 127
+          name: FRE018
+
+        - priority: 127
+          name: FRE019
+
+        - priority: 127
+          name: FRE020
+
+        - priority: 127
+          name: FRE021
+
+        - priority: 127
+          name: FRE022
+
+        - priority: 127
+          name: FRE023
+
+        - priority: 127
+          name: FRE024
+
+        - priority: 127
+          name: FRE025
+
+        - priority: 127
+          name: FRE026
+
+        - priority: 127
+          name: FRE027
+
+        - priority: 127
+          name: FRE028
+
+        - priority: 127
+          name: FRE029
+
+        - priority: 127
+          name: FRE030
+
+        - priority: 127
+          name: FRE031
+
+        - priority: 127
+          name: FRE032
+
+        - priority: 127
+          name: FRE033
+
+        - priority: 127
+          name: FRE034
+
+        - priority: 127
+          name: FRE035
+
+        - priority: 127
+          name: FRE036
+
+        - priority: 127
+          name: FRE037
+
+        - priority: 127
+          name: FRE038
+
+        - priority: 127
+          name: FRE039
+
+        - priority: 127
+          name: FRE040
+
+        - priority: 127
+          name: FRE041
+
+        - priority: 127
+          name: FRE042
+
+        - priority: 127
+          name: FRE043
+
+        - priority: 127
+          name: FRE044
+
+        - priority: 127
+          name: FRE045
+
+        - priority: 127
+          name: FRE046
+
+        - priority: 127
+          name: FRE047
+
+        - priority: 127
+          name: FRE048
+
+        - priority: 127
+          name: FRE049
+
+        - priority: 127
+          name: FRE050
+
+        - priority: 127
+          name: FRE051
+
+        - priority: 127
+          name: FRE052
+
+        - priority: 127
+          name: FRE053
+
+        - priority: 127
+          name: FRE054
+
+        - priority: 127
+          name: FRE055
+
+        - priority: 127
+          name: FRE056
+
+        - priority: 127
+          name: FRE057
+
+        - priority: 127
+          name: FRE058
+
+        - priority: 127
+          name: FRE059
+
+        - priority: 127
+          name: FRE060
+
+        - priority: 127
+          name: FRE061
+
+        - priority: 127
+          name: FRE062
+
+        - priority: 127
+          name: FRE063
+
+        - priority: 127
+          name: FRE064
+
+        - priority: 127
+          name: FRE065
+
+        - priority: 127
+          name: FRE066
+
+        - priority: 127
+          name: FRE067
+
+        - priority: 127
+          name: FRE068
+
+        - priority: 127
+          name: FRE069
+
+        - priority: 127
+          name: FRE070
+
+        - priority: 127
+          name: FRE071
+
+        - priority: 127
+          name: FRE072
+
+        - priority: 127
+          name: FRE073
+
+        - priority: 127
+          name: FRE074
+
+        - priority: 127
+          name: FRE075
+
+        - priority: 127
+          name: FRE076
+
+        - priority: 127
+          name: FRE077
+
+        - priority: 127
+          name: FRE078
+
+        - priority: 127
+          name: FRE079
+
+        - priority: 127
+          name: FRE080
+
+        - priority: 127
+          name: FRE081
+
+        - priority: 127
+          name: FRE082
+
+        - priority: 127
+          name: FRE083
+
+        - priority: 127
+          name: FRE084
+
+        - priority: 127
+          name: FRE085
+
+        - priority: 127
+          name: FRE086
+
+        - priority: 127
+          name: FRE087
+
+        - priority: 127
+          name: FRE088
+
+        - priority: 127
+          name: FRE089
+
+        - priority: 127
+          name: FRE090
+
+        - priority: 127
+          name: FRE091
+
+        - priority: 127
+          name: FRE092
+
+        - priority: 127
+          name: FRE093
+
+        - priority: 127
+          name: FRE094
+
+        - priority: 127
+          name: FRE095
+
+        - priority: 127
+          name: FRE096
+
+        - priority: 127
+          name: FRE097
+
+        - priority: 127
+          name: FRE098
+
+        - priority: 127
+          name: FRE099
+
+        - priority: 127
+          name: FRE100
+
+        - priority: 127
+          name: FRE101
+
+        - priority: 127
+          name: FRE102
+
+        - priority: 127
+          name: FRE103
+
+        - priority: 127
+          name: FRE104
+
+        - priority: 127
+          name: FRE105
+
+        - priority: 127
+          name: FRE106
+
+        - priority: 127
+          name: FRE107
+
+        - priority: 127
+          name: FRE108
+
+        - priority: 127
+          name: FRE109
+
+        - priority: 127
+          name: FRE110
+
+        - priority: 127
+          name: FRE111
+
+        - priority: 127
+          name: FRE112
+
+        - priority: 127
+          name: FRE113
+
+        - priority: 127
+          name: FRE114
+
+        - priority: 127
+          name: FRE115
+
+        - priority: 127
+          name: FRE116
+
+        - priority: 127
+          name: FRE117
+
+        - priority: 127
+          name: FRE118
+
+        - priority: 127
+          name: FRE119
+
+        - priority: 127
+          name: FRE120
+
+        - priority: 127
+          name: FRE121
+
+        - priority: 127
+          name: FRE122
+
+        - priority: 127
+          name: FRE123
+
+        - priority: 127
+          name: FRE124
+
+        - priority: 127
+          name: FRE125
+
+        - priority: 127
+          name: FRE126
+
+        - priority: 127
+          name: FRE127
+
+        - priority: 127
+          name: FRE128
+
+        - priority: 127
+          name: FRE129
+
+        - priority: 127
+          name: FRE130
+
+        - priority: 127
+          name: FRE131
+
+        - priority: 127
+          name: FRE132
+
+        - priority: 127
+          name: FRE133
+
+        - priority: 127
+          name: FRE134
+
+        - priority: 127
+          name: FRE135
+
+        - priority: 127
+          name: FRE136
+
+        - priority: 127
+          name: FRE137
+
+        - priority: 127
+          name: FRE138
+
+        - priority: 127
+          name: FRE139
+
+        - priority: 127
+          name: FRE140
+
+        - priority: 127
+          name: FRE141
+
+        - priority: 127
+          name: FRE142
+
+        - priority: 127
+          name: FRE143
+
+        - priority: 127
+          name: FRE144
+
+        - priority: 127
+          name: FRE145
+
+        - priority: 127
+          name: FRE146
+
+        - priority: 127
+          name: FRE147
+
+        - priority: 127
+          name: FRE148
+
+        - priority: 127
+          name: FRE149
+
+        - priority: 127
+          name: FRE150
+
+        - priority: 127
+          name: FRE151
+
+        - priority: 127
+          name: FRE152
+
+        - priority: 127
+          name: FRE153
+
+        - priority: 127
+          name: FRE154
+
+        - priority: 127
+          name: FRE155
+
+        - priority: 127
+          name: FRE156
+
+        - priority: 127
+          name: FRE157
+
+        - priority: 127
+          name: FRE158
+
+        - priority: 127
+          name: FRE159
+
+        - priority: 127
+          name: FRE160
+
+        - priority: 127
+          name: FRE161
+
+        - priority: 127
+          name: FRE162
+
+        - priority: 127
+          name: FRE163
+
+        - priority: 127
+          name: FRE164
+
+        - priority: 127
+          name: FRE165
+
+        - priority: 127
+          name: FRE166
+
+        - priority: 127
+          name: FRE167
+
+        - priority: 127
+          name: FRE168
+
+        - priority: 127
+          name: FRE169
+
+        - priority: 127
+          name: FRE170
+
+        - priority: 127
+          name: FRE171
+
+        - priority: 127
+          name: FRE172
+
+        - priority: 127
+          name: FRE173
+
+        - priority: 127
+          name: FRE174
+
+        - priority: 127
+          name: FRE175
+
+        - priority: 127
+          name: FRE176
+
+        - priority: 127
+          name: FRE177
+
+        - priority: 127
+          name: FRE178
+
+        - priority: 127
+          name: FRE179
+
+        - priority: 127
+          name: FRE180
+
+        - priority: 127
+          name: FRE181
+
+        - priority: 127
+          name: FRE182
+
+        - priority: 127
+          name: FRE183
+
+        - priority: 127
+          name: FRE184
+
+        - priority: 127
+          name: FRE185
+
+        - priority: 127
+          name: FRE186
+
+        - priority: 127
+          name: FRE187
+
+        - priority: 127
+          name: FRE188
+
+        - priority: 127
+          name: FRE189
+
+        - priority: 127
+          name: FRE190
+
+        - priority: 127
+          name: FRE191
+
+        - priority: 127
+          name: FRE192
+
+        - priority: 127
+          name: FRE193
+
+        - priority: 127
+          name: FRE194
+
+        - priority: 127
+          name: FRE195
+
+        - priority: 127
+          name: FRE196
+
+        - priority: 127
+          name: FRE197
+
+        - priority: 127
+          name: FRE198
+
+        - priority: 127
+          name: FRE199

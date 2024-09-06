@@ -36,15 +36,14 @@ class Target:
         if key not in self.enums:
             self.enums[key] = {}
 
-        self.enums[key].update(data)
+        enum = self.enums[key]
+        enum.update(data)
 
     def add_flagset(self, key: str, data: dict):
         if key not in self.flagsets:
-            flagset = FlagSet(key)
-            self.flagsets[key] = flagset
-        else:
-            flagset = self.flagsets[key]
+            self.flagsets[key] = FlagSet(key)
 
+        flagset = self.flagsets[key]
         for flag_key, flag_data in data.items():
             flagset.add_flag(Flag.parse(key, flag_key, flag_data))
 
@@ -55,10 +54,14 @@ class Target:
         if key not in self.tables:
             self.tables[key] = Table(key, self)
 
+        table = self.tables[key]
         for field_key, field_data in data.items():
-            self.tables[key].add_field(field_key, field_data)
+            table.add_field(field_key, field_data)
 
-    def add_rows(self, table_key: str, rows: list):
+    def add_data(self, table_key: str, rows: list):
+        if table_key not in self.tables:
+            raise RuntimeError(f'Cannot add data for unknown table "{table_key}".')
+
         table = self.tables[table_key]
         for row in rows:
             table.add_row(row)
