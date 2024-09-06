@@ -1,119 +1,119 @@
 schema:
-    weapon:
-        name:
-            type: string
-            name: Name
-            default: Unnamed
-            group: properties
-        ammo_type:
-            type: ammo
-            name: Ammo type
-            patch_key: Ammo type
-            default: 0
-            group: properties
-        state_select:
-            type: reference
-            reference: state
-            name: Select
-            patch_key: Select frame
-            default: 0
-            group: states
-        state_deselect:
-            type: reference
-            reference: state
-            name: Deselect
-            patch_key: Deselect frame
-            default: 0
-            group: states
-        state_bob:
-            type: reference
-            reference: state
-            name: Bobbing
-            patch_key: Bobbing frame
-            default: 0
-            group: states
-        state_fire:
-            type: reference
-            reference: state
-            name: Fire
-            patch_key: Firing frame
-            default: 0
-            group: states
-        state_muzzle:
-            type: reference
-            reference: state
-            name: Muzzle flash
-            patch_key: Shooting frame
-            default: 0
-            group: states
+  weapon:
+    name:
+      type: string
+      name: Name
+      default: Unnamed
+      group: properties
+    ammo_type:
+      type: ammo
+      name: Ammo type
+      patch_key: Ammo type
+      default: 0
+      group: properties
+    state_select:
+      type: reference
+      reference: state
+      name: Select
+      patch_key: Select frame
+      default: 0
+      group: states
+    state_deselect:
+      type: reference
+      reference: state
+      name: Deselect
+      patch_key: Deselect frame
+      default: 0
+      group: states
+    state_bob:
+      type: reference
+      reference: state
+      name: Bobbing
+      patch_key: Bobbing frame
+      default: 0
+      group: states
+    state_fire:
+      type: reference
+      reference: state
+      name: Fire
+      patch_key: Firing frame
+      default: 0
+      group: states
+    state_muzzle:
+      type: reference
+      reference: state
+      name: Muzzle flash
+      patch_key: Shooting frame
+      default: 0
+      group: states
 
 data:
-    weapon:
-        - name: Fist
-          state_select: 3
-          state_deselect: 4
-          state_bob: 2
-          state_fire: 5
-          state_muzzle: 0
-          ammo_type: 5
+  weapon:
+    - name: Fist
+      state_select: 3
+      state_deselect: 4
+      state_bob: 2
+      state_fire: 5
+      state_muzzle: 0
+      ammo_type: 5
 
-        - state_deselect: 12
-          state_bob: 10
-          state_muzzle: 17
-          state_select: 11
-          state_fire: 13
-          name: Pistol
+    - state_deselect: 12
+      state_bob: 10
+      state_muzzle: 17
+      state_select: 11
+      state_fire: 13
+      name: Pistol
 
-        - state_deselect: 20
-          state_bob: 18
-          state_muzzle: 30
-          ammo_type: 1
-          state_select: 19
-          state_fire: 21
-          name: Shotgun
+    - state_deselect: 20
+      state_bob: 18
+      state_muzzle: 30
+      ammo_type: 1
+      state_select: 19
+      state_fire: 21
+      name: Shotgun
 
-        - state_deselect: 51
-          state_bob: 49
-          state_muzzle: 55
-          state_select: 50
-          state_fire: 52
-          name: Chaingun
+    - state_deselect: 51
+      state_bob: 49
+      state_muzzle: 55
+      state_select: 50
+      state_fire: 52
+      name: Chaingun
 
-        - state_deselect: 59
-          state_bob: 57
-          state_muzzle: 63
-          ammo_type: 3
-          state_select: 58
-          state_fire: 60
-          name: Rocket launcher
+    - state_deselect: 59
+      state_bob: 57
+      state_muzzle: 63
+      ammo_type: 3
+      state_select: 58
+      state_fire: 60
+      name: Rocket launcher
 
-        - state_deselect: 76
-          state_bob: 74
-          state_muzzle: 79
-          ammo_type: 2
-          state_select: 75
-          state_fire: 77
-          name: Plasma rifle
+    - state_deselect: 76
+      state_bob: 74
+      state_muzzle: 79
+      ammo_type: 2
+      state_select: 75
+      state_fire: 77
+      name: Plasma rifle
 
-        - state_deselect: 83
-          state_bob: 81
-          state_muzzle: 88
-          ammo_type: 2
-          state_select: 82
-          state_fire: 84
-          name: BFG 9000
+    - state_deselect: 83
+      state_bob: 81
+      state_muzzle: 88
+      ammo_type: 2
+      state_select: 82
+      state_fire: 84
+      name: BFG 9000
 
-        - state_deselect: 70
-          state_bob: 67
-          ammo_type: 5
-          state_select: 69
-          state_fire: 71
-          name: Chainsaw
+    - state_deselect: 70
+      state_bob: 67
+      ammo_type: 5
+      state_select: 69
+      state_fire: 71
+      name: Chainsaw
 
-        - state_deselect: 34
-          state_bob: 32
-          state_muzzle: 47
-          ammo_type: 1
-          state_select: 33
-          state_fire: 35
-          name: Super-shotgun
+    - state_deselect: 34
+      state_bob: 32
+      state_muzzle: 47
+      ammo_type: 1
+      state_select: 33
+      state_fire: 35
+      name: Super-shotgun

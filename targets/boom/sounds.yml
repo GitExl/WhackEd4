@@ -1,435 +1,435 @@
 schema:
-    sound:
-        name:
-            type: string
-            name: Name
-            default: Unnamed
-            max: 6
-            min: 1
-        is_singular:
-            type: bool
-            name: Singular
-            patch_key: 'Zero/One'
-            default: 1
-        priority:
-            type: int32
-            name: Priority
-            patch_key: Value
-            default: 64
-        link_pointer:
-            type: int32
-            name: Linked pointer
-            patch_key: Zero 1
-            default: 0
-            hidden: 1
-        link_pitch:
-            type: int32
-            name: Linked pitch
-            patch_key: Neg. One 1
-            default: -1
-            hidden: 1
-        link_volume:
-            type: int32
-            name: Linked volume
-            patch_key: Neg. One 2
-            default: -1
-            hidden: 1
+  sound:
+    name:
+      type: string
+      name: Name
+      default: Unnamed
+      max: 6
+      min: 1
+    is_singular:
+      type: bool
+      name: Singular
+      patch_key: 'Zero/One'
+      default: 1
+    priority:
+      type: int32
+      name: Priority
+      patch_key: Value
+      default: 64
+    link_pointer:
+      type: int32
+      name: Linked pointer
+      patch_key: Zero 1
+      default: 0
+      hidden: 1
+    link_pitch:
+      type: int32
+      name: Linked pitch
+      patch_key: Neg. One 1
+      default: -1
+      hidden: 1
+    link_volume:
+      type: int32
+      name: Linked volume
+      patch_key: Neg. One 2
+      default: -1
+      hidden: 1
 
 data:
-    sound:
-        - is_singular: 0
-          name: pistol
+  sound:
+    - is_singular: 0
+      name: pistol
 
-        - is_singular: 0
-          name: shotgn
+    - is_singular: 0
+      name: shotgn
 
-        - is_singular: 0
-          name: sgcock
+    - is_singular: 0
+      name: sgcock
 
-        - is_singular: 0
-          name: dshtgn
+    - is_singular: 0
+      name: dshtgn
 
-        - is_singular: 0
-          name: dbopn
+    - is_singular: 0
+      name: dbopn
 
-        - is_singular: 0
-          name: dbcls
+    - is_singular: 0
+      name: dbcls
 
-        - is_singular: 0
-          name: dbload
+    - is_singular: 0
+      name: dbload
 
-        - is_singular: 0
-          name: plasma
+    - is_singular: 0
+      name: plasma
 
-        - is_singular: 0
-          name: bfg
+    - is_singular: 0
+      name: bfg
 
-        - is_singular: 0
-          name: sawup
+    - is_singular: 0
+      name: sawup
 
-        - is_singular: 0
-          priority: 118
-          name: sawidl
+    - is_singular: 0
+      priority: 118
+      name: sawidl
 
-        - is_singular: 0
-          name: sawful
+    - is_singular: 0
+      name: sawful
 
-        - is_singular: 0
-          name: sawhit
+    - is_singular: 0
+      name: sawhit
 
-        - is_singular: 0
-          name: rlaunc
+    - is_singular: 0
+      name: rlaunc
 
-        - is_singular: 0
-          priority: 70
-          name: rxplod
+    - is_singular: 0
+      priority: 70
+      name: rxplod
 
-        - is_singular: 0
-          priority: 70
-          name: firsht
+    - is_singular: 0
+      priority: 70
+      name: firsht
 
-        - is_singular: 0
-          priority: 70
-          name: firxpl
+    - is_singular: 0
+      priority: 70
+      name: firxpl
 
-        - is_singular: 0
-          priority: 100
-          name: pstart
+    - is_singular: 0
+      priority: 100
+      name: pstart
 
-        - is_singular: 0
-          priority: 100
-          name: pstop
+    - is_singular: 0
+      priority: 100
+      name: pstop
 
-        - is_singular: 0
-          priority: 100
-          name: doropn
+    - is_singular: 0
+      priority: 100
+      name: doropn
 
-        - is_singular: 0
-          priority: 100
-          name: dorcls
+    - is_singular: 0
+      priority: 100
+      name: dorcls
 
-        - is_singular: 0
-          priority: 119
-          name: stnmov
+    - is_singular: 0
+      priority: 119
+      name: stnmov
 
-        - is_singular: 0
-          priority: 78
-          name: swtchn
+    - is_singular: 0
+      priority: 78
+      name: swtchn
 
-        - is_singular: 0
-          priority: 78
-          name: swtchx
+    - is_singular: 0
+      priority: 78
+      name: swtchx
 
-        - is_singular: 0
-          priority: 96
-          name: plpain
+    - is_singular: 0
+      priority: 96
+      name: plpain
 
-        - is_singular: 0
-          priority: 96
-          name: dmpain
+    - is_singular: 0
+      priority: 96
+      name: dmpain
 
-        - is_singular: 0
-          priority: 96
-          name: popain
+    - is_singular: 0
+      priority: 96
+      name: popain
 
-        - is_singular: 0
-          priority: 96
-          name: vipain
+    - is_singular: 0
+      priority: 96
+      name: vipain
 
-        - is_singular: 0
-          priority: 96
-          name: mnpain
+    - is_singular: 0
+      priority: 96
+      name: mnpain
 
-        - is_singular: 0
-          priority: 96
-          name: pepain
+    - is_singular: 0
+      priority: 96
+      name: pepain
 
-        - is_singular: 0
-          priority: 78
-          name: slop
+    - is_singular: 0
+      priority: 78
+      name: slop
 
-        - priority: 78
-          name: itemup
+    - priority: 78
+      name: itemup
 
-        - priority: 78
-          name: wpnup
+    - priority: 78
+      name: wpnup
 
-        - is_singular: 0
-          priority: 96
-          name: oof
+    - is_singular: 0
+      priority: 96
+      name: oof
 
-        - is_singular: 0
-          priority: 32
-          name: telept
+    - is_singular: 0
+      priority: 32
+      name: telept
 
-        - priority: 98
-          name: posit1
+    - priority: 98
+      name: posit1
 
-        - priority: 98
-          name: posit2
+    - priority: 98
+      name: posit2
 
-        - priority: 98
-          name: posit3
+    - priority: 98
+      name: posit3
 
-        - priority: 98
-          name: bgsit1
+    - priority: 98
+      name: bgsit1
 
-        - priority: 98
-          name: bgsit2
+    - priority: 98
+      name: bgsit2
 
-        - priority: 98
-          name: sgtsit
+    - priority: 98
+      name: sgtsit
 
-        - priority: 98
-          name: cacsit
+    - priority: 98
+      name: cacsit
 
-        - priority: 94
-          name: brssit
+    - priority: 94
+      name: brssit
 
-        - priority: 92
-          name: cybsit
+    - priority: 92
+      name: cybsit
 
-        - priority: 90
-          name: spisit
+    - priority: 90
+      name: spisit
 
-        - priority: 90
-          name: bspsit
+    - priority: 90
+      name: bspsit
 
-        - priority: 90
-          name: kntsit
+    - priority: 90
+      name: kntsit
 
-        - priority: 90
-          name: vilsit
+    - priority: 90
+      name: vilsit
 
-        - priority: 90
-          name: mansit
+    - priority: 90
+      name: mansit
 
-        - priority: 90
-          name: pesit
+    - priority: 90
+      name: pesit
 
-        - is_singular: 0
-          priority: 70
-          name: sklatk
+    - is_singular: 0
+      priority: 70
+      name: sklatk
 
-        - is_singular: 0
-          priority: 70
-          name: sgtatk
+    - is_singular: 0
+      priority: 70
+      name: sgtatk
 
-        - is_singular: 0
-          priority: 70
-          name: skepch
+    - is_singular: 0
+      priority: 70
+      name: skepch
 
-        - is_singular: 0
-          priority: 70
-          name: vilatk
+    - is_singular: 0
+      priority: 70
+      name: vilatk
 
-        - is_singular: 0
-          priority: 70
-          name: claw
+    - is_singular: 0
+      priority: 70
+      name: claw
 
-        - is_singular: 0
-          priority: 70
-          name: skeswg
+    - is_singular: 0
+      priority: 70
+      name: skeswg
 
-        - is_singular: 0
-          priority: 32
-          name: pldeth
+    - is_singular: 0
+      priority: 32
+      name: pldeth
 
-        - is_singular: 0
-          priority: 32
-          name: pdiehi
+    - is_singular: 0
+      priority: 32
+      name: pdiehi
 
-        - is_singular: 0
-          priority: 70
-          name: podth1
+    - is_singular: 0
+      priority: 70
+      name: podth1
 
-        - is_singular: 0
-          priority: 70
-          name: podth2
+    - is_singular: 0
+      priority: 70
+      name: podth2
 
-        - is_singular: 0
-          priority: 70
-          name: podth3
+    - is_singular: 0
+      priority: 70
+      name: podth3
 
-        - is_singular: 0
-          priority: 70
-          name: bgdth1
+    - is_singular: 0
+      priority: 70
+      name: bgdth1
 
-        - is_singular: 0
-          priority: 70
-          name: bgdth2
+    - is_singular: 0
+      priority: 70
+      name: bgdth2
 
-        - is_singular: 0
-          priority: 70
-          name: sgtdth
+    - is_singular: 0
+      priority: 70
+      name: sgtdth
 
-        - is_singular: 0
-          priority: 70
-          name: cacdth
+    - is_singular: 0
+      priority: 70
+      name: cacdth
 
-        - is_singular: 0
-          priority: 70
-          name: skldth
+    - is_singular: 0
+      priority: 70
+      name: skldth
 
-        - is_singular: 0
-          priority: 32
-          name: brsdth
+    - is_singular: 0
+      priority: 32
+      name: brsdth
 
-        - is_singular: 0
-          priority: 32
-          name: cybdth
+    - is_singular: 0
+      priority: 32
+      name: cybdth
 
-        - is_singular: 0
-          priority: 32
-          name: spidth
+    - is_singular: 0
+      priority: 32
+      name: spidth
 
-        - is_singular: 0
-          priority: 32
-          name: bspdth
+    - is_singular: 0
+      priority: 32
+      name: bspdth
 
-        - is_singular: 0
-          priority: 32
-          name: vildth
+    - is_singular: 0
+      priority: 32
+      name: vildth
 
-        - is_singular: 0
-          priority: 32
-          name: kntdth
+    - is_singular: 0
+      priority: 32
+      name: kntdth
 
-        - is_singular: 0
-          priority: 32
-          name: pedth
+    - is_singular: 0
+      priority: 32
+      name: pedth
 
-        - is_singular: 0
-          priority: 32
-          name: skedth
+    - is_singular: 0
+      priority: 32
+      name: skedth
 
-        - priority: 120
-          name: posact
+    - priority: 120
+      name: posact
 
-        - priority: 120
-          name: bgact
+    - priority: 120
+      name: bgact
 
-        - priority: 120
-          name: dmact
+    - priority: 120
+      name: dmact
 
-        - priority: 100
-          name: bspact
+    - priority: 100
+      name: bspact
 
-        - priority: 100
-          name: bspwlk
+    - priority: 100
+      name: bspwlk
 
-        - priority: 100
-          name: vilact
+    - priority: 100
+      name: vilact
 
-        - is_singular: 0
-          priority: 78
-          name: noway
+    - is_singular: 0
+      priority: 78
+      name: noway
 
-        - is_singular: 0
-          priority: 60
-          name: barexp
+    - is_singular: 0
+      priority: 60
+      name: barexp
 
-        - is_singular: 0
-          name: punch
+    - is_singular: 0
+      name: punch
 
-        - is_singular: 0
-          priority: 70
-          name: hoof
+    - is_singular: 0
+      priority: 70
+      name: hoof
 
-        - is_singular: 0
-          priority: 70
-          name: metal
+    - is_singular: 0
+      priority: 70
+      name: metal
 
-        - link_pointer: 84240
-          link_pitch: 150
-          link_volume: 0
-          is_singular: 0
-          name: chgun
+    - link_pointer: 84240
+      link_pitch: 150
+      link_volume: 0
+      is_singular: 0
+      name: chgun
 
-        - is_singular: 0
-          priority: 60
-          name: tink
+    - is_singular: 0
+      priority: 60
+      name: tink
 
-        - is_singular: 0
-          priority: 100
-          name: bdopn
+    - is_singular: 0
+      priority: 100
+      name: bdopn
 
-        - is_singular: 0
-          priority: 100
-          name: bdcls
+    - is_singular: 0
+      priority: 100
+      name: bdcls
 
-        - is_singular: 0
-          priority: 100
-          name: itmbk
+    - is_singular: 0
+      priority: 100
+      name: itmbk
 
-        - is_singular: 0
-          priority: 32
-          name: flame
+    - is_singular: 0
+      priority: 32
+      name: flame
 
-        - is_singular: 0
-          priority: 32
-          name: flamst
+    - is_singular: 0
+      priority: 32
+      name: flamst
 
-        - is_singular: 0
-          priority: 60
-          name: getpow
+    - is_singular: 0
+      priority: 60
+      name: getpow
 
-        - is_singular: 0
-          priority: 70
-          name: bospit
+    - is_singular: 0
+      priority: 70
+      name: bospit
 
-        - is_singular: 0
-          priority: 70
-          name: boscub
+    - is_singular: 0
+      priority: 70
+      name: boscub
 
-        - is_singular: 0
-          priority: 70
-          name: bossit
+    - is_singular: 0
+      priority: 70
+      name: bossit
 
-        - is_singular: 0
-          priority: 70
-          name: bospn
+    - is_singular: 0
+      priority: 70
+      name: bospn
 
-        - is_singular: 0
-          priority: 70
-          name: bosdth
+    - is_singular: 0
+      priority: 70
+      name: bosdth
 
-        - is_singular: 0
-          priority: 70
-          name: manatk
+    - is_singular: 0
+      priority: 70
+      name: manatk
 
-        - is_singular: 0
-          priority: 70
-          name: mandth
+    - is_singular: 0
+      priority: 70
+      name: mandth
 
-        - is_singular: 0
-          priority: 70
-          name: sssit
+    - is_singular: 0
+      priority: 70
+      name: sssit
 
-        - is_singular: 0
-          priority: 70
-          name: ssdth
+    - is_singular: 0
+      priority: 70
+      name: ssdth
 
-        - is_singular: 0
-          priority: 70
-          name: keenpn
+    - is_singular: 0
+      priority: 70
+      name: keenpn
 
-        - is_singular: 0
-          priority: 70
-          name: keendt
+    - is_singular: 0
+      priority: 70
+      name: keendt
 
-        - is_singular: 0
-          priority: 70
-          name: skeact
+    - is_singular: 0
+      priority: 70
+      name: skeact
 
-        - is_singular: 0
-          priority: 70
-          name: skesit
+    - is_singular: 0
+      priority: 70
+      name: skesit
 
-        - is_singular: 0
-          priority: 70
-          name: skeatk
+    - is_singular: 0
+      priority: 70
+      name: skeatk
 
-        - is_singular: 0
-          priority: 60
-          name: radio
+    - is_singular: 0
+      priority: 60
+      name: radio

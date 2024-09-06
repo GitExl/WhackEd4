@@ -1,32 +1,32 @@
 schema:
-    ammo:
-        name:
-            type: string
-            name: Name
-            default: Unnamed
-        maximum:
-            type: int32
-            name: Maximum
-            default: 0
-        clip:
-            type: int32
-            name: Clip
-            default: 0
+  ammo:
+    name:
+      type: string
+      name: Name
+      default: Unnamed
+    maximum:
+      type: int32
+      name: Maximum
+      default: 0
+    clip:
+      type: int32
+      name: Clip
+      default: 0
 
 data:
-    ammo:
-        - name: Bullets
-          clip: 10
-          maximum: 200
+  ammo:
+    - name: Bullets
+      clip: 10
+      maximum: 200
 
-        - name: Shells
-          clip: 4
-          maximum: 50
+    - name: Shells
+      clip: 4
+      maximum: 50
 
-        - name: Cells
-          clip: 20
-          maximum: 300
+    - name: Cells
+      clip: 20
+      maximum: 300
 
-        - name: Rockets
-          clip: 1
-          maximum: 50
+    - name: Rockets
+      clip: 1
+      maximum: 50

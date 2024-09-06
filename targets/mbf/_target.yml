@@ -1,11 +1,11 @@
 name: "Marine's Best Friend (MBF)"
 extends: boom
 patch_versions:
-    - 19
-    - 21
+  - 19
+  - 21
 load:
-    - actions
-    - sprites
-    - states
-    - sounds
-    - things
+  - actions
+  - sprites
+  - states
+  - sounds
+  - things

@@ -1,16 +1,16 @@
 data:
-    sound:
-      - priority: 98
-        name: dgsit
+  sound:
+    - priority: 98
+      name: dgsit
 
-      - priority: 70
-        name: dgatk
+    - priority: 70
+      name: dgatk
 
-      - priority: 120
-        name: dgact
+    - priority: 120
+      name: dgact
 
-      - priority: 70
-        name: dgdth
+    - priority: 70
+      name: dgdth
 
-      - priority: 96
-        name: dgpain
+    - priority: 96
+      name: dgpain

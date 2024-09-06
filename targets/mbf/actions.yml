@@ -1,125 +1,125 @@
 actions:
-    Detonate:
-      description: Explode with variable damage (thing damage field).
-      type: thing
-    Mushroom:
-      description: Creates a mushroom explosion effect by throwing fireballs up in all
-        directions and causing radius damage.
-      unused:
-        - name: Fireball angle
-          description: The angle to throw the fireballs in.
-          type: fixedpoint
-          range:
-          - -359
-          - 359
-        - name: Fireball speed
-          description: The speed to throw the fireballs at.
-          type: fixedpoint
-          range:
-          - -32767
-          - 32767
-      type: thing
-    Spawn:
-      description: Spawns a thing at the position of this thing.
-      unused:
-        - name: Thing
-          description: The thing to spawn.
-          type: thing
-        - name: Z
-          description: The relative Z position to spawn the thing at.
-          type: integer
-          range:
-          - -32767
-          - 32767
-      type: thing
-    Turn:
-      description: Turns this actor a certain amount.
-      unused:
-        - name: Angle
-          description: The angle to turn, in degrees.
-          type: integer
-          range:
-          - -359
-          - 359
-      type: thing
-    Face:
-      description: Sets this thing's angle directly.
-      unused:
-        - name: Angle
-          description: The angle to face, in degrees.
-          type: integer
-          range:
-          - 0
-          - 359
-      type: thing
-    Scratch:
-      description: Scratches a nearby thing.
-      unused:
-        - name: Damage
-          description: The amount of damage to inflict.
-          type: integer
-          range:
-          - -32767
-          - 32767
-        - name: Sound
-          description: The sound to play.
-          type: sound
-      type: thing
-      sound: state:unused2
-    PlaySound:
-      description: Plays a sound.
-      unused:
-        - name: Sound
-          description: The sound to play.
-          type: sound
-        - name: Full volume
-          description: If set to 1, the sound effect will play at full volume regardless
-            of the distance.
-          type: integer
-          range:
-          - 0
-          - 1
-      type: thing
-      sound: state:unused1
-    RandomJump:
-      description: A random chance to jump to a state. Duration must not be -1.
-      unused:
-        - name: State
-          description: The state number to jump to.
-          type: state
-        - name: Chance
-          description: The chance that the jump is executed. Ranged 0 to 255.
-          type: integer
-          range:
-          - 0
-          - 255
-      type: thing
-    LineEffect:
-      description: Triggers a linedef effect for a sector tag.
-      unused:
-        - name: Type
-          description: The linedef effect type number to trigger.
-          type: integer
-          range:
-          - -32767
-          - 32767
-        - name: Sector tag
-          description: The sector tag to trigger the effect on.
-          type: integer
-          range:
-          - -32767
-          - 32767
-      type: thing
-    Die:
-      description: Kills this thing.
-      type: thing
-    FireOldBFG:
-      description: Fires the beta-style BFG.
-      type: weapon
-    BetaSkullAttack:
-      description: Performs the beta Lost Soul attack.
-      type: thing
-      sound: thing:soundAttack
-    Stop:
-      description: Stops the actor's movement by setting its momentum to 0.
-      type: thing
+  Detonate:
+    description: Explode with variable damage (thing damage field).
+    type: thing
+  Mushroom:
+    description: Creates a mushroom explosion effect by throwing fireballs up in all
+      directions and causing radius damage.
+    unused:
+      - name: Fireball angle
+        description: The angle to throw the fireballs in.
+        type: fixedpoint
+        range:
+        - -359
+        - 359
+      - name: Fireball speed
+        description: The speed to throw the fireballs at.
+        type: fixedpoint
+        range:
+        - -32767
+        - 32767
+    type: thing
+  Spawn:
+    description: Spawns a thing at the position of this thing.
+    unused:
+      - name: Thing
+        description: The thing to spawn.
+        type: thing
+      - name: Z
+        description: The relative Z position to spawn the thing at.
+        type: integer
+        range:
+        - -32767
+        - 32767
+    type: thing
+  Turn:
+    description: Turns this actor a certain amount.
+    unused:
+      - name: Angle
+        description: The angle to turn, in degrees.
+        type: integer
+        range:
+        - -359
+        - 359
+    type: thing
+  Face:
+    description: Sets this thing's angle directly.
+    unused:
+      - name: Angle
+        description: The angle to face, in degrees.
+        type: integer
+        range:
+        - 0
+        - 359
+    type: thing
+  Scratch:
+    description: Scratches a nearby thing.
+    unused:
+      - name: Damage
+        description: The amount of damage to inflict.
+        type: integer
+        range:
+        - -32767
+        - 32767
+      - name: Sound
+        description: The sound to play.
+        type: sound
+    type: thing
+    sound: state:unused2
+  PlaySound:
+    description: Plays a sound.
+    unused:
+      - name: Sound
+        description: The sound to play.
+        type: sound
+      - name: Full volume
+        description: If set to 1, the sound effect will play at full volume regardless
+          of the distance.
+        type: integer
+        range:
+        - 0
+        - 1
+    type: thing
+    sound: state:unused1
+  RandomJump:
+    description: A random chance to jump to a state. Duration must not be -1.
+    unused:
+      - name: State
+        description: The state number to jump to.
+        type: state
+      - name: Chance
+        description: The chance that the jump is executed. Ranged 0 to 255.
+        type: integer
+        range:
+        - 0
+        - 255
+    type: thing
+  LineEffect:
+    description: Triggers a linedef effect for a sector tag.
+    unused:
+      - name: Type
+        description: The linedef effect type number to trigger.
+        type: integer
+        range:
+        - -32767
+        - 32767
+      - name: Sector tag
+        description: The sector tag to trigger the effect on.
+        type: integer
+        range:
+        - -32767
+        - 32767
+    type: thing
+  Die:
+    description: Kills this thing.
+    type: thing
+  FireOldBFG:
+    description: Fires the beta-style BFG.
+    type: weapon
+  BetaSkullAttack:
+    description: Performs the beta Lost Soul attack.
+    type: thing
+    sound: thing:soundAttack
+  Stop:
+    description: Stops the actor's movement by setting its momentum to 0.
+    type: thing

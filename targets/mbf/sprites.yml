@@ -1,7 +1,7 @@
 data:
-    sprite:
-          - name: DOGS
-          - name: PLS1
-          - name: PLS2
-          - name: BON3
-          - name: BON4
+  sprite:
+    - name: DOGS
+    - name: PLS1
+    - name: PLS2
+    - name: BON3
+    - name: BON4

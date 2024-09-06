@@ -1,17 +1,17 @@
 schema:
-    par:
-        episode:
-            type: int32
-            name: Episode
-            default: 0
-            patch_key: Episode
-        map:
-            type: int32
-            name: Map
-            default: 0
-            patch_key: Map
-        seconds:
-            type: int32
-            name: Seconds
-            default: 0
-            patch_key: Seconds
+  par:
+    episode:
+      type: int32
+      name: Episode
+      default: 0
+      patch_key: Episode
+    map:
+      type: int32
+      name: Map
+      default: 0
+      patch_key: Map
+    seconds:
+      type: int32
+      name: Seconds
+      default: 0
+      patch_key: Seconds

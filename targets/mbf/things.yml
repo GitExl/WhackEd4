@@ -1,99 +1,99 @@
 flags:
-    thing_vanilla:
-        TRANSLATION:
-            alias: "TRANSLATION1"
-        TRANSLATION1:
-            index: 26
-            name: "Color 1 (grey\\red)"
-            description: "This thing's green colors will be mapped to grey (or red if the Color 2 flag is also set)."
-        TRANSLATION2:
-            index: 27
-            name: "Color 2 (brown\\red)"
-            description: "This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set)."
-        TOUCHY:
-            index: 28
-            name: "Dies on impact"
-            description: "Dies on impact with any solid object."
-        BOUNCES:
-            index: 29
-            name: "Bounces"
-            description: "Bounces off floors, ceilings and maybe walls."
-        FRIEND:
-            index: 30
-            name: "Friendly"
-            description: "A friend of the player."
-        UNUSED1:
-            alias: "TRANSLATION2"
-        UNUSED2:
-            alias: "TOUCHY"
-        UNUSED3:
-            alias: "BOUNCES"
-        UNUSED4:
-            alias: "FRIEND"
+  thing_vanilla:
+    TRANSLATION:
+      alias: "TRANSLATION1"
+    TRANSLATION1:
+      index: 26
+      name: "Color 1 (grey\\red)"
+      description: "This thing's green colors will be mapped to grey (or red if the Color 2 flag is also set)."
+    TRANSLATION2:
+      index: 27
+      name: "Color 2 (brown\\red)"
+      description: "This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set)."
+    TOUCHY:
+      index: 28
+      name: "Dies on impact"
+      description: "Dies on impact with any solid object."
+    BOUNCES:
+      index: 29
+      name: "Bounces"
+      description: "Bounces off floors, ceilings and maybe walls."
+    FRIEND:
+      index: 30
+      name: "Friendly"
+      description: "A friend of the player."
+    UNUSED1:
+      alias: "TRANSLATION2"
+    UNUSED2:
+      alias: "TOUCHY"
+    UNUSED3:
+      alias: "BOUNCES"
+    UNUSED4:
+      alias: "FRIEND"
 
 data:
-    thing:
-         - flags: 4194310
-           health: 500
-           height: 1835008
-           id: 888
-           mass: 100
-           pain_chance: 180
-           sound_active: 110
-           sound_alert: 108
-           sound_attack: 109
-           sound_death: 111
-           sound_pain: 112
-           speed: 10
-           state_death: 987
-           state_melee: 982
-           state_walk: 974
-           state_pain: 985
-           state_raise: 993
-           state_spawn: 972
-           radius: 786432
-           name: "Dog"
+  thing:
+     - flags: 4194310
+       health: 500
+       height: 1835008
+       id: 888
+       mass: 100
+       pain_chance: 180
+       sound_active: 110
+       sound_alert: 108
+       sound_attack: 109
+       sound_death: 111
+       sound_pain: 112
+       speed: 10
+       state_death: 987
+       state_melee: 982
+       state_walk: 974
+       state_pain: 985
+       state_raise: 993
+       state_spawn: 972
+       radius: 786432
+       name: "Dog"
 
-         - flags: 536938000
-           health: 1000
-           height: 524288
-           mass: 100
-           damage: 4
-           sound_alert: 8
-           sound_death: 17
-           speed: 1638400
-           state_death: 1044
-           state_spawn: 1042
-           radius: 851968
-           name: "Beta Plasma 1"
+     - flags: 536938000
+       health: 1000
+       height: 524288
+       mass: 100
+       damage: 4
+       sound_alert: 8
+       sound_death: 17
+       speed: 1638400
+       state_death: 1044
+       state_spawn: 1042
+       radius: 851968
+       name: "Beta Plasma 1"
 
-         - flags: 536938000
-           health: 1000
-           height: 524288
-           mass: 100
-           damage: 4
-           sound_alert: 8
-           sound_death: 17
-           speed: 1638400
-           state_death: 1051
-           state_spawn: 1049
-           radius: 393216
-           name: "Beta Plasma 2"
+     - flags: 536938000
+       health: 1000
+       height: 524288
+       mass: 100
+       damage: 4
+       sound_alert: 8
+       sound_death: 17
+       speed: 1638400
+       state_death: 1051
+       state_spawn: 1049
+       radius: 393216
+       name: "Beta Plasma 2"
 
-         - flags: 8388609
-           health: 1000
-           height: 1048576
-           id: 2016
-           mass: 100
-           state_spawn: 1054
-           radius: 655360
-           name: "Beta Sceptre"
+     - flags: 8388609
+       health: 1000
+       height: 1048576
+       id: 2016
+       mass: 100
+       state_spawn: 1054
+       radius: 655360
+       name: "Beta Sceptre"
 
-         - flags: 8388609
-           health: 1000
-           height: 655360
-           id: 2017
-           mass: 100
-           state_spawn: 1055
-           radius: 1310720
-           name: "Beta Bible"
+     - flags: 8388609
+       health: 1000
+       height: 655360
+       id: 2017
+       mass: 100
+       state_spawn: 1055
+       radius: 1310720
+       name: "Beta Bible"
