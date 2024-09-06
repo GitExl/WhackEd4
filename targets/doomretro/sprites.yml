@@ -1,0 +1,6 @@
+data:
+  sprite:
+    - _index: 144
+      name: BLD2
+    - _index: 245
+      name: RSMK

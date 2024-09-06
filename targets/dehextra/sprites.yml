@@ -1,7 +1,7 @@
 data:
     sprite:
-        - name: BLD2
-        - name: SP00
+        - _index: 145
+          name: SP00
         - name: SP01
         - name: SP02
         - name: SP03

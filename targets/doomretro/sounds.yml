@@ -1,0 +1,14 @@
+data:
+  sound:
+    - _index: 113
+      priority: 60
+      name: SECRET
+
+    - priority: 60
+      name: GIBDTH
+
+    - priority: 0
+      name: SCRSHT
+
+    - priority: 0
+      name: CONSOL

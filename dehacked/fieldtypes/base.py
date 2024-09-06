@@ -20,6 +20,9 @@ class BaseFieldType:
     def validate(self, value: any) -> bool:
         return True
 
+    def transform_from_data(self, value: any) -> any:
+        return value
+
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):
         if 'name' not in data:

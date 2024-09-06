@@ -1,0 +1,689 @@
+flags:
+  thing_doomretro:
+    'TRANSLUCENT':
+      name: Translucent
+    'TRANSLUCENT_REDONLY':
+      name: Translucent, red only
+    'TRANSLUCENT_GREENONLY':
+      name: Translucent, green only
+    'TRANSLUCENT_BLUEONLY':
+      name: Translucent, blue only
+    'TRANSLUCENT_33':
+      name: Translucent 33%
+    'TRANSLUCENT_50':
+      name: Translucent 50%
+    'TRANSLUCENT_REDWHITEONLY':
+      name: Translucent red and white only
+    'TRANSLUCENT_REDTOGREEN_33':
+      name: Translucent red to green 33%
+    'TRANSLUCENT_REDTOBLUE_33':
+      name: Translucent red to blue 33%
+    'TRANSLUCENT_BLUE_25':
+      name: Translucent blue 25%
+    'GREENTORED':
+      name: Green to red
+    'REDTOBLUE':
+      name: Red to blue
+    'FLOATBOB':
+      name: Float bobbing
+    'MIRRORED':
+      name: Mirrored
+    'FALLING':
+      name: Falling
+    'ONMOBJ':
+      name: Is on top of thing
+    'PASSMOBJ':
+      name: Can pass over/under
+    'RESURRECTING':
+      name: Is resurrecting
+    'FOOTCLIP':
+      name: Foot clipping
+    'NOLIQUIDBOB':
+      name: No liquid bobbing
+    'FEETARECLIPPED':
+      name: Feet are clipped
+    'CASTSHADOW':
+      name: Casts shadow
+    'BLOOD':
+      name: Blood
+    'DONTMAP':
+      name: Do not map
+    'SMOKETRAIL':
+      name: Smoke trail
+    'CRUSHABLE':
+      name: Crushable
+    'MASSACRE':
+      name: Massacre
+    'DECORATION':
+      name: Decoration
+    'DONTDRAW':
+      name: Do not draw
+    'MONSTERMISSILE':
+      name: Monster missile
+
+enums:
+  doomretro_blood_color:
+    -1: None
+    0: Red (normal)
+    1: Grey
+    2: Green
+    3: Blue
+    4: Yellow
+    5: Black
+    6: Purple
+    7: White
+    8: Orange
+
+schema:
+  thing:
+    blood_color:
+      type: enum
+      enum: doomretro_blood_color
+      name: Blood color
+      patch_key: Blood color
+      default: -1
+      group: properties
+    retro_flags:
+      type: flags
+      flagset: thing_doomretro
+      name: Doom Retro flags
+      patch_key: Retro bits
+      default: []
+      group: flags
+    shadow_offset:
+      type: fixed
+      name: Shadow offset
+      patch_key: Shadow offset
+      default: 0
+      group: properties
+    obituary_name:
+      type: string
+      name: Obituary name
+      patch_key: Name
+      default: ''
+      group: properties
+    obituary_name_plural:
+      type: string
+      name: Obituary plural name
+      patch_key: Plural
+      default: ''
+      group: properties
+
+data:
+  thing:
+    - _index: 0
+      retro_flags: [ CASTSHADOW, PASSMOBJ, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: player
+
+    - shadow_offset: 131072
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: zombieman
+      obituary_name_plural: zombiemen
+
+    - shadow_offset: 131072
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: shotgun guy
+      obituary_name_plural: shotgun guys
+
+    - shadow_offset: 262144
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: arch-vile
+      obituary_name_plural: arch-viles
+
+    - retro_flags: [ TRANSLUCENT, NOLIQUIDBOB ]
+      obituary_name: arch-vile fire
+
+    - shadow_offset: 262144
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: revenant
+      obituary_name_plural: revenants
+
+    - retro_flags: [ TRANSLUCENT, NOLIQUIDBOB ]
+      obituary_name: revenant
+      obituary_name_plural: revenants
+
+    - retro_flags: [ TRANSLUCENT_33, NOLIQUIDBOB ]
+      obituary_name: smoke
+
+    - shadow_offset: 131072
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: mancubus
+      obituary_name_plural: mancubi
+
+    - retro_flags: [ TRANSLUCENT, NOLIQUIDBOB ]
+      obituary_name: mancubus
+      obituary_name_plural: mancubi
+
+    - shadow_offset: 131072
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: heavy weapon dude
+      obituary_name_plural: heavy weapon dudes
+
+    - shadow_offset: 131072
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: imp
+      obituary_name_plural: imps
+
+    - shadow_offset: 131072
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: pinky demon
+      obituary_name_plural: pinky demons
+
+    - shadow_offset: 131072
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: spectre
+      obituary_name_plural: spectres
+
+    - blood_color: 3
+      retro_flags: [ PASSMOBJ, CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: cacodemon
+      obituary_name_plural: cacodemons
+
+    - blood_color: 2
+      shadow_offset: 262144
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: baron of hell
+      obituary_name_plural: barons of hell
+
+    - retro_flags: [ TRANSLUCENT, NOLIQUIDBOB ]
+      obituary_name: hell noble
+      obituary_name_plural: hell nobles
+
+    - blood_color: 2
+      shadow_offset: 262144
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: hell knight
+      obituary_name_plural: hell knights
+
+    - retro_flags: [ PASSMOBJ, CASTSHADOW, TRANSLUCENT_REDONLY, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: lost soul
+      obituary_name_plural: lost souls
+
+    - shadow_offset: 786432
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: spider mastermind
+      obituary_name_plural: spider masterminds
+
+    - shadow_offset: 262144
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: arachnotron
+      obituary_name_plural: arachnotrons
+
+    - shadow_offset: 262144
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: cyberdemon
+      obituary_name_plural: cyberdmeons
+
+    - retro_flags: [ PASSMOBJ, CASTSHADOW, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: pain elemental
+      obituary_name_plural: pain elementals
+
+    - retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: Wolfenstein SS
+      obituary_name_plural: Wolfenstein SS
+
+    - obituary_name: commander keen
+      obituary_name_plural: commander keens
+
+    - obituary_name: icon of sin
+      obituary_name_plural: icons of sin
+
+    - obituary_name: monsters spawner
+
+    - obituary_name: monsters target
+
+    - retro_flags: [ CASTSHADOW ]
+      obituary_name: icon of sin
+      obituary_name_plural: icons of sin
+
+    - retro_flags: [ TRANSLUCENT ]
+      obituary_name: icon of sin fire
+
+    - retro_flags: [ CASTSHADOW, NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: barrel
+      obituary_name_plural: barrels
+
+    - retro_flags: [ TRANSLUCENT ]
+      obituary_name: imp
+      obituary_name_plural: imps
+
+    - retro_flags: [ TRANSLUCENT ]
+      obituary_name: cacodemon
+      obituary_name_plural: cacodemons
+
+    - retro_flags: [ CASTSHADOW ]
+      obituary_name: rocket
+
+    - retro_flags: [ TRANSLUCENT ]
+      obituary_name: plasma rifle
+
+    - retro_flags: [ TRANSLUCENT ]
+      obituary_name: BFG-9000 projectile
+
+    - retro_flags: [ TRANSLUCENT ]
+      obituary_name: arachnotron's projectile
+
+    - retro_flags: [ TRANSLUCENT_33 ]
+      obituary_name: bullet puff
+
+    # MT_BLOOD, blood_color should be 184 from info.c, but that is not a valid value
+    - blood_color: 0
+      retro_flags: [ BLOOD, TRANSLUCENT_50 ]
+      obituary_name: red blood
+
+    - retro_flags: [ TRANSLUCENT ]
+      obituary_name: teleport fog
+
+    - retro_flags: [ TRANSLUCENT ]
+      obituary_name: item fog
+
+    - obituary_name: teleport destination
+
+    - retro_flags: [ TRANSLUCENT ]
+      obituary_name: BFG-9000 projectile
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: green armor
+      obituary_name_plural: green armor
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: blue armor
+      obituary_name_plural: blue armors
+
+    - retro_flags: [ CASTSHADOW, TRANSLUCENT_BLUE_25, FOOTCLIP ]
+      obituary_name: health bonus
+      obituary_name_plural: health bonuses
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: armor bonus
+      obituary_name_plural: armor bonuses
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: blue keycard
+      obituary_name_plural: blue keycards
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: red keycard
+      obituary_name_plural: red keycards
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: yellow keycard
+      obituary_name_plural: yellow keycards
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: yellow skull key
+      obituary_name_plural: yellow skull keys
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: red skull key
+      obituary_name_plural: red skull keys
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: blue skull key
+      obituary_name_plural: blue skull keys
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: stimpack
+      obituary_name_plural: stimpacks
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: medikit
+      obituary_name_plural: medikits
+
+    - retro_flags: [ CASTSHADOW, TRANSLUCENT_BLUE_25, FLOATBOB ]
+      obituary_name: soulsphere
+      obituary_name_plural: soulspheres
+
+    - retro_flags: [ CASTSHADOW, TRANSLUCENT_33, FLOATBOB ]
+      obituary_name: invulnerability power-up
+      obituary_name_plural: invulnerability power-ups
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: berserk power-up
+      obituary_name_plural: berserk power-ups
+
+    - retro_flags: [ CASTSHADOW, TRANSLUCENT_33, FLOATBOB ]
+      obituary_name: partial invisibility power-up
+      obituary_name_plural: partial invisibility power-ups
+
+    - retro_flags: [ CASTSHADOW, FLOATBOB ]
+      obituary_name: radiation shielding suit power-up
+      obituary_name_plural: radiation shielding suit power-ups
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: computer area map power-up
+      obituary_name_plural: computer area map power-ups
+
+    - retro_flags: [ CASTSHADOW, TRANSLUCENT_REDONLY, FOOTCLIP ]
+      obituary_name: light amplification visor power-up
+      obituary_name_plural: light amplification visor power-ups
+
+    - retro_flags: [ CASTSHADOW, FLOATBOB ]
+      obituary_name: megasphere
+      obituary_name_plural: megaspheres
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: clip
+      obituary_name_plural: clips
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: box of bullets
+      obituary_name_plural: boxes of bullets
+
+    - shadow_offset: 65536
+      retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: rocket ammo
+      obituary_name_plural: rocket ammo
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: box of rockets
+      obituary_name_plural: boxes of rockets
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: cell
+      obituary_name_plural: cells
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: cell pack
+      obituary_name_plural: cell packs
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: shotgun shell
+      obituary_name_plural: shotgun shells
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: box of shells
+      obituary_name_plural: boxes of shells
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: backpack
+      obituary_name_plural: backpacks
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: BFG-9000
+      obituary_name_plural: BFG-9000s
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: chaingun
+      obituary_name_plural: chainguns
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: chainsaw
+      obituary_name_plural: chainsaws
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: rocket launcher
+      obituary_name_plural: rocket launchers
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: plasma rifle
+      obituary_name_plural: plasma rifles
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: shotgun
+      obituary_name_plural: shotguns
+
+    - retro_flags: [ CASTSHADOW, FOOTCLIP ]
+      obituary_name: super shotgun
+      obituary_name_plural: super shotguns
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_BLUEONLY, DECORATION, FOOTCLIP ]
+      obituary_name: tall techno floor lamp
+      obituary_name_plural: tall techno floor lamps
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_BLUEONLY, DECORATION, FOOTCLIP ]
+      obituary_name: short techno floor lamp
+      obituary_name_plural: short techno floor lamps
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_REDONLY, DECORATION, FOOTCLIP ]
+      obituary_name: floor lamp
+      obituary_name_plural: floor lamps
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: tall green column
+      obituary_name_plural: tall green columns
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: short green column
+      obituary_name_plural: short green columns
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: tall red column
+      obituary_name_plural: tall red columns
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: short red column
+      obituary_name_plural: short red columns
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: short red column with skull
+      obituary_name_plural: short red columns with skulls
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: short green column with beating heart
+      obituary_name_plural: short green columns with beating hearts
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_GREENONLY, DECORATION, FOOTCLIP ]
+      obituary_name: evil eye
+      obituary_name_plural: evil eyes
+
+    - retro_flags: [ CASTSHADOW, DECORATION ]
+      obituary_name: floating skull
+      obituary_name_plural: floating skulls
+
+    - retro_flags: [ DECORATION, FOOTCLIP ]
+      obituary_name: torched tree
+      obituary_name_plural: torched trees
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_BLUEONLY, DECORATION, FOOTCLIP ]
+      obituary_name: tall blue firestick
+      obituary_name_plural: tall blue firesticks
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_GREENONLY, DECORATION, FOOTCLIP ]
+      obituary_name: tall green firestick
+      obituary_name_plural: tall green firesticks
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_REDONLY, DECORATION, FOOTCLIP ]
+      obituary_name: tall red firestick
+      obituary_name_plural: tall red firesticks
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_BLUEONLY, DECORATION, FOOTCLIP ]
+      obituary_name: short blue firestick
+      obituary_name_plural: short blue firesticks
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_GREENONLY, DECORATION, FOOTCLIP ]
+      obituary_name: short green firestick
+      obituary_name_plural: short green firesticks
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_REDONLY, DECORATION, FOOTCLIP ]
+      obituary_name: short red firestick
+      obituary_name_plural: short red firesticks
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: stalagmite
+      obituary_name_plural: stalagmites
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: tall techno pillar
+      obituary_name_plural: tall techno pillars
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP, TRANSLUCENT_REDONLY ]
+      obituary_name: candlestick
+      obituary_name_plural: candlesticks
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: candelabra
+      obituary_name_plural: candelabras
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging victim (twitching blocking)
+      obituary_name_plural: hanging victim (twitching blocking)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging victim (arms out blocking)
+      obituary_name_plural: hanging victim (arms out blocking)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging victim (one-legged blocking)
+      obituary_name_plural: hanging victim (one-legged blocking)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging pair of legs (blocking)
+      obituary_name_plural: hanging pair of legs (blocking)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging leg (blocking)
+      obituary_name_plural: hanging leg (blocking)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging victim (arms out)
+      obituary_name_plural: hanging victims (arms out)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging pair of legs
+      obituary_name_plural: hanging pairs of legs
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging victim (one-legged)
+      obituary_name_plural: hanging victims (one-legged)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging leg
+      obituary_name_plural: hanging legs
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging victim (twitching)
+      obituary_name_plural: hanging victims (twitching)
+
+    - blood_color: 3
+      retro_flags: [ CASTSHADOW, CRUSHABLE, DECORATION, FOOTCLIP ]
+      obituary_name: cacodemon's corpse
+
+    - retro_flags: [ CASTSHADOW, CRUSHABLE, DECORATION, FOOTCLIP ]
+      obituary_name: marine's corpse
+
+    - retro_flags: [ CASTSHADOW, CRUSHABLE, DECORATION, FOOTCLIP ]
+      obituary_name: zombieman's corpse
+
+    - retro_flags: [ CASTSHADOW, CRUSHABLE, DECORATION, FOOTCLIP ]
+      obituary_name: pinky demon's corpse
+
+    - obituary_name: lost soul's corpse
+
+    - retro_flags: [ CASTSHADOW, CRUSHABLE, DECORATION, FOOTCLIP ]
+      obituary_name: imp's corpse
+
+    - retro_flags: [ CASTSHADOW, CRUSHABLE, DECORATION, FOOTCLIP ]
+      obituary_name: shotgun guy's corpse
+
+    - retro_flags: [ CASTSHADOW, DECORATION, FOOTCLIP ]
+      obituary_name: bloody mess 1
+      obituary_name_plural: bloody mess 1
+
+    - retro_flags: [ CASTSHADOW, DECORATION, FOOTCLIP ]
+      obituary_name: bloody mess 2
+      obituary_name_plural: bloody mess 2
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: five skulls shishkebab
+      obituary_name_plural: five skulls shishkebabs
+
+    - retro_flags: [ DECORATION, FOOTCLIP ]
+      obituary_name: pool of blood and bones
+      obituary_name_plural: pools of blood and bones
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: skull on a pole
+      obituary_name_plural: skulls on poles
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: pile of skulls and candles
+      obituary_name_plural: piles of skulls and candles
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: impaled human
+      obituary_name_plural: impaled humans
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: twitching impaled human
+      obituary_name_plural: twitching impaled humans
+
+    - retro_flags: [ NOLIQUIDBOB, DECORATION, FOOTCLIP ]
+      obituary_name: large brown tree
+      obituary_name_plural: large brown trees
+
+    - retro_flags: [ NOLIQUIDBOB, TRANSLUCENT_REDONLY, DECORATION, FOOTCLIP ]
+      obituary_name: burning barrel
+      obituary_name_plural: burning barrels
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging victim (guts removed)
+      obituary_name_plural: hanging victims (guts removed)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging victim (guts and brain removed)
+      obituary_name_plural: hanging victims (guts and brain removed)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging torso (looking down)
+      obituary_name_plural: hanging torsos (looking down)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging torso (open skull)
+      obituary_name_plural: hanging torsos (open skull)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging torso (looking up)
+      obituary_name_plural: hanging torsos (looking up)
+
+    - retro_flags: [ DECORATION ]
+      obituary_name: hanging torso (brain removed)
+      obituary_name_plural: hanging torsos (brain removed)
+
+    - retro_flags: [ DECORATION, FOOTCLIP ]
+      obituary_name: pool of blood and guts
+      obituary_name_plural: pools of blood and guts
+
+    - retro_flags: [ DECORATION, FOOTCLIP ]
+      obituary_name: pool of blood
+      obituary_name_plural: pools of blood
+
+    - retro_flags: [ DECORATION, FOOTCLIP ]
+      obituary_name: pool of brains
+      obituary_name_plural: pools of brains
+
+    - obituary_name: point pusher
+      obituary_name_plural: point pushers
+
+    - obituary_name: point puller
+      obituary_name_plural: point pullers
+
+    - shadow_offset: 262144
+      retro_flags: [ CASTSHADOW, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]
+      obituary_name: dog
+      obituary_name_plural: dogs
+
+    - obituary_name: plasma ball 1
+      obituary_name_plural: plasma ball 1
+
+    - obituary_name: plasma ball 2
+      obituary_name_plural: plasma ball 2
+
+    - retro_flags: [ CASTSHADOW ]
+      obituary_name: evil sceptre
+      obituary_name_plural: evil sceptres
+
+    - retro_flags: [ CASTSHADOW ]
+      obituary_name: unholy bible
+      obituary_name_plural: unholy bibles
+
+    - obituary_name: music source
+      obituary_name_plural: music sources
+
+    - obituary_name: GIBDTH
+      obituary_name_plural: GIBDTH
+
+    - _index: 150
+      retro_flags: [ TRANSLUCENT_50 ]
+      obituary_name: rocket trail
+      obituary_name_plural: rocket trails

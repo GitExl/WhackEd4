@@ -1,0 +1,11 @@
+name: "Doom Retro"
+extends: dehextra
+patch_versions:
+  - 19
+  - 21
+load:
+  - sprites
+  - states
+  - sounds
+  - things
+  - strings

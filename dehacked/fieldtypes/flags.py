@@ -16,16 +16,33 @@ class FlagsFieldType(BaseFieldType):
         self.flagset_name: Optional[str] = None
 
     def validate(self, value: any) -> bool:
-        if type(value) != int:
+        if type(value) != set:
             return False
 
         flagset = self.target.flagsets[self.flagset_name]
-        for flag_index in range(0, 32):
-            bit = 2 ** (flag_index + 1)
-            if value & bit and flag_index not in flagset.flag_by_index:
+        for flag_key in value:
+            if flag_key not in flagset.flags:
                 return False
 
         return True
+
+    def transform_from_data(self, value: any) -> any:
+
+        # Parse integers into known flags.
+        # @todo replace integers in all data with arrays and skip this step
+        if type(value) == int:
+            flags = set()
+            flagset = self.target.flagsets[self.flagset_name]
+            for flag_index, flag in flagset.flag_by_index.items():
+                bit = 2 ** flag_index
+                if value & bit:
+                    flags.add(flag.key)
+            return flags
+
+        elif type(value) == list:
+            return set(value)
+
+        raise RuntimeError(f'Cannot transform "{value}" into flag data.')
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):

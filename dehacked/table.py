@@ -25,7 +25,7 @@ class Table:
     def add_field(self, key: str, data: dict):
         field_type = fieldtype_factory.create(key, data, self.target)
         self.fields[key] = field_type
-        self.default_row[key] = field_type.default
+        self.default_row[key] = field_type.transform_from_data(field_type.default)
 
     def add_row(self, data: dict):
 
@@ -33,6 +33,12 @@ class Table:
         if '_index' in data:
             self.next_index = data['_index']
             del data['_index']
+
+        for key, value in data.items():
+            if key not in self.fields:
+                raise RuntimeError(f'Table "{self.name}", contains data for unknown field "{key}".')
+            field = self.fields[key]
+            data[key] = field.transform_from_data(value)
 
         # Extend an existing row or create a new one from default data.
         if self.next_index in self.rows:
