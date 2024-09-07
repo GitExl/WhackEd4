@@ -1,0 +1,7 @@
+name: MBF21
+description: Adds thing, state and weapon fields and new actions.
+load:
+  - actions
+  - states
+  - things
+  - weapons

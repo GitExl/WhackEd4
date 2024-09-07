@@ -1,4 +1,5 @@
-name: "Marine's Best Friend (MBF)"
+name: MBF (Marine's Best Friend)
+description: Supports additional MBF features.
 extends: boom
 patch_versions:
   - 19
@@ -9,3 +10,10 @@ load:
   - states
   - sounds
   - things
+options:
+  dsdhacked:
+    enabled: 1
+    required: 0
+  mbf21:
+    enabled: 1
+    required: 0

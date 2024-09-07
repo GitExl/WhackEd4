@@ -1,0 +1,60 @@
+schema:
+  weapon:
+    flags_mbf21:
+      type: flags
+      flagset: weapon_mbf21
+      name: MBF21 flags
+      patch_key: MBF21 Bits
+      default: []
+    ammo_per_shot:
+      type: int32
+      min: 0
+      name: Ammo per shot
+      patch_key: Ammo per shot
+      default: -1
+
+flags:
+  weapon_mbf21:
+    NOTHRUST:
+      name: Do not thrust things
+      description: Doesn't thrust things
+    SILENT:
+      name: Silent
+      description: Weapon is silent
+    NOAUTOFIRE:
+      name: No autofire after swap
+      description: Weapon won't autofire when swapped to
+    FLEEMELEE:
+      name: Melee to monsters
+      description: Monsters consider it a melee weapon
+    AUTOSWITCHFROM:
+      name: Autoswitch away
+      description: Can be switched away from when ammo is picked up
+    NOAUTOSWITCHTO:
+      name: No autoswitch to
+      description: Cannot be switched to when ammo is picked up
+
+data:
+  weapon:
+    - ammo_per_shot: 1
+      flags_mbf21: [ FLEEMELEE, AUTOSWITCHFROM, NOAUTOSWITCHTO ]
+
+    - ammo_per_shot: 1
+      flags_mbf21: [ AUTOSWITCHFROM ]
+
+    - ammo_per_shot: 1
+
+    - ammo_per_shot: 1
+
+    - ammo_per_shot: 1
+      flags_mbf21: [ NOAUTOFIRE ]
+
+    - ammo_per_shot: 1
+
+    - ammo_per_shot: 40
+      flags_mbf21: [ NOAUTOFIRE ]
+
+    - ammo_per_shot: 1
+    - flags_mbf21: [ NOTHRUST, FLEEMELEE, NOAUTOSWITCHTO ]
+
+    - ammo_per_shot: 2

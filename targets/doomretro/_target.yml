@@ -1,4 +1,5 @@
-name: "Doom Retro"
+name: Doom Retro
+description: Supports additional Doom Retro features.
 extends: dehextra
 patch_versions:
   - 19
@@ -9,3 +10,10 @@ load:
   - sounds
   - things
   - strings
+options:
+  dsdhacked:
+    enabled: 1
+    required: 1
+  mbf21:
+    enabled: 1
+    required: 1

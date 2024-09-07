@@ -11,6 +11,7 @@ class Feature(Enum):
     CLASSIC_CODEPOINTERS = 'classic_codepointers'
     CLASSIC_STRINGS = 'classic_strings'
     CLASSIC_AMMO_TYPE = 'classic_ammo_type'
+    CLASSIC_FLAGS = 'classic_flags'
 
 
 class Target:

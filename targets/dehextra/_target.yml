@@ -1,4 +1,5 @@
-name: "Extended (DEHEXTRA)"
+name: DEHEXTRA (Dehacked extended)
+description: Adds many new unused things, states, sounds and sprites.
 extends: mbf
 patch_versions:
   - 19
@@ -8,3 +9,10 @@ load:
   - states
   - sounds
   - things
+options:
+  dsdhacked:
+    enabled: 1
+    required: 0
+  mbf21:
+    enabled: 1
+    required: 0

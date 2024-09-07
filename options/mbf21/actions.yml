@@ -1,0 +1,357 @@
+actions:
+  A_SpawnObject:
+    type: thing
+    description: Generic actor spawn function.\nIf the spawnee is a missile, the tracer and target pointers are set as follows:\nIf spawner is also a missile, tracer and target are copied to spawnee\nOtherwise, spawnee's target is set to the spawner and tracer is set to the spawner's target.
+    arguments:
+      - name: Type
+        type: thing
+        description: Actor to spawn.
+      - name: Angle
+        type: fixed
+        description: Angle (degrees), relative to calling actor's angle.
+      - name: x_ofs
+        type: fixed
+        description: X (forward/back) spawn position offset.
+      - name: y_ofs
+        type: fixed
+        description: Y (left/right) spawn position offset.
+      - name: z_ofs
+        type: fixed
+        description: Z (up/down) spawn position offset.
+      - name: x_vel
+        type: fixed
+        description: X (forward/back) velocity.
+      - name: y_vel
+        type: fixed
+        description: Y (left/right) velocity.
+      - name: z_vel
+        type: fixed
+        description: Z (up/down) velocity.
+
+  A_MonsterProjectile:
+    type: thing
+    description: Generic monster projectile attack.\nThe spawned projectile's tracer pointer is always set to the spawner's target, for generic seeker missile support.
+    arguments:
+      - name: type
+        type: thing
+        description: Actor to spawn.
+      - name: angle
+        type: fixed
+        description: Angle (degrees), relative to calling actor's angle.
+      - name: pitch
+        type: fixed
+        description: Pitch (degrees), relative to calling actor's pitch.
+      - name: hoffset
+        type: fixed
+        description: Horizontal spawn offset, relative to calling actor's angle.
+      - name: voffset
+        type: fixed
+        description: Vertical spawn offset, relative to actor's default projectile fire height.
+
+  A_MonsterBulletAttack:
+    type: thing
+    description: 'Generic monster bullet attack.\nDamage formula is: damage = (damagebase * random(1, damagedice))'
+    arguments:
+      - name: hspread
+        type: fixed
+        description: Horizontal spread (degrees, in fixed point).
+      - name: vspread
+        type: fixed
+        description: Vertical spread (degrees, in fixed point).
+      - name: numbullets
+        type: uint
+        description: Number of bullets to fire; if not set, defaults to 1.
+      - name: damagebase
+        type: uint
+        description: Base damage of attack; if not set, defaults to 3.
+      - name: damagedice
+        type: uint
+        description: Attack damage random multiplier; if not set, defaults to 5.
+
+  A_MonsterMeleeAttack:
+    type: thing
+    description: 'Generic monster melee attack.\nDamage formula is: damage = (damagebase * random(1, damagedice))'
+    arguments:
+      - name: damagebase
+        type: uint
+        description: Base damage of attack; if not set, defaults to 3.
+      - name: damagedice
+        type: uint
+        description: Attack damage random multiplier; if not set, defaults to 8.
+      - name: sound
+        type: sound
+        description: Sound to play if attack hits.
+      - name: range
+        type: fixed
+        description: Attack range; if not set, defaults to calling actor's melee range property.
+
+  A_RadiusDamage:
+    type: thing
+    description: Generic explosion.
+    arguments:
+      - name: damage
+        type: uint
+        description: Max explosion damge.
+      - name: radius
+        type: uint
+        description: Explosion radius, in map units.
+
+  A_NoiseAlert:
+    type: thing
+    description: Alerts monsters within sound-travel distance of the calling actor's target.
+
+  A_HealChase:
+    type: thing
+    description: Generic A_VileChase. Chases the player and resurrects any corpses with a Raise state when bumping into them.
+    arguments:
+      - name: state
+        type: uint
+        description: State to jump to on the calling actor when resurrecting a corpse.
+      - name: sound
+        type: uint
+        description: Sound to play when resurrecting a corpse.
+
+  A_SeekTracer:
+    type: thing
+    description: Generic seeker missile function.
+    arguments:
+      - name: threshold
+        type: fixed
+        description: If angle to target is lower than this, missile will 'snap' directly to face the target.
+      - name: maxturnangle
+        type: fixed
+        description: Maximum angle a missile will turn towards the target if angle is above the threshold.
+
+  A_FindTracer:
+    type: thing
+    description: Searches for a valid tracer (seek target), if the calling actor doesn't already have one. Particularly useful for player missiles.
+    arguments:
+      - name: fov
+        type: fixed
+        description: Field-of-view, relative to calling actor's angle, to search for targets in. If zero, the search will occur in all directions.
+      - name: rangeblocks
+        type: uint
+        description: Distance to search, in map blocks (128 units); if not set, defaults to 10.
+
+  A_ClearTracer:
+    type: thing
+    description: Clears the calling actor's tracer (seek target) field.
+
+  A_JumpIfHealthBelow:
+    type: thing
+    description: Jumps to a state if caller's health is below the specified threshold.
+    arguments:
+      - name: state
+        type: uint
+        description: State to jump to.
+      - name: health
+        type: int
+        description: Health to check.
+
+  A_JumpIfTargetInSight:
+    type: thing
+    description: Jumps to a state if caller's target is in line-of-sight.
+    arguments:
+      - name: state
+        type: state
+        description: State to jump to.
+      - name: fov
+        type: fixed
+        description: Field-of-view, relative to calling actor's angle, to check for target in. If zero, the check will occur in all directions.
+
+  A_JumpIfTargetCloser:
+    type: thing
+    description: Jumps to a state if caller's target is closer than the specified distance.
+    arguments:
+      - state:
+        type: state
+        description: State to jump to.
+      - distance:
+        type: fixed
+        description: Distance threshold, in map units.
+
+  A_JumpIfTracerInSight:
+    type: thing
+    description: Jumps to a state if caller's tracer (seek target) is in line-of-sight.
+    arguments:
+      - name: state
+        type: state
+        description: State to jump to.
+      - name: fov
+        type: fixed
+        description: Field-of-view, relative to calling actor's angle, to check for tracer in. If zero, the check will occur in all directions.
+
+  A_JumpIfTracerCloser:
+    type: thing
+    description: Jumps to a state if caller's tracer (seek target) is closer than the specified distance.
+    arguments:
+      - name: state
+        type: state
+        description: State to jump to.
+      - name: distance
+        type: fixed
+        description: Distance threshold, in map units.
+
+  A_JumpIfFlagsSet:
+    type: thing
+    description: Jumps to a state if caller has all of the specified thing flags set.
+    arguments:
+      - name: state
+        type: state
+        description: State to jump to.
+      - name: flags
+        type: int
+        description: Standard actor flag(s) to check.
+      - name: flags2
+        type: int
+        description: MBF21 actor flag(s) to check.
+
+  A_AddFlags:
+    type: thing
+    description: Adds the specified thing flags to the caller.
+    arguments:
+      - name: flags
+        type: int
+        description: Standard actor flag(s) to add.
+      - name: flags2
+        type: int
+        description: MBF21 actor flag(s) to add.
+
+  A_RemoveFlags:
+    type: thing
+    description: Removes the specified thing flags from the caller.
+    arguments:
+      - name: flags
+        type: int
+        description: Standard actor flag(s) to remove.
+      - name: flags2
+        type: int
+        description: MBF21 actor flag(s) to remove.
+
+  A_WeaponProjectile:
+    type: weapon
+    description: Generic weapon projectile attack.
+    arguments:
+      - name: type
+        type: thing
+        description: Actor to spawn.
+      - name: angle
+        type: fixed
+        description: Angle (degrees), relative to player's angle.
+      - name: pitch
+        type: fixed
+        description: Pitch (degrees), relative to player's pitch.
+      - name: hoffset
+        type: fixed
+        description: Horizontal spawn offset, relative to player's angle.
+      - name: voffset
+        type: fixed
+        description: Vertical spawn offset, relative to player's default projectile fire height.
+
+  A_WeaponBulletAttack:
+    type: weapon
+    description: Generic weapon bullet attack.
+    arguments:
+      - name: hspread
+        type: fixed
+        description: Horizontal spread (degrees, in fixed point).
+      - name: vspread
+        type: fixed
+        description: Vertical spread (degrees, in fixed point).
+      - name: numbullets
+        type: uint
+        description: Number of bullets to fire; if not set, defaults to 1.
+      - name: damagebase
+        type: uint
+        description: Base damage of attack; if not set, defaults to 5.
+      - name: damagedice
+        type: uint
+        description: Attack damage random multiplier; if not set, defaults to 3.
+
+  A_WeaponMeleeAttack:
+    type: weapon
+    description: 'Generic weapon melee attack.\nDamage formula is: damage = (damagebase * random(1, damagedice)); this is then multiplied by zerkfactor if the player has Berserk.'
+    arguments:
+      - name: damagebase
+        type: uint
+        description: Base damage of attack; if not set, defaults to 2.
+      - name: damagedice
+        type: uint
+        description: Attack damage random multiplier; if not set, defaults to 10.
+      - name: zerkfactor
+        type: fixed
+        description: Berserk damage multiplier; if not set, defaults to 1.0.
+      - name: sound
+        type: uint
+        description: Sound index to play if attack hits.
+      - name: range
+        type: fixed
+        description: Attack range; if not set, defaults to player mobj's melee range property.
+
+  A_WeaponSound:
+    type: weapon
+    description: Generic playsound for weapons.
+    arguments:
+      - name: sound
+        type: sound
+        description: Sound to play.
+      - name: fullvol
+        type: int
+        description: If nonzero, play this sound at full volume across the entire map.
+
+  A_WeaponJump:
+    type: weapon
+    description: Random state jump for weapons.
+    arguments:
+      - name: state
+        type: state
+        description: State index to jump to.
+      - name: chance
+        type: int
+        range: [0, 256]
+        description: Chance out of 256 to perform the jump. 0 (or below) never jumps, 256 (or higher) always jumps.
+
+  A_ConsumeAmmo:
+    type: weapon
+    description: Subtracts ammo from the currently-selected weapon's ammo pool.\nIf amount is negative, ammo will be added to the ammo pool instead.
+    arguments:
+      - name: amount
+        type: int
+        description: Amount of ammo to subtract. If zero, will default to the current weapon's ammopershot value.
+
+  A_CheckAmmo:
+    type: weapon
+    description: Jumps to state if ammo is below amount.
+    arguments:
+      - name: state
+        type: state
+        description: State index to jump to.
+      - name: amount
+        type: uint
+        description: Amount of ammo to check. If zero, will default to the current weapon's ammopershot value.
+
+  A_RefireTo:
+    type: weapon
+    description: Jumps to state if the fire button is currently being pressed and the weapon has enough ammo to fire.
+    arguments:
+      - name: state
+        type: state
+        description: State index to jump to.
+      - name: noammocheck
+        type: int
+        description: If nonzero, skip the ammo check.
+
+  A_GunFlashTo:
+    type: weapon
+    description: Generic weapon muzzle flash.
+    arguments:
+      - name: state
+        type: state
+        description: State index to set the flash psprite to.
+      - name: nothirdperson
+        type: int
+        description: If nonzero, do not change the 3rd-person player sprite to the player muzzleflash state.
+
+  A_WeaponAlert:
+    type: weapon
+    description: Alerts monsters within sound-travel distance of the player's presence. Useful for weapons with the WPF_SILENT flag set.

@@ -1,0 +1,127 @@
+schema:
+  thing:
+    infight_group:
+      type: int32
+      name: Infighting group
+      min: 0
+      patch_key: Infighting group
+      default: 0
+      group: properties
+    projectile_group:
+      type: int32
+      name: Projectile group
+      patch_key: Projectile group
+      default: 0
+      group: properties
+    splash_group:
+      type: int32
+      name: Splash group
+      min: 0
+      patch_key: Splash group
+      default: 0
+      group: properties
+    flags_mbf21:
+      type: flags
+      flagset: thing_mbf21
+      name: MBF21 flags
+      patch_key: MBF21 Bits
+      default: []
+      group: flags
+    sound_rip:
+      type: reference
+      reference: sound
+      name: Rip sound
+      patch_key: Rip sound
+      default: 0
+      group: sounds
+    fast_speed:
+      type: fixed
+      name: Fast speed
+      patch_key: Fast speed
+      default: -0.0000152587890625
+      group: properties
+    melee_range:
+      type: fixed
+      name: Melee range
+      patch_key: Melee range
+      default: 64.0
+      group: properties
+
+flags:
+  thing_mbf21:
+    LOGRAV:
+      name: Lower gravity
+      description: Low gravity.
+      index: 0
+    SHORTMRANGE:
+      name: Short missile range
+      description: Short missile range.
+      index: 1
+    DMGIGNORED:
+      name: Other things ignore attack
+      description: Other things ignore its attacks.
+      index: 2
+    NORADIUSDMG:
+      name: No splash damage
+      description: Doesn't take splash damage.
+      index: 3
+    FORCERADIUSDMG:
+      name: Force splash damage on immune targets
+      description: Causes splash damage even if the target is immune.
+      index: 4
+    HIGHERMPROB:
+      name: Higher missile attack probability
+      description: Higher missile attack probability.
+      index: 5
+    RANGEHALF:
+      name: Half distance for attack probability
+      description: Use half distance for missile attack probability.
+      index: 6
+    NOTHRESHOLD:
+      name: No target threshold
+      description: No targeting threshold.
+      index: 7
+    LONGMELEE:
+      name: Long melee range.
+      description: Long melee range.
+      index: 8
+    BOSS:
+      name: Full volume, splash damage immune
+      description: Full volume see / death sound, and splash damage immunity.
+      index: 9
+    MAP07BOSS1:
+      name: Trigger tag 666
+      description: Tag 666 "boss" on Doom 2 map 7.
+      index: 10
+    MAP07BOSS2:
+      name: Trigger tag 667
+      description: Tag 667 "boss" on Doom 2 map 7.
+      index: 11
+    E1M8BOSS:
+      name: E1M8 boss
+      description: E1M8 boss.
+      index: 12
+    E2M8BOSS:
+      name: E2M8 boss
+      description: E2M8 boss.
+      index: 13
+    E3M8BOSS:
+      name: E3M8 boss
+      description: E3M8 boss.
+      index: 14
+    E4M6BOSS:
+      name: E4M6 boss
+      description: E4M6 boss.
+      index: 15
+    E4M8BOSS:
+      name: E4M8 boss
+      description: E4M8 boss.
+      index: 16
+    RIP:
+      name: Rip through target
+      description: Projectile rips through targets.
+      index: 17
+    FULLVOLSOUNDS:
+      name: Full volume sounds
+      description: Full volume see / death sound.
+      index: 18

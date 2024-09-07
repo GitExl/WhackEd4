@@ -1,0 +1,63 @@
+schema:
+  state:
+    flags_mbf21:
+      type: flags
+      flagset: state_mbf21
+      name: MBF21 flags
+      patch_key: MBF21 Bits
+      default: []
+      group: flags
+    arg1:
+      type: int32
+      name: Argument 1
+      patch_key: Args1
+      default: 0
+      group: arguments
+    arg2:
+      type: int32
+      name: Argument 2
+      patch_key: Args2
+      default: 0
+      group: arguments
+    arg3:
+      type: int32
+      name: Argument 3
+      patch_key: Args3
+      default: 0
+      group: arguments
+    arg4:
+      type: int32
+      name: Argument 4
+      patch_key: Args4
+      default: 0
+      group: arguments
+    arg5:
+      type: int32
+      name: Argument 5
+      patch_key: Args5
+      default: 0
+      group: arguments
+    arg6:
+      type: int32
+      name: Argument 6
+      patch_key: Args6
+      default: 0
+      group: arguments
+    arg7:
+      type: int32
+      name: Argument 7
+      patch_key: Args7
+      default: 0
+      group: arguments
+    arg8:
+      type: int32
+      name: Argument 8
+      patch_key: Args8
+      default: 0
+      group: arguments
+
+flags:
+  state_mbf21:
+    SKILL5FAST:
+      name: Nightmare half tics
+      description: Tics halve on nightmare skill
