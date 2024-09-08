@@ -11,7 +11,7 @@ schema:
       min: 0
       name: Ammo per shot
       patch_key: Ammo per shot
-      default: -1
+      default: 0
 
 flags:
   weapon_mbf21:

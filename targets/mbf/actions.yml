@@ -8,13 +8,13 @@ actions:
     unused:
       - name: Fireball angle
         description: The angle to throw the fireballs in.
-        type: fixedpoint
+        type: fixed
         range:
         - -359
         - 359
       - name: Fireball speed
         description: The speed to throw the fireballs at.
-        type: fixedpoint
+        type: fixed
         range:
         - -32767
         - 32767
@@ -27,7 +27,7 @@ actions:
         type: thing
       - name: Z
         description: The relative Z position to spawn the thing at.
-        type: integer
+        type: int
         range:
         - -32767
         - 32767
@@ -37,7 +37,7 @@ actions:
     unused:
       - name: Angle
         description: The angle to turn, in degrees.
-        type: integer
+        type: int
         range:
         - -359
         - 359
@@ -47,7 +47,7 @@ actions:
     unused:
       - name: Angle
         description: The angle to face, in degrees.
-        type: integer
+        type: int
         range:
         - 0
         - 359
@@ -57,7 +57,7 @@ actions:
     unused:
       - name: Damage
         description: The amount of damage to inflict.
-        type: integer
+        type: int
         range:
         - -32767
         - 32767
@@ -75,7 +75,7 @@ actions:
       - name: Full volume
         description: If set to 1, the sound effect will play at full volume regardless
           of the distance.
-        type: integer
+        type: int
         range:
         - 0
         - 1
@@ -89,7 +89,7 @@ actions:
         type: state
       - name: Chance
         description: The chance that the jump is executed. Ranged 0 to 255.
-        type: integer
+        type: int
         range:
         - 0
         - 255
@@ -99,13 +99,13 @@ actions:
     unused:
       - name: Type
         description: The linedef effect type number to trigger.
-        type: integer
+        type: int
         range:
         - -32767
         - 32767
       - name: Sector tag
         description: The sector tag to trigger the effect on.
-        type: integer
+        type: int
         range:
         - -32767
         - 32767

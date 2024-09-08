@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Tuple, Set
 
 import yaml
 
@@ -11,15 +11,29 @@ class TargetLoader:
     def __init__(self, base_path: Path):
         self.base_path: Path = base_path
 
-    def load(self, target_id: str) -> Target:
-        info, data = self._load_yaml(target_id)
+    def load(self, target_id: str, options: Set[str]) -> Target:
+        info, data = self._load_target_yaml(target_id)
 
+        # Create initial target from info.
         target = Target(target_id, info['name'])
-        target.patch_versions = info['patch_versions']
-
+        target.patch_versions = set(info['patch_versions'])
         if 'features' in info:
             for feature in info['features']:
                 target.features.add(Feature(feature))
+
+        # Load optional data.
+        if 'options' in info:
+            for option_key, option_data in info['options'].items():
+                if not option_data['required'] and option_key not in options:
+                    continue
+                option_info, option_data = self._load_option_yaml(option_key)
+                self._merge_data(data, option_data)
+
+                # Option features overwrite.
+                if 'patch_versions' in option_info:
+                    target.patch_versions = set(option_info['patch_versions'])
+
+        # Copy Yaml data to the target.
         if 'strings' in data:
             target.strings.update(data['strings'])
         if 'cheats' in data:
@@ -75,8 +89,8 @@ class TargetLoader:
         elif len(keys) == 1 and keys[0] in root:
             del root[keys[0]]
 
-    def _load_yaml(self, target_id: str) -> Tuple[dict, dict]:
-        target_path = self.base_path / Path(target_id)
+    def _load_target_yaml(self, target_id: str) -> Tuple[dict, dict]:
+        target_path = self.base_path / 'targets' / Path(target_id)
 
         info_file = target_path / Path('_target.yml')
         if not info_file.exists():
@@ -86,20 +100,44 @@ class TargetLoader:
             info = yaml.load(f.read(), yaml.CSafeLoader)
 
         if 'extends' in info:
-            base_info, data = self._load_yaml(info['extends'])
+            base_info, data = self._load_target_yaml(info['extends'])
         else:
             data = {}
 
-        for filename in info['load']:
-            file_path = target_path / Path(f'{filename}.yml')
+        if 'load' in info:
+            yaml_files = [target_path / Path(f'{yaml_name}.yml') for yaml_name in info['load']]
+            self._load_yamls_merged(data, yaml_files)
+
+        return info, data
+
+    def _load_option_yaml(self, option_id: str) -> Tuple[dict, dict]:
+        option_path = self.base_path / 'options' / Path(option_id)
+
+        info_file = option_path / Path('_option.yml')
+        if not info_file.exists():
+            raise RuntimeError(f'The option "{option_id}" does not exist.')
+
+        with open(info_file, 'r', encoding='utf8') as f:
+            info = yaml.load(f.read(), yaml.CSafeLoader)
+
+        data = {}
+        if 'load' in info:
+            yaml_files = [option_path / Path(f'{yaml_name}.yml') for yaml_name in info['load']]
+            self._load_yamls_merged(data, yaml_files)
+
+        return info, data
+
+    def _load_yamls_merged(self, data: dict, yaml_files):
+        for file_path in yaml_files:
+            if not file_path.exists():
+                raise RuntimeError(f'The file "{file_path}" does not exist.')
             with open(file_path, 'r', encoding='utf8') as f:
                 leaf = yaml.load(f.read(), yaml.CSafeLoader)
 
+            # Clear values in existing data before merging in new data.
             if 'clear' in leaf:
                 for clear_key in leaf['clear']:
                     self._clear_data(data, clear_key.split('.'))
                 del leaf['clear']
 
             self._merge_data(data, leaf)
-
-        return info, data

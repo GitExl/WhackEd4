@@ -1,6 +1,6 @@
-name: DSDhacked
-description: Removes limits and allows adding any number of things, states, sprites and sounds.
+name: DSDHacked
+description: Allows adding any number of things, states, sprites and sounds.
 patch_versions:
   - 2021
 features:
-  - dsdhacked
+  - expandable

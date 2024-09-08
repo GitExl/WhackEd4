@@ -1,0 +1,7 @@
+name: DEHEXTRA (Dehacked extended)
+description: Adds unused things, states, sounds and sprites and a few new thing fields.
+load:
+  - sprites
+  - states
+  - sounds
+  - things

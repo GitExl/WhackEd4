@@ -683,7 +683,7 @@ data:
     - obituary_name: GIBDTH
       obituary_name_plural: GIBDTH
 
-    - _index: 150
+    - _index: 149
       retro_flags: [ TRANSLUCENT_50 ]
       obituary_name: rocket trail
       obituary_name_plural: rocket trails

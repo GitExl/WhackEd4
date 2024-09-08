@@ -38,13 +38,13 @@ schema:
       type: fixed
       name: Fast speed
       patch_key: Fast speed
-      default: -0.0000152587890625
+      default: -1
       group: properties
     melee_range:
       type: fixed
       name: Melee range
       patch_key: Melee range
-      default: 64.0
+      default: 4194304
       group: properties
 
 flags:

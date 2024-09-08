@@ -11,9 +11,9 @@ load:
   - sounds
   - things
 options:
-  dsdhacked:
-    enabled: 1
+  dehextra:
     required: 0
   mbf21:
-    enabled: 1
+    required: 0
+  dsdhacked:
     required: 0

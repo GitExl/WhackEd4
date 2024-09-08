@@ -11,9 +11,9 @@ load:
   - things
   - strings
 options:
-  dsdhacked:
-    enabled: 1
+  dehextra:
     required: 1
   mbf21:
-    enabled: 1
+    required: 1
+  dsdhacked:
     required: 1

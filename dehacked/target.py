@@ -12,6 +12,7 @@ class Feature(Enum):
     CLASSIC_STRINGS = 'classic_strings'
     CLASSIC_AMMO_TYPE = 'classic_ammo_type'
     CLASSIC_FLAGS = 'classic_flags'
+    EXPANDABLE = 'expandable'
 
 
 class Target:
@@ -19,7 +20,7 @@ class Target:
     def __init__(self, target_id: str, name: str):
         self.id: str = target_id
         self.name: str = name
-        self.patch_versions: List[str] = []
+        self.patch_versions: Set[str] = set()
         self.features: Set[Feature] = set()
 
         self.tables: Dict[str, Table] = {}

@@ -15,8 +15,9 @@ class ActionArgumentType(Enum):
     SOUND = 'sound'
     AMMO = 'ammo'
     WEAPON = 'weapon'
-    INTEGER = 'integer'
-    FIXED_POINT = 'fixedpoint'
+    INTEGER_SIGNED = 'int'
+    INTEGER_UNSIGNED = 'uint'
+    FIXED_POINT = 'fixed'
 
 
 class ActionArgument:

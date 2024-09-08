@@ -163,10 +163,10 @@ actions:
     type: thing
     description: Jumps to a state if caller's target is closer than the specified distance.
     arguments:
-      - state:
+      - name: state
         type: state
         description: State to jump to.
-      - distance:
+      - name: distance
         type: fixed
         description: Distance threshold, in map units.
 
