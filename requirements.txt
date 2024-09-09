@@ -2,3 +2,4 @@ wxPython~=4.2.1
 PyAudio~=0.2.14
 cx_Freeze~=7.1.1
 pyyaml~=6.0.2
+jsonschema~=4.23.0

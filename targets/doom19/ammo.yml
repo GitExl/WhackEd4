@@ -13,7 +13,7 @@ schema:
       name: Clip
       default: 0
 
-data:
+rows:
   ammo:
     - name: Bullets
       clip: 10

@@ -31,7 +31,7 @@ schema:
       default: 0
       group: properties
 
-data:
+rows:
   thing:
     - _index: 0
       gib_health: -100

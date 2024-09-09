@@ -1,13 +1,9 @@
 name: Doom 1.9
 description: For vanilla Doom version 1.9 (Doom 1 and Doom 2).
 patch_versions:
-  - 19
-features:
-  - classic_codepointers
-  - classic_strings
-  - classic_ammo_type
-  - classic_flags
+  - '19'
 load:
+  - features
   - strings
   - actions
   - sprites

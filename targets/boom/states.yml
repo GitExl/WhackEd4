@@ -52,7 +52,7 @@ states_used:
   - 799
   - 895
 
-data:
+rows:
   state:
     - sprite: 0
     - action: Light0

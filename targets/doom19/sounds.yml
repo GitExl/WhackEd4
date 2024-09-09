@@ -59,7 +59,7 @@ schema:
       default: 0
       hidden: 1
 
-data:
+rows:
   sound:
     - is_singular: 0
       name_pointer: 151340

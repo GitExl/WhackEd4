@@ -1,0 +1,121 @@
+type: object
+properties:
+
+  schema:
+    type: object
+    additionalProperties:
+      type: object
+      additionalProperties:
+        type: object
+        required:
+          - type
+          - name
+          - default
+        properties:
+          type:
+            type: string
+            enum: [ reference, uint32, int32, byte, ubyte, fixed, string, ammo, action, bool, enum, flags ]
+          name:
+            type: string
+          patch_key:
+            type: string
+          default:
+            type: [ integer, string, array ]
+          group:
+            type: string
+          min:
+            type: integer
+          max:
+            type: integer
+          reference:
+            type: string
+          enum:
+            type: string
+          flagset:
+            type: string
+
+  rows:
+    type: object
+    additionalProperties:
+      type: array
+      items:
+        type: object
+
+  actions:
+    type: object
+    additionalProperties:
+      type: object
+      required:
+        - description
+      properties:
+        type:
+          type: string
+          enum: [ thing, weapon ]
+        name:
+          type: string
+        description:
+          type: string
+        arguments:
+          type: array
+          items:
+            type: object
+            required:
+              - name
+              - type
+            properties:
+              name:
+                type: string
+              type:
+                type: string
+                enum: [ int, uint, fixed, thing, state, ammo, weapon, sound ]
+              description:
+                type: string
+
+  strings:
+    type: object
+    additionalProperties:
+      type: string
+
+  states_used:
+    type: array
+    items:
+      type: integer
+
+  codepointer_to_state:
+    type: object
+    additionalProperties:
+      type: integer
+
+  cheats:
+    type: object
+    additionalProperties:
+      type: string
+
+  enums:
+    type: object
+    additionalProperties:
+      type: object
+      additionalProperties:
+          type: string
+
+  flags:
+    type: object
+    additionalProperties:
+      type: object
+      additionalProperties:
+        type: object
+        properties:
+          name:
+            type: string
+          index:
+            type: integer
+          alias:
+            type: string
+          description:
+            type: string
+
+  features:
+    type: array
+    uniqueItems: true
+    items:
+      type: string

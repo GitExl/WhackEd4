@@ -34,7 +34,7 @@ flags:
       name: No autoswitch to
       description: Cannot be switched to when ammo is picked up
 
-data:
+rows:
   weapon:
     - ammo_per_shot: 1
       flags_mbf21: [ FLEEMELEE, AUTOSWITCHFROM, NOAUTOSWITCHTO ]

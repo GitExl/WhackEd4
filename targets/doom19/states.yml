@@ -503,7 +503,7 @@ codepointer_to_state:
   - 809
   - 811
 
-data:
+rows:
   state:
     - sprite: 0
     - sprite: 1

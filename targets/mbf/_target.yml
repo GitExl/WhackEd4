@@ -2,8 +2,8 @@ name: MBF (Marine's Best Friend)
 description: Supports additional MBF features.
 extends: boom
 patch_versions:
-  - 19
-  - 21
+  - '19'
+  - '21'
 load:
   - actions
   - sprites
@@ -12,8 +12,8 @@ load:
   - things
 options:
   dehextra:
-    required: 0
+    required: false
   mbf21:
-    required: 0
+    required: false
   dsdhacked:
-    required: 0
+    required: false

@@ -47,7 +47,7 @@ schema:
       default: 0
       group: states
 
-data:
+rows:
   weapon:
     - name: Fist
       state_select: 3

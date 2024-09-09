@@ -47,7 +47,7 @@ schema:
       default: 0
       group: states
 
-data:
+rows:
   weapon:
     - state_deselect: 4
       state_bob: 2

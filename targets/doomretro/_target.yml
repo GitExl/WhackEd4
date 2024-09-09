@@ -2,8 +2,8 @@ name: Doom Retro
 description: Supports additional Doom Retro features.
 extends: dehextra
 patch_versions:
-  - 19
-  - 21
+  - '19'
+  - '21'
 load:
   - sprites
   - states
@@ -12,8 +12,8 @@ load:
   - strings
 options:
   dehextra:
-    required: 1
+    required: true
   mbf21:
-    required: 1
+    required: true
   dsdhacked:
-    required: 1
+    required: true

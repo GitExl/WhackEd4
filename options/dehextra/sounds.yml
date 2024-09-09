@@ -1,4 +1,4 @@
-data:
+rows:
   sound:
     - _index: 500
       priority: 127

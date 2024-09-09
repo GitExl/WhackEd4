@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional
+
 if TYPE_CHECKING:
     from dehacked.target import Target
 
@@ -15,11 +16,12 @@ class StringFieldType(BaseFieldType):
         self.min: int = 0
         self.max: int = 0xFFFF
 
-    def validate(self, value: any) -> bool:
+    def validate(self, value: any) -> Optional[str]:
         if type(value) != str:
-            return False
+            return 'String data must be a string.'
 
-        return self.min <= len(value) <= self.max
+        if len(value) < self.min or len(value) > self.max:
+            return f'String length must be between {self.min} and {self.max} characters inclusive.'
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):

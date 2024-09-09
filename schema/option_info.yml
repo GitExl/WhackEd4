@@ -1,0 +1,21 @@
+type: object
+required:
+  - name
+  - description
+
+properties:
+  name:
+    type: string
+  description:
+    type: string
+
+  patch_versions:
+    type: array
+    uniqueItems: true
+    items:
+      type: string
+
+  load:
+    type: array
+    items:
+      type: string

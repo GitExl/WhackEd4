@@ -83,7 +83,7 @@ schema:
       value_false: 202
       default: 0
 
-data:
+rows:
   misc:
     - idkfa_armor_class: 2
       idkfa_armor: 200

@@ -1,8 +1,8 @@
 name: Boom
 description: Boom extended Dehacked.
 patch_versions:
-  - 19
-  - 21
+  - '19'
+  - '21'
 load:
   - strings
   - actions
@@ -17,8 +17,8 @@ load:
   - cheats
 options:
   dehextra:
-    required: 0
+    required: false
   mbf21:
-    required: 0
+    required: false
   dsdhacked:
-    required: 0
+    required: false

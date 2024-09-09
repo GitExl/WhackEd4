@@ -15,10 +15,12 @@ class EnumFieldType(BaseFieldType):
 
         self.enum_name: Optional[str] = None
 
-    def validate(self, value: any) -> bool:
+    def validate(self, value: any) -> Optional[str]:
         if type(value) != int:
-            return False
-        return value in self.target.enums[self.enum_name]
+            return 'Enum data must be an integer.'
+
+        if value not in self.target.enums[self.enum_name]:
+            return f'Unknown enum key {value}.'
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):

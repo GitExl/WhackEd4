@@ -1,6 +1,6 @@
 name: DSDHacked
 description: Allows adding any number of things, states, sprites and sounds.
 patch_versions:
-  - 2021
-features:
-  - expandable
+  - '2021'
+load:
+  - features

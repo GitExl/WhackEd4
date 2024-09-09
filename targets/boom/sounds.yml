@@ -17,7 +17,7 @@ schema:
       patch_key: Neg. One 1
       default: -1
 
-data:
+rows:
   sound:
     - name: pistol
 

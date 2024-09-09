@@ -1,4 +1,4 @@
-data:
+rows:
   state:
     - _index: 1076
       duration: 6

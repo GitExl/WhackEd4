@@ -109,7 +109,7 @@ schema:
       default: ''
       group: properties
 
-data:
+rows:
   thing:
     - _index: 0
       retro_flags: [ CASTSHADOW, PASSMOBJ, CRUSHABLE, NOLIQUIDBOB, FOOTCLIP ]

@@ -15,16 +15,14 @@ class FlagsFieldType(BaseFieldType):
 
         self.flagset_name: Optional[str] = None
 
-    def validate(self, value: any) -> bool:
+    def validate(self, value: any) -> Optional[str]:
         if type(value) != set:
-            return False
+            return 'Flags data must be a set.'
 
         flagset = self.target.flagsets[self.flagset_name]
         for flag_key in value:
             if flag_key not in flagset.flags:
-                return False
-
-        return True
+                return f'Flag {flag_key} is not part of flagset {self.flagset_name}.'
 
     def transform_from_data(self, value: any) -> any:
 

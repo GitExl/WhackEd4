@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional
+
 if TYPE_CHECKING:
     from dehacked.target import Target
 
@@ -18,10 +19,12 @@ class IntegerFieldType(BaseFieldType):
         self.min: int = self.MIN_ABSOLUTE
         self.max: int = self.MAX_ABSOLUTE
 
-    def validate(self, value: any) -> bool:
+    def validate(self, value: any) -> Optional[str]:
         if type(value) != int:
-            return False
-        return self.min <= value <= self.max
+            return 'Integer data must be an integer.'
+
+        if value < self.min or value > self.max:
+            return f'Integer value {value} must be between {self.min} and {self.max} inclusive.'
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):

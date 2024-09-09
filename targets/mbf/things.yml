@@ -31,7 +31,7 @@ flags:
     UNUSED4:
       alias: "FRIEND"
 
-data:
+rows:
   thing:
      - flags: 4194310
        health: 500

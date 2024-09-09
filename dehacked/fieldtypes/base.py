@@ -17,8 +17,8 @@ class BaseFieldType:
         self.patch_key: Optional[str] = None
         self.group: Optional[str] = None
 
-    def validate(self, value: any) -> bool:
-        return True
+    def validate(self, value: any) -> Optional[str]:
+        return None
 
     def transform_from_data(self, value: any) -> any:
         return value

@@ -1,25 +1,46 @@
 from pathlib import Path
-from typing import List, Tuple, Set
+from typing import List, Tuple, Set, Dict, Optional
 
+import jsonschema
 import yaml
 
-from dehacked.target import Target, Feature
+from dehacked.target import Target, TargetInfo
 
 
 class TargetLoader:
 
-    def __init__(self, base_path: Path):
+    def __init__(self, base_path: Path, validate_jsonschema=False, validate_target=True):
         self.base_path: Path = base_path
+        self.validate_jsonschema: bool = validate_jsonschema
+        self.validate_target: bool = validate_target
 
-    def load(self, target_id: str, options: Set[str]) -> Target:
-        info, data = self._load_target_yaml(target_id)
+        if self.validate_jsonschema:
+            self.jsonschemas: Dict[str, dict] = {
+                'target_info': self._load_jsonschema('target_info'),
+                'target_data': self._load_jsonschema('target_data'),
+                'option_info': self._load_jsonschema('option_info'),
+            }
+
+    def list(self) -> Dict[str, TargetInfo]:
+        targets = {}
+
+        targets_dir = self.base_path / 'targets'
+        for target_dir in targets_dir.iterdir():
+            target_path = target_dir / '_target.yml'
+            if not target_path.exists():
+                continue
+            data = self._load_yaml(target_path, 'target_info')
+
+            target_id = target_dir.stem
+            targets[target_id] = TargetInfo.parse(target_id, data)
+
+        return targets
+
+    def load(self, target_info: TargetInfo, options: Set[str]) -> Target:
+        info, data = self._load_target_yaml(target_info.id)
 
         # Create initial target from info.
-        target = Target(target_id, info['name'])
-        target.patch_versions = set(info['patch_versions'])
-        if 'features' in info:
-            for feature in info['features']:
-                target.features.add(Feature(feature))
+        target = Target.from_info(target_info)
 
         # Load optional data.
         if 'options' in info:
@@ -29,38 +50,18 @@ class TargetLoader:
                 option_info, option_data = self._load_option_yaml(option_key)
                 self._merge_data(data, option_data)
 
-                # Option features overwrite.
+                # Patch versions overwrite all previous versions.
                 if 'patch_versions' in option_info:
                     target.patch_versions = set(option_info['patch_versions'])
 
         # Copy Yaml data to the target.
-        if 'strings' in data:
-            target.strings.update(data['strings'])
-        if 'cheats' in data:
-            target.cheats.update(data['cheats'])
-        if 'states_used' in data:
-            target.states_used.update(data['states_used'])
-        if 'codepointer_to_state' in data:
-            target.codepointer_to_state.extend(data['codepointer_to_state'])
-        if 'actions' in data:
-            for action_key, action_data in data['actions'].items():
-                target.add_action(action_key, action_data)
-        if 'flags' in data:
-            for flagset_key, flagset_data in data['flags'].items():
-                target.add_flagset(flagset_key, flagset_data)
-        if 'enums' in data:
-            for enum_key, enum_data in data['enums'].items():
-                target.add_enum(enum_key, enum_data)
-        if 'schema' in data:
-            for schema_key, schema_data in data['schema'].items():
-                target.add_schema(schema_key, schema_data)
-        if 'data' in data:
-            for table_key, table_rows in data['data'].items():
-                target.add_data(table_key, table_rows)
+        target.add_data(data)
 
-        target.validate()
-
-        print(info)
+        errors = target.validate()
+        if len(errors):
+            for error in errors:
+                print(error)
+            raise RuntimeError('Target validation failed.')
 
         return target
 
@@ -91,13 +92,8 @@ class TargetLoader:
 
     def _load_target_yaml(self, target_id: str) -> Tuple[dict, dict]:
         target_path = self.base_path / 'targets' / Path(target_id)
-
         info_file = target_path / Path('_target.yml')
-        if not info_file.exists():
-            raise RuntimeError(f'The target "{target_id}" does not exist.')
-
-        with open(info_file, 'r', encoding='utf8') as f:
-            info = yaml.load(f.read(), yaml.CSafeLoader)
+        info = self._load_yaml(info_file, jsonschema_name='target_info')
 
         if 'extends' in info:
             base_info, data = self._load_target_yaml(info['extends'])
@@ -106,33 +102,25 @@ class TargetLoader:
 
         if 'load' in info:
             yaml_files = [target_path / Path(f'{yaml_name}.yml') for yaml_name in info['load']]
-            self._load_yamls_merged(data, yaml_files)
+            self._load_data_yamls(data, yaml_files)
 
         return info, data
 
     def _load_option_yaml(self, option_id: str) -> Tuple[dict, dict]:
         option_path = self.base_path / 'options' / Path(option_id)
-
         info_file = option_path / Path('_option.yml')
-        if not info_file.exists():
-            raise RuntimeError(f'The option "{option_id}" does not exist.')
-
-        with open(info_file, 'r', encoding='utf8') as f:
-            info = yaml.load(f.read(), yaml.CSafeLoader)
+        info = self._load_yaml(info_file, jsonschema_name='option_info')
 
         data = {}
         if 'load' in info:
             yaml_files = [option_path / Path(f'{yaml_name}.yml') for yaml_name in info['load']]
-            self._load_yamls_merged(data, yaml_files)
+            self._load_data_yamls(data, yaml_files)
 
         return info, data
 
-    def _load_yamls_merged(self, data: dict, yaml_files):
+    def _load_data_yamls(self, data: dict, yaml_files):
         for file_path in yaml_files:
-            if not file_path.exists():
-                raise RuntimeError(f'The file "{file_path}" does not exist.')
-            with open(file_path, 'r', encoding='utf8') as f:
-                leaf = yaml.load(f.read(), yaml.CSafeLoader)
+            leaf = self._load_yaml(file_path, jsonschema_name='target_data')
 
             # Clear values in existing data before merging in new data.
             if 'clear' in leaf:
@@ -141,3 +129,20 @@ class TargetLoader:
                 del leaf['clear']
 
             self._merge_data(data, leaf)
+
+    def _load_yaml(self, file: Path, jsonschema_name: Optional[str]=None) -> dict:
+        if not file.exists():
+            raise RuntimeError(f'The file "{file}" does not exist.')
+
+        with open(file, 'r', encoding='utf8') as f:
+            data = yaml.load(f.read(), yaml.CSafeLoader)
+
+        if self.validate_jsonschema and jsonschema_name is not None:
+            jsonschema.validate(instance=data, schema=self.jsonschemas[jsonschema_name])
+
+        return data
+
+    def _load_jsonschema(self, name: str) -> dict:
+        file_path = self.base_path / 'schema' / f'{name}.yml'
+        with open(file_path, 'r', encoding='utf8') as f:
+            return yaml.load(f.read(), yaml.CSafeLoader)

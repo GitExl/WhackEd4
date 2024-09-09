@@ -273,7 +273,7 @@ flags:
       name: Color 2 (brown\red)
       description: This thing's green colors will be mapped to brown (or red if the Color 1 flag is also set).
 
-data:
+rows:
   thing:
     - height: 3670016
       sound_pain: 25
