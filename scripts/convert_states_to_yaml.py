@@ -1,7 +1,8 @@
 import json
-from strictyaml import as_document
 
-with open('states.json', 'r') as f:
+import yaml
+
+with open('targets/states.json', 'r') as f:
     d = json.load(f)
 
 out = []
@@ -27,5 +28,4 @@ for state in d['states']:
 
     out.append(state)
 
-yaml = as_document(out)
-print(yaml.as_yaml())
+print(yaml.dump(out))
