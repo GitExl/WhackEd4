@@ -15,7 +15,7 @@ class ReferenceFieldType(BaseFieldType):
         self.table_name: Optional[str] = None
 
     def validate(self, value: any) -> Optional[str]:
-        if isinstance(value, int):
+        if not isinstance(value, int):
             return 'Reference data must be an integer.'
 
         if self.table_name not in self.target.tables:

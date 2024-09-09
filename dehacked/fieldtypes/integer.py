@@ -19,7 +19,7 @@ class IntegerFieldType(BaseFieldType):
         self.max: int = self.MAX_ABSOLUTE
 
     def validate(self, value: any) -> Optional[str]:
-        if isinstance(value, int):
+        if not isinstance(value, int):
             return 'Integer data must be an integer.'
 
         if value < self.min or value > self.max:

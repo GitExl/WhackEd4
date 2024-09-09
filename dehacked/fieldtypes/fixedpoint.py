@@ -19,7 +19,7 @@ class FixedPointFieldType(BaseFieldType):
         self.max: float = self.MAX_ABSOLUTE
 
     def validate(self, value: any) -> Optional[str]:
-        if isinstance(value, int):
+        if not isinstance(value, int):
             return 'Fixed point data must be an integer.'
 
         norm = value / 65536.0
