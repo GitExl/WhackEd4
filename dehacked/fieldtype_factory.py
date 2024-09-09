@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from dehacked.fieldtypes.action import ActionFieldType
 from dehacked.fieldtypes.ammo import AmmoFieldType
 from dehacked.fieldtypes.base import BaseFieldType
@@ -7,11 +9,11 @@ from dehacked.fieldtypes.bool import BoolFieldType
 from dehacked.fieldtypes.enum import EnumFieldType
 from dehacked.fieldtypes.fixedpoint import FixedPointFieldType
 from dehacked.fieldtypes.flags import FlagsFieldType
-from dehacked.fieldtypes.integer import Int32FieldType, Uint32FieldType, ByteFieldType, UbyteFieldType
+from dehacked.fieldtypes.integer import (Int32FieldType, Uint32FieldType, ByteFieldType,
+                                         UbyteFieldType)
 from dehacked.fieldtypes.reference import ReferenceFieldType
 from dehacked.fieldtypes.string import StringFieldType
 
-from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from dehacked.target import Target
 

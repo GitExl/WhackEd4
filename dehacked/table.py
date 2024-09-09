@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-from typing import Dict, List
+from typing import TYPE_CHECKING, Dict, List
 from dehacked.schema import Schema
 
-from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from dehacked.target import Target
 

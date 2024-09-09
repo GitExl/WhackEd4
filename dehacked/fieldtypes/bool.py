@@ -1,11 +1,10 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Optional
+from dehacked.fieldtypes.base import BaseFieldType
 
 if TYPE_CHECKING:
     from dehacked.target import Target
-
-from dehacked.fieldtypes.base import BaseFieldType
 
 
 class BoolFieldType(BaseFieldType):
@@ -17,11 +16,13 @@ class BoolFieldType(BaseFieldType):
         self.value_false: any = 0
 
     def validate(self, value: any) -> Optional[str]:
-        if type(value) != int:
+        if not isinstance(value, int):
             return 'Boolean data must be an integer.'
 
-        if value != self.value_true and value != self.value_false:
+        if value not in {self.value_true, self.value_false}:
             return f'Expected {self.value_true} or {self.value_false} for boolean data.'
+
+        return None
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):

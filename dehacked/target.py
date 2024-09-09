@@ -52,7 +52,12 @@ class Target:
 
     @classmethod
     def from_info(cls, target_info: TargetInfo):
-        return cls(target_info.id, target_info.name, target_info.description, target_info.patch_versions)
+        return cls(
+            target_info.id,
+            target_info.name,
+            target_info.description,
+            target_info.patch_versions
+        )
 
     def add_data(self, data: dict):
         if 'features' in data:
@@ -95,7 +100,7 @@ class Target:
 
         flagset = self.flagsets[key]
         for flag_key, flag_data in data.items():
-            flagset.add_flag(Flag.parse(key, flag_key, flag_data))
+            flagset.add_flag(Flag.parse(flag_key, flag_data))
 
     def add_action(self, key: str, data: dict):
         self.actions[key] = Action.parse(key, data)

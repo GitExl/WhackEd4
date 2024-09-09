@@ -1,11 +1,10 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Optional
+from dehacked.fieldtypes.base import BaseFieldType
 
 if TYPE_CHECKING:
     from dehacked.target import Target
-
-from dehacked.fieldtypes.base import BaseFieldType
 
 
 class EnumFieldType(BaseFieldType):
@@ -16,11 +15,13 @@ class EnumFieldType(BaseFieldType):
         self.enum_name: Optional[str] = None
 
     def validate(self, value: any) -> Optional[str]:
-        if type(value) != int:
+        if not isinstance(value, int):
             return 'Enum data must be an integer.'
 
         if value not in self.target.enums[self.enum_name]:
             return f'Unknown enum key {value}.'
+
+        return None
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):

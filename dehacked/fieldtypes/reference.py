@@ -1,11 +1,10 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Optional
+from dehacked.fieldtypes.base import BaseFieldType
 
 if TYPE_CHECKING:
     from dehacked.target import Target
-
-from dehacked.fieldtypes.base import BaseFieldType
 
 
 class ReferenceFieldType(BaseFieldType):
@@ -16,7 +15,7 @@ class ReferenceFieldType(BaseFieldType):
         self.table_name: Optional[str] = None
 
     def validate(self, value: any) -> Optional[str]:
-        if type(value) != int:
+        if isinstance(value, int):
             return 'Reference data must be an integer.'
 
         if self.table_name not in self.target.tables:
@@ -25,6 +24,8 @@ class ReferenceFieldType(BaseFieldType):
         table = self.target.tables[self.table_name]
         if value not in table.rows:
             return f'Table "{self.table_name}" does not contain index {value}.'
+
+        return None
 
     @classmethod
     def parse(cls, key: str, data: dict, target: Target):

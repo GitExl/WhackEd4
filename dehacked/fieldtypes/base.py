@@ -18,6 +18,7 @@ class BaseFieldType:
         self.group: Optional[str] = None
 
     def validate(self, value: any) -> Optional[str]:
+        # pylint: disable=unused-argument
         return None
 
     def transform_from_data(self, value: any) -> any:

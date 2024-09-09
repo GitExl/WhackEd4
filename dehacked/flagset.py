@@ -10,11 +10,10 @@ class Flag:
         self.index: Optional[int] = None
 
     @classmethod
-    def parse(cls, flagset_key: str, key: str, data: dict):
+    def parse(cls, key: str, data: dict):
         """
         Creates a new Flag instance from a data dict.
 
-        :param flagset_key: the key of the flagset this flag belongs to.
         :param key: the flag's key.
         :param data: data to create the instance with.
 

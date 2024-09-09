@@ -38,8 +38,8 @@ class Action:
 
         self.sound: Optional[str] = None
         self.spawn: Optional[int] = None
-        self.set_momentum: bool = False
-        self.use_extra_flash_state: bool = False
+        self.sets_momentum: bool = False
+        self.uses_extra_flash_state: bool = False
 
         self.unused: List[ActionArgument] = []
         self.arguments: List[ActionArgument] = []

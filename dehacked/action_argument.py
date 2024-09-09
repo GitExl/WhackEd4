@@ -41,23 +41,23 @@ class ActionArgument:
         self.range: Optional[Tuple[int, int]] = None
 
     @classmethod
-    def parse(cls, action_key: str, argument_key: str, data: dict):
+    def parse(cls, key: str, arg_key: str, data: dict):
         """
         Creates a new ActionArgument instance from a data dict.
 
-        :param action_key: the key of the action this argument belongs to.
-        :param argument_key: the key of this argument.
+        :param key: the key of the action this argument belongs to.
+        :param arg_key: the key of this argument.
         :param data: a dict of data to create the instance from.
 
         :return: a new ActionArgument instance.
         """
 
         if 'name' not in data:
-            raise RuntimeError(f'Action "{action_key}" argument "{argument_key}" requires a "name" property.')
+            raise RuntimeError(f'Action "{key}" argument "{arg_key}" requires a "name".')
         if 'description' not in data:
-            raise RuntimeError(f'Action "{action_key}" argument "{argument_key}" requires a "description" property.')
+            raise RuntimeError(f'Action "{key}" argument "{arg_key}" requires a "description".')
         if 'type' not in data:
-            raise RuntimeError(f'Action "{action_key}" argument "{argument_key}" requires a "type" property.')
+            raise RuntimeError(f'Action "{key}" argument "{arg_key}" requires a "type".')
 
         argument = cls(
             data['name'],

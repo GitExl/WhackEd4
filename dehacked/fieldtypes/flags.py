@@ -1,11 +1,10 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Optional
+from dehacked.fieldtypes.base import BaseFieldType
 
 if TYPE_CHECKING:
     from dehacked.target import Target
-
-from dehacked.fieldtypes.base import BaseFieldType
 
 
 class FlagsFieldType(BaseFieldType):
@@ -16,7 +15,7 @@ class FlagsFieldType(BaseFieldType):
         self.flagset_name: Optional[str] = None
 
     def validate(self, value: any) -> Optional[str]:
-        if type(value) != set:
+        if not isinstance(value, set):
             return 'Flags data must be a set.'
 
         flagset = self.target.flagsets[self.flagset_name]
@@ -24,11 +23,13 @@ class FlagsFieldType(BaseFieldType):
             if flag_key not in flagset.flags:
                 return f'Flag {flag_key} is not part of flagset {self.flagset_name}.'
 
+        return None
+
     def transform_from_data(self, value: any) -> any:
 
         # Parse integers into known flags.
         # @todo replace integers in all data with arrays and skip this step
-        if type(value) == int:
+        if isinstance(value, int):
             flags = set()
             flagset = self.target.flagsets[self.flagset_name]
             for flag_index, flag in flagset.flag_by_index.items():
@@ -37,7 +38,7 @@ class FlagsFieldType(BaseFieldType):
                     flags.add(flag.key)
             return flags
 
-        elif type(value) == list:
+        if isinstance(value, list):
             return set(value)
 
         raise RuntimeError(f'Cannot transform "{value}" into flag data.')

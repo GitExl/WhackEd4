@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from typing import Dict, Optional, List
+from typing import TYPE_CHECKING, Dict, Optional, List
 
 from dehacked import fieldtype_factory
 from dehacked.fieldtypes.base import BaseFieldType
 
-from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from dehacked.target import Target
 
@@ -31,13 +30,13 @@ class Schema:
             field = self.fields[key]
             data[key] = field.transform_from_data(value)
 
-    def validate_row(self, row: dict, row_index: int) -> List[str]:
+    def validate_row(self, row: dict, index: int) -> List[str]:
         errors: List[str] = []
 
         for field_key, value in row.items():
             error = self.validate_field(field_key, value)
             if error is not None:
-                errors.append(f'Validation error in "{self.name}" table row {row_index}, field "{field_key}": {error}')
+                errors.append(f'Validation error for {self.name} {index}, "{field_key}": {error}')
 
         return errors
 

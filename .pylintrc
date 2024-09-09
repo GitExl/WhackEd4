@@ -1,3 +1,6 @@
+[MASTER]
+init-hook='import sys; sys.path.append(".")'
+
 [MAIN]
 ignore-paths=src/whacked4/ui/windows.py
 jobs=4

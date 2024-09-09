@@ -58,7 +58,7 @@ class TargetLoader:
         target.add_data(data)
 
         errors = target.validate()
-        if len(errors):
+        if len(errors) > 0:
             for error in errors:
                 print(error)
             raise RuntimeError('Target validation failed.')
@@ -70,13 +70,13 @@ class TargetLoader:
             if key not in root:
                 root[key] = item
             else:
-                if type(item) is dict:
-                    if type(root[key]) is not dict:
+                if isinstance(item, dict):
+                    if not isinstance(root[key], dict):
                         raise RuntimeError(
                             f'Cannot merge "{key}" dictionary data, root and leaf differ in type.')
                     self._merge_data(root[key], item)
-                elif type(item) is list:
-                    if type(root[key]) is not list:
+                elif isinstance(item, list):
+                    if not isinstance(root[key], list):
                         raise RuntimeError(
                             f'Cannot merge "{key}" list data, root and leaf differ in type.')
                     root[key].extend(item)
@@ -96,7 +96,7 @@ class TargetLoader:
         info = self._load_yaml(info_file, jsonschema_name='target_info')
 
         if 'extends' in info:
-            base_info, data = self._load_target_yaml(info['extends'])
+            _, data = self._load_target_yaml(info['extends'])
         else:
             data = {}
 
