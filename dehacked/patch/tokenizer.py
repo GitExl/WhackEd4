@@ -14,13 +14,14 @@ class Tokenizer:
         self._tokens: List[BaseToken] = []
         self._unmatched: List[str] = []
         self._current_section: Optional[str] = None
+        self._current_line: int = -1
 
         # Precompile regular expressions used for tokenizing.
         token_regexes = [
             (self._tokenize_text, r'^text (\d+)\s+(\d+)'),
+            (self._tokenize_assignment, r'^(.+?)\s*=\s*(.+)\s*$'),
             (self._tokenize_heading, r'^(thing|ammo|weapon|frame|sound|misc|sprite|cheat|pointer)\s+(\d+)(\s+\((.+)\))?'),
             (self._tokenize_section, r'^\[(.+)]'),
-            (self._tokenize_assignment, r'^(.+?)\s*=\s*(.+)\s*$'),
             (self._tokenize_par, r'^par\s+(\d+)\s+(\d+)(?:\s+(\d+))?'),
             (self._tokenize_include, r'^include\s+(.+)'),
         ]
@@ -69,6 +70,7 @@ class Tokenizer:
 
         self._tokens.append(
             TextToken(
+                line=self._current_line,
                 old=str_old,
                 new=str_new,
             )
@@ -85,6 +87,7 @@ class Tokenizer:
 
         self._tokens.append(
             HeadingToken(
+                line=self._current_line,
                 type=heading_type,
                 index=index,
                 name=name,
@@ -99,6 +102,7 @@ class Tokenizer:
 
         self._tokens.append(
             SectionToken(
+                line=self._current_line,
                 name=section,
             )
         )
@@ -129,6 +133,7 @@ class Tokenizer:
 
         self._tokens.append(
             AssignmentToken(
+                line=self._current_line,
                 key=key,
                 value=value,
             )
@@ -147,6 +152,7 @@ class Tokenizer:
 
         self._tokens.append(
             ParToken(
+                line=self._current_line,
                 seconds=seconds,
                 map=map_index,
                 episode=episode_index,
@@ -159,6 +165,7 @@ class Tokenizer:
 
         self._tokens.append(
             IncludeToken(
+                line=self._current_line,
                 file=file,
             )
         )
@@ -175,6 +182,8 @@ class Tokenizer:
         else:
             text = self._text[self._pos:index]
             self._pos += (index - self._pos) + 1
+
+        self._current_line +=1
 
         return text
 

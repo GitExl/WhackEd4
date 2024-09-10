@@ -4,7 +4,7 @@ from typing import Optional
 
 @dataclass(frozen=True)
 class BaseToken:
-    pass
+    line: int
 
 @dataclass(frozen=True)
 class HeadingToken(BaseToken):
@@ -14,8 +14,8 @@ class HeadingToken(BaseToken):
 
     def __repr__(self):
         if self.name is not None:
-            return f'Heading: {self.type} {self.index}, "{self.name}"'
-        return f'Heading: {self.type}, {self.index}'
+            return f'HEADING: {self.type} {self.index}, "{self.name}"'
+        return f'HEADING: {self.type}, {self.index}'
 
 @dataclass(frozen=True)
 class AssignmentToken(BaseToken):
@@ -23,14 +23,14 @@ class AssignmentToken(BaseToken):
     value: str
 
     def __repr__(self):
-        return f'Assignment: {self.key} = {self.value}'
+        return f'ASSIGNMENT: {self.key} = {self.value}'
 
 @dataclass(frozen=True)
 class SectionToken(BaseToken):
     name: str
 
     def __repr__(self):
-        return f'Section: {self.name}'
+        return f'SECTION: {self.name}'
 
 @dataclass(frozen=True)
 class TextToken(BaseToken):
@@ -38,7 +38,7 @@ class TextToken(BaseToken):
     new: str
 
     def __repr__(self):
-        return f'Old: {self.old}\nNew: {self.new}'
+        return f'TEXT: "{self.old}" to "{self.new}"'
 
 @dataclass(frozen=True)
 class ParToken(BaseToken):
@@ -49,11 +49,11 @@ class ParToken(BaseToken):
     def __repr__(self):
         if self.episode is not None:
             return f'Par time: E{self.episode}M{self.map}, {self.seconds} seconds'
-        return f'Par time: MAP{self.map:>02}, {self.seconds} seconds'
+        return f'PAR: MAP{self.map:>02}, {self.seconds} seconds'
 
 @dataclass(frozen=True)
 class IncludeToken(BaseToken):
     file: str
 
     def __repr__(self):
-        return f'Include: {self.file}'
+        return f'INCLUDE: {self.file}'
