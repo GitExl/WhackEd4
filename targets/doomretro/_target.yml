@@ -1,6 +1,6 @@
 name: Doom Retro
 description: Supports additional Doom Retro features.
-extends: dehextra
+extends: mbf
 patch_versions:
   - '19'
   - '21'

@@ -1,7 +1,7 @@
 clear:
-  - data.state
+  - rows.state
 
-data:
+rows:
   state:
     - sprite: 0
     - sprite: 1

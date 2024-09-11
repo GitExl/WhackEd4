@@ -1,10 +1,11 @@
 from pathlib import Path
-from typing import List, Tuple, Set, Dict, Optional
+from typing import List, Tuple, Dict, Optional
 
 import jsonschema
 import yaml
 
-from dehacked.target import Target, TargetInfo
+from dehacked.target import TargetInfo
+from dehacked.target_info import OptionInfo
 
 
 class TargetLoader:
@@ -21,49 +22,39 @@ class TargetLoader:
                 'option_info': self._load_jsonschema('option_info'),
             }
 
-    def list(self) -> Dict[str, TargetInfo]:
+    def list_targets(self) -> Dict[str, TargetInfo]:
         targets = {}
 
-        targets_dir = self.base_path / 'targets'
-        for target_dir in targets_dir.iterdir():
+        targets_base_dir = self.base_path / 'targets'
+        for target_dir in targets_base_dir.iterdir():
             target_path = target_dir / '_target.yml'
             if not target_path.exists():
                 continue
-            data = self._load_yaml(target_path, 'target_info')
 
-            target_id = target_dir.stem
-            targets[target_id] = TargetInfo.parse(target_id, data)
+            key = target_dir.stem
+            target_info, target_data = self._load_target_yaml(key)
+
+            targets[key] = TargetInfo.parse(key, target_info)
+            targets[key].add_data(target_data)
 
         return targets
 
-    def load(self, target_info: TargetInfo, options: Set[str]) -> Target:
-        info, data = self._load_target_yaml(target_info.id)
+    def list_options(self) -> Dict[str, OptionInfo]:
+        options = {}
 
-        # Create initial target from info.
-        target = Target.from_info(target_info)
+        options_base_dir = self.base_path / 'options'
+        for option_dir in options_base_dir.iterdir():
+            option_path = option_dir / '_option.yml'
+            if not option_path.exists():
+                continue
 
-        # Load optional data.
-        if 'options' in info:
-            for option_key, option_data in info['options'].items():
-                if not option_data['required'] and option_key not in options:
-                    continue
-                option_info, option_data = self._load_option_yaml(option_key)
-                self._merge_data(data, option_data)
+            key = option_dir.stem
+            option_info, option_data = self._load_option_yaml(key)
 
-                # Patch versions overwrite all previous versions.
-                if 'patch_versions' in option_info:
-                    target.patch_versions = set(option_info['patch_versions'])
+            options[key] = OptionInfo.parse(key, option_info)
+            options[key].add_data(option_data)
 
-        # Copy Yaml data to the target.
-        target.add_data(data)
-
-        errors = target.validate()
-        if len(errors) > 0:
-            for error in errors:
-                print(error)
-            raise RuntimeError('Target validation failed.')
-
-        return target
+        return options
 
     def _merge_data(self, root: dict, leaf: dict):
         for key, item in leaf.items():
@@ -118,7 +109,7 @@ class TargetLoader:
 
         return info, data
 
-    def _load_data_yamls(self, data: dict, yaml_files):
+    def _load_data_yamls(self, data: dict, yaml_files: List[Path]):
         for file_path in yaml_files:
             leaf = self._load_yaml(file_path, jsonschema_name='target_data')
 

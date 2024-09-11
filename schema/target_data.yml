@@ -82,8 +82,8 @@ properties:
       type: integer
 
   codepointer_to_state:
-    type: object
-    additionalProperties:
+    type: array
+    items:
       type: integer
 
   cheats:

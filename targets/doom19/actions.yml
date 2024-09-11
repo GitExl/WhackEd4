@@ -303,7 +303,7 @@ actions:
     description: Player Plasma Rifle attack.
     name: FirePlasma
     type: weapon
-      use_extra_flash_state: 1
+    use_extra_flash_state: 1
   '186512':
     description: Player Pistol shot.
     name: FirePistol
@@ -324,7 +324,7 @@ actions:
     name: FireCGun
     type: weapon
     sound: sound:1
-      use_extra_flash_state: 1
+    use_extra_flash_state: 1
   '187200':
     description: Restore the lighting level after a gun flash.
     name: Light0

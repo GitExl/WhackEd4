@@ -6,6 +6,7 @@ from dehacked.dehacked_enum import DehackedEnum
 from dehacked.flagset import FlagSet, Flag
 from dehacked.schema import Schema
 from dehacked.table import Table
+from dehacked.target_info import TargetInfo, OptionInfo
 
 
 class Feature(Enum):
@@ -16,48 +17,58 @@ class Feature(Enum):
     EXPANDABLE = 'expandable'
 
 
-class TargetInfo:
-
-    def __init__(self, id: str, name: str, description: str, patch_versions: Set[str]):
-        self.id: str = id
-        self.name: str = name
-        self.description: str = description
-        self.patch_versions: Set[str] = patch_versions
-
-    @classmethod
-    def parse(cls, id: str, data: dict):
-        return TargetInfo(id, data['name'], data['description'], data['patch_versions'])
-
-
 class Target:
 
-    def __init__(self, target_id: str, name: str, description: str, patch_versions: Set[str]):
-        self.id: str = target_id
+    def __init__(self, key: str, name: str, description: str, patch_versions: Set[str]):
+        self.key: str = key
         self.name: str = name
         self.description: str = description
         self.patch_versions: Set[str] = patch_versions
+        self.options: Set[str] = set()
 
         self.features: Set[Feature] = set()
         self.tables: Dict[str, Table] = {}
         self.schemas: Dict[str, Schema] = {}
-
         self.strings: Dict[str, str] = {}
         self.cheats: Dict[str, str] = {}
         self.actions: Dict[str, Action] = {}
         self.flagsets: Dict[str, FlagSet] = {}
         self.enums: Dict[str, DehackedEnum] = {}
-
         self.states_used: Set[int] = set()
         self.codepointer_to_state: List[int] = []
 
     @classmethod
-    def from_info(cls, target_info: TargetInfo):
-        return cls(
-            target_info.id,
-            target_info.name,
-            target_info.description,
-            target_info.patch_versions
+    def from_info_with_options(cls, info: TargetInfo, selected_options: List[OptionInfo]):
+        target = cls(
+            info.key,
+            info.name,
+            info.description,
+            info.patch_versions
         )
+        target.add_data(info.data)
+
+        # Merge in option data, in the order that the target specifies.
+        for option_key in info.options:
+            for option in selected_options:
+                if option_key == option.key:
+                    target.options.add(option.key)
+                    target.add_data(option.data)
+
+                    # Patch versions overwrite all previous versions.
+                    if len(option.patch_versions) > 0:
+                        target.patch_versions = option.patch_versions
+
+                    break
+            else:
+                raise RuntimeError(f'Target "{info.key}" does not support option "{option_key}".')
+
+        errors = target.validate()
+        if len(errors) > 0:
+            for error in errors:
+                print(error)
+            raise RuntimeError('Target validation failed.')
+
+        return target
 
     def add_data(self, data: dict):
         if 'features' in data:
