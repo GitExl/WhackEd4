@@ -1,7 +1,7 @@
 from typing import List, Dict, Optional
 
-from dehacked.patch.tokens import BaseToken, HeadingToken, SectionToken, AssignmentToken, TextToken, IncludeToken, \
-    ParToken
+from dehacked.patch.tokens import (BaseToken, HeadingToken, SectionToken, AssignmentToken,
+                                   TextToken, IncludeToken, ParToken)
 
 
 Item = Dict[str, any]
@@ -44,12 +44,12 @@ class Parser:
                 if self._item is not None:
                     self._item[token.key] = token.value
                 else:
-                    raise ParserError(f'Assignment outside of a valid section on line {token.line}.')
+                    raise ParserError(f'Assignment outside of valid section on line {token.line}.')
 
             # Special text replacement, combined into strings section.
             elif isinstance(token, TextToken):
                 self._emit_item()
-                self._section_key = 'strings'
+                self._section_key = 'text'
                 self._item = {
                     token.old: token.new,
                 }

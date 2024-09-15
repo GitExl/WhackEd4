@@ -3,7 +3,6 @@ description: For vanilla Doom version 1.9 (Doom 1 and Doom 2).
 patch_versions:
   - '19'
 load:
-  - features
   - strings
   - actions
   - sprites

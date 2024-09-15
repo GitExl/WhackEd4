@@ -10,10 +10,9 @@ from dehacked.target_info import TargetInfo, OptionInfo
 
 
 class Feature(Enum):
-    CLASSIC_CODEPOINTERS = 'classic_codepointers'
-    CLASSIC_STRINGS = 'classic_strings'
-    CLASSIC_AMMO_TYPE = 'classic_ammo_type'
-    CLASSIC_FLAGS = 'classic_flags'
+    EXTENDED_CODEPOINTERS = 'extended_codepointers'
+    EXTENDED_STRINGS = 'extended_strings'
+    EXTENDED_FLAGS = 'extended_flags'
     EXPANDABLE = 'expandable'
 
 
@@ -61,12 +60,6 @@ class Target:
                     break
             else:
                 raise RuntimeError(f'Target "{info.key}" does not support option "{option_key}".')
-
-        errors = target.validate()
-        if len(errors) > 0:
-            for error in errors:
-                print(error)
-            raise RuntimeError('Target validation failed.')
 
         return target
 

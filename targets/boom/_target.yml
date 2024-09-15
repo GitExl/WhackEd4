@@ -4,6 +4,7 @@ patch_versions:
   - '19'
   - '21'
 load:
+  - features
   - strings
   - actions
   - sprites

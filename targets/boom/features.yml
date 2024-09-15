@@ -1,0 +1,4 @@
+features:
+  - extended_codepointers
+  - extended_strings
+  - extended_flags
