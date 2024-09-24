@@ -4355,7 +4355,7 @@ class AboutDialogBase ( wx.Dialog ):
 
 		bSizer56.Add( self.m_staticText139, 0, wx.EXPAND|wx.LEFT|wx.RIGHT|wx.TOP, 3 )
 
-		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aeyesx, Acts19quiz, Aliotroph?, Altazimuth, Andy Fox, Andy Shawaluk, antares031, Asht Mslf, Big_Al, CodeImp, CSabo, Da Werecat, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Endy McGufin, Enjay, esselfortium, Frades, Francesco Orsenigo, Greg Lewis, hawkwind3, iori, j0e, Kurisutaru, Leonard Pitre, Looney, MaiklRussia, Marc. A. Pullen, NeophyteRonin, Palladium, plums, Rellik, REZ, scifista42, Skullers, SlayeR, The Doommer, TheStupidestBeing, tempun, un4seen, VGA, WildWeasel, XDelusion, Xyzzy01, Zodomaniac", wx.DefaultPosition, self.FromDIP( wx.Size( -1,-1 ) ), wx.ST_NO_AUTORESIZE )
+		self.m_staticText138 = wx.StaticText( self, wx.ID_ANY, u"Aeyesx, Acts19quiz, Aliotroph?, Altazimuth, Andy Fox, Andy Shawaluk, antares031, Asht Mslf, Big_Al, CodeImp, CSabo, Da Werecat, Dani J666, Daniel Carroll, Doom Dude, DooMAD, Doomer, EarthQuake, Endy McGufin, Enjay, esselfortium, Frades, Francesco Orsenigo, Gregor, Greg Lewis, hawkwind3, iori, j0e, Kurisutaru, Leonard Pitre, Looney, MaiklRussia, Marc. A. Pullen, NeophyteRonin, Palladium, plums, Rellik, REZ, scifista42, Skullers, SlayeR, The Doommer, TheStupidestBeing, tempun, un4seen, VGA, WildWeasel, XDelusion, Xyzzy01, Zodomaniac", wx.DefaultPosition, self.FromDIP( wx.Size( -1,-1 ) ), wx.ST_NO_AUTORESIZE )
 		self.m_staticText138.Wrap( -1 )
 
 		bSizer56.Add( self.m_staticText138, 1, wx.ALL|wx.EXPAND, 3 )
