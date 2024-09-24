@@ -440,7 +440,7 @@ class Patch:
                     else:
                         self.things[entry_index].name = entry_name
                     continue
-                if line.startswith('Frame ') and len(line_words) >= 2:
+                if line.startswith('Frame ') and len(line_words) == 2:
                     mode = ParseMode.STATE
                     entry_index = int(line_words[1])
                     if entry_index < 0 or entry_index >= len(self.states):
@@ -448,7 +448,7 @@ class Patch:
                                               'in the chosen engine. It will not be loaded.'
                         entry_index = -1
                     continue
-                if line.startswith('Sound ') and len(line_words) >= 2:
+                if line.startswith('Sound ') and len(line_words) == 2:
                     mode = ParseMode.SOUND
                     entry_index = int(line_words[1])
                     if entry_index < 0 or entry_index >= len(self.sounds):
@@ -484,7 +484,7 @@ class Patch:
                     messages['UNSUPPORTED_SPRITE'] = 'The patch contains sprite blocks, which '\
                                                      'are unsupported and will not be loaded.'
                     continue
-                if line.startswith('Pointer ') and len(line_words) >= 4:
+                if line.startswith('Pointer ') and len(line_words) == 4:
                     mode = ParseMode.POINTER
                     entry_index = int(line_words[3][:-1])
                     continue
