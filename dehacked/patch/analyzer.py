@@ -17,10 +17,10 @@ class Analyzer:
         self._add_info(target_info, 'target')
         self._add_info(option_info, 'option')
 
-    def get_valid_targets(self, patch_data: dict) -> Tuple[Set[str], Set[str]]:
+    def get_valid_targets(self, patch_data: dict) -> Tuple[Set[str], Set[str], Set[str]]:
         global_data = patch_data.get('global', None)
         if global_data is None:
-            return set(), set()
+            return set(), set(), set()
 
         doom_version = global_data.get('doom version', None)
 
@@ -30,20 +30,27 @@ class Analyzer:
             required_features.add(Feature.EXTENDED_CODEPOINTERS.value)
         if 'strings' in patch_data:
             required_features.add(Feature.EXTENDED_STRINGS.value)
+        if 'sounds' in patch_data:
+            required_features.add(Feature.EXPANDABLE.value)
+        if 'sprites' in patch_data:
+            required_features.add(Feature.EXPANDABLE.value)
+
+        # @todo test for extended flags by checking some known flag patch keys
 
         # Test all options.
         valid_options = set()
+        required_options = set()
         for option_key, option in self.option_info.items():
 
-            # Options must support the doom version.
+            # Option must support the doom version.
             if doom_version is not None and len(option.patch_versions) > 0 and doom_version not in option.patch_versions:
-                print(f'Disallow option {option_key} because its doom version is not compatible.')
                 continue
 
-            # Options must support all required features.
+            # Option must support one ore more required features.
             option_features = set(option.data.get('features', []))
-            if len(option_features) > 0 and required_features.issubset(option_features):
-                print(f'Disallow option {option_key} because option features are not a subset of required features.')
+            if len(required_features.intersection(option_features)) > 0:
+                required_options.add(option_key)
+            else:
                 continue
 
             valid_options.add(option_key)
@@ -52,21 +59,20 @@ class Analyzer:
         valid_targets = set()
         for target_key, target in self.target_info.items():
 
-            # All features must be supported.
+            # All features must be supported or they must be supported by valid options.
+            # @todo
             target_features = set(target.data.get('features', []))
             if not required_features.issubset(target_features):
-                print(f'Disallow target {target_key} because required features are not a subset of target features.')
                 continue
 
             # One of the target's options must support the doom version, or the target itself must.
             if not valid_options.issubset(target.options.keys()):
                 if doom_version is not None and doom_version not in target.patch_versions:
-                    print(f'Disallow target {target_key} because its doom version is not compatible and none of its options are compatible.')
                     continue
 
             valid_targets.add(target_key)
 
-        return valid_targets, valid_options
+        return valid_targets, valid_options, required_options
 
     def _add_info(self, info: Dict[str, BaseInfo], type: str):
         for target_key, target in info.items():
