@@ -45,6 +45,7 @@ class Engine:
         self.weapons: Table[WeaponEntry] = table.Table[WeaponEntry](WeaponEntry, self)
         self.ammo: Table[AmmoEntry] = table.Table[AmmoEntry](AmmoEntry, self)
         self.sounds: Table[SoundEntry] = table.Table[SoundEntry](SoundEntry, self)
+        self.sounds.offset = 1
 
         # Par times.
         self.pars: Table[ParEntry] = table.Table[ParEntry](ParEntry, self)

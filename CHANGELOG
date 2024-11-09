@@ -1,6 +1,7 @@
 Version 1.3.2
 -------------
 Fixed: [CODEPTR] frame definitions were not always correctly read from patches. Thanks to Gregor.
+Fixed: Sound loading was broken, and was not 1-based. Thanks to MTrop.
 
 Version 1.3.1
 -------------

@@ -448,9 +448,9 @@ class Patch:
                                               'in the chosen engine. It will not be loaded.'
                         entry_index = -1
                     continue
-                if line.startswith('Sound ') and len(line_words) == 2:
+                if line.startswith('Sound ') and len(line_words) >= 2:
                     mode = ParseMode.SOUND
-                    entry_index = int(line_words[1])
+                    entry_index = int(line_words[1]) - 1
                     if entry_index < 0 or entry_index >= len(self.sounds):
                         messages['NOSOUND'] = 'The patch contains sound data that does not exist '\
                                               'in the chosen engine. It will not be loaded.'
