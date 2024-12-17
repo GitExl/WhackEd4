@@ -57,12 +57,20 @@ class Image:
         :param palette: Doom palette.
         :param mirror: Should be created as a mirrored version?
         """
+
+        if len(data) < Image.S_HEADER.size:
+            return Image.create_invalid()
         width, height, left, top = Image.S_HEADER.unpack_from(data)
 
         # Attempt to detect invalid data.
         if width > 2048 or height > 2048 or top > 2048 or left > 2048:
             return Image.create_invalid()
         if width <= 0 or height <= 0:
+            return Image.create_invalid()
+
+        # Verify data length.
+        expected_minimum_size = Image.S_HEADER.size + (4 * width)
+        if len(data) < expected_minimum_size:
             return Image.create_invalid()
 
         # Initialize data for an empty bitmap.
