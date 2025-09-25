@@ -2,6 +2,7 @@
 General utility functions.
 """
 
+import sys
 import wx
 
 from whacked4.doom.wadlist import WADList
@@ -205,3 +206,29 @@ def file_dialog(
     if result == wx.ID_OK:
         return dialog.GetPath()
     return None
+
+
+def load_toolbar_bitmap(path: str) -> wx.Bitmap:
+    """
+    Loads a toolbar bitmap, downscaling to 25% size on Mac to work around
+    SetToolBitmapSize limitations.
+
+    @param path: path to the bitmap file
+    @return: wx.Bitmap object, potentially downscaled on Mac
+    """
+
+    bitmap = wx.Bitmap(path, wx.BITMAP_TYPE_ANY)
+
+    # On Mac, downscale toolbar icons to 25% to work around SetToolBitmapSize issues
+    if sys.platform == 'darwin':
+        original_size = bitmap.GetSize()
+        new_width = int(original_size.width * 0.25)
+        new_height = int(original_size.height * 0.25)
+
+        if new_width > 0 and new_height > 0:
+            # Create a scaled image
+            image = bitmap.ConvertToImage()
+            scaled_image = image.Scale(new_width, new_height, wx.IMAGE_QUALITY_HIGH)
+            bitmap = wx.Bitmap(scaled_image)
+
+    return bitmap

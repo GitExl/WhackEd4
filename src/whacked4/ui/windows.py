@@ -11,6 +11,7 @@ from whacked4.ui.state_list import StateList
 import wx
 import wx.xrc
 from whacked4.ui import spritepreview
+from whacked4 import utils
 
 WINDOW_MAIN = 6000
 MAIN_TOOL_THINGS = 6001
@@ -239,23 +240,23 @@ class MainFrameBase ( wx.MDIParentFrame ):
 		self.MainToolbar = self.CreateToolBar( wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL, wx.ID_ANY )
 		self.MainToolbar.SetToolBitmapSize( self.FromDIP( wx.Size( 40,40 ) ) )
 		self.MainToolbar.SetToolSeparation( 1 )
-		self.ToolThings = self.MainToolbar.AddTool( MAIN_TOOL_THINGS, u" Things", wx.Bitmap( u"res/editor-things.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolThings = self.MainToolbar.AddTool( MAIN_TOOL_THINGS, u" Things", utils.load_toolbar_bitmap( u"res/editor-things.png" ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolStates = self.MainToolbar.AddTool( MAIN_TOOL_STATES, u" States", wx.Bitmap( u"res/editor-states.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolStates = self.MainToolbar.AddTool( MAIN_TOOL_STATES, u" States", utils.load_toolbar_bitmap( u"res/editor-states.png" ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolSounds = self.MainToolbar.AddTool( MAIN_TOOL_SOUNDS, u" Sounds", wx.Bitmap( u"res/editor-sounds.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolSounds = self.MainToolbar.AddTool( MAIN_TOOL_SOUNDS, u" Sounds", utils.load_toolbar_bitmap( u"res/editor-sounds.png" ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolStrings = self.MainToolbar.AddTool( MAIN_TOOL_STRINGS, u" Strings", wx.Bitmap( u"res/editor-strings.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolStrings = self.MainToolbar.AddTool( MAIN_TOOL_STRINGS, u" Strings", utils.load_toolbar_bitmap( u"res/editor-strings.png" ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolsWeapons = self.MainToolbar.AddTool( MAIN_TOOL_WEAPONS, u" Weapons", wx.Bitmap( u"res/editor-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolsWeapons = self.MainToolbar.AddTool( MAIN_TOOL_WEAPONS, u" Weapons", utils.load_toolbar_bitmap( u"res/editor-weapons.png" ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolAmmo = self.MainToolbar.AddTool( MAIN_TOOL_AMMO, u" Ammo", wx.Bitmap( u"res/editor-ammo.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolAmmo = self.MainToolbar.AddTool( MAIN_TOOL_AMMO, u" Ammo", utils.load_toolbar_bitmap( u"res/editor-ammo.png" ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolCheats = self.MainToolbar.AddTool( MAIN_TOOL_CHEATS, u" Cheats", wx.Bitmap( u"res/editor-cheats.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolCheats = self.MainToolbar.AddTool( MAIN_TOOL_CHEATS, u" Cheats", utils.load_toolbar_bitmap( u"res/editor-cheats.png" ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolMiscellaneous = self.MainToolbar.AddTool( MAIN_TOOL_MISC, u" Miscellaneous  ", wx.Bitmap( u"res/editor-misc.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolMiscellaneous = self.MainToolbar.AddTool( MAIN_TOOL_MISC, u" Miscellaneous  ", utils.load_toolbar_bitmap( u"res/editor-misc.png" ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolPar = self.MainToolbar.AddTool( MAIN_TOOL_PAR, u" Par times", wx.Bitmap( u"res/editor-par.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolPar = self.MainToolbar.AddTool( MAIN_TOOL_PAR, u" Par times", utils.load_toolbar_bitmap( u"res/editor-par.png" ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
 		self.MainToolbar.Realize()
 
