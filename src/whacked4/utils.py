@@ -208,22 +208,22 @@ def file_dialog(
     return None
 
 
-def load_toolbar_bitmap(path: str) -> wx.Bitmap:
+def load_toolbar_bitmap(path: str, target_size: wx.Size = None) -> wx.Bitmap:
     """
-    Loads a toolbar bitmap, downscaling to 25% size on Mac to work around
+    Loads a toolbar bitmap, scaling to target size on Mac to work around
     SetToolBitmapSize limitations.
 
     @param path: path to the bitmap file
-    @return: wx.Bitmap object, potentially downscaled on Mac
+    @param target_size: target size to scale to on Mac (if None, uses original size)
+    @return: wx.Bitmap object, potentially scaled on Mac
     """
 
     bitmap = wx.Bitmap(path, wx.BITMAP_TYPE_ANY)
 
-    # On Mac, downscale toolbar icons to 25% to work around SetToolBitmapSize issues
-    if sys.platform == 'darwin':
-        original_size = bitmap.GetSize()
-        new_width = int(original_size.width * 0.25)
-        new_height = int(original_size.height * 0.25)
+    # On Mac, scale toolbar icons to target size to work around SetToolBitmapSize issues
+    if sys.platform == 'darwin' and target_size is not None:
+        new_width = target_size.width
+        new_height = target_size.height
 
         if new_width > 0 and new_height > 0:
             # Create a scaled image
