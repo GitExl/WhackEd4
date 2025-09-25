@@ -95,6 +95,8 @@ class StateList(wx.ListCtrl):
             columns_width += self.GetColumnWidth(column_index)
 
         width = self.GetClientSize()[0] - columns_width - 4
+        if self.GetColumnCount() <= StateColumn.PARAMETERS:
+            return
         current_width = self.GetColumnWidth(StateColumn.PARAMETERS)
         if width != current_width:
             self.SetColumnWidth(StateColumn.PARAMETERS, width)
