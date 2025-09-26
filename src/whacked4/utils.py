@@ -232,3 +232,48 @@ def load_toolbar_bitmap(path: str, target_size: wx.Size = None) -> wx.Bitmap:
             bitmap = wx.Bitmap(scaled_image)
 
     return bitmap
+
+
+def ensure_window_visible(window: wx.Window) -> bool:
+    """
+    Ensures a window is positioned within the visible display area. If the window
+    is positioned outside all visible displays, moves it to (0, 0).
+
+    @param window: the window to check and potentially reposition
+    @return: True if the window was repositioned, False if it was already visible
+    """
+
+    # Get window position and size
+    window_rect = window.GetRect()
+
+    # Get all display information
+    display_count = wx.Display.GetCount()
+    window_visible = False
+
+    # Check if the window intersects with any display
+    for i in range(display_count):
+        display = wx.Display(i)
+        display_rect = display.GetGeometry()
+
+        # Check if window intersects with this display
+        if window_rect.Intersects(display_rect):
+            window_visible = True
+            break
+
+    # If window is not visible on any display, move it to a safe position
+    if not window_visible:
+        # Try to position on the primary display, or fallback to (0, 0)
+        try:
+            primary_display = wx.Display(0)
+            display_rect = primary_display.GetGeometry()
+            # Position at top-left of primary display with some margin
+            safe_x = max(0, display_rect.x + 50)
+            safe_y = max(0, display_rect.y + 50)
+        except:
+            # Fallback to origin if display detection fails
+            safe_x, safe_y = 0, 0
+
+        window.SetPosition(wx.Point(safe_x, safe_y))
+        return True
+
+    return False

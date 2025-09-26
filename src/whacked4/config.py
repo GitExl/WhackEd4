@@ -9,6 +9,7 @@ import sys
 import wx
 
 from whacked4 import settingshandler
+from whacked4 import utils
 
 
 # Application info.
@@ -90,6 +91,10 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
             main_window['width'],
             main_window['height']
         )
+
+        # Ensure window is visible on current display setup
+        utils.ensure_window_visible(window)
+
         window.Maximize(main_window['maximized'])
         window.Refresh()
 
