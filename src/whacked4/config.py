@@ -87,13 +87,21 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
         """
 
         main_window = self.get_setting('main_window_state')
-
-        window.SetSize(
-            main_window['x'],
-            main_window['y'],
-            main_window['width'],
-            main_window['height']
-        )
+        
+        if sys.platform == 'darwin':
+            window.SetSize(
+                main_window['x'],
+                main_window['y'],
+                wx.DefaultCoord,
+                wx.DefaultCoord
+            )
+        else:
+            window.SetSize(
+                main_window['x'],
+                main_window['y'],
+                main_window['width'],
+                main_window['height']
+            )
 
         # Ensure window is visible on current display setup
         utils.ensure_window_visible(window)
