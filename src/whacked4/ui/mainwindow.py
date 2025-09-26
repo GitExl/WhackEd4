@@ -592,6 +592,9 @@ class MainWindow(windows.MainFrameBase):
 
         self.SetLabel(label)
 
+        # On Mac, also mark the close button as dirty
+        self.OSXSetModified(self.patch_modified)
+
     def new_file(self):
         """
         Creates a new Dehacked patch file.
