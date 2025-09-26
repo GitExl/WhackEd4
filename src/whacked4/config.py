@@ -5,6 +5,7 @@ user-definable configuration details.
 
 import os.path
 import sys
+import platformdirs
 
 import wx
 
@@ -26,6 +27,8 @@ FONT_MONOSPACED_BOLD = None
 # Application configuration path.
 if sys.platform == 'win32':
     CONFIG_DIR = os.environ['APPDATA'] + '/' + APP_SIMPLE_NAME
+elif sys.platform == 'darwin':
+    CONFIG_DIR = platformdirs.user_config_dir(appname=APP_SIMPLE_NAME)
 else:
     CONFIG_DIR = os.path.join(os.path.expanduser("~"), '.' + APP_SIMPLE_NAME)
 
