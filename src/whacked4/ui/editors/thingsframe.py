@@ -321,6 +321,9 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         name_width = self.ThingList.GetClientSize()[0] - columns_width - 4
         self.ThingList.SetColumnWidth(1, name_width)
 
+        # Required on macOS to allow the list to actually resize when window resizes.
+        event.Skip()
+
     def flaglist_build(self):
         """
         Build the flags list from scratch.
