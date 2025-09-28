@@ -37,6 +37,7 @@ class MainWindow(windows.MainFrameBase):
 
     def __init__(self, parent):
         windows.MainFrameBase.__init__(self, parent)
+        self._adjust_mac_ui()
 
         wx.BeginBusyCursor()
 
@@ -958,3 +959,25 @@ class MainWindow(windows.MainFrameBase):
     def help_help(self, event: MenuEvent):
         file = 'file://' + os.path.join(os.getcwd(), 'docs/index.html')
         webbrowser.open(file)
+
+    def _adjust_mac_ui(self):
+        if sys.platform != 'darwin':
+            return
+
+        # Adjust the toolbar
+        style = self.MainToolbar.GetWindowStyle()
+        style &= ~wx.TB_VERTICAL
+        style |= wx.TB_HORIZONTAL
+        self.MainToolbar.SetWindowStyle(style)
+        tool_info = []
+        for index in range(self.MainToolbar.GetToolsCount()):
+            tool = self.MainToolbar.GetToolByPos(index)
+            tool_info.append((
+                tool.GetId(),
+                tool.GetLabel(),
+                tool.GetBitmap().ConvertToImage().Scale(80, 80, wx.IMAGE_QUALITY_HIGH).ConvertToBitmap()
+            ))
+        self.MainToolbar.ClearTools()
+        for entry in tool_info:
+            self.MainToolbar.AddTool(entry[0], entry[1], entry[2], wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None)
+        self.MainToolbar.Realize()

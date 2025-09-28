@@ -10,9 +10,7 @@
 from whacked4.ui.state_list import StateList
 import wx
 import wx.xrc
-import sys
 from whacked4.ui import spritepreview
-from whacked4 import utils
 
 WINDOW_MAIN = 6000
 MAIN_TOOL_THINGS = 6001
@@ -234,46 +232,30 @@ PREVIEW_CLOSE = 6211
 class MainFrameBase ( wx.MDIParentFrame ):
 
 	def __init__( self, parent ):
-		# Mac-specific window configuration
-		if sys.platform == 'darwin':
-			# Small window size for title bar + toolbar + file label, non-resizable
-			window_size = wx.Size( 800, 60 )
-			window_style = wx.CAPTION|wx.CLOSE_BOX|wx.MINIMIZE_BOX|wx.SYSTEM_MENU
-		else:
-			# Default size and style for other platforms
-			window_size = wx.Size( 1024, 560 )
-			window_style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.MINIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.HSCROLL|wx.VSCROLL
-
-		wx.MDIParentFrame.__init__ ( self, parent, id = WINDOW_MAIN, title = u"WhackEd4", pos = wx.DefaultPosition, size = window_size, style = window_style )
+		wx.MDIParentFrame.__init__ ( self, parent, id = WINDOW_MAIN, title = u"WhackEd4", pos = wx.DefaultPosition, size = wx.Size( 1024,560 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MAXIMIZE_BOX|wx.MINIMIZE_BOX|wx.RESIZE_BORDER|wx.SYSTEM_MENU|wx.HSCROLL|wx.VSCROLL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
-		# Mac-specific toolbar orientation
-		if sys.platform == 'darwin':
-			toolbar_style = wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_HORIZONTAL|wx.TB_BOTTOM
-		else:
-			toolbar_style = wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL
-		self.MainToolbar = self.CreateToolBar( toolbar_style, wx.ID_ANY )
-		mac_button_size = self.FromDIP( wx.Size( 80,80 ) )
+		self.MainToolbar = self.CreateToolBar( wx.TB_FLAT|wx.TB_HORZ_TEXT|wx.TB_NODIVIDER|wx.TB_TEXT|wx.TB_VERTICAL, wx.ID_ANY )
 		self.MainToolbar.SetToolBitmapSize( self.FromDIP( wx.Size( 40,40 ) ) )
 		self.MainToolbar.SetToolSeparation( 1 )
-		self.ToolThings = self.MainToolbar.AddTool( MAIN_TOOL_THINGS, u" Things", utils.load_toolbar_bitmap( u"res/editor-things.png", mac_button_size ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolThings = self.MainToolbar.AddTool( MAIN_TOOL_THINGS, u" Things", wx.Bitmap( u"res/editor-things.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolStates = self.MainToolbar.AddTool( MAIN_TOOL_STATES, u" States", utils.load_toolbar_bitmap( u"res/editor-states.png", mac_button_size ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolStates = self.MainToolbar.AddTool( MAIN_TOOL_STATES, u" States", wx.Bitmap( u"res/editor-states.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolSounds = self.MainToolbar.AddTool( MAIN_TOOL_SOUNDS, u" Sounds", utils.load_toolbar_bitmap( u"res/editor-sounds.png", mac_button_size ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolSounds = self.MainToolbar.AddTool( MAIN_TOOL_SOUNDS, u" Sounds", wx.Bitmap( u"res/editor-sounds.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolStrings = self.MainToolbar.AddTool( MAIN_TOOL_STRINGS, u" Strings", utils.load_toolbar_bitmap( u"res/editor-strings.png", mac_button_size ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolStrings = self.MainToolbar.AddTool( MAIN_TOOL_STRINGS, u" Strings", wx.Bitmap( u"res/editor-strings.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolsWeapons = self.MainToolbar.AddTool( MAIN_TOOL_WEAPONS, u" Weapons", utils.load_toolbar_bitmap( u"res/editor-weapons.png", mac_button_size ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolsWeapons = self.MainToolbar.AddTool( MAIN_TOOL_WEAPONS, u" Weapons", wx.Bitmap( u"res/editor-weapons.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolAmmo = self.MainToolbar.AddTool( MAIN_TOOL_AMMO, u" Ammo", utils.load_toolbar_bitmap( u"res/editor-ammo.png", mac_button_size ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolAmmo = self.MainToolbar.AddTool( MAIN_TOOL_AMMO, u" Ammo", wx.Bitmap( u"res/editor-ammo.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolCheats = self.MainToolbar.AddTool( MAIN_TOOL_CHEATS, u" Cheats", utils.load_toolbar_bitmap( u"res/editor-cheats.png", mac_button_size ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolCheats = self.MainToolbar.AddTool( MAIN_TOOL_CHEATS, u" Cheats", wx.Bitmap( u"res/editor-cheats.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolMiscellaneous = self.MainToolbar.AddTool( MAIN_TOOL_MISC, u" Miscellaneous  ", utils.load_toolbar_bitmap( u"res/editor-misc.png", mac_button_size ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolMiscellaneous = self.MainToolbar.AddTool( MAIN_TOOL_MISC, u" Miscellaneous  ", wx.Bitmap( u"res/editor-misc.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
-		self.ToolPar = self.MainToolbar.AddTool( MAIN_TOOL_PAR, u" Par times", utils.load_toolbar_bitmap( u"res/editor-par.png", mac_button_size ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
+		self.ToolPar = self.MainToolbar.AddTool( MAIN_TOOL_PAR, u" Par times", wx.Bitmap( u"res/editor-par.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None )
 
 		self.MainToolbar.Realize()
 
@@ -2434,12 +2416,11 @@ class StatesFrameBase ( wx.MDIChildFrame ):
 		bSizer140.Add( self.Filter, 0, wx.RIGHT, 6 )
 
 		self.FilterTools = wx.ToolBar( self.m_panel61, STATES_FILTERTOOLS, wx.DefaultPosition, wx.DefaultSize, wx.TB_FLAT|wx.TB_HORIZONTAL|wx.TB_NODIVIDER )
-		filter_tools_size = self.FromDIP( wx.Size( 18,18 ) )
-		self.FilterTools.SetToolBitmapSize( filter_tools_size )
+		self.FilterTools.SetToolBitmapSize( self.FromDIP( wx.Size( 18,18 ) ) )
 		self.FilterTools.SetToolSeparation( 0 )
 		self.FilterTools.SetMargins( self.FromDIP( wx.Size( 0,0 ) ) )
 		self.FilterTools.SetToolPacking( 0 )
-		self.FilterToolRefresh = self.FilterTools.AddTool( STATES_FILTERTOOLS_REFRESH, u"tool", utils.load_toolbar_bitmap( u"res/icon-refresh.png", filter_tools_size ), wx.NullBitmap, wx.ITEM_NORMAL, u"Refreshes the state list.", wx.EmptyString, None )
+		self.FilterToolRefresh = self.FilterTools.AddTool( STATES_FILTERTOOLS_REFRESH, u"tool", wx.Bitmap( u"res/icon-refresh.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, u"Refreshes the state list.", wx.EmptyString, None )
 
 		self.FilterTools.Realize()
 
@@ -3683,11 +3664,10 @@ class ParFrameBase ( wx.MDIChildFrame ):
 		bSizer97 = wx.BoxSizer( wx.VERTICAL )
 
 		self.Tools = wx.ToolBar( self.m_panel47, PAR_TOOLS, wx.DefaultPosition, wx.DefaultSize, wx.TB_FLAT|wx.TB_NODIVIDER|wx.TB_VERTICAL )
-		tools_size = self.FromDIP( wx.Size( 18,18 ) )
-		self.Tools.SetToolBitmapSize( tools_size )
-		self.Add = self.Tools.AddTool( PAR_TOOL_ADD, u"tool", utils.load_toolbar_bitmap( u"res/icon-plus.png", tools_size ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None )
+		self.Tools.SetToolBitmapSize( self.FromDIP( wx.Size( 18,18 ) ) )
+		self.Add = self.Tools.AddTool( PAR_TOOL_ADD, u"tool", wx.Bitmap( u"res/icon-plus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None )
 
-		self.Remove = self.Tools.AddTool( PAR_TOOL_REMOVE, u"tool", utils.load_toolbar_bitmap( u"res/icon-minus.png", tools_size ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None )
+		self.Remove = self.Tools.AddTool( PAR_TOOL_REMOVE, u"tool", wx.Bitmap( u"res/icon-minus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None )
 
 		self.Tools.Realize()
 
@@ -4114,11 +4094,10 @@ class PatchInfoDialogBase ( wx.Dialog ):
 		bSizer63 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_toolBar3 = wx.ToolBar( self.m_panel52, PATCHINFO_TOOLBAR, wx.DefaultPosition, wx.DefaultSize, wx.TB_FLAT|wx.TB_NODIVIDER|wx.TB_VERTICAL )
-		toolbar3_size = self.FromDIP( wx.Size( 18,18 ) )
-		self.m_toolBar3.SetToolBitmapSize( toolbar3_size )
-		self.AddPWAD = self.m_toolBar3.AddTool( PATCHINFO_TOOLBAR_ADD, u"tool", utils.load_toolbar_bitmap( u"res/icon-plus.png", toolbar3_size ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None )
+		self.m_toolBar3.SetToolBitmapSize( self.FromDIP( wx.Size( 18,18 ) ) )
+		self.AddPWAD = self.m_toolBar3.AddTool( PATCHINFO_TOOLBAR_ADD, u"tool", wx.Bitmap( u"res/icon-plus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None )
 
-		self.RemovePWAD = self.m_toolBar3.AddTool( PATCHINFO_TOOLBAR_REMOVE, u"tool", utils.load_toolbar_bitmap( u"res/icon-minus.png", toolbar3_size ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None )
+		self.RemovePWAD = self.m_toolBar3.AddTool( PATCHINFO_TOOLBAR_REMOVE, u"tool", wx.Bitmap( u"res/icon-minus.png", wx.BITMAP_TYPE_ANY ), wx.NullBitmap, wx.ITEM_NORMAL, wx.EmptyString, wx.EmptyString, None )
 
 		self.m_toolBar3.Realize()
 
