@@ -964,7 +964,7 @@ class MainWindow(windows.MainFrameBase):
         if sys.platform != 'darwin':
             return
 
-        # Adjust the toolbar
+        # Adjust the toolbar to be horizontal and fix the oversized icons
         style = self.MainToolbar.GetWindowStyle()
         style &= ~wx.TB_VERTICAL
         style |= wx.TB_HORIZONTAL
@@ -979,5 +979,33 @@ class MainWindow(windows.MainFrameBase):
             ))
         self.MainToolbar.ClearTools()
         for entry in tool_info:
-            self.MainToolbar.AddTool(entry[0], entry[1], entry[2], wx.NullBitmap, wx.ITEM_CHECK, wx.EmptyString, wx.EmptyString, None)
+            self.MainToolbar.AddTool(
+                entry[0],
+                entry[1],
+                entry[2],
+                wx.NullBitmap,
+                wx.ITEM_CHECK,
+                wx.EmptyString,
+                wx.EmptyString,
+                None
+            )
         self.MainToolbar.Realize()
+
+        # Get rid of scroll bars
+        self.GetClientWindow().SetScrollbar(wx.HORIZONTAL, 0, 0, 0, True)
+        self.GetClientWindow().SetScrollbar(wx.VERTICAL, 0, 0, 0, True)
+
+        # Fit to toolbar size and disable resizing
+        size = self.MainToolbar.GetSize()
+        self.SetSize(size)
+        client_size = self.GetClientSize()
+        title_bar_height = size.height - client_size.height
+        size_for_constraining = wx.Size(size.width, size.height + title_bar_height)
+        self.SetMinSize(size_for_constraining)
+        self.SetMaxSize(size_for_constraining)
+
+        # Disable full screen mode
+        self.EnableFullScreenView(False)
+
+        # Disable the green maximize button
+        self.EnableMaximizeButton(False)
