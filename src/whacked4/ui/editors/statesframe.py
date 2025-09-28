@@ -2,6 +2,8 @@
 State editing UI.
 """
 
+import sys
+
 from collections import OrderedDict
 from typing import Dict, Optional, List, Tuple
 
@@ -78,6 +80,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
     def __init__(self, parent):
         windows.StatesFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
+        self._adjust_mac_ui()
 
         self.SetIcon(wx.Icon('res/editor-states.png'))
 
@@ -957,6 +960,29 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         Event redirect for updating properties.
         """
         self.update_properties()
+
+    def _adjust_mac_ui(self):
+        """
+        Adjust the UI for macOS.
+        """
+
+        if sys.platform != 'darwin':
+            return
+
+        id = self.FilterToolRefresh.GetId()
+        label = self.FilterToolRefresh.GetLabel()
+        bitmap_size = self.FilterTools.GetToolBitmapSize()
+        bitmap = self.FilterToolRefresh.GetBitmap().ConvertToImage().Scale(
+            bitmap_size.width,
+            bitmap_size.height).ConvertToBitmap()
+        short_help = self.FilterToolRefresh.GetShortHelp()
+        disabled_bitmap = self.FilterToolRefresh.GetDisabledBitmap()
+        kind = self.FilterToolRefresh.GetKind()
+        long_help = self.FilterToolRefresh.GetLongHelp()
+        client_data = self.FilterToolRefresh.GetClientData()
+
+        self.FilterTools.ClearTools()
+        self.FilterToolRefresh = self.FilterTools.AddTool(id, label, bitmap, disabled_bitmap, kind, short_help, long_help, client_data)
 
 
 def get_action_param_counts(action: Optional[Action]) -> int:
