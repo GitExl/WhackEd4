@@ -6,7 +6,7 @@ from enum import IntEnum
 from math import floor
 from typing import Optional, List, Tuple
 
-import wx
+import sys, wx
 from wx import Colour, ListEvent, PostEvent, SizeEvent
 from wx.lib.newevent import NewEvent
 
@@ -174,7 +174,9 @@ class StateList(wx.ListCtrl):
             action_name = ''
             parameters = (str(state['unused1']), str(state['unused2']))
 
-        lit = '◾' if state['spriteFrame'] & FRAMEFLAG_LIT else ''
+        # Use asterisk on macOS because of system theme causing the black square to be hard to see AND off-center
+        # Same off-center problem with emoji, attempted it.
+        lit = ('*' if sys.platform == 'darwin' else '◾') if state['spriteFrame'] & FRAMEFLAG_LIT else ''
         frame_name = str(state['spriteFrame'] & ~FRAMEFLAG_LIT)
         parameters_text = ', '.join(parameters)
 

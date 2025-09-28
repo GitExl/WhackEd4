@@ -5,7 +5,7 @@ Sound editor UI.
 from math import floor
 from typing import List, Optional
 
-import wx
+import sys, wx
 from wx import Colour, Window, Control, ActivateEvent, CommandEvent, ListEvent, SpinEvent
 
 from whacked4 import config, utils
@@ -150,7 +150,8 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
         else:
             if sound['isSingular'] == 1:
-                singular = '◾'
+                # Use asterisk on macOS because of system theme causing the black square to be hard to see
+                singular = '*' if sys.platform == 'darwin' else '◾'
             else:
                 singular = ''
 
