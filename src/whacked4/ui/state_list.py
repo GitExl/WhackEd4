@@ -238,6 +238,10 @@ class StateList(wx.ListCtrl):
         :param _:
         """
 
+        # Check if the widget is still valid to avoid errors during shutdown
+        if not self:
+            return
+
         self.selected.clear()
 
         item = self.GetFirstSelected()
