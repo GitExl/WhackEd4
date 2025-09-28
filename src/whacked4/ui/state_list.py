@@ -134,7 +134,7 @@ class StateList(wx.ListCtrl):
         self.ClearAll()
 
         if self.GetColumnCount() == 0:
-            scale = self.GetDPIScaleFactor()
+            scale = utils.get_platform_dpi_scale(self)
             self.InsertColumn(StateColumn.INDEX, '', width=floor(47 * scale))
             self.InsertColumn(StateColumn.NAME, 'Name', width=floor(59 * scale))
             self.InsertColumn(StateColumn.SPRITE, 'Spr', width=floor(42 * scale))

@@ -62,9 +62,9 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         """
 
         self.ParList.ClearAll()
-        self.ParList.InsertColumn(0, 'Map', width=floor(59 * self.GetDPIScaleFactor()))
-        self.ParList.InsertColumn(1, 'Seconds', width=floor(58 * self.GetDPIScaleFactor()))
-        self.ParList.InsertColumn(2, 'Minutes', width=floor(69 * self.GetDPIScaleFactor()))
+        self.ParList.InsertColumn(0, 'Map', width=floor(59 * utils.get_platform_dpi_scale(self)))
+        self.ParList.InsertColumn(1, 'Seconds', width=floor(58 * utils.get_platform_dpi_scale(self)))
+        self.ParList.InsertColumn(2, 'Minutes', width=floor(69 * utils.get_platform_dpi_scale(self)))
 
         for index, _ in enumerate(self.patch.pars.entries):
             self.ParList.InsertItem(index, '')
@@ -97,6 +97,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         """
 
         self.list_autosize(self.ParList)
+        event.Skip()
 
     def properties_set_state(self, state: bool):
         """

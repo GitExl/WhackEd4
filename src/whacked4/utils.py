@@ -277,3 +277,11 @@ def ensure_window_visible(window: wx.Window) -> bool:
         return True
 
     return False
+
+
+def get_platform_dpi_scale(widget: wx.Window) -> float:
+    """
+    Gets platform-specific DPI scale factor for the given widget. On macOS, this returns 1.0 to avoid scaling issues.
+    On other platforms, it returns the widget's actual DPI scale factor.
+    """
+    return 1.0 if sys.platform == 'darwin' else widget.GetDPIScaleFactor()

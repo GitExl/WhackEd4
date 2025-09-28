@@ -58,9 +58,9 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
 
         # Add column headers if necessary.
         if self.AmmoList.GetColumnCount() == 0:
-            self.AmmoList.InsertColumn(0, 'Name', width=floor(76 * self.GetDPIScaleFactor()))
-            self.AmmoList.InsertColumn(1, 'Maximum', width=floor(67 * self.GetDPIScaleFactor()))
-            self.AmmoList.InsertColumn(2, 'Pickup', width=floor(49 * self.GetDPIScaleFactor()))
+            self.AmmoList.InsertColumn(0, 'Name', width=floor(76 * utils.get_platform_dpi_scale(self)))
+            self.AmmoList.InsertColumn(1, 'Maximum', width=floor(67 * utils.get_platform_dpi_scale(self)))
+            self.AmmoList.InsertColumn(2, 'Pickup', width=floor(49 * utils.get_platform_dpi_scale(self)))
 
         for ammo_index in range(len(self.patch.ammo)):
             self.AmmoList.InsertItem(ammo_index, '')
@@ -93,6 +93,8 @@ class AmmoFrame(editormixin.EditorMixin, windows.AmmoFrameBase):
         self.AmmoList.SetColumnWidth(0, column_width // 3)
         self.AmmoList.SetColumnWidth(1, column_width // 3)
         self.AmmoList.SetColumnWidth(2, column_width // 3)
+
+        event.Skip()
 
     def ammo_select(self, event: ListEvent):
         """

@@ -113,10 +113,10 @@ class SoundsFrame(editormixin.EditorMixin, windows.SoundsFrameBase):
 
         # Add column headers if necessary.
         if self.SoundList.GetColumnCount() == 0:
-            self.SoundList.InsertColumn(0, 'Index', width=floor(41 * self.GetDPIScaleFactor()))
-            self.SoundList.InsertColumn(1, 'Name', width=floor(54 * self.GetDPIScaleFactor()))
-            self.SoundList.InsertColumn(2, 'Priority', width=floor(50 * self.GetDPIScaleFactor()))
-            self.SoundList.InsertColumn(3, 'Singular', width=floor(58 * self.GetDPIScaleFactor()))
+            self.SoundList.InsertColumn(0, 'Index', width=floor(41 * utils.get_platform_dpi_scale(self)))
+            self.SoundList.InsertColumn(1, 'Name', width=floor(54 * utils.get_platform_dpi_scale(self)))
+            self.SoundList.InsertColumn(2, 'Priority', width=floor(50 * utils.get_platform_dpi_scale(self)))
+            self.SoundList.InsertColumn(3, 'Singular', width=floor(58 * utils.get_platform_dpi_scale(self)))
 
         # Add dummy sound.
         self.SoundList.InsertItem(0, '0')

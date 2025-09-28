@@ -278,11 +278,11 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
         self.ThingList.ClearAll()
 
         if self.ThingList.GetColumnCount() == 0:
-            self.ThingList.InsertColumn(0, '', width=floor(36 * self.GetDPIScaleFactor()))
-            self.ThingList.InsertColumn(1, 'Name', width=floor(225 * self.GetDPIScaleFactor()))
-            self.ThingList.InsertColumn(2, 'ID', width=floor(46 * self.GetDPIScaleFactor()))
+            self.ThingList.InsertColumn(0, '', width=floor(36 * utils.get_platform_dpi_scale(self)))
+            self.ThingList.InsertColumn(1, 'Name', width=floor(225 * utils.get_platform_dpi_scale(self)))
+            self.ThingList.InsertColumn(2, 'ID', width=floor(46 * utils.get_platform_dpi_scale(self)))
             if 'thing.game' in self.patch.engine.features:
-                self.ThingList.InsertColumn(3, 'Game', width=floor(50 * self.GetDPIScaleFactor()))
+                self.ThingList.InsertColumn(3, 'Game', width=floor(50 * utils.get_platform_dpi_scale(self)))
 
         for index, _ in enumerate(self.patch.things):
             self.ThingList.InsertItem(index, '')

@@ -9,6 +9,7 @@ import copy
 import wx
 from wx import Window, ListEvent, CommandEvent, SizeEvent
 
+from whacked4 import utils
 from whacked4.dehacked.patch import Patch
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import stringdialog
@@ -58,8 +59,8 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
 
         # Add column headers if necessary.
         if self.CheatList.GetColumnCount() == 0:
-            self.CheatList.InsertColumn(0, 'Name', width=floor(185 * self.GetDPIScaleFactor()))
-            self.CheatList.InsertColumn(1, 'Code', width=floor(138 * self.GetDPIScaleFactor()))
+            self.CheatList.InsertColumn(0, 'Name', width=floor(185 * utils.get_platform_dpi_scale(self)))
+            self.CheatList.InsertColumn(1, 'Code', width=floor(138 * utils.get_platform_dpi_scale(self)))
 
         for index, key in enumerate(self.patch.engine.cheat_data.keys()):
             self.CheatList.InsertItem(index, self.patch.engine.cheat_data[key]['name'])
@@ -90,6 +91,7 @@ class CheatsFrame(editormixin.EditorMixin, windows.CheatsFrameBase):
 
         width = self.CheatList.GetClientSize()[0] - self.CheatList.GetColumnWidth(0) - 4
         self.CheatList.SetColumnWidth(1, width)
+        event.Skip()
 
     def cheat_edit(self, event: ListEvent):
         """
