@@ -28,6 +28,15 @@ OPTIONS = {
         'NSHighResolutionCapable': True,
         'LSMinimumSystemVersion': '10.12',
         'NSHumanReadableCopyright': '© 2025 Dennis Meuwissen',
+        'CFBundleDocumentTypes': [
+            {
+                'CFBundleTypeName': 'DeHackEd Patch',
+                'CFBundleTypeExtensions': ['deh', 'bex'],
+                'CFBundleTypeRole': 'Editor',
+                'CFBundleTypeIconFile': 'icon-hatchet.icns',
+                'LSHandlerRank': 'Owner'
+            }
+        ],
     },
     'packages': ['wx', 'pyaudio', 'platformdirs'],
     'includes': [],
