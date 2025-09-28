@@ -142,6 +142,7 @@ releases
 #############
 
 *.py[co]
+.venv/
 
 # Packages
 *.egg
@@ -171,4 +172,3 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
-.venv/

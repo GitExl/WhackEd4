@@ -208,32 +208,6 @@ def file_dialog(
     return None
 
 
-def load_toolbar_bitmap(path: str, target_size: wx.Size = None) -> wx.Bitmap:
-    """
-    Loads a toolbar bitmap, scaling to target size on Mac to work around
-    SetToolBitmapSize limitations.
-
-    @param path: path to the bitmap file
-    @param target_size: target size to scale to on Mac (if None, uses original size)
-    @return: wx.Bitmap object, potentially scaled on Mac
-    """
-
-    bitmap = wx.Bitmap(path, wx.BITMAP_TYPE_ANY)
-
-    # On Mac, scale toolbar icons to target size to work around SetToolBitmapSize issues
-    if sys.platform == 'darwin' and target_size is not None:
-        new_width = target_size.width
-        new_height = target_size.height
-
-        if new_width > 0 and new_height > 0:
-            # Create a scaled image
-            image = bitmap.ConvertToImage()
-            scaled_image = image.Scale(new_width, new_height, wx.IMAGE_QUALITY_HIGH)
-            bitmap = wx.Bitmap(scaled_image)
-
-    return bitmap
-
-
 def ensure_window_visible(window: wx.Window) -> bool:
     """
     Ensures a window is positioned within the visible display area. If the window
