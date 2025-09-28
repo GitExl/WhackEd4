@@ -81,7 +81,7 @@ class StateList(wx.ListCtrl):
         for color in ITEM_COLORS:
             self.item_colors.append(utils.mix_colors(color, background_color, 0.95))
 
-    def resize(self, _: SizeEvent):
+    def resize(self, event: SizeEvent):
         """
         Dialog resize event handler.
 
@@ -100,6 +100,8 @@ class StateList(wx.ListCtrl):
         current_width = self.GetColumnWidth(StateColumn.PARAMETERS)
         if width != current_width:
             self.SetColumnWidth(StateColumn.PARAMETERS, width)
+
+        event.Skip()
 
     def update_item_attributes(self):
         """
