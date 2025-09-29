@@ -30,6 +30,8 @@ from whacked4.ui.editors import thingsframe, statesframe, soundsframe, stringsfr
 from whacked4.ui.workspace import Workspace
 
 
+MAIN_MENU_CLOSE_WINDOW = 7000
+
 class MainWindow(windows.MainFrameBase):
     """
     The main MDI parent window.
@@ -116,6 +118,15 @@ class MainWindow(windows.MainFrameBase):
 
         self.editor_window_set_edit()
         self.file_set_state()
+
+    def close_editor_window(self, event: CommandEvent):
+        """
+        Closes the currently active editor window.
+        """
+
+        active_child = self.GetActiveChild()
+        if active_child is not None:
+            active_child.Close()
 
     def show_start(self):
         """
@@ -722,6 +733,10 @@ class MainWindow(windows.MainFrameBase):
         self.MenuEditPaste.Enable(edit_state)
         self.MenuEditUndo.Enable(undo_state)
 
+        # On Mac, enable/disable Close Window menu based on whether active child is an editor window
+        if sys.platform == 'darwin':
+            self.MenuViewCloseWindow.Enable(undo_state)
+
     def editor_window_show(self, tool_id: int):
         """
         Shows an editor window.
@@ -1009,3 +1024,16 @@ class MainWindow(windows.MainFrameBase):
 
         # Disable the green maximize button
         self.EnableMaximizeButton(False)
+
+        # Add a close window menu item, needed as an equivalent for CTRL+F4 on Windows
+        self.MenuView.AppendSeparator()
+        self.MenuViewCloseWindow = wx.MenuItem(
+            self.MenuView,
+            MAIN_MENU_CLOSE_WINDOW,
+            'Close Window\tCtrl+W',
+            wx.EmptyString,
+            wx.ITEM_NORMAL
+        )
+        self.MenuView.Append(self.MenuViewCloseWindow)
+        self.Bind(wx.EVT_MENU, self.close_editor_window, id=MAIN_MENU_CLOSE_WINDOW)
+
