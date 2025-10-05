@@ -9,6 +9,7 @@ import sys
 import wx
 
 from whacked4 import settingshandler
+from whacked4 import utils
 
 
 # Application info.
@@ -25,6 +26,9 @@ FONT_MONOSPACED_BOLD = None
 # Application configuration path.
 if sys.platform == 'win32':
     CONFIG_DIR = os.environ['APPDATA'] + '/' + APP_SIMPLE_NAME
+elif sys.platform == 'darwin':
+    import platformdirs
+    CONFIG_DIR = platformdirs.user_config_dir(appname=APP_SIMPLE_NAME)
 else:
     CONFIG_DIR = os.path.join(os.path.expanduser("~"), '.' + APP_SIMPLE_NAME)
 
@@ -83,13 +87,25 @@ class WhackEd4Settings(settingshandler.SettingsHandler):
         """
 
         main_window = self.get_setting('main_window_state')
+        
+        if sys.platform == 'darwin':
+            window.SetSize(
+                main_window['x'],
+                main_window['y'],
+                wx.DefaultCoord,
+                wx.DefaultCoord
+            )
+        else:
+            window.SetSize(
+                main_window['x'],
+                main_window['y'],
+                main_window['width'],
+                main_window['height']
+            )
 
-        window.SetSize(
-            main_window['x'],
-            main_window['y'],
-            main_window['width'],
-            main_window['height']
-        )
+        # Ensure window is visible on current display setup
+        utils.ensure_window_visible(window)
+
         window.Maximize(main_window['maximized'])
         window.Refresh()
 

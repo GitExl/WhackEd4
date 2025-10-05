@@ -143,6 +143,7 @@ releases
 #############
 
 *.py[co]
+.venv/
 
 # Packages
 *.egg

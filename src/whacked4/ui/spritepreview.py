@@ -56,7 +56,7 @@ class SpritePreview(wx.Panel):
         self.baseline_factor: float = 0.8
 
         # Scale to draw sprites at.
-        self.scale: float = 1.0 * self.GetDPIScaleFactor()
+        self.scale: float = 1.0 * utils.get_platform_dpi_scale(self)
 
         # The icon to display instead of missing sprites.
         self.missing: Bitmap = wx.Bitmap('res/icon-missing.png', wx.BITMAP_TYPE_PNG)
@@ -124,7 +124,7 @@ class SpritePreview(wx.Panel):
         drag_point_end = event.GetLogicalPosition(wx.WindowDC(self))
         drag_distance = drag_point_end.x - self.drag_point_start.x
 
-        sensitivity = SpritePreview.DRAG_SENSITIVITY * self.GetDPIScaleFactor()
+        sensitivity = SpritePreview.DRAG_SENSITIVITY * utils.get_platform_dpi_scale(self)
         drag_angle = (self.drag_angle_start - 1) - (drag_distance / sensitivity)
         drag_angle = int((drag_angle % 8) + 1)
 
@@ -360,7 +360,7 @@ class SpritePreview(wx.Panel):
         :param scale:
         """
 
-        self.scale = scale * self.GetDPIScaleFactor()
+        self.scale = scale * utils.get_platform_dpi_scale(self)
         self.floor_points = self.create_floor_points()
         self.update_paint()
 

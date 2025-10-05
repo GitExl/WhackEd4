@@ -240,7 +240,11 @@ class WADList:
                     continue
 
                 frame = lump_name[4]
-                rotation = int(lump_name[5])
+                try:
+                    rotation = int(lump_name[5])
+                except ValueError:
+                    continue
+
                 sprite_entry.add_frame(frame, rotation, lump, False)
 
                 # Mirrored sprite lump.

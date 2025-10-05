@@ -30,6 +30,8 @@ from whacked4.ui.editors import thingsframe, statesframe, soundsframe, stringsfr
 from whacked4.ui.workspace import Workspace
 
 
+MAIN_MENU_CLOSE_WINDOW = 7000
+
 class MainWindow(windows.MainFrameBase):
     """
     The main MDI parent window.
@@ -37,6 +39,7 @@ class MainWindow(windows.MainFrameBase):
 
     def __init__(self, parent):
         windows.MainFrameBase.__init__(self, parent)
+        self._adjust_mac_ui()
 
         wx.BeginBusyCursor()
 
@@ -115,6 +118,15 @@ class MainWindow(windows.MainFrameBase):
 
         self.editor_window_set_edit()
         self.file_set_state()
+
+    def close_editor_window(self, event: CommandEvent):
+        """
+        Closes the currently active editor window.
+        """
+
+        active_child = self.GetActiveChild()
+        if active_child is not None:
+            active_child.Close()
 
     def show_start(self):
         """
@@ -592,6 +604,9 @@ class MainWindow(windows.MainFrameBase):
 
         self.SetLabel(label)
 
+        # On Mac, also mark the close button as dirty
+        self.OSXSetModified(self.patch_modified)
+
     def new_file(self):
         """
         Creates a new Dehacked patch file.
@@ -717,6 +732,10 @@ class MainWindow(windows.MainFrameBase):
         self.MenuEditCopy.Enable(edit_state)
         self.MenuEditPaste.Enable(edit_state)
         self.MenuEditUndo.Enable(undo_state)
+
+        # On Mac, enable/disable Close Window menu based on whether active child is an editor window
+        if sys.platform == 'darwin':
+            self.MenuViewCloseWindow.Enable(undo_state)
 
     def editor_window_show(self, tool_id: int):
         """
@@ -955,3 +974,66 @@ class MainWindow(windows.MainFrameBase):
     def help_help(self, event: MenuEvent):
         file = 'file://' + os.path.join(os.getcwd(), 'docs/index.html')
         webbrowser.open(file)
+
+    def _adjust_mac_ui(self):
+        if sys.platform != 'darwin':
+            return
+
+        # Adjust the toolbar to be horizontal and fix the oversized icons
+        style = self.MainToolbar.GetWindowStyle()
+        style &= ~wx.TB_VERTICAL
+        style |= wx.TB_HORIZONTAL
+        self.MainToolbar.SetWindowStyle(style)
+        tool_info = []
+        for index in range(self.MainToolbar.GetToolsCount()):
+            tool = self.MainToolbar.GetToolByPos(index)
+            tool_info.append((
+                tool.GetId(),
+                tool.GetLabel(),
+                tool.GetBitmap().ConvertToImage().Scale(80, 80, wx.IMAGE_QUALITY_HIGH).ConvertToBitmap()
+            ))
+        self.MainToolbar.ClearTools()
+        for entry in tool_info:
+            self.MainToolbar.AddTool(
+                entry[0],
+                entry[1],
+                entry[2],
+                wx.NullBitmap,
+                wx.ITEM_CHECK,
+                wx.EmptyString,
+                wx.EmptyString,
+                None
+            )
+        self.MainToolbar.Realize()
+
+        # Get rid of scroll bars
+        self.GetClientWindow().SetScrollbar(wx.HORIZONTAL, 0, 0, 0, True)
+        self.GetClientWindow().SetScrollbar(wx.VERTICAL, 0, 0, 0, True)
+
+        # Fit to toolbar size and disable resizing
+        size = self.MainToolbar.GetSize()
+        self.SetSize(size)
+        client_size = self.GetClientSize()
+        title_bar_height = size.height - client_size.height
+        size_for_constraining = wx.Size(size.width, size.height + title_bar_height)
+        self.SetMinSize(size_for_constraining)
+        self.SetMaxSize(size_for_constraining)
+
+        # Disable full screen mode
+        self.EnableFullScreenView(False)
+
+        # Disable the green maximize button
+        self.EnableMaximizeButton(False)
+
+        # Add a close window menu item, needed as an equivalent for CTRL+F4 on Windows
+        self.MenuView.AppendSeparator()
+        self.MenuViewCloseWindow = wx.MenuItem(
+            self.MenuView,
+            MAIN_MENU_CLOSE_WINDOW,
+            'Close Window\tCtrl+W',
+            wx.EmptyString,
+            wx.ITEM_NORMAL
+        )
+        self.MenuView.Append(self.MenuViewCloseWindow)
+        self.Bind(wx.EVT_MENU, self.close_editor_window, id=MAIN_MENU_CLOSE_WINDOW)
+

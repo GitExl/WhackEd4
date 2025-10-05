@@ -6,6 +6,7 @@ to restore a user's workspace to a former state.
 
 import json
 import os.path
+import sys
 from typing import Optional, Dict, List
 
 from wx import Frame, MDIParentFrame
@@ -101,8 +102,11 @@ class Workspace:
         if 'active' in self.windows:
             active_window = self.windows['active']
             window = workspace_windows[active_window]
-            window.Raise()
-            window.SetFocus()
+            if sys.platform == 'darwin' and window.IsShown():
+                # On macOS calling Raise causes a 'ghost' of the window without any UI to show up, so don't try to raise
+                # it if hidden.
+                window.Raise()
+                window.SetFocus()
 
     def store_windows(self, frame: MDIParentFrame, workspace_windows: Dict[str, Frame]):
         """

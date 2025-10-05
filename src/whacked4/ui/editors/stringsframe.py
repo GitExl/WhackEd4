@@ -9,7 +9,7 @@ from typing import Optional
 import wx
 from wx import Window, SizeEvent, CommandEvent
 
-from whacked4 import config
+from whacked4 import config, utils
 from whacked4.dehacked.patch import Patch, string_escape
 from whacked4.ui import editormixin, windows
 from whacked4.ui.dialogs import stringdialog
@@ -57,7 +57,7 @@ class StringsFrame(editormixin.EditorMixin, windows.StringsFrameBase):
         self.StringList.ClearAll()
 
         if self.StringList.GetColumnCount() == 0:
-            scale = self.GetDPIScaleFactor()
+            scale = utils.get_platform_dpi_scale(self)
             if self.patch.extended:
                 self.StringList.InsertColumn(0, 'Name', width=floor(134 * scale))
                 self.StringList.InsertColumn(1, 'String', width=floor(800 * scale))

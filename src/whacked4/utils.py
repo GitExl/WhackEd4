@@ -2,6 +2,7 @@
 General utility functions.
 """
 
+import sys
 import wx
 
 from whacked4.doom.wadlist import WADList
@@ -205,3 +206,56 @@ def file_dialog(
     if result == wx.ID_OK:
         return dialog.GetPath()
     return None
+
+
+def ensure_window_visible(window: wx.Window) -> bool:
+    """
+    Ensures a window is positioned within the visible display area. If the window
+    is positioned outside all visible displays, moves it to (0, 0).
+
+    @param window: the window to check and potentially reposition
+    @return: True if the window was repositioned, False if it was already visible
+    """
+
+    # Get window position and size
+    window_rect = window.GetRect()
+
+    # Get all display information
+    display_count = wx.Display.GetCount()
+    window_visible = False
+
+    # Check if the window intersects with any display
+    for i in range(display_count):
+        display = wx.Display(i)
+        display_rect = display.GetGeometry()
+
+        # Check if window intersects with this display
+        if window_rect.Intersects(display_rect):
+            window_visible = True
+            break
+
+    # If window is not visible on any display, move it to a safe position
+    if not window_visible:
+        # Try to position on the primary display, or fallback to (0, 0)
+        try:
+            primary_display = wx.Display(0)
+            display_rect = primary_display.GetGeometry()
+            # Position at top-left of primary display with some margin
+            safe_x = max(0, display_rect.x + 50)
+            safe_y = max(0, display_rect.y + 50)
+        except:
+            # Fallback to origin if display detection fails
+            safe_x, safe_y = 0, 0
+
+        window.SetPosition(wx.Point(safe_x, safe_y))
+        return True
+
+    return False
+
+
+def get_platform_dpi_scale(widget: wx.Window) -> float:
+    """
+    Gets platform-specific DPI scale factor for the given widget. On macOS, this returns 1.0 to avoid scaling issues.
+    On other platforms, it returns the widget's actual DPI scale factor.
+    """
+    return 1.0 if sys.platform == 'darwin' else widget.GetDPIScaleFactor()
