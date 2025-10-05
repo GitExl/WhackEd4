@@ -3,6 +3,7 @@ Dehacked patch info UI.
 """
 
 import os.path
+import sys
 from typing import Dict, Optional, List
 
 import wx
@@ -23,6 +24,7 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
 
     def __init__(self, parent: Window):
         windows.PatchInfoDialogBase.__init__(self, parent)
+        self._adjust_mac_ui()
 
         self.SetEscapeId(windows.PATCHINFO_CANCEL)
 
@@ -238,3 +240,26 @@ class PatchInfoDialog(windows.PatchInfoDialogBase):
 
     def cancel(self, event: CommandEvent):
         self.EndModal(0)
+
+    def _adjust_mac_ui(self):
+        if sys.platform != 'darwin':
+            return
+        bitmap_size = self.m_toolBar3.GetToolBitmapSize()
+        info = [(
+            tool.GetId(),
+            tool.GetLabel(),
+            tool.GetBitmap().ConvertToImage().Scale(
+                bitmap_size.x,
+                bitmap_size.y,
+                wx.IMAGE_QUALITY_HIGH
+            ).ConvertToBitmap(),
+            tool.GetDisabledBitmap(),
+            tool.GetKind(),
+            tool.GetShortHelp(),
+            tool.GetLongHelp(),
+            tool.GetClientData()
+        ) for tool in (self.AddPWAD, self.RemovePWAD)]
+        self.m_toolBar3.ClearTools()
+        self.AddPWAD = self.m_toolBar3.AddTool(*info[0])
+        self.RemovePWAD = self.m_toolBar3.AddTool(*info[1])
+        self.m_toolBar3.Realize()

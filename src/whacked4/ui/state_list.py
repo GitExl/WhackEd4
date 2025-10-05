@@ -6,7 +6,7 @@ from enum import IntEnum
 from math import floor
 from typing import Optional, List, Tuple
 
-import wx
+import sys, wx
 from wx import Colour, ListEvent, PostEvent, SizeEvent
 from wx.lib.newevent import NewEvent
 
@@ -81,7 +81,7 @@ class StateList(wx.ListCtrl):
         for color in ITEM_COLORS:
             self.item_colors.append(utils.mix_colors(color, background_color, 0.95))
 
-    def resize(self, _: SizeEvent):
+    def resize(self, event: SizeEvent):
         """
         Dialog resize event handler.
 
@@ -95,9 +95,13 @@ class StateList(wx.ListCtrl):
             columns_width += self.GetColumnWidth(column_index)
 
         width = self.GetClientSize()[0] - columns_width - 4
+        if self.GetColumnCount() <= StateColumn.PARAMETERS:
+            return
         current_width = self.GetColumnWidth(StateColumn.PARAMETERS)
         if width != current_width:
             self.SetColumnWidth(StateColumn.PARAMETERS, width)
+
+        event.Skip()
 
     def update_item_attributes(self):
         """
@@ -130,7 +134,7 @@ class StateList(wx.ListCtrl):
         self.ClearAll()
 
         if self.GetColumnCount() == 0:
-            scale = self.GetDPIScaleFactor()
+            scale = utils.get_platform_dpi_scale(self)
             self.InsertColumn(StateColumn.INDEX, '', width=floor(47 * scale))
             self.InsertColumn(StateColumn.NAME, 'Name', width=floor(59 * scale))
             self.InsertColumn(StateColumn.SPRITE, 'Spr', width=floor(42 * scale))
@@ -170,7 +174,9 @@ class StateList(wx.ListCtrl):
             action_name = ''
             parameters = (str(state['unused1']), str(state['unused2']))
 
-        lit = '◾' if state['spriteFrame'] & FRAMEFLAG_LIT else ''
+        # Use asterisk on macOS because of system theme causing the black square to be hard to see AND off-center
+        # Same off-center problem with emoji, attempted it.
+        lit = ('*' if sys.platform == 'darwin' else '◾') if state['spriteFrame'] & FRAMEFLAG_LIT else ''
         frame_name = str(state['spriteFrame'] & ~FRAMEFLAG_LIT)
         parameters_text = ', '.join(parameters)
 
@@ -233,6 +239,10 @@ class StateList(wx.ListCtrl):
 
         :param _:
         """
+
+        # Check if the widget is still valid to avoid errors during shutdown
+        if not self:
+            return
 
         self.selected.clear()
 

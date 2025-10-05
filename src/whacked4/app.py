@@ -135,17 +135,33 @@ def set_monospace_font():
 
     font_size = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT).GetPointSize()
 
-    config.FONT_MONOSPACED = wx.Font(
-        font_size,
-        wx.FONTFAMILY_DEFAULT,
-        wx.FONTSTYLE_NORMAL,
-        wx.FONTWEIGHT_NORMAL,
-        faceName=config.FONT_MONOSPACED_NAME
-    )
-    config.FONT_MONOSPACED_BOLD = wx.Font(
-        font_size,
-        wx.FONTFAMILY_DEFAULT,
-        wx.FONTSTYLE_NORMAL,
-        wx.FONTWEIGHT_BOLD,
-        faceName=config.FONT_MONOSPACED_NAME
-    )
+    # On macOS, use the wxPython suggested monospace font
+    # On other platforms, use the configured font name
+    if sys.platform == 'darwin':
+        config.FONT_MONOSPACED = wx.Font(
+            font_size,
+            wx.FONTFAMILY_TELETYPE,
+            wx.FONTSTYLE_NORMAL,
+            wx.FONTWEIGHT_NORMAL
+        )
+        config.FONT_MONOSPACED_BOLD = wx.Font(
+            font_size,
+            wx.FONTFAMILY_TELETYPE,
+            wx.FONTSTYLE_NORMAL,
+            wx.FONTWEIGHT_BOLD
+        )
+    else:
+        config.FONT_MONOSPACED = wx.Font(
+            font_size,
+            wx.FONTFAMILY_DEFAULT,
+            wx.FONTSTYLE_NORMAL,
+            wx.FONTWEIGHT_NORMAL,
+            faceName=config.FONT_MONOSPACED_NAME
+        )
+        config.FONT_MONOSPACED_BOLD = wx.Font(
+            font_size,
+            wx.FONTFAMILY_DEFAULT,
+            wx.FONTSTYLE_NORMAL,
+            wx.FONTWEIGHT_BOLD,
+            faceName=config.FONT_MONOSPACED_NAME
+        )

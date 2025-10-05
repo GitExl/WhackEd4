@@ -128,8 +128,8 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         self.WeaponList.ClearAll()
 
         if self.WeaponList.GetColumnCount() == 0:
-            self.WeaponList.InsertColumn(0, 'Name', width=floor(120 * self.GetDPIScaleFactor()))
-            self.WeaponList.InsertColumn(1, 'Ammo', width=floor(120 * self.GetDPIScaleFactor()))
+            self.WeaponList.InsertColumn(0, 'Name', width=floor(120 * utils.get_platform_dpi_scale(self)))
+            self.WeaponList.InsertColumn(1, 'Ammo', width=floor(120 * utils.get_platform_dpi_scale(self)))
 
         for index in range(len(self.patch.weapons)):
             self.WeaponList.InsertItem(index, '')
@@ -157,6 +157,7 @@ class WeaponsFrame(editormixin.EditorMixin, windows.WeaponsFrameBase):
         column_width = self.WeaponList.GetClientSize()[0] - 4
         self.WeaponList.SetColumnWidth(0, column_width // 2)
         self.WeaponList.SetColumnWidth(1, column_width // 2)
+        event.Skip()
 
     def ammolist_build(self):
         """

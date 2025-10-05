@@ -2,6 +2,8 @@
 Par time editor UI.
 """
 
+import sys
+
 from math import floor
 from typing import Dict, Optional
 
@@ -30,6 +32,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
     def __init__(self, parent: Window):
         windows.ParFrameBase.__init__(self, parent)
         editormixin.EditorMixin.__init__(self)
+        self._adjust_mac_ui()
 
         self.SetIcon(wx.Icon('res/editor-par.png'))
 
@@ -59,9 +62,9 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         """
 
         self.ParList.ClearAll()
-        self.ParList.InsertColumn(0, 'Map', width=floor(59 * self.GetDPIScaleFactor()))
-        self.ParList.InsertColumn(1, 'Seconds', width=floor(58 * self.GetDPIScaleFactor()))
-        self.ParList.InsertColumn(2, 'Minutes', width=floor(69 * self.GetDPIScaleFactor()))
+        self.ParList.InsertColumn(0, 'Map', width=floor(59 * utils.get_platform_dpi_scale(self)))
+        self.ParList.InsertColumn(1, 'Seconds', width=floor(58 * utils.get_platform_dpi_scale(self)))
+        self.ParList.InsertColumn(2, 'Minutes', width=floor(69 * utils.get_platform_dpi_scale(self)))
 
         for index, _ in enumerate(self.patch.pars.entries):
             self.ParList.InsertItem(index, '')
@@ -94,6 +97,7 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         """
 
         self.list_autosize(self.ParList)
+        event.Skip()
 
     def properties_set_state(self, state: bool):
         """
@@ -207,3 +211,51 @@ class ParFrame(editormixin.EditorMixin, windows.ParFrameBase):
         return {
             'pars': dup
         }
+
+    def _adjust_mac_ui(self):
+        if sys.platform != 'darwin':
+            return
+
+        bitmap_size = self.Tools.GetToolBitmapSize()
+        add_id, add_label, add_bitmap, add_dis_bitmap, add_kind, add_short_help, add_long_help, add_client_data = (
+            self.Add.GetId(),
+            self.Add.GetLabel(),
+            self.Add.GetBitmap().ConvertToImage().Scale(bitmap_size.x, bitmap_size.y).ConvertToBitmap(),
+            self.Add.GetDisabledBitmap(),
+            self.Add.GetKind(),
+            self.Add.GetShortHelp(),
+            self.Add.GetLongHelp(),
+            self.Add.GetClientData()
+        )
+        rem_id, rem_label, rem_bitmap, rem_dis_bitmap, rem_kind, rem_short_help, rem_long_help, rem_client_data = (
+            self.Remove.GetId(),
+            self.Remove.GetLabel(),
+            self.Remove.GetBitmap().ConvertToImage().Scale(bitmap_size.x, bitmap_size.y).ConvertToBitmap(),
+            self.Remove.GetDisabledBitmap(),
+            self.Remove.GetKind(),
+            self.Remove.GetShortHelp(),
+            self.Remove.GetLongHelp(),
+            self.Remove.GetClientData()
+        )
+        self.Tools.ClearTools()
+        self.Add = self.Tools.AddTool(
+            add_id,
+            add_label,
+            add_bitmap,
+            add_dis_bitmap,
+            add_kind,
+            add_short_help,
+            add_long_help,
+            add_client_data
+        )
+        self.Remove = self.Tools.AddTool(
+            rem_id,
+            rem_label,
+            rem_bitmap,
+            rem_dis_bitmap,
+            rem_kind,
+            rem_short_help,
+            rem_long_help,
+            rem_client_data
+        )
+        self.Tools.Realize()
