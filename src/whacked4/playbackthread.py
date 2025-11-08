@@ -1,32 +1,39 @@
 """
-PyAudio playback thread.
+Audio playback thread.
 """
 
 import threading
-import pyaudio
+import sounddevice
 
 
 class PlaybackThread(threading.Thread):
     """
-    A thread that uses PyAudio to play back raw sample data.
+    A thread to play back raw sample data.
     """
 
-    def __init__(self, pyaudio_instance, sample_rate, samples):
+    def __init__(self, sample_rate, samples):
         threading.Thread.__init__(self)
 
-        self.pyaudio_instance = pyaudio_instance
         self.sample_rate: int = sample_rate
-        self.samples: int = samples
+        self.samples: bytes = samples
+        self.current_frame: int = 0
 
     def run(self):
-        stream = self.pyaudio_instance.open(
-            format=pyaudio.paUInt8,
+        event = threading.Event()
+
+        def callback(outdata, frames, time, status):
+            chunksize = min(len(self.samples) - self.current_frame, frames)
+            outdata[:chunksize] = self.samples[self.current_frame:self.current_frame + chunksize]
+            if chunksize < frames:
+                raise sounddevice.CallbackStop()
+            self.current_frame += chunksize
+
+        stream = sounddevice.RawOutputStream(
+            dtype='uint8',
+            samplerate=self.sample_rate,
             channels=1,
-            rate=self.sample_rate,
-            output=True,
-            frames_per_buffer=1,
-            start=True
+            callback=callback,
+            finished_callback=event.set,
         )
-        stream.write(self.samples)
-        stream.stop_stream()
-        stream.close()
+        with stream:
+            event.wait()

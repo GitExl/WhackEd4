@@ -2,6 +2,7 @@ Version 1.3.3
 -------------
 Fixed: lumps with non-integer representable rotations are no longer loaded as sprites. Thanks to Kain D.
 Changed: improve detection for invalid graphics.
+Changed: replaced PyAudio with sounddevice.
 
 Version 1.3.2
 -------------

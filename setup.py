@@ -31,5 +31,5 @@ setup(
 	description=os.environ['app_description'],
 	options={'build_exe': build_exe_options},
 	executables=[exe],
-	requires=['pyaudio', 'wx']
+	requires=['sounddevice', 'wx']
 )

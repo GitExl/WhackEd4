@@ -1,11 +1,11 @@
 """
-Classes for Doom audio reading and playback using the PyAudio PortAudio bindings.
+Classes for Doom audio reading and playback.
 """
 
 import struct
 from typing import Optional
 
-import whacked4.playbackthread
+from whacked4 import playbackthread
 
 
 class Sound:
@@ -39,15 +39,14 @@ class Sound:
         # Slice sample data from the rest of the lump.
         self.samples = data[self.SOUND_HEADER.size:]
 
-    def play(self, pyaudio_instance):
+    def play(self):
         """
         Plays this sound.
         """
 
         # Start a new playback thread so that this function call does not block.
-        player = whacked4.playbackthread.PlaybackThread(
-            pyaudio_instance,
+        player = playbackthread.PlaybackThread(
             self.sample_rate,
-            self.samples
+            self.samples,
         )
         player.start()

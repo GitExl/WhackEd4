@@ -10,7 +10,6 @@ import locale
 from typing import TextIO, Optional
 
 import wx
-import pyaudio
 
 from whacked4 import config
 from whacked4.ui import mainwindow
@@ -28,14 +27,6 @@ class WhackEd4App(wx.App):
         super().__init__()
 
         self.log: Optional[TextIO] = None
-        self.pyaudio_instance = pyaudio.PyAudio()
-
-    def OnExit(self):
-        """
-        App exit event.
-        """
-
-        self.pyaudio_instance.terminate()
 
     def OnInit(self):
         """
