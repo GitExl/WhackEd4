@@ -8,6 +8,8 @@ import re
 from dataclasses import dataclass
 from typing import Dict, Optional, Set, BinaryIO, List, TypeVar, Generic, Type, Iterator
 
+from whacked4.dehacked.errors import DehackedLookupError
+
 
 @dataclass
 class ThingFlag:
@@ -143,18 +145,18 @@ class Table(Generic[T]):
             # Flag is a mnemonic.
             else:
                 if not self.engine.extended:
-                    raise LookupError(f'Encountered thing flag key "{flag_str}" in a'
+                    raise DehackedLookupError(f'Encountered thing flag key "{flag_str}" in a'
                                       f'non-extended patch.')
 
                 flag = self.flags.get(f'{field_key}_{flag_str}')
                 if flag is None:
-                    raise LookupError(f'Ignoring unknown thing flag key "{flag_str}".')
+                    raise DehackedLookupError(f'Ignoring unknown thing flag key "{flag_str}".')
 
                 if flag.alias is not None:
                     original_flag = flag.alias
                     flag = self.flags.get(f'{field_key}_{flag.alias}')
                     if flag is None:
-                        raise LookupError(f'Ignoring unknown thing flag alias "{original_flag}".')
+                        raise DehackedLookupError(f'Ignoring unknown thing flag alias "{original_flag}".')
 
                 out.add(flag_str)
 
@@ -195,7 +197,7 @@ class Table(Generic[T]):
         for key in value:
             flag_key = f'{field_key}_{key}'
             if flag_key not in self.flags:
-                raise LookupError(f'Unknown thing flag key "{key}" for '
+                raise DehackedLookupError(f'Unknown thing flag key "{key}" for '
                                   f'field "{field_key}".')
 
             out.append(key)
@@ -215,7 +217,7 @@ class Table(Generic[T]):
             flag_key = f'{field_key}_{key}'
             flag = self.flags.get(flag_key)
             if flag.index is None:
-                raise LookupError(f'Cannot write non-bitfield thing flag "{key}" into '
+                raise DehackedLookupError(f'Cannot write non-bitfield thing flag "{key}" into '
                                   f'a non-extended patch.')
 
             bits |= int(math.pow(2, flag.index))

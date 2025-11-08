@@ -8,7 +8,7 @@ from json.encoder import JSONEncoder
 from typing import List, Dict, Set, Optional
 
 from whacked4.dehacked import table, entry
-from whacked4.dehacked.action import Action
+from whacked4.dehacked.action_list import ActionList
 from whacked4.dehacked.entries import ThingEntry, WeaponEntry, StateEntry, AmmoEntry, ParEntry, SoundEntry
 from whacked4.dehacked.table import Table, ThingFlag
 
@@ -68,7 +68,7 @@ class Engine:
         self.action_index_to_state: List[int] = []
 
         # A dict of actions available to this engine.
-        self.actions: Dict[str, Action] = {}
+        self.actions: ActionList = ActionList()
 
         # A set of state indices whose use is hardcoded in the game executable.
         self.used_states: Set[int] = set()
@@ -135,8 +135,7 @@ class Engine:
             self.weapons.read_from_json(data['weapons'])
             self.ammo.read_from_json(data['ammo'])
 
-            for key, value in data['actions'].items():
-                self.actions[key] = Action.from_json(value)
+            self.actions.add_from_json(data['actions'])
 
             self.states.read_from_json(data['states'])
             self.sounds.read_from_json(data['sounds'])
@@ -169,23 +168,6 @@ class Engine:
         self.weapons.apply_defaults(self.default_weapon)
         self.ammo.apply_defaults(self.default_ammo)
         self.sounds.apply_defaults(self.default_sound)
-
-    def get_action_key_from_name(self, action_name: str):
-        """
-        Returns an action key from an action name. Useful for getting action names
-        for non-extended engines.
-
-        @param action_name: the name of the action to find the key of.
-        """
-
-        if self.extended:
-            return action_name
-
-        for key, action in self.actions.items():
-            if action.name == action_name:
-                return key
-
-        return None
 
     def is_compatible(self, version: int, is_extended: bool):
         """

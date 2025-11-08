@@ -873,7 +873,7 @@ class ThingsFrame(editormixin.EditorMixin, windows.ThingsFrameBase):
             if not state['action']:
                 continue
 
-            action = self.patch.engine.actions[state['action']]
+            action = self.patch.engine.actions.get_by_key(state['action'])
             if action.sets_momentum:
                 self.thing_is_projectile = False
 

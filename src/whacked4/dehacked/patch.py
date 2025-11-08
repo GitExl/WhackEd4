@@ -11,38 +11,9 @@ from whacked4.dehacked import engine
 from whacked4.dehacked.engine import Engine
 from whacked4.dehacked.entries import (ThingEntry, StateEntry, SoundEntry, WeaponEntry, AmmoEntry,
                                        ParEntry)
+from whacked4.dehacked.errors import DehackedLookupError, DehackedVersionError, DehackedPatchError, DehackedFormatError
 from whacked4.dehacked.table import Table
 from whacked4.enum import WhackedEnum
-
-
-class DehackedPatchError(Exception):
-    """
-    Base class for errors in Dehacked file reading/writing.
-    """
-
-    def __init__(self, msg: str):
-        self.msg = msg
-
-    def __str__(self):
-        return self.msg
-
-
-class DehackedVersionError(DehackedPatchError):
-    """
-    Version difference errors in Dehacked file reading.
-    """
-
-
-class DehackedFormatError(DehackedPatchError):
-    """
-    Patch format version errors in Dehacked file reading.
-    """
-
-
-class DehackedLookupError(DehackedPatchError):
-    """
-    Patch format key lookup errors in Dehacked file reading.
-    """
 
 
 class ParseMode(WhackedEnum):
@@ -274,9 +245,10 @@ class Patch:
             # Create a dict of modified actions.
             # [state index] = action pointer
             for index, _ in enumerate(self.states):
-                action_pointer = self.states[index]['action']
-                if action_pointer != self.engine.states[index]['action']:
-                    out[index] = action_pointer
+                action_key = self.states[index]['action']
+                action = self.engine.actions.get_by_key(action_key)
+                if action is not None and action_key != self.engine.states[index]['action']:
+                    out[index] = action.name
 
             if len(out) > 0:
                 f.write('\n[CODEPTR]\n')
@@ -293,26 +265,27 @@ class Patch:
         # actions are matched to action pointer indices. Their value refers to a state
         # in the original engine data with this particular action.
         for i, state in enumerate(self.states):
-            action_pointer = state['action']
+            action_key = state['action']
+            action = self.engine.actions.get_by_key(action_key)
 
-            if action_pointer != self.engine.states[i]['action']:
+            if action is not None and action_key != self.engine.states[i]['action']:
                 # Attempt to find this state's action pointer index in the action
                 # index lookup list.
                 try:
                     action_pointer_index = self.engine.action_index_to_state.index(i)
                 except ValueError as e:
-                    raise LookupError(f'Cannot find an action pointer '
+                    raise DehackedLookupError(f'Cannot find an action key '
                                       f'index for state {i}') from e
 
                 # Find a state in the engine state table that uses the new action pointer.
                 state_index = -1
                 for j, inner_state in enumerate(self.engine.states):
-                    if inner_state['action'] == action_pointer:
+                    if inner_state['action'] == action_key:
                         state_index = j
                         break
 
                 if state_index == -1:
-                    raise LookupError(f'Cannot find a state for action pointer {action_pointer}')
+                    raise DehackedLookupError(f'Cannot find a state for action key {action_key}')
 
                 f.write(f'\nPointer {action_pointer_index} (Frame {i})\n')
                 f.write(f'Codep Frame = {state_index}\n')
@@ -621,16 +594,17 @@ class Patch:
                         continue
 
                     key = pair[0]
-                    value = pair[1]
+                    action_key = pair[1].lower()
                     index = int(key.split(' ')[1])
 
-                    if value not in self.engine.actions:
-                        messages['UNKNOWN_ACTION_NAME'] = 'Unknown action name ' + value
+                    action = self.engine.actions.get_by_key(action_key)
+                    if action is None:
+                        messages['UNKNOWN_ACTION_NAME'] = 'Unknown action key ' + action_key
                     elif index < 0 or index >= len(self.states):
                         messages['INVALID_CODEPOINTER'] = 'Invalid codepointer values were '\
                                                           'encountered.'
                     else:
-                        self.states[index]['action'] = value
+                        self.states[index]['action'] = action.key
 
                     continue
 
