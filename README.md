@@ -23,7 +23,7 @@ Dependencies
 
 ### Building on Windows
 
-WhackEd4 is built with [Python 3.11](https://www.python.org/downloads/), using the wxPython 4.1.1 and Sounddevice
+WhackEd4 is built with [Python 3.11](https://www.python.org/downloads/), using the wxPython 4 and Sounddevice
 libraries. The user interface is designed with [wxFormBuilder](https://github.com/wxFormBuilder/wxFormBuilder/releases).
 To build the setup executable you will need cx_Freeze and [Inno Setup](https://jrsoftware.org/isdl.php).
 [7zip](https://www.7-zip.org/download.html) is required if you want to automatically create a standalone release Zip
