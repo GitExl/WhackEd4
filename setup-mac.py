@@ -38,7 +38,7 @@ OPTIONS = {
             }
         ],
     },
-    'packages': ['wx', 'pyaudio', 'platformdirs'],
+    'packages': ['wx', 'sounddevice', 'platformdirs'],
     'includes': [],
     'excludes': [
         'wx.tools', 'wx.py', 'wx.lib.agw', 'wx.lib.plot', 'wx.lib.floatcanvas',
@@ -60,5 +60,5 @@ setup(
     data_files=DATA_FILES,
     options={'py2app': OPTIONS},
     setup_requires=['py2app'],
-    install_requires=['pyaudio', 'wxPython', 'platformdirs']
+    install_requires=['sounddevice', 'wxPython', 'platformdirs']
 )

@@ -23,15 +23,17 @@ class Action:
     Stores information about a state action as supported by an engine.
     """
 
-    def __init__(self, name: str, description: str, action_type: ActionType):
+    def __init__(self, key: str, name: str, description: str, action_type: ActionType):
         """
         Constructor.
 
-        :param name: the name of the action as used in a patch.
-        :param description: a short description of what the action does.
-        :param action_type: the type of entity the action is meant to be used on.
+        :param key: The value used in patches.
+        :param name: The human-readable name of the action.
+        :param description: A short description of what the action does.
+        :param action_type: The type of entity the action is meant to be used on.
         """
 
+        self.key: str = key
         self.name: str = name
         self.description: str = description
         self.type: ActionType = action_type
@@ -49,9 +51,9 @@ class Action:
         Returns a list of action argument properties from a state that are valid
         for this action.
 
-        :param state: the state to return the property values of.
+        :param state: The state to return the property values of.
 
-        :return: a list of the state's property values.
+        :return: A list of the state's property values.
         """
 
         param_keys = []
@@ -62,16 +64,18 @@ class Action:
         return [str(state[key]) for key in param_keys]
 
     @classmethod
-    def from_json(cls, json: dict):
+    def from_json(cls, key: str, json: dict):
         """
         Creates a new Action instance from a dict of JSON data.
 
-        :param json: data to create the instance with.
+        :param key: The action key.
+        :param json: Data to create the instance with.
 
-        :return: a new Action instance.
+        :return: A new Action instance.
         """
 
         action = cls(
+            key,
             str(json['name']),
             str(json['description']),
             ActionType.get(json['type'])

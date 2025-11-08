@@ -1,7 +1,11 @@
 Version 1.3.3
 -------------
 Fixed: lumps with non-integer representable rotations are no longer loaded as sprites. Thanks to Kain D.
+Fixed: action/codepointers are case-insensitive. Thanks to ioan-chera.
+Fixed: all relevant errors were not displayed during patch load. Thanks to ioan-chera.
+Changed: functional MacOS support. Thanks to ioan-chera.
 Changed: improve detection for invalid graphics.
+Changed: replaced PyAudio with sounddevice library.
 
 Version 1.3.2
 -------------

@@ -349,8 +349,8 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         action_items = []
 
-        for action in self.patch.engine.actions.values():
-            action_items.append(action.name)
+        for name in self.patch.engine.actions.get_names():
+            action_items.append(name)
 
         self.Action.SetItems(action_items)
 
@@ -507,19 +507,13 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         self.update_sprite_preview()
 
-    def set_param_visibility(self, action_key: str):
+    def set_param_visibility(self, action: Optional[Action]):
         """
         Sets the visibility of action parameters for the currently selected states.
         """
 
-        if action_key in self.patch.engine.actions:
-            action = self.patch.engine.actions[action_key]
-        else:
-            action = None
-
         if action is not None:
             self.Action.SetToolTip(action.description)
-
         arg_count = get_action_param_counts(action)
 
         # Unused parameters.
@@ -715,9 +709,11 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
         """
 
         action_name = self.Action.GetStringSelection()
-        action_key = self.patch.engine.get_action_key_from_name(action_name)
+        action = self.patch.engine.actions.get_by_name(action_name)
+        if action is None:
+            return;
 
-        if not self.patch.engine.extended and action_key == '0':
+        if not self.patch.engine.extended and action.key == '0':
             self.update_properties()
             return
 
@@ -728,9 +724,9 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
             # Only allow modifying a state's action if the engine is extended, or if the state
             # already has an action.
             if self.patch.engine.extended or self.patch.engine.states[state_index]['action'] != '0':
-                state['action'] = action_key
+                state['action'] = action.key
 
-        self.set_param_visibility(action_key)
+        self.set_param_visibility(action)
         self.StateList.refresh_selected_rows()
         self.is_modified(True)
 
@@ -763,13 +759,15 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
     def set_selected_action(self, action_key: str):
         """
-        Sets the action choice box' index to reflect the specified action value.
+        Sets the action choice box index to reflect the specified action value.
         """
 
-        action = self.patch.engine.actions[action_key]
-        self.Action.Select(self.Action.FindString(action.name))
+        action = self.patch.engine.actions.get_by_key(action_key)
+        if action is None:
+            return
 
-        self.set_param_visibility(action_key)
+        self.Action.Select(self.Action.FindString(action.name))
+        self.set_param_visibility(action)
 
     def state_context(self, event: ListEvent):
         """
@@ -805,7 +803,7 @@ class StatesFrame(editormixin.EditorMixin, windows.StatesFrameBase):
 
         for _, state_index, state in self.StateList.iterate_selected():
 
-            # Link previous state to this one.
+            # Link the previous state to this one.
             if prev_state is not None:
                 prev_state['nextState'] = state_index
 

@@ -210,11 +210,11 @@ class StatePreviewDialog(windows.StatePreviewDialogBase):
 
         if state['action'] is not None:
             action_key = state['action']
-            action = self.patch.engine.actions[action_key]
+            action = self.patch.engine.actions.get_by_key(action_key)
             action_label = action.name
 
             # Support for RandomJump action that takes parameters to jump to a random next state.
-            if state['action'] == 'RandomJump' and random.randint(0, 255) < state['unused2']:
+            if action.name == 'RandomJump' and random.randint(0, 255) < state['unused2']:
                 self.set_state(state['unused1'])
                 return
 

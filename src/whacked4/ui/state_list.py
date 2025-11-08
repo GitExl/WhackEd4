@@ -4,7 +4,7 @@ Custom state list control.
 
 from enum import IntEnum
 from math import floor
-from typing import Optional, List, Tuple
+from typing import Optional, List, Tuple, Generator
 
 import sys, wx
 from wx import Colour, ListEvent, PostEvent, SizeEvent
@@ -165,7 +165,7 @@ class StateList(wx.ListCtrl):
 
 
         """
-        action = self.patch.engine.actions.get(state['action'], None)
+        action = self.patch.engine.actions.get_by_key(state['action'])
 
         if action is not None:
             action_name = action.name
@@ -260,7 +260,7 @@ class StateList(wx.ListCtrl):
 
         return self.selected
 
-    def iterate_selected(self) -> Tuple[int, int, Entry]:
+    def iterate_selected(self) -> Generator[tuple[int, int, Entry]]:
         """
         Iterator for selected states.
         """
