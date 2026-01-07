@@ -103,8 +103,12 @@ class Entry:
                           FieldType.SOUND, FieldType.SPRITE, FieldType.STATE}:
             try:
                 return int(value)
-            except ValueError as e:
-                raise ValueError(f'Value "{value}" for field "{key}" is not an integer.') from e
+            except ValueError:
+                # Try to parse fixed point values that were erroneously output as floating point.
+                try:
+                    return int(float(value))
+                except ValueError as e:
+                    raise ValueError(f'Value "{value}" for field "{key}" is not an integer.') from e
 
         if field.type == FieldType.FLOAT:
             try:
